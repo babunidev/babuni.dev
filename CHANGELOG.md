@@ -7,11 +7,16 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 ## [Unreleased]
 
 ### Added
-- Initial documentation foundation prepared on a documentation branch: concept, roadmap, agent guidance, design, architecture, content policy, decisions, journal, collaboration policy, and ChatGPT project instructions.
-- Expanded repository README describing the project and current implementation status.
+- Initial Astro 7 project foundation: package scripts, lockfile, TypeScript configuration, base page, favicons, and editor configuration (creator's commit `294831c`).
+- Project documentation baseline: concept, roadmap, agent guidance, design, architecture, content policy, decisions, journal, collaboration policy, and ChatGPT project instructions.
+- Updated README describing the portfolio's goals and documentation.
 
-### Not yet merged / separately in progress
-- Astro starter project was installed and tested locally by the creator. It was **not present on the GitHub main branch** when this documentation was prepared; it is not counted as an implemented change in this branch.
+### Changed
+- Integrated local Astro foundation and documentation on `main` in merge commit `5902121`, preserving both agent instruction sets in AGENTS.md.
+- Aligned documented workflow to the creator's decision to develop directly on `main` unless requested otherwise.
+
+### Verification
+- The creator reported Astro 7.4.2 starting successfully at localhost:4321 before the merge. The repository content and merge commit were verified on GitHub. No post-merge site build or browser test has yet been independently performed.
 
 ## Conventions
 

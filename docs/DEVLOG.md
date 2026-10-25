@@ -71,6 +71,18 @@ This is an edited account of the development process, not a verbatim transcript 
 
 **Open.** Project-specific ChatGPT settings must be updated by the user in the ChatGPT UI; the Markdown file itself cannot enforce those settings. Future agents must use available conversations and explicitly provided sources, not pretend to possess a complete conversation archive.
 
+## 2026-10-26 — Integrating local development and the public project record
+
+**Creator direction.** After creating a repository and initializing Astro locally, the creator established a simple Git workflow: all active development belongs on `main`. They also insisted that the project documentation and Astro implementation coexist without discarding either set of agent rules.
+
+**AI contribution.** The assistant originally prepared documentation in a separate branch and then moved it directly onto `main` at the creator's request. When the creator fetched remote changes and merged locally, Git reported an add/add conflict in `AGENTS.md`. The assistant proposed retaining the custom project rules from the remote version, appending the Astro starter's local development guidance, and revising the workflow rule to use `main`.
+
+**Creator action and feedback.** The creator followed that reconciliation, staged `AGENTS.md`, committed the merge, and pushed it to GitHub. Their terminal reported commit `5902121` and a successful update to `origin/main`.
+
+**Verification.** GitHub was checked afterward: `main` contains both `package.json` and `src/pages/index.astro`, plus the complete merged `AGENTS.md` and project documentation. The local Astro starter had previously started successfully according to the creator; no new post-merge build or browser verification was performed.
+
+**Outcome.** The foundation is integrated and the next development target is the grid mechanics, not a finished visual site. A subsequent documentation-only update corrected stale instructions claiming that Astro was still local-only. Remaining independent setup: confirm ChatGPT project instructions in its user interface.
+
 ---
 
 ## Future journal entry template

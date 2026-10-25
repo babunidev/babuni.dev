@@ -77,3 +77,10 @@
 ## Adding decisions
 
 For each entry add date, status, motivating creator request, alternatives (including AI-originated ones), rationale, impact, and verification links. When changing a decision, mark the original **Superseded** rather than silently rewriting history.
+
+## D-014 — Main-only development workflow
+**Status:** Accepted · **Date:** 2026-10-26
+**Creator direction:** Development should take place directly on `main`, not through a branch-and-PR routine.
+**AI contribution:** Initially prepared a separate documentation branch for safety, then honored the creator's correction and supported integrating local Astro work with repository documentation on `main`.
+**Decision:** Make direct `main` updates the default. Remain careful with local uncommitted work and use explicit approval before deployment or destructive operations.
+**Verification:** Merge commit `5902121` was pushed by the creator and verified on GitHub. The branch workflow was superseded for future changes.

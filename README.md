@@ -8,7 +8,7 @@ The website itself is intended to become one of its exhibits: a record of its co
 
 ## Project status
 
-**Early foundation / prototype planning.** The GitHub default branch initially contained only this README and a .gitignore. Astro has been initialized and tested *locally* by the creator; that work must be committed and pushed separately. This documentation branch does not claim that the interface is implemented.
+**Foundation complete; interactive prototype not yet implemented.** Astro 7 with TypeScript and the initial documentation now exist together on GitHub `main` (merge commit `5902121`). The creator reported running the starter locally; no grid, portal, or bloom behavior has been implemented or verified.
 
 ## Documentation
 

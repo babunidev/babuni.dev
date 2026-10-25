@@ -1,6 +1,6 @@
 # Technical Architecture — Proposed
 
-**Status:** Planning. Astro 7.4.2 was reported running locally; remote source may not yet include it.
+**Status:** Astro 7 + TypeScript foundation committed to GitHub `main` (`5902121`); interactive grid architecture remains proposed. The creator previously reported Astro 7.4.2 running locally.
 
 ## Responsibilities
 
@@ -8,7 +8,7 @@
 - **TypeScript interactive engine:** grid coordinates, viewport sizing, drag, shifting, wrap/recycling, selection, cell reservation, and preload scheduling.
 - **Svelte (candidate):** UI rendering for the grid island and blooms; select only after a small prototype.
 - **Structured Markdown/MDX content:** per-project narratives, modules, metadata and dev logs.
-- **GitHub:** source and review; automated CI builds after Astro is pushed.
+- **GitHub:** source of truth on `main`; automated CI and deployments are future work.
 - **VPS:** eventual static deployment with HTTPS; deployment not configured.
 
 ## Data identity vs render identity
@@ -57,4 +57,4 @@ Never commit private keys, environment secrets, tokens or VPS credentials. Keep 
 
 ## Current known baseline
 
-GitHub main originally contained README and .gitignore only. The creator reported Node.js 24.18.0, npm 11.16.0, and local Astro 7.4.2 running; local changes were staged, with the first commit initially requiring a Git author identity. Do not assert those files are on main until verified.
+GitHub `main` now contains the Astro starter (`package.json`, `src/pages/index.astro` and related files) and project documentation, integrated in merge commit `5902121`. The creator reported Node.js 24.18.0, npm 11.16.0 and the Astro 7.4.2 local dev server working. The starter displays an Astro heading; no grid implementation or post-merge build result has been reported.

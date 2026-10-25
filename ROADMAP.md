@@ -6,10 +6,13 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 - [x] Create public GitHub repository babunidev/babuni.dev.
 - [x] Clone repository locally.
 - [x] Install Node.js and npm locally; Astro starter runs at localhost:4321 (reported by creator).
-- [ ] Commit/push local Astro foundation to main.
-- [x] Prepare project documentation baseline on a dedicated documentation branch.
-- [ ] Merge documentation after local foundation is published; reconcile AGENTS.md if both branches add it.
+- [x] Commit and push Astro foundation to main (merge commit `5902121`, verified on GitHub).
+- [x] Prepare initial project documentation baseline and publish it to main.
+- [x] Reconcile and retain project agent rules and Astro guidance in AGENTS.md.
+- [x] Record the creator's preference to work directly on main.
 - [ ] Set ChatGPT project instructions from the provided instruction file.
+
+**Milestone 0 status:** Foundation and documentation integrated on `main`. Applying the saved ChatGPT project instructions in account settings remains a separate manual configuration step.
 
 ## Milestone 1 — Mechanically correct grid
 - [ ] Decide tile sizing and responsive visible-cell formula.

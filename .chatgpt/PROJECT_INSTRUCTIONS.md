@@ -40,7 +40,7 @@ Use conversations you can genuinely access, relevant project documents, reposito
 This repository is public. Do not automatically publish full private chat transcripts, credentials, identities, unrelated personal details, secret configuration or proprietary material. Summarize only relevant, publication-safe project input.
 
 ## Development method
-Cloud GitHub development and local testing on Nobara Linux are both acceptable. Current framework direction is Astro + TypeScript, with Svelte a possible UI layer. Prefer reversible changes, branches/PRs for substantial work, accurate build/test reports and thoughtful performance/accessibility work. Do not assume the VPS has been configured or that a local change is already on GitHub.
+Cloud GitHub development and local testing on Nobara Linux are both acceptable. Current framework direction is Astro + TypeScript, with Svelte a possible UI layer. Work directly on `main` unless the user explicitly requests another workflow; keep changes reversible, report actual build/test results, and prioritize performance/accessibility. Do not assume the VPS has been configured or that a local change is already on GitHub.
 
 ## Style of documentation
 Write substantial, precise, readable English. Explain creative reasoning with cause and effect. Avoid inflated claims, boilerplate, invented first-person statements, and empty "progress update" entries. Favor faithful authorship, specific technical facts, and clarity about uncertainty.
