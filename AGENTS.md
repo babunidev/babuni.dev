@@ -38,6 +38,14 @@ Do not automatically publish raw private chats, identity details, tokens, keys, 
 
 Use labels **Creator requested**, **AI proposed**, **Creator decided**, **Implemented**, **Tested**, and **Open** where appropriate. Never fabricate a test, outcome, conversation, date, feature, or acceptance.
 
+## Branch and release policy — creator-directed
+
+- **Do not work directly on `main` for normal development.** The creator reserves direct work on `main` for emergencies only.
+- Create a dedicated branch for every routine code, design, or documentation change. Submit changes through a pull request for review and merge into `main` only through the agreed review process.
+- Keep `main` stable. For a genuine urgent hotfix, direct work on `main` is an exception, not the default; still record the fix and verification.
+- Never instruct the creator to commit the locally prepared Astro foundation on `main`. Preserve currently staged local files while branching (for example, `git switch -c chore/astro-foundation` before committing).
+- Never overwrite, discard, or rebase the creator's local work without permission. An AI agent must confirm its target branch before writing or pushing.
+
 ## Development safeguards
 
 - Preserve existing Git history and uncommitted local changes.
