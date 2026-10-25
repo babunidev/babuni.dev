@@ -1,0 +1,64 @@
+# babuni.dev — Creative Concept
+
+**Owner and creative director:** Babuni.dev  
+**State:** Agreed concept, not a finished specification  
+**Origin:** Retrospective reconstruction from project conversations, October 2026
+
+## The toy box
+
+babuni.dev is a personal, explorable workshop. Visiting it should feel like opening a childhood toy box: an assortment of works that invite discovery and play. A toy may be finished, unfinished, experimental, artistic, technical, fictional, or something in between.
+
+Visitors are not marched through a linear portfolio or blog. They encounter shapes, names, colors, and glimpses of worlds first; greater understanding becomes available through engagement.
+
+The website itself belongs in the collection. A possible first or center project is babuni.dev, with its own concept, sketches, dev log, architecture, and changelog. Its actual placement remains a design decision to test.
+
+## The surface
+
+The viewport is filled edge to edge by a tight field of square **tiles**. The original desktop exploration used roughly 6 × 4 visible tiles, but the number is responsive rather than fixed. There is no decorative landscape behind the grid.
+
+The tiles are stylized, deliberately restrained stone objects. Historical Mesoamerican masonry was an early inspiration, but the desired result is an original design language, not an imitation. Each tile carries a legible **engraved project title**, project-specific engravings, and a recessed, colored **portal**. The portal displays the project's visual identity or a view into its world.
+
+A slim persistent top bar contains BABUNI.DEV, Projects (dropdown), Gallery, and About. Search is a possible enhancement rather than a locked requirement.
+
+## Living motion
+
+Individual projects remain anchored to grid cells; they do not drift as independent floating objects. At intervals, whole horizontal or vertical lines move smoothly, one cell at a time, like shifting plates. Motion is calm, eased, and unobtrusive.
+
+A round first selects horizontal or vertical motion by chance. Eligible lines roll d20; results above 10 move. Lines roll in an initiative order, with proposed bonuses +4, +3, +2, +1 for the first four in that order. This is a *proposed* rule and needs generalization and testing for six columns or more.
+
+Visitors can drag the entire field in any direction. Tiles are recycled offstage so that no edge or empty background becomes visible. When the number of visible cells exceeds the number of projects, duplicates are allowed, ideally distributed to avoid conspicuous clustering.
+
+## Discovery and the four depths
+
+1. **Grid:** colored portals and engraved titles. Four glowing points on a tile can emit small sci-fi callouts.
+2. **Small bloom:** first click or tap. The selected tile remains the anchor. Neighboring tiles physically glide aside; the space of one or more adjacent *tile cells* becomes introductory project modules. The rest of the grid stays present and slows down.
+3. **Full bloom:** a second activation commits to the selected project. All other project tiles disappear. The original tile stays near the center, with simple readable media and information modules unfolding around it.
+4. **Expanded module:** selecting a text, image, video, or file module opens an appropriate detailed view. Text scrolls normally; image galleries are freely browsable, with a prominent center image. A separate fullscreen image control displays the art without captions or UI.
+
+The central portal in full bloom also closes the project, returning to the grid.
+
+## Information points
+
+Four small lights surrounding the portal are *not links*. Their bubbles explain what a project is, does, serves, and what is notable about it. One may occasionally emerge without interaction; hovering a point reveals its bubble; lingering over the tile can gently fade all bubbles in. The holographic callouts sit above the tile and stay within its visual boundaries. The user can ignore them entirely.
+
+## Content and presentation
+
+A project is a container for independently expandable modules: short and long descriptions, keywords, screenshots, artwork, moving previews, videos, documents, files, releases, and development history. The small and full blooms adapt to the available content instead of forcing every project into the same filled-out card.
+
+Long-form material must remain readable in conventional scrolling views. Animation should communicate relationship and discovery, not interrupt reading.
+
+## Performance as a visible principle
+
+The initial screen begins with a central tile. Nearby tiles progressively appear until the visible grid fills. A small offscreen buffer is readied for incoming shifts and dragging. Heavy images, videos, and documents load on demand. The site does not need a compulsory loading screen.
+
+Lower-power / reduced-motion modes may substitute fade-reposition-fade for extensive travel animations. This is a proposed fallback to verify, not a tested optimization claim.
+
+## Creation as a recorded collaboration
+
+The creator directs the vision, sketches behavior in conversation, accepts or rejects alternatives, and tests results. AI agents may translate those directions into structured specifications, code, media, or documents. Both parts must be visible in the project's record without presenting AI-generated decisions as the creator's own words.
+
+See [Human–AI collaboration](docs/AI_COLLABORATION.md) and [Development journal](docs/DEVLOG.md).
+
+## Open design questions
+
+Exact tile aspect ratio and visual assets; repeat spacing and stable keys in infinite wrap; precise bloom cell-reservation algorithm; mobile gestures and accessibility; shift collision / interruption rules; image-gallery and video-preview behavior; performance thresholds; full-bloom arrangement constraints; how the site's self-exhibit should be positioned. Resolve by prototyping and recording decisions rather than guessing.
