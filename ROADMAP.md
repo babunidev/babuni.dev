@@ -10,9 +10,9 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 - [x] Prepare initial project documentation baseline and publish it to main.
 - [x] Reconcile and retain project agent rules and Astro guidance in AGENTS.md.
 - [x] Record the creator's preference to work directly on main.
-- [ ] Set ChatGPT project instructions from the provided instruction file.
+- [x] Activate babuni.dev ChatGPT project instructions (confirmed available in this ChatGPT project).
 
-**Milestone 0 status:** Foundation and documentation integrated on `main`. Applying the saved ChatGPT project instructions in account settings remains a separate manual configuration step.
+**Milestone 0 status:** Complete. Astro foundation, documentation, main-only workflow, and active ChatGPT project instructions are established.
 
 ## Milestone 1 — Mechanically correct grid
 - [ ] Decide tile sizing and responsive visible-cell formula.
