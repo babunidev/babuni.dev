@@ -74,6 +74,13 @@
 **Decision:** Distinguish creator requests, AI proposals, creator decisions, executed changes, and verification; see docs/AI_COLLABORATION.md.  
 **Constraint:** Never fabricate missing conversations or publish sensitive raw transcripts.
 
+## D-014 — Keep normal development off main
+**Status:** Accepted · **Date:** 2026-10-26  
+**Creator direction:** "I work on main only for emergencies." This corrected the assistant's earlier suggestion to push the locally prepared Astro foundation directly to main.  
+**AI contribution:** The assistant proposed using a separate Astro foundation branch and a pull request while preserving the existing documentation PR.  
+**Decision:** Routine development and documentation changes happen on topic branches and enter main through reviewed pull requests. Direct work on main is reserved for emergency hotfixes.  
+**Implementation:** This workflow rule is documented in AGENTS.md and the ChatGPT project instructions on the existing documentation branch. No GitHub branch protection settings were modified.
+
 ## Adding decisions
 
 For each entry add date, status, motivating creator request, alternatives (including AI-originated ones), rationale, impact, and verification links. When changing a decision, mark the original **Superseded** rather than silently rewriting history.
