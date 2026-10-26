@@ -184,3 +184,11 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **AI contribution and implementation.** The assistant doubled mouse/touch speed from 440 to 880 CSS px/s and arrow-key speed from 130 to 260 CSS px/s. It also doubled pointer acceleration (1800 to 3600 CSS px/s²), keyboard acceleration (520 to 1040 CSS px/s²), and keyboard deceleration (700 to 1400 CSS px/s²) to maintain the previous acceleration and slowing durations. The 180 CSS px cursor-lead limit and autonomous row/column shifting were left unchanged. A regression test checks the exact new configuration.
 
 **Verification and open work.** This was a targeted numerical tuning change, not a redesign of grid movement. The creator has not yet tested the faster feel in the browser; the new full Node test suite and Astro build also require a local run. The startup sequence is documented for future testing handoffs.
+
+## 2026-10-26 — Doubling the tempo of manual exploration
+
+**Creator direction.** After reviewing the movement configuration, the creator asked for double the current speed. They also requested a repeatable testing handoff: after pulling a change from GitHub, stop the existing Astro development server and start a new one.
+
+**AI contribution and implementation.** The assistant changed the maximum mouse/touch speed from 440 to 880 CSS px/s and the held-arrow speed from 130 to 260 CSS px/s. To preserve approximately the same ramp duration, pointer acceleration increased from 1800 to 3600 CSS px/s², keyboard acceleration from 520 to 1040 CSS px/s², and keyboard deceleration from 700 to 1400 CSS px/s². The 180 CSS px pointer-lag limit and autonomous line-shift settings were deliberately unchanged. A new test asserts those exact tuning values.
+
+**Verification and open work.** This is an implemented numeric tuning change; the creator has not yet tried the faster version. The updated full Node test suite and Astro application still need to be run on the creator's PC. The documentation records the full pull–stop–start handoff sequence for subsequent tests.
