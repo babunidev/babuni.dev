@@ -147,3 +147,5 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 Each future entry should include the change, its user-visible or technical effect, and optionally a PR/commit reference. Avoid duplicating brainstorm narratives from DEVLOG. Date releases when actual releases happen; do not invent version numbers.
 
 - Distinguish keyboard-visible project focus from stale pointer/touch button focus, preventing another indefinite suppression path.
+
+- Follow-up: close the bloom corridor smoothly even when a right-side vertical shift is paused mid-cell, preserving its vertical progress and resuming it after collapse.
