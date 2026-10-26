@@ -10,7 +10,7 @@ babuni.dev is a personal, explorable workshop. Visiting it should feel like open
 
 Visitors are not marched through a linear portfolio or blog. They encounter shapes, names, colors, and glimpses of worlds first; greater understanding becomes available through engagement.
 
-The website itself belongs in the collection. A possible first or center project is babuni.dev, with its own concept, sketches, dev log, architecture, and changelog. Its actual placement remains a design decision to test.
+The website itself belongs in the collection. The creator has confirmed BABUNI.DEV as the initial center tile, with its own concept, sketches, dev log, architecture, and changelog. Other projects begin in a clockwise spiral around it. The exact rendered result remains subject to hands-on testing.
 
 ## The surface
 
@@ -26,7 +26,7 @@ Individual projects remain anchored to grid cells; they do not drift as independ
 
 A round first selects horizontal or vertical motion by chance. Eligible lines roll d20; results above 10 move. Lines roll in an initiative order, with proposed bonuses +4, +3, +2, +1 for the first four in that order. This is a *proposed* rule and needs generalization and testing for six columns or more.
 
-Visitors can drag the entire field in any direction. Tiles are recycled offstage so that no edge or empty background becomes visible. When the number of visible cells exceeds the number of projects, duplicates are allowed, ideally distributed to avoid conspicuous clustering.
+Visitors can drag the entire field in any direction. Visual tiles are recycled offstage so that no edge or empty background becomes visible. Project identities are assigned in the creator's clockwise spiral, stay stable while visible, and are reused after leaving view. The screen stays fully filled: when there are fewer distinct projects than visible cells, project identities repeat rather than producing empty or filler tiles. When enough projects exist, visible duplicates should be avoided.
 
 ## Discovery and the four depths
 
