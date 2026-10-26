@@ -234,3 +234,16 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **Implementation.** Added `ProjectPlacement.stageEntrances`, which reserves a final identity for each incoming offscreen tile *before* a row or column starts moving. The renderer determines the entering source at the leading edge and the departing source at the opposite edge, stages the project allocation, and updates the still-offscreen tile before its animation begins. When there is enough identity inventory, it preserves a currently safe incoming project; otherwise it uses the identity freed by the outgoing tile. Existing visible tiles are not renamed during staging. The previously implemented source-history resolver remains responsible for which physical tile occupies each logical cell at rest.
 
 **Trade-off and verification.** With exactly as many identities as resting visible cells, the beginning/end of a slow shift may briefly expose one additional partial tile, so strictly zero transient duplicates is not always mathematically possible. The stronger rule is stable identity for every moving tile, with no duplicates at rest when inventory suffices. Regression tests were added for both directions on both axes, and for opposite-moving lines. A fresh local suite and actual desktop observation are still required. Neither manual pan speeds nor the d20/timing mechanics were changed.
+
+
+## 2026-10-26 — Recovering the larger body of work for future exhibits
+
+**Creator direction.** While collecting potential babuni.dev projects, the creator challenged the first inventory for omitting major original works including Morkahja, Ethera and Analubia, as well as small game-design experiments. They directed a much deeper investigation, asked for concise descriptions ordered roughly by recent activity, then requested that the resulting collection be placed in a suitable part of the babuni.dev GitHub repository as a *memory* that could be useful for prototypes.
+
+**AI contribution and correction.** The AI initially over-relied on current conversational summaries and underrepresented earlier game development. A broader search of available conversation files and the connected GitHub account found 38 accessible repositories and recovered documentation for numerous small addons, creative automations, a talent-design atlas, the Button Game, and the Ethera/Morkahja relationship. It reconstructed a list of 53 **candidate** entries, some being variants, collections, or technical experiments rather than standalone releases.
+
+**Creator decision.** Preserve the collection in the repository as a reference for future prototyping. No decision was made to publish all entries as live portfolio exhibits or to declare them fully verified.
+
+**Implementation.** Created [PROJECT_INVENTORY.md](PROJECT_INVENTORY.md) and linked it from README.md. It records source quality, provisional ordering, relationships and verification requirements. No actual project records, portal artwork, site UI, or game code were altered.
+
+**Verification and limitations.** GitHub accepted the documentation changes. The list was not cross-checked against every historical conversation, original project asset, release, or runnable application. Several older names and dates remain uncertain. This is a publication-safe summary, not a raw chat archive.
