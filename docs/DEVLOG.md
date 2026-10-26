@@ -176,3 +176,11 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **Implementation.** No application behavior changed in this verification session. The assistant recorded the observed result on `main` as part of the project history.
 
 **Still open.** Automated test success does not establish whether the creator likes the revised mouse acceleration, arrow-key navigation, or line-shifting appearance. Those behaviors still require visual/hands-on review; mobile touch remains separately unverified.
+
+## 2026-10-26 — A faster tempo for manual exploration
+
+**Creator direction.** After exploring the configurable values in the GitHub control file, the creator requested double the current movement speed. They also established a practical handoff preference: after repository updates, always provide the commands to pull GitHub changes, stop the existing Astro server, and start a new one.
+
+**AI contribution and implementation.** The assistant doubled mouse/touch speed from 440 to 880 CSS px/s and arrow-key speed from 130 to 260 CSS px/s. It also doubled pointer acceleration (1800 to 3600 CSS px/s²), keyboard acceleration (520 to 1040 CSS px/s²), and keyboard deceleration (700 to 1400 CSS px/s²) to maintain the previous acceleration and slowing durations. The 180 CSS px cursor-lead limit and autonomous row/column shifting were left unchanged. A regression test checks the exact new configuration.
+
+**Verification and open work.** This was a targeted numerical tuning change, not a redesign of grid movement. The creator has not yet tested the faster feel in the browser; the new full Node test suite and Astro build also require a local run. The startup sequence is documented for future testing handoffs.
