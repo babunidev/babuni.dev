@@ -20,12 +20,12 @@ export interface PanTuning {
 }
 /** Prototype values for creator review; intentionally kept together for easy adjustment. */
 export const PAN_TUNING: Readonly<PanTuning> = Object.freeze({
-  pointerMaxSpeed: 880,        // px/s: doubled maximum for mouse and touch dragging
-  pointerAcceleration: 3600,  // px/s²: about 0.24s ramp to top speed (doubled)
+  pointerMaxSpeed: 1760,        // px/s: doubled maximum for mouse and touch dragging
+  pointerAcceleration: 7200,  // px/s²: about 0.24s ramp to top speed (doubled)
   pointerLagLimit: 180,       // px: do not chase a very fast cursor indefinitely
-  keyboardMaxSpeed: 260,      // px/s: much slower than pointer panning
-  keyboardAcceleration: 1040, // px/s²: gentle ramp for held arrow keys
-  keyboardDeceleration: 1400  // px/s²: short ease out after releasing keys
+  keyboardMaxSpeed: 520,      // px/s: much slower than pointer panning
+  keyboardAcceleration: 2080, // px/s²: gentle ramp for held arrow keys
+  keyboardDeceleration: 2800  // px/s²: short ease out after releasing keys
 });
 
 const zero = (): Vector => ({x: 0, y: 0});
