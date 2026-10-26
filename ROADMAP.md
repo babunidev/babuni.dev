@@ -129,3 +129,13 @@ Verified in this session: grid test command (nine passing test files), Astro pro
 - **Immediate refinement implemented:** Open-bloom anchor does not show redundant topic bubbles; other tiles continue normally. Ten test files, build and desktop focus/other-tile browser check pass.
 - **Next, before coding full bloom:** Refine and agree module families and shared data/view structure. CONTENT contains an AI draft for review. Full bloom and production schema remain unimplemented.
 - **Defer polish:** Resize/orientation, keyboard focus continuity, dense-layout readability and visual optimization remain tracked but are not the immediate priority. No automatic timing or positioning changes are authorized by this planning discussion.
+
+## 2026-10-26 — Content-backed small-bloom previews
+
+Babuni.dev confirms the bubble exclusion works and phone orientation has shown no problems in their real-device testing. Prioritize content/module architecture; landscape/readability polish remains deferred.
+
+Implemented: shared content definitions, twelve populated BABUNI.DEV modules, five populated Button Game modules and empty definitions omitted; random sampling capped at nine plus the anchor; independent sequential reveal with cleanup; real gallery/video/resource previews; dynamic physical vacancies on both sides of a fixed anchor. MODULE_AUTHORING documents media folders and source/public hosting distinctions.
+
+Verified: eleven test files and build; seeded selection/reveal/content/asset tests and one-through-nine geometry/shift inversion checks. Browser: nine own previews, stationary centered anchor, zero measured panel/tile overlaps, deliberate native video playback, image switching, exactly five Button Game previews, varied own subsets on reopening and mid-reveal switch cleanup.
+
+Next: refine and implement expanded full-page module presentation and navigation from these previews. A split-pane layout versus larger scrolling modules remains undecided. Native phone acceptance of this new multi-module implementation, extended mixed-shift/recycling runs, and external provider embed playback remain open. Do not confuse earlier phone acceptance with verification of this new commit.

@@ -22,10 +22,10 @@ export function shiftTouchesSelection(move:GridLineMove,cell:GridCell):boolean {
     ? move.line===cell.row||move.line===cell.row+1
     : move.line>=cell.column;
 }
-export function shiftAvoidsBloom(move:GridLineMove,cell:GridCell):boolean {
+export function shiftAvoidsBloom(move:GridLineMove,cell:GridCell,vacancies:readonly GridCell[]=bloomVacancies(cell)):boolean {
   return move.axis==='row'
-    ? move.line!==cell.row&&move.line!==cell.row+1
-    : move.line!==cell.column&&move.line!==cell.column+1;
+    ? move.line!==cell.row&&!vacancies.some(hole=>hole.row===move.line)
+    : move.line!==cell.column&&!vacancies.some(hole=>hole.column===move.line);
 }
 export function permittedBloomShifts<T extends GridLineMove>(
   moves:readonly T[],cell:GridCell

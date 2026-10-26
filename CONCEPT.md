@@ -43,7 +43,7 @@ Three small lights surrounding the portal—**top, left, and right**—are *not 
 
 ## Content and presentation
 
-A project is a container for independently expandable modules: short and long descriptions, keywords, screenshots, artwork, moving previews, videos, documents, files, releases, and development history. The small and full blooms adapt to the available content instead of forcing every project into the same filled-out card.
+A project is a container for independently expandable modules: short and long descriptions, keywords, screenshots, artwork, moving previews, videos, documents, files, releases, and development history. The small and full blooms adapt to the available content instead of forcing every project into the same filled-out card. Babuni.dev specified up to nine populated small-bloom preview modules, sampled randomly when more content exists and revealed one after another; empty definitions do not appear.
 
 Long-form material must remain readable in conventional scrolling views. Animation should communicate relationship and discovery, not interrupt reading.
 

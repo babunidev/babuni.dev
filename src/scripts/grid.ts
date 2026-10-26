@@ -1,4 +1,7 @@
-import {occupiedCell,restingCell,bloomVacancies,tileAtCenter} from '../lib/bloom-geometry';
+import {modulesForProject} from '../lib/project-content';
+import {selectModules,MODULE_OFFSETS,moduleRevealPlan} from '../lib/project-modules';
+import {renderModulePreview} from './module-preview';
+import {occupiedCell,restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
@@ -6,7 +9,7 @@ import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate }
 import { demoProjects } from '../lib/demo-projects';
 import { topicLabelsForProject, TOPIC_POINTS, chooseAmbientPoint, topicRevealPlan, type TopicPoint } from '../lib/project-topics';
 import { introSequence, INTRO_SPAWN_STAGGER_MS } from '../lib/grid-intro';
-import { centeredPan, interpolateCenter, bloomModuleCell, shiftsForBloom,
+import { centeredPan, interpolateCenter,
   CENTER_DURATION_MS, BLOOM_SHIFT_DURATION_MS, AMBIENT_INTERVAL_MS,
   AMBIENT_VISIBLE_MS, AMBIENT_RETRY_MS, ambientInsets,
   ambientTileIsEligible, ambientPollDelay,
@@ -39,7 +42,9 @@ if (viewport && world && resetButton && status) {
   let centerFrame:number|null=null;
   let bloomModule:HTMLElement|null=null;
   let bloomAnchor:CellCoordinate|null=null;
-  let metadataModule:HTMLElement|null=null;
+  let bloomModules:HTMLElement[]=[];
+  let bloomCells:ReturnType<typeof moduleVacancies>=[];
+  let bloomRevealTimers:ReturnType<typeof setTimeout>[]=[];
   let bloomOpeningTimer:ReturnType<typeof setTimeout>|null=null;
   let bloomClosingTimer:ReturnType<typeof setTimeout>|null=null;
   let teaserTile:HTMLDivElement|null=null;
@@ -271,8 +276,7 @@ if (viewport && world && resetButton && status) {
     const visible:CellCoordinate[]=[];
     const retained:CellCoordinate[]=[];
     const margin=bufferCells*tileSize;
-    const anchor=bloomModule?bloomAnchor:null;
-    const vacancies=anchor?bloomVacancies(anchor):[];
+    const vacancies=bloomModule?bloomCells:[];
     for(const slot of slots){
       const visual=occupiedCell(slot,vacancies);
       const x=frame.originX+visual.column*tileSize;
@@ -327,7 +331,7 @@ if (viewport && world && resetButton && status) {
     refreshMobileTopics();
   }
   function paintMovement(fraction:number):void {
-    const vacancies=bloomModule&&bloomAnchor?bloomVacancies(bloomAnchor):[];
+    const vacancies=bloomModule?bloomCells:[];
     for(const slot of slots){
       const visual=occupiedCell(slot,vacancies);
       if(bloomModule)slot.element.classList.toggle('grid-tile--bloom-shifted',visual.column!==slot.column);
@@ -339,7 +343,7 @@ if (viewport && world && resetButton && status) {
     refreshMobileTopics();
   }
   function paintedCell(slot:TileSlot,fraction=moving?.fraction??0):CellCoordinate {
-    const visual=occupiedCell(slot,bloomModule&&bloomAnchor?bloomVacancies(bloomAnchor):[]);
+    const visual=occupiedCell(slot,bloomModule?bloomCells:[]);
     const p=easeInOut(fraction);
     const rowMove=moving?.moves.find(move=>move.axis==='row'&&move.line===visual.row);
     const columnMove=moving?.moves.find(move=>move.axis==='column'&&move.line===visual.column);
@@ -380,8 +384,8 @@ if (viewport && world && resetButton && status) {
       const anchor=bloomAnchor;
       if(!anchor){nextRound(1000);return;}
       const cell={column:anchor.column,row:anchor.row};
-      visibleRows=visibleRows.filter(line=>shiftAvoidsBloom({axis:'row',line,direction:1},cell));
-      visibleColumns=visibleColumns.filter(line=>shiftAvoidsBloom({axis:'column',line,direction:1},cell));
+      visibleRows=visibleRows.filter(line=>shiftAvoidsBloom({axis:'row',line,direction:1},cell,bloomCells));
+      visibleColumns=visibleColumns.filter(line=>shiftAvoidsBloom({axis:'column',line,direction:1},cell,bloomCells));
     }else if(selectedChoice){nextRound(1000);return;}
     const round=planShiftRound(visibleRows,visibleColumns);
     if(!round.moves.length){nextRound(restWait);return;}
@@ -389,8 +393,7 @@ if (viewport && world && resetButton && status) {
     // All incoming tiles already exist just outside the viewport. Give them
     // their final project identity NOW, before their shift reveals them.
     // Otherwise the completed sync could visibly replace their name and tint.
-    const anchor=bloomModule?bloomAnchor:null;
-    const vacancies=anchor?bloomVacancies(anchor):[];
+    const vacancies=bloomModule?bloomCells:[];
     round.moves=round.moves.map(move=>({...move,vacancies}));
     const sourceAt=(column:number,row:number)=>{
       const cell=restingCell({column,row},vacancies);
@@ -501,9 +504,10 @@ if (viewport && world && resetButton && status) {
     if(centerFrame!==null){cancelAnimationFrame(centerFrame);centerFrame=null;}
     if(bloomOpeningTimer!==null){clearTimeout(bloomOpeningTimer);bloomOpeningTimer=null;}
     if(bloomClosingTimer!==null){clearTimeout(bloomClosingTimer);bloomClosingTimer=null;}
-    bloomModule?.remove();bloomModule=null;
-    bloomAnchor=null;
-    metadataModule?.remove();metadataModule=null;
+    for(const timer of bloomRevealTimers)clearTimeout(timer);
+    bloomRevealTimers=[];
+    for(const panel of bloomModules)panel.remove();
+    bloomModules=[];bloomModule=null;bloomAnchor=null;bloomCells=[];
     surface.classList.remove('is-focusing','is-blooming','is-bloom-opening','is-bloom-closing');
     for(const slot of slots)slot.element.classList.remove('grid-tile--bloom-returning');
     if(hadBloom&&animateReturn&&!prefersReduced.matches)
@@ -544,73 +548,50 @@ if (viewport && world && resetButton && status) {
     }
   }
 
-  /** Stage 2: shift the entire right-hand run by one real tile.
-   * This is a vacant grid cell, not a floating modal over a neighbor.
-   */
+  /** Reserve real cells without moving the project anchor; preview selection
+   * and reveal order are sampled once for this opening. */
   function openSmallBloom(choice:ProjectChoice):void {
     const chosen=locate(choice);
     if(!chosen){stopSelection();return;}
     const project=demoProjects[chosen.projectIndex??-1];
     if(!project){stopSelection();return;}
     const selectedCell={column:chosen.column,row:chosen.row};
+    const modules=selectModules(modulesForProject(project.id,project.shortSummary));
     bloomAnchor=selectedCell;
-    const moduleCell=bloomModuleCell(selectedCell);
+    bloomCells=moduleVacancies(selectedCell,MODULE_OFFSETS.slice(0,modules.length));
     surface.classList.remove('is-focusing');
     surface.classList.add('is-blooming','is-bloom-opening');
     highlightSelection();
     layer.getBoundingClientRect();
-    for(const slot of slots){
-      slot.element.classList.toggle('grid-tile--bloom-shifted',
-        shiftsForBloom(slot,selectedCell));
-    }
-    const panel=document.createElement('section');
-    panel.className='grid-bloom-module';
-    panel.style.left=(moduleCell.column*tileSize)+'px';
-    panel.style.top=(moduleCell.row*tileSize)+'px';
-    panel.setAttribute('role','region');
-    panel.setAttribute('aria-label','Small bloom: '+project.name);
-    const kicker=document.createElement('span');
-    kicker.className='bloom-kicker';
-    kicker.textContent='A CLOSER LOOK';
-    const title=document.createElement('h2');
-    title.className='bloom-title';title.textContent=project.name;
-    const summary=document.createElement('p');
-    summary.className='bloom-summary';summary.textContent=project.shortSummary;
-    const close=document.createElement('button');
-    close.className='bloom-close';close.type='button';
-    close.textContent='Close';close.setAttribute('aria-label','Close '+project.name);
-    close.addEventListener('click',event=>{
-      event.stopPropagation();stopSelection();
-      surface.focus({preventScroll:true});
+    bloomModules=modules.map((module,index)=>{
+      const panel=renderModulePreview(module,project.name);
+      panel.style.left=(bloomCells[index].column*tileSize)+'px';
+      panel.style.top=(bloomCells[index].row*tileSize)+'px';
+      layer.appendChild(panel);return panel;
     });
-    panel.append(kicker,title,summary,close);
-    layer.appendChild(panel);
-    layer.getBoundingClientRect();
-    bloomModule=panel;
+    bloomModule=bloomModules[0]??null;
     if(activeTopic===chosen.element)hideTopic();
-    const metadata=document.createElement('section');
-    metadata.className='grid-bloom-module';
-    metadata.style.left=(selectedCell.column*tileSize)+'px';
-    metadata.style.top=((selectedCell.row+1)*tileSize)+'px';
-    metadata.setAttribute('aria-label','Project notes: '+project.name);
-    const notesTitle=document.createElement('h2');
-    notesTitle.className='bloom-title';notesTitle.textContent='Project notes';
-    const notes=document.createElement('p');notes.className='bloom-summary';
-    const topics=topicLabelsForProject(project.id);
-    notes.textContent=TOPIC_POINTS.map(point=>topics[point]).join(' · ')+'. Source evidence: '+project.evidence+'. Provisional inventory candidate; details await review.';
-    metadata.append(notesTitle,notes);layer.appendChild(metadata);metadataModule=metadata;
-    paintMovement(moving?.fraction??0);
+    if(bloomModule){
+      const close=document.createElement('button');close.className='bloom-close';close.type='button';
+      close.textContent='Close';close.setAttribute('aria-label','Close '+project.name);
+      close.addEventListener('click',event=>{
+        event.stopPropagation();stopSelection();surface.focus({preventScroll:true});
+      });bloomModule.append(close);
+    }
+    paintMovement(0);
+    // Reserve the entire footprint first; reveal previews only after the
+    // displacement settles. Pending timers belong to this bloom instance.
+    const plan=moduleRevealPlan(bloomModules);
     bloomOpeningTimer=setTimeout(()=>{
       bloomOpeningTimer=null;
       surface.classList.remove('is-bloom-opening');
-      panel.classList.add('is-open');
-      metadata.classList.add('is-open');
-      liveStatus.textContent=project.name+' opened beside its centered tile.';
+      for(const reveal of plan){
+        if(prefersReduced.matches||reveal.delay===0)reveal.item.classList.add('is-open');
+        else bloomRevealTimers.push(setTimeout(()=>reveal.item.classList.add('is-open'),reveal.delay));
+      }
+      liveStatus.textContent=project.name+': '+modules.length+' preview modules opened.';
       for(const slot of slots)slot.element.style.removeProperty('transition');
-      // Re-enable the original dice-driven scheduler. Only lines that do not
-      // cross the selected row/displaced corridor will be eligible.
-      if(moving)resumeMovement();
-      else nextRound(1500);
+      if(moving)resumeMovement();else nextRound(1500);
     },prefersReduced.matches?0:BLOOM_SHIFT_DURATION_MS);
   }
 

@@ -223,3 +223,14 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Fixed
 - Suppress topic bubbles on the physical tile whose bloom is open, for hover/focus and mobile center discovery. Other tiles and repeated project instances retain normal topic behavior. Opening clears any already-visible anchor bubbles.
+
+## 2026-10-26 — Content-backed, sampled small-bloom modules
+
+### Added
+- A shared module catalog with text/document, image-gallery, local-video/external-embed and resource previews. BABUNI.DEV has twelve populated modules; Button Game has exactly five, with its other definitions empty.
+- Up to nine populated previews sampled without replacement per opening, with shuffled sequential reveals after space is cleared. Pending reveals cancel when closing/switching.
+- Two supplied screenshots and four web-ready MP4/poster derivatives from selected short visual-documentation recordings; no autoplay, on-demand native playback and gallery navigation.
+- Authoring guide for project content and media folders.
+
+### Changed
+- Bloom vacancy mapping supports previews on both sides of the fixed project anchor. Every selected module reserves a real cell; shift eligibility follows the complete sampled footprint.

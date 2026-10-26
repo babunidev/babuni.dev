@@ -1,0 +1,226 @@
+{
+  "babuni-dev": [
+    {
+      "id": "overview",
+      "type": "text",
+      "title": "Overview",
+      "preview": "An exploratory workshop of projects, ideas and experiments.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "body": "Babuni.dev is a collection to explore rather than a linear portfolio. The living stone grid invites discovery through portals, topic wings and project blooms. Finished work, experiments and evolving ideas share the same surface.",
+      "source": "https://github.com/babunidev/babuni.dev/blob/main/CONCEPT.md"
+    },
+    {
+      "id": "concept",
+      "type": "text",
+      "title": "Concept",
+      "preview": "The toy box: discovery, shifting plates and four depths of exploration.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "document": "CONCEPT.md",
+      "source": "https://github.com/babunidev/babuni.dev/blob/main/CONCEPT.md"
+    },
+    {
+      "id": "journal",
+      "type": "text",
+      "title": "Development journal",
+      "preview": "Human direction, AI interpretation, iteration and the evidence behind each change.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "document": "docs/DEVLOG.md",
+      "source": "https://github.com/babunidev/babuni.dev/blob/main/docs/DEVLOG.md"
+    },
+    {
+      "id": "changes",
+      "type": "text",
+      "title": "Changelog",
+      "preview": "The implemented changes, kept separate from plans and unverified proposals.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "document": "CHANGELOG.md",
+      "source": "https://github.com/babunidev/babuni.dev/blob/main/CHANGELOG.md"
+    },
+    {
+      "id": "architecture",
+      "type": "text",
+      "title": "Architecture",
+      "preview": "Stable project identities, recycled tiles, visual occupancy and content modules.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "document": "docs/ARCHITECTURE.md",
+      "source": "https://github.com/babunidev/babuni.dev/blob/main/docs/ARCHITECTURE.md"
+    },
+    {
+      "id": "collaboration",
+      "type": "text",
+      "title": "Human–AI collaboration",
+      "preview": "How Babuni.dev directs the work, with AI contributions and decisions made visible.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "document": "docs/AI_COLLABORATION.md",
+      "source": "https://github.com/babunidev/babuni.dev/blob/main/docs/AI_COLLABORATION.md"
+    },
+    {
+      "id": "visual-history",
+      "type": "gallery",
+      "title": "Visual documentation",
+      "preview": "Snapshots of the portal artwork and small-bloom prototype.",
+      "images": [
+        {
+          "src": "/media/babuni-dev/images/small-bloom.jpg",
+          "alt": "BABUNI.DEV with adjacent summary and project notes modules.",
+          "caption": "Small-bloom prototype, October 2026."
+        },
+        {
+          "src": "/media/babuni-dev/images/portal-artwork.jpg",
+          "alt": "Babuni.dev’s supplied logo inside its round stone portal.",
+          "caption": "First supplied portal artwork, October 2026."
+        }
+      ],
+      "credit": "Babuni.dev supplied these visual development records."
+    },
+    {
+      "id": "video-grid-motion",
+      "type": "video",
+      "title": "Living grid",
+      "preview": "Recorded row and column movement in an earlier grid prototype.",
+      "video": {
+        "src": "/media/babuni-dev/videos/grid-motion.mp4",
+        "poster": "/media/babuni-dev/videos/grid-motion.jpg",
+        "title": "Living grid"
+      },
+      "credit": "Recording supplied by Babuni.dev. Web derivative crops browser chrome; the original is retained locally."
+    },
+    {
+      "id": "video-column-shifts",
+      "type": "video",
+      "title": "Shifting columns",
+      "preview": "A supplied recording of vertical plate movement.",
+      "video": {
+        "src": "/media/babuni-dev/videos/column-shifts.mp4",
+        "poster": "/media/babuni-dev/videos/column-shifts.jpg",
+        "title": "Shifting columns"
+      },
+      "credit": "Recording supplied by Babuni.dev. Web derivative crops browser chrome; the original is retained locally."
+    },
+    {
+      "id": "video-bloom-motion",
+      "type": "video",
+      "title": "Movement study",
+      "preview": "An earlier motion study from the supplied visual documentation.",
+      "video": {
+        "src": "/media/babuni-dev/videos/bloom-motion.mp4",
+        "poster": "/media/babuni-dev/videos/bloom-motion.jpg",
+        "title": "Movement study"
+      },
+      "credit": "Recording supplied by Babuni.dev. Web derivative crops browser chrome; the original is retained locally."
+    },
+    {
+      "id": "video-small-bloom",
+      "type": "video",
+      "title": "Small bloom recording",
+      "preview": "A supplied recording showing project content opening beside its tile.",
+      "video": {
+        "src": "/media/babuni-dev/videos/small-bloom.mp4",
+        "poster": "/media/babuni-dev/videos/small-bloom.jpg",
+        "title": "Small bloom recording"
+      },
+      "credit": "Recording supplied by Babuni.dev. Web derivative crops browser chrome; the original is retained locally."
+    },
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "Explore the source and documented decisions behind this website.",
+      "links": [
+        {
+          "label": "Repository",
+          "href": "https://github.com/babunidev/babuni.dev"
+        },
+        {
+          "label": "Design decisions",
+          "href": "https://github.com/babunidev/babuni.dev/blob/main/docs/DECISIONS.md"
+        }
+      ]
+    }
+  ],
+  "button-game": [
+    {
+      "id": "overview",
+      "type": "text",
+      "title": "Button Game",
+      "preview": "A one-minute reaction game with moving targets and physical-looking scores.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "body": "The game begins with the first press of a moving turquoise button and a 60-second clock. Presses release visible numbers into a bounded playfield; collecting and combining them becomes part of the game. Creative direction and authorship belong to Babuni.dev.",
+      "source": "https://github.com/babunidev/ButtonGame/blob/main/README.md"
+    },
+    {
+      "id": "play",
+      "type": "text",
+      "title": "Play and combinations",
+      "preview": "Quick Strikes, bouncing numbers, score collection and time rewards.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "body": "Quick Strike rewards the first hit just after a target appears. Floating values collide and merge before their earned score reaches the collector. Special combinations include 21 → 42 and 37 → 73. Selected milestones award visible time bonuses. These details are documented in the game concept; this portfolio is not a separate gameplay verification.",
+      "source": "https://github.com/babunidev/ButtonGame/blob/main/CONCEPT.md"
+    },
+    {
+      "id": "wifi",
+      "type": "text",
+      "title": "Play together on Wi-Fi",
+      "preview": "One Android phone hosts the browser game and shared high scores.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "body": "Serve on Wi-Fi lets the Android app host the game for nearby players joining through an address or QR code. The Android host owns the shared leaderboard. This is parallel local play with shared rankings, rather than synchronized game physics between players.",
+      "source": "https://github.com/babunidev/ButtonGame/blob/main/docs/ARCHITECTURE.md"
+    },
+    {
+      "id": "journal",
+      "type": "text",
+      "title": "Development story",
+      "preview": "From an older Flash game to browser play, score physics and Android hosting.",
+      "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
+      "body": "The repository preserves the original Flash artifact, an earlier reconstruction and the evolving browser/Android game. Its journal records Babuni.dev’s directions and corrections alongside AI implementation. Visible score transfers, special-number choreography and host-owned persistence evolved through those iterations.",
+      "source": "https://github.com/babunidev/ButtonGame/blob/main/docs/DEVLOG.md"
+    },
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Source and documentation",
+      "preview": "Read the game concept, development record and hosting instructions.",
+      "links": [
+        {
+          "label": "Button Game repository",
+          "href": "https://github.com/babunidev/ButtonGame"
+        },
+        {
+          "label": "Concept and mechanics",
+          "href": "https://github.com/babunidev/ButtonGame/blob/main/CONCEPT.md"
+        },
+        {
+          "label": "Development journal",
+          "href": "https://github.com/babunidev/ButtonGame/blob/main/docs/DEVLOG.md"
+        }
+      ]
+    },
+    {
+      "id": "images",
+      "type": "gallery",
+      "title": "Images",
+      "preview": "",
+      "images": []
+    },
+    {
+      "id": "video",
+      "type": "video",
+      "title": "Video",
+      "preview": ""
+    },
+    {
+      "id": "changes",
+      "type": "text",
+      "title": "Changelog",
+      "preview": "",
+      "body": ""
+    },
+    {
+      "id": "collaboration",
+      "type": "text",
+      "title": "Collaboration",
+      "preview": "",
+      "body": ""
+    }
+  ]
+}

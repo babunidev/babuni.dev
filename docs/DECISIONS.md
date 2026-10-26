@@ -272,3 +272,13 @@ Accessibility refinement: keyboard-visible focus on a project control suppresses
 **Babuni.dev requested and implemented:** Suppress redundant topic bubbles only on the tile with an open bloom. Preserve normal topics elsewhere, including other instances of that project.
 
 **AI proposed, approval open:** Five module families—text, image collections, media, development history and resources—with shared identity/preview/source/provenance fields, reusable detail views and layout kept separate. Alternatives are bespoke renderers for every concept/devlog/architecture label or a fixed identical module set for all projects; the draft favors reuse and optional content. These family boundaries, module selection and layout are explicitly not locked.
+
+## 2026-10-26 — Populate and sample the small-bloom preview layer
+
+**Babuni.dev decided:** Small-bloom modules first, real image/video support now, a full content set for BABUNI.DEV and five for Button Game, empty definitions omitted, up to nine displayed from an arbitrarily larger content set, randomized sequential reveals and a random subset when needed. They confirmed working bubbles and phone orientation in actual use, while deferring polish.
+
+**AI interpretation/implementation:** Nine previews in addition to the project anchor. Use its eight neighboring slots plus one adjacent cell to the right when a ninth is needed, retaining the original right/below first slots for sparse projects. Clear the complete sampled footprint before revealing it to avoid constantly retargeting moving tiles. Keep the existing expansion duration and use the existing topic stagger range for the newly requested sequence. A left/right split of each row keeps the project centered with invertible visual occupancy. Alternatives were nine total cells including the project (would allow only eight previews), overlapping panels (contrary to physical vacancies), or sequential displacement for each reveal (would repeatedly alter geometry).
+
+The initial five editorial families reuse four renderer types: journal/history is a text role; image gallery, video and resources have their own previews. Button Game summaries use verified public project docs rather than invented media. Originals stay local; selected, compressed web derivatives are versioned under public/media. Native video loads only after deliberate interaction; external player frames require Load video.
+
+**Still open:** Babuni.dev considered both a left-content/right-module selection layout and larger scrollable full-page modules. Neither is locked by this implementation. Full-page expansion, enlarged text readers and final full-bloom navigation remain the next design/implementation layer. No unrelated positioning, tile size or shift-speed retuning.

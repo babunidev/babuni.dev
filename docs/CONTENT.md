@@ -109,3 +109,13 @@ History can reuse text rendering for individual entries; overview, concept and a
 **First self-exhibit candidate:** BABUNI.DEV could offer Overview/Concept, Design sketches, Development journal, Changelog, Architecture and Human–AI collaboration. Only include media that actually exists and is approved. These are candidates for review, not built full-bloom modules or claims that a gallery is already available.
 
 **Open for refinement:** Family boundaries, which modules appear in small bloom, initial full-bloom selection/order, whether history needs its own overview layout, and how much layout control project authors receive. No full-bloom renderer or production schema has been implemented by this draft.
+
+## First populated preview catalog — 2026-10-26
+
+**Babuni.dev authorized:** Populate BABUNI.DEV from its documentation and supplied visual material, and create five content-bearing Button Game modules. **Implemented:** BABUNI.DEV contains twelve populated definitions: overview, concept, development journal, changelog, architecture, collaboration methodology, a two-image collection, four supplied recordings and repository resources. Sampling shows up to nine per opening. Text/document modules contain actual body text or resolved local Markdown; cards show curated excerpts.
+
+Button Game’s five are overview, play/combinations, Android Wi-Fi play, development story and source/documentation. They are AI-curated summaries grounded in the public repository README, CONCEPT, docs/DEVLOG and docs/ARCHITECTURE inspected on 2026-10-26. Source links are retained. Historical/release-status contradictions in evolving upstream docs were not promoted into unverified release claims. Image/video and two other definitions remain empty and are excluded; no Button Game media was invented or repurposed from unrelated footage.
+
+Babuni.dev supplied the two JPG screenshot records and four short recordings from `visualdocumentationmaterial/moduleContentVideo`. JPGs are unchanged; video exports crop browser chrome, scale to 960px and encode web-ready MP4 plus poster images. Originals remain unchanged locally. The 26-minute mixed recording was inspected through sample frames and excluded. Media credit identifies Babuni.dev as supplier and discloses the derivative operation. Individual preview playback is implemented; full-page text/gallery composition remains future work.
+
+See [Module authoring](MODULE_AUTHORING.md) for `public/media/<project-id>/images/` and `videos/` paths, catalog fields, empty-slot rules, supported external player URLs and asset checks. Adding media alone does not automatically publish a module; selection is explicit in the project catalog.
