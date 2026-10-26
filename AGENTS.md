@@ -79,3 +79,15 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## Creator's local testing handoff
+
+When providing a GitHub update for local testing, include the full terminal sequence to pull the commit, stop any running Astro server, and start a new Astro server (with LAN access for phone testing):
+
+```bash
+git pull --ff-only
+npx astro dev stop
+npm run dev -- --host 0.0.0.0
+```
+
+Give the creator this restart sequence with each future published change, even if the running server could hot-reload.
