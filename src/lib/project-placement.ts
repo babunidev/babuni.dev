@@ -15,6 +15,18 @@ export function spiralIndex(column:number,row:number):number {
   return first+7*ring+(column+ring);
 }
 
+/** Detect entrances at BOTH viewport edges, including partly visible tiles. */
+export function visibleCellBounds(width:number,height:number,tileSize:number,originX:number,originY:number):{
+  firstColumn:number;lastColumn:number;firstRow:number;lastRow:number;
+}{
+  return {
+    firstColumn:Math.floor(-originX/tileSize)||0,
+    lastColumn:Math.ceil((width-originX)/tileSize)-1,
+    firstRow:Math.floor(-originY/tileSize)||0,
+    lastRow:Math.ceil((height-originY)/tileSize)-1
+  };
+}
+
 /** Content remains resident until beyond the two-cell retention band.
  * Offscreen duplicates are allowed; visible cells first claim unused projects.
  * When there are fewer distinct projects than visible cells, repeats are required.
