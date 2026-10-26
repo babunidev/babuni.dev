@@ -177,3 +177,11 @@ The creator ran the Astro prototype locally, confirmed all five unit tests passe
 **Alternatives not adopted now:** Displaying the entire one-line summary on hover; activating from the entire tile; four simultaneous bubbles; automatic extraction from unscreened texts; new final textures before functionality.
 
 **Status:** Prototype implemented and ready for local tests/creator visual review. Topic wording, UI styling, and future keyword extraction are provisional; three other points, automatic teasers and bloom selection remain unimplemented.
+
+## D-023 — Selection centers before bloom; occasional topic teasers (2026-10-26)
+
+**Creator direction:** Clicking a tile anywhere on screen moves the entire grid so the selected tile occupies the center. Only after arriving does a neighbor vacate a real cell for small bloom. Existing tiny information bubbles may also appear spontaneously, subtly and sporadically.
+
+**Provisional AI solution:** Stone-select button (portal retains topic-only behavior); stable source-cell identity pin; 720 ms camera easing; translate the whole right-hand row segment by one tile over 520 ms; reveal one adjacent summary module and close on Escape/Close/selected tile. Freeze automatic shifts during the bloom; finish already-running shifts before centering. Ambient hint after randomized 6.5–10.5 s wait, visible for 1.7 s, only when idle and not under reduced motion.
+
+**Status:** Prototype implemented for creator testing. Directions and timing are not yet visually accepted; the center-before-bloom order and spontaneous hints are creator-established requirements.

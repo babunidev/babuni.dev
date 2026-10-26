@@ -6,6 +6,13 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Added — center-first project selection, small bloom and ambient hints (2026-10-26)
+- Selecting a visible stone tile centers its original source identity through a 720 ms eased camera movement. The portal still triggers its approved tiny topic bubble.
+- Only after centering, the entire right-hand segment of neighboring tiles slides one cell right (520 ms), freeing a genuine adjacent cell containing the candidate's provisional short summary. Escape, Close, or selecting the centered project again restores the grid.
+- Autonomous line shifts pause for the bloom; already-running shifts finish before a queued selection recenters.
+- One existing glowing topic point occasionally reveals its tiny label for 1.7 s after a random 6.5–10.5 s idle interval. Teasers skip active interactions, focus/bloom, shifts, page-hidden and reduced-motion states.
+- Added pure geometry/timing tests and a pinning regression test. Browser integration and the full local Node/Astro suite are still pending.
+
 ### Added — first portal-region topic bubble (2026-10-26)
 - The small square above each project's colored portal glows when the portal itself is explored, revealing exactly one short topic label in a compact bubble contained within the same tile.
 - Added 53 hand-selected provisional topic labels drawn conservatively from candidate summaries (e.g. "Reaction game", "Worldbuilding"), rather than placing full summaries or marketing copy in the popup. Original short descriptions remain stored separately.

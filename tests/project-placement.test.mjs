@@ -158,3 +158,16 @@ test('opposite-moving lines stage both entering projects without an end-of-shift
     assert.equal(new Set(after.map(cell=>manager.get(cell))).size,45);
   }
 });
+
+test('a selected visible source keeps its identity as other tiles come and go',()=>{
+  const manager=new ProjectPlacement(45);
+  const original=box(0,0,4,2),band=box(0,0,6,4);
+  manager.sync(original,band);
+  const selected=p(4,0);
+  const originalId=manager.get(selected);
+  for(let step=1;step<=4;step++){
+    const shiftedVisible=box(step,0,4,2);
+    manager.sync(shiftedVisible,box(step,0,6,4),selected);
+    assert.equal(manager.get(selected),originalId);
+  }
+});

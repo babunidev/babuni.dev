@@ -95,13 +95,17 @@ export class ProjectPlacement {
   /** Coordinates refer to original source tiles after reversing completed line shifts.
    * Retained cells comprise the visible viewport and two offscreen tile bands.
    */
-  sync(visible:readonly CellCoordinate[],retained:readonly CellCoordinate[]):void {
+  sync(visible:readonly CellCoordinate[],retained:readonly CellCoordinate[],pinned?:CellCoordinate):void {
     const keep=new Set(retained.map(key));
     for(const id of this.assigned.keys())if(!keep.has(id))this.assigned.delete(id);
     const visibleKeys=new Set(visible.map(key));
     const usedRetained=new Set(this.assigned.values());
     const seenVisible=new Set<number>();
+    const pinnedKey=pinned?key(pinned):null;
     const ordered=[...visible].sort((a,b)=>{
+      const pinA=key(a)===pinnedKey?0:1;
+      const pinB=key(b)===pinnedKey?0:1;
+      if(pinA!==pinB)return pinA-pinB;
       const wasA=this.lastVisible.has(key(a))?0:1;
       const wasB=this.lastVisible.has(key(b))?0:1;
       return wasA-wasB||spiralIndex(a.column,a.row)-spiralIndex(b.column,b.row);

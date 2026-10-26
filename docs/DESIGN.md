@@ -150,3 +150,13 @@ The creator chose to start with just **one** of the originally planned four info
 Input behavior: mouse hover inside the portal reveals the bubble, leaving the portal dismisses it; keyboard focus/activation offers the same information; touch tap without movement toggles a single bubble. Initiating a drag, recycling a tile, moving its project identity, or switching to another portal dismisses the previous bubble. The circle remains the pointer hit target; the rest of the tile is still available for normal drag/pan. The popup is contained within tile bounds and does not displace neighboring tiles. Respect reduced motion for glow and popup transitions.
 
 This is **not** a complete four-point system, a small bloom, a full project preview or a claim that the topics are finished editorial content. The creator's emphasis is exploration and flavor rather than selling. Remaining information points, occasional teaser, longer hover behavior and keyword-curation workflow are future design work.
+
+## Center-first selection and spontaneous glowing topics — 2026-10-26
+
+**Creator-established interaction:** Wherever a project tile is clicked, the entire grid moves until *that same project* is centered first. Only **after** centering should the neighboring tile(s) move to reserve a physically unoccupied neighboring cell for the partial bloom. Separately, the tiny glowing topic bubbles can occasionally appear unprompted as subtle flavor across the living grid.
+
+**Current first prototype:** Select the stone area (outside the existing portal topic button). A 720 ms eased camera movement recenters the selected logical source. Then a contiguous run of tiles to its right translates exactly one cell for 520 ms, freeing the right-adjacent square for one module showing the provisional short summary. Re-select the centered stone, press Escape or use Close to collapse it. An already-active autonomous shift completes before selection; further auto shifting and manual panning pause until the bloom closes. These timings, rightward direction and focus behavior remain experimental. On narrow phones the module can be smaller than the vacant cell so the centered anchor is not displaced.
+
+**Ambient hints:** Randomly every 6.5–10.5 seconds while idle, one existing top marker may glow and its short topic appear for 1.7 seconds. Never compete with explicit interaction, shifting, selection, initial entrance or reduced-motion use. No automatic long descriptions, marketing text, or multiple simultaneous bubbles.
+
+Full four-point information design, multi-module blooms, selection switching refinements, and collision-safe grid motion during bloom are still future work. Finished portal artwork is not a prerequisite.

@@ -1,4 +1,4 @@
-import {spiralIndex,type CellCoordinate} from './project-placement';
+import {spiralIndex,type CellCoordinate} from './project-placement.ts';
 
 /** Visual-only entrance sequence: never block real content loading. */
 export const INTRO_SPAWN_DURATION_MS=373;
