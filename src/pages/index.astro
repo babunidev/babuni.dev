@@ -13,7 +13,7 @@ const title='babuni.dev — Living Grid Prototype';
 <body>
   <main class="experience" aria-label="Living grid prototype">
     <div id="grid-viewport" class="grid-viewport" tabindex="0" aria-label="Endless project grid. Drag with a mouse or finger to move. Focus and use arrow keys, or press Home to recenter.">
-      <div id="grid-world" class="grid-world" aria-hidden="true"></div>
+      <div id="grid-world" class="grid-world"></div>
     </div>
     <header class="site-header">
       <div class="brand">BABUNI.DEV</div>
@@ -50,8 +50,14 @@ const title='babuni.dev — Living Grid Prototype';
     100%{opacity:1;transform:scale(1)}
   }
   .tile-face::before{content:'';position:absolute;inset:9px;border:1px solid #777068;opacity:.43;pointer-events:none}
-  .tile-mark{width:7px;height:7px;border:1px solid #b6a487;transform:rotate(45deg)}
-  .tile-portal{width:59%;aspect-ratio:1;max-height:59%;flex:none;border-radius:50%;border:6px solid #77716d;box-shadow:0 0 0 2px #2b2826,inset 0 0 0 3px #18191e,inset 0 0 24px #08070d;background:radial-gradient(circle at 43% 38%,color-mix(in srgb,var(--portal-color) 75%,white),var(--portal-color) 23%,#121323 70%,#05060c 100%)}
+  .tile-mark{width:7px;height:7px;flex:none;z-index:2;border:1px solid #b6a487;transform:rotate(45deg);transition:background-color 180ms,box-shadow 180ms,border-color 180ms}
+  .grid-tile--topic-open .tile-mark{border-color:#f5ecda;background:var(--portal-color);box-shadow:0 0 0 2px #1b1b21,0 0 9px 3px var(--portal-color),0 0 17px var(--portal-color)}
+  .tile-topic{position:absolute;top:6px;left:calc(50% + 13px);right:6px;z-index:3;pointer-events:none;padding:5px 7px;border-radius:3px;border:1px solid #837c91;background:rgba(19,20,28,.96);box-shadow:0 4px 16px rgba(0,0,0,.44);font:500 clamp(9px,calc(var(--tile-size,240px) * .047),12px)/1.18 system-ui,sans-serif;letter-spacing:.015em;color:#f0e8d9;overflow-wrap:anywhere;opacity:0;transform:translateY(5px) scale(.95);transition:opacity 150ms ease,transform 180ms ease}
+  .grid-tile--topic-open .tile-topic{opacity:1;transform:translateY(0) scale(1)}
+  .grid-viewport.is-dragging .tile-topic{opacity:0}
+  .grid-viewport.is-dragging .grid-tile--topic-open .tile-mark{box-shadow:none}
+  .tile-portal{width:59%;aspect-ratio:1;max-height:59%;flex:none;appearance:none;padding:0;cursor:help;pointer-events:auto;border-radius:50%;border:6px solid #77716d;box-shadow:0 0 0 2px #2b2826,inset 0 0 0 3px #18191e,inset 0 0 24px #08070d;background:radial-gradient(circle at 43% 38%,color-mix(in srgb,var(--portal-color) 75%,white),var(--portal-color) 23%,#121323 70%,#05060c 100%)}
+  .tile-portal:focus-visible{outline:3px solid #e8d7b5;outline-offset:4px}
   .tile-name{font-size:clamp(12px,calc(var(--tile-size,240px) * .068),17px);max-width:89%;text-align:center;letter-spacing:.08em;color:#d8cab7;text-shadow:0 1px 1px #000;white-space:normal;overflow-wrap:break-word;text-wrap:balance;line-height:1.18}
   .grid-tile--long-title .tile-name{font-size:clamp(10px,calc(var(--tile-size,240px) * .052),14px);letter-spacing:.025em;line-height:1.12;max-width:95%}
   .grid-tile--long-title .tile-portal{width:53%;max-height:53%}

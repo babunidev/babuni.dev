@@ -3,6 +3,7 @@ import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/g
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 import { demoProjects } from '../lib/demo-projects';
+import { topicForProject } from '../lib/project-topics';
 import { introSequence, INTRO_SPAWN_STAGGER_MS } from '../lib/grid-intro';
 
 interface TileSlot { element: HTMLDivElement; column: number; row: number; projectIndex?: number; }
@@ -23,6 +24,10 @@ if (viewport && world && resetButton && status) {
   let viewportWidth=0, viewportHeight=0;
   let introPlayed=false, introPending=0;
   let activePointer:number|null=null, lastX=0, lastY=0;
+  let pointerDownX=0, pointerDownY=0, pointerDragged=false;
+  let pinnedBeforeDown:HTMLDivElement|null=null;
+  let activeTopic:HTMLDivElement|null=null;
+  let pinnedTopic:HTMLDivElement|null=null;
   const heldArrows=new Set<string>();
   let manualPan=createManualPanState();
   let manualFrame:number|null=null;
@@ -36,15 +41,32 @@ if (viewport && world && resetButton && status) {
   const heading=document.querySelector<HTMLElement>('.header-note');
   let timer:ReturnType<typeof setTimeout>|null=null;
 
+  /** At most one topic can be open at a time. The portal is the only trigger. */
+  function hideTopic():void {
+    activeTopic?.classList.remove('grid-tile--topic-open');
+    activeTopic=null;
+    pinnedTopic=null;
+  }
+  function showTopic(tile:HTMLDivElement):void {
+    if(tile.getAttribute('aria-hidden')==='true')return;
+    if(activeTopic!==tile)hideTopic();
+    activeTopic=tile;
+    tile.classList.add('grid-tile--topic-open');
+  }
+  function portalFrom(target:EventTarget|null):HTMLButtonElement|null {
+    return target instanceof Element
+      ? target.closest<HTMLButtonElement>('.tile-portal'):null;
+  }
   function makeTile():HTMLDivElement {
     const element=document.createElement('div');
     element.className='grid-tile';
     element.setAttribute('aria-hidden','true');
-    element.innerHTML='<div class="tile-face"><div class="tile-mark"></div><div class="tile-portal"></div><div class="tile-name"></div></div>';
+    element.innerHTML='<div class="tile-face"><div class="tile-mark" aria-hidden="true"></div><button type="button" class="tile-portal" tabindex="-1" aria-label="Project topic"></button><div class="tile-topic" aria-hidden="true"></div><div class="tile-name"></div></div>';
     return element;
   }
   function populate(slot:TileSlot,column:number,row:number,force=false):void {
     if(slot.column!==column||slot.row!==row){
+      if(activeTopic===slot.element)hideTopic();
       slot.column=column;slot.row=row;
       slot.element.style.left=(column*tileSize)+'px';
       slot.element.style.top=(row*tileSize)+'px';
@@ -54,6 +76,7 @@ if (viewport && world && resetButton && status) {
     // approach the retention band; this never consumes a visible project.
     const projectIndex=placement.get(source)??spiralIndex(source.column,source.row)%placement.projectCount;
     if(!force&&slot.projectIndex===projectIndex)return;
+    if(activeTopic===slot.element)hideTopic();
     slot.projectIndex=projectIndex;
     const isOrigin=projectIndex===0;
     const project=demoProjects[projectIndex];
@@ -64,6 +87,11 @@ if (viewport && world && resetButton && status) {
     slot.element.classList.toggle('grid-tile--long-title',project.name.length>18);
     const label=slot.element.querySelector<HTMLElement>('.tile-name');
     if(label) label.textContent=project.name;
+    const topic=topicForProject(project.id);
+    const bubble=slot.element.querySelector<HTMLElement>('.tile-topic');
+    if(bubble)bubble.textContent=topic;
+    const portal=slot.element.querySelector<HTMLButtonElement>('.tile-portal');
+    if(portal)portal.setAttribute('aria-label',project.name+': '+topic);
   }
   /** The introduction only affects the first visible tiles, once on page load. */
   function cancelIntro():void {
@@ -100,6 +128,7 @@ if (viewport && world && resetButton && status) {
     // ResizeObserver repeats the initial size; never rebuild/replay for that.
     if(rect.width===viewportWidth&&rect.height===viewportHeight&&slots.length)return;
     cancelIntro();
+    hideTopic();
     viewportWidth=rect.width;viewportHeight=rect.height;
     tileSize=tileSizeForWidth(rect.width);
     surface.style.setProperty('--tile-size',tileSize+'px');
@@ -132,7 +161,16 @@ if (viewport && world && resetButton && status) {
       const x=frame.originX+slot.column*tileSize;
       const y=frame.originY+slot.row*tileSize;
       const source=sourceCell(slot.column,slot.row,history);
-      if(x<rect.width&&x+tileSize>0&&y<rect.height&&y+tileSize>0)visible.push(source);
+      const isVisible=x<rect.width&&x+tileSize>0&&y<rect.height&&y+tileSize>0;
+      if(isVisible)visible.push(source);
+      // Accessible only while the actual tile is inside the viewport.
+      slot.element.setAttribute('aria-hidden',String(!isVisible));
+      const button=slot.element.querySelector<HTMLButtonElement>('.tile-portal');
+      if(button){
+        button.tabIndex=isVisible?0:-1;
+        if(!isVisible&&document.activeElement===button)button.blur();
+      }
+      if(!isVisible&&activeTopic===slot.element)hideTopic();
       if(x<rect.width+margin&&x+tileSize>-margin&&
          y<rect.height+margin&&y+tileSize>-margin)retained.push(source);
     }
@@ -153,6 +191,7 @@ if (viewport && world && resetButton && status) {
     }
     firstColumn=frame.firstColumn; firstRow=frame.firstRow;
     if(dx||dy){
+      if(activeTopic)hideTopic();
       for(let y=0;y<rows;y++){
         const row=logicalCell(firstRow,y,rowHead,rows);
         for(let x=0;x<columns;x++){
@@ -200,6 +239,7 @@ if (viewport && world && resetButton && status) {
     const visibleColumns=Array.from({length:right-left+1},(_,i)=>left+i);
     const round=planShiftRound(visibleRows,visibleColumns);
     if(!round.moves.length){nextRound(restWait);return;}
+    hideTopic();
     cancelIntro();
     // All incoming tiles already exist just outside the viewport. Give them
     // their final project identity NOW, before their shift reveals them.
@@ -282,9 +322,45 @@ if (viewport && world && resetButton && status) {
     resumeMovement();
   }
 
+  surface.addEventListener('pointerover',event=>{
+    if(event.pointerType==='touch'||activePointer!==null)return;
+    const portal=portalFrom(event.target);
+    if(!portal)return;
+    const tile=portal.closest<HTMLDivElement>('.grid-tile');
+    if(tile){
+      pinnedTopic=null;
+      showTopic(tile);
+    }
+  });
+  surface.addEventListener('pointerout',event=>{
+    if(event.pointerType==='touch')return;
+    const portal=portalFrom(event.target);
+    // Mouse hover ends when leaving the portal; keyboard focus remains open.
+    if(portal&&!portal.matches(':focus-visible')
+       &&activeTopic===portal.closest('.grid-tile'))hideTopic();
+  });
+  surface.addEventListener('focusin',event=>{
+    const portal=portalFrom(event.target);
+    const tile=portal?.closest<HTMLDivElement>('.grid-tile');
+    if(tile)showTopic(tile);
+  });
+  surface.addEventListener('focusout',event=>{
+    const portal=portalFrom(event.target);
+    if(portal&&activeTopic===portal.closest('.grid-tile')&&!pinnedTopic)hideTopic();
+  });
+  // Keyboard Enter/Space can reveal the focused topic as well. Touch taps
+  // are handled at pointerup because pointer capture retargets pointer events.
+  surface.addEventListener('click',event=>{
+    if(event.detail!==0)return;
+    const portal=portalFrom(event.target);
+    const tile=portal?.closest<HTMLDivElement>('.grid-tile');
+    if(tile)showTopic(tile);
+  });
   surface.addEventListener('pointerdown',event=>{
-    if(activePointer!==null||!event.isPrimary||(event.pointerType==='mouse'&&event.button!==0)) return;
+    if(activePointer!==null||!event.isPrimary||(event.pointerType==='mouse'&&event.button!==0))return;
     cancelIntro();
+    pinnedBeforeDown=pinnedTopic;
+    pointerDownX=event.clientX;pointerDownY=event.clientY;pointerDragged=false;
     activePointer=event.pointerId; lastX=event.clientX; lastY=event.clientY;
     surface.setPointerCapture(event.pointerId);
     surface.classList.add('is-dragging');
@@ -295,13 +371,36 @@ if (viewport && world && resetButton && status) {
   });
   surface.addEventListener('pointermove',event=>{
     if(event.pointerId!==activePointer)return;
+    if(Math.hypot(event.clientX-pointerDownX,event.clientY-pointerDownY)>9){
+      pointerDragged=true;
+      hideTopic();
+    }
     manualPan=queuePointerTravel(manualPan,event.clientX-lastX,event.clientY-lastY);
     lastX=event.clientX;lastY=event.clientY;
     scheduleManualFrame();
   });
   function release(event:PointerEvent):void {
     if(event.pointerId!==activePointer)return;
-    activePointer=null; surface.classList.remove('is-dragging');
+    const isTap=event.type==='pointerup'&&!pointerDragged
+      &&Math.hypot(event.clientX-pointerDownX,event.clientY-pointerDownY)<=9;
+    activePointer=null;surface.classList.remove('is-dragging');
+    if(isTap){
+      // Pointer capture retargets pointerup to the viewport, so hit-test the
+      // actual portal location. Everywhere else simply dismisses the bubble.
+      const portal=portalFrom(document.elementFromPoint(event.clientX,event.clientY));
+      const tile=portal?.closest<HTMLDivElement>('.grid-tile');
+      if(tile&&surface.contains(tile)){
+        if(pinnedBeforeDown===tile){
+          hideTopic();
+          portal?.blur();
+        }else{
+          showTopic(tile);
+          pinnedTopic=tile;
+        }
+      }else hideTopic();
+    }
+    pinnedBeforeDown=null;
+    if(event.type==='pointercancel')hideTopic();
     // Discard remaining cursor lag on release: no delayed ghost-chase.
     manualPan.pending={x:0,y:0};
     manualPan.pointerVelocity={x:0,y:0};
@@ -314,6 +413,7 @@ if (viewport && world && resetButton && status) {
   const arrowNames=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown']);
   surface.addEventListener('keydown',event=>{
     if(event.key==='Home'){
+      hideTopic();
       cancelIntro();
       event.preventDefault();
       resetManualInput();
@@ -321,6 +421,7 @@ if (viewport && world && resetButton && status) {
       return;
     }
     if(!arrowNames.has(event.key))return;
+    hideTopic();
     cancelIntro();
     event.preventDefault();
     if(!heldArrows.has(event.key)){
@@ -337,6 +438,7 @@ if (viewport && world && resetButton && status) {
     }
   });
   window.addEventListener('blur',()=>{
+    hideTopic();
     heldArrows.clear();
     manualPan.keyboardVelocity={x:0,y:0};
     if(activePointer!==null){
@@ -348,13 +450,15 @@ if (viewport && world && resetButton && status) {
     resumeMovement();
   });
   reset.addEventListener('click',()=>{
+    hideTopic();
     cancelIntro();
     resetManualInput();
     panX=0;panY=0;updateField();
     liveStatus.textContent='Returned to the starting tile.';
   });
   document.addEventListener('visibilitychange',()=>{
-    if(document.hidden)pauseMovement();else resumeMovement();
+    if(document.hidden){hideTopic();pauseMovement();}
+    else resumeMovement();
   });
   prefersReduced.addEventListener('change',()=>{
     if(prefersReduced.matches)cancelIntro();

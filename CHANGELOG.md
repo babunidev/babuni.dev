@@ -6,6 +6,13 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Added — first portal-region topic bubble (2026-10-26)
+- The small square above each project's colored portal glows when the portal itself is explored, revealing exactly one short topic label in a compact bubble contained within the same tile.
+- Added 53 hand-selected provisional topic labels drawn conservatively from candidate summaries (e.g. "Reaction game", "Worldbuilding"), rather than placing full summaries or marketing copy in the popup. Original short descriptions remain stored separately.
+- Hover activates only inside the portal, not across the tile. Keyboard focus and Enter/Space provide an accessible equivalent; a stationary touch tap toggles the bubble, whereas touch/mouse drags continue to pan the grid.
+- Keep at most one topic active, clear it when tile identities/positions change, and exclude offscreen portal controls from keyboard focus. Retain the spiral, entrance animation, movement values, and temporary textures.
+- Added topic coverage/length tests; full browser integration and hands-on visual review remain pending.
+
 ### Changed — use 53 real candidate names in the prototype grid (2026-10-26)
 - Replaced 45 numbered demo labels with 53 distinct named candidates from `docs/PROJECT_INVENTORY.md`, preserving the inventory's provisional recent-to-old order and BABUNI.DEV at the center.
 - Attached a provisional ID, one-line summary, evidence category and portal tint to each candidate so future information bubbles can reuse short descriptions. The titles and metadata are **not** verified or approved portfolio exhibits.
