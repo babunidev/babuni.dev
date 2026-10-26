@@ -1,17 +1,18 @@
-import { demoProjectIndex, gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
+import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
+import { ProjectPlacement, spiralIndex, type CellCoordinate } from '../lib/project-placement';
 
 interface ProjectPlaceholder { name: string; tint: string; }
 const projects: ProjectPlaceholder[] = [
-  {name:'PROJECT 01',tint:'#568cdb'}, {name:'PROJECT 02',tint:'#d3a457'},
-  {name:'PROJECT 03',tint:'#6ac0a5'}, {name:'PROJECT 04',tint:'#c778b9'},
-  {name:'PROJECT 05',tint:'#db7859'}, {name:'PROJECT 06',tint:'#8c8be3'},
-  {name:'PROJECT 07',tint:'#7eb875'}, {name:'PROJECT 08',tint:'#c1b56d'},
-  {name:'PROJECT 09',tint:'#61afb9'}, {name:'PROJECT 10',tint:'#ab88d1'},
-  {name:'PROJECT 11',tint:'#d08e79'}, {name:'PROJECT 12',tint:'#70a3c2'}
+  {name:'PROJECT 02',tint:'#568cdb'}, {name:'PROJECT 03',tint:'#d3a457'},
+  {name:'PROJECT 04',tint:'#6ac0a5'}, {name:'PROJECT 05',tint:'#c778b9'},
+  {name:'PROJECT 06',tint:'#db7859'}, {name:'PROJECT 07',tint:'#8c8be3'},
+  {name:'PROJECT 08',tint:'#7eb875'}, {name:'PROJECT 09',tint:'#c1b56d'},
+  {name:'PROJECT 10',tint:'#61afb9'}, {name:'PROJECT 11',tint:'#ab88d1'},
+  {name:'PROJECT 12',tint:'#d08e79'}, {name:'PROJECT 13',tint:'#70a3c2'}
 ];
-interface TileSlot { element: HTMLDivElement; column: number; row: number; }
+interface TileSlot { element: HTMLDivElement; column: number; row: number; projectIndex?: number; }
 const viewport = document.querySelector<HTMLElement>('#grid-viewport');
 const world = document.querySelector<HTMLElement>('#grid-world');
 const resetButton = document.querySelector<HTMLButtonElement>('#reset-view');
@@ -20,6 +21,8 @@ const status = document.querySelector<HTMLElement>('#grid-status');
 if (viewport && world && resetButton && status) {
   const surface=viewport, layer=world, reset=resetButton, liveStatus=status;
   const bufferCells=2;
+  // Index zero is the real BABUNI.DEV tile. Demo project IDs then start at 02.
+  const placement=new ProjectPlacement(projects.length+1);
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
   let slots:TileSlot[]=[];
@@ -45,14 +48,19 @@ if (viewport && world && resetButton && status) {
     return element;
   }
   function populate(slot:TileSlot,column:number,row:number,force=false):void {
-    if(!force&&slot.column===column&&slot.row===row)return;
-    slot.column=column; slot.row=row;
-    slot.element.style.left=(column*tileSize)+'px';
-    slot.element.style.top=(row*tileSize)+'px';
+    if(slot.column!==column||slot.row!==row){
+      slot.column=column;slot.row=row;
+      slot.element.style.left=(column*tileSize)+'px';
+      slot.element.style.top=(row*tileSize)+'px';
+    }
     const source=sourceCell(column,row,history);
-    const isOrigin=source.column===0&&source.row===0;
-    const project=isOrigin ? {name:'BABUNI.DEV',tint:'#b78af9'} :
-      projects[demoProjectIndex(source.column,source.row,projects.length)];
+    // Unreserved outer buffer cells receive a temporary visual ID until they
+    // approach the retention band; this never consumes a visible project.
+    const projectIndex=placement.get(source)??spiralIndex(source.column,source.row)%placement.projectCount;
+    if(!force&&slot.projectIndex===projectIndex)return;
+    slot.projectIndex=projectIndex;
+    const isOrigin=projectIndex===0;
+    const project=isOrigin?{name:'BABUNI.DEV',tint:'#b78af9'}:projects[projectIndex-1];
     slot.element.style.setProperty('--portal-color',project.tint);
     slot.element.classList.toggle('grid-tile--origin',isOrigin);
     const label=slot.element.querySelector<HTMLElement>('.tile-name');
@@ -75,10 +83,28 @@ if (viewport && world && resetButton && status) {
       fragment.appendChild(element);
     }
     layer.replaceChildren(fragment);
-    updateField();
+    updateField(true);
+  }
+  /** Update content reservations only when the set of visible tile cells changes.
+   * This keeps manual camera dragging fast and prevents same-screen duplicates.
+   */
+  function syncProjects(frame:{originX:number;originY:number},rect:{width:number;height:number}):void {
+    const visible:CellCoordinate[]=[];
+    const retained:CellCoordinate[]=[];
+    const margin=bufferCells*tileSize;
+    for(const slot of slots){
+      const x=frame.originX+slot.column*tileSize;
+      const y=frame.originY+slot.row*tileSize;
+      const source=sourceCell(slot.column,slot.row,history);
+      if(x<rect.width&&x+tileSize>0&&y<rect.height&&y+tileSize>0)visible.push(source);
+      if(x<rect.width+margin&&x+tileSize>-margin&&
+         y<rect.height+margin&&y+tileSize>-margin)retained.push(source);
+    }
+    placement.sync(visible,retained);
+    for(const slot of slots)populate(slot,slot.column,slot.row);
   }
   /** Move the whole layer for every drag event; repurpose only exiting pool slots. */
-  function updateField():void {
+  function updateField(forceSync=false):void {
     const rect=surface.getBoundingClientRect();
     if(!rect.width||!rect.height||!columns||!rows) return;
     const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells});
@@ -100,6 +126,7 @@ if (viewport && world && resetButton && status) {
       }
     }
     layer.style.transform='translate3d('+frame.originX+'px,'+frame.originY+'px,0)';
+    if(dx||dy||forceSync)syncProjects(frame,rect);
     if(moving)paintMovement(moving.fraction);
   }
   function paintMovement(fraction:number):void {
@@ -145,10 +172,9 @@ if (viewport && world && resetButton && status) {
     if(moving.fraction<1){requestAnimationFrame(frameMovement);return;}
     history.push(...moving.moves);
     moving=null;
-    for(const slot of slots){
-      populate(slot,slot.column,slot.row,true);
-      slot.element.style.transform='';
-    }
+    // The source identity is carried by the shifted tile, not by its old slot.
+    updateField(true);
+    for(const slot of slots)slot.element.style.transform='';
     if(heading)heading.textContent='Living grid prototype';
     nextRound(restWait);
   }
