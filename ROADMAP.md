@@ -34,8 +34,8 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 ## Milestone 2 — The first portal
 - [ ] Reusable, stylized stone tile component.
 - [ ] Engraved, always-legible title and colored portal window.
-- [ ] Four point-anchored holographic information bubbles.
-- [ ] Hover, focus, tap, automatic occasional teaser, and linger-to-reveal behaviors.
+- [x] Prototype three point-anchored topic bubbles (top, left, right; browser/device visual approval still pending).
+- [ ] Complete interaction verification for hover, focus, tap and occasional ambient teasers (prototypes implemented, including during small bloom); optional linger-to-reveal remains unimplemented.
 - [ ] Test against clutter on dense grids.
 
 ## Milestone 3 — Small bloom

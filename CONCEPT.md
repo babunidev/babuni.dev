@@ -30,7 +30,7 @@ Visitors can drag the entire field in any direction. Visual tiles are recycled o
 
 ## Discovery and the four depths
 
-1. **Grid:** colored portals and engraved titles. Four glowing points on a tile can emit small sci-fi callouts.
+1. **Grid:** colored portals and engraved titles. Three small glowing points (above, left, right of the portal) can reveal very brief topic/flavor snippets. The previous four-point idea was later revised by Babuni.dev.
 2. **Small bloom:** first click or tap. The selected tile remains the anchor. Neighboring tiles physically glide aside; the space of one or more adjacent *tile cells* becomes introductory project modules. The rest of the grid stays present and slows down.
 3. **Full bloom:** a second activation commits to the selected project. All other project tiles disappear. The original tile stays near the center, with simple readable media and information modules unfolding around it.
 4. **Expanded module:** selecting a text, image, video, or file module opens an appropriate detailed view. Text scrolls normally; image galleries are freely browsable, with a prominent center image. A separate fullscreen image control displays the art without captions or UI.
@@ -39,7 +39,7 @@ The central portal in full bloom also closes the project, returning to the grid.
 
 ## Information points
 
-Four small lights surrounding the portal are *not links*. Their bubbles explain what a project is, does, serves, and what is notable about it. One may occasionally emerge without interaction; hovering a point reveals its bubble; lingering over the tile can gently fade all bubbles in. The holographic callouts sit above the tile and stay within its visual boundaries. The user can ignore them entirely.
+Three small lights surrounding the portal—**top, left, and right**—are *not links*. Their tiny bubbles give a category, form, theme, or other interesting flavor instead of a sales pitch. This supersedes the earlier four-point sketch. Directly exploring the portal can reveal all three; one randomly chosen point may briefly reveal its clue without interaction, including on other tiles while a small bloom is open. The holographic callouts stay inside their tile boundaries and can be ignored. Their exact wording will be curated from reliable project material and development history.
 
 ## Content and presentation
 

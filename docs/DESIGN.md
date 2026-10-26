@@ -12,9 +12,9 @@ This document describes intended behavior; implementation must be separately ver
 ## Tile visual
 - Stylized low-detail stone square with slight depth, readable title engraved in the stone, project-dependent minimal engravings.
 - Recessed colored central portal; project logo or themed image inside it.
-- Four glowing points on portal rim. Angular sci-fi connector strokes and small translucent overlays originate there.
+- Three small glowing square points (above, left, right of portal) with bounded translucent topic snippets; the four-point sketch was superseded on 2026-10-26. Angular connector strokes remain a possible future visual refinement.
 - Panels are temporary *information snippets*: purpose, behavior, audience, interesting characteristics.
-- One random teaser occasionally; point hover/focus shows one; prolonged tile hover reveals multiple. On touch use accessible tap/focus alternative.
+- Direct portal hover/focus/tap reveals all three tiny snippets; occasional ambient teasers reveal one random point at a time, including on unaffected surrounding tiles during small bloom. Linger timing remains optional/unimplemented.
 - Info overlays remain inside the tile boundary; do not reserve adjacent cells. This differs from bloom modules.
 
 ## Movement

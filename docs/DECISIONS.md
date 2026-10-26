@@ -20,7 +20,7 @@
 **Decision:** Minimal original stone surface and colored portal; no scenic background behind full-screen grid.
 
 ## D-004 — Point-origin information bubbles
-**Status:** Accepted  
+**Status:** Superseded in point count and discovery trigger by D-026 (2026-10-26); non-navigational, bounded information intent remains accepted  
 **Babuni.dev correction:** Bubbles describe the project; they are not navigational shortcuts.  
 **Decision:** Four contextual lights emit bounded holographic snippets with random, point-hover, and linger behaviors.
 

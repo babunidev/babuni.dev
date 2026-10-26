@@ -3,7 +3,7 @@ import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/g
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 import { demoProjects } from '../lib/demo-projects';
-import { topicForProject } from '../lib/project-topics';
+import { topicLabelsForProject, TOPIC_POINTS, chooseAmbientPoint, type TopicPoint } from '../lib/project-topics';
 import { introSequence, INTRO_SPAWN_STAGGER_MS } from '../lib/grid-intro';
 import { centeredPan, interpolateCenter, bloomModuleCell, shiftsForBloom,
   CENTER_DURATION_MS, BLOOM_SHIFT_DURATION_MS, AMBIENT_INTERVAL_MS,
@@ -44,6 +44,7 @@ if (viewport && world && resetButton && status) {
   let ambientTimer:ReturnType<typeof setTimeout>|null=null;
   let nextAmbientAt=performance.now()+AMBIENT_INTERVAL_MS;
   let lastAmbientProjectId:string|null=null;
+  let lastAmbientPoint:TopicPoint|null=null;
   let pointerDownSelect:HTMLButtonElement|null=null;
   let pinnedBeforeDown:HTMLDivElement|null=null;
   let pointerDownPortal:HTMLButtonElement|null=null;
@@ -62,18 +63,22 @@ if (viewport && world && resetButton && status) {
   const heading=document.querySelector<HTMLElement>('.header-note');
   let timer:ReturnType<typeof setTimeout>|null=null;
 
-  /** At most one topic can be open at a time. The portal is the only trigger. */
+  /** Direct exploration reveals all three snippets; an ambient hint lights
+   * only one of the three diamonds. Never show multiple projects together.
+   */
   function hideTopic():void {
     if(teaserTimer!==null){clearTimeout(teaserTimer);teaserTimer=null;}
     teaserTile=null;
     activeTopic?.classList.remove('grid-tile--topic-open');
+    activeTopic?.removeAttribute('data-topic-mode');
     activeTopic=null;
     pinnedTopic=null;
   }
-  function showTopic(tile:HTMLDivElement):void {
+  function showTopic(tile:HTMLDivElement,point:TopicPoint|'all'='all'):void {
     if(tile.getAttribute('aria-hidden')==='true')return;
     if(activeTopic!==tile)hideTopic();
     activeTopic=tile;
+    tile.dataset.topicMode=point;
     tile.classList.add('grid-tile--topic-open');
   }
   function selectFrom(target:EventTarget|null):HTMLButtonElement|null {
@@ -122,7 +127,7 @@ if (viewport && world && resetButton && status) {
     const element=document.createElement('div');
     element.className='grid-tile';
     element.setAttribute('aria-hidden','true');
-    element.innerHTML='<div class="tile-face"><button type="button" class="tile-select" tabindex="-1" aria-label="Explore project"></button><div class="tile-mark" aria-hidden="true"></div><button type="button" class="tile-portal" tabindex="-1" aria-label="Project topic"></button><div class="tile-topic" aria-hidden="true"></div><div class="tile-name"></div></div>';
+    element.innerHTML='<div class="tile-face"><button type="button" class="tile-select" tabindex="-1" aria-label="Explore project"></button><div class="tile-mark tile-mark--top" aria-hidden="true"></div><div class="tile-mark tile-mark--left" aria-hidden="true"></div><div class="tile-mark tile-mark--right" aria-hidden="true"></div><button type="button" class="tile-portal" tabindex="-1" aria-label="Explore three project topics"></button><div class="tile-topic tile-topic--top" data-topic-point="top" aria-hidden="true"></div><div class="tile-topic tile-topic--left" data-topic-point="left" aria-hidden="true"></div><div class="tile-topic tile-topic--right" data-topic-point="right" aria-hidden="true"></div><div class="tile-name"></div></div>';
     return element;
   }
   function populate(slot:TileSlot,column:number,row:number,force=false):void {
@@ -148,11 +153,14 @@ if (viewport && world && resetButton && status) {
     slot.element.classList.toggle('grid-tile--long-title',project.name.length>18);
     const label=slot.element.querySelector<HTMLElement>('.tile-name');
     if(label) label.textContent=project.name;
-    const topic=topicForProject(project.id);
-    const bubble=slot.element.querySelector<HTMLElement>('.tile-topic');
-    if(bubble)bubble.textContent=topic;
+    const topics=topicLabelsForProject(project.id);
+    for(const point of TOPIC_POINTS){
+      const bubble=slot.element.querySelector<HTMLElement>('.tile-topic--'+point);
+      if(bubble)bubble.textContent=topics[point];
+    }
     const portal=slot.element.querySelector<HTMLButtonElement>('.tile-portal');
-    if(portal)portal.setAttribute('aria-label',project.name+': '+topic);
+    if(portal)portal.setAttribute('aria-label',
+      project.name+': '+TOPIC_POINTS.map(point=>topics[point]).join(', '));
     const select=slot.element.querySelector<HTMLButtonElement>('.tile-select');
     if(select)select.setAttribute('aria-label','Explore '+project.name);
   }
@@ -641,9 +649,13 @@ if (viewport && world && resetButton && status) {
     // Only visible keyboard focus blocks hints. Pointer/touch focus can
     // persist after a tap even when the visitor is just watching.
     // Focusing the viewport itself is also safe.
-    const blocked=document.hidden||prefersReduced.matches||selectedChoice!==null
-      ||pendingChoice!==null||centering!==null||bloomModule!==null
-      ||moving!==null||activePointer!==null||heldArrows.size>0
+    // The ambient world stays alive around an open small bloom.
+    // Only suppress during entrance/closing and active user input.
+    const bloomTransitioning=(selectedChoice!==null&&!bloomModule)
+      ||(bloomModule!==null&&!bloomModule.classList.contains('is-open'));
+    const blocked=document.hidden||prefersReduced.matches
+      ||pendingChoice!==null||centering!==null||bloomClosingTimer!==null
+      ||bloomTransitioning||activePointer!==null||heldArrows.size>0
       ||panIsMoving(manualPan)||activeTopic!==null||introPending>0
       ||focusedProjectControl;
     const wait=ambientPollDelay(performance.now(),nextAmbientAt,blocked);
@@ -655,9 +667,15 @@ if (viewport && world && resetButton && status) {
     const insets=ambientInsets(tileSize,headerHeight,footerHeight);
     // getBoundingClientRect reflects the actual viewport and CSS transforms,
     // unlike resting row/column indices or a simple aria-hidden check.
+    const chosenSlot=selectedChoice&&bloomModule?locate(selectedChoice):null;
     const eligible=slots.filter(slot=>
       slot.projectIndex!==undefined
       &&slot.element.getAttribute('aria-hidden')==='false'
+      // Avoid the centered tile, its bloom row, and actively moving tiles.
+      &&(!chosenSlot||slot.row!==chosenSlot.row)
+      &&!slot.element.classList.contains('grid-tile--selected')
+      &&!(moving?.moves.some(move=>
+        move.axis==='row'?move.line===slot.row:move.line===slot.column))
       &&ambientTileIsEligible(slot.element.getBoundingClientRect(),viewportRect,insets));
     if(!eligible.length){
       scheduleAmbient(AMBIENT_RETRY_MS);
@@ -667,9 +685,11 @@ if (viewport && world && resetButton && status) {
     const candidates=fresh.length?fresh:eligible;
     const chosen=candidates[Math.floor(Math.random()*candidates.length)];
     const tile=chosen.element;
-    showTopic(tile);
+    const point=chooseAmbientPoint(lastAmbientPoint,Math.random());
+    showTopic(tile,point);
     teaserTile=tile;
     lastAmbientProjectId=tile.dataset.projectId??null;
+    lastAmbientPoint=point;
     teaserTimer=setTimeout(()=>{
       teaserTimer=null;
       if(activeTopic===tile&&!pinnedTopic)hideTopic();

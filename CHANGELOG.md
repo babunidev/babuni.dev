@@ -6,6 +6,14 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Added — three portal topic points and ambient hints during small bloom (2026-10-26)
+- Extended the previous single glowing top square into **three** portal markers (above, left, right), each with one short provisional snippet for all 53 candidate projects. Direct portal hover/focus/tap reveals all three; this remains a temporary texture/functionality prototype.
+- Manual inspection retains the portal-only activation region; the surrounding stone still selects and centers the project. No navigational links or sales language were added to the bubbles.
+- Spontaneous hints now randomly activate only one of the three points per appearance, preferring a different point from the last hint.
+- Hints continue on safe surrounding tiles while a small bloom is open; the centered/selected tile, displaced bloom row and tiles currently shifting are excluded. Opening/closing transitions, active user interaction, invisible/edge tiles, page-hidden and reduced-motion continue to suppress the effects.
+- Retained the approximately five-second cadence and 1.7-second brief display, existing row/column shift logic, and project centering/bloom timings.
+- Added tests for complete three-point labels, concise/unique snippets and nonrepeating ambient point selection. Local test suite, production build and visual/mobile checks are still outstanding.
+
 ### Changed — visitor-controlled blooms with independent living-grid shifts (2026-10-26)
 - During an open small bloom, permit autonomous shifts of other rows and all nonprotected columns under the existing dice/timing rules. Protect only the selected row, selected column and immediate right-side bloom column.
 - A right-side column that moves vertically through the displaced selected row interpolates horizontally at the same time, avoiding a sudden visual project-position jump when the shift commits.

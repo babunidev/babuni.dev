@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {demoProjects} from '../src/lib/demo-projects.ts';
-import {projectTopics,topicForProject} from '../src/lib/project-topics.ts';
+import {projectTopics,topicForProject,TOPIC_POINTS,supplementalTopics,topicLabelsForProject,chooseAmbientPoint} from '../src/lib/project-topics.ts';
 
 test('each provisional project has exactly one concise first-bubble topic',()=>{
   assert.equal(demoProjects.length,53);
@@ -21,4 +21,43 @@ test('a bubble offers just a subject, not a description or release claim',()=>{
   assert.equal(topicForProject('morkahja-world-and-peoples'),'Worldbuilding');
   assert.equal(topicForProject('buxbrewding'),'WoW addon');
   assert.equal(topicForProject('not-in-inventory'),'Creative work');
+});
+
+test('each of the 53 prototype tiles has three short, distinct, evidence-grounded flavor snippets',()=>{
+  assert.deepEqual(TOPIC_POINTS,['top','left','right']);
+  assert.equal(Object.keys(supplementalTopics).length,demoProjects.length);
+  for(const project of demoProjects){
+    const topics=topicLabelsForProject(project.id);
+    assert.deepEqual(Object.keys(topics),TOPIC_POINTS,project.name);
+    assert.equal(topics.top,topicForProject(project.id),project.name);
+    assert.equal(new Set(Object.values(topics)).size,3,project.name);
+    for(const point of TOPIC_POINTS){
+      assert.ok(topics[point].length>0&&topics[point].length<=24,
+        project.name+' '+point+': '+topics[point]);
+      assert.notEqual(topics[point],project.shortSummary);
+    }
+  }
+});
+test('three markers carry different kinds of tiny project information',()=>{
+  assert.deepEqual(topicLabelsForProject('button-game'),{
+    top:'Reaction game',left:'Android game',right:'Local multiplayer'
+  });
+  assert.deepEqual(topicLabelsForProject('anskar-grotzschnapf'),{
+    top:'Generative art',left:'Poetry',right:'Digital prints'
+  });
+  assert.deepEqual(topicLabelsForProject('morkahjaworld'),{
+    top:'World project',left:'Named repository',right:'Details to explore'
+  });
+});
+test('ambient marker choice cycles without repeating the previous point',()=>{
+  for(const previous of TOPIC_POINTS){
+    for(const fraction of [0,.25,.5,.75,1]){
+      const point=chooseAmbientPoint(previous,fraction);
+      assert.ok(TOPIC_POINTS.includes(point));
+      assert.notEqual(point,previous);
+    }
+  }
+  assert.equal(chooseAmbientPoint(null,0),'top');
+  assert.equal(chooseAmbientPoint(null,.5),'left');
+  assert.equal(chooseAmbientPoint(null,.99),'right');
 });

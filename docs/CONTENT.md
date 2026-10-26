@@ -11,7 +11,7 @@ Content must be editable by humans or authorized AI agents without rewriting the
 - status: idea / prototype / in-development / released / archived
 - categories and tags
 - portal: logo/art asset, alt text, project-specific engraving theme
-- infoPoints: up to four contextual facts (what / why / who / notable detail)
+- infoPoints: three currently planned short flavor hints (above/left/right); former four-point plan superseded. Include curation evidence and review status.
 - modules: ordered set of typed preview/detail sources
 - links: official sources, repository, demos, releases with explicit labels
 - created / updated dates only when supported by records
