@@ -20,7 +20,8 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 - [x] Implement pointer-event mouse/touch dragging, keyboard pan, and reset (desktop pointer tested, real touch pending).
 - [x] Implement bounded DOM tile recycling, keeping stable logical coordinates (unit tested and browser preview checked).
 - [x] Prototype clockwise spiral-first project assignment with visibility-aware source identity recycling; fill the viewport by repeating the original project library when necessary. Ten pure-placement tests passed in isolation.
-- [ ] Creator review of spiral order and project identity uniqueness while panning and during autonomous line shifts. The full Astro build and physical device checks remain outstanding.
+- [x] Creator visually approved the initial 45-project spiral on desktop, describing the result as looking fantastic (2026-10-26).
+- [ ] Verify project uniqueness and stable identity during extended panning and ongoing autonomous shifts; full Astro build and physical-device checks remain outstanding.
 
 **Creator's first desktop acceptance test (2026-10-26):** Local Astro 7.4.2 server returned the page successfully. On the creator's desktop, the centered BABUNI.DEV tile appeared correctly, mouse dragging felt smooth and appropriately paced, and the grid could be dragged indefinitely without encountering an edge. This verifies the manual desktop experience by user observation; physical phone/tablet, resizing, automated shift mechanics, and reduced-motion tests remain open.
 - [ ] Prove responsive coverage on phone, laptop, and wide desktop.
@@ -74,3 +75,5 @@ Update CHANGELOG for implemented changes; DEVLOG for context and experiments; DE
 **Speed tuning (2026-10-26):** The creator requested doubling the mouse/touch and arrow-key movement speeds. The new tuning is implemented (880 and 260 CSS px/s maximum respectively) with proportionally doubled acceleration/deceleration. Hands-on approval and fresh local tests remain pending.
 
 **45-identity visual check (2026-10-26):** Added demo projects through PROJECT 45 and tests for uniqueness across all 45 cells initially visible at 1920×1080. Updated two stale control tests from the creator's preceding 28/30 run. Full post-change suite and visual inspection are pending.
+
+**Creator checkpoint (2026-10-26):** Initial spiral visual arrangement approved with 45 demo identities. Before the first stone portal, prioritize fresh `npm run test:grid` and `npm run build`, a short real desktop shift/recycling check, and keyboard/reduced-motion checks. Physical phone and laptop responsiveness can remain a later verification track, reflecting the creator's desktop-first preference. Current control ceilings in code were doubled again to 1760 CSS px/s pointer and 520 CSS px/s keyboard; older historical roadmap figures remain as records of previous experiments.
