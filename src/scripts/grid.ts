@@ -1,6 +1,7 @@
 import {modulesForProject} from '../lib/project-content';
 import {selectModules,MODULE_OFFSETS,moduleRevealPlan} from '../lib/project-modules';
 import {renderModulePreview} from './module-preview';
+import {openBigBloom} from './big-bloom';
 import {occupiedCell,restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
@@ -40,6 +41,8 @@ if (viewport && world && resetButton && status) {
   let pendingChoice:ProjectChoice|null=null;
   let centering:{fromX:number;fromY:number;toX:number;toY:number;started:number|null}|null=null;
   let centerFrame:number|null=null;
+  let bigBloomOpen=false;
+  let pendingBigBloom:(()=>void)|null=null;
   let bloomModule:HTMLElement|null=null;
   let bloomAnchor:CellCoordinate|null=null;
   let bloomModules:HTMLElement[]=[];
@@ -240,13 +243,14 @@ if (viewport && world && resetButton && status) {
       },{once:true});
     }
   }
-  function rebuildPool():void {
+  function rebuildPool(preserveBloom=false):void {
+    if(bigBloomOpen&&!preserveBloom)return;
     const rect=surface.getBoundingClientRect();
     if(!rect.width||!rect.height) return;
     // ResizeObserver repeats the initial size; never rebuild/replay for that.
     if(rect.width===viewportWidth&&rect.height===viewportHeight&&slots.length)return;
     cancelIntro();
-    stopSelection(false);
+    if(!preserveBloom)stopSelection(false);
     hideTopic();
     viewportWidth=rect.width;viewportHeight=rect.height;
     tileSize=tileSizeForWidth(rect.width);
@@ -262,7 +266,8 @@ if (viewport && world && resetButton && status) {
       slots.push(slot); populate(slot,firstColumn+x,firstRow+y);
       fragment.appendChild(element);
     }
-    layer.replaceChildren(fragment);
+    layer.replaceChildren(fragment,...bloomModules);
+    bloomModules.forEach((panel,index)=>{panel.style.left=bloomCells[index].column*tileSize+'px';panel.style.top=bloomCells[index].row*tileSize+'px';});
     updateField(true);
     if(!introPlayed){
       introPlayed=true;
@@ -364,7 +369,8 @@ if (viewport && world && resetButton && status) {
   }
   function startRound():void {
     timer=null;
-    if(centering||pendingChoice||bloomClosingTimer!==null){
+    if(bigBloomOpen){return;}
+    if(centering||pendingChoice||pendingBigBloom||bloomClosingTimer!==null){
       nextRound(1000);
       return;
     }
@@ -434,6 +440,7 @@ if (viewport && world && resetButton && status) {
     updateField(true);
     paintMovement(0);
     surface.classList.remove('is-autoshifting');
+    if(pendingBigBloom){const open=pendingBigBloom;pendingBigBloom=null;open();return;}
     if(heading)heading.textContent=selectedChoice?'Exploring project':'Living grid prototype';
     if(closeAfterShift){
       const next=closeAfterShift.next;closeAfterShift=null;
@@ -450,7 +457,7 @@ if (viewport && world && resetButton && status) {
     }
   }
   function resumeMovement():void {
-    if(!moving||moving.pausedAt===null||activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)||document.hidden)return;
+    if(bigBloomOpen||!moving||moving.pausedAt===null||activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)||document.hidden)return;
     moving.started+=performance.now()-moving.pausedAt;
     moving.pausedAt=null;
     surface.classList.add('is-autoshifting');
@@ -486,6 +493,7 @@ if (viewport && world && resetButton && status) {
    * immediately while the old right-hand tiles slide home.
    */
   function stopSelection(animateReturn=true,nextChoice:ProjectChoice|null=null):void {
+    pendingBigBloom=null;surface.classList.remove('is-big-bloom-waiting');
     const wasActive=!!selectedChoice||!!centering||!!bloomModule||!!pendingChoice;
     const hadBloom=!!bloomModule;
     if(hadBloom&&moving&&animateReturn){
@@ -564,7 +572,7 @@ if (viewport && world && resetButton && status) {
     highlightSelection();
     layer.getBoundingClientRect();
     bloomModules=modules.map((module,index)=>{
-      const panel=renderModulePreview(module,project.name);
+      const panel=renderModulePreview(module,project.name,()=>requestBigBloom(module.id));
       panel.style.left=(bloomCells[index].column*tileSize)+'px';
       panel.style.top=(bloomCells[index].row*tileSize)+'px';
       layer.appendChild(panel);return panel;
@@ -576,7 +584,7 @@ if (viewport && world && resetButton && status) {
       close.textContent='Close';close.setAttribute('aria-label','Close '+project.name);
       close.addEventListener('click',event=>{
         event.stopPropagation();stopSelection();surface.focus({preventScroll:true});
-      });bloomModule.append(close);
+      });bloomModule.insertBefore(close,bloomModule.querySelector('.bloom-read-more'));
     }
     paintMovement(0);
     // Reserve the entire footprint first; reveal previews only after the
@@ -593,6 +601,31 @@ if (viewport && world && resetButton && status) {
       for(const slot of slots)slot.element.style.removeProperty('transition');
       if(moving)resumeMovement();else nextRound(1500);
     },prefersReduced.matches?0:BLOOM_SHIFT_DURATION_MS);
+  }
+
+  function requestBigBloom(moduleId:string):void {
+    if(bigBloomOpen||closeAfterShift||!selectedChoice||!bloomModule||bloomClosingTimer!==null)return;
+    const enter=()=>{
+      if(!selectedChoice||!bloomModule)return;
+      const tile=locate(selectedChoice),project=demoProjects.find(item=>item.id===selectedChoice!.projectId);
+      if(!project)return;
+      bigBloomOpen=true;surface.classList.remove('is-big-bloom-waiting');
+      if(timer!==null){clearTimeout(timer);timer=null;}
+      heldArrows.clear();manualPan=createManualPanState();hideTopic();
+      layer.querySelectorAll('video').forEach(video=>video.pause());
+      openBigBloom(project,modulesForProject(project.id,project.shortSummary),moduleId,
+        tile?.element.getBoundingClientRect()??surface.getBoundingClientRect(),()=>{
+          rebuildPool(true);bigBloomOpen=false;
+          if(bloomAnchor){const target=centeredPan(bloomAnchor,tileSize);panX=target.x;panY=target.y;updateField();}
+          const trigger=bloomModules.find(panel=>panel.dataset.moduleId===moduleId)?.querySelector<HTMLButtonElement>('.bloom-read-more');
+          (trigger??surface).focus({preventScroll:true});
+          // Native dialog focus restoration can scroll an overflow-hidden
+          // ancestor. Camera transforms exclusively own grid positioning.
+          surface.scrollTop=0;surface.scrollLeft=0;nextRound(restWait);
+        });
+    };
+    if(moving){pendingBigBloom=enter;surface.classList.add('is-big-bloom-waiting');liveStatus.textContent='Waiting for the current shift before opening big bloom.';resumeMovement();}
+    else enter();
   }
 
   /** Stage 1: move the grid to center the exact original project source.
@@ -687,7 +720,7 @@ if (viewport && world && resetButton && status) {
     // Only suppress during entrance/closing and active user input.
     const bloomTransitioning=(selectedChoice!==null&&!bloomModule)
       ||(bloomModule!==null&&!bloomModule.classList.contains('is-open'));
-    const blocked=document.hidden||prefersReduced.matches
+    const blocked=bigBloomOpen||document.hidden||prefersReduced.matches
       ||pendingChoice!==null||centering!==null||bloomClosingTimer!==null
       ||bloomTransitioning||activePointer!==null||heldArrows.size>0
       ||panIsMoving(manualPan)||activeTopic!==null||introPending>0
@@ -866,6 +899,7 @@ if (viewport && world && resetButton && status) {
     }
   });
   window.addEventListener('keydown',event=>{
+    if(bigBloomOpen)return;
     if(event.key==='Escape'&&(selectedChoice||pendingChoice)){
       event.preventDefault();
       stopSelection();
@@ -904,6 +938,6 @@ if (viewport && world && resetButton && status) {
   });
   nextRound(firstWait);
   scheduleAmbient(AMBIENT_INTERVAL_MS);
-  new ResizeObserver(rebuildPool).observe(surface);
+  new ResizeObserver(()=>rebuildPool()).observe(surface);
   rebuildPool();
 }

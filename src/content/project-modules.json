@@ -74,52 +74,33 @@
       "credit": "Babuni.dev supplied these visual development records."
     },
     {
-      "id": "video-grid-motion",
+      "id": "videos",
       "type": "video",
-      "title": "Living grid",
-      "preview": "Recorded row and column movement in an earlier grid prototype.",
-      "video": {
-        "src": "/media/babuni-dev/videos/grid-motion.mp4",
-        "poster": "/media/babuni-dev/videos/grid-motion.jpg",
-        "title": "Living grid"
-      },
-      "credit": "Recording supplied by Babuni.dev. Web derivative crops browser chrome; the original is retained locally."
-    },
-    {
-      "id": "video-column-shifts",
-      "type": "video",
-      "title": "Shifting columns",
-      "preview": "A supplied recording of vertical plate movement.",
-      "video": {
-        "src": "/media/babuni-dev/videos/column-shifts.mp4",
-        "poster": "/media/babuni-dev/videos/column-shifts.jpg",
-        "title": "Shifting columns"
-      },
-      "credit": "Recording supplied by Babuni.dev. Web derivative crops browser chrome; the original is retained locally."
-    },
-    {
-      "id": "video-bloom-motion",
-      "type": "video",
-      "title": "Movement study",
-      "preview": "An earlier motion study from the supplied visual documentation.",
-      "video": {
-        "src": "/media/babuni-dev/videos/bloom-motion.mp4",
-        "poster": "/media/babuni-dev/videos/bloom-motion.jpg",
-        "title": "Movement study"
-      },
-      "credit": "Recording supplied by Babuni.dev. Web derivative crops browser chrome; the original is retained locally."
-    },
-    {
-      "id": "video-small-bloom",
-      "type": "video",
-      "title": "Small bloom recording",
-      "preview": "A supplied recording showing project content opening beside its tile.",
-      "video": {
-        "src": "/media/babuni-dev/videos/small-bloom.mp4",
-        "poster": "/media/babuni-dev/videos/small-bloom.jpg",
-        "title": "Small bloom recording"
-      },
-      "credit": "Recording supplied by Babuni.dev. Web derivative crops browser chrome; the original is retained locally."
+      "title": "Videos",
+      "preview": "A collection of recordings from the development of Babuni.dev.",
+      "videos": [
+        {
+          "src": "/media/babuni-dev/videos/grid-motion.mp4",
+          "poster": "/media/babuni-dev/videos/grid-motion.jpg",
+          "title": "Living grid"
+        },
+        {
+          "src": "/media/babuni-dev/videos/column-shifts.mp4",
+          "poster": "/media/babuni-dev/videos/column-shifts.jpg",
+          "title": "Shifting columns"
+        },
+        {
+          "src": "/media/babuni-dev/videos/bloom-motion.mp4",
+          "poster": "/media/babuni-dev/videos/bloom-motion.jpg",
+          "title": "Movement study"
+        },
+        {
+          "src": "/media/babuni-dev/videos/small-bloom.mp4",
+          "poster": "/media/babuni-dev/videos/small-bloom.jpg",
+          "title": "Small bloom recording"
+        }
+      ],
+      "credit": "Recordings supplied by Babuni.dev. Current local web derivatives crop browser chrome. YouTube sources can replace them when supplied."
     },
     {
       "id": "source",

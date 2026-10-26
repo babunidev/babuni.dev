@@ -32,10 +32,10 @@ Visitors can drag the entire field in any direction. Visual tiles are recycled o
 
 1. **Grid:** colored portals and engraved titles. Three small glowing points (above, left, right of the portal) can reveal very brief topic/flavor snippets. The previous four-point idea was later revised by Babuni.dev.
 2. **Small bloom:** first click or tap. The selected tile remains the anchor. Neighboring tiles physically glide aside; the space of one or more adjacent *tile cells* becomes introductory project modules. The rest of the grid stays present and slows down. The open bloom travels with the grid during panning; selecting another project closes the old one before opening the next.
-3. **Full bloom:** a second activation commits to the selected project. All other project tiles disappear. The original tile stays near the center, with simple readable media and information modules unfolding around it.
+3. **Full bloom / big bloom:** activate a small-bloom module or its Read more control. All other project tiles disappear. The project portal moves to the top left as a one-step back control. The chosen module is prominent in the draggable field, with all other populated modules arranged around it and revealed in random succession.
 4. **Expanded module:** selecting a text, image, video, or file module opens an appropriate detailed view. Text scrolls normally; image galleries are freely browsable, with a prominent center image. A separate fullscreen image control displays the art without captions or UI.
 
-The central portal in full bloom also closes the project, returning to the grid.
+Navigation returns one level at a time: expanded module → big bloom → small bloom → grid. The small-bloom center tile closes that bloom; entering big bloom requires activating a module. The big-bloom field is navigated by dragging, while long text scrolls normally in detail. Each project has one Videos collection module rather than a module per recording.
 
 ## Information points
 

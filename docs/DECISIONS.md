@@ -292,3 +292,12 @@ The initial five editorial families reuse four renderer types: journal/history i
 ## 2026-10-26 — Eight modules around the center
 
 **Status: Implemented; supersedes the earlier nine-preview interpretation. Babuni.dev decided:** Up to eight surrounding previews plus the center project form a 3×3 square. **AI execution:** Cap eight and delete the extra slot at (2,0). Keep random sampling from larger populated catalogs and the same reveal timing; fewer populated modules still reserve fewer cells.
+
+
+## 2026-10-26 — Draggable big bloom and module detail
+
+**Status: Implemented, human-confirmed.** Enter big bloom by activating a small-bloom module/Read more; land on its intro, then activate again for detail. Small-bloom center tile remains close. Big-bloom project portal sits at top left and returns one step to centered small bloom. Detail Back/Escape returns to the same big-bloom camera. This supersedes previous second-center-click entry and full-bloom-to-grid descriptions.
+
+**Babuni.dev decided:** Drag navigation in big bloom; normal scrolling in text detail. All populated modules appear progressively, not just the eight sampled previews. One Videos collection per project. YouTube migration is deferred until links exist.
+
+**AI implementation choices:** Separate modal project field over retained grid, distinct equal-size card slots around the chosen center, randomized remaining assignment/reveal order once per entry, and 720 ms portal travel reusing existing centering timing. Hidden grid shifts suspend after the current normal-tempo shift finishes; there is no acceleration. Layout and content identities remain separate.

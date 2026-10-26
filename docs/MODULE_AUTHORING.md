@@ -2,7 +2,7 @@
 
 ## Current stage
 
-The small bloom renders content previews, not the future full-page expanded reader. Its project tile stays centered initially; up to eight populated modules reserve real neighboring cells and reveal in a shuffled sequence. The eight immediate neighbors form a 3×3 square with the anchor in the middle. Pan to reach modules outside a small viewport. Reopening samples again; a selection is stable while open. Empty definitions do not render or reserve cells.
+The small bloom renders content previews. Each Read more opens the draggable big bloom focused on that module; another Read more opens its full-page detail. Its project tile stays centered initially; up to eight populated modules reserve real neighboring cells and reveal in a shuffled sequence. The eight immediate neighbors form a 3×3 square with the anchor in the middle. Pan to reach modules outside a small viewport. Reopening samples again; a selection is stable while open. Empty definitions do not render or reserve cells.
 
 Project definitions live in `src/content/project-modules.json`, keyed by stable project ID. Module IDs are unique within a project and independent of position. The content catalog can contain more than eight entries.
 
@@ -21,22 +21,22 @@ Keep original visual documentation in its source folder. Only selected website-r
 
 All modules have `id`, `type`, `title`, `preview`, and optional `source`/`credit` metadata.
 
-- **Text:** `body` holds plain text, or `document` references one of the local document sources registered in `src/lib/project-content.ts`. The provider resolves the real Markdown into `body`; the small card displays the curated preview. Concepts, architecture, journals, changelogs and collaboration records reuse this type. Full text is available in the data for a later expanded reader.
+- **Text:** `body` holds plain text, or `document` references one of the local document sources registered in `src/lib/project-content.ts`. The provider resolves the real Markdown into `body`; the small card displays the curated preview. Concepts, architecture, journals, changelogs and collaboration records reuse this type. Full text is rendered in the expanded reader; basic headings, paragraphs, lists, code blocks and HTTP(S) links are supported. Relative document links remain text until document routing exists.
 - **Gallery:** `images` contains `{src, alt, caption?}` entries. The preview shows one image with a Next image control where applicable.
-- **Video:** `video` contains `{src, poster?, title}` for a local/native clip, or `{embed, title}` for a supported external player. Embed URLs must be HTTPS `www.youtube-nocookie.com/embed/<id>` or `player.vimeo.com/video/<id>`. External frames load only after pressing Load video.
+- **Video collection:** `videos` is an array of video records, one project collection module. Legacy `video` is accepted for a single record. Each record contains `{src, poster?, title}` for a local/native clip, or `{embed, title}` for a supported external player. Embed URLs must be HTTPS `www.youtube-nocookie.com/embed/<id>` or `player.vimeo.com/video/<id>`. External frames load only after pressing Load video.
 - **Resources:** `links` contains `{label, href}` entries. Resource destinations open on explicit activation.
 
 An empty `body`, empty `images`/`links`, or absent video source is intentionally empty. Do not add filler text simply to make an empty module appear. Button Game has exactly five populated definitions and four empty definitions; its media is not invented. Other provisional projects keep one summary preview from their existing catalog description.
 
 ## First content sets and provenance
 
-BABUNI.DEV has twelve populated modules: overview, concept, journal, changelog, architecture, collaboration, gallery, four recordings and repository resources. Each opening selects eight without replacement. Button Game has overview, play/combinations, Android Wi-Fi play, development story and source/documentation. Its editorial text was grounded in public README, CONCEPT, journal and architecture documents inspected on 2026-10-26. These are curated snapshots with source links, not an automatic live feed or independent gameplay/release verification.
+BABUNI.DEV has nine populated modules: overview, concept, journal, changelog, architecture, collaboration, gallery, one Videos collection containing four recordings, and repository resources. Each opening selects eight without replacement. Button Game has overview, play/combinations, Android Wi-Fi play, development story and source/documentation. Its editorial text was grounded in public README, CONCEPT, journal and architecture documents inspected on 2026-10-26. These are curated snapshots with source links, not an automatic live feed or independent gameplay/release verification.
 
 ## Verification
 
 Run `npm run test:grid` and `npm run build`. Catalog tests check populated counts, linked document/media existence, random sampling, unique identities, stagger bounds and embed URL validation. Geometry tests cover one through eight module footprints, stationary anchors, reversible mapping, no overlapping expansion and straight vertical shift endpoints.
 
-The expanded page layout is still open for refinement: fixed left-content/right-selector panes versus larger scrolling modules was discussed by Babuni.dev, not finalized or implemented in this stage.
+Big bloom is now a draggable field of larger intro cards. It contains every populated module, uncapped; the selected module occupies the center and the others receive shuffled surrounding slots once per entry. Its top-left portal returns to the retained small bloom. Detail views scroll normally and return to the same camera position. YouTube upload/URL migration is deferred by Babuni.dev; existing local recordings remain playable.
 
 
 ## 2026-10-26 — Button Game portal artwork

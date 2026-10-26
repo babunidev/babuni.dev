@@ -242,3 +242,12 @@ Media is versioned in GitHub but served by the website host. Four selected origi
 ## 2026-10-26 — Eight modules around the center
 
 **Current rule:** `MAX_BLOOM_MODULES=8`; `MODULE_OFFSETS` contains exactly the eight immediate neighbors, excluding the center. Earlier nine-preview descriptions are historical and superseded. Generic vacancy mapping and scheduler are unchanged. Tests cover one through eight reserved cells and assert the exact square perimeter.
+
+
+## 2026-10-26 — Draggable big bloom and module detail
+
+`lib/big-bloom.ts` filters content and lays out every populated module, without the small-preview cap. It fixes the selected identity at cell (0,0), shuffles the remainder and assigns unique square-ring cells. `scripts/big-bloom.ts` owns a separate camera, native project dialog and nested detail dialog. The grid/small-bloom DOM remains intact and inert beneath the modal. Reveal timers/ResizeObserver/media clean up on exit; details restore focus and retain the camera. Pointer capture begins only after 9px drag intent, suppressing activation after dragging; embedded controls are excluded. No wheel pan interception is installed.
+
+`grid.ts` queues big-bloom entry until any active shift completes with its original duration, cancels pending entry on selection/close, and suspends further rounds while big bloom is present. Return recenters the retained anchor/sample; a viewport resize during big bloom defers the grid rebuild until return and preserves module DOM during that rebuild. Existing small-bloom pan and shift geometry remain separate.
+
+`ModuleVideo` and `videosForModule` support a project-level `videos` array plus legacy single `video`. A preview shows the first recording and collection count; detail renders the collection with deliberate playback, no autoplay and preload none. External player frames require explicit loading and existing allowlist validation. The document reader builds text nodes/HTTP(S) links and basic blocks; raw HTML is never executed. Relative source-document routes and rich Markdown tables/inline formatting are not implemented.

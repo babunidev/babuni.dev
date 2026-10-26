@@ -129,3 +129,10 @@ Babuni.dev supplied `public/portal-content/PortalContentButtonGame.png`; copied 
 ## 2026-10-26 — Eight modules around the center
 
 **Babuni.dev correction:** Display at most eight populated modules around the project tile. This supersedes nine-preview descriptions above. BABUNI.DEV retains its twelve definitions, sampling eight per opening; Button Game retains five populated modules. No content was deleted.
+
+
+## 2026-10-26 — Draggable big bloom and module detail
+
+**Babuni.dev requested:** A single Videos home for all project recordings, used in small and big bloom. **Implemented:** Four BABUNI.DEV video definitions consolidated into `videos`, containing all four supplied records. BABUNI.DEV now has nine populated modules (eight sampled in small bloom, all nine in big bloom); Button Game retains five, with empty definitions excluded. Source text, galleries, credits and video assets remain intact. Expanded readers use real resolved bodies rather than only the curated preview sentence. Basic document blocks render; advanced Markdown styling and relative-document navigation remain future improvements.
+
+Babuni.dev deferred YouTube migration because links are not available. Existing local MP4 playback remains; no videos were uploaded and no claim of YouTube-backed traffic is made.

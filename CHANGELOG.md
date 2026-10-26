@@ -246,3 +246,15 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Fixed
 - Cap small-bloom previews at eight and remove the extra right-hand slot, forming a 3×3 square including the project tile. Larger catalogs still sample randomly; five-module projects remain five.
+
+
+## 2026-10-26 — Draggable big bloom and module detail
+
+### Added
+- Bottom-right Read more controls and module-body activation in small bloom; enter a project-only draggable big bloom focused on the selected intro.
+- All populated project modules in distinct surrounding slots with randomized sequential reveals; top-left project portal returns to the retained small bloom.
+- A second Read more opens full-page document, image-gallery, video-collection or resource detail; Back/Escape returns one level, preserving big-bloom camera position.
+- Keyboard pan/Home, native modal focus containment, reduced-motion handling and image-only browser fullscreen controls.
+### Changed
+- BABUNI.DEV’s four recordings now share one Videos module, leaving nine populated modules total. Small bloom still samples eight; Button Game still has five.
+- Big-bloom entry waits for an active shift at its original tempo. Underlying grid motion is suspended while exploring big bloom and resumes after returning.

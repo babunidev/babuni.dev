@@ -39,19 +39,24 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 - [ ] Test against clutter on dense grids.
 
 ## Milestone 3 — Small bloom
-- [ ] Select and focus a tile instance.
-- [ ] Reserve adjacent grid cell(s) for modules; move displaced neighbors.
-- [ ] Keep neighboring project tiles visible while reducing shift speed.
-- [ ] Support switching selection and graceful collapse.
-- [ ] Preserve identity when wrapped copies exist.
+- [x] Select and focus a tile instance (functional prototype).
+- [x] Reserve adjacent grid cells for up to eight modules; move displaced neighbors.
+- [x] Keep neighboring tiles visible and allow nonconflicting shifts at the approved calm tempo.
+- [x] Support switching selection and graceful collapse.
+- [x] Preserve selected source identity across recycled instances (tests and sampled browser checks; extended acceptance remains).
+
+Functional prototype built; prolonged/device acceptance remains separate from implementation.
 
 ## Milestone 4 — Full bloom and viewers
-- [ ] Remove unrelated tiles without losing navigation context.
-- [ ] Keep central portal tile as anchor and exit.
-- [ ] Compose rich preview modules from project content.
-- [ ] Expand text to accessible scrollable reader.
-- [ ] Build scrollable image gallery with fixed-size central image and optional art-only fullscreen.
-- [ ] Embed video previews and file references safely.
+- [x] Show a project-only draggable big bloom, retaining the underlying grid/small bloom.
+- [x] Move project portal to top left as a one-step return to centered small bloom.
+- [x] Compose all populated intro modules; focus the clicked preview and reveal others in random succession.
+- [x] Expand text into a scrollable reader with basic document formatting.
+- [x] Provide a scrollable image collection and browser fullscreen control where supported.
+- [x] Provide deliberate video collection playback and source/resource links.
+- [ ] Complete native-phone, keyboard/reduced-motion, cross-browser/fullscreen and long-session acceptance; refine advanced document/gallery presentation.
+
+Functional prototype built; local video remains until YouTube links are supplied. Rich Markdown fidelity and final image-gallery composition are not declared complete.
 
 ## Milestone 5 — Content and automation
 - [ ] Define and validate project schema and MDX blocks.
@@ -149,3 +154,12 @@ Next: refine and implement expanded full-page module presentation and navigation
 ## 2026-10-26 — Eight modules around the center
 
 Built: corrected the small-bloom maximum to eight surrounding previews plus the center project (3×3 total), superseding the earlier nine-preview interpretation. Larger catalogs and randomized sequential reveal remain; full-page expansion is still future work.
+
+
+## 2026-10-26 — Draggable big bloom and module detail
+
+Implemented: four-level module navigation, draggable big bloom with all populated modules and selected intro centered, progressive shuffled reveals, top-left one-step return portal, full-page text/image/video/resource detail, keyboard navigation and media cleanup. Small bloom still samples eight and returns with its same content; no center-tile full-bloom shortcut.
+
+Content update: BABUNI.DEV has nine modules after grouping its four recordings into one Videos collection. Button Game remains five. YouTube hosting deferred by Babuni.dev until URLs are provided.
+
+Milestone 4 is a functional prototype, not a release-complete claim: native phone/cross-browser acceptance, long-session navigation, advanced document formatting, image presentation polish and production accessibility/performance review remain. Milestones 5/6 publishing/hosting work is not implied complete.

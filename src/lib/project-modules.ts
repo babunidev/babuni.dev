@@ -2,12 +2,17 @@
 export type ModuleType='text'|'gallery'|'video'|'resources';
 export interface ModuleImage {src:string;alt:string;caption?:string}
 export interface ModuleLink {label:string;href:string}
+export interface ModuleVideo {src?:string;embed?:string;poster?:string;title:string}
 export interface ProjectModule {
   id:string;type:ModuleType;title:string;preview:string;
   body?:string;images?:ModuleImage[];
-  video?:{src?:string;embed?:string;poster?:string;title:string};
+  video?:ModuleVideo;
+  videos?:ModuleVideo[];
   links?:ModuleLink[];
   source?:string;credit?:string;
+}
+export function videosForModule(module:ProjectModule):ModuleVideo[]{
+  return module.videos??(module.video?[module.video]:[]);
 }
 export const MAX_BLOOM_MODULES=8;
 export function safeEmbedUrl(value:string):string|null {
@@ -23,7 +28,7 @@ export function moduleHasContent(module:ProjectModule):boolean {
   switch(module.type){
     case 'text':return !!module.body?.trim();
     case 'gallery':return !!module.images?.some(image=>image.src.trim()&&image.alt.trim());
-    case 'video':return !!module.video?.src?.trim()||!!(module.video?.embed&&safeEmbedUrl(module.video.embed));
+    case 'video':return videosForModule(module).some(video=>!!video.src?.trim()||!!(video.embed&&safeEmbedUrl(video.embed)));
     case 'resources':return !!module.links?.some(link=>link.label.trim()&&link.href.trim());
   }
 }

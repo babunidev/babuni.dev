@@ -31,7 +31,7 @@ This document describes intended behavior; implementation must be separately ver
 | --- | --- | --- | --- |
 | Grid | Initial page, close project | All tiles, occasional bubbles | Activate tile |
 | Small bloom | Activate a tile | Portal anchor, adjacent cell-sized overview modules, other tiles displaced | Activate same tile again, switch tile, or close |
-| Full bloom | Re-activate selected tile | Center portal and complete project preview modules, other project tiles gone | Activate central tile to return to grid; activate module |
+| Full bloom / big bloom | Activate a small-bloom module or Read more | Top-left project portal, selected intro centered, all populated modules in a draggable field | Portal returns to small bloom; a module opens detail |
 | Module detail | Activate module | Full document, media gallery, video or download information | Explicit back to full bloom |
 
 Click/tap behaviors should be discoverable; provide visible back controls and keyboard routes. Avoid hijacking regular page scroll for state navigation.
@@ -265,3 +265,10 @@ Button Game now displays its supplied square PNG through the same centered circu
 ## 2026-10-26 — Eight modules around the center
 
 **Current rule, superseding earlier nine-module descriptions:** Up to eight previews occupy the immediate neighbors of the central project tile, forming a 3×3 square when full. No extra preview extends two cells right. Random sampling/order and all movement/reveal timing remain unchanged.
+
+
+## 2026-10-26 — Draggable big bloom and module detail
+
+**Current human-confirmed flow, superseding older full-bloom sections:** Small modules have bottom-right Read more. Their body also enters big bloom, except actual gallery/player/link controls. Big bloom displays a top-left project portal with a back label, an intro centered on the chosen module and all other populated intro cards around it. Positions are sampled once, revelations staggered using existing intervals. Cards never overlap. Mouse/finger drag navigates; keyboard arrows and Home provide an alternative. Another module activation/Read more opens detail. Text detail scrolls and selects normally; media controls do not pan the field. Back/Escape restores the previous level, preserving camera position. Portal return restores the same small-bloom sample and centers its project tile. Clicking that center tile closes small bloom.
+
+**AI geometry choice:** Larger equal-size intro cards on spaced square-ring cells, selected first at center and remaining assignments shuffled. This is an initial functional composition, not final visual polish. Portal travel reuses the existing centering duration. Fullscreen image mode uses the browser control; expanded text supports basic document formatting, not every Markdown extension.
