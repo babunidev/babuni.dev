@@ -1,7 +1,7 @@
 /** Viewport and tile dimensions are CSS pixels. */
 export interface GridGeometry {
   width: number; height: number; tileSize: number;
-  panX: number; panY: number; bufferCells: number;
+  panX: number; panY: number; bufferCells: number; columnBufferCells?: number;
 }
 export interface GridWindow {
   originX: number; originY: number;
@@ -20,9 +20,10 @@ export function tileSizeForWidth(width: number): number {
 /** Logical cell (0,0) starts exactly centered, then the field pans freely. */
 export function gridWindow(g: GridGeometry): GridWindow {
   const { width, height, tileSize: size, panX, panY, bufferCells } = g;
+  const columnBufferCells=g.columnBufferCells??bufferCells;
   if (!(width > 0 && height > 0 && size > 0) ||
       !Number.isFinite(panX) || !Number.isFinite(panY) ||
-      !Number.isInteger(bufferCells) || bufferCells < 0) {
+      !Number.isInteger(bufferCells) || bufferCells < 0 || !Number.isInteger(columnBufferCells) || columnBufferCells < 0) {
     throw new RangeError('Invalid viewport or grid geometry');
   }
   const originX = width / 2 - size / 2 + panX;
@@ -30,9 +31,9 @@ export function gridWindow(g: GridGeometry): GridWindow {
   const buffer = bufferCells * size;
   return {
     originX, originY,
-    firstColumn: Math.floor((-buffer - originX) / size),
+    firstColumn: Math.floor((-columnBufferCells*size - originX) / size),
     firstRow: Math.floor((-buffer - originY) / size),
-    columns: Math.ceil(width / size) + 2 * bufferCells + 2,
+    columns: Math.ceil(width / size) + 2 * columnBufferCells + 2,
     rows: Math.ceil(height / size) + 2 * bufferCells + 2
   };
 }

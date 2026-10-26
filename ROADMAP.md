@@ -48,9 +48,9 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 Functional prototype built; prolonged/device acceptance remains separate from implementation.
 
 ## Milestone 4 — Full bloom and viewers
-- [x] Show a project-only draggable big bloom, retaining the underlying grid/small bloom.
-- [x] Move project portal to top left as a one-step return to centered small bloom.
-- [x] Compose all populated intro modules; focus the clicked preview and reveal others in random succession.
+- [x] Grow big bloom inside the living grid with 2×2 modules and surrounding tiles.
+- [x] Retain the original-size project tile in the selected module’s lower-left quarter as a one-step return to centered small bloom.
+- [x] Compose all populated intros; center the chosen module and reveal others top-first clockwise, with additional rows extending down.
 - [x] Expand text into a scrollable reader with basic document formatting.
 - [x] Provide a scrollable image collection and browser fullscreen control where supported.
 - [x] Provide deliberate video collection playback and source/resource links.
@@ -163,3 +163,10 @@ Implemented: four-level module navigation, draggable big bloom with all populate
 Content update: BABUNI.DEV has nine modules after grouping its four recordings into one Videos collection. Button Game remains five. YouTube hosting deferred by Babuni.dev until URLs are provided.
 
 Milestone 4 is a functional prototype, not a release-complete claim: native phone/cross-browser acceptance, long-session navigation, advanced document formatting, image presentation polish and production accessibility/performance review remain. Milestones 5/6 publishing/hosting work is not implied complete.
+
+
+## 2026-10-26 — Big bloom grows inside the living grid
+
+Built revision of Milestone 4: big bloom integrated into the living grid with real 2×2 reservations, the original tile as lower-left Back, surrounding autonomous shifts, shared panning, top-first clockwise appearance and downward three-column overflow. Longer body excerpts and media-collection context now distinguish big previews from small teasers. Separate modal intro canvas/header are superseded; only full detail remains modal. Small-bloom sampling and full detail navigation are retained.
+
+Validation includes arbitrary larger catalogs in geometry tests; actual BABUNI.DEV currently has nine modules, so downward overflow is not claimed as observed with a larger real project. Native-device, prolonged shift/recycling and final visual acceptance remain open. No production deployment or YouTube migration is included.

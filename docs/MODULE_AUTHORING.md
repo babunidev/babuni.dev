@@ -36,7 +36,7 @@ BABUNI.DEV has nine populated modules: overview, concept, journal, changelog, ar
 
 Run `npm run test:grid` and `npm run build`. Catalog tests check populated counts, linked document/media existence, random sampling, unique identities, stagger bounds and embed URL validation. Geometry tests cover one through eight module footprints, stationary anchors, reversible mapping, no overlapping expansion and straight vertical shift endpoints.
 
-Big bloom is now a draggable field of larger intro cards. It contains every populated module, uncapped; the selected module occupies the center and the others receive shuffled surrounding slots once per entry. Its top-left portal returns to the retained small bloom. Detail views scroll normally and return to the same camera position. YouTube upload/URL migration is deferred by Babuni.dev; existing local recordings remain playable.
+Big bloom belongs to the same draggable living grid. Every module occupies 2×2 tile cells. It contains every populated module, uncapped; the chosen module is central and the others receive shuffled content assignments once per entry. Positions reveal top-first clockwise for the first nine, then extend down in three columns. The original-size project tile stays in the selected module’s lower-left quarter and returns to the retained small bloom. Text intros use up to 1,600 characters of real body content; galleries add captions/counts and Videos lists its recordings. Detail views scroll normally and return to the same camera position. YouTube upload/URL migration is deferred by Babuni.dev; existing local recordings remain playable.
 
 
 ## 2026-10-26 — Button Game portal artwork

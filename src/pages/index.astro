@@ -23,6 +23,7 @@ const title='babuni.dev — Living Grid Prototype';
       <span class="instruction">Drag or swipe to explore · Arrow keys also work</span>
       <button id="reset-view" type="button">Return to center</button>
     </div>
+    <div class="bloom-help"><button type="button" aria-label="Help exploring the bloom" aria-describedby="bloom-help-text">?</button><span id="bloom-help-text" role="tooltip">Drag or swipe to explore. Arrow keys move the grid. Read more opens detail. The project tile returns one step.</span></div>
     <div id="grid-status" class="sr-only" role="status" aria-live="polite"></div>
   </main>
   <script>
@@ -138,20 +139,24 @@ const title='babuni.dev — Living Grid Prototype';
   .video-item figcaption,.video-count{font:12px/1.4 system-ui,sans-serif;color:#c8c2cb}
   .video-item .bloom-media{max-height:none;min-height:0}
   .is-big-bloom-waiting .grid-tile--selected .tile-select::after{content:'';position:absolute;inset:4px;border:2px solid #f0cf91;animation:selection-wait 1600ms ease-in-out infinite}
-  .big-bloom{position:fixed;inset:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;border:0;padding:0;background:radial-gradient(ellipse at center,#333039,#17181d);color:#e9dfd2;overflow:hidden}
-  .big-bloom::backdrop,.module-detail::backdrop{background:#17181d}
-  .big-bloom-portal{position:absolute;z-index:4;left:16px;top:16px;width:112px;height:112px;padding:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:2px solid #b39973;background:#393837;color:#e9dfd2;cursor:pointer;transform-origin:top left;font:12px Georgia,serif}
-  .big-portal-aperture{display:block;width:64px;height:64px;border-radius:50%;overflow:hidden;border:4px solid #242329;box-shadow:0 0 0 2px #82786d}
-  .big-portal-aperture img{width:100%;height:100%;object-fit:cover}
-  .big-bloom-instructions{position:absolute;top:25px;left:150px;right:20px;font:13px/1.5 system-ui,sans-serif;color:#c8c2cb;pointer-events:none}
-  .big-bloom-stage{position:absolute;inset:144px 0 0;overflow:hidden;overflow:clip;touch-action:none;user-select:none;cursor:grab}
-  .big-bloom-stage.is-dragging{cursor:grabbing}
-  .big-bloom-world{position:absolute;top:0;left:0;will-change:transform}
-  .big-bloom-card{padding:24px;gap:14px;overflow:hidden}
-  .big-bloom-card .bloom-title{font-size:22px}
-  .big-bloom-card .bloom-summary{font-size:16px;max-height:90px}
-  .big-bloom-card .bloom-media{max-height:175px}
+  .grid-viewport.is-big-bloom{overflow:clip}
+  .experience:has(.is-big-bloom) .site-header,.experience:has(.is-big-bloom) .help-panel{display:none}
+  .is-bloom-opening .grid-tile--depth-transition{transition:transform 520ms cubic-bezier(.22,.75,.25,1)}
+  .grid-tile--big-anchor{z-index:4}
+  .big-bloom-card{padding:clamp(12px,calc(var(--tile-size) * .085),24px);gap:12px;overflow:hidden;transform-origin:top left}
+  .big-bloom-card .bloom-title{font-size:clamp(18px,calc(var(--tile-size) * .09),24px)}
+  .big-bloom-card .bloom-summary{font:400 clamp(12px,calc(var(--tile-size) * .067),16px)/1.55 system-ui,sans-serif;white-space:normal;max-height:none;overflow:visible}
+  .big-bloom-card .bloom-media{max-height:calc(var(--tile-size) * .85)}
   .big-bloom-card--selected{border-color:#e3c99b;box-shadow:inset 0 0 0 5px #49404a,0 0 24px #d8bd9133}
+  .big-bloom-card--selected .bloom-preview-content{flex:0 1 auto;max-height:calc(var(--tile-size) - 32px)}
+  .bloom-preview-credit,.bloom-collection-list{font:12px/1.5 system-ui,sans-serif;color:#b8afbc;margin:6px 0}
+  .bloom-collection-list{padding-left:20px}
+  .bloom-help{display:none;position:fixed;z-index:6;right:16px;bottom:16px;font:13px/1.5 system-ui,sans-serif}
+  .experience:has(.is-big-bloom) .bloom-help{display:block}
+  .bloom-help button{width:32px;height:32px;border-radius:50%;border:1px solid #a7977e;background:#242329;color:#e9dfd2;cursor:help}
+  .bloom-help span{display:none;position:absolute;right:0;bottom:40px;width:230px;padding:12px;background:#242329;border:1px solid #a7977e;color:#e9dfd2}
+  .bloom-help:hover span,.bloom-help:focus-within span{display:block}
+  .module-detail::backdrop{background:#17181d}
   .module-detail{position:fixed;inset:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;padding:24px clamp(18px,5vw,80px);border:0;background:#202027;color:#e9dfd2;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;user-select:text}
   .detail-back{position:sticky;top:0;z-index:2;width:max-content;font-size:14px;margin-bottom:24px}
   .module-detail h1,.module-detail-content{max-width:900px;margin-left:auto;margin-right:auto}

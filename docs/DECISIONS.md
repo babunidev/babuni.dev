@@ -301,3 +301,12 @@ The initial five editorial families reuse four renderer types: journal/history i
 **Babuni.dev decided:** Drag navigation in big bloom; normal scrolling in text detail. All populated modules appear progressively, not just the eight sampled previews. One Videos collection per project. YouTube migration is deferred until links exist.
 
 **AI implementation choices:** Separate modal project field over retained grid, distinct equal-size card slots around the chosen center, randomized remaining assignment/reveal order once per entry, and 720 ms portal travel reusing existing centering timing. Hidden grid shifts suspend after the current normal-tempo shift finishes; there is no acceleration. Layout and content identities remain separate.
+
+
+## 2026-10-26 — Big bloom grows inside the living grid
+
+**Status: Implemented, explicit Babuni.dev revision.** Big bloom shares the living grid and its pan controller; project tiles physically move aside and remain outside the footprint. Each module occupies 2×2 grid cells. The chosen module is central, with the original-size project tile in its lower-left quarter as one-step Back. This supersedes the separate full-page intro canvas and top-left portal clone. Only detail views remain modal.
+
+**Babuni.dev decided:** Top-first clockwise appearance like the site spiral, extension downward for catalogs exceeding nine, no instruction/header bar in big bloom, and more content at each discovery depth. **AI geometry choices:** Three module columns; selected top-left at `(anchor.column, anchor.row - 1)` so its lower-left cell is exactly the existing anchor. Exclude only that cell from vacancies; reserve all other covered cells. Preserve the same small sample on return. Keep randomized content assignment while ordering physical reveals. A question-mark tooltip offers optional guidance.
+
+**Alternatives:** Independent overlay canvas and hiding all other projects are superseded. Vertical/diagonal tile redistribution was unnecessary: the existing invertible horizontal row mapping clears every footprint and protects actual occupied columns for autonomous shifts.

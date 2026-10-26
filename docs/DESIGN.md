@@ -31,7 +31,7 @@ This document describes intended behavior; implementation must be separately ver
 | --- | --- | --- | --- |
 | Grid | Initial page, close project | All tiles, occasional bubbles | Activate tile |
 | Small bloom | Activate a tile | Portal anchor, adjacent cell-sized overview modules, other tiles displaced | Activate same tile again, switch tile, or close |
-| Full bloom / big bloom | Activate a small-bloom module or Read more | Top-left project portal, selected intro centered, all populated modules in a draggable field | Portal returns to small bloom; a module opens detail |
+| Full bloom / big bloom | Activate a small-bloom module or Read more | Shared living grid with 2×2 modules; selected intro centered; original project tile in its lower-left quarter | Original project tile returns to small bloom; a module opens detail |
 | Module detail | Activate module | Full document, media gallery, video or download information | Explicit back to full bloom |
 
 Click/tap behaviors should be discoverable; provide visible back controls and keyboard routes. Avoid hijacking regular page scroll for state navigation.
@@ -272,3 +272,12 @@ Button Game now displays its supplied square PNG through the same centered circu
 **Current human-confirmed flow, superseding older full-bloom sections:** Small modules have bottom-right Read more. Their body also enters big bloom, except actual gallery/player/link controls. Big bloom displays a top-left project portal with a back label, an intro centered on the chosen module and all other populated intro cards around it. Positions are sampled once, revelations staggered using existing intervals. Cards never overlap. Mouse/finger drag navigates; keyboard arrows and Home provide an alternative. Another module activation/Read more opens detail. Text detail scrolls and selects normally; media controls do not pan the field. Back/Escape restores the previous level, preserving camera position. Portal return restores the same small-bloom sample and centers its project tile. Clicking that center tile closes small bloom.
 
 **AI geometry choice:** Larger equal-size intro cards on spaced square-ring cells, selected first at center and remaining assignments shuffled. This is an initial functional composition, not final visual polish. Portal travel reuses the existing centering duration. Fullscreen image mode uses the browser control; expanded text supports basic document formatting, not every Markdown extension.
+
+
+## 2026-10-26 — Big bloom grows inside the living grid
+
+**Current human-confirmed rule, superseding the earlier modal/top-left design:** Big bloom is part of the living grid, with no header strip or persistent instructions covering content. Every module is exactly twice a normal tile’s width and height. The clicked preview transits to the selected central module. The original project tile retains its normal responsive size in that module’s lower-left quarter; Read more occupies the opposite corner. The selected intro’s text stays above the anchor area. Only this deliberate anchor/panel overlap is allowed.
+
+All populated modules are available. The first nine positions are center, top, upper-right, right, lower-right, bottom, lower-left, left, upper-left. The selected module appears through its transit; neighbors follow the top-first clockwise path. Additional modules extend down in three columns. Module identities are shuffled into the remaining positions once per entry, not while reading. Grid tiles remain around the modules, with nonconflicting normal-tempo shifts and the established grab/pull navigation. Text-heavy full-page detail scrolls normally. Big previews expose more actual body text and collection context. The corner question mark reveals help on hover/focus; it does not reserve a bar.
+
+Entry/return wait for current shifts, and reserve/restore space before revealing panels. The original tile backs out to the exact same small-bloom sample and recenters. Selecting a different project keeps the established close-first behavior. Existing normal-grid header/help styling is unchanged; it is hidden only while big bloom is open.

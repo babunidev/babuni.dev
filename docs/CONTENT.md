@@ -136,3 +136,8 @@ Babuni.dev supplied `public/portal-content/PortalContentButtonGame.png`; copied 
 **Babuni.dev requested:** A single Videos home for all project recordings, used in small and big bloom. **Implemented:** Four BABUNI.DEV video definitions consolidated into `videos`, containing all four supplied records. BABUNI.DEV now has nine populated modules (eight sampled in small bloom, all nine in big bloom); Button Game retains five, with empty definitions excluded. Source text, galleries, credits and video assets remain intact. Expanded readers use real resolved bodies rather than only the curated preview sentence. Basic document blocks render; advanced Markdown styling and relative-document navigation remain future improvements.
 
 Babuni.dev deferred YouTube migration because links are not available. Existing local MP4 playback remains; no videos were uploaded and no claim of YouTube-backed traffic is made.
+
+
+## 2026-10-26 — Big bloom grows inside the living grid
+
+Content depth is now progressive: small bloom retains curated teaser sentences; large text modules use up to 1,600 characters derived from the real resolved body, with full text still in detail. Large galleries add captions and counts; the Videos intro lists the supplied recordings and keeps the collection detail. Credits remain visible. No new content or YouTube URLs were fabricated. The catalog remains nine populated BABUNI.DEV modules and five Button Game modules; the latter’s empty definitions remain excluded. Larger future catalogs extend down instead of adding extra lateral rings.

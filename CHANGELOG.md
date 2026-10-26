@@ -258,3 +258,14 @@ Each future entry should include the change, its user-visible or technical effec
 ### Changed
 - BABUNI.DEV’s four recordings now share one Videos module, leaving nine populated modules total. Small bloom still samples eight; Button Game still has five.
 - Big-bloom entry waits for an active shift at its original tempo. Underlying grid motion is suspended while exploring big bloom and resumes after returning.
+
+
+## 2026-10-26 — Big bloom grows inside the living grid
+
+### Changed
+- Big bloom now reserves real space in the living grid instead of opening a separate modal canvas. Surrounding project tiles stay present and nonconflicting shifts continue.
+- Each large module spans exactly 2×2 tile cells. The original-size project tile occupies the selected module’s lower-left quarter as Back; Read more stays bottom right.
+- Selected preview transitions into the center; remaining modules reveal top-first clockwise. Collections larger than nine extend downward in three columns.
+- Large text previews expose longer source excerpts; image/video previews add collection context.
+### Removed
+- Big-bloom header strip, reduced top-left portal clone, separate camera and persistent instruction line. A small corner help tooltip replaces the instruction strip in big bloom.

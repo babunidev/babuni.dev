@@ -1,7 +1,8 @@
 import {modulesForProject} from '../lib/project-content';
 import {selectModules,MODULE_OFFSETS,moduleRevealPlan} from '../lib/project-modules';
 import {renderModulePreview} from './module-preview';
-import {openBigBloom} from './big-bloom';
+import {createModuleDetails} from './module-detail';
+import {bigBloomLayout,bigBloomVacancies,bigModuleCell,bigBloomRevealPlan} from '../lib/big-bloom';
 import {occupiedCell,restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
@@ -9,7 +10,7 @@ import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } 
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 import { demoProjects } from '../lib/demo-projects';
 import { topicLabelsForProject, TOPIC_POINTS, chooseAmbientPoint, topicRevealPlan, type TopicPoint } from '../lib/project-topics';
-import { introSequence, INTRO_SPAWN_STAGGER_MS } from '../lib/grid-intro';
+import { introSequence, INTRO_SPAWN_STAGGER_MS, INTRO_SPAWN_DURATION_MS } from '../lib/grid-intro';
 import { centeredPan, interpolateCenter,
   CENTER_DURATION_MS, BLOOM_SHIFT_DURATION_MS, AMBIENT_INTERVAL_MS,
   AMBIENT_VISIBLE_MS, AMBIENT_RETRY_MS, ambientInsets,
@@ -26,6 +27,7 @@ const status = document.querySelector<HTMLElement>('#grid-status');
 if (viewport && world && resetButton && status) {
   const surface=viewport, layer=world, reset=resetButton, liveStatus=status;
   const bufferCells=2;
+  let columnBufferCells=2;
   // First inventory entry is BABUNI.DEV; all 53 candidates remain provisional.
   const placement=new ProjectPlacement(demoProjects.length);
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
@@ -41,7 +43,10 @@ if (viewport && world && resetButton && status) {
   let pendingChoice:ProjectChoice|null=null;
   let centering:{fromX:number;fromY:number;toX:number;toY:number;started:number|null}|null=null;
   let centerFrame:number|null=null;
-  let bigBloomOpen=false;
+  let bigBloomOpen=false,bigTransitioning=false,detailOpen=false;
+  let bigLayout:ReturnType<typeof bigBloomLayout>=[];
+  let smallBloom:{panels:HTMLElement[];cells:ReturnType<typeof moduleVacancies>}|null=null;
+  let centerCompletion:(()=>void)|null=null;
   let pendingBigBloom:(()=>void)|null=null;
   let bloomModule:HTMLElement|null=null;
   let bloomAnchor:CellCoordinate|null=null;
@@ -57,6 +62,7 @@ if (viewport && world && resetButton && status) {
   let lastAmbientProjectId:string|null=null;
   let lastAmbientPoint:TopicPoint|null=null;
   let pointerDownSelect:HTMLButtonElement|null=null;
+  let pointerDownPanel:HTMLElement|null=null;
   let activeTopic:HTMLDivElement|null=null;
   const heldArrows=new Set<string>();
   let manualPan=createManualPanState();
@@ -72,6 +78,11 @@ if (viewport && world && resetButton && status) {
   const mobileTopics=matchMedia('(hover: none) and (pointer: coarse)');
   const heading=document.querySelector<HTMLElement>('.header-note');
   let timer:ReturnType<typeof setTimeout>|null=null;
+  const details=createModuleDetails(open=>{
+    detailOpen=open;
+    if(open){pauseBloomMedia();heldArrows.clear();manualPan=createManualPanState();pauseMovement();}
+    else{surface.scrollTop=0;surface.scrollLeft=0;resumeMovement();if(!moving)nextRound(restWait);}
+  });
 
   /** Direct exploration reveals all three snippets; an ambient hint lights
    * only one of the three diamonds. Never show multiple projects together.
@@ -148,6 +159,12 @@ if (viewport && world && resetButton && status) {
     });
   }
   function highlightSelection():void {
+    for(const slot of slots){
+      const anchor=bigBloomOpen&&!!bloomAnchor&&slot.column===bloomAnchor.column&&slot.row===bloomAnchor.row;
+      slot.element.classList.toggle('grid-tile--big-anchor',anchor);
+      const button=slot.element.querySelector<HTMLButtonElement>('.tile-select');
+      if(button){const label=button.dataset.exploreLabel;if(anchor)button.setAttribute('aria-label','Back to small bloom');else if(label)button.setAttribute('aria-label',label);}
+    }
     const choice=pendingChoice??selectedChoice;
     const waiting=!!moving&&(pendingChoice!==null||closeAfterShift!==null);
     for(const slot of slots){
@@ -212,7 +229,7 @@ if (viewport && world && resetButton && status) {
       }
     }
     const select=slot.element.querySelector<HTMLButtonElement>('.tile-select');
-    if(select)select.setAttribute('aria-label','Explore '+project.name+': '+TOPIC_POINTS.map(point=>topics[point]).join(', '));
+    if(select){select.dataset.exploreLabel='Explore '+project.name+': '+TOPIC_POINTS.map(point=>topics[point]).join(', ');select.setAttribute('aria-label',select.dataset.exploreLabel);}
   }
   /** The introduction only affects the first visible tiles, once on page load. */
   function cancelIntro():void {
@@ -243,19 +260,19 @@ if (viewport && world && resetButton && status) {
       },{once:true});
     }
   }
-  function rebuildPool(preserveBloom=false):void {
-    if(bigBloomOpen&&!preserveBloom)return;
+  function rebuildPool(preserveBloom=false,force=false):void {
+    preserveBloom=preserveBloom||bigBloomOpen;
     const rect=surface.getBoundingClientRect();
     if(!rect.width||!rect.height) return;
     // ResizeObserver repeats the initial size; never rebuild/replay for that.
-    if(rect.width===viewportWidth&&rect.height===viewportHeight&&slots.length)return;
+    if(!force&&rect.width===viewportWidth&&rect.height===viewportHeight&&slots.length)return;
     cancelIntro();
     if(!preserveBloom)stopSelection(false);
     hideTopic();
     viewportWidth=rect.width;viewportHeight=rect.height;
     tileSize=tileSizeForWidth(rect.width);
     surface.style.setProperty('--tile-size',tileSize+'px');
-    const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells});
+    const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells,columnBufferCells});
     columns=frame.columns; rows=frame.rows;
     firstColumn=frame.firstColumn; firstRow=frame.firstRow;
     columnHead=0; rowHead=0; slots=[];
@@ -267,7 +284,7 @@ if (viewport && world && resetButton && status) {
       fragment.appendChild(element);
     }
     layer.replaceChildren(fragment,...bloomModules);
-    bloomModules.forEach((panel,index)=>{panel.style.left=bloomCells[index].column*tileSize+'px';panel.style.top=bloomCells[index].row*tileSize+'px';});
+    positionBloomPanels();
     updateField(true);
     if(!introPlayed){
       introPlayed=true;
@@ -308,7 +325,7 @@ if (viewport && world && resetButton && status) {
   function updateField(forceSync=false):void {
     const rect=surface.getBoundingClientRect();
     if(!rect.width||!rect.height||!columns||!rows) return;
-    const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells});
+    const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells,columnBufferCells});
     const dx=frame.firstColumn-firstColumn, dy=frame.firstRow-firstRow;
     if(Math.abs(dx)>=columns||Math.abs(dy)>=rows){
       columnHead=0; rowHead=0;
@@ -369,8 +386,7 @@ if (viewport && world && resetButton && status) {
   }
   function startRound():void {
     timer=null;
-    if(bigBloomOpen){return;}
-    if(centering||pendingChoice||pendingBigBloom||bloomClosingTimer!==null){
+    if(centering||bigTransitioning||detailOpen||pendingChoice||pendingBigBloom||bloomClosingTimer!==null){
       nextRound(1000);
       return;
     }
@@ -379,7 +395,7 @@ if (viewport && world && resetButton && status) {
       return;
     }
     const rect=surface.getBoundingClientRect();
-    const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells});
+    const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells,columnBufferCells});
     const top=Math.floor(-frame.originY/tileSize);
     const bottom=Math.ceil((rect.height-frame.originY)/tileSize)-1;
     const left=Math.floor(-frame.originX/tileSize);
@@ -457,7 +473,7 @@ if (viewport && world && resetButton && status) {
     }
   }
   function resumeMovement():void {
-    if(bigBloomOpen||!moving||moving.pausedAt===null||activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)||document.hidden)return;
+    if(detailOpen||!moving||moving.pausedAt===null||activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)||document.hidden)return;
     moving.started+=performance.now()-moving.pausedAt;
     moving.pausedAt=null;
     surface.classList.add('is-autoshifting');
@@ -507,6 +523,10 @@ if (viewport && world && resetButton && status) {
       return;
     }
     closeAfterShift=null;
+    details.close();pauseBloomMedia();
+    smallBloom?.panels.forEach(panel=>panel.remove());smallBloom=null;bigLayout=[];
+    bigBloomOpen=false;bigTransitioning=false;centerCompletion=null;
+    surface.classList.remove('is-big-bloom');
     pendingChoice=nextChoice;
     centering=null;
     if(centerFrame!==null){cancelAnimationFrame(centerFrame);centerFrame=null;}
@@ -525,7 +545,7 @@ if (viewport && world && resetButton && status) {
       element.classList.toggle('grid-tile--bloom-returning',
         hadBloom&&animateReturn&&!prefersReduced.matches
           &&element.classList.contains('grid-tile--bloom-shifted'));
-      element.classList.remove('grid-tile--bloom-shifted','grid-tile--selected');
+      element.classList.remove('grid-tile--bloom-shifted','grid-tile--selected','grid-tile--big-anchor','grid-tile--depth-transition');
       element.style.removeProperty('transition');
     }
     selectedChoice=null;
@@ -603,29 +623,109 @@ if (viewport && world && resetButton && status) {
     },prefersReduced.matches?0:BLOOM_SHIFT_DURATION_MS);
   }
 
+  function positionBloomPanels():void {
+    bloomModules.forEach((panel,index)=>{
+      const cell=bigBloomOpen&&bloomAnchor?bigModuleCell(bloomAnchor,bigLayout[index]):bloomCells[index];
+      if(!cell)return;
+      panel.style.left=cell.column*tileSize+'px';panel.style.top=cell.row*tileSize+'px';
+      if(bigBloomOpen){panel.style.width=2*tileSize+'px';panel.style.height=2*tileSize+'px';}
+    });
+    if(smallBloom)smallBloom.panels.forEach((panel,index)=>{
+      panel.style.left=smallBloom!.cells[index].column*tileSize+'px';
+      panel.style.top=smallBloom!.cells[index].row*tileSize+'px';
+    });
+  }
+  function clearBloomTimers():void {
+    if(bloomOpeningTimer!==null){clearTimeout(bloomOpeningTimer);bloomOpeningTimer=null;}
+    bloomRevealTimers.forEach(clearTimeout);bloomRevealTimers=[];
+  }
+  function pauseBloomMedia():void {
+    for(const panel of bloomModules)panel.querySelectorAll('video').forEach(video=>video.pause());
+  }
+  function depthTransition(target:{x:number;y:number},settled:()=>void):void {
+    bigTransitioning=true;heldArrows.clear();manualPan=createManualPanState();hideTopic();
+    if(timer!==null){clearTimeout(timer);timer=null;}
+    surface.classList.add('is-bloom-opening');
+    for(const slot of slots)slot.element.classList.add('grid-tile--depth-transition');
+    // Existing rows interpolate only horizontally; the shared camera owns
+    // the whole-field travel. Space settles before panels become visible.
+    paintMovement(0);updateField(true);
+    centering={fromX:panX,fromY:panY,toX:target.x,toY:target.y,started:null};
+    centerCompletion=()=>{};
+    if(centerFrame!==null)cancelAnimationFrame(centerFrame);
+    centerFrame=requestAnimationFrame(frameCenter);
+    bloomOpeningTimer=setTimeout(()=>{
+      bloomOpeningTimer=null;bigTransitioning=false;
+      surface.classList.remove('is-bloom-opening');
+      for(const slot of slots)slot.element.classList.remove('grid-tile--depth-transition');
+      settled();highlightSelection();surface.scrollTop=0;surface.scrollLeft=0;nextRound(1500);
+    },prefersReduced.matches?0:Math.max(CENTER_DURATION_MS,BLOOM_SHIFT_DURATION_MS));
+  }
+  function queueDepthChange(change:()=>void):void {
+    if(moving){pendingBigBloom=change;surface.classList.add('is-big-bloom-waiting');
+      liveStatus.textContent='Waiting for the current shift before changing bloom depth.';resumeMovement();}
+    else change();
+  }
   function requestBigBloom(moduleId:string):void {
-    if(bigBloomOpen||closeAfterShift||!selectedChoice||!bloomModule||bloomClosingTimer!==null)return;
-    const enter=()=>{
-      if(!selectedChoice||!bloomModule)return;
-      const tile=locate(selectedChoice),project=demoProjects.find(item=>item.id===selectedChoice!.projectId);
-      if(!project)return;
-      bigBloomOpen=true;surface.classList.remove('is-big-bloom-waiting');
-      if(timer!==null){clearTimeout(timer);timer=null;}
-      heldArrows.clear();manualPan=createManualPanState();hideTopic();
-      layer.querySelectorAll('video').forEach(video=>video.pause());
-      openBigBloom(project,modulesForProject(project.id,project.shortSummary),moduleId,
-        tile?.element.getBoundingClientRect()??surface.getBoundingClientRect(),()=>{
-          rebuildPool(true);bigBloomOpen=false;
-          if(bloomAnchor){const target=centeredPan(bloomAnchor,tileSize);panX=target.x;panY=target.y;updateField();}
-          const trigger=bloomModules.find(panel=>panel.dataset.moduleId===moduleId)?.querySelector<HTMLButtonElement>('.bloom-read-more');
-          (trigger??surface).focus({preventScroll:true});
-          // Native dialog focus restoration can scroll an overflow-hidden
-          // ancestor. Camera transforms exclusively own grid positioning.
-          surface.scrollTop=0;surface.scrollLeft=0;nextRound(restWait);
-        });
-    };
-    if(moving){pendingBigBloom=enter;surface.classList.add('is-big-bloom-waiting');liveStatus.textContent='Waiting for the current shift before opening big bloom.';resumeMovement();}
-    else enter();
+    if(bigBloomOpen||bigTransitioning||closeAfterShift||!selectedChoice||!bloomModule||!bloomAnchor||bloomClosingTimer!==null)return;
+    queueDepthChange(()=>{
+      if(!selectedChoice||!bloomAnchor)return;
+      const project=demoProjects.find(item=>item.id===selectedChoice!.projectId);if(!project)return;
+      const source=bloomModules.find(panel=>panel.dataset.moduleId===moduleId);
+      const start={column:parseFloat(source?.style.left??'0')/tileSize,row:parseFloat(source?.style.top??'0')/tileSize};
+      clearBloomTimers();pauseBloomMedia();
+      // Four rightward vacancies plus two staging cells cover the widest row.
+      // Keep the bounded horizontal pool thereafter; vertical buffering is unchanged.
+      if(columnBufferCells<6){columnBufferCells=6;rebuildPool(true,true);}
+      smallBloom={panels:[...bloomModules],cells:[...bloomCells]};
+      bigLayout=bigBloomLayout(modulesForProject(project.id,project.shortSummary),moduleId);
+      layer.getBoundingClientRect();
+      for(const panel of bloomModules)panel.remove();
+      bigBloomOpen=true;surface.classList.add('is-big-bloom');surface.classList.remove('is-big-bloom-waiting');
+      surface.scrollTop=0;surface.scrollLeft=0;
+      bloomCells=bigBloomVacancies(bloomAnchor,bigLayout);
+      bloomModules=bigLayout.map(entry=>{
+        const panel=renderModulePreview(entry.module,project.name,()=>details.open(entry.module,panel.querySelector<HTMLButtonElement>('.bloom-read-more')!),'big');
+        panel.classList.add('big-bloom-card');
+        if(entry.module.id===moduleId)panel.classList.add('big-bloom-card--selected');
+        layer.append(panel);return panel;
+      });
+      bloomModule=bloomModules[0]??null;positionBloomPanels();highlightSelection();
+      const anchor=bloomAnchor;
+      depthTransition({x:-anchor.column*tileSize-tileSize/2,y:-anchor.row*tileSize+tileSize/2},()=>{
+        const plan=bigBloomRevealPlan(bloomModules);
+        for(const reveal of plan){
+          const show=()=>{
+            reveal.item.classList.add('is-open');
+            if(reveal.item===bloomModules[0]&&!prefersReduced.matches){
+              const cell=bigModuleCell(anchor,bigLayout[0]);
+              reveal.item.animate([{transform:`translate(${(start.column-cell.column)*tileSize}px,${(start.row-cell.row)*tileSize}px) scale(.5)`},{transform:'translate(0,0) scale(1)'}],{duration:INTRO_SPAWN_DURATION_MS,easing:'ease-in-out'});
+            }
+          };
+          if(prefersReduced.matches||reveal.delay===0)show();else bloomRevealTimers.push(setTimeout(show,reveal.delay));
+        }
+        if(activePointer===null)surface.focus({preventScroll:true});
+        liveStatus.textContent=project.name+': '+bloomModules.length+' large modules in the living grid.';
+      });
+    });
+  }
+  function requestSmallBloom():void {
+    if(!bigBloomOpen||bigTransitioning||closeAfterShift||!smallBloom||!bloomAnchor)return;
+    queueDepthChange(()=>{
+      if(!smallBloom||!bloomAnchor)return;
+      clearBloomTimers();pauseBloomMedia();layer.getBoundingClientRect();
+      for(const panel of bloomModules)panel.remove();
+      bloomModules=smallBloom.panels;bloomCells=smallBloom.cells;smallBloom=null;
+      bigBloomOpen=false;bigLayout=[];
+      surface.classList.remove('is-big-bloom','is-big-bloom-waiting');
+      for(const panel of bloomModules){panel.classList.remove('is-open');layer.append(panel);}
+      bloomModule=bloomModules[0]??null;positionBloomPanels();highlightSelection();
+      depthTransition(centeredPan(bloomAnchor,tileSize),()=>{
+        bloomModules.forEach(panel=>panel.classList.add('is-open'));
+        surface.scrollTop=0;surface.scrollLeft=0;
+        surface.focus({preventScroll:true});liveStatus.textContent='Returned to the same small bloom.';
+      });
+    });
   }
 
   /** Stage 1: move the grid to center the exact original project source.
@@ -647,10 +747,14 @@ if (viewport && world && resetButton && status) {
       centerFrame=requestAnimationFrame(frameCenter);
     }else{
       centering=null;
-      if(selectedChoice)openSmallBloom(selectedChoice);
+      const done=centerCompletion;centerCompletion=null;
+      if(done)done();else if(selectedChoice)openSmallBloom(selectedChoice);
     }
   }
   function beginSelection(choice:ProjectChoice):void {
+    // The original tile backs out one depth; small bloom then closes.
+    if(bigTransitioning)return;
+    if(bigBloomOpen&&selectedChoice&&sameChoice(selectedChoice,choice)){requestSmallBloom();return;}
     // A second click on the same project closes its existing bloom.
     if(selectedChoice&&sameChoice(selectedChoice,choice)){
       stopSelection();surface.focus({preventScroll:true});return;
@@ -788,6 +892,15 @@ if (viewport && world && resetButton && status) {
     if(!select?.matches(':focus-visible')&&activeTopic===tile)hideTopic();
   });
   surface.addEventListener('focusin',event=>{
+    if(bigBloomOpen&&event.target instanceof HTMLElement&&event.target.matches(':focus-visible')){
+      const panel=event.target.closest<HTMLElement>('.big-bloom-card');
+      if(panel){const rect=event.target.getBoundingClientRect(),bounds=surface.getBoundingClientRect();
+        if(rect.right<=bounds.left||rect.left>=bounds.right||rect.bottom<=bounds.top||rect.top>=bounds.bottom){
+          panX=-parseFloat(panel.style.left)-tileSize/2;panY=-parseFloat(panel.style.top)-tileSize/2;
+          updateField();surface.scrollTop=0;surface.scrollLeft=0;
+        }
+      }
+    }
     if(mobileTopics.matches)return;
     const tile=selectFrom(event.target)?.closest<HTMLDivElement>('.grid-tile');
     if(tile){
@@ -812,9 +925,12 @@ if (viewport && world && resetButton && status) {
   });
   surface.addEventListener('pointerdown',event=>{
     if(activePointer!==null||!event.isPrimary||(event.pointerType==='mouse'&&event.button!==0))return;
-    if(event.target instanceof Element&&event.target.closest('.grid-bloom-module'))return;
+    if(event.target instanceof Element&&event.target.closest('.grid-bloom-module')
+       &&(!bigBloomOpen||event.target.closest('button,a,video,iframe')))return;
+    layer.querySelectorAll<HTMLElement>('.grid-bloom-module[data-dragged]').forEach(panel=>delete panel.dataset.dragged);
     cancelIntro();
     pointerDownSelect=selectFrom(event.target);
+    pointerDownPanel=bigBloomOpen&&event.target instanceof Element?event.target.closest<HTMLElement>('.big-bloom-card'):null;
     pointerDownX=event.clientX;pointerDownY=event.clientY;pointerDragged=false;
     activePointer=event.pointerId; lastX=event.clientX; lastY=event.clientY;
     surface.setPointerCapture(event.pointerId);
@@ -828,6 +944,11 @@ if (viewport && world && resetButton && status) {
     if(event.pointerId!==activePointer)return;
     if(Math.hypot(event.clientX-pointerDownX,event.clientY-pointerDownY)>9){
       pointerDragged=true;
+      if(bigBloomOpen||bigTransitioning){
+        if(centering){centering=null;centerCompletion=null;if(centerFrame!==null)cancelAnimationFrame(centerFrame);centerFrame=null;}
+        const panel=document.elementFromPoint(pointerDownX,pointerDownY)?.closest<HTMLElement>('.big-bloom-card');
+        if(panel)panel.dataset.dragged='true';
+      }
       if(!bloomModule&&!closeAfterShift&&(selectedChoice||pendingChoice||centering))stopSelection();
       if(!mobileTopics.matches)hideTopic();
     }
@@ -842,10 +963,12 @@ if (viewport && world && resetButton && status) {
       &&Math.hypot(event.clientX-pointerDownX,event.clientY-pointerDownY)<=9;
     activePointer=null;surface.classList.remove('is-dragging');
     let chosen:ProjectChoice|null=null;
+    let activatePanel:HTMLElement|null=null;
     if(isTap){
       // Pointer capture retargets pointerup to the viewport. Hit-test the
       // actual release position and require the same tile button at both ends.
       const hit=document.elementFromPoint(event.clientX,event.clientY);
+      if(pointerDownPanel&&hit?.closest('.big-bloom-card')===pointerDownPanel)activatePanel=pointerDownPanel;
       const select=selectFrom(hit);
       const selectedTile=select?.closest<HTMLDivElement>('.grid-tile');
       if(selectedTile&&select===pointerDownSelect&&surface.contains(selectedTile)){
@@ -853,7 +976,7 @@ if (viewport && world && resetButton && status) {
         hideTopic();
       }else hideTopic();
     }
-    pointerDownSelect=null;
+    pointerDownSelect=null;pointerDownPanel=null;
     if(event.type==='pointercancel')hideTopic();
     // Discard remaining cursor lag on release: no delayed ghost-chase.
     manualPan.pending={x:0,y:0};
@@ -864,6 +987,7 @@ if (viewport && world && resetButton && status) {
       // Every active shift finishes at its original tempo before opening.
       if(pendingChoice&&!selectedChoice&&bloomClosingTimer===null)resumeMovement();
     }else resumeMovement();
+    if(activatePanel){const entry=bigLayout.find(entry=>entry.module.id===activatePanel!.dataset.moduleId);if(entry)details.open(entry.module,activatePanel.querySelector<HTMLButtonElement>('.bloom-read-more')!);}
     refreshMobileTopics();
   }
   surface.addEventListener('pointerup',release);
@@ -871,6 +995,11 @@ if (viewport && world && resetButton && status) {
   surface.addEventListener('lostpointercapture',release);
   const arrowNames=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown']);
   surface.addEventListener('keydown',event=>{
+    if(event.target instanceof Element&&event.target.closest('button,a,video,iframe'))return;
+    if(bigTransitioning&&centering&&(event.key==='Home'||arrowNames.has(event.key))){centering=null;centerCompletion=null;if(centerFrame!==null)cancelAnimationFrame(centerFrame);centerFrame=null;}
+    if(event.key==='Home'&&bigBloomOpen&&bloomAnchor){
+      event.preventDefault();panX=-bloomAnchor.column*tileSize-tileSize/2;panY=-bloomAnchor.row*tileSize+tileSize/2;updateField();return;
+    }
     if(event.key==='Home'){
       stopSelection(false);
       hideTopic();
@@ -899,7 +1028,8 @@ if (viewport && world && resetButton && status) {
     }
   });
   window.addEventListener('keydown',event=>{
-    if(bigBloomOpen)return;
+    if(detailOpen)return;
+    if(event.key==='Escape'&&bigBloomOpen){event.preventDefault();requestSmallBloom();return;}
     if(event.key==='Escape'&&(selectedChoice||pendingChoice)){
       event.preventDefault();
       stopSelection();
