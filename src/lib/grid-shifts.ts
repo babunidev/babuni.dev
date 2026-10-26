@@ -19,7 +19,16 @@ export function planShiftRound(rows:number[],columns:number[],random:RandomSourc
   const direction:ShiftDirection=random()<.5?-1:1;
   return {axis,line,direction,d20,bonus,total:d20+bonus,initiative};
  });
- return {axis,rolls,moves:rolls.filter(r=>r.total>10).map(({axis,line,direction})=>({axis,line,direction}))};
+ // Winning initiatives claim their direction, so two rows (or columns)
+ // cannot form a simultaneous same-direction block.
+ const directionsTaken=new Set<ShiftDirection>();
+ const moves:ShiftEvent[]=[];
+ for(const roll of rolls){
+  if(roll.total<=10||directionsTaken.has(roll.direction))continue;
+  directionsTaken.add(roll.direction);
+  moves.push({axis,line:roll.line,direction:roll.direction});
+ }
+ return {axis,rolls,moves};
 }
 /** Run the chronological shift events backwards to recover a tile's original source coordinate. */
 export function sourceCell(column:number,row:number,history:readonly ShiftEvent[]):{column:number;row:number}{

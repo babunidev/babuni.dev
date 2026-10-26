@@ -6,6 +6,15 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — movement refinement, 2026-10-26
+- Replaced per-keypress arrow jumps with frame-driven, smoothly accelerating and decelerating held-arrow navigation (provisional 130 CSS px/s ceiling).
+- Added a tunable pointer-follow speed ceiling (provisional 440 CSS px/s), short acceleration ramp, and bounded cursor lead. Movement stops on pointer release without a delayed catch-up.
+- Restricted each autonomous round to at most one moving line per direction, preventing multiple same-direction row blocks; applied the analogous provisional rule to columns.
+- Preserved grid recycling, initial centering, and pause/resume behavior for autonomous shifts.
+
+### Verification — movement refinement
+- The isolated equivalent TypeScript implementation passed 18 Node tests and strict TypeScript checks; an isolated Chromium preview checked mouse speed limiting, continuous arrow motion, finite tile pool, shift pause/resume and reduced motion on desktop and phone-sized viewports. The committed Astro application and the new complete test suite still require the creator's local run and visual review.
+
 ### Added
 - Experimental autonomous one-cell row/column movement, including randomized direction and provisional d20/initiative rolls (+4, +3, +2, +1, then zero).
 - Pausing an in-progress line shift during mouse/touch dragging; resuming after release; deferring new rounds during drag and tab invisibility; disabling automatic motion under reduced-motion preference.

@@ -1,5 +1,6 @@
 import { demoProjectIndex, gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
+import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 
 interface ProjectPlaceholder { name: string; tint: string; }
 const projects: ProjectPlaceholder[] = [
@@ -23,6 +24,10 @@ if (viewport && world && resetButton && status) {
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
   let slots:TileSlot[]=[];
   let activePointer:number|null=null, lastX=0, lastY=0;
+  const heldArrows=new Set<string>();
+  let manualPan=createManualPanState();
+  let manualFrame:number|null=null;
+  let previousManualTime:number|null=null;
   // Experimental movement values, not yet confirmed by the creator.
   const duration=4400, firstWait=6500, restWait=8000;
   const history:ShiftEvent[]=[];
@@ -115,7 +120,7 @@ if (viewport && world && resetButton && status) {
   }
   function startRound():void {
     timer=null;
-    if(activePointer!==null||document.hidden||prefersReduced.matches||moving){
+    if(activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)||document.hidden||prefersReduced.matches||moving){
       nextRound(1000);
       return;
     }
@@ -151,46 +156,108 @@ if (viewport && world && resetButton && status) {
     if(moving&&moving.pausedAt===null)moving.pausedAt=performance.now();
   }
   function resumeMovement():void {
-    if(!moving||moving.pausedAt===null||activePointer!==null||document.hidden)return;
+    if(!moving||moving.pausedAt===null||activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)||document.hidden)return;
     moving.started+=performance.now()-moving.pausedAt;
     moving.pausedAt=null;
     requestAnimationFrame(frameMovement);
   }
+  function arrowDirection():{x:number;y:number}{
+    return {
+      x:Number(heldArrows.has('ArrowLeft'))-Number(heldArrows.has('ArrowRight')),
+      y:Number(heldArrows.has('ArrowUp'))-Number(heldArrows.has('ArrowDown'))
+    };
+  }
+  function scheduleManualFrame():void {
+    if(manualFrame===null) manualFrame=requestAnimationFrame(animateManual);
+  }
+  function animateManual(now:number):void {
+    manualFrame=null;
+    const elapsed=previousManualTime===null?1/60:(now-previousManualTime)/1000;
+    previousManualTime=now;
+    const step=stepManualPan(manualPan,elapsed,activePointer!==null,arrowDirection());
+    manualPan=step.state;
+    if(step.delta.x!==0||step.delta.y!==0){
+      panX+=step.delta.x;panY+=step.delta.y;
+      updateField();
+    }
+    if(activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)){
+      scheduleManualFrame();
+    }else{
+      previousManualTime=null;
+      resumeMovement();
+    }
+  }
+  function resetManualInput():void {
+    heldArrows.clear();
+    manualPan=createManualPanState();
+    previousManualTime=null;
+    resumeMovement();
+  }
+
   surface.addEventListener('pointerdown',event=>{
     if(activePointer!==null||!event.isPrimary||(event.pointerType==='mouse'&&event.button!==0)) return;
     activePointer=event.pointerId; lastX=event.clientX; lastY=event.clientY;
     surface.setPointerCapture(event.pointerId);
     surface.classList.add('is-dragging');
+    manualPan.pending={x:0,y:0};
+    manualPan.pointerVelocity={x:0,y:0};
     pauseMovement();
+    scheduleManualFrame();
   });
   surface.addEventListener('pointermove',event=>{
     if(event.pointerId!==activePointer)return;
-    panX+=event.clientX-lastX; panY+=event.clientY-lastY;
-    lastX=event.clientX; lastY=event.clientY;
-    updateField();
+    manualPan=queuePointerTravel(manualPan,event.clientX-lastX,event.clientY-lastY);
+    lastX=event.clientX;lastY=event.clientY;
+    scheduleManualFrame();
   });
   function release(event:PointerEvent):void {
     if(event.pointerId!==activePointer)return;
     activePointer=null; surface.classList.remove('is-dragging');
+    // Discard remaining cursor lag on release: no delayed ghost-chase.
+    manualPan.pending={x:0,y:0};
+    manualPan.pointerVelocity={x:0,y:0};
     resumeMovement();
     if(surface.hasPointerCapture(event.pointerId))surface.releasePointerCapture(event.pointerId);
   }
   surface.addEventListener('pointerup',release);
   surface.addEventListener('pointercancel',release);
   surface.addEventListener('lostpointercapture',release);
+  const arrowNames=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown']);
   surface.addEventListener('keydown',event=>{
-    const distance=event.shiftKey?tileSize:Math.round(tileSize/3);
-    switch(event.key){
-      case 'ArrowLeft':panX+=distance;break;
-      case 'ArrowRight':panX-=distance;break;
-      case 'ArrowUp':panY+=distance;break;
-      case 'ArrowDown':panY-=distance;break;
-      case 'Home':panX=0;panY=0;break;
-      default:return;
+    if(event.key==='Home'){
+      event.preventDefault();
+      resetManualInput();
+      panX=0;panY=0;updateField();
+      return;
     }
-    event.preventDefault();updateField();
+    if(!arrowNames.has(event.key))return;
+    event.preventDefault();
+    if(!heldArrows.has(event.key)){
+      heldArrows.add(event.key);
+      pauseMovement();
+      scheduleManualFrame();
+    }
+  });
+  window.addEventListener('keyup',event=>{
+    if(!arrowNames.has(event.key))return;
+    if(heldArrows.delete(event.key)){
+      event.preventDefault();
+      scheduleManualFrame();
+    }
+  });
+  window.addEventListener('blur',()=>{
+    heldArrows.clear();
+    manualPan.keyboardVelocity={x:0,y:0};
+    if(activePointer!==null){
+      activePointer=null;
+      manualPan.pending={x:0,y:0};
+      manualPan.pointerVelocity={x:0,y:0};
+      surface.classList.remove('is-dragging');
+    }
+    resumeMovement();
   });
   reset.addEventListener('click',()=>{
+    resetManualInput();
     panX=0;panY=0;updateField();
     liveStatus.textContent='Returned to the starting tile.';
   });

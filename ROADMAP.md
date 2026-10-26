@@ -24,7 +24,9 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 - [ ] Prove responsive coverage on phone, laptop, and wide desktop.
 - [x] Prototype slow one-cell row/column shifts with testable seeded dice rounds (timing and initiative mechanics provisional; creator review outstanding).
 - [x] Pause an active autonomous shift while dragging, resume afterward and defer new rounds while dragging. Bloom-specific conflict handling awaits bloom implementation.
-- [ ] Validate keyboard and reduced-motion alternatives.
+- [ ] Validate keyboard and reduced-motion alternatives. Frame-driven, slower keyboard movement and reduced-motion support are implemented, but await creator/device acceptance.
+
+**Movement refinement (2026-10-26):** Creator requested smooth, slower arrow-key navigation; brief acceleration and an adjustable speed ceiling for mouse/touch dragging; and no two simultaneously shifting rows moving in the same direction. A matching restriction on columns is an AI-proposed extension, awaiting creator review. Initial controller and directional shift cap are implemented and tested in an isolated preview. New creator feedback is needed before locking speeds or declaring Milestone 1 complete.
 
 ## Milestone 2 — The first portal
 - [ ] Reusable, stylized stone tile component.

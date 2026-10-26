@@ -27,3 +27,25 @@ test('successive perpendicular moves are order sensitive',()=>{
 test('easing stays in bounds and lands on exact cell boundaries',()=>{
  assert.equal(easeInOut(-5),0);assert.equal(easeInOut(0),0);assert.equal(easeInOut(.5),.5);assert.equal(easeInOut(1),1);assert.equal(easeInOut(3),1);
 });
+
+test('no two moving lines share a direction, for both axes across 400 seeded rounds',()=>{
+  const seen=new Set();
+  for(let seed=0;seed<400;seed++){
+    const round=planShiftRound([-3,-2,-1,0,1,2,3],[-3,-2,-1,0,1,2,3],seededRandom(seed));
+    seen.add(round.axis);
+    assert.ok(round.moves.length<=2);
+    assert.equal(new Set(round.moves.map(move=>move.direction)).size,round.moves.length);
+    assert.ok(round.moves.every(move=>round.rolls.some(roll=>
+      roll.line===move.line && roll.direction===move.direction && roll.total>10)));
+  }
+  assert.deepEqual([...seen].sort(),['column','row']);
+});
+test('first successful initiative roll takes precedence for its direction',()=>{
+  for(let seed=0;seed<200;seed++){
+    const round=planShiftRound([0,1,2,3,4,5],[0,1,2,3,4,5],seededRandom(seed));
+    for(const move of round.moves){
+      const earliest=round.rolls.find(roll=>roll.total>10 && roll.direction===move.direction);
+      assert.equal(move.line,earliest.line);
+    }
+  }
+});

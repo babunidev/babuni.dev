@@ -84,3 +84,13 @@ The first implementation uses the creator's previously discussed dice idea: a ra
 Prototype values (AI-chosen, not locked by the creator): about 6.5 seconds before the first round, 4.4 seconds of smoothstep easing for a move, and an 8-second rest between rounds. While holding and dragging, an ongoing shift freezes and resumes at the same progress on release, while upcoming rounds wait. The grid camera's approved manual-drag behavior is unchanged. The application also suspends ongoing movement when the page is hidden and disables automatic movement for users requesting reduced motion. Status text in the header is temporary visual feedback.
 
 The probabilities, pace, simultaneous movements, and direction rules still require creator testing. Bloom interactions will need a later policy for suspending nearby line movement.
+
+## Refined movement feel — 2026-10-26 prototype
+
+**Creator direction.** The original arrow-key jumps were too abrupt and fast. Key navigation should instead have continuous, slower, smooth movement. Dragging with the mouse may briefly accelerate before reaching its normal cruising speed, which should have an adjustable ceiling and should not attempt to match arbitrarily fast pointer travel. During autonomous shifting, the creator observed unattractive large blocks when two or more rows moved in the same direction simultaneously and explicitly disallowed that pattern.
+
+**Prototype parameters (AI-selected, pending hands-on adjustment):** Arrow keys ramp to at most **130 CSS px/s** with **520 px/s²** acceleration and **700 px/s²** deceleration. Mouse/touch follow ramps to at most **440 CSS px/s** with **1800 px/s²** acceleration. Pointer lag is capped at **180 CSS px**; any unfinished lag is discarded when the visitor releases the pointer. These values are all defined in `src/lib/grid-controls.ts`, not spread across event handlers. Arrow-key repeats never generate additional jumps; the animation clock determines movement. Diagonal arrow input is normalized so it is not faster.
+
+**New shift constraint:** Per autonomous round, select at most one successful row to shift left and one to shift right. Earlier successful dice/initiative rolls get priority within each direction. The assistant extends the same constraint to columns (one up, one down maximum) to avoid equivalent vertical blocks; column-specific approval is pending creator review. Shifts remain one full cell over the existing slow easing interval and pause during active pointer or keyboard navigation.
+
+**Future visual evidence:** The creator intends to add images and videos to a folder named `Visual Documentation Material` for inclusion in curated development records. No such media have been received or integrated as part of this change.
