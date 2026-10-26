@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {centeredPan,bloomModuleCell,shiftsForBloom,interpolateCenter,CENTER_DURATION_MS,BLOOM_SHIFT_DURATION_MS,AMBIENT_INTERVAL_MS,AMBIENT_RETRY_MS,AMBIENT_VISIBLE_MS,ambientInsets,ambientTileIsEligible,ambientPollDelay,shiftTouchesSelection,shiftAvoidsBloom,permittedBloomShifts,selectionShiftAction,bloomShiftFraction} from '../src/lib/grid-focus.ts';
+import {centeredPan,bloomModuleCell,shiftsForBloom,interpolateCenter,CENTER_DURATION_MS,BLOOM_SHIFT_DURATION_MS,AMBIENT_INTERVAL_MS,AMBIENT_RETRY_MS,AMBIENT_VISIBLE_MS,ambientInsets,ambientTileIsEligible,ambientPollDelay,shiftTouchesSelection,shiftAvoidsBloom,permittedBloomShifts,selectionShiftAction} from '../src/lib/grid-focus.ts';
 const c=(column,row)=>({column,row});
 test('any clicked tile centers with no snapping to original grid',()=>{
   for(const cell of [c(0,0),c(-5,3),c(20,-14),c(1,1)]){
@@ -26,12 +26,12 @@ test('a right-side bloom frees exactly the adjacent cell without overlapping nei
   }
   assert.ok(BLOOM_SHIFT_DURATION_MS>0);
 });
-test('only the selected row is displaced, never other neighboring rows',()=>{
+test('both reserved rows displace runs, other rows stay fixed',()=>{
   const selected=c(4,-3);
   assert.equal(shiftsForBloom(c(5,-3),selected),true);
   assert.equal(shiftsForBloom(c(4,-3),selected),false);
   assert.equal(shiftsForBloom(c(3,-3),selected),false);
-  assert.equal(shiftsForBloom(c(8,-2),selected),false);
+  assert.equal(shiftsForBloom(c(8,-2),selected),true);
 });
 test('ambient topic hints keep a five-second interval and a brief appearance',()=>{
   assert.equal(AMBIENT_INTERVAL_MS,5000);
@@ -68,7 +68,7 @@ test('moving selected or first bloom-neighbor line must finish before selection'
   assert.equal(shiftTouchesSelection({axis:'row',line:1,direction:1},chosen),false);
   assert.equal(shiftTouchesSelection({axis:'column',line:2,direction:-1},chosen),true);
   assert.equal(shiftTouchesSelection({axis:'column',line:3,direction:1},chosen),true);
-  assert.equal(shiftTouchesSelection({axis:'column',line:4,direction:1},chosen),false);
+  assert.equal(shiftTouchesSelection({axis:'column',line:4,direction:1},chosen),true);
 });
 test('all unrelated rows and columns can continue around an open bloom',()=>{
   const chosen={column:2,row:-1};
@@ -81,7 +81,7 @@ test('all unrelated rows and columns can continue around an open bloom',()=>{
     {axis:'column',line:3,direction:-1},
     {axis:'column',line:6,direction:1}
   ];
-  assert.deepEqual(permittedBloomShifts(candidates,chosen),[candidates[1],candidates[2],candidates[3],candidates[6]]);
+  assert.deepEqual(permittedBloomShifts(candidates,chosen),[candidates[1],candidates[3],candidates[6]]);
   assert.equal(shiftAvoidsBloom({axis:'column',line:0,direction:1},chosen),true);
   assert.equal(shiftAvoidsBloom({axis:'column',line:3,direction:1},chosen),false);
   assert.equal(shiftAvoidsBloom({axis:'column',line:8,direction:1},chosen),true);
@@ -94,26 +94,8 @@ test('selection strategy prioritizes a moving tile, otherwise centers immediatel
   assert.equal(selectionShiftAction([{axis:'column',line:3,direction:1}],cell),'wait');
   assert.equal(selectionShiftAction([{axis:'row',line:-2,direction:1}],cell),'pause');
   assert.equal(selectionShiftAction([{axis:'column',line:1,direction:1}],cell),'pause');
-  assert.equal(selectionShiftAction([{axis:'column',line:6,direction:-1}],cell),'pause');
+  assert.equal(selectionShiftAction([{axis:'column',line:6,direction:-1}],cell),'wait');
   assert.equal(selectionShiftAction([
     {axis:'row',line:-1,direction:1},{axis:'row',line:0,direction:-1}
   ],cell),'wait');
-});
-
-test('right-hand vertical shifts interpolate into the displaced bloom row',()=>{
-  const selected={column:2,row:0};
-  const rightColumn=5;
-  for(const direction of [-1,1]){
-    const incoming={column:rightColumn,row:0-direction};
-    const departing={column:rightColumn,row:0};
-    assert.equal(bloomShiftFraction(incoming,selected,direction,0),0);
-    assert.equal(bloomShiftFraction(incoming,selected,direction,.5),.5);
-    assert.equal(bloomShiftFraction(incoming,selected,direction,1),1);
-    assert.equal(bloomShiftFraction(departing,selected,direction,0),1);
-    assert.equal(bloomShiftFraction(departing,selected,direction,.5),.5);
-    assert.equal(bloomShiftFraction(departing,selected,direction,1),0);
-  }
-  assert.equal(bloomShiftFraction({column:1,row:0},selected,undefined,.5),0);
-  assert.equal(bloomShiftFraction({column:3,row:0},selected,undefined,.5),1);
-  assert.equal(bloomShiftFraction({column:6,row:0},selected,undefined,.5),1);
 });

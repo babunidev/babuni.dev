@@ -1,3 +1,4 @@
+import {occupiedCell,bloomVacancies} from './bloom-geometry.ts';
 import {easeInOut} from './grid-shifts.ts';
 export interface GridCell {column:number;row:number}
 export interface PanPosition {x:number;y:number}
@@ -10,45 +11,21 @@ export function centeredPan(cell:GridCell,tileSize:number):PanPosition {
 export function bloomModuleCell(selected:GridCell):GridCell {
   return {column:selected.column+1,row:selected.row};
 }
-/** Move the entire contiguous right-hand run one tile over, never just one
- * neighbor overlapping another. The first adjacent cell becomes genuinely free.
- */
+/** Both reserved rows displace contiguous runs to the right. */
 export function shiftsForBloom(cell:GridCell,selected:GridCell):boolean {
-  return cell.row===selected.row&&cell.column>selected.column;
+  return occupiedCell(cell,bloomVacancies(selected)).column!==cell.column;
 }
-/** Existing shift directly moves the chosen tile or the cell needed by its
- * first right-side bloom. Such a selection must wait for that motion to settle.
- */
 export type GridLineMove={axis:'row'|'column';line:number;direction:number};
+/** Expansion changes entire right-hand runs, not merely the adjacent cell. */
 export function shiftTouchesSelection(move:GridLineMove,cell:GridCell):boolean {
   return move.axis==='row'
-    ? move.line===cell.row
-    : move.line===cell.column||move.line===cell.column+1;
+    ? move.line===cell.row||move.line===cell.row+1
+    : move.line>=cell.column;
 }
-/** The selected row and two protected columns must stay fixed. All other
- * rows and columns can still move. Far-right column shifts crossing the
- * displaced row are interpolated sideways with bloomShiftFraction().
- */
 export function shiftAvoidsBloom(move:GridLineMove,cell:GridCell):boolean {
   return move.axis==='row'
-    ? move.line!==cell.row
+    ? move.line!==cell.row&&move.line!==cell.row+1
     : move.line!==cell.column&&move.line!==cell.column+1;
-}
-/** The horizontal bloom displacement is 1 tile for tiles in the selected
- * row to its right. During vertical movement through that row, the incoming
- * tile gradually acquires this offset and the departing tile releases it.
- * At both endpoints the positions match the renderer's resting geometry.
- */
-export function bloomShiftFraction(
-  tile:GridCell,selected:GridCell,columnDirection:number|undefined,progress:number
-):number {
-  if(tile.column<=selected.column)return 0;
-  const p=easeInOut(progress);
-  if(columnDirection!==undefined&&tile.column>selected.column+1){
-    if(tile.row===selected.row)return 1-p;
-    if(tile.row+columnDirection===selected.row)return p;
-  }
-  return tile.row===selected.row?1:0;
 }
 export function permittedBloomShifts<T extends GridLineMove>(
   moves:readonly T[],cell:GridCell

@@ -67,3 +67,7 @@ Later versions should review actual project descriptions, reliable documentation
 ## First bloom module from provisional summaries (2026-10-26)
 
 The one-cell small-bloom prototype uses the selected candidate's existing provisional `shortSummary`. Its contents are distinct from the much shorter topic marker. This tests spatial displacement and selection before a production portfolio schema exists. Occasional ambient topic teasers reuse the same 53 reviewed-for-prototype draft subjects; no new creative claims, art assets or source materials are added. Publication approval and proper multi-module content remain future milestones.
+
+## Lower small-bloom module — 2026-10-26
+
+**Babuni.dev requested** a second module below the selected project after consulting the intended content. CONCEPT and DESIGN list descriptions, keywords, metadata, media, dev-log and file availability as candidates without fixing this slot. **AI chose** a provisional “Project notes” module using existing `project-topics.ts` labels and `demo-projects.ts` evidence classification, explicitly stating that candidate details await review. No invented release status, media availability, or development history is supplied. The right summary module remains. Final lower-module editorial choice and production project verification remain open for Babuni.dev.

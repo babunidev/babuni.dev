@@ -97,3 +97,9 @@ The focus gate now distinguishes keyboard-visible focus from stale mouse/touch f
 
 
 **Milestone 3 — movement and selection priority refinement (2026-10-26):** Babuni.dev requested the living grid to keep shifting in nonconflicting rows/columns while a bloom is open; selecting a moving tile should immediately show a golden highlight and wait for the affected shift, while selecting an unrelated tile pauses that shift and begins centering immediately. Switching from one open bloom to another must close the first bloom and only then recenter/open the second. Implemented a prototype conflict filter protecting the selected row plus selected/module columns; other columns can cross the translated right-hand run with a coordinated sideways offset. Close-first switching and queued golden selection are implemented. Focused tests added; full browser/build verification and multi-module conflict safety remain pending.
+
+## 2026-10-26 — Two-module mechanics checkpoint
+
+Implemented prototype: right summary and lower metadata modules with physical vacancies; occupied visual-column shifts; complete expansion-run conflict checks; immediate drag/arrow navigation while closing; unrelated hover persistence; square-top bubble anchors. Shared vacancy geometry supports and tests a future 3×3 set, but full bloom remains unimplemented.
+
+Verified in this session: grid test command (nine passing test files), Astro production build, local 620×652 browser preview of two modules and drag/collapse. Remaining: prolonged shift/recycling and identity checks, exact bubble alignment at all responsive sizes, hover persistence during repeated unrelated shifts, real touch/keyboard/reduced-motion acceptance, final lower-module editorial approval, and full-bloom scheduling/content. Milestone 3 remains a prototype, not complete.

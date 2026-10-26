@@ -178,3 +178,13 @@ The approved center-first movement and one-cell bloom retain their existing prot
 **Prototype visual mechanics:** The selected row does not autonomously shift during the bloom, and neither does the selected column or immediate right-side module column. All other rows/columns remain eligible under normal dice behavior. For columns beyond the module, a tile entering the right-shifted selected row simultaneously eases one tile to the right, and a tile leaving eases it back to its normal column, so the geometry connects cleanly across a vertical shift. Selection/bloom animation durations and the topic bubbles are unchanged.
 
 **Open:** Test simultaneous movement from different directions, rapid switching between tiles while a bloom closes, focus after moving rows, and narrow/mobile layouts before locking the behavior. Compatible-line filtering is an initial single-module rule and must be extended for larger blooms.
+
+## Two-module small bloom and straight shifts — 2026-10-26
+
+**Babuni.dev requested:** Straight plate motion through the actual occupied columns, no zigzag/overlap across displaced rows; finish conflicting shifts before expansion; drag immediately while closing; keep unrelated hover topics; align bubble bottom-left to square top; add a module below the selected project.
+
+**AI implemented:** Reserve right and below cells by inserting a vacancy in each affected row and sliding its contiguous right-hand run. The selected row inserts after the anchor; the next row inserts at its column. Rows containing reservations and columns through either module/anchor are protected. Other visual columns move straight, even when their occupants have different resting columns. Expansion waits for either displaced row or any column at/right of the anchor. Left columns and other rows may pause for centering and resume afterward.
+
+Closing during an active shift shortens its remaining straight movement to approximately 520 ms, then returns displaced runs over 520 ms. Camera dragging begins at the existing 9 px intent threshold and does not wait for either stage. This close timing is AI-chosen and awaits acceptance. Ordinary taps retain selection behavior.
+
+The lower module uses existing topic labels and inventory evidence, with an explicit provisional-content note. This is an AI content choice among concept-approved metadata/keyword candidates, not a human-approved final module specification. Future 3×3 composition remains planned; the geometry accepts arbitrary vacancy sets, but reservations, scheduling, and content for that layout still need implementation. Earlier sideways interpolation descriptions are historical and superseded.

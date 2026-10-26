@@ -157,3 +157,15 @@ Each future entry should include the change, its user-visible or technical effec
 - Distinguish keyboard-visible project focus from stale pointer/touch button focus, preventing another indefinite suppression path.
 
 - Follow-up: close the bloom corridor smoothly even when a right-side vertical shift is paused mid-cell, preserving its vertical progress and resuming it after collapse.
+
+## 2026-10-26 — Occupied-column shifts and two-cell small bloom
+
+### Added
+- A second small-bloom module below the selected tile: provisional topics and inventory evidence. Both modules reserve actual visual cells.
+- Shared vacancy insertion/inversion geometry and regression coverage, including a future 3×3 vacancy mapping (not a full-bloom implementation).
+
+### Fixed
+- Vertical shifts select actual occupied visual columns and commit matching source identities, removing sideways interpolation across displaced rows.
+- Expansion waits for shifts affecting either displaced run, including far-right columns.
+- Map dragging and arrow navigation close a bloom while allowing camera movement immediately.
+- Unrelated shift starts no longer dismiss portal topic bubbles. Bubble bottom-left anchors now meet the top of their rotated glowing squares.

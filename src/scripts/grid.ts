@@ -1,3 +1,4 @@
+import {occupiedCell,restingCell,bloomVacancies} from '../lib/bloom-geometry';
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
@@ -8,8 +9,8 @@ import { introSequence, INTRO_SPAWN_STAGGER_MS } from '../lib/grid-intro';
 import { centeredPan, interpolateCenter, bloomModuleCell, shiftsForBloom,
   CENTER_DURATION_MS, BLOOM_SHIFT_DURATION_MS, AMBIENT_INTERVAL_MS,
   AMBIENT_VISIBLE_MS, AMBIENT_RETRY_MS, ambientInsets,
-  ambientTileIsEligible, ambientPollDelay, shiftTouchesSelection,
-  shiftAvoidsBloom, selectionShiftAction, bloomShiftFraction
+  ambientTileIsEligible, ambientPollDelay,
+  shiftAvoidsBloom, selectionShiftAction
 } from '../lib/grid-focus';
 
 interface TileSlot { element: HTMLDivElement; column: number; row: number; projectIndex?: number; }
@@ -37,6 +38,7 @@ if (viewport && world && resetButton && status) {
   let centering:{fromX:number;fromY:number;toX:number;toY:number;started:number|null}|null=null;
   let centerFrame:number|null=null;
   let bloomModule:HTMLElement|null=null;
+  let metadataModule:HTMLElement|null=null;
   let bloomOpeningTimer:ReturnType<typeof setTimeout>|null=null;
   let bloomClosingTimer:ReturnType<typeof setTimeout>|null=null;
   let teaserTile:HTMLDivElement|null=null;
@@ -57,8 +59,9 @@ if (viewport && world && resetButton && status) {
   // Experimental movement values, not yet confirmed by the creator.
   const duration=4400, firstWait=6500, restWait=8000;
   const history:ShiftEvent[]=[];
-  interface Moving {moves:ShiftEvent[]; started:number; pausedAt:number|null; fraction:number}
+  interface Moving {moves:ShiftEvent[]; started:number; pausedAt:number|null; fraction:number; duration?:number}
   let moving:Moving|null=null;
+  let closeAfterShift:{next:ProjectChoice|null}|null=null;
   const prefersReduced=matchMedia('(prefers-reduced-motion: reduce)');
   const heading=document.querySelector<HTMLElement>('.header-note');
   let timer:ReturnType<typeof setTimeout>|null=null;
@@ -269,7 +272,6 @@ if (viewport && world && resetButton && status) {
     }
     firstColumn=frame.firstColumn; firstRow=frame.firstRow;
     if(dx||dy){
-      if(activeTopic)hideTopic();
       for(let y=0;y<rows;y++){
         const row=logicalCell(firstRow,y,rowHead,rows);
         for(let x=0;x<columns;x++){
@@ -283,7 +285,7 @@ if (viewport && world && resetButton && status) {
     const signature=bounds.firstColumn+','+bounds.lastColumn+','+bounds.firstRow+','+bounds.lastRow;
     if(dx||dy||forceSync||signature!==visibleWindowSignature)syncProjects(frame,rect);
     visibleWindowSignature=signature;
-    if(moving)paintMovement(moving.fraction);
+    if(moving||bloomModule)paintMovement(moving?.fraction??0);
     if(selectedChoice)highlightSelection();
   }
   function paintMovement(fraction:number):void {
@@ -295,10 +297,10 @@ if (viewport && world && resetButton && status) {
     const anchor=selectedChoice&&bloomModule?locate(selectedChoice):null;
     const bloomCell=anchor?{column:anchor.column,row:anchor.row}:null;
     for(const slot of slots){
-      const bloomX=bloomCell
-        ?bloomShiftFraction(slot,bloomCell,movingColumns.get(slot.column),fraction)*tileSize:0;
-      const dx=(movingRows.get(slot.row)??0)*tileSize*p+bloomX;
-      const dy=(movingColumns.get(slot.column)??0)*tileSize*p;
+      const visual=occupiedCell(slot,bloomCell?bloomVacancies(bloomCell):[]);
+      if(bloomCell)slot.element.classList.toggle('grid-tile--bloom-shifted',visual.column!==slot.column);
+      const dx=(movingRows.get(visual.row)??0)*tileSize*p+(visual.column-slot.column)*tileSize;
+      const dy=(movingColumns.get(visual.column)??0)*tileSize*p;
       slot.element.style.transform=(dx||dy)?'translate3d('+dx+'px,'+dy+'px,0)':'';
     }
   }
@@ -333,25 +335,31 @@ if (viewport && world && resetButton && status) {
     }else if(selectedChoice){nextRound(1000);return;}
     const round=planShiftRound(visibleRows,visibleColumns);
     if(!round.moves.length){nextRound(restWait);return;}
-    hideTopic();
     cancelIntro();
     // All incoming tiles already exist just outside the viewport. Give them
     // their final project identity NOW, before their shift reveals them.
     // Otherwise the completed sync could visibly replace their name and tint.
+    const anchor=selectedChoice&&bloomModule?locate(selectedChoice):null;
+    const vacancies=anchor?bloomVacancies(anchor):[];
+    round.moves=round.moves.map(move=>({...move,vacancies}));
+    const sourceAt=(column:number,row:number)=>{
+      const cell=restingCell({column,row},vacancies);
+      return sourceCell(cell.column,cell.row,history);
+    };
     const entrances=round.moves.map(move=>{
       if(move.axis==='row'){
         const enteringColumn=move.direction===1?left-1:right+1;
         const departingColumn=move.direction===1?right:left;
         return {
-          incoming:sourceCell(enteringColumn,move.line,history),
-          departing:sourceCell(departingColumn,move.line,history)
+          incoming:sourceAt(enteringColumn,move.line),
+          departing:sourceAt(departingColumn,move.line)
         };
       }
       const enteringRow=move.direction===1?top-1:bottom+1;
       const departingRow=move.direction===1?bottom:top;
       return {
-        incoming:sourceCell(move.line,enteringRow,history),
-        departing:sourceCell(move.line,departingRow,history)
+        incoming:sourceAt(move.line,enteringRow),
+        departing:sourceAt(move.line,departingRow)
       };
     });
     placement.stageEntrances(entrances);
@@ -364,17 +372,20 @@ if (viewport && world && resetButton && status) {
   }
   function frameMovement(now:number):void {
     if(!moving||moving.pausedAt!==null)return;
-    moving.fraction=Math.min(1,Math.max(0,(now-moving.started)/duration));
+    moving.fraction=Math.min(1,Math.max(0,(now-moving.started)/(moving.duration??duration)));
     paintMovement(moving.fraction);
     if(moving.fraction<1){requestAnimationFrame(frameMovement);return;}
     history.push(...moving.moves);
     moving=null;
     // The source identity is carried by the shifted tile, not by its old slot.
     updateField(true);
-    for(const slot of slots)slot.element.style.transform='';
+    paintMovement(0);
     surface.classList.remove('is-autoshifting');
     if(heading)heading.textContent=selectedChoice?'Exploring project':'Living grid prototype';
-    if(pendingChoice&&!bloomClosingTimer){
+    if(closeAfterShift){
+      const next=closeAfterShift.next;closeAfterShift=null;
+      stopSelection(true,next);
+    }else if(pendingChoice&&!bloomClosingTimer){
       const chosen=pendingChoice;pendingChoice=null;
       beginSelection(chosen);
     }else nextRound(restWait);
@@ -424,15 +435,25 @@ if (viewport && world && resetButton && status) {
   function stopSelection(animateReturn=true,nextChoice:ProjectChoice|null=null):void {
     const wasActive=!!selectedChoice||!!centering||!!bloomModule||!!pendingChoice;
     const hadBloom=!!bloomModule;
-    const oldSlot=selectedChoice?locate(selectedChoice):null;
-    const oldColumn=oldSlot?.column??null;
-    if(hadBloom&&moving&&animateReturn)pauseMovement();
+    if(hadBloom&&moving&&animateReturn){
+      // Finish the straight visual movement before reclaiming its vacancies.
+      // Panning continues immediately while this short close sequence runs.
+      closeAfterShift={next:nextChoice};
+      const remaining=BLOOM_SHIFT_DURATION_MS;
+      moving.duration=remaining/Math.max(.001,1-moving.fraction);
+      moving.started=performance.now()-moving.fraction*moving.duration;
+      moving.pausedAt=null;
+      requestAnimationFrame(frameMovement);
+      return;
+    }
+    closeAfterShift=null;
     pendingChoice=nextChoice;
     centering=null;
     if(centerFrame!==null){cancelAnimationFrame(centerFrame);centerFrame=null;}
     if(bloomOpeningTimer!==null){clearTimeout(bloomOpeningTimer);bloomOpeningTimer=null;}
     if(bloomClosingTimer!==null){clearTimeout(bloomClosingTimer);bloomClosingTimer=null;}
     bloomModule?.remove();bloomModule=null;
+    metadataModule?.remove();metadataModule=null;
     surface.classList.remove('is-focusing','is-blooming','is-bloom-closing');
     for(const slot of slots)slot.element.classList.remove('grid-tile--bloom-returning');
     if(hadBloom&&animateReturn&&!prefersReduced.matches)
@@ -446,24 +467,8 @@ if (viewport && world && resetButton && status) {
       element.style.removeProperty('transition');
     }
     selectedChoice=null;
-    // If a column was mid-shift, animate the removal of its temporary
-    // rightward bloom offset while preserving its paused vertical progress.
-    if(hadBloom&&moving&&moving.pausedAt!==null&&animateReturn
-       &&!prefersReduced.matches){
-      const progress=easeInOut(moving.fraction);
-      for(const slot of slots){
-        const rowMove=moving.moves.find(move=>move.axis==='row'&&move.line===slot.row);
-        const columnMove=moving.moves.find(move=>move.axis==='column'&&move.line===slot.column);
-        if(!slot.element.classList.contains('grid-tile--bloom-returning')
-          &&!(columnMove&&oldColumn!==null&&slot.column>oldColumn+1))continue;
-        const x=(rowMove?.direction??0)*tileSize*progress;
-        const y=(columnMove?.direction??0)*tileSize*progress;
-        slot.element.getBoundingClientRect();
-        slot.element.style.transition='transform '+BLOOM_SHIFT_DURATION_MS
-          +'ms cubic-bezier(.22,.75,.25,1)';
-        slot.element.style.transform=x||y?'translate3d('+x+'px,'+y+'px,0)':'';
-      }
-    }
+    // Keep independent paused motion while displaced runs return home.
+    paintMovement(moving?.fraction??0);
     highlightSelection();
     if(heading)heading.textContent=nextChoice?'Switching projects':'Living grid prototype';
     if(hadBloom&&animateReturn&&!prefersReduced.matches){
@@ -502,28 +507,10 @@ if (viewport && world && resetButton && status) {
     surface.classList.remove('is-focusing');
     surface.classList.add('is-blooming');
     highlightSelection();
+    layer.getBoundingClientRect();
     for(const slot of slots){
       slot.element.classList.toggle('grid-tile--bloom-shifted',
         shiftsForBloom(slot,selectedCell));
-    }
-    // The camera may have paused an unrelated vertical shift mid-cell. Its
-    // column's tiles need to acquire/release the bloom's horizontal offset
-    // during the opening animation, not suddenly jump when motion resumes.
-    if(moving&&moving.pausedAt!==null){
-      const eased=easeInOut(moving.fraction);
-      for(const move of moving.moves){
-        if(move.axis!=='column'||move.line<=selectedCell.column+1)continue;
-        for(const slot of slots){
-          if(slot.column!==move.line)continue;
-          const x=bloomShiftFraction(slot,selectedCell,move.direction,moving.fraction)*tileSize;
-          const y=move.direction*eased*tileSize;
-          // Freeze the old computed position as the transition's start point.
-          slot.element.getBoundingClientRect();
-          slot.element.style.transition='transform '+BLOOM_SHIFT_DURATION_MS
-            +'ms cubic-bezier(.22,.75,.25,1)';
-          slot.element.style.transform='translate3d('+x+'px,'+y+'px,0)';
-        }
-      }
     }
     const panel=document.createElement('section');
     panel.className='grid-bloom-module';
@@ -547,10 +534,24 @@ if (viewport && world && resetButton && status) {
     });
     panel.append(kicker,title,summary,close);
     layer.appendChild(panel);
+    layer.getBoundingClientRect();
     bloomModule=panel;
+    const metadata=document.createElement('section');
+    metadata.className='grid-bloom-module';
+    metadata.style.left=(selectedCell.column*tileSize)+'px';
+    metadata.style.top=((selectedCell.row+1)*tileSize)+'px';
+    metadata.setAttribute('aria-label','Project notes: '+project.name);
+    const notesTitle=document.createElement('h2');
+    notesTitle.className='bloom-title';notesTitle.textContent='Project notes';
+    const notes=document.createElement('p');notes.className='bloom-summary';
+    const topics=topicLabelsForProject(project.id);
+    notes.textContent=TOPIC_POINTS.map(point=>topics[point]).join(' · ')+'. Source evidence: '+project.evidence+'. Provisional inventory candidate; details await review.';
+    metadata.append(notesTitle,notes);layer.appendChild(metadata);metadataModule=metadata;
+    paintMovement(moving?.fraction??0);
     bloomOpeningTimer=setTimeout(()=>{
       bloomOpeningTimer=null;
       panel.classList.add('is-open');
+      metadata.classList.add('is-open');
       liveStatus.textContent=project.name+' opened beside its centered tile.';
       for(const slot of slots)slot.element.style.removeProperty('transition');
       // Re-enable the original dice-driven scheduler. Only lines that do not
@@ -770,9 +771,10 @@ if (viewport && world && resetButton && status) {
     if(event.pointerId!==activePointer)return;
     if(Math.hypot(event.clientX-pointerDownX,event.clientY-pointerDownY)>9){
       pointerDragged=true;
+      if(!closeAfterShift&&(selectedChoice||pendingChoice||centering))stopSelection();
       hideTopic();
     }
-    if(!selectedChoice&&!centering)
+    if(pointerDragged||(!selectedChoice&&!centering))
       manualPan=queuePointerTravel(manualPan,event.clientX-lastX,event.clientY-lastY);
     lastX=event.clientX;lastY=event.clientY;
     scheduleManualFrame();
@@ -836,7 +838,7 @@ if (viewport && world && resetButton && status) {
       return;
     }
     if(!arrowNames.has(event.key))return;
-    if(selectedChoice){event.preventDefault();return;}
+    if(selectedChoice||pendingChoice||centering)stopSelection();
     hideTopic();
     cancelIntro();
     event.preventDefault();

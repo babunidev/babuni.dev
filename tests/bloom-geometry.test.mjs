@@ -1,0 +1,34 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {occupiedCell,restingCell,bloomVacancies} from '../src/lib/bloom-geometry.ts';
+import {sourceCell} from '../src/lib/grid-shifts.ts';
+import {shiftTouchesSelection,shiftAvoidsBloom} from '../src/lib/grid-focus.ts';
+test('two modules and future 3x3 vacancies preserve unique occupied cells',()=>{
+ for(const vacancies of [bloomVacancies({column:0,row:0}),Array.from({length:9},(_,i)=>({column:i%3-1,row:Math.floor(i/3)-1})).filter(c=>c.column||c.row)]){
+  const seen=new Set();
+  for(let row=-5;row<=5;row++)for(let column=-5;column<=5;column++){
+   const c={column,row},v=occupiedCell(c,vacancies),key=JSON.stringify(v);
+   assert.ok(!seen.has(key));seen.add(key);
+   assert.ok(!vacancies.some(h=>h.column===v.column&&h.row===v.row));
+   assert.deepEqual(restingCell(v,vacancies),c);
+  }
+ }
+});
+test('vertical shifts select actual visual occupants and preserve straight x and identity at commit',()=>{
+ const selected={column:0,row:0},vacancies=bloomVacancies(selected);
+ for(const direction of [-1,1])for(const line of [-3,-1,2,3,5]){
+  const move={axis:'column',line,direction,vacancies};
+  assert.ok(shiftAvoidsBloom(move,selected));
+  for(let row=-4;row<4;row++){
+   const original=restingCell({column:line,row},vacancies);
+   const end=restingCell({column:line,row:row+direction},vacancies);
+   assert.deepEqual(sourceCell(end.column,end.row,[move]),original);
+   assert.equal(occupiedCell(original,vacancies).column,occupiedCell(end,vacancies).column);
+  }
+ }
+});
+test('expansion waits for far-right columns and both displaced row runs',()=>{
+ const c={column:2,row:3};
+ for(const move of [{axis:'column',line:9,direction:1},{axis:'row',line:4,direction:-1}])assert.ok(shiftTouchesSelection(move,c));
+ assert.equal(shiftTouchesSelection({axis:'column',line:1,direction:1},c),false);
+});
