@@ -39,7 +39,7 @@ The central portal in full bloom also closes the project, returning to the grid.
 
 ## Information points
 
-Three small lights surrounding the portal—**top, left, and right**—are *not links*. Their tiny bubbles give a category, form, theme, or other interesting flavor instead of a sales pitch. This supersedes the earlier four-point sketch. Directly exploring the portal can reveal all three; one randomly chosen point may briefly reveal its clue without interaction, including on other tiles while a small bloom is open. Babuni.dev revised their presentation on 2026-10-26: holographic callouts may extend over neighboring tiles like wings. The left bubble anchors by its bottom-right corner, the right by its bottom-left, and the top grows upward. They can be ignored. Their exact wording will be curated from reliable project material and development history.
+Three small lights surrounding the portal—**top, left, and right**—are *not links*. Their tiny bubbles give a category, form, theme, or other interesting flavor instead of a sales pitch. This supersedes the earlier four-point sketch. Hovering or focusing anywhere on a tile reveals all three in succession; the whole tile is one button for selecting the project, including its portal; one randomly chosen point may briefly reveal its clue without interaction, including on other tiles while a small bloom is open. Babuni.dev revised their presentation on 2026-10-26: holographic callouts may extend over neighboring tiles like wings. The left bubble anchors by its bottom-right corner, the right by its bottom-left, and the top grows upward. They can be ignored. Their exact wording will be curated from reliable project material and development history.
 
 ## Content and presentation
 

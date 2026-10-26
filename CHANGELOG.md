@@ -201,3 +201,9 @@ Each future entry should include the change, its user-visible or technical effec
 ### Added
 - A gentle gold outline pulse on the queued project while opening, switching or closing waits for a shift. Reduced motion keeps a steady outline; the selected control exposes its busy state.
 - Babuni.dev’s supplied `PortalContentBabuniDev.png` in the BABUNI.DEV portal, centered behind a circular mask and recessed rim. Artwork follows semantic identity through tile reuse.
+
+## 2026-10-26 — One action across the whole tile
+
+### Changed
+- Each tile now has one full-face button for hover/focus topics and click/tap/keyboard project selection. Portal graphics are decorative rather than a separate button.
+- Removed the portal-only touch toggle and extra keyboard stop; whole-tile topic reveal keeps its randomized sequence.

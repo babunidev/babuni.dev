@@ -46,7 +46,7 @@ const title='babuni.dev — Living Grid Prototype';
   .grid-viewport.is-bloom-closing .grid-tile--bloom-returning{transition:transform 520ms cubic-bezier(.22,.75,.25,1)}
   .grid-viewport.is-blooming .grid-tile--bloom-shifted{transform:translate3d(var(--tile-size),0,0)}
   .grid-tile--selected .tile-face{border-color:#d8bd91;box-shadow:inset 0 0 0 4px #393837,inset 0 0 0 5px #b39973,0 0 15px rgba(224,190,138,.48)}
-  .tile-select{position:absolute;inset:0;z-index:1;appearance:none;border:0;background:transparent;cursor:pointer;pointer-events:auto}
+  .tile-select{position:absolute;inset:0;z-index:4;appearance:none;border:0;background:transparent;cursor:pointer;pointer-events:auto}
   .tile-select:focus-visible{outline:3px solid #e3c99b;outline-offset:-10px}
   /* Acknowledgement only: opacity changes, never the tile's shift transform. */
   .grid-tile--waiting .tile-select::after{content:'';position:absolute;inset:4px;border:2px solid #f0cf91;box-shadow:inset 0 0 10px rgba(240,207,145,.22),0 0 12px rgba(240,207,145,.35);pointer-events:none;animation:selection-wait 1600ms ease-in-out infinite}
@@ -106,12 +106,11 @@ const title='babuni.dev — Living Grid Prototype';
   }
   .grid-viewport.is-dragging .tile-topic{opacity:0}
   .grid-viewport.is-dragging .grid-tile--topic-open .tile-mark{box-shadow:none}
-  .tile-portal{width:100%;height:100%;aspect-ratio:1;max-height:none;flex:none;appearance:none;padding:0;cursor:help;pointer-events:auto;border-radius:50%;border:6px solid #77716d;box-shadow:0 0 0 2px #2b2826,inset 0 0 0 3px #18191e,inset 0 0 24px #08070d;background:radial-gradient(circle at 43% 38%,color-mix(in srgb,var(--portal-color) 75%,white),var(--portal-color) 23%,#121323 70%,#05060c 100%)}
+  .tile-portal{width:100%;height:100%;aspect-ratio:1;max-height:none;flex:none;appearance:none;padding:0;cursor:inherit;pointer-events:none;border-radius:50%;border:6px solid #77716d;box-shadow:0 0 0 2px #2b2826,inset 0 0 0 3px #18191e,inset 0 0 24px #08070d;background:radial-gradient(circle at 43% 38%,color-mix(in srgb,var(--portal-color) 75%,white),var(--portal-color) 23%,#121323 70%,#05060c 100%)}
   /* The square source is centered behind a round aperture; the rim sits above it. */
   .tile-portal--artwork{overflow:hidden;isolation:isolate}
   .tile-portal-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;pointer-events:none;z-index:0}
   .tile-portal--artwork::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 3px #18191e,inset 0 0 12px rgba(8,7,13,.6);pointer-events:none;z-index:1}
-  .tile-portal:focus-visible{outline:3px solid #e8d7b5;outline-offset:4px}
   .tile-name{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:89%;font-size:clamp(12px,calc(var(--tile-size,240px) * .068),17px);max-width:89%;text-align:center;letter-spacing:.08em;color:#d8cab7;text-shadow:0 1px 1px #000;white-space:normal;overflow-wrap:break-word;text-wrap:balance;line-height:1.18}
   .grid-tile--long-title .tile-name{width:95%;font-size:clamp(9px,calc(var(--tile-size,240px) * .052),14px);letter-spacing:.025em;line-height:1.12;max-width:95%}
   .grid-tile--origin .tile-face{border-color:#ac9a86}

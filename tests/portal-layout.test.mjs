@@ -30,3 +30,11 @@ test('topic wings stay anchored to their own marker rather than old tile offsets
   assert.match(css,/\.tile-topic--right\{bottom:calc\(50% \+ 3\.5px\);left:calc\(100% \+ var\(--marker-edge-gap\)\)/);
   assert.match(css,/\.tile-topic\{position:absolute;top:auto;bottom:calc\(100% \+ var\(--marker-edge-gap\) \+ 7px\);left:50%;/);
 });
+
+test('a tile exposes exactly one button; the portal is decorative',()=>{
+  const template=grid.match(/element\.innerHTML='([^']+)'/)[1];
+  assert.equal((template.match(/<button\b/g)||[]).length,1);
+  assert.match(template,/<button[^>]+class="tile-select"/);
+  assert.match(template,/<div class="tile-portal" aria-hidden="true"><\/div>/);
+  assert.doesNotMatch(template,/<button[^>]+class="tile-portal"/);
+});

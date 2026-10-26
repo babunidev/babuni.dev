@@ -14,7 +14,7 @@ This document describes intended behavior; implementation must be separately ver
 - Recessed colored central portal; project logo or themed image inside it.
 - Three small glowing square points (above, left, right of portal) with outward-spreading translucent topic snippets; the four-point sketch was superseded on 2026-10-26. Angular connector strokes remain a possible future visual refinement.
 - Panels are temporary *information snippets*: purpose, behavior, audience, interesting characteristics.
-- Direct portal hover/focus/tap reveals all three tiny snippets; occasional ambient teasers reveal one random point at a time, including on unaffected surrounding tiles during small bloom. Linger timing remains optional/unimplemented.
+- Whole-tile hover/focus reveals all three tiny snippets in their existing randomized sequence; clicking/tapping anywhere selects the project. Occasional ambient teasers reveal one random point at a time, including on unaffected surrounding tiles during small bloom. Linger timing remains optional/unimplemented.
 - Info overlays may extend across neighboring tiles; do not reserve adjacent cells. This differs from bloom modules.
 
 ## Movement
@@ -223,3 +223,9 @@ The autonomous duration remains **4400 ms**, with the existing smoothstep easing
 **Babuni.dev requested:** Pulse while a requested action waits for a shift, and replace BABUNI.DEV’s colored ball with their supplied square PNG seen through a round opening. **AI implemented:** A gold outline on the queued destination (or current project when closing) pulses in opacity while waiting. It never scales/moves the tile or alters the shift clock. AI chose a gentle 1600 ms cycle; reduced-motion mode leaves the indication steady. The pulse stops when waiting ends or selection is cancelled.
 
 The original square logo image remains centered and fills the circular aperture; its corners are clipped, with a dark recessed rim drawn above it. Portal diameter, marker placement, topic reveal and all existing movement timings remain unchanged. Other projects keep their colored portal fallback. No source image editing, new logo generation or automatic image pan/zoom is introduced. Final pulse feel and device-level image readability remain open.
+
+## Unified whole-tile interaction — 2026-10-26
+
+**Babuni.dev requested/decided:** The whole tile should open its bubbles and be clickable for selection, with the portal no longer a separate interaction. **Implemented:** Hover/focus anywhere on the tile starts the existing random sequential topic reveal. Click/tap anywhere, including the portal, selects the project; native Enter/Space uses the same button. Touch no longer requires or offers a separate portal-only topic toggle before selection. Internal pointer movement does not dismiss/restart the sequence; leaving the tile or focus dismisses it. Activation follows existing centering/bloom behavior.
+
+There is one keyboard stop and action per tile. The decorative portal and logo retain their geometry/mask. Drag intent and capture, queued gold pulse, normal shift waits, reveal timing and bloom switching remain unchanged. Older portal-only hover/touch descriptions are superseded by this explicit human direction. Physical touch acceptance remains pending.
