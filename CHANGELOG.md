@@ -84,6 +84,13 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 - On 2026-10-26, an independent text-source snapshot of `ea90117` installed with lifecycle scripts disabled and passed `npm run build` (one static page). Manifest/lockfile consistency and relative Markdown links passed inspection. Dedicated type checking, browser testing, and dependency vulnerability auditing were not performed.
 - The creator reported Astro 7.4.2 starting successfully at localhost:4321 before the merge. The repository content and merge commit were verified on GitHub. At that time, no post-merge build or browser test had been independently performed.
 
+### Added — 2026-10-26: project inventory research memory
+- Added `docs/PROJECT_INVENTORY.md`, a provisional 53-entry catalog of potential portfolio works with one-line descriptions, evidence levels and project relationships.
+- Linked the research inventory from README and recorded its provenance and limitations in the development journal.
+
+### Verification
+- Documentation writes confirmed by GitHub. No application code was changed and no build/browser tests were run for this documentation-only update.
+
 ## Conventions
 
 Each future entry should include the change, its user-visible or technical effect, and optionally a PR/commit reference. Avoid duplicating brainstorm narratives from DEVLOG. Date releases when actual releases happen; do not invent version numbers.
