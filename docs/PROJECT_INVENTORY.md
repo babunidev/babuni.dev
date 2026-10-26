@@ -5,9 +5,9 @@
 
 ## Purpose and provenance
 
-The creator asked to collect work discussed across chats, projects and repositories, including abandoned concepts, small addons, old games, visual studies and works in progress, then order it approximately by most recent work. The AI assembled the list from available conversations, uploaded/project material and connected GitHub README/repository evidence. This is a **working memory** to help choose authentic prototype tile titles and later research actual exhibits.
+Babuni.dev asked to collect work discussed across chats, projects and repositories, including abandoned concepts, small addons, old games, visual studies and works in progress, then order it approximately by most recent work. The AI assembled the list from available conversations, uploaded/project material and connected GitHub README/repository evidence. This is a **working memory** to help choose authentic prototype tile titles and later research actual exhibits.
 
-**Important boundaries:** Ordering is approximate (recent GitHub update order is more reliable than old conversation chronology). A row is a candidate *work, variant, subproject or collection*, not a claim of an independent released product. Some entries are ancestors/renames or belong under a larger project. Inclusion does **not** mean approval for public exhibition, correctness of every earlier claim, access to original assets, or confirmation of release or functionality. Creator approval and source verification are required before converting entries into production content. Do not publish private conversations or copyrighted game assets by default.
+**Important boundaries:** Ordering is approximate (recent GitHub update order is more reliable than old conversation chronology). A row is a candidate *work, variant, subproject or collection*, not a claim of an independent released product. Some entries are ancestors/renames or belong under a larger project. Inclusion does **not** mean approval for public exhibition, correctness of every earlier claim, access to original assets, or confirmation of release or functionality. Babuni.dev approval and source verification are required before converting entries into production content. Do not publish private conversations or copyrighted game assets by default.
 
 **Evidence key:** `repo` = README found in the accessible GitHub account; `repo-lineage` = documented repository likely part of a family; `repo-context` = supported by related repository documentation; `document` = recovered creative document; `conversation` = prior discussion only; `repository-doc` = this portfolio's own documented methodology; `name-only` = named repository without substantive verified contents. Statuses and timeline require a fresh check.
 
@@ -51,8 +51,8 @@ The creator asked to collect work discussed across chats, projects and repositor
 | 34 | Amazin | Stealth-emote addon with rested experience reporting. | repo |
 | 35 | WarriorStartAttack | Auto-attack helper for warrior abilities. | repo-lineage |
 | 36 | GuildChatAI | Experimental guild chat project with limited public description. | repo |
-| 37 | Practical Templates Creator | Concept for an automated creator of practical digital templates. | conversation |
-| 38 | Human–AI Development Journal | Record of creator direction, AI work, decisions and technical verification. | repository-doc |
+| 37 | Practical Templates Babuni.dev | Concept for an automated Babuni.dev of practical digital templates. | conversation |
+| 38 | Human–AI Development Journal | Record of Babuni.dev direction, AI work, decisions and technical verification. | repository-doc |
 | 39 | ROAR Guild and Community | WoW guild community design and shared roleplaying rituals. | conversation |
 | 40 | The Amberbrew Family | Warcraft character and family lore centered on the Amberbrew household. | conversation |
 | 41 | Buxbrew — character story | Roleplaying story of Jasmine 'Buxbrew' Amberbrew. | conversation |
