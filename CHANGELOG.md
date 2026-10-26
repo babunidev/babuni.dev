@@ -6,6 +6,11 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — manual movement tuning (2026-10-26)
+- Doubled mouse/touch maximum pan speed (440 to 880 CSS px/s) and arrow-key speed (130 to 260 CSS px/s), with correspondingly doubled acceleration and deceleration settings.
+- Kept the 180 CSS px cursor-lag cap and autonomous shifting cadence unchanged.
+- Added a test asserting the requested tuning values. Full post-change local test and browser review pending.
+
 ### Fixed — seeded shift test coverage, 2026-10-26
 - Corrected a false-negative assertion in the no-same-direction shift test. Consecutive small seeds (0–399) all selected the row axis on the first output of the test RNG, so the test failed its expectation that columns were also covered.
 - Explicitly exercise 200 reproducible rounds for each axis, including the same-direction restriction and earliest-successful-initiative priority. No application or movement algorithm was changed.
