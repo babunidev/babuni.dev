@@ -291,3 +291,14 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **Verification.** Pure helper tests for exact recentering, non-overlapping row displacement and hint cadence have been authored, along with a selected-identity regression test. Browser behavior and the full suite still need running. No new external dependencies or finished stone/portal assets were introduced.
 
 The implementation additionally limits focus suppression to keyboard-visible focus rather than stale mouse/touch focus: clicking a portal can leave the browser's activeElement on its button even after the visitor stops interacting. This distinction is relevant to the creator's observation that tapping away and back seemed to change whether hints appeared.
+
+
+## 2026-10-26 — Ambient hints that can actually be noticed
+
+**Creator feedback.** The creator found the center-first project selection and neighboring-cell bloom smooth, pretty and deliberate. They did not reliably see the spontaneous little topic hints: sometimes nothing appeared for a long time, occasionally one was near a corner, and tapping away/back seemed to change whether hints resumed. They suggested a hint around every five seconds, on a genuinely onscreen tile.
+
+**AI diagnosis.** The prior 6.5–10.5-second attempt was silently skipped during a 4.4-second row/column shift, followed by another full random delay. Repeated shifts could therefore create large gaps. Eligible tiles included partly visible fragments at screen edges. Passive focus on the viewport, or stale browser focus on a portal button following mouse/touch input, could also block hints without ongoing user activity.
+
+**AI change.** The due timestamp now advances five seconds after a successful teaser; a blocked or empty-candidate attempt retries after 600 milliseconds without restarting the five-second wait. Candidate tiles must fit fully within the actual transformed viewport, with additional clearance from corners and the header and footer controls. A project-control focus blocks only when keyboard-visible; the viewport itself does not suppress passive viewing. The preceding project's identity is excluded when another suitable tile exists. One tiny topic stays visible 1.7 seconds at most; selection, bloom, manual interaction, line shifting, hidden tabs and reduced-motion settings still take priority.
+
+**Verification.** Focused tests were updated for cadence, busy retries, desktop edge rejection and phone geometry. Full local suite, production build, and creator visual confirmation of the revised hints remain pending. The existing center-and-bloom animations were not changed.

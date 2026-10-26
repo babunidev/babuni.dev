@@ -6,6 +6,15 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Fixed — recurring ambient topic bubbles stay in view (2026-10-26)
+- Adjusted automatic topic hints to a roughly five-second interval, with existing 1.7-second display duration.
+- Busy checks (including autonomous shifts) now retry after 600 ms instead of resetting the entire wait. No queue of missed hints accumulates.
+- Only choose fully onscreen project tiles with safe room around edges and the header/footer; use transformed DOM bounds.
+- Passive viewport focus and stale pointer/touch focus no longer suppress hints indefinitely; active keyboard-visible project focus still has priority.
+- Avoid repeating the immediately previous project when other candidates exist.
+- Added tests for cadence, short retry behavior, onscreen eligibility and phone-size geometry.
+- The creator visually approved the center-first small-bloom transition. New ambient behavior awaits their testing.
+
 ### Changed — project-wide author attribution (2026-10-26)
 - Standardized the **Babuni.dev** author identity across accessible GitHub repositories: public README credits, World of Warcraft add-on manifests, applicable package metadata and current project documentation.
 - Replaced generic author-role references in this portfolio's working documentation with the artist name while preserving distinct AI contributions and historical records.

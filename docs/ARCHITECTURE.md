@@ -134,3 +134,10 @@ The stone face has a separate focusable select button underneath the existing po
 An ambient timer reveals one existing topic marker/label for about 1.7 s at randomized 6.5–10.5 s intervals, conditioned on visibility, inactivity, no active bubble, no selection or shifting, and absence of reduced-motion preference. The UI introduces no network request or keyword generation. Full local suite, visual correctness, touch and focus behavior, and interrupt/reentry cases remain unverified.
 
 The live focused-control check uses CSS `:focus-visible` for project buttons; ordinary pointer/touch focus left behind after a tap does not indefinitely block idle hint scheduling.
+
+
+## Ambient hint reliability correction — 2026-10-26
+
+`src/lib/grid-focus.ts` now defines a 5000 ms normal interval, 600 ms blocked retry and 1700 ms visibility duration. The renderer stores `nextAmbientAt` and only advances it after successfully displaying a hint. Misses during autonomous shifts/interaction retry shortly without resetting the deadline, eliminating the previous 6.5–10.5-second skip-and-restart behavior. There is no queue of overdue hints.
+
+The candidate filter checks each recycled tile's actual `getBoundingClientRect()` against the viewport's bounding box, applying padding on both sides, extra top space for the site header and extra bottom space for the help panel. A tile must be fully inside these margins; `aria-hidden` alone is insufficient. The focused-control gate uses `:focus-visible` so that keyboard navigation retains precedence, but stale pointer focus and passive viewport focus do not stop ambient feedback. A previous-project-ID preference discourages immediate repetitions. Tests cover timing and full-tile geometry; integrated browser results and phone input remain to be checked.

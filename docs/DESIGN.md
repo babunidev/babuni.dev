@@ -162,3 +162,10 @@ This is **not** a complete four-point system, a small bloom, a full project prev
 Full four-point information design, multi-module blooms, selection switching refinements, and collision-safe grid motion during bloom are still future work. Finished portal artwork is not a prerequisite.
 
 Keyboard-visible project focus blocks automated bubbles, but stale pointer/touch focus on a button does not suppress passive hints forever. This is distinct from an actively open project topic, which continues to take precedence.
+
+
+## Reliable ambient mini-topics — 2026-10-26
+
+After approving the centering-and-bloom transition, the creator observed long unexplained gaps between automatic bubble appearances and occasional hints near screen corners. Aim for one short, gentle topic bubble approximately every five seconds during idle viewing. The selected project's **entire tile** must be visibly within the viewport, clear of the header and bottom controls, rather than just partially intersecting the screen. If a row shifts or the visitor is interacting when a hint is due, defer briefly and show one when eligible; do not start a new multi-second wait for every miss. No simultaneous hints. Keyboard-visible project focus remains protected, but passive grid focus/touch-afterglow should not halt the effect indefinitely. Reduced-motion users still receive no automatic teaser.
+
+The approved center-first movement and one-cell bloom retain their existing prototype timings and mechanics. New hint placement and pacing await visual acceptance.
