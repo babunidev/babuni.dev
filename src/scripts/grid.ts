@@ -416,6 +416,9 @@ if (viewport && world && resetButton && status) {
   function stopSelection(animateReturn=true,nextChoice:ProjectChoice|null=null):void {
     const wasActive=!!selectedChoice||!!centering||!!bloomModule||!!pendingChoice;
     const hadBloom=!!bloomModule;
+    const oldSlot=selectedChoice?locate(selectedChoice):null;
+    const oldColumn=oldSlot?.column??null;
+    if(hadBloom&&moving&&animateReturn)pauseMovement();
     pendingChoice=nextChoice;
     centering=null;
     if(centerFrame!==null){cancelAnimationFrame(centerFrame);centerFrame=null;}
@@ -435,17 +438,39 @@ if (viewport && world && resetButton && status) {
       element.style.removeProperty('transition');
     }
     selectedChoice=null;
+    // If a column was mid-shift, animate the removal of its temporary
+    // rightward bloom offset while preserving its paused vertical progress.
+    if(hadBloom&&moving&&moving.pausedAt!==null&&animateReturn
+       &&!prefersReduced.matches){
+      const progress=easeInOut(moving.fraction);
+      for(const slot of slots){
+        const rowMove=moving.moves.find(move=>move.axis==='row'&&move.line===slot.row);
+        const columnMove=moving.moves.find(move=>move.axis==='column'&&move.line===slot.column);
+        if(!slot.element.classList.contains('grid-tile--bloom-returning')
+          &&!(columnMove&&oldColumn!==null&&slot.column>oldColumn+1))continue;
+        const x=(rowMove?.direction??0)*tileSize*progress;
+        const y=(columnMove?.direction??0)*tileSize*progress;
+        slot.element.getBoundingClientRect();
+        slot.element.style.transition='transform '+BLOOM_SHIFT_DURATION_MS
+          +'ms cubic-bezier(.22,.75,.25,1)';
+        slot.element.style.transform=x||y?'translate3d('+x+'px,'+y+'px,0)':'';
+      }
+    }
     highlightSelection();
     if(heading)heading.textContent=nextChoice?'Switching projects':'Living grid prototype';
     if(hadBloom&&animateReturn&&!prefersReduced.matches){
       bloomClosingTimer=setTimeout(()=>{
         surface.classList.remove('is-bloom-closing');
-        for(const slot of slots)slot.element.classList.remove('grid-tile--bloom-returning');
+        for(const slot of slots){
+          slot.element.classList.remove('grid-tile--bloom-returning');
+          slot.element.style.removeProperty('transition');
+        }
         bloomClosingTimer=null;
         if(pendingChoice){
           const following=pendingChoice;pendingChoice=null;
           beginSelection(following);
-        }else if(!moving)nextRound(restWait);
+        }else if(moving)resumeMovement();
+        else nextRound(restWait);
       },BLOOM_SHIFT_DURATION_MS);
     }else if(nextChoice){
       pendingChoice=null;
