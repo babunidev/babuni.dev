@@ -99,3 +99,7 @@ Identify the project's human author by the artist name **Babuni.dev**. Avoid usi
 ## Preserve approved interaction feel
 
 Babuni.dev explicitly requested on 2026-10-26: do not independently change established timing, positioning, or other approved feature behavior while solving another issue. Preserve the existing feel. If a proposed solution needs such a change that Babuni.dev has not already authorized, explain the idea and ask before implementing it. Record AI proposals separately from human decisions. In particular, clicking/selecting a project must never accelerate autonomous shifts: let the current shift finish at its normal tempo before opening.
+
+## Current development priority and test attribution
+
+Babuni.dev directed on 2026-10-26: prioritize architecture and underlying structures before visual/readability polish. Discuss and refine module kinds/structure before implementing full bloom; do not treat AI module proposals as approved requirements. Babuni.dev clarified that their mobile feedback is based on actual phone testing. Record that as human device evidence, separately from agent browser mocks or automated tests.

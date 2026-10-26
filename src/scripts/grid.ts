@@ -81,6 +81,14 @@ if (viewport && world && resetButton && status) {
   }
   function showTopic(tile:HTMLDivElement,point:TopicPoint|'all'='all'):void {
     if(tile.getAttribute('aria-hidden')==='true')return;
+    // Suppress only the open bloom's physical anchor, not other copies
+    // of that project or the queued destination of a selection switch.
+    const slot=slots.find(slot=>slot.element===tile);
+    if(bloomModule&&bloomAnchor&&slot
+       &&slot.column===bloomAnchor.column&&slot.row===bloomAnchor.row){
+      hideTopic();
+      return;
+    }
     // Focus, pointer entry and touch can all target the same exploration.
     // Preserve an existing sequence rather than restarting its random order.
     if(activeTopic===tile&&point==='all'&&tile.dataset.topicSequence==='true')return;
@@ -579,6 +587,7 @@ if (viewport && world && resetButton && status) {
     layer.appendChild(panel);
     layer.getBoundingClientRect();
     bloomModule=panel;
+    if(activeTopic===chosen.element)hideTopic();
     const metadata=document.createElement('section');
     metadata.className='grid-bloom-module';
     metadata.style.left=(selectedCell.column*tileSize)+'px';

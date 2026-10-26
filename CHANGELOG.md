@@ -218,3 +218,8 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Fixed
 - Bloom geometry and selected identity survive panning beyond the bounded rendered tile pool and returning.
+
+## 2026-10-26 — Topics defer to the open bloom
+
+### Fixed
+- Suppress topic bubbles on the physical tile whose bloom is open, for hover/focus and mobile center discovery. Other tiles and repeated project instances retain normal topic behavior. Opening clears any already-visible anchor bubbles.

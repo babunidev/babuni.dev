@@ -89,3 +89,23 @@ The square artwork is displayed behind a round crop; the original is retained in
 **2026-10-26 unified tile control:** Existing topic text and supplied artwork are unchanged. Each tile’s single button announces its project name and three topic snippets; the portal is decorative, with no duplicate accessible action or extra tab stop. Whole-tile hover/focus presents the same snippets in the existing shuffled sequence.
 
 **2026-10-26 mobile discovery:** Existing topic labels and their random sequential reveal are reused for the tile under the screen center on coarse/no-hover input. This reveals hints, not project selection. No new copy or long-press instructions were introduced. Open summary/notes modules keep their content while panning away and back; their semantic source is retained beyond DOM recycling.
+
+## Full-bloom module proposal — AI draft for Babuni.dev review, 2026-10-26
+
+Babuni.dev asked to specify module structure collaboratively before building full bloom, prioritizing architecture and underlying structures over polish. The following is **AI-proposed, not an approved schema or implementation**. It refines the existing module candidates without requiring every project to have every type.
+
+| Family | Content examples | Preview and expanded view |
+| --- | --- | --- |
+| Text / document | Overview, concept, guide, architecture, collaboration notes | Short excerpt; conventional scrolling reader |
+| Image collection | Artwork, screenshots, sketches, design evolution | Cover/thumbnail; browsable gallery and optional art-only fullscreen |
+| Media | Video or audio where provided | Poster/title; deliberate playback and supporting captions/transcript when available |
+| Development history | Journal entries, experiments, decisions, changes and releases | Recent entry or highlight; chronological entries opening into the shared text reader |
+| Resources | Source repositories, demos, releases and downloadable files | Named destination/file summary; explicit open/download action |
+
+**Shared structure proposed:** Each project owns an ordered list of optional modules. Each module has a stable ID, family, title, short preview, full content or source references, and provenance/credits where applicable. Preview and detailed view use the same content source, avoiding separate prose for every display depth. Layout preferences are separate from content identity; do not bake fixed grid coordinates or a mandatory eight-module ring into project data. Load heavy media only when needed.
+
+History can reuse text rendering for individual entries; overview, concept and architecture are editorial roles of text modules, not separate one-off renderer types. Releases can appear as history entries linking to resource records. A feature/experiment can use text plus images/media rather than needing a custom component per project.
+
+**First self-exhibit candidate:** BABUNI.DEV could offer Overview/Concept, Design sketches, Development journal, Changelog, Architecture and Human–AI collaboration. Only include media that actually exists and is approved. These are candidates for review, not built full-bloom modules or claims that a gallery is already available.
+
+**Open for refinement:** Family boundaries, which modules appear in small bloom, initial full-bloom selection/order, whether history needs its own overview layout, and how much layout control project authors receive. No full-bloom renderer or production schema has been implemented by this draft.
