@@ -168,3 +168,11 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **Correction.** The assistant amended the test to inject a controlled first random value that explicitly selects the axis. The remaining draws still come from the reproducible seeded generator, preserving real variation in initiative, die rolls and direction. The no-same-direction and earliest-successful-initiative assertions now run across both axes independently.
 
 **Verification and outcome.** An isolated local Node test confirmed the corrected axis-selection coverage passes. Only test source and documentation were changed; no application behavior or shift rule was modified. A full test-suite run on the creator's newly pulled revision is still needed. This false alarm is recorded because it shows how inadequate test inputs can leave a critical branch untested.
+
+## 2026-10-26 — Corrected movement test suite verified on the creator's PC
+
+**Creator action and verification.** The creator fast-forwarded local `main` from `e569a1f` to `eef55d0` and reran `npm run test:grid` on Nobara Linux. The terminal reported **19 tests passed, 0 failed**, including separate row/column direction exclusivity and initiative priority. This confirms that the previously failing assertion has been corrected in the full local test suite.
+
+**Implementation.** No application behavior changed in this verification session. The assistant recorded the observed result on `main` as part of the project history.
+
+**Still open.** Automated test success does not establish whether the creator likes the revised mouse acceleration, arrow-key navigation, or line-shifting appearance. Those behaviors still require visual/hands-on review; mobile touch remains separately unverified.

@@ -11,7 +11,7 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 - Explicitly exercise 200 reproducible rounds for each axis, including the same-direction restriction and earliest-successful-initiative priority. No application or movement algorithm was changed.
 
 ### Verification — seeded test fix
-- An isolated local Node run of the corrected axis-forcing test passed. The creator's full pre-fix `npm run test:grid` previously reported 18 passing and 1 failing tests. Post-commit local suite verification remains pending.
+- An isolated local Node run of the corrected axis-forcing test passed. The creator's full pre-fix `npm run test:grid` previously reported 18 passing and 1 failing tests. The creator subsequently pulled `eef55d0` and verified the complete local `npm run test:grid` suite: **19 passed, 0 failed**.
 
 ### Changed — movement refinement, 2026-10-26
 - Replaced per-keypress arrow jumps with frame-driven, smoothly accelerating and decelerating held-arrow navigation (provisional 130 CSS px/s ceiling).
