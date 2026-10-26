@@ -19,6 +19,8 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 - [x] Implement temporary representative tiles (not final stone assets or real projects).
 - [x] Implement pointer-event mouse/touch dragging, keyboard pan, and reset (desktop pointer tested, real touch pending).
 - [x] Implement bounded DOM tile recycling, keeping stable logical coordinates (unit tested and browser preview checked).
+- [x] Prototype clockwise spiral-first project assignment with visibility-aware source identity recycling; fill the viewport by repeating the original project library when necessary. Eight pure-placement tests passed in isolation.
+- [ ] Creator review of spiral order and project identity uniqueness while panning and during autonomous line shifts. The full Astro build and physical device checks remain outstanding.
 
 **Creator's first desktop acceptance test (2026-10-26):** Local Astro 7.4.2 server returned the page successfully. On the creator's desktop, the centered BABUNI.DEV tile appeared correctly, mouse dragging felt smooth and appropriately paced, and the grid could be dragged indefinitely without encountering an edge. This verifies the manual desktop experience by user observation; physical phone/tablet, resizing, automated shift mechanics, and reduced-motion tests remain open.
 - [ ] Prove responsive coverage on phone, laptop, and wide desktop.
