@@ -1,6 +1,6 @@
 # Technical Architecture — Proposed
 
-**Status:** Astro 7 + TypeScript foundation committed to GitHub `main` (`5902121`); interactive grid architecture remains proposed. The creator previously reported Astro 7.4.2 running locally.
+**Status:** Astro 7 + TypeScript foundation committed to GitHub `main` (`5902121`); interactive grid architecture remains proposed. Babuni.dev previously reported Astro 7.4.2 running locally.
 
 ## Responsibilities
 
@@ -65,7 +65,7 @@ Never commit private keys, environment secrets, tokens or VPS credentials. Keep 
 
 ## Current known baseline
 
-GitHub `main` now contains the Astro starter (`package.json`, `src/pages/index.astro` and related files) and project documentation, integrated in merge commit `5902121`. The creator reported Node.js 24.18.0, npm 11.16.0 and the Astro 7.4.2 local dev server working. The starter displays an Astro heading; no grid implementation exists. An independent source-snapshot build against `ea90117` passed on 2026-10-26 using Node.js 24.22.1 and npm 11.9.0. Dependencies were installed with lifecycle scripts disabled. Browser behavior and dedicated type checking were not verified; see [foundation review](REVIEW-2026-10-26.md).
+GitHub `main` now contains the Astro starter (`package.json`, `src/pages/index.astro` and related files) and project documentation, integrated in merge commit `5902121`. Babuni.dev reported Node.js 24.18.0, npm 11.16.0 and the Astro 7.4.2 local dev server working. The starter displays an Astro heading; no grid implementation exists. An independent source-snapshot build against `ea90117` passed on 2026-10-26 using Node.js 24.22.1 and npm 11.9.0. Dependencies were installed with lifecycle scripts disabled. Browser behavior and dedicated type checking were not verified; see [foundation review](REVIEW-2026-10-26.md).
 
 ## Autonomous line-shift prototype
 
@@ -113,7 +113,7 @@ The renderer keeps an `introPlayed` flag and checks actual viewport width/height
 
 `src/lib/demo-projects.ts` now holds 53 provisional `DemoProject` records from `docs/PROJECT_INVENTORY.md`: stable candidate `id`, `name`, `shortSummary`, inventory `evidence` and temporary `tint`. This is a checked-in data snapshot rather than a live Markdown runtime parser: changing the source inventory later requires reviewing/updating the prototype catalog. Index 0 stays BABUNI.DEV; the other 52 entries follow the inventory's approximate recency order. The existing `ProjectPlacement` algorithm consumes the new `demoProjects.length` and otherwise remains unchanged. No separate production content schema or verified publication state is implied. The renderer attaches candidate ID and summary as DOM data attributes for later interactions and uses a long-title class for wrapping; the temporary grid art is otherwise intact.
 
-The inventory's evidence categories carry differing levels of confidence and must not be converted into claims of release/technical completeness without separately confirming each project. This temporary catalog can later be migrated into the structured records defined in `docs/CONTENT.md`, with provenance, rights and creator approval tracked per project. No new assets or external dependencies were introduced.
+The inventory's evidence categories carry differing levels of confidence and must not be converted into claims of release/technical completeness without separately confirming each project. This temporary catalog can later be migrated into the structured records defined in `docs/CONTENT.md`, with provenance, rights and Babuni.dev approval tracked per project. No new assets or external dependencies were introduced.
 
 ## One visible portal topic bubble — 2026-10-26
 
@@ -123,7 +123,7 @@ The DOM pool renderer (`src/scripts/grid.ts`) now creates a button-shaped `.tile
 
 Offscreen buffered `.grid-tile` elements retain `aria-hidden=true` and portal `tabIndex=-1`; visible tiles expose their project button with an accessible name including the topic. Recycling/project reassignment clears the active topic to prevent displaying outdated text. The compact bubble is absolutely positioned inside each tile and has no pointer hit area of its own; CSS transitions are bypassed under the existing reduced-motion rule. The implementation makes no attempt yet at four independent points, automatic teaser cycles, dynamic keyword generation or bloom reservations.
 
-**Pending:** local Node/Astro checks, mouse and real touchscreen integration, focus traversal under shifting/panning, and creator judgment of the precise glow and information density.
+**Pending:** local Node/Astro checks, mouse and real touchscreen integration, focus traversal under shifting/panning, and Babuni.dev judgment of the precise glow and information density.
 
 ## Center-first selection and ambient topic teasers — 2026-10-26
 
