@@ -97,6 +97,8 @@ export class ProjectPlacement {
    */
   sync(visible:readonly CellCoordinate[],retained:readonly CellCoordinate[],pinned?:CellCoordinate):void {
     const keep=new Set(retained.map(key));
+    // An open bloom can travel beyond the bounded DOM pool and return later.
+    if(pinned)keep.add(key(pinned));
     for(const id of this.assigned.keys())if(!keep.has(id))this.assigned.delete(id);
     const visibleKeys=new Set(visible.map(key));
     const usedRetained=new Set(this.assigned.values());

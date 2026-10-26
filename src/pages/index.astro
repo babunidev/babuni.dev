@@ -104,8 +104,8 @@ const title='babuni.dev — Living Grid Prototype';
   .grid-tile--topic-open[data-topic-mode~="right"] .tile-topic--right{
     opacity:1;transform:translate(var(--topic-offset-x),0) scale(1)
   }
-  .grid-viewport.is-dragging .tile-topic{opacity:0}
-  .grid-viewport.is-dragging .grid-tile--topic-open .tile-mark{box-shadow:none}
+  .grid-viewport.is-dragging:not(.has-center-topics) .tile-topic{opacity:0}
+  .grid-viewport.is-dragging:not(.has-center-topics) .grid-tile--topic-open .tile-mark{box-shadow:none}
   .tile-portal{width:100%;height:100%;aspect-ratio:1;max-height:none;flex:none;appearance:none;padding:0;cursor:inherit;pointer-events:none;border-radius:50%;border:6px solid #77716d;box-shadow:0 0 0 2px #2b2826,inset 0 0 0 3px #18191e,inset 0 0 24px #08070d;background:radial-gradient(circle at 43% 38%,color-mix(in srgb,var(--portal-color) 75%,white),var(--portal-color) 23%,#121323 70%,#05060c 100%)}
   /* The square source is centered behind a round aperture; the rim sits above it. */
   .tile-portal--artwork{overflow:hidden;isolation:isolate}

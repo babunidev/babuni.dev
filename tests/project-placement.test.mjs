@@ -171,3 +171,17 @@ test('a selected visible source keeps its identity as other tiles come and go',(
     assert.equal(manager.get(selected),originalId);
   }
 });
+
+test('open bloom source survives panning beyond the DOM pool and returning',()=>{
+ const mgr=new ProjectPlacement(53),anchor=p(0,0);
+ mgr.sync(box(0,0,2,2),box(0,0,4,4),anchor);
+ const selected=mgr.get(anchor);
+ for(const distance of [20,100,-80]){
+  mgr.sync(box(distance,distance,2,2),box(distance,distance,4,4),anchor);
+  assert.equal(mgr.get(anchor),selected,'offscreen selected identity stays pinned');
+ }
+ mgr.sync(box(0,0,2,2),box(0,0,4,4),anchor);
+ assert.equal(mgr.get(anchor),selected);
+ mgr.sync(box(100,100,2,2),box(100,100,4,4));
+ assert.equal(mgr.get(anchor),undefined,'unselected distant identity can be reclaimed');
+});

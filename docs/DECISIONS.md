@@ -258,3 +258,9 @@ Accessibility refinement: keyboard-visible focus on a project control suppresses
 ## 2026-10-26 — One tile, one action
 
 **Status: Babuni.dev requested; implemented, device acceptance open.** Babuni.dev explicitly replaced separate portal/topic and tile/selection actions with one tile-wide control. AI kept the existing full-face select button, made the portal decorative, routed hover/focus through the tile, and retained click/tap/keyboard selection plus drag discrimination. An overlay button avoids nested buttons and gives one accessible action. Keeping two controls or requiring a first portal tap for topics would conflict with the user’s usability direction. Established timing/positioning and image masking are preserved.
+
+## 2026-10-26 — Mobile center discovery and persistent blooms
+
+**Status: Babuni.dev explicitly decided; implemented, native-device acceptance open.** Centered-tile topic discovery replaces the need for mobile hover/long press. Keeping a bloom open while panning deliberately reverses the earlier human drag-to-close request; it is not an AI-originated change to that approved behavior. Babuni.dev’s newer direction prioritizes readability and control.
+
+**AI implementation choices:** Detect primary coarse/no-hover input rather than shrinking the desktop window; use the physically covering tile rather than logical source coordinates or the nearest tile. A center over a module/empty reservation has no topic owner. Preserve the current random reveal order/timing and suppress competing ambient hints on mobile. Store bloom geometry independently of DOM recycling and retain its source until closure. Alternatives were long-press/two-step touch discovery (not desired by Babuni.dev), width-only detection (would alter narrow desktop interaction), or closing/reopening offscreen blooms (contrary to persistent panning). No responsive size, motion speed or bloom arrangement retuning.

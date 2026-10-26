@@ -207,3 +207,14 @@ Each future entry should include the change, its user-visible or technical effec
 ### Changed
 - Each tile now has one full-face button for hover/focus topics and click/tap/keyboard project selection. Portal graphics are decorative rather than a separate button.
 - Removed the portal-only touch toggle and extra keyboard stop; whole-tile topic reveal keeps its randomized sequence.
+
+## 2026-10-26 — Mobile center topics and persistent bloom panning
+
+### Added
+- On primary coarse-pointer/no-hover devices, the tile covering the screen center reveals its topics during browsing. Center ownership follows panning and shifts; ambient hints do not compete with it.
+
+### Changed
+- An open bloom stays attached to its project during pointer/keyboard panning instead of closing on drag. Selecting another project keeps the established close-first switch and normal shift waits.
+
+### Fixed
+- Bloom geometry and selected identity survive panning beyond the bounded rendered tile pool and returning.

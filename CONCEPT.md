@@ -31,7 +31,7 @@ Visitors can drag the entire field in any direction. Visual tiles are recycled o
 ## Discovery and the four depths
 
 1. **Grid:** colored portals and engraved titles. Three small glowing points (above, left, right of the portal) can reveal very brief topic/flavor snippets. The previous four-point idea was later revised by Babuni.dev.
-2. **Small bloom:** first click or tap. The selected tile remains the anchor. Neighboring tiles physically glide aside; the space of one or more adjacent *tile cells* becomes introductory project modules. The rest of the grid stays present and slows down.
+2. **Small bloom:** first click or tap. The selected tile remains the anchor. Neighboring tiles physically glide aside; the space of one or more adjacent *tile cells* becomes introductory project modules. The rest of the grid stays present and slows down. The open bloom travels with the grid during panning; selecting another project closes the old one before opening the next.
 3. **Full bloom:** a second activation commits to the selected project. All other project tiles disappear. The original tile stays near the center, with simple readable media and information modules unfolding around it.
 4. **Expanded module:** selecting a text, image, video, or file module opens an appropriate detailed view. Text scrolls normally; image galleries are freely browsable, with a prominent center image. A separate fullscreen image control displays the art without captions or UI.
 
@@ -39,7 +39,7 @@ The central portal in full bloom also closes the project, returning to the grid.
 
 ## Information points
 
-Three small lights surrounding the portal—**top, left, and right**—are *not links*. Their tiny bubbles give a category, form, theme, or other interesting flavor instead of a sales pitch. This supersedes the earlier four-point sketch. Hovering or focusing anywhere on a tile reveals all three in succession; the whole tile is one button for selecting the project, including its portal; one randomly chosen point may briefly reveal its clue without interaction, including on other tiles while a small bloom is open. Babuni.dev revised their presentation on 2026-10-26: holographic callouts may extend over neighboring tiles like wings. The left bubble anchors by its bottom-right corner, the right by its bottom-left, and the top grows upward. They can be ignored. Their exact wording will be curated from reliable project material and development history.
+Three small lights surrounding the portal—**top, left, and right**—are *not links*. Their tiny bubbles give a category, form, theme, or other interesting flavor instead of a sales pitch. This supersedes the earlier four-point sketch. On desktop, hovering or focusing anywhere on a tile reveals all three in succession; on mobile, the tile occupying the screen center reveals them automatically while browsing; the whole tile is one button for selecting the project, including its portal; one randomly chosen point may briefly reveal its clue without interaction, including on other tiles while a small bloom is open. Babuni.dev revised their presentation on 2026-10-26: holographic callouts may extend over neighboring tiles like wings. The left bubble anchors by its bottom-right corner, the right by its bottom-left, and the top grows upward. They can be ignored. Their exact wording will be curated from reliable project material and development history.
 
 ## Content and presentation
 

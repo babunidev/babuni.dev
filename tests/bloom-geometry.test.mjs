@@ -62,3 +62,16 @@ test('successive opposite column shifts stay aligned and reassign every endpoint
   }
  }
 });
+
+test('center ownership follows panning, displaced cells and mid-shift positions',async()=>{
+ const {tileAtCenter}=await import('../src/lib/bloom-geometry.ts');
+ const tiles=[{column:0,row:0},{column:1,row:0},{column:0,row:1}];
+ assert.equal(tileAtCenter(tiles,c=>c,{column:.5,row:.5}),tiles[0]);
+ assert.equal(tileAtCenter(tiles,c=>c,{column:1,row:.5}),tiles[1]);
+ const vacancies=bloomVacancies(tiles[0]);
+ assert.equal(tileAtCenter(tiles,c=>occupiedCell(c,vacancies),{column:1.5,row:.5}),undefined,'module vacancy has no topic tile');
+ assert.equal(tileAtCenter(tiles,c=>occupiedCell(c,vacancies),{column:2.5,row:.5}),tiles[1]);
+ const column=[{column:3,row:0},{column:3,row:1}];
+ assert.equal(tileAtCenter(column,c=>({...c,row:c.row+.75}),{column:3.5,row:1.5}),column[0]);
+ assert.equal(tileAtCenter(column,c=>({...c,row:c.row+.25}),{column:3.5,row:1.5}),column[1]);
+});

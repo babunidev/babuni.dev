@@ -1,4 +1,4 @@
-import {occupiedCell,restingCell,bloomVacancies} from '../lib/bloom-geometry';
+import {occupiedCell,restingCell,bloomVacancies,tileAtCenter} from '../lib/bloom-geometry';
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
@@ -38,6 +38,7 @@ if (viewport && world && resetButton && status) {
   let centering:{fromX:number;fromY:number;toX:number;toY:number;started:number|null}|null=null;
   let centerFrame:number|null=null;
   let bloomModule:HTMLElement|null=null;
+  let bloomAnchor:CellCoordinate|null=null;
   let metadataModule:HTMLElement|null=null;
   let bloomOpeningTimer:ReturnType<typeof setTimeout>|null=null;
   let bloomClosingTimer:ReturnType<typeof setTimeout>|null=null;
@@ -60,6 +61,7 @@ if (viewport && world && resetButton && status) {
   let moving:Moving|null=null;
   let closeAfterShift:{next:ProjectChoice|null}|null=null;
   const prefersReduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileTopics=matchMedia('(hover: none) and (pointer: coarse)');
   const heading=document.querySelector<HTMLElement>('.header-note');
   let timer:ReturnType<typeof setTimeout>|null=null;
 
@@ -261,7 +263,7 @@ if (viewport && world && resetButton && status) {
     const visible:CellCoordinate[]=[];
     const retained:CellCoordinate[]=[];
     const margin=bufferCells*tileSize;
-    const anchor=selectedChoice&&bloomModule?locate(selectedChoice):null;
+    const anchor=bloomModule?bloomAnchor:null;
     const vacancies=anchor?bloomVacancies(anchor):[];
     for(const slot of slots){
       const visual=occupiedCell(slot,vacancies);
@@ -314,22 +316,35 @@ if (viewport && world && resetButton && status) {
     visibleWindowSignature=signature;
     if(moving||bloomModule)paintMovement(moving?.fraction??0);
     if(selectedChoice)highlightSelection();
+    refreshMobileTopics();
   }
   function paintMovement(fraction:number):void {
-    const movingRows=new Map<number,number>(), movingColumns=new Map<number,number>();
-    for(const move of moving?.moves??[]){
-      (move.axis==='row'?movingRows:movingColumns).set(move.line,move.direction);
-    }
-    const p=easeInOut(fraction);
-    const anchor=selectedChoice&&bloomModule?locate(selectedChoice):null;
-    const bloomCell=anchor?{column:anchor.column,row:anchor.row}:null;
+    const vacancies=bloomModule&&bloomAnchor?bloomVacancies(bloomAnchor):[];
     for(const slot of slots){
-      const visual=occupiedCell(slot,bloomCell?bloomVacancies(bloomCell):[]);
-      if(bloomCell)slot.element.classList.toggle('grid-tile--bloom-shifted',visual.column!==slot.column);
-      const dx=(movingRows.get(visual.row)??0)*tileSize*p+(visual.column-slot.column)*tileSize;
-      const dy=(movingColumns.get(visual.column)??0)*tileSize*p;
+      const visual=occupiedCell(slot,vacancies);
+      if(bloomModule)slot.element.classList.toggle('grid-tile--bloom-shifted',visual.column!==slot.column);
+      const position=paintedCell(slot,fraction);
+      const dx=(position.column-slot.column)*tileSize;
+      const dy=(position.row-slot.row)*tileSize;
       slot.element.style.transform=(dx||dy)?'translate3d('+dx+'px,'+dy+'px,0)':'';
     }
+    refreshMobileTopics();
+  }
+  function paintedCell(slot:TileSlot,fraction=moving?.fraction??0):CellCoordinate {
+    const visual=occupiedCell(slot,bloomModule&&bloomAnchor?bloomVacancies(bloomAnchor):[]);
+    const p=easeInOut(fraction);
+    const rowMove=moving?.moves.find(move=>move.axis==='row'&&move.line===visual.row);
+    const columnMove=moving?.moves.find(move=>move.axis==='column'&&move.line===visual.column);
+    return {column:visual.column+(rowMove?.direction??0)*p,
+      row:visual.row+(columnMove?.direction??0)*p};
+  }
+  function refreshMobileTopics():void {
+    surface.classList.toggle('has-center-topics',mobileTopics.matches);
+    if(!mobileTopics.matches||document.hidden)return;
+    const tile=tileAtCenter(slots,slot=>paintedCell(slot),
+      {column:.5-panX/tileSize,row:.5-panY/tileSize});
+    if(tile)showTopic(tile.element);
+    else hideTopic(); // The center can be a bloom module rather than a tile.
   }
   function nextRound(delay:number):void {
     if(timer!==null)clearTimeout(timer);
@@ -354,7 +369,7 @@ if (viewport && world && resetButton && status) {
     let visibleRows=Array.from({length:bottom-top+1},(_,i)=>top+i);
     let visibleColumns=Array.from({length:right-left+1},(_,i)=>left+i);
     if(selectedChoice&&bloomModule){
-      const anchor=locate(selectedChoice);
+      const anchor=bloomAnchor;
       if(!anchor){nextRound(1000);return;}
       const cell={column:anchor.column,row:anchor.row};
       visibleRows=visibleRows.filter(line=>shiftAvoidsBloom({axis:'row',line,direction:1},cell));
@@ -366,7 +381,7 @@ if (viewport && world && resetButton && status) {
     // All incoming tiles already exist just outside the viewport. Give them
     // their final project identity NOW, before their shift reveals them.
     // Otherwise the completed sync could visibly replace their name and tint.
-    const anchor=selectedChoice&&bloomModule?locate(selectedChoice):null;
+    const anchor=bloomModule?bloomAnchor:null;
     const vacancies=anchor?bloomVacancies(anchor):[];
     round.moves=round.moves.map(move=>({...move,vacancies}));
     const sourceAt=(column:number,row:number)=>{
@@ -479,6 +494,7 @@ if (viewport && world && resetButton && status) {
     if(bloomOpeningTimer!==null){clearTimeout(bloomOpeningTimer);bloomOpeningTimer=null;}
     if(bloomClosingTimer!==null){clearTimeout(bloomClosingTimer);bloomClosingTimer=null;}
     bloomModule?.remove();bloomModule=null;
+    bloomAnchor=null;
     metadataModule?.remove();metadataModule=null;
     surface.classList.remove('is-focusing','is-blooming','is-bloom-opening','is-bloom-closing');
     for(const slot of slots)slot.element.classList.remove('grid-tile--bloom-returning');
@@ -529,6 +545,7 @@ if (viewport && world && resetButton && status) {
     const project=demoProjects[chosen.projectIndex??-1];
     if(!project){stopSelection();return;}
     const selectedCell={column:chosen.column,row:chosen.row};
+    bloomAnchor=selectedCell;
     const moduleCell=bloomModuleCell(selectedCell);
     surface.classList.remove('is-focusing');
     surface.classList.add('is-blooming','is-bloom-opening');
@@ -669,6 +686,7 @@ if (viewport && world && resetButton && status) {
   }
   function tryAmbient():void {
     ambientTimer=null;
+    if(mobileTopics.matches){scheduleAmbient(AMBIENT_INTERVAL_MS);return;}
     const focused=document.activeElement;
     const focusedProjectControl=focused instanceof Element
       &&focused.matches('.tile-select:focus-visible, .bloom-close:focus-visible');
@@ -693,7 +711,7 @@ if (viewport && world && resetButton && status) {
     const insets=ambientInsets(tileSize,headerHeight,footerHeight);
     // getBoundingClientRect reflects the actual viewport and CSS transforms,
     // unlike resting row/column indices or a simple aria-hidden check.
-    const chosenSlot=selectedChoice&&bloomModule?locate(selectedChoice):null;
+    const chosenSlot=bloomModule?bloomAnchor:null;
     const eligible=slots.filter(slot=>
       slot.projectIndex!==undefined
       &&slot.element.getAttribute('aria-hidden')==='false'
@@ -732,7 +750,7 @@ if (viewport && world && resetButton && status) {
   }
 
   surface.addEventListener('pointerover',event=>{
-    if(event.pointerType==='touch'||activePointer!==null)return;
+    if(mobileTopics.matches||event.pointerType==='touch'||activePointer!==null)return;
     const select=selectFrom(event.target);
     const tile=select?.closest<HTMLDivElement>('.grid-tile');
     if(!tile||(event.relatedTarget instanceof Node&&tile.contains(event.relatedTarget)))return;
@@ -740,13 +758,14 @@ if (viewport && world && resetButton && status) {
     showTopic(tile);
   });
   surface.addEventListener('pointerout',event=>{
-    if(event.pointerType==='touch')return;
+    if(mobileTopics.matches||event.pointerType==='touch')return;
     const select=selectFrom(event.target);
     const tile=select?.closest<HTMLDivElement>('.grid-tile');
     if(!tile||(event.relatedTarget instanceof Node&&tile.contains(event.relatedTarget)))return;
     if(!select?.matches(':focus-visible')&&activeTopic===tile)hideTopic();
   });
   surface.addEventListener('focusin',event=>{
+    if(mobileTopics.matches)return;
     const tile=selectFrom(event.target)?.closest<HTMLDivElement>('.grid-tile');
     if(tile){
       if(teaserTile===tile&&teaserTimer!==null){clearTimeout(teaserTimer);teaserTimer=null;teaserTile=null;}
@@ -754,6 +773,7 @@ if (viewport && world && resetButton && status) {
     }
   });
   surface.addEventListener('focusout',event=>{
+    if(mobileTopics.matches)return;
     const tile=selectFrom(event.target)?.closest<HTMLDivElement>('.grid-tile');
     if(tile&&activeTopic===tile)hideTopic();
   });
@@ -785,8 +805,8 @@ if (viewport && world && resetButton && status) {
     if(event.pointerId!==activePointer)return;
     if(Math.hypot(event.clientX-pointerDownX,event.clientY-pointerDownY)>9){
       pointerDragged=true;
-      if(!closeAfterShift&&(selectedChoice||pendingChoice||centering))stopSelection();
-      hideTopic();
+      if(!bloomModule&&!closeAfterShift&&(selectedChoice||pendingChoice||centering))stopSelection();
+      if(!mobileTopics.matches)hideTopic();
     }
     if(pointerDragged||(!selectedChoice&&!centering))
       manualPan=queuePointerTravel(manualPan,event.clientX-lastX,event.clientY-lastY);
@@ -821,6 +841,7 @@ if (viewport && world && resetButton && status) {
       // Every active shift finishes at its original tempo before opening.
       if(pendingChoice&&!selectedChoice&&bloomClosingTimer===null)resumeMovement();
     }else resumeMovement();
+    refreshMobileTopics();
   }
   surface.addEventListener('pointerup',release);
   surface.addEventListener('pointercancel',release);
@@ -837,8 +858,8 @@ if (viewport && world && resetButton && status) {
       return;
     }
     if(!arrowNames.has(event.key))return;
-    if(selectedChoice||pendingChoice||centering)stopSelection();
-    hideTopic();
+    if(!bloomModule&&(selectedChoice||pendingChoice||centering))stopSelection();
+    if(!mobileTopics.matches)hideTopic();
     cancelIntro();
     event.preventDefault();
     if(!heldArrows.has(event.key)){
@@ -873,6 +894,7 @@ if (viewport && world && resetButton && status) {
     }
     resumeMovement();
   });
+  window.addEventListener('focus',refreshMobileTopics);
   reset.addEventListener('click',()=>{
     stopSelection(false);
     hideTopic();
@@ -883,10 +905,11 @@ if (viewport && world && resetButton && status) {
   });
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden){hideTopic();pauseMovement();}
-    else resumeMovement();
+    else{resumeMovement();refreshMobileTopics();}
   });
+  mobileTopics.addEventListener('change',()=>{hideTopic();refreshMobileTopics();});
   prefersReduced.addEventListener('change',()=>{
-    if(prefersReduced.matches){cancelIntro();hideTopic();}
+    if(prefersReduced.matches){cancelIntro();hideTopic();refreshMobileTopics();}
     else nextRound(firstWait);
   });
   nextRound(firstWait);

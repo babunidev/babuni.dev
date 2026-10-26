@@ -14,3 +14,13 @@ export function restingCell(cell:Cell,vacancies:readonly Cell[]):Cell {
 export function bloomVacancies(selected:Cell):Cell[]{
   return [{column:selected.column+1,row:selected.row},{column:selected.column,row:selected.row+1}];
 }
+
+/** Match the cell physically covering the viewport center, including displaced
+ * and mid-shift cells. Half-open edges choose one tile at shared boundaries. */
+export function tileAtCenter<T>(tiles:readonly T[],position:(tile:T)=>Cell,center:Cell):T|undefined {
+  return tiles.find(tile=>{
+    const cell=position(tile);
+    return center.column>=cell.column&&center.column<cell.column+1
+      &&center.row>=cell.row&&center.row<cell.row+1;
+  });
+}
