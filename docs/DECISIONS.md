@@ -121,3 +121,7 @@ The creator ran the Astro prototype locally, confirmed all five unit tests passe
 **Verification:** An isolated equivalent revision passed 18 local tests, a strict TypeScript check, and desktop/phone-sized Chromium previews for movement and reduced motion. A full local Astro build and creator hands-on evaluation remain outstanding.
 
 **Documentation material:** The creator intends to supply images and videos in `Visual Documentation Material` for visual development evidence. No assets were added or reviewed in this implementation.
+
+### D-017 speed adjustment — 2026-10-26
+
+**Creator direction:** Make current manual movement twice as fast. **AI implementation:** Doubled mouse/touch and keyboard maximum speeds, acceleration, and keyboard deceleration. The unchanged 180 CSS px cursor-lead limit prevents additional catch-up lag; autonomous shifts remain at their previous pace. **Status:** Committed as a tuning experiment; creator review pending.
