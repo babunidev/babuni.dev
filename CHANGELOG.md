@@ -6,6 +6,13 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Fixed — seeded shift test coverage, 2026-10-26
+- Corrected a false-negative assertion in the no-same-direction shift test. Consecutive small seeds (0–399) all selected the row axis on the first output of the test RNG, so the test failed its expectation that columns were also covered.
+- Explicitly exercise 200 reproducible rounds for each axis, including the same-direction restriction and earliest-successful-initiative priority. No application or movement algorithm was changed.
+
+### Verification — seeded test fix
+- An isolated local Node run of the corrected axis-forcing test passed. The creator's full pre-fix `npm run test:grid` previously reported 18 passing and 1 failing tests. Post-commit local suite verification remains pending.
+
 ### Changed — movement refinement, 2026-10-26
 - Replaced per-keypress arrow jumps with frame-driven, smoothly accelerating and decelerating held-arrow navigation (provisional 130 CSS px/s ceiling).
 - Added a tunable pointer-follow speed ceiling (provisional 440 CSS px/s), short acceleration ramp, and bounded cursor lead. Movement stops on pointer release without a delayed catch-up.

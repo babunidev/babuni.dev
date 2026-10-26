@@ -158,3 +158,13 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **Visual history as a future input.** The creator also planned to add screenshots and videos in a folder called `Visual Documentation Material` so that future documentation can show what the interface actually looked like and how it evolved. No media were provided during this implementation; the intention was recorded without inventing assets or public-use approval.
 
 **Outcome.** The new movement limits are implemented as a testable iteration. The creator's judgment of the speed, acceleration, and whether the columns should obey the same restriction remains the next decision point.
+
+## 2026-10-26 — A failed test reveals a blind spot in the test itself
+
+**Creator verification.** The creator pulled commit `e569a1f` and ran `npm run test:grid` on Nobara Linux. Eighteen tests passed, while the new test claiming coverage of both row and column shifting failed. It expected the generated rounds to include both axes, but its observed set contained only `row`.
+
+**AI diagnosis.** The new motion restriction was not shown to be broken. The test drove `planShiftRound` with the first output of a deterministic linear-congruential random generator for seeds 0 through 399. That narrow consecutive seed range always yielded a first value below 0.5, selecting the row axis. The test assumed a distribution that its chosen seeds did not provide, so it never examined column rounds.
+
+**Correction.** The assistant amended the test to inject a controlled first random value that explicitly selects the axis. The remaining draws still come from the reproducible seeded generator, preserving real variation in initiative, die rolls and direction. The no-same-direction and earliest-successful-initiative assertions now run across both axes independently.
+
+**Verification and outcome.** An isolated local Node test confirmed the corrected axis-selection coverage passes. Only test source and documentation were changed; no application behavior or shift rule was modified. A full test-suite run on the creator's newly pulled revision is still needed. This false alarm is recorded because it shows how inadequate test inputs can leave a critical branch untested.
