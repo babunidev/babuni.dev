@@ -12,10 +12,10 @@ This document describes intended behavior; implementation must be separately ver
 ## Tile visual
 - Stylized low-detail stone square with slight depth, readable title engraved in the stone, project-dependent minimal engravings.
 - Recessed colored central portal; project logo or themed image inside it.
-- Three small glowing square points (above, left, right of portal) with bounded translucent topic snippets; the four-point sketch was superseded on 2026-10-26. Angular connector strokes remain a possible future visual refinement.
+- Three small glowing square points (above, left, right of portal) with outward-spreading translucent topic snippets; the four-point sketch was superseded on 2026-10-26. Angular connector strokes remain a possible future visual refinement.
 - Panels are temporary *information snippets*: purpose, behavior, audience, interesting characteristics.
 - Direct portal hover/focus/tap reveals all three tiny snippets; occasional ambient teasers reveal one random point at a time, including on unaffected surrounding tiles during small bloom. Linger timing remains optional/unimplemented.
-- Info overlays remain inside the tile boundary; do not reserve adjacent cells. This differs from bloom modules.
+- Info overlays may extend across neighboring tiles; do not reserve adjacent cells. This differs from bloom modules.
 
 ## Movement
 - Whole row or column translates exactly one cell per successful shift.
@@ -66,7 +66,7 @@ Click/tap behaviors should be discoverable; provide visible back controls and ke
 ## Visual acceptance tests
 1. No blank viewport margins during drag, shifts, and resize.
 2. A tile has an engraved title and its own colored portal.
-3. A light-point bubble is an overlay contained by the tile, not a navigation button.
+3. A light-point bubble may overlay neighboring tiles, remains anchored to its glowing square, and is not a navigation button.
 4. Small bloom frees actual neighboring cell space.
 5. Full bloom removes other projects.
 6. Module detail reads/browses normally.
@@ -188,3 +188,7 @@ The approved center-first movement and one-cell bloom retain their existing prot
 Closing during an active shift shortens its remaining straight movement to approximately 520 ms, then returns displaced runs over 520 ms. Camera dragging begins at the existing 9 px intent threshold and does not wait for either stage. This close timing is AI-chosen and awaits acceptance. Ordinary taps retain selection behavior.
 
 The lower module uses existing topic labels and inventory evidence, with an explicit provisional-content note. This is an AI content choice among concept-approved metadata/keyword candidates, not a human-approved final module specification. Future 3×3 composition remains planned; the geometry accepts arbitrary vacancy sets, but reservations, scheduling, and content for that layout still need implementation. Earlier sideways interpolation descriptions are historical and superseded.
+
+## Outward topic wings — 2026-10-26
+
+**Babuni.dev decided:** Bubble containment is superseded. Let topics spread over adjacent tiles like wings; left uses its bottom-right corner, right its bottom-left, top spreads upward. **AI implemented:** Top bottom-center sits above its square; side corners meet their respective square tops. All use content-sized width with a 230 px / 70vw maximum and consistent typography/padding. Source tiles rise above grid neighbors and bloom panels while topics are open. Bubbles remain passive overlays without reserved cells. The viewport still clips at screen edges; edge flipping is not implemented. Older containment descriptions are historical.

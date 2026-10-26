@@ -82,17 +82,17 @@ const title='babuni.dev — Living Grid Prototype';
     border-color:#f5ecda;background:var(--portal-color);
     box-shadow:0 0 0 2px #1b1b21,0 0 9px 3px var(--portal-color),0 0 17px var(--portal-color)
   }
-  .tile-topic{position:absolute;top:6px;left:calc(50% + 13px);right:6px;z-index:3;pointer-events:none;padding:5px 7px;border-radius:3px;border:1px solid #837c91;background:rgba(19,20,28,.96);box-shadow:0 4px 16px rgba(0,0,0,.44);font:500 clamp(9px,calc(var(--tile-size,240px) * .047),12px)/1.18 system-ui,sans-serif;letter-spacing:.015em;color:#f0e8d9;overflow-wrap:anywhere;opacity:0;transform:translateY(5px) scale(.95);transition:opacity 150ms ease,transform 180ms ease}
-  /* The top, left and right snippets each originate from their own diamond.
-     Intentional portal inspection reveals all; one ambient teaser shows one. */
-  .tile-topic{top:auto;bottom:calc(88% + 1.45px);left:calc(50% - 1.45px);right:auto;width:calc(50% - 8px);transform-origin:bottom left}
-  .tile-topic--left{bottom:calc(51% + 5.45px);left:calc(50% - var(--tile-size,240px) * .32 - 1.45px)}
-  .tile-topic--right{bottom:calc(51% + 5.45px);left:calc(50% + var(--tile-size,240px) * .32 - 8.45px);width:calc(18% - 1px);padding:3px;font-size:9px}
+  /* Topic wings may cross neighboring tiles; lift the source stacking context
+     so later tiles and bloom modules cannot paint over their text. */
+  .grid-tile--topic-open{z-index:3}
+  .tile-topic{position:absolute;top:auto;bottom:calc(88% + 1.45px);left:calc(50% + 3.5px);right:auto;z-index:3;pointer-events:none;width:max-content;max-width:min(230px,70vw);padding:6px 9px;border-radius:3px;border:1px solid #837c91;background:rgba(19,20,28,.96);box-shadow:0 4px 16px rgba(0,0,0,.44);font:500 clamp(10px,calc(var(--tile-size,240px) * .047),12px)/1.25 system-ui,sans-serif;letter-spacing:.015em;color:#f0e8d9;overflow-wrap:anywhere;opacity:0;--topic-offset-x:-50%;transform:translate(var(--topic-offset-x),5px) scale(.95);transform-origin:bottom center;transition:opacity 150ms ease,transform 180ms ease}
+  .tile-topic--left{bottom:calc(51% + 5.45px);left:auto;right:calc(50% + var(--tile-size,240px) * .32 - 3.5px);--topic-offset-x:0%;transform-origin:bottom right}
+  .tile-topic--right{bottom:calc(51% + 5.45px);left:calc(50% + var(--tile-size,240px) * .32 - 3.5px);--topic-offset-x:0%;transform-origin:bottom left}
   .grid-tile--topic-open[data-topic-mode="all"] .tile-topic,
   .grid-tile--topic-open[data-topic-mode="top"] .tile-topic--top,
   .grid-tile--topic-open[data-topic-mode="left"] .tile-topic--left,
   .grid-tile--topic-open[data-topic-mode="right"] .tile-topic--right{
-    opacity:1;transform:translateY(0) scale(1)
+    opacity:1;transform:translate(var(--topic-offset-x),0) scale(1)
   }
   .grid-viewport.is-dragging .tile-topic{opacity:0}
   .grid-viewport.is-dragging .grid-tile--topic-open .tile-mark{box-shadow:none}

@@ -71,3 +71,7 @@ The one-cell small-bloom prototype uses the selected candidate's existing provis
 ## Lower small-bloom module — 2026-10-26
 
 **Babuni.dev requested** a second module below the selected project after consulting the intended content. CONCEPT and DESIGN list descriptions, keywords, metadata, media, dev-log and file availability as candidates without fixing this slot. **AI chose** a provisional “Project notes” module using existing `project-topics.ts` labels and `demo-projects.ts` evidence classification, explicitly stating that candidate details await review. No invented release status, media availability, or development history is supplied. The right summary module remains. Final lower-module editorial choice and production project verification remain open for Babuni.dev.
+
+## Topic wing presentation — 2026-10-26
+
+Babuni.dev explicitly allows topic snippets to overlap neighboring tiles. Existing provisional labels are unchanged. AI removed the right bubble’s narrow-column typography and uses matching readable padding/font sizes across all three; wrapping is based on a shared reading-width limit, not available room inside the tile.

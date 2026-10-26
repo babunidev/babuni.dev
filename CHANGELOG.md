@@ -169,3 +169,8 @@ Each future entry should include the change, its user-visible or technical effec
 - Expansion waits for shifts affecting either displaced run, including far-right columns.
 - Map dragging and arrow navigation close a bloom while allowing camera movement immediately.
 - Unrelated shift starts no longer dismiss portal topic bubbles. Bubble bottom-left anchors now meet the top of their rotated glowing squares.
+
+## 2026-10-26 — Outward topic wings
+
+### Changed
+- Topic bubbles may overlay neighboring tiles. Left anchors bottom-right, right bottom-left, and top bottom-center; shared readable sizing replaces the cramped right bubble. Active topic tiles render above neighboring tiles and bloom modules.
