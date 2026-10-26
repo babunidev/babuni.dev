@@ -237,3 +237,8 @@ Media is versioned in GitHub but served by the website host. Four selected origi
 ## 2026-10-26 — Button Game portal artwork
 
 `DemoProject.portalArtwork` is an optional public URL. Recycled tiles clear prior portal children and load the assigned project artwork; records without a URL retain the color fallback. Artwork assignment is explicit, independent of tile position.
+
+
+## 2026-10-26 — Eight modules around the center
+
+**Current rule:** `MAX_BLOOM_MODULES=8`; `MODULE_OFFSETS` contains exactly the eight immediate neighbors, excluding the center. Earlier nine-preview descriptions are historical and superseded. Generic vacancy mapping and scheduler are unchanged. Tests cover one through eight reserved cells and assert the exact square perimeter.

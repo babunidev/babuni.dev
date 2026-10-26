@@ -8,8 +8,8 @@ import {shiftAvoidsBloom} from '../src/lib/grid-focus.ts';
 const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url)));
 const resolve=m=>({...m,body:m.document?readFileSync(new URL('../'+m.document,import.meta.url),'utf8'):m.body});
 const own=catalog['babuni-dev'].map(resolve),button=catalog['button-game'].map(resolve);
-test('real content has more than nine own modules, exactly five Button Game modules, no broken assets',()=>{
- assert.ok(own.filter(moduleHasContent).length>9);
+test('real content has more than eight own modules, exactly five Button Game modules, no broken assets',()=>{
+ assert.ok(own.filter(moduleHasContent).length>8);
  assert.equal(button.filter(moduleHasContent).length,5);
  assert.ok(button.some(m=>!moduleHasContent(m)));
  for(const modules of [own,button]){
@@ -24,17 +24,19 @@ test('sample populated modules without replacement; omit empty types and randomi
  const selections=new Set();
  for(let seed=0;seed<40;seed++){
   const picked=selectModules(own,seededRandom(seed));
-  assert.equal(picked.length,9);assert.equal(new Set(picked.map(m=>m.id)).size,9);
+  assert.equal(picked.length,8);assert.equal(new Set(picked.map(m=>m.id)).size,8);
   assert.ok(picked.every(moduleHasContent));selections.add(picked.map(m=>m.id).sort().join(','));
   const five=selectModules(button,seededRandom(seed));assert.equal(five.length,5);assert.ok(five.every(moduleHasContent));
  }
  assert.ok(selections.size>10);
- const plan=moduleRevealPlan([1,2,3,4,5,6,7,8,9],seededRandom(4));
- assert.equal(plan[0].delay,0);assert.equal(new Set(plan.map(r=>r.item)).size,9);
+ const plan=moduleRevealPlan([1,2,3,4,5,6,7,8],seededRandom(4));
+ assert.equal(plan[0].delay,0);assert.equal(new Set(plan.map(r=>r.item)).size,8);
  for(let i=1;i<plan.length;i++)assert.ok(plan[i].delay-plan[i-1].delay>=260&&plan[i].delay-plan[i-1].delay<=420);
 });
-test('nine physical module slots plus anchor remain distinct; expansion does not overlap or move anchor',()=>{
- for(const anchor of [{column:0,row:0},{column:-8,row:4}])for(let count=1;count<=9;count++){
+test('eight physical module slots plus anchor remain distinct; expansion does not overlap or move anchor',()=>{
+ assert.equal(MODULE_OFFSETS.length,8);
+ assert.deepEqual(new Set(MODULE_OFFSETS.map(c=>`${c.column},${c.row}`)),new Set(['-1,-1','0,-1','1,-1','-1,0','1,0','-1,1','0,1','1,1']));
+ for(const anchor of [{column:0,row:0},{column:-8,row:4}])for(let count=1;count<=8;count++){
   const holes=moduleVacancies(anchor,MODULE_OFFSETS.slice(0,count));
   assert.deepEqual(occupiedCell(anchor,holes),anchor);
   for(let row=anchor.row-2;row<=anchor.row+2;row++){

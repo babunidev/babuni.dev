@@ -240,3 +240,9 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Added
 - Button Game portal uses the supplied PNG logo through the existing circular mask. Project catalog entries now declare optional portal artwork URLs.
+
+
+## 2026-10-26 — Eight modules around the center
+
+### Fixed
+- Cap small-bloom previews at eight and remove the extra right-hand slot, forming a 3×3 square including the project tile. Larger catalogs still sample randomly; five-module projects remain five.

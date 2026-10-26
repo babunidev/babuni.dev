@@ -460,3 +460,10 @@ For mobile-path verification, copied the built site to a temporary directory out
 **Babuni.dev requested:** Supplied the Button Game logo in the advised portal-content folder and showed its location. **AI implemented:** Copied the PNG unchanged and connected it through an optional project catalog artwork URL, also migrating the existing BABUNI.DEV URL to that field. **Alternatives:** Kept explicit assignment rather than automatic filename discovery, to avoid accidentally publishing unassigned assets. **Verification:** See checks below; existing portal mask, dimensions and interaction timing are retained. Logo supply is attributed to Babuni.dev; no claim about its original production method is made.
 
 **Tested:** All 11 test files pass (`npm run test:grid`); `npm run build` and `git diff --check` pass. Supplied PNG inspected directly and copied byte-for-byte. **Open:** Browser preview connection failed with transport closed before response; the rendered circular crop has not been visually verified in this change. No new phone test claimed.
+
+
+## 2026-10-26 — Eight modules around the center
+
+**Babuni.dev corrected:** Eight surrounding modules are intended; the center project is the ninth cell of the square. The supplied screenshot exposed the extra right-hand preview. **AI implemented:** Reduced the selection cap to eight and removed the ninth offset. The previous AI interpretation of nine previews plus an anchor is superseded. **Alternatives/decision:** Follow the human correction directly; retain catalogs larger than eight, random selection, sequential reveal, and established timing. **Verification:** Updated sampling, reveal and geometry tests, including an exact eight-neighbor footprint assertion; results below.
+
+**Tested:** All 11 test files, production build and diff whitespace check pass. Exact eight-neighbor coverage and selection count are verified automatically. **Open:** Browser visual verification remains unavailable following the preview connection failure in this session; no new phone verification claimed.

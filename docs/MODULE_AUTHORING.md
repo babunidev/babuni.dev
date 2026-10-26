@@ -2,9 +2,9 @@
 
 ## Current stage
 
-The small bloom renders content previews, not the future full-page expanded reader. Its project tile stays centered initially; up to nine populated modules reserve real neighboring cells and reveal in a shuffled sequence. Eight fit around the anchor; a ninth extends one cell farther right. Pan to reach modules outside a small viewport. Reopening samples again; a selection is stable while open. Empty definitions do not render or reserve cells.
+The small bloom renders content previews, not the future full-page expanded reader. Its project tile stays centered initially; up to eight populated modules reserve real neighboring cells and reveal in a shuffled sequence. The eight immediate neighbors form a 3×3 square with the anchor in the middle. Pan to reach modules outside a small viewport. Reopening samples again; a selection is stable while open. Empty definitions do not render or reserve cells.
 
-Project definitions live in `src/content/project-modules.json`, keyed by stable project ID. Module IDs are unique within a project and independent of position. There is no nine-entry limit on the content catalog.
+Project definitions live in `src/content/project-modules.json`, keyed by stable project ID. Module IDs are unique within a project and independent of position. The content catalog can contain more than eight entries.
 
 ## Where to put images and videos
 
@@ -30,11 +30,11 @@ An empty `body`, empty `images`/`links`, or absent video source is intentionally
 
 ## First content sets and provenance
 
-BABUNI.DEV has twelve populated modules: overview, concept, journal, changelog, architecture, collaboration, gallery, four recordings and repository resources. Each opening selects nine without replacement. Button Game has overview, play/combinations, Android Wi-Fi play, development story and source/documentation. Its editorial text was grounded in public README, CONCEPT, journal and architecture documents inspected on 2026-10-26. These are curated snapshots with source links, not an automatic live feed or independent gameplay/release verification.
+BABUNI.DEV has twelve populated modules: overview, concept, journal, changelog, architecture, collaboration, gallery, four recordings and repository resources. Each opening selects eight without replacement. Button Game has overview, play/combinations, Android Wi-Fi play, development story and source/documentation. Its editorial text was grounded in public README, CONCEPT, journal and architecture documents inspected on 2026-10-26. These are curated snapshots with source links, not an automatic live feed or independent gameplay/release verification.
 
 ## Verification
 
-Run `npm run test:grid` and `npm run build`. Catalog tests check populated counts, linked document/media existence, random sampling, unique identities, stagger bounds and embed URL validation. Geometry tests cover one through nine module footprints, stationary anchors, reversible mapping, no overlapping expansion and straight vertical shift endpoints.
+Run `npm run test:grid` and `npm run build`. Catalog tests check populated counts, linked document/media existence, random sampling, unique identities, stagger bounds and embed URL validation. Geometry tests cover one through eight module footprints, stationary anchors, reversible mapping, no overlapping expansion and straight vertical shift endpoints.
 
 The expanded page layout is still open for refinement: fixed left-content/right-selector panes versus larger scrolling modules was discussed by Babuni.dev, not finalized or implemented in this stage.
 

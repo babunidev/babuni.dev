@@ -144,3 +144,8 @@ Next: refine and implement expanded full-page module presentation and navigation
 ## 2026-10-26 — Button Game portal artwork
 
 - Built: Button Game supplied logo connected to the circular portal via explicit project artwork metadata. Expanded module/full-bloom work remains unchanged.
+
+
+## 2026-10-26 — Eight modules around the center
+
+Built: corrected the small-bloom maximum to eight surrounding previews plus the center project (3×3 total), superseding the earlier nine-preview interpretation. Larger catalogs and randomized sequential reveal remain; full-page expansion is still future work.

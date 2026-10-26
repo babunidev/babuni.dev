@@ -9,7 +9,7 @@ export interface ProjectModule {
   links?:ModuleLink[];
   source?:string;credit?:string;
 }
-export const MAX_BLOOM_MODULES=9;
+export const MAX_BLOOM_MODULES=8;
 export function safeEmbedUrl(value:string):string|null {
   try{
     const url=new URL(value);
@@ -36,11 +36,10 @@ export function shuffled<T>(items:readonly T[],random:()=>number=Math.random):T[
 export function selectModules(modules:readonly ProjectModule[],random:()=>number=Math.random):ProjectModule[]{
   return shuffled(modules.filter(moduleHasContent),random).slice(0,MAX_BLOOM_MODULES);
 }
-/** Eight immediate neighbors plus an adjacent ninth cell. The project itself
- * remains at (0,0), so nine modules do not imply a nine-cell total layout. */
+/** Eight immediate neighbors form a 3×3 square with the project at (0,0). */
 export const MODULE_OFFSETS=[{column:1,row:0},{column:0,row:1},
   {column:1,row:1},{column:-1,row:1},{column:0,row:-1},
-  {column:1,row:-1},{column:-1,row:-1},{column:-1,row:0},{column:2,row:0}] as const;
+  {column:1,row:-1},{column:-1,row:-1},{column:-1,row:0}] as const;
 export function moduleRevealPlan<T>(items:readonly T[],random:()=>number=Math.random):{item:T;delay:number}[]{
   let delay=0;
   return shuffled(items,random).map((item,index)=>{

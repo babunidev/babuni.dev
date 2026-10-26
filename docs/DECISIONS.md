@@ -287,3 +287,8 @@ The initial five editorial families reuse four renderer types: journal/history i
 ## 2026-10-26 — Button Game portal artwork
 
 **Status: Implemented. Babuni.dev direction:** Use the supplied Button Game logo. **AI implementation choice:** Optional `portalArtwork` on stable project catalog records rather than another renderer-specific project-ID branch or automatic folder discovery. Missing artwork keeps the existing color fallback. Revisit automatic authoring only if requested.
+
+
+## 2026-10-26 — Eight modules around the center
+
+**Status: Implemented; supersedes the earlier nine-preview interpretation. Babuni.dev decided:** Up to eight surrounding previews plus the center project form a 3×3 square. **AI execution:** Cap eight and delete the extra slot at (2,0). Keep random sampling from larger populated catalogs and the same reveal timing; fewer populated modules still reserve fewer cells.

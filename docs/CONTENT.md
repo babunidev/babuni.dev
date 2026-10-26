@@ -124,3 +124,8 @@ See [Module authoring](MODULE_AUTHORING.md) for `public/media/<project-id>/image
 ## 2026-10-26 — Button Game portal artwork
 
 Babuni.dev supplied `public/portal-content/PortalContentButtonGame.png`; copied unchanged and assigned to `button-game`. This portal identity image does not populate a gallery module or change the five populated Button Game modules.
+
+
+## 2026-10-26 — Eight modules around the center
+
+**Babuni.dev correction:** Display at most eight populated modules around the project tile. This supersedes nine-preview descriptions above. BABUNI.DEV retains its twelve definitions, sampling eight per opening; Button Game retains five populated modules. No content was deleted.

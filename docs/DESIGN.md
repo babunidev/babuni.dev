@@ -260,3 +260,8 @@ Previews support real image switching and deliberate native video playback; text
 ## 2026-10-26 — Button Game portal artwork
 
 Button Game now displays its supplied square PNG through the same centered circular aperture as BABUNI.DEV. Mask, portal size, placement and all interaction timings are unchanged.
+
+
+## 2026-10-26 — Eight modules around the center
+
+**Current rule, superseding earlier nine-module descriptions:** Up to eight previews occupy the immediate neighbors of the central project tile, forming a 3×3 square when full. No extra preview extends two cells right. Random sampling/order and all movement/reveal timing remain unchanged.
