@@ -10,6 +10,21 @@ The website itself is intended to become one of its exhibits: a record of its co
 
 **Foundation complete; interactive prototype not yet implemented.** Astro 7 with TypeScript and the initial documentation now exist together on GitHub `main` (merge commit `5902121`). The creator reported running the starter locally; no grid, portal, or bloom behavior has been implemented or verified.
 
+## Local development
+
+Requires Node.js `>=22.23.4` (the version range declared by the project and locked Astro package) and npm. Run these commands from the repository root:
+
+```sh
+npm ci
+npm run dev
+```
+
+Open the local address printed by Astro (normally http://localhost:4321). For agents, use `npm run dev -- --background`; manage it with `npm run astro -- dev status`, `npm run astro -- dev logs`, and `npm run astro -- dev stop`.
+
+`npm run build` creates the static site in `dist/`. `npm run preview` serves that build locally.
+
+The starter build was independently verified on 2026-10-26 against commit `ea90117`. This verifies compilation, not browser behavior or the planned interactions. CI and a dedicated type-check command are not yet configured; see [foundation review](docs/REVIEW-2026-10-26.md).
+
 ## Documentation
 
 - [Concept](CONCEPT.md) — the vision and agreed design direction

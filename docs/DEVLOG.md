@@ -83,6 +83,18 @@ This is an edited account of the development process, not a verbatim transcript 
 
 **Outcome.** The foundation is integrated and the next development target is the grid mechanics, not a finished visual site. A subsequent documentation-only update corrected stale instructions claiming that Astro was still local-only. Remaining independent setup: confirm ChatGPT project instructions in its user interface.
 
+## 2026-10-26 — Reviewing the foundation before the grid
+
+**Creator direction and source.** In the current review session, the creator asked the assistant to take a critical reviewer role, become familiar with the repository's structure and text, and record its contribution in the development documentation. The request was to examine the work already present, not to begin implementing the interactive portfolio.
+
+**AI contribution.** The assistant reviewed `main` at `ea90117`, including the starter, dependency lockfile, creative specification, and collaboration rules. It found a consistent separation between intended behavior and implemented software. The actual site remained a single Astro starter page. The review identified missing README setup instructions, stale framework status in D-011, and two open verification gaps: no CI workflow and no dedicated Astro type-checking tool.
+
+**Execution and evidence.** The assistant added a [dated review report](REVIEW-2026-10-26.md), documented local setup, and corrected current status in the decision register and architecture baseline. A text-source snapshot installed with lifecycle scripts disabled and built successfully with `npm run build`, producing one static page. Manifest/lockfile consistency and relative Markdown links passed inspection. Astro's CLI help confirmed the existing background-server guidance. The checker command requested missing dependencies, so no semantic type-check result is claimed. Browser and production verification were not performed.
+
+**Historical clarification.** The earlier journal entry left ChatGPT project-instruction activation open. Milestone 0 and commit `ea90117` subsequently recorded it as confirmed; that earlier open item is resolved.
+
+**Outcome and open proposals.** The starter has an independently observed build result, while its creative behavior remains unimplemented. The assistant recommended earlier CI and a dedicated checking command, and flagged the boundary between initial center-out appearance and interactive viewport coverage for future specification. These are AI recommendations, not newly approved creator decisions. No application code or creative direction changed.
+
 ---
 
 ## Future journal entry template

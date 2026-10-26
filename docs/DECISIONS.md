@@ -58,10 +58,11 @@
 **Open:** Buffer policy and prioritization should be performance-tested.
 
 ## D-011 — Astro foundation and interactive island
-**Status:** Astro locally initialized; interactive framework Proposed  
+**Status:** Astro accepted and committed; interactive framework Proposed  
 **Creator direction:** Cloud-first development, local testing, future local agents.  
 **AI recommendation:** Astro with TypeScript and possibly Svelte for the grid.  
-**Decision:** Astro is chosen; Svelte is not yet confirmed as installed or implemented.
+**Decision:** Astro is chosen; Svelte remains a candidate and is not installed or implemented in the reviewed repository.
+**Verification update (2026-10-26):** Foundation integrated on `main` in `5902121`; independent starter build passed against `ea90117`. This updates implementation evidence without changing the framework decision.
 
 ## D-012 — The site documents itself
 **Status:** Accepted concept  
