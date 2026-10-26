@@ -267,3 +267,8 @@ Media is versioned in GitHub but served by the website host. Four selected origi
 ## 2026-10-26 — Four additional portal images
 
 Four additional project records now declare `portalArtwork` URLs. The existing recycled-tile renderer handles them without new branches or behavior changes; unassigned projects retain their color fallback.
+
+
+## 2026-10-26 — Stronger action and waiting feedback
+
+`interaction-feedback.ts` installs delegated pointer/Enter/Space acknowledgement for tile and bloom controls, including detail buttons outside the grid. A WeakMap replaces a prior press timer on repeated presses; each highlight clears after 240 ms without changing dispatch or motion. Grid selection busy state includes pending depth changes, centering and bloom preparation. `queueDepthChange` owns/clears the originating button’s waiting class and aria-busy on entry, replacement or cancellation. Existing geometry and scheduling durations are unchanged.

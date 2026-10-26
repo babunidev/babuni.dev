@@ -175,3 +175,8 @@ Validation includes arbitrary larger catalogs in geometry tests; actual BABUNI.D
 ## 2026-10-26 — Four additional portal images
 
 Built: the four newly supplied FavorCraft, FlourishForever, ResistForever and SocialForever portal identities are connected. This asset update does not change milestone scope or imply new project-module content.
+
+
+## 2026-10-26 — Stronger action and waiting feedback
+
+Built: stronger tile/preparation pulse and pointer/keyboard button acknowledgement, including a persistent queued Read more indication. Next acceptance checks: switch during a running shift; full forward/back navigation; panning beside an open big bloom; phone reading/orientation and media cleanup. After Milestone 4 acceptance, Milestone 5 focuses on content validation/authoring, another populated real project and CI build checks. Hosting/release remains later and requires its own authorization.

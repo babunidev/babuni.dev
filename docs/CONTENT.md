@@ -146,3 +146,8 @@ Content depth is now progressive: small bloom retains curated teaser sentences; 
 ## 2026-10-26 — Four additional portal images
 
 Babuni.dev supplied four additional portal identity files, copied unchanged: `FavorCraft.png` → `favorcraft`, `FlourishForever.png` → `flourishforever`, `ResistForever.png` → `resistforever`, and `SocialForever.png` → `socialforever`. They live under `public/portal-content/` and do not create or fill gallery modules.
+
+
+## 2026-10-26 — Stronger action and waiting feedback
+
+Babuni.dev’s positive assessment of the current design and request for stronger interaction feedback are recorded in DEVLOG. This feedback update changes no project prose, media assets, module counts or content sampling.

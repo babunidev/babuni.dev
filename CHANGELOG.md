@@ -275,3 +275,11 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Added
 - Supplied portal artwork for FavorCraft, FlourishForever, ResistForever and SocialForever, explicitly assigned through the existing project catalog.
+
+
+## 2026-10-26 — Stronger action and waiting feedback
+
+### Changed
+- Stronger gold tile acknowledgement and preparation glow; waiting pulses use a slightly faster 1400 ms cycle instead of 1600 ms.
+- Read more stays highlighted/busy while a bloom depth change waits for a shift. Read more, Back, Close, resource actions and project tiles acknowledge pointer/keyboard presses immediately without delaying navigation.
+- Tile busy state covers centering and bloom preparation as well as queued shifts; reduced-motion feedback remains steady.

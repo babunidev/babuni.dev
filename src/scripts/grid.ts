@@ -1,3 +1,4 @@
+import {installInteractionFeedback} from './interaction-feedback';
 import {modulesForProject} from '../lib/project-content';
 import {selectModules,MODULE_OFFSETS,moduleRevealPlan} from '../lib/project-modules';
 import {renderModulePreview} from './module-preview';
@@ -26,6 +27,7 @@ const status = document.querySelector<HTMLElement>('#grid-status');
 
 if (viewport && world && resetButton && status) {
   const surface=viewport, layer=world, reset=resetButton, liveStatus=status;
+  installInteractionFeedback();
   const bufferCells=2;
   let columnBufferCells=2;
   // First inventory entry is BABUNI.DEV; all 53 candidates remain provisional.
@@ -48,6 +50,7 @@ if (viewport && world && resetButton && status) {
   let smallBloom:{panels:HTMLElement[];cells:ReturnType<typeof moduleVacancies>}|null=null;
   let centerCompletion:(()=>void)|null=null;
   let pendingBigBloom:(()=>void)|null=null;
+  let pendingDepthControl:HTMLElement|null=null;
   let bloomModule:HTMLElement|null=null;
   let bloomAnchor:CellCoordinate|null=null;
   let bloomModules:HTMLElement[]=[];
@@ -166,7 +169,8 @@ if (viewport && world && resetButton && status) {
       if(button){const label=button.dataset.exploreLabel;if(anchor)button.setAttribute('aria-label','Back to small bloom');else if(label)button.setAttribute('aria-label',label);}
     }
     const choice=pendingChoice??selectedChoice;
-    const waiting=!!moving&&(pendingChoice!==null||closeAfterShift!==null);
+    const waiting=(!!moving&&(pendingChoice!==null||closeAfterShift!==null||pendingBigBloom!==null))
+      ||centering!==null||bigTransitioning||bloomClosingTimer!==null||surface.classList.contains('is-bloom-opening')||surface.classList.contains('is-bloom-closing');
     for(const slot of slots){
       const source=sourceCell(slot.column,slot.row,history);
       const selected=!!choice&&source.column===choice.source.column
@@ -509,7 +513,7 @@ if (viewport && world && resetButton && status) {
    * immediately while the old right-hand tiles slide home.
    */
   function stopSelection(animateReturn=true,nextChoice:ProjectChoice|null=null):void {
-    pendingBigBloom=null;surface.classList.remove('is-big-bloom-waiting');
+    pendingBigBloom=null;clearDepthFeedback();surface.classList.remove('is-big-bloom-waiting');
     const wasActive=!!selectedChoice||!!centering||!!bloomModule||!!pendingChoice;
     const hadBloom=!!bloomModule;
     if(hadBloom&&moving&&animateReturn){
@@ -612,7 +616,7 @@ if (viewport && world && resetButton && status) {
     const plan=moduleRevealPlan(bloomModules);
     bloomOpeningTimer=setTimeout(()=>{
       bloomOpeningTimer=null;
-      surface.classList.remove('is-bloom-opening');
+      surface.classList.remove('is-bloom-opening');highlightSelection();
       for(const reveal of plan){
         if(prefersReduced.matches||reveal.delay===0)reveal.item.classList.add('is-open');
         else bloomRevealTimers.push(setTimeout(()=>reveal.item.classList.add('is-open'),reveal.delay));
@@ -661,10 +665,18 @@ if (viewport && world && resetButton && status) {
       settled();highlightSelection();surface.scrollTop=0;surface.scrollLeft=0;nextRound(1500);
     },prefersReduced.matches?0:Math.max(CENTER_DURATION_MS,BLOOM_SHIFT_DURATION_MS));
   }
-  function queueDepthChange(change:()=>void):void {
-    if(moving){pendingBigBloom=change;surface.classList.add('is-big-bloom-waiting');
-      liveStatus.textContent='Waiting for the current shift before changing bloom depth.';resumeMovement();}
-    else change();
+  function clearDepthFeedback():void {
+    pendingDepthControl?.classList.remove('is-waiting');
+    pendingDepthControl?.setAttribute('aria-busy','false');pendingDepthControl=null;
+  }
+  function queueDepthChange(change:()=>void,control:HTMLElement|null=null):void {
+    clearDepthFeedback();
+    const run=()=>{clearDepthFeedback();change();};
+    if(moving){
+      pendingDepthControl=control;control?.classList.add('is-waiting');control?.setAttribute('aria-busy','true');
+      pendingBigBloom=run;surface.classList.add('is-big-bloom-waiting');highlightSelection();
+      liveStatus.textContent='Waiting for the current shift before changing bloom depth.';resumeMovement();
+    }else run();
   }
   function requestBigBloom(moduleId:string):void {
     if(bigBloomOpen||bigTransitioning||closeAfterShift||!selectedChoice||!bloomModule||!bloomAnchor||bloomClosingTimer!==null)return;
@@ -707,7 +719,7 @@ if (viewport && world && resetButton && status) {
         if(activePointer===null)surface.focus({preventScroll:true});
         liveStatus.textContent=project.name+': '+bloomModules.length+' large modules in the living grid.';
       });
-    });
+    },bloomModules.find(panel=>panel.dataset.moduleId===moduleId)?.querySelector<HTMLElement>('.bloom-read-more')??null);
   }
   function requestSmallBloom():void {
     if(!bigBloomOpen||bigTransitioning||closeAfterShift||!smallBloom||!bloomAnchor)return;
@@ -748,7 +760,7 @@ if (viewport && world && resetButton && status) {
     }else{
       centering=null;
       const done=centerCompletion;centerCompletion=null;
-      if(done)done();else if(selectedChoice)openSmallBloom(selectedChoice);
+      if(done){done();highlightSelection();}else if(selectedChoice)openSmallBloom(selectedChoice);
     }
   }
   function beginSelection(choice:ProjectChoice):void {

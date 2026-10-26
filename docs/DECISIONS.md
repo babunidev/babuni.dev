@@ -315,3 +315,8 @@ The initial five editorial families reuse four renderer types: journal/history i
 ## 2026-10-26 — Four additional portal images
 
 **Implemented — Babuni.dev direction:** Use the four supplied FavorCraft, FlourishForever, ResistForever and SocialForever PNGs as portal identities. **AI execution:** Explicit `portalArtwork` URLs on the existing stable project records; unchanged supplied files and shared circular crop. Automatic folder discovery remains unimplemented.
+
+
+## 2026-10-26 — Stronger action and waiting feedback
+
+**Implemented — Babuni.dev direction:** Make pending switches visibly responsive through stronger tile glow and slightly faster waiting pulses, and acknowledge Read more/Back presses. **AI choice:** 1400 ms opacity pulse, 240 ms press acknowledgement, persistent queued-button highlight and aria-busy. Preserve all movement/navigation clocks and use a steady indication for reduced motion. This supersedes the earlier 1600 ms feedback cycle, not the approved shift tempo.
