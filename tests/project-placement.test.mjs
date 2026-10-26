@@ -78,3 +78,26 @@ test('both viewport edges detect a newly entering partially visible tile',()=>{
   assert.equal(before.firstColumn,after.firstColumn);
   assert.notEqual(before.lastColumn,after.lastColumn);
 });
+
+test('real desktop and phone aspect ratios keep visible identities unique while panning',()=>{
+  for(const [width,height,size] of [[1920,1080,240],[390,844,156]]){
+    const mgr=new ProjectPlacement(70);
+    for(let step=0;step<35;step++){
+      const originX=width/2-size/2-step*91;
+      const originY=height/2-size/2+step*43;
+      const bounds=visibleCellBounds(width,height,size,originX,originY);
+      const visible=[],retained=[];
+      for(let row=bounds.firstRow-2;row<=bounds.lastRow+2;row++){
+        for(let col=bounds.firstColumn-2;col<=bounds.lastColumn+2;col++){
+          const cell=p(col,row);
+          retained.push(cell);
+          if(col>=bounds.firstColumn&&col<=bounds.lastColumn&&row>=bounds.firstRow&&row<=bounds.lastRow){
+            visible.push(cell);
+          }
+        }
+      }
+      mgr.sync(visible,retained);
+      assert.equal(new Set(visible.map(c=>mgr.get(c))).size,visible.length);
+    }
+  }
+});
