@@ -157,6 +157,28 @@ if (viewport && world && resetButton && status) {
     const visibleColumns=Array.from({length:right-left+1},(_,i)=>left+i);
     const round=planShiftRound(visibleRows,visibleColumns);
     if(!round.moves.length){nextRound(restWait);return;}
+    // All incoming tiles already exist just outside the viewport. Give them
+    // their final project identity NOW, before their shift reveals them.
+    // Otherwise the completed sync could visibly replace their name and tint.
+    const entrances=round.moves.map(move=>{
+      if(move.axis==='row'){
+        const enteringColumn=move.direction===1?left-1:right+1;
+        const departingColumn=move.direction===1?right:left;
+        return {
+          incoming:sourceCell(enteringColumn,move.line,history),
+          departing:sourceCell(departingColumn,move.line,history)
+        };
+      }
+      const enteringRow=move.direction===1?top-1:bottom+1;
+      const departingRow=move.direction===1?bottom:top;
+      return {
+        incoming:sourceCell(move.line,enteringRow,history),
+        departing:sourceCell(move.line,departingRow,history)
+      };
+    });
+    placement.stageEntrances(entrances);
+    // Only offscreen entrances should receive a new project at this point.
+    for(const slot of slots)populate(slot,slot.column,slot.row);
     moving={moves:round.moves,started:performance.now(),pausedAt:null,fraction:0};
     if(heading)heading.textContent=round.axis==='row'?'Rows are shifting':'Columns are shifting';
     requestAnimationFrame(frameMovement);

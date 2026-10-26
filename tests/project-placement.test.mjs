@@ -101,3 +101,60 @@ test('real desktop and phone aspect ratios keep visible identities unique while 
     }
   }
 });
+
+import {sourceCell} from '../src/lib/grid-shifts.ts';
+
+function enteringAndDeparting(move){
+  if(move.axis==='row'){
+    return {
+      incoming:p(move.direction===1?-5:5,move.line),
+      departing:p(move.direction===1?4:-4,move.line)
+    };
+  }
+  return {
+    incoming:p(move.line,move.direction===1?-3:3),
+    departing:p(move.line,move.direction===1?2:-2)
+  };
+}
+test('each of four entering edges keeps its project number and tint identity after a shift',()=>{
+  for(const axis of ['row','column']){
+    for(const direction of [-1,1]){
+      const manager=new ProjectPlacement(45);
+      const visible=box(0,0,4,2),retained=box(0,0,6,4);
+      manager.sync(visible,retained);
+      const move={axis,line:0,direction};
+      const pair=enteringAndDeparting(move);
+      const snapshots=visible.map(cell=>[cell,manager.get(cell)]);
+      manager.stageEntrances([pair]);
+      const projectWhileEntering=manager.get(pair.incoming);
+      assert.notEqual(projectWhileEntering,undefined,`${axis} ${direction} not staged`);
+      for(const [cell,oldProject] of snapshots)
+        assert.equal(manager.get(cell),oldProject,'a visible tile changed at shift start');
+      const source=cell=>sourceCell(cell.column,cell.row,[move]);
+      const after=visible.map(source),nextBuffer=retained.map(source);
+      manager.sync(after,nextBuffer);
+      assert.equal(manager.get(pair.incoming),projectWhileEntering,
+        `${axis} ${direction}: tile was renamed after its movement finished`);
+      assert.equal(new Set(after.map(cell=>manager.get(cell))).size,45,
+        `${axis} ${direction}: finishing movement produced duplicate visible projects`);
+    }
+  }
+});
+test('opposite-moving lines stage both entering projects without an end-of-shift swap',()=>{
+  for(const axis of ['row','column']){
+    const manager=new ProjectPlacement(45);
+    const before=box(0,0,4,2),buffer=box(0,0,6,4);
+    manager.sync(before,buffer);
+    const moves=axis==='row'
+      ?[{axis,line:0,direction:1},{axis,line:1,direction:-1}]
+      :[{axis,line:0,direction:1},{axis,line:1,direction:-1}];
+    const pairs=moves.map(enteringAndDeparting);
+    manager.stageEntrances(pairs);
+    const expected=pairs.map(pair=>manager.get(pair.incoming));
+    const updated=cell=>sourceCell(cell.column,cell.row,moves);
+    const after=before.map(updated);
+    manager.sync(after,buffer.map(updated));
+    assert.deepEqual(pairs.map(pair=>manager.get(pair.incoming)),expected);
+    assert.equal(new Set(after.map(cell=>manager.get(cell))).size,45);
+  }
+});

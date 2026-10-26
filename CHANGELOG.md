@@ -6,6 +6,11 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Fixed — project identity swapping at the end of an autonomous shift (2026-10-26)
+- Before moving a row or column, reserve project identities for the incoming offscreen tiles. Previously, a tile could slide into view as one numbered/color-coded project and abruptly turn into another when the shift completed.
+- Prefer an already safe offscreen identity, or reuse the identity of the tile departing at the opposite edge. Keep existing visible tile identities unchanged. The ordinary spiral placement, manual speeds and shift timing are not changed.
+- Added regression tests for row shifts in both directions, column shifts in both directions, and opposite-moving simultaneous lines. Full local tests and creator visual confirmation remain pending.
+
 ### Changed — 45-project demo and stale test correction (2026-10-26)
 - Added 45 distinct demo identities: BABUNI.DEV and PROJECT 02–45, so the centered 1920×1080 viewport can initially display 45 unique project tiles. Repeats remain necessary if panning exposes more than 45 partially visible tiles.
 - Moved demo content into a small independent module and added catalog/desktop spiral coverage tests. The spiral allocator and movement controls were not changed.

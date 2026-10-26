@@ -55,6 +55,43 @@ export class ProjectPlacement {
     }
     throw new Error('Unreachable project selection');
   }
+  /** Give each entering offscreen tile its FINAL project before a line begins moving.
+   * An incoming buffer tile may currently duplicate a visible project; without
+   * staging, sync() would rename it on the final animation frame.
+   *
+   * Prefer its existing identity when it will be unique at rest; otherwise reuse
+   * the project leaving at the opposite side. Do not change any currently
+   * visible source-cell assignment while a shift is in progress.
+   */
+  stageEntrances(pairs:readonly {incoming:CellCoordinate;departing:CellCoordinate}[]):void {
+    if(pairs.length===0)return;
+    const departures=new Set(pairs.map(pair=>key(pair.departing)));
+    const continuing=new Set<number>();
+    for(const id of this.lastVisible){
+      if(departures.has(id))continue;
+      const project=this.assigned.get(id);
+      if(project!==undefined)continuing.add(project);
+    }
+    const reserved=new Set(continuing);
+    const currentlyReserved=new Set(this.assigned.values());
+    for(const pair of pairs){
+      const incomingKey=key(pair.incoming);
+      // An already visible tile must never be reassigned by staging.
+      if(this.lastVisible.has(incomingKey))continue;
+      const current=this.assigned.get(incomingKey);
+      if(current!==undefined&&!reserved.has(current)){
+        reserved.add(current);
+        continue;
+      }
+      const exiting=this.assigned.get(key(pair.departing));
+      const project=exiting!==undefined&&!reserved.has(exiting)
+        ?exiting:this.choose(reserved,currentlyReserved);
+      this.assigned.set(incomingKey,project);
+      currentlyReserved.add(project);
+      reserved.add(project);
+    }
+  }
+
   /** Coordinates refer to original source tiles after reversing completed line shifts.
    * Retained cells comprise the visible viewport and two offscreen tile bands.
    */

@@ -143,3 +143,11 @@ The creator ran the Astro prototype locally, confirmed all five unit tests passe
 ### D-018 — Testing the spiral with 45 identities (2026-10-26)
 
 **Creator request:** Increase the temporary project collection to 45 to verify the full desktop layout can avoid duplicates. **AI implementation:** BABUNI.DEV plus PROJECT 02–45, preserving the clockwise spiral and adding explicit initial desktop uniqueness tests. **Caveat:** Panning sometimes increases the count of partially visible cells beyond 45, so occasional repetition remains allowed. **Status:** Implemented for hands-on testing; not yet visually accepted.
+
+## D-019 — Reserve a moving tile's project identity before its animation (2026-10-26)
+
+**Creator direction:** Project number and color must not abruptly switch while a tile is entering the viewport during an autonomous shift. The creator observed the problem particularly for left-to-right entry, and possibly bottom-to-top entry.
+
+**AI diagnosis and decision:** The end-of-shift visibility allocator can reassign an incoming source that was provisionally filled with another identity during movement. Stage an arrival's final project before animation, prioritizing an existing nonconflicting identity or otherwise the project's identity leaving the opposite edge. Do not change currently visible source assignments while staging. This preserves the creator's clockwise spiral and offscreen reuse goals.
+
+**Status:** Code and regression tests committed for evaluation; local browser reproduction and creator visual acceptance pending. Temporary duplicated partial-edge tiles during a shift may be unavoidable when all resting visible project identities are in use.

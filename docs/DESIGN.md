@@ -124,3 +124,9 @@ PROJECT 10 appears directly above the center in the second ring, at coordinate (
 ## 45 demo project identities — desktop spiral review, 2026-10-26
 
 The creator requested 45 distinctly named placeholders (BABUNI.DEV plus PROJECT 02–45) to visually judge the spiral reuse rule. An initial centered 1920×1080 viewport with 240px tiles has 45 visible cells, including partial edge tiles, so all may have different project names. Some panned positions have more visible cells and must repeat if only 45 identities exist. These demo entries are not 45 published portfolio projects; no filler/neutral stones have been introduced and the spiral placement algorithm is unchanged.
+
+## Project labels must remain stable during autonomous shifts — 2026-10-26
+
+**Creator's visual correction:** An incoming project tile must not change its engraved name, project number or portal color when it finishes sliding into the view. The prototype previously sometimes showed that jump on left-to-right entries, and a vertical case was also suspected.
+
+**Motion rule:** Determine the incoming tile's final identity in the offscreen buffer *before* the line starts translating, instead of selecting its project at the moment the one-cell motion completes. The tile's identity and color must remain constant throughout the animation. At rest, avoid repeated visible projects when the project catalog can fill the viewport without duplication. When an extra partial-edge tile appears during a moving line, a short overlap may be unavoidable; do not hide the identity switch by fading or renaming a moving project.
