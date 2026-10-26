@@ -138,4 +138,4 @@ The creator ran the Astro prototype locally, confirmed all five unit tests passe
 
 **Alternatives not chosen:** Empty neutral stone placeholders; arbitrary hash-based repeated project placement; changing visual tile size to force available projects to fit.
 
-**Verification:** Eight isolated pure TypeScript/Node placement tests passed, including five-project repetition, enough-project uniqueness under panning and a synthetic moved row. Creator browser acceptance and a full Astro build remain open.
+**Verification:** Ten isolated pure TypeScript/Node placement tests passed, including five-project repetition, enough-project uniqueness under panning and a synthetic moved row. Creator browser acceptance and a full Astro build remain open.
