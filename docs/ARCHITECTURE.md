@@ -232,3 +232,8 @@ Pointer/focus topic delegation uses that same tile button; related-target checks
 Vacancies optionally carry `originColumn` to split expansion around the project axis. `occupiedCell` subtracts the row’s left-side vacancy count before insertion; `restingCell` adds it back during inversion. Legacy vacancies without that field retain their old mapping. Shift history captures the entire footprint including its origin metadata, so commit inversion matches rendering. Dynamic row/column protection uses every module vacancy plus the anchor. The one-through-nine tests verify fixed anchor, unique occupied cells, non-overlapping horizontal expansion and correct vertical endpoints. No diagonal motion or globally accelerated shifts are added.
 
 Media is versioned in GitHub but served by the website host. Four selected original clips total approximately three minutes; browser-chrome-cropped 960px H.264 derivatives and posters occupy about 5.6 MiB. The original 26-minute mixed recording is excluded. Full text bodies currently ship with the client catalog (about 195 KiB client JavaScript before transfer compression at this checkpoint); deferred text loading can be revisited if actual performance warrants it.
+
+
+## 2026-10-26 — Button Game portal artwork
+
+`DemoProject.portalArtwork` is an optional public URL. Recycled tiles clear prior portal children and load the assigned project artwork; records without a URL retain the color fallback. Artwork assignment is explicit, independent of tile position.

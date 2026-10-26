@@ -139,3 +139,8 @@ Implemented: shared content definitions, twelve populated BABUNI.DEV modules, fi
 Verified: eleven test files and build; seeded selection/reveal/content/asset tests and one-through-nine geometry/shift inversion checks. Browser: nine own previews, stationary centered anchor, zero measured panel/tile overlaps, deliberate native video playback, image switching, exactly five Button Game previews, varied own subsets on reopening and mid-reveal switch cleanup.
 
 Next: refine and implement expanded full-page module presentation and navigation from these previews. A split-pane layout versus larger scrolling modules remains undecided. Native phone acceptance of this new multi-module implementation, extended mixed-shift/recycling runs, and external provider embed playback remain open. Do not confuse earlier phone acceptance with verification of this new commit.
+
+
+## 2026-10-26 — Button Game portal artwork
+
+- Built: Button Game supplied logo connected to the circular portal via explicit project artwork metadata. Expanded module/full-bloom work remains unchanged.

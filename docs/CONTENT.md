@@ -119,3 +119,8 @@ Button Game’s five are overview, play/combinations, Android Wi-Fi play, develo
 Babuni.dev supplied the two JPG screenshot records and four short recordings from `visualdocumentationmaterial/moduleContentVideo`. JPGs are unchanged; video exports crop browser chrome, scale to 960px and encode web-ready MP4 plus poster images. Originals remain unchanged locally. The 26-minute mixed recording was inspected through sample frames and excluded. Media credit identifies Babuni.dev as supplier and discloses the derivative operation. Individual preview playback is implemented; full-page text/gallery composition remains future work.
 
 See [Module authoring](MODULE_AUTHORING.md) for `public/media/<project-id>/images/` and `videos/` paths, catalog fields, empty-slot rules, supported external player URLs and asset checks. Adding media alone does not automatically publish a module; selection is explicit in the project catalog.
+
+
+## 2026-10-26 — Button Game portal artwork
+
+Babuni.dev supplied `public/portal-content/PortalContentButtonGame.png`; copied unchanged and assigned to `button-game`. This portal identity image does not populate a gallery module or change the five populated Button Game modules.

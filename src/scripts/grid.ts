@@ -197,14 +197,14 @@ if (viewport && world && resetButton && status) {
       // Artwork follows semantic project identity, never a recycled tile index.
       // Clear children on reassignment so the logo cannot leak to another project.
       portal.replaceChildren();
-      const hasArtwork=project.id==='babuni-dev';
+      const hasArtwork=Boolean(project.portalArtwork);
       portal.classList.toggle('tile-portal--artwork',hasArtwork);
       if(hasArtwork){
         const image=document.createElement('img');
         image.className='tile-portal-image';image.alt='';
         image.loading='lazy';image.decoding='async';image.draggable=false;
         image.width=1254;image.height=1254;
-        image.src='/portal-content/PortalContentBabuniDev.png';
+        image.src=project.portalArtwork!;
         portal.appendChild(image);
       }
     }

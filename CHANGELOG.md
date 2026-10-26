@@ -234,3 +234,9 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Changed
 - Bloom vacancy mapping supports previews on both sides of the fixed project anchor. Every selected module reserves a real cell; shift eligibility follows the complete sampled footprint.
+
+
+## 2026-10-26 — Button Game portal artwork
+
+### Added
+- Button Game portal uses the supplied PNG logo through the existing circular mask. Project catalog entries now declare optional portal artwork URLs.

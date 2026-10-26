@@ -255,3 +255,8 @@ An open bloom moves with the camera on desktop and mobile, retaining both module
 **AI layout interpretation:** Nine means nine preview modules plus the project tile. The first two slots retain right/below placement; the other six immediate neighbors fill out the surrounding ring, with the ninth at two cells right of the anchor. A project with fewer previews reserves only that many cells. Left/right row runs slide away from vacancies while the anchor stays fixed; no diagonal corrections. Mobile can pan to offscreen previews. This is not a claim that nine modules plus an anchor fit inside a 3×3 total area.
 
 Previews support real image switching and deliberate native video playback; text displays a curated excerpt with full source content in the module data. They do not yet launch a full-page expanded reader. All module families share stable data separate from layout. See MODULE_AUTHORING for editable definitions and media paths.
+
+
+## 2026-10-26 — Button Game portal artwork
+
+Button Game now displays its supplied square PNG through the same centered circular aperture as BABUNI.DEV. Mask, portal size, placement and all interaction timings are unchanged.

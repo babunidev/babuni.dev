@@ -13,11 +13,14 @@ export interface DemoProject {
   /** The inventory's evidence classification, not a release status. */
   evidence: string;
   tint: string;
+  /** Optional public URL for artwork clipped by the shared circular portal. */
+  portalArtwork?: string;
 }
 export const DEMO_PROJECT_COUNT=53;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
+    "portalArtwork": "/portal-content/PortalContentBabuniDev.png",
     "name": "BABUNI.DEV",
     "shortSummary": "Interactive creative portfolio with a living tile grid and exploratory project views.",
     "evidence": "repo",
@@ -25,6 +28,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "button-game",
+    "portalArtwork": "/portal-content/PortalContentButtonGame.png",
     "name": "Button Game",
     "shortSummary": "Android reaction game with scores, leaderboard and local multiplayer hosting.",
     "evidence": "repo",

@@ -37,3 +37,8 @@ BABUNI.DEV has twelve populated modules: overview, concept, journal, changelog, 
 Run `npm run test:grid` and `npm run build`. Catalog tests check populated counts, linked document/media existence, random sampling, unique identities, stagger bounds and embed URL validation. Geometry tests cover one through nine module footprints, stationary anchors, reversible mapping, no overlapping expansion and straight vertical shift endpoints.
 
 The expanded page layout is still open for refinement: fixed left-content/right-selector panes versus larger scrolling modules was discussed by Babuni.dev, not finalized or implemented in this stage.
+
+
+## 2026-10-26 — Button Game portal artwork
+
+Portal identity images belong in `public/portal-content/`. Assign their public URL through `portalArtwork` in `src/lib/demo-projects.ts`; filenames alone do not assign artwork. Button Game uses `/portal-content/PortalContentButtonGame.png`. Portal artwork is separate from gallery module content.
