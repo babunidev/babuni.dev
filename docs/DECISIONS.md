@@ -320,3 +320,8 @@ The initial five editorial families reuse four renderer types: journal/history i
 ## 2026-10-26 — Stronger action and waiting feedback
 
 **Implemented — Babuni.dev direction:** Make pending switches visibly responsive through stronger tile glow and slightly faster waiting pulses, and acknowledge Read more/Back presses. **AI choice:** 1400 ms opacity pulse, 240 ms press acknowledgement, persistent queued-button highlight and aria-busy. Preserve all movement/navigation clocks and use a steady indication for reduced motion. This supersedes the earlier 1600 ms feedback cycle, not the approved shift tempo.
+
+
+## 2026-10-27 — Content validation and authoring
+
+**Status: Implemented AI implementation choice within Babuni.dev’s requested content-validation scope.** Retain the existing JSON authoring format; provide local checks and blank templates rather than introducing a CMS or MDX migration. Empty modules are valid drafts; partial media records are errors. Build failures prevent structurally broken content from being packaged. Remote availability and editorial accuracy remain human review responsibilities. Revisit the format when real authoring needs justify it.

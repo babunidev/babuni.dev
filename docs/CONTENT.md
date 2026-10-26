@@ -151,3 +151,8 @@ Babuni.dev supplied four additional portal identity files, copied unchanged: `Fa
 ## 2026-10-26 — Stronger action and waiting feedback
 
 Babuni.dev’s positive assessment of the current design and request for stronger interaction feedback are recorded in DEVLOG. This feedback update changes no project prose, media assets, module counts or content sampling.
+
+
+## 2026-10-27 — Content validation and authoring
+
+Babuni.dev requested Content Validation and Authoring. Existing nine BABUNI.DEV populated modules and five populated/four empty Button Game modules are retained. Use `npm run content:check` and the blank-template workflow in MODULE_AUTHORING.md. Empty definitions stay hidden; incomplete media/link records fail validation. Sources and credits are checked structurally, not independently fact-checked or license-cleared. No additional project content was invented.

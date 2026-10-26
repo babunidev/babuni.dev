@@ -272,3 +272,8 @@ Four additional project records now declare `portalArtwork` URLs. The existing r
 ## 2026-10-26 — Stronger action and waiting feedback
 
 `interaction-feedback.ts` installs delegated pointer/Enter/Space acknowledgement for tile and bloom controls, including detail buttons outside the grid. A WeakMap replaces a prior press timer on repeated presses; each highlight clears after 240 ms without changing dispatch or motion. Grid selection busy state includes pending depth changes, centering and bloom preparation. `queueDepthChange` owns/clears the originating button’s waiting class and aria-busy on entry, replacement or cancellation. Existing geometry and scheduling durations are unchanged.
+
+
+## 2026-10-27 — Content validation and authoring
+
+`scripts/content-tools.mjs` validates catalog data before production build via `prebuild`, reusing runtime populated-content and embed rules. It checks the stable project inventory, local public files and registered document paths. It reports precise errors and exits unsuccessfully on invalid content. `content:template` prints an empty definition without mutation. No runtime requests, dependencies or CMS were added. Document registration currently remains explicit in both the runtime provider and validator.

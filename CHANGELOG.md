@@ -283,3 +283,9 @@ Each future entry should include the change, its user-visible or technical effec
 - Stronger gold tile acknowledgement and preparation glow; waiting pulses use a slightly faster 1400 ms cycle instead of 1600 ms.
 - Read more stays highlighted/busy while a bloom depth change waits for a shift. Read more, Back, Close, resource actions and project tiles acknowledge pointer/keyboard presses immediately without delaying navigation.
 - Tile busy state covers centering and bloom preparation as well as queued shifts; reduced-motion feedback remains steady.
+
+
+## 2026-10-27 — Content validation and authoring
+
+### Added
+- Local content validation with field-specific errors, automatic validation before production builds, and blank module templates that leave live content untouched.

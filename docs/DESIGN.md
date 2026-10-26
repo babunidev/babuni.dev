@@ -291,3 +291,8 @@ FavorCraft, FlourishForever, ResistForever and SocialForever use their supplied 
 ## 2026-10-26 — Stronger action and waiting feedback
 
 User-authorized feedback refinement: pointer/keyboard presses brighten the control immediately; tiles gain a stronger gold face glow. Waiting/preparation uses a stronger halo with a 1400 ms opacity pulse. Centering, expansion/return and queued shifts indicate preparation; settled tiles retain their calmer selected state. Queued Read more buttons stay highlighted/busy until their action starts or is cancelled. There is no scaling, layout movement or action delay in press feedback. Reduced motion makes pulses steady.
+
+
+## 2026-10-27 — Content validation and authoring
+
+Content authoring now has local validation and invisible blank templates. No timing, placement, navigation or visual behavior changed. Structural validation is separate from Babuni.dev’s hands-on acceptance and editorial review.

@@ -11,7 +11,10 @@
     "build": "astro build",
     "test:grid": "node --experimental-strip-types --test tests/*.test.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "content:check": "node --experimental-strip-types scripts/content-tools.mjs",
+    "content:template": "node --experimental-strip-types scripts/content-tools.mjs template",
+    "prebuild": "npm run content:check"
   },
   "dependencies": {
     "astro": "^7.4.2"

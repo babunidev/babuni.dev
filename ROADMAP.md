@@ -180,3 +180,10 @@ Built: the four newly supplied FavorCraft, FlourishForever, ResistForever and So
 ## 2026-10-26 — Stronger action and waiting feedback
 
 Built: stronger tile/preparation pulse and pointer/keyboard button acknowledgement, including a persistent queued Read more indication. Next acceptance checks: switch during a running shift; full forward/back navigation; panning beside an open big bloom; phone reading/orientation and media cleanup. After Milestone 4 acceptance, Milestone 5 focuses on content validation/authoring, another populated real project and CI build checks. Hosting/release remains later and requires its own authorization.
+
+
+## 2026-10-27 — Content validation and authoring
+
+**Babuni.dev direction:** Move forward with Content Validation and Authoring after positive interaction feedback.
+
+Built: field-level catalog validation, build gate, blank templates and practical authoring instructions. Retained current JSON modules; MDX blocks are not implemented. Two populated projects and document-backed development modules already exist. Still open: editorial review of content/attribution, another real project if desired, CI/preview checks and controlled publishing. Device/accessibility acceptance items remain separately tracked.

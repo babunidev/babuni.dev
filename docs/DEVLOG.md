@@ -529,3 +529,14 @@ Phone-sized browser (mouse input, not native-device acceptance): at 390×844, me
 **Tested/outcome:** All 12 test files, production build and whitespace checks pass. Browser observed an immediately pressed/busy tile with the 1.4-second computed pulse. During a real autonomous shift, the clicked Read more button and selected tile were both aria-busy=true and visibly highlighted while big bloom had not started. After entry/preparation settled, the button waiting class cleared, tile aria-busy returned to false and no waiting tiles remained. Enter opened a real Changelog detail; the Back button returned to big bloom without changing the navigation flow. A waiting-state screenshot was saved outside the repository for the user handoff. No new native-device or reduced-motion browser emulation is claimed; CSS retains the existing global reduced-motion animation bypass.
 
 **Discovered/fixed:** The preparation timer could settle just before the last camera animation frame, leaving a stale busy highlight. The camera completion path now refreshes feedback after clearing centering; closing geometry is also included in preparation state. This changes acknowledgement state only, not camera/shift durations.
+
+
+## 2026-10-27 — Content validation and authoring
+
+**Babuni.dev requested:** Proceed with Content Validation and Authoring after positive hands-on feedback. This is not blanket acceptance of every outstanding device/accessibility check.
+
+**AI interpretation and execution:** Add dependency-free local validation and non-writing blank templates around the existing JSON contract. Keep intentional empty definitions, existing content and navigation intact. A CMS, MDX migration, another project and CI were left for separate work. Validation catches malformed records, duplicate IDs, missing assets/documents, unsupported fields and unsafe destinations.
+
+**Verification:** Initial new test incorrectly expected all secondary diagnostics from an already-invalid record; corrected it to test missing previews independently. Final suite/build results are recorded below. No new phone or browser interaction test was performed for this tooling-only change.
+
+**Tested:** All 13 test files passed with `npm run test:grid`; `npm run build` passed including the new content gate; `git diff --check` passed. Template tests cover all four empty module kinds, malformed definitions, source/media errors, duplicate IDs, preview requirements and document ambiguity. Browser/phone verification was not repeated because no interaction code changed.
