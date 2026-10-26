@@ -188,3 +188,10 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Changed
 - Portal exploration reveals the three topic wings cumulatively in a fresh random order, with 260–420 ms between successive bubbles. Ambient hints continue to reveal one point. Pending reveals cancel when topics close.
+
+## 2026-10-26 — Preserve calm shifts and remove bloom return glitch
+
+### Fixed
+- Removed shortened shift completion when closing or switching a bloom. The fixed 4.4-second shift duration and easing remain in force; all tile selections show gold and wait for the active shift before centering/opening.
+- Limited bloom transform transitions to opening/closing phases, preventing displaced tiles from animating backward after vertical shift slot reassignment.
+- Project visibility reservations use occupied visual positions while bloom rows are displaced.

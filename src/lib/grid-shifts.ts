@@ -1,5 +1,7 @@
 import {occupiedCell,restingCell,type Cell} from './bloom-geometry.ts';
 /** A complete infinite row or column moves by one logical cell. */
+/** Approved calm plate tempo; interactions must not replace this duration. */
+export const SHIFT_DURATION_MS=4400;
 export type ShiftAxis='row'|'column';
 export type ShiftDirection=-1|1;
 export interface ShiftEvent {axis:ShiftAxis; line:number; direction:ShiftDirection; vacancies?:readonly Cell[]}

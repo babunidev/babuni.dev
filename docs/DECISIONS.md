@@ -240,3 +240,11 @@ Accessibility refinement: keyboard-visible focus on a project control suppresses
 **AI choice:** Replace the 59%/53% portal difference with one 56% square-aspect circular portal. Create a shared `.tile-portal-cluster` coordinate frame, placed at horizontal 50%, vertical 45% of the square tile to leave title room. Place the three seven-pixel rotated square indicators just beyond the portal rim with a common six-percent-of-tile clearance. Keep topic wings attached to their indicator origins and long-title typography independent of portal diameter.
 
 **Alternatives:** Setting all circles to the same width without grouping indicators was simpler but would retain inconsistent radial alignment; varying portal size to accommodate long text was explicitly rejected. **Open:** visual fit of very long titles on phone-sized tiles and precise glow/frame clearance require real rendered checks.
+
+## 2026-10-26 — Preserve established feel; remove accelerated shift completion
+
+**Status: Babuni.dev decided; implemented, further visual acceptance open.** Babuni.dev rejected the AI-added accelerated finish when selecting/switching projects and explicitly asked that every active shift finish at its normal calm tempo before opening. Babuni.dev also asked agents to propose and ask before independently changing established timing, positioning or other approved behavior. This standing instruction is now in AGENTS.md.
+
+**AI correction:** Remove duration overrides, queue all selections through normal completion, scope bloom transitions to actual opening/closing, and check visibility in occupied visual coordinates. Centering, expansion/return, manual-pan tuning, dice rules and topic timing were not retuned.
+
+**Alternatives:** Babuni.dev explicitly permits fading occupying tiles out and content in if displacement cannot be made reliable. AI retained displacement after finding a concrete transition lifecycle defect; pure coordinate reassignment was already represented by visual occupancy/history, while CSS erroneously animated committed slot resets. No global suspension or diagonal detour is added. This preserves the currently liked spatial behavior without claiming that all future full-bloom states are tested.

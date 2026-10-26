@@ -188,3 +188,11 @@ CSS in `src/pages/index.astro` raises `.grid-tile--topic-open` to z-index 3 (blo
 `src/pages/index.astro` sizes the wrapper at `width:56%; aspect-ratio:1`, gives its circle `width:100%; height:100%`, and locates the wrapper at `left:50%; top:45%`. Marker centers are placed at exactly `half portal diameter + 6% tile size + half 7px marker` along the top, left and right axes. This single radial formula replaces the previous unrelated face-percentage positions and the long-title 53% portal override. The name is positioned independently at the bottom and can use its smaller font without influencing the circle geometry. All three bubble wings are anchored relative to the corresponding marker's top edge in the same wrapper. Parent `pointer-events:none` and child `pointer-events:auto` on the circle retain portal-only inspection; info panels remain passive.
 
 `tests/portal-layout.test.mjs` checks the single width, consistent wrapper, same radial offset and attachment declarations, and evaluates clearance for representative tile sizes. These are source/geometry tests rather than actual rendered screenshot comparisons. Interaction, browser/device visuals and Astro build are pending verification for this change.
+
+## Shift clock and transition ownership — 2026-10-26
+
+`SHIFT_DURATION_MS=4400` in `grid-shifts.ts` supplies the fixed renderer clock. `Moving` has no duration override. Selecting any tile during a shift queues the semantic source; switching an open bloom queues close until the event completes. `resumeMovement` only compensates for existing pauses and never accelerates the event.
+
+`.is-bloom-opening` exclusively enables the opening transform transition; `.is-bloom-closing` enables the return. `.is-blooming` alone does not animate slot transform changes. This matters because shift completion synchronously reassigns source identities to resting DOM slots: CSS must not interpolate those slot resets. Pure geometry alone did not expose this CSS lifecycle defect.
+
+`syncProjects` maps cells through the active vacancies before checking visibility/retention, matching visual occupancy used by rendering and entrance staging. Visual-to-resting inversion and source history remain the coordinate model; no diagonal path correction or fade replacement is added.

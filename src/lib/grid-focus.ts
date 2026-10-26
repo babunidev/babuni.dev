@@ -32,14 +32,13 @@ export function permittedBloomShifts<T extends GridLineMove>(
 ):T[]{
   return moves.filter(move=>shiftAvoidsBloom(move,cell));
 }
-/** Distinguish an actual moving selected tile / bloom neighbor from an
- * independent moving line: only the former waits, and both show gold now.
- */
+/** Babuni.dev requests every active shift finish calmly before opening,
+ * including lines unrelated to the chosen tile. Gold selection is immediate. */
 export type SelectionShiftAction='wait'|'pause';
 export function selectionShiftAction(
-  moves:readonly GridLineMove[],cell:GridCell
+  moves:readonly GridLineMove[],_cell:GridCell
 ):SelectionShiftAction{
-  return moves.some(move=>shiftTouchesSelection(move,cell))?'wait':'pause';
+  return moves.length?'wait':'pause';
 }
 export const CENTER_DURATION_MS=720;
 export const BLOOM_SHIFT_DURATION_MS=520;

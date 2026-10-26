@@ -77,3 +77,5 @@ The one-cell small-bloom prototype uses the selected candidate's existing provis
 Babuni.dev explicitly allows topic snippets to overlap neighboring tiles. Existing provisional labels are unchanged. AI removed the right bubble’s narrow-column typography and uses matching readable padding/font sizes across all three; wrapping is based on a shared reading-width limit, not available room inside the tile.
 
 **2026-10-26 presentation update:** Babuni.dev requested random sequential topic discovery. Existing labels remain unchanged; portal exploration now accumulates the three snippets in shuffled order rather than showing all simultaneously.
+
+**2026-10-26 calm-shift correction:** Summary, notes and topic text are unchanged. Pending selections retain their source/project identity while waiting for the current shift. Visibility reservations now check occupied visual positions, avoiding decisions based on pre-displacement positions. Fading content in place was authorized as an alternative but not implemented in this correction.

@@ -88,12 +88,13 @@ test('all unrelated rows and columns can continue around an open bloom',()=>{
   assert.equal(shiftAvoidsBloom({axis:'row',line:-1,direction:1},chosen),false);
 });
 
-test('selection strategy prioritizes a moving tile, otherwise centers immediately',()=>{
+test('selection waits for every active line, including unrelated lines',()=>{
   const cell=c(2,0);
+  assert.equal(selectionShiftAction([],cell),'pause');
   assert.equal(selectionShiftAction([{axis:'row',line:0,direction:1}],cell),'wait');
   assert.equal(selectionShiftAction([{axis:'column',line:3,direction:1}],cell),'wait');
-  assert.equal(selectionShiftAction([{axis:'row',line:-2,direction:1}],cell),'pause');
-  assert.equal(selectionShiftAction([{axis:'column',line:1,direction:1}],cell),'pause');
+  assert.equal(selectionShiftAction([{axis:'row',line:-2,direction:1}],cell),'wait');
+  assert.equal(selectionShiftAction([{axis:'column',line:1,direction:1}],cell),'wait');
   assert.equal(selectionShiftAction([{axis:'column',line:6,direction:-1}],cell),'wait');
   assert.equal(selectionShiftAction([
     {axis:'row',line:-1,direction:1},{axis:'row',line:0,direction:-1}

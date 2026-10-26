@@ -95,3 +95,7 @@ Give Babuni.dev this restart sequence with each future published change, even if
 ## Author attribution
 
 Identify the project's human author by the artist name **Babuni.dev**. Avoid using “creator” as a title or generic name for Babuni.dev. Attribute AI implementation and documentation work distinctly; preserve historical evidence and third-party credits.
+
+## Preserve approved interaction feel
+
+Babuni.dev explicitly requested on 2026-10-26: do not independently change established timing, positioning, or other approved feature behavior while solving another issue. Preserve the existing feel. If a proposed solution needs such a change that Babuni.dev has not already authorized, explain the idea and ask before implementing it. Record AI proposals separately from human decisions. In particular, clicking/selecting a project must never accelerate autonomous shifts: let the current shift finish at its normal tempo before opening.

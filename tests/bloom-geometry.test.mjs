@@ -32,3 +32,33 @@ test('expansion waits for far-right columns and both displaced row runs',()=>{
  for(const move of [{axis:'column',line:9,direction:1},{axis:'row',line:4,direction:-1}])assert.ok(shiftTouchesSelection(move,c));
  assert.equal(shiftTouchesSelection({axis:'column',line:1,direction:1},c),false);
 });
+
+test('successive opposite column shifts stay aligned and reassign every endpoint without collision',()=>{
+ const vacancies=bloomVacancies({column:0,row:0});
+ const history=[];
+ for(let round=0;round<8;round++){
+  const moves=[{axis:'column',line:2,direction:round%2?1:-1,vacancies},
+               {axis:'column',line:4,direction:round%2?-1:1,vacancies}];
+  const sources=[];
+  for(let row=-6;row<=6;row++)for(let column=-4;column<=6;column++){
+   const cell={column,row},visual=occupiedCell(cell,vacancies);
+   const move=moves.find(m=>m.line===visual.column);
+   const end={column:visual.column,row:row+(move?.direction??0)};
+   sources.push({visual,move,end,source:sourceCell(column,row,history)});
+  }
+  for(const progress of [0,.1,.5,.9,1]){
+   const positions=new Set();
+   for(const {visual,move} of sources){
+    const position={column:visual.column,row:visual.row+(move?.direction??0)*progress};
+    assert.equal(position.column,visual.column);
+    const key=JSON.stringify(position);
+    assert.ok(!positions.has(key),'no two tiles share a trajectory position');positions.add(key);
+   }
+  }
+  history.push(...moves);
+  for(const {end,source} of sources){
+   const resting=restingCell(end,vacancies);
+   assert.deepEqual(sourceCell(resting.column,resting.row,history),source);
+  }
+ }
+});

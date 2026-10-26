@@ -1,6 +1,6 @@
 import {occupiedCell,restingCell,bloomVacancies} from '../lib/bloom-geometry';
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
-import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
+import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 import { demoProjects } from '../lib/demo-projects';
@@ -57,9 +57,9 @@ if (viewport && world && resetButton && status) {
   let manualFrame:number|null=null;
   let previousManualTime:number|null=null;
   // Experimental movement values, not yet confirmed by the creator.
-  const duration=4400, firstWait=6500, restWait=8000;
+  const firstWait=6500, restWait=8000;
   const history:ShiftEvent[]=[];
-  interface Moving {moves:ShiftEvent[]; started:number; pausedAt:number|null; fraction:number; duration?:number}
+  interface Moving {moves:ShiftEvent[]; started:number; pausedAt:number|null; fraction:number}
   let moving:Moving|null=null;
   let closeAfterShift:{next:ProjectChoice|null}|null=null;
   const prefersReduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -252,9 +252,12 @@ if (viewport && world && resetButton && status) {
     const visible:CellCoordinate[]=[];
     const retained:CellCoordinate[]=[];
     const margin=bufferCells*tileSize;
+    const anchor=selectedChoice&&bloomModule?locate(selectedChoice):null;
+    const vacancies=anchor?bloomVacancies(anchor):[];
     for(const slot of slots){
-      const x=frame.originX+slot.column*tileSize;
-      const y=frame.originY+slot.row*tileSize;
+      const visual=occupiedCell(slot,vacancies);
+      const x=frame.originX+visual.column*tileSize;
+      const y=frame.originY+visual.row*tileSize;
       const source=sourceCell(slot.column,slot.row,history);
       const isVisible=x<rect.width&&x+tileSize>0&&y<rect.height&&y+tileSize>0;
       if(isVisible)visible.push(source);
@@ -392,7 +395,7 @@ if (viewport && world && resetButton && status) {
   }
   function frameMovement(now:number):void {
     if(!moving||moving.pausedAt!==null)return;
-    moving.fraction=Math.min(1,Math.max(0,(now-moving.started)/(moving.duration??duration)));
+    moving.fraction=Math.min(1,Math.max(0,(now-moving.started)/SHIFT_DURATION_MS));
     paintMovement(moving.fraction);
     if(moving.fraction<1){requestAnimationFrame(frameMovement);return;}
     history.push(...moving.moves);
@@ -456,14 +459,13 @@ if (viewport && world && resetButton && status) {
     const wasActive=!!selectedChoice||!!centering||!!bloomModule||!!pendingChoice;
     const hadBloom=!!bloomModule;
     if(hadBloom&&moving&&animateReturn){
-      // Finish the straight visual movement before reclaiming its vacancies.
-      // Panning continues immediately while this short close sequence runs.
+      // Keep the current clock and easing curve. Selection/collapse waits
+      // for this event to finish at its established tempo.
       closeAfterShift={next:nextChoice};
-      const remaining=BLOOM_SHIFT_DURATION_MS;
-      moving.duration=remaining/Math.max(.001,1-moving.fraction);
-      moving.started=performance.now()-moving.fraction*moving.duration;
-      moving.pausedAt=null;
-      requestAnimationFrame(frameMovement);
+      pendingChoice=nextChoice;
+      highlightSelection();
+      if(nextChoice)liveStatus.textContent='Project selected. Waiting for the current shift to finish at its normal pace.';
+      resumeMovement();
       return;
     }
     closeAfterShift=null;
@@ -474,7 +476,7 @@ if (viewport && world && resetButton && status) {
     if(bloomClosingTimer!==null){clearTimeout(bloomClosingTimer);bloomClosingTimer=null;}
     bloomModule?.remove();bloomModule=null;
     metadataModule?.remove();metadataModule=null;
-    surface.classList.remove('is-focusing','is-blooming','is-bloom-closing');
+    surface.classList.remove('is-focusing','is-blooming','is-bloom-opening','is-bloom-closing');
     for(const slot of slots)slot.element.classList.remove('grid-tile--bloom-returning');
     if(hadBloom&&animateReturn&&!prefersReduced.matches)
       surface.classList.add('is-bloom-closing');
@@ -525,7 +527,7 @@ if (viewport && world && resetButton && status) {
     const selectedCell={column:chosen.column,row:chosen.row};
     const moduleCell=bloomModuleCell(selectedCell);
     surface.classList.remove('is-focusing');
-    surface.classList.add('is-blooming');
+    surface.classList.add('is-blooming','is-bloom-opening');
     highlightSelection();
     layer.getBoundingClientRect();
     for(const slot of slots){
@@ -570,6 +572,7 @@ if (viewport && world && resetButton && status) {
     paintMovement(moving?.fraction??0);
     bloomOpeningTimer=setTimeout(()=>{
       bloomOpeningTimer=null;
+      surface.classList.remove('is-bloom-opening');
       panel.classList.add('is-open');
       metadata.classList.add('is-open');
       liveStatus.textContent=project.name+' opened beside its centered tile.';
@@ -632,17 +635,15 @@ if (viewport && world && resetButton && status) {
     const cell={column:chosen.column,row:chosen.row};
     const movementAction=moving?selectionShiftAction(moving.moves,cell):null;
     if(movementAction==='wait'){
-      // The source tile itself (or the neighbor needed to open it) is
-      // moving. Mark it golden NOW, then wait for just this running round.
+      // Selection never retimes an active shift. Mark gold now, then
+      // begin the opening procedure once this round has finished.
       pendingChoice=choice;highlightSelection();
       if(heading)heading.textContent='Waiting to open '+demoProjects[chosen.projectIndex??0].name;
-      liveStatus.textContent='Project selected. Waiting for its moving line to settle.';
+      liveStatus.textContent='Project selected. Waiting for the current shift to finish at its normal pace.';
       resumeMovement();
       return;
     }
-    // An unrelated shift should not delay the user's camera movement.
-    // Compatible row/column shifts remain frozen until the bloom is open.
-    if(moving)pauseMovement();
+    // No active shift remains when the opening procedure begins.
     pendingChoice=null;
     selectedChoice=choice;
     const target=centeredPan(chosen,tileSize);
