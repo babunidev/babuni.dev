@@ -15,7 +15,7 @@ Content must be editable by humans or authorized AI agents without rewriting the
 - modules: ordered set of typed preview/detail sources
 - links: official sources, repository, demos, releases with explicit labels
 - created / updated dates only when supported by records
-- provenance: source documents, verified claims, original creator notes
+- provenance: source documents, verified claims, original Babuni.dev notes
 
 ## Module types
 
@@ -37,7 +37,7 @@ Treat this website as an ordinary project record rather than special hardcoded p
 
 ## AI authoring contract
 
-Before generating a project entry, verify facts against its source repository, creator-provided material or an authoritative link. AI may write explanatory text, but must distinguish source facts from inference and avoid inventing achievements, releases or contributors.
+Before generating a project entry, verify facts against its source repository, Babuni.dev-provided material or an authoritative link. AI may write explanatory text, but must distinguish source facts from inference and avoid inventing achievements, releases or contributors.
 
 Maintain both human agency and transparency:
 - The human author is responsible for creative direction and approval of substantive changes.
@@ -56,7 +56,7 @@ Schema implementation, media hosting policy, thumbnail generation, image resolut
 
 The temporary `src/lib/demo-projects.ts` now contains **53 candidate identities**, transcribed in approximate recent-to-old order from `PROJECT_INVENTORY.md`. Each carries a provisional slug-like `id`, visible `name`, `shortSummary`, original inventory `evidence` label and decorative `tint`. BABUNI.DEV stays at the center and is rendered uppercase. These are **prototype names**, not a set of 53 verified, approved, independent releases. Related addon lineages, alternative names, lore works, and conceptual studies have deliberately not been merged yet.
 
-The one-line descriptions are stored for future info points or bloom content but are not yet displayed as new information bubbles. Before converting any entry into a portfolio exhibit, confirm individual title, relationship to parent works, authorship, status, source links, rights and creator approval. The later production schema must not assume the provisional catalog IDs will remain final.
+The one-line descriptions are stored for future info points or bloom content but are not yet displayed as new information bubbles. Before converting any entry into a portfolio exhibit, confirm individual title, relationship to parent works, authorship, status, source links, rights and Babuni.dev approval. The later production schema must not assume the provisional catalog IDs will remain final.
 
 ## Temporary topic label for the first information point (2026-10-26)
 
