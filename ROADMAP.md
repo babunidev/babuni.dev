@@ -170,3 +170,8 @@ Milestone 4 is a functional prototype, not a release-complete claim: native phon
 Built revision of Milestone 4: big bloom integrated into the living grid with real 2×2 reservations, the original tile as lower-left Back, surrounding autonomous shifts, shared panning, top-first clockwise appearance and downward three-column overflow. Longer body excerpts and media-collection context now distinguish big previews from small teasers. Separate modal intro canvas/header are superseded; only full detail remains modal. Small-bloom sampling and full detail navigation are retained.
 
 Validation includes arbitrary larger catalogs in geometry tests; actual BABUNI.DEV currently has nine modules, so downward overflow is not claimed as observed with a larger real project. Native-device, prolonged shift/recycling and final visual acceptance remain open. No production deployment or YouTube migration is included.
+
+
+## 2026-10-26 — Four additional portal images
+
+Built: the four newly supplied FavorCraft, FlourishForever, ResistForever and SocialForever portal identities are connected. This asset update does not change milestone scope or imply new project-module content.

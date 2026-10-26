@@ -269,3 +269,9 @@ Each future entry should include the change, its user-visible or technical effec
 - Large text previews expose longer source excerpts; image/video previews add collection context.
 ### Removed
 - Big-bloom header strip, reduced top-left portal clone, separate camera and persistent instruction line. A small corner help tooltip replaces the instruction strip in big bloom.
+
+
+## 2026-10-26 — Four additional portal images
+
+### Added
+- Supplied portal artwork for FavorCraft, FlourishForever, ResistForever and SocialForever, explicitly assigned through the existing project catalog.

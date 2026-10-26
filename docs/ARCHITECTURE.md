@@ -262,3 +262,8 @@ Media is versioned in GitHub but served by the website host. Four selected origi
 `gridWindow` accepts an optional horizontal `columnBufferCells`, defaulting to the existing buffer. First big entry expands the bounded horizontal source pool to six cells per side (vertical buffer remains two) and rebuilds while preserving active panels. This allocation is retained for the session rather than repeatedly recreated. Resizing an open big bloom preserves its layout and cached small panels while recomputing pixel positions. Native scrolling is clipped in big bloom so the camera exclusively owns field positioning. Pointer capture resolves taps on module bodies separately from drags and excludes media/link/Read more controls.
 
 `moduleIntro` derives a bounded longer excerpt from body text; big preview rendering adds real collection captions, titles and credit. Data definitions and the four-video collection remain unchanged. Fullscreen detail retains safe document/media rendering and deliberate playback. The former big modal, fixed top-left mini portal and separate pan state are removed.
+
+
+## 2026-10-26 — Four additional portal images
+
+Four additional project records now declare `portalArtwork` URLs. The existing recycled-tile renderer handles them without new branches or behavior changes; unassigned projects retain their color fallback.

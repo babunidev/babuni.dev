@@ -36,6 +36,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "socialforever",
+    "portalArtwork": "/portal-content/SocialForever.png",
     "name": "SocialForever",
     "shortSummary": "WoW social memory and player encounter addon.",
     "evidence": "repo",
@@ -50,6 +51,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "flourishforever",
+    "portalArtwork": "/portal-content/FlourishForever.png",
     "name": "FlourishForever",
     "shortSummary": "Configurable ability-triggered roleplay emotes.",
     "evidence": "repo",
@@ -85,6 +87,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "resistforever",
+    "portalArtwork": "/portal-content/ResistForever.png",
     "name": "ResistForever",
     "shortSummary": "Partial-resist and spell-miss tooltip calculations.",
     "evidence": "repo",
@@ -92,6 +95,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "favorcraft",
+    "portalArtwork": "/portal-content/FavorCraft.png",
     "name": "FavorCraft",
     "shortSummary": "Merchant's Favor profession, recipe and materials planner.",
     "evidence": "repo",

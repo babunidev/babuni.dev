@@ -310,3 +310,8 @@ The initial five editorial families reuse four renderer types: journal/history i
 **Babuni.dev decided:** Top-first clockwise appearance like the site spiral, extension downward for catalogs exceeding nine, no instruction/header bar in big bloom, and more content at each discovery depth. **AI geometry choices:** Three module columns; selected top-left at `(anchor.column, anchor.row - 1)` so its lower-left cell is exactly the existing anchor. Exclude only that cell from vacancies; reserve all other covered cells. Preserve the same small sample on return. Keep randomized content assignment while ordering physical reveals. A question-mark tooltip offers optional guidance.
 
 **Alternatives:** Independent overlay canvas and hiding all other projects are superseded. Vertical/diagonal tile redistribution was unnecessary: the existing invertible horizontal row mapping clears every footprint and protects actual occupied columns for autonomous shifts.
+
+
+## 2026-10-26 — Four additional portal images
+
+**Implemented — Babuni.dev direction:** Use the four supplied FavorCraft, FlourishForever, ResistForever and SocialForever PNGs as portal identities. **AI execution:** Explicit `portalArtwork` URLs on the existing stable project records; unchanged supplied files and shared circular crop. Automatic folder discovery remains unimplemented.

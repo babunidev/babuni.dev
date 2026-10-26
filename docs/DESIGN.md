@@ -281,3 +281,8 @@ Button Game now displays its supplied square PNG through the same centered circu
 All populated modules are available. The first nine positions are center, top, upper-right, right, lower-right, bottom, lower-left, left, upper-left. The selected module appears through its transit; neighbors follow the top-first clockwise path. Additional modules extend down in three columns. Module identities are shuffled into the remaining positions once per entry, not while reading. Grid tiles remain around the modules, with nonconflicting normal-tempo shifts and the established grab/pull navigation. Text-heavy full-page detail scrolls normally. Big previews expose more actual body text and collection context. The corner question mark reveals help on hover/focus; it does not reserve a bar.
 
 Entry/return wait for current shifts, and reserve/restore space before revealing panels. The original tile backs out to the exact same small-bloom sample and recenters. Selecting a different project keeps the established close-first behavior. Existing normal-grid header/help styling is unchanged; it is hidden only while big bloom is open.
+
+
+## 2026-10-26 — Four additional portal images
+
+FavorCraft, FlourishForever, ResistForever and SocialForever use their supplied images through the same circular aperture and original tile proportions. No portal positioning, animation timing or bloom layout changes accompany this asset update.

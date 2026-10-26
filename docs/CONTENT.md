@@ -141,3 +141,8 @@ Babuni.dev deferred YouTube migration because links are not available. Existing 
 ## 2026-10-26 — Big bloom grows inside the living grid
 
 Content depth is now progressive: small bloom retains curated teaser sentences; large text modules use up to 1,600 characters derived from the real resolved body, with full text still in detail. Large galleries add captions and counts; the Videos intro lists the supplied recordings and keeps the collection detail. Credits remain visible. No new content or YouTube URLs were fabricated. The catalog remains nine populated BABUNI.DEV modules and five Button Game modules; the latter’s empty definitions remain excluded. Larger future catalogs extend down instead of adding extra lateral rings.
+
+
+## 2026-10-26 — Four additional portal images
+
+Babuni.dev supplied four additional portal identity files, copied unchanged: `FavorCraft.png` → `favorcraft`, `FlourishForever.png` → `flourishforever`, `ResistForever.png` → `resistforever`, and `SocialForever.png` → `socialforever`. They live under `public/portal-content/` and do not create or fill gallery modules.
