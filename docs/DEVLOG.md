@@ -122,3 +122,15 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **Verification.** Five unit tests for grid math passed locally, as did isolated Chromium checks for initial centering and pointer-drag coverage at 1920×1080, 768×1024 and 390×844. These tests used a compiled standalone preview, not a complete Astro production build. Physical mobile testing, actual production build verification and performance measurement remain open.
 
 **Result.** The geometry and movement contract is represented in source, with the creator's initial-center correction preserved as a design decision rather than silently buried in code.
+
+## 2026-10-26 — First hands-on desktop test: the movement feels right
+
+**Creator's verification.** After pulling the first grid implementation and running `npm ci`, the creator reported zero dependency vulnerabilities and all five grid-math tests passing. An old Astro development server was already running, so they stopped it and restarted Astro 7.4.2. The server reported readiness and a successful HTTP 200 response for the homepage.
+
+**Experience and feedback.** The creator tested the new grid personally on their 1920×1080 desktop. They confirmed that the BABUNI.DEV tile starts at the exact center, that holding and dragging with the mouse moves the field smoothly in a map-like way, and that the field remains endlessly draggable. They briefly wondered whether movement might be too fast, then concluded it felt right, calling the experience “perfect” and “cool.” This is approval of the present manual-drag feel, not a request to change the speed.
+
+**Potential refinement, not a final decision.** The creator observed that the temporary “Return to center” button could probably be removed later. Keep it for testing for now; its fate is not yet decided and no change to the interface was requested.
+
+**Implementation and evidence.** No application code was altered in this feedback session. The assistant recorded the creator's first desktop acceptance results in the roadmap and decision history. Physical touch interaction, multi-device coverage, browser resizing, and autonomous row/column shifting still need separate verification.
+
+**Outcome.** Basic desktop panning, initial centering, and visible endlessness have passed creator review. This provides a usable interaction baseline for subsequent shifting-grid experiments.
