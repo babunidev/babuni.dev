@@ -298,3 +298,17 @@ export function chooseAmbientPoint(previous:TopicPoint|null,random:number):Topic
   const bounded=Math.max(0,Math.min(.999999,Number.isFinite(random)?random:0));
   return options[Math.floor(bounded*options.length)];
 }
+
+/** One random permutation, then a gently varied interval between reveals. */
+export function topicRevealPlan(random:()=>number=Math.random):{point:TopicPoint;delay:number}[]{
+  const points=[...TOPIC_POINTS];
+  for(let i=points.length-1;i>0;i--){
+    const j=Math.floor(random()*(i+1));
+    [points[i],points[j]]=[points[j],points[i]];
+  }
+  let delay=0;
+  return points.map((point,index)=>{
+    if(index)delay+=260+Math.floor(random()*161);
+    return {point,delay};
+  });
+}

@@ -192,3 +192,7 @@ The lower module uses existing topic labels and inventory evidence, with an expl
 ## Outward topic wings — 2026-10-26
 
 **Babuni.dev decided:** Bubble containment is superseded. Let topics spread over adjacent tiles like wings; left uses its bottom-right corner, right its bottom-left, top spreads upward. **AI implemented:** Top bottom-center sits above its square; side corners meet their respective square tops. All use content-sized width with a 230 px / 70vw maximum and consistent typography/padding. Source tiles rise above grid neighbors and bloom panels while topics are open. Bubbles remain passive overlays without reserved cells. The viewport still clips at screen edges; edge flipping is not implemented. Older containment descriptions are historical.
+
+## Sequential topic wings — 2026-10-26
+
+**Babuni.dev requested:** Randomly choose the first bubble, then show the next and the next for an organic feel. **AI implemented:** Shuffle all three once per fresh portal exploration; show the first immediately and keep it visible as the other two arrive. AI-selected intervals vary from 260 to 420 ms. Hover/focus/tap share this sequence; duplicate triggers on the same open portal do not restart it. Closing, dragging, switching or recycling cancels pending reveals. Ambient teasers remain single-point. Reduced motion disables CSS transitions but retains the ordered reveal. Final timing acceptance remains open.

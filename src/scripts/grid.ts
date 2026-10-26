@@ -4,7 +4,7 @@ import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/g
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 import { demoProjects } from '../lib/demo-projects';
-import { topicLabelsForProject, TOPIC_POINTS, chooseAmbientPoint, type TopicPoint } from '../lib/project-topics';
+import { topicLabelsForProject, TOPIC_POINTS, chooseAmbientPoint, topicRevealPlan, type TopicPoint } from '../lib/project-topics';
 import { introSequence, INTRO_SPAWN_STAGGER_MS } from '../lib/grid-intro';
 import { centeredPan, interpolateCenter, bloomModuleCell, shiftsForBloom,
   CENTER_DURATION_MS, BLOOM_SHIFT_DURATION_MS, AMBIENT_INTERVAL_MS,
@@ -69,21 +69,41 @@ if (viewport && world && resetButton && status) {
   /** Direct exploration reveals all three snippets; an ambient hint lights
    * only one of the three diamonds. Never show multiple projects together.
    */
+  let topicRevealTimers:ReturnType<typeof setTimeout>[]=[];
   function hideTopic():void {
+    for(const timer of topicRevealTimers)clearTimeout(timer);
+    topicRevealTimers=[];
     if(teaserTimer!==null){clearTimeout(teaserTimer);teaserTimer=null;}
     teaserTile=null;
     activeTopic?.classList.remove('grid-tile--topic-open');
     activeTopic?.removeAttribute('data-topic-mode');
+    activeTopic?.removeAttribute('data-topic-sequence');
     activeTopic=null;
     pinnedTopic=null;
   }
   function showTopic(tile:HTMLDivElement,point:TopicPoint|'all'='all'):void {
     if(tile.getAttribute('aria-hidden')==='true')return;
-    if(activeTopic!==tile)hideTopic();
+    // Focus, pointer entry and touch can all target the same exploration.
+    // Preserve an existing sequence rather than restarting its random order.
+    if(activeTopic===tile&&point==='all'&&tile.dataset.topicSequence==='true')return;
+    hideTopic();
     activeTopic=tile;
-    tile.dataset.topicMode=point;
     tile.classList.add('grid-tile--topic-open');
+    if(point!=='all'){
+      tile.dataset.topicMode=point;
+      return;
+    }
+    tile.dataset.topicSequence='true';
+    for(const reveal of topicRevealPlan()){
+      const show=()=>{
+        if(activeTopic!==tile)return;
+        tile.dataset.topicMode=[tile.dataset.topicMode,reveal.point].filter(Boolean).join(' ');
+      };
+      if(reveal.delay===0)show();
+      else topicRevealTimers.push(setTimeout(show,reveal.delay));
+    }
   }
+
   function selectFrom(target:EventTarget|null):HTMLButtonElement|null {
     return target instanceof Element
       ? target.closest<HTMLButtonElement>('.tile-select'):null;

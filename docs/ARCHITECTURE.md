@@ -175,3 +175,7 @@ Expansion conflict checks include whole displaced runs, not just two adjacent co
 ## Topic overlay stacking — 2026-10-26
 
 CSS in `src/pages/index.astro` raises `.grid-tile--topic-open` to z-index 3 (bloom modules use 2) so transformed neighboring tiles do not obscure outward bubbles. Content-sized bubbles share a bounded reading width rather than a tile-bound width. Left/right transform origins match their bottom-right/bottom-left anchors; the top translates by half its own width and grows from bottom-center. Pointer events remain disabled on bubbles; no geometry or shift scheduling changes. Viewport-edge clipping remains.
+
+## Topic reveal lifecycle — 2026-10-26
+
+`topicRevealPlan` in `project-topics.ts` returns a shuffled permutation with cumulative delays. `showTopic` schedules successive additions to space-separated `data-topic-mode` tokens; CSS token selectors reveal each matching marker and bubble. `hideTopic` cancels every reveal timer and clears sequence state. Repeated focus/pointer/tap triggers preserve an active exploration. Ambient mode bypasses the three-point sequence. No grid geometry changes.

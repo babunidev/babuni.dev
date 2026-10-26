@@ -61,3 +61,17 @@ test('ambient marker choice cycles without repeating the previous point',()=>{
   assert.equal(chooseAmbientPoint(null,.5),'left');
   assert.equal(chooseAmbientPoint(null,.99),'right');
 });
+
+test('portal reveal shuffles all three points and staggers each exactly once',async()=>{
+  const {topicRevealPlan}=await import('../src/lib/project-topics.ts');
+  const orders=new Set();
+  for(const first of [.05,.45,.95])for(const second of [.05,.95]){
+    const values=[first,second,.2,.8];
+    const plan=topicRevealPlan(()=>values.shift()??.5);
+    assert.deepEqual(plan.map(r=>r.point).sort(),['left','right','top']);
+    assert.equal(plan[0].delay,0);
+    for(let i=1;i<3;i++)assert.ok(plan[i].delay-plan[i-1].delay>=260&&plan[i].delay-plan[i-1].delay<=420);
+    orders.add(plan.map(r=>r.point).join(','));
+  }
+  assert.equal(orders.size,6);
+});

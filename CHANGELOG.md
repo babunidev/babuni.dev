@@ -174,3 +174,8 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Changed
 - Topic bubbles may overlay neighboring tiles. Left anchors bottom-right, right bottom-left, and top bottom-center; shared readable sizing replaces the cramped right bubble. Active topic tiles render above neighboring tiles and bloom modules.
+
+## 2026-10-26 — Organic topic reveal
+
+### Changed
+- Portal exploration reveals the three topic wings cumulatively in a fresh random order, with 260–420 ms between successive bubbles. Ambient hints continue to reveal one point. Pending reveals cancel when topics close.

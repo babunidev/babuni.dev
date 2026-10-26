@@ -75,3 +75,5 @@ The one-cell small-bloom prototype uses the selected candidate's existing provis
 ## Topic wing presentation — 2026-10-26
 
 Babuni.dev explicitly allows topic snippets to overlap neighboring tiles. Existing provisional labels are unchanged. AI removed the right bubble’s narrow-column typography and uses matching readable padding/font sizes across all three; wrapping is based on a shared reading-width limit, not available room inside the tile.
+
+**2026-10-26 presentation update:** Babuni.dev requested random sequential topic discovery. Existing labels remain unchanged; portal exploration now accumulates the three snippets in shuffled order rather than showing all simultaneously.
