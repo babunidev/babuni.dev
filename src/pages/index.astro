@@ -42,8 +42,9 @@ const title='babuni.dev — Living Grid Prototype';
   .grid-world{position:absolute;top:0;left:0;will-change:transform;pointer-events:none}
   .grid-tile{position:absolute;width:var(--tile-size,240px);height:var(--tile-size,240px);padding:2px;background:#111215}
   /* Bloom temporarily displaces the entire right-hand run, freeing a real cell. */
-  .grid-viewport.is-blooming .grid-tile,
-  .grid-viewport.is-bloom-closing .grid-tile{transition:transform 520ms cubic-bezier(.22,.75,.25,1)}
+  .grid-viewport.is-blooming .grid-tile--bloom-shifted,
+  .grid-viewport.is-bloom-closing .grid-tile--bloom-returning{transition:transform 520ms cubic-bezier(.22,.75,.25,1)}
+  .grid-viewport.is-blooming.is-autoshifting .grid-tile--bloom-shifted{transition:none}
   .grid-viewport.is-blooming .grid-tile--bloom-shifted{transform:translate3d(var(--tile-size),0,0)}
   .grid-tile--selected .tile-face{border-color:#d8bd91;box-shadow:inset 0 0 0 4px #393837,inset 0 0 0 5px #b39973,0 0 15px rgba(224,190,138,.48)}
   .tile-select{position:absolute;inset:0;z-index:1;appearance:none;border:0;background:transparent;cursor:pointer;pointer-events:auto}

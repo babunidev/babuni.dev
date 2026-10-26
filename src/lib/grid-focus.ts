@@ -16,6 +16,54 @@ export function bloomModuleCell(selected:GridCell):GridCell {
 export function shiftsForBloom(cell:GridCell,selected:GridCell):boolean {
   return cell.row===selected.row&&cell.column>selected.column;
 }
+/** Existing shift directly moves the chosen tile or the cell needed by its
+ * first right-side bloom. Such a selection must wait for that motion to settle.
+ */
+export type GridLineMove={axis:'row'|'column';line:number;direction:number};
+export function shiftTouchesSelection(move:GridLineMove,cell:GridCell):boolean {
+  return move.axis==='row'
+    ? move.line===cell.row
+    : move.line===cell.column||move.line===cell.column+1;
+}
+/** The selected row and two protected columns must stay fixed. All other
+ * rows and columns can still move. Far-right column shifts crossing the
+ * displaced row are interpolated sideways with bloomShiftFraction().
+ */
+export function shiftAvoidsBloom(move:GridLineMove,cell:GridCell):boolean {
+  return move.axis==='row'
+    ? move.line!==cell.row
+    : move.line!==cell.column&&move.line!==cell.column+1;
+}
+/** The horizontal bloom displacement is 1 tile for tiles in the selected
+ * row to its right. During vertical movement through that row, the incoming
+ * tile gradually acquires this offset and the departing tile releases it.
+ * At both endpoints the positions match the renderer's resting geometry.
+ */
+export function bloomShiftFraction(
+  tile:GridCell,selected:GridCell,columnDirection:number|undefined,progress:number
+):number {
+  if(tile.column<=selected.column)return 0;
+  const p=easeInOut(progress);
+  if(columnDirection!==undefined&&tile.column>selected.column+1){
+    if(tile.row===selected.row)return 1-p;
+    if(tile.row+columnDirection===selected.row)return p;
+  }
+  return tile.row===selected.row?1:0;
+}
+export function permittedBloomShifts<T extends GridLineMove>(
+  moves:readonly T[],cell:GridCell
+):T[]{
+  return moves.filter(move=>shiftAvoidsBloom(move,cell));
+}
+/** Distinguish an actual moving selected tile / bloom neighbor from an
+ * independent moving line: only the former waits, and both show gold now.
+ */
+export type SelectionShiftAction='wait'|'pause';
+export function selectionShiftAction(
+  moves:readonly GridLineMove[],cell:GridCell
+):SelectionShiftAction{
+  return moves.some(move=>shiftTouchesSelection(move,cell))?'wait':'pause';
+}
 export const CENTER_DURATION_MS=720;
 export const BLOOM_SHIFT_DURATION_MS=520;
 /** One deterministic, bounded camera movement; never touch logical identities. */

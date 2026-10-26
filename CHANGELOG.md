@@ -6,6 +6,14 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — visitor-controlled blooms with independent living-grid shifts (2026-10-26)
+- During an open small bloom, permit autonomous shifts of other rows and all nonprotected columns under the existing dice/timing rules. Protect only the selected row, selected column and immediate right-side bloom column.
+- A right-side column that moves vertically through the displaced selected row interpolates horizontally at the same time, avoiding a sudden visual project-position jump when the shift commits.
+- Clicking a tile already moving in a protected line immediately highlights it gold and queues recentering until the current shift finishes. Unrelated shifts instead pause for centering and resume after the bloom's entrance animation.
+- Selecting another project closes the old bloom first, returns its neighbors over the existing 520 ms duration, and only then centers and opens the next; the queued destination turns gold immediately.
+- Bloom transform transitions now apply only to displaced/returning tiles rather than delaying unrelated line shifts. The 53 project records, normal shift dice/timings, portal topic bubbles and initial spiral entrance remain unchanged.
+- Added focused tests for shift/selection arbitration and continuous vertical crossing geometry. Full local tests and browser interaction checks are pending.
+
 ### Fixed — recurring ambient topic bubbles stay in view (2026-10-26)
 - Adjusted automatic topic hints to a roughly five-second interval, with existing 1.7-second display duration.
 - Busy checks (including autonomous shifts) now retry after 600 ms instead of resetting the entire wait. No queue of missed hints accumulates.
