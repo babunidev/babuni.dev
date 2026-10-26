@@ -107,3 +107,6 @@ Verified in this session: grid test command (nine passing test files), Astro pro
 **2026-10-26 topic wings:** Implemented Babuni.dev’s revised outward overlay direction and left bottom-right anchor, with equal typography and source-tile stacking above neighbors. Build and nine grid test files pass; desktop 1280×720 browser preview confirms three outward bubbles and side overlap. Physical mobile and viewport-edge acceptance remain open.
 
 **2026-10-26 sequential topics:** Implemented shuffled cumulative reveal for portal hover/focus/tap. Tests cover all six permutations, unique points and stagger bounds; grid suite and build pass. Browser timing/lifecycle and physical touch acceptance remain pending.
+
+
+**Milestone 2 — portal symmetry refinement (2026-10-26):** Babuni.dev requested one portal circle size on every square tile (midpoint between 59% and 53%) and three glowing point squares with equal radial distance from the portal's center, placed farther toward the inner stone frame. A shared portal-relative layout now uses a provisional 56% circle and reanchors the previously implemented outward topic wings. Regression tests added; final visual acceptance, small-screen/long-title fit and a fresh local build remain pending. This is an aesthetic consistency update, not completion of Milestone 2 or a change to full-bloom plans.

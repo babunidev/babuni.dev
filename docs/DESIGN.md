@@ -196,3 +196,12 @@ The lower module uses existing topic labels and inventory evidence, with an expl
 ## Sequential topic wings — 2026-10-26
 
 **Babuni.dev requested:** Randomly choose the first bubble, then show the next and the next for an organic feel. **AI implemented:** Shuffle all three once per fresh portal exploration; show the first immediately and keep it visible as the other two arrive. AI-selected intervals vary from 260 to 420 ms. Hover/focus/tap share this sequence; duplicate triggers on the same open portal do not restart it. Closing, dragging, switching or recycling cancels pending reveals. Ambient teasers remain single-point. Reduced motion disables CSS transitions but retains the ordered reveal. Final timing acceptance remains open.
+
+
+## Portal symmetry and consistent project sizing — 2026-10-26
+
+**Babuni.dev request:** The stone tiles are *squares*, and portal circles must all be the same diameter. Normal titles previously used 59% width while long titles used 53%; the current visual prototype uses **56% of the square tile's face** for every circular portal. Longer titles may change their text sizing, not the portal size. The three glowing information squares must be equidistant from the circle center, positioned farther outward near the inner frame, never obscured by the portal.
+
+**Prototype geometry (AI-selected values):** One square `.tile-portal-cluster`, horizontally centered and at 45% of tile height. All three diamonds are positioned relative to its circular portal boundary with an equal 6%-of-tile margin beyond the rim (plus half the square width). Left and right use the portal's vertical midpoint; the top uses its horizontal midpoint. The engraved name is anchored separately near the tile bottom, allowing long-title typography to change without moving or shrinking the portal. Existing topic wings are anchored to the tops of their relocated squares, with the left bubble growing left, the right growing right and the top centered upward. This does not alter bloom behavior or the organic, sequential three-topic reveal.
+
+**Verification needed:** Inspect tile proportions at 144–172 px mobile, 200 px tablet and 240 px desktop sizes, especially text/portal clearance on long labels, marker distances and topic overlay stacking. The earlier AI drawing with a rectangular stone was incorrect and is not part of the specification. New portal artwork remains optional and deferred.

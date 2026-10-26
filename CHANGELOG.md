@@ -6,6 +6,15 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+
+## 2026-10-26 — Uniform portal and symmetric indicator geometry
+
+### Changed
+- Standardized every project portal at a 56%-wide circular size (between the former 59% normal and 53% long-name sizes), independent of project-title length.
+- Anchored the portal to a fixed 45%-height center within the square tile, with titles positioned separately beneath it; only title typography adapts to longer project names.
+- Wrapped the portal, all three glowing square markers, and their topic wings in a shared local coordinate system. Marker centers now sit at equal radial distances above, left, and right of the portal, outside its rim and near the inner tile frame.
+- Reanchored the existing top/left/right topic wings to their corresponding relocated squares, preserving bottom-corner origins and the current sequential reveal behavior.
+- Added a focused structural and responsive geometry regression test for uniform diameter, equal marker radius and bubble attachment. Build/browser verification still pending for this particular adjustment.
 ### Added — three portal topic points and ambient hints during small bloom (2026-10-26)
 - Extended the previous single glowing top square into **three** portal markers (above, left, right), each with one short provisional snippet for all 53 candidate projects. Direct portal hover/focus/tap reveals all three; this remains a temporary texture/functionality prototype.
 - Manual inspection retains the portal-only activation region; the surrounding stone still selects and centers the project. No navigational links or sales language were added to the bubbles.
