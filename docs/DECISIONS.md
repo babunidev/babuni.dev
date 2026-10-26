@@ -85,3 +85,10 @@ For each entry add date, status, motivating creator request, alternatives (inclu
 **AI contribution:** Initially prepared a separate documentation branch for safety, then honored the creator's correction and supported integrating local Astro work with repository documentation on `main`.
 **Decision:** Make direct `main` updates the default. Remain careful with local uncommitted work and use explicit approval before deployment or destructive operations.
 **Verification:** Merge commit `5902121` was pushed by the creator and verified on GitHub. The branch workflow was superseded for future changes.
+
+## D-015 — Start from screen-center; free map-like dragging and recycled DOM cells
+**Status:** Accepted interaction; responsive size values initial · **Date:** 2026-10-26
+**Creator direction:** The initial layout must have one full tile exactly at screen center, regardless of desktop, tablet or phone size, with a perfectly top-down wall of squares. The grid should respond to holding and dragging with the mouse or swiping with the thumb, as in Google Maps. Tiles leaving an edge should be reused just beyond the opposite edge, keeping the visual field continuous without accumulating unlimited new tiles.
+**AI contribution:** Suggested viewport-centered logical coordinates, a 240/200/phone-relative CSS-pixel scale based on approved mockup size, and a fixed DOM tile pool with two offscreen buffer bands. Interpreted recycling as reassigning visual element positions, not destroying project identities or keeping an infinite history of mounted nodes.
+**Decision:** One centered initial tile, unbounded free pan, automatic offscreen tile reuse, no row/column fitting constraint. Motion inertia remains an open future option, not an accepted requirement.
+**Implementation and verification:** First provisional Astro/TypeScript prototype; five geometry tests and isolated Chromium layout/drag checks passed. Full Astro build and real phone/tablet touch tests are not yet verified.

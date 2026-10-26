@@ -5,8 +5,9 @@ This document describes intended behavior; implementation must be separately ver
 ## Overall frame
 - Persistent top bar: BABUNI.DEV / Projects dropdown / Gallery / About.
 - Grid fills the screen beneath the bar; never reveal scenic backgrounds or blank edges.
-- Approximately 6 × 4 tiles on the initial desktop concept; responsive number of cells based on viewport and tile dimensions.
-- Tile graphics can extend beyond edges of the viewport; drag to explore. Center-of-viewport focus is preferred but not a fixed global origin.
+- The first tile starts perfectly centered in the full viewport on desktop, tablet, and phone. This is the starting anchor only: dragging can move it out of view.
+- Approximate approved sizes: desktop 240 CSS px (>=1024 px viewport width), tablet 200 px (600–1023 px), phone clamp(144 px, 40vw, 172 px). These prototype values require hands-on device verification.
+- No fixed number of complete rows or columns. Tiles fill outward in a seamless top-down wall; partial tiles at edges are intentional, and the navigation overlays the grid.
 
 ## Tile visual
 - Stylized low-detail stone square with slight depth, readable title engraved in the stone, project-dependent minimal engravings.
@@ -69,3 +70,9 @@ Click/tap behaviors should be discoverable; provide visible back controls and ke
 4. Small bloom frees actual neighboring cell space.
 5. Full bloom removes other projects.
 6. Module detail reads/browses normally.
+
+## Free manual pan — milestone 1 prototype (2026-10-26)
+
+The creator described interaction as Google Maps-style dragging: hold the primary mouse button or touch with a finger and pull the entire grid in any direction. Drag follows the pointer with no snapping or mandatory return to the starting center. Releasing currently stops movement; kinetic inertia has not been requested or implemented. A keyboard-accessible alternative uses arrow keys and Home or the reset button.
+
+Reuse the existing visual tile elements when they travel wholly offscreen. A moving tile reappears in the offscreen buffer on the opposite side and later becomes visible again. Maintain two extra tile-wide buffer bands initially; the DOM pool should not grow indefinitely as a visitor travels. The prototype uses decorative sample projects; real project records and future bloom interactions remain separate.

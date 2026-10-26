@@ -14,7 +14,7 @@ The website itself belongs in the collection. A possible first or center project
 
 ## The surface
 
-The viewport is filled edge to edge by a tight field of square **tiles**. The original desktop exploration used roughly 6 × 4 visible tiles, but the number is responsive rather than fixed. There is no decorative landscape behind the grid.
+The viewport is filled edge to edge by a tight field of square **tiles**, viewed straight from above with no perspective. One complete tile starts at the exact screen center; the entire field is free to move afterward. The original 6 × 4 desktop layout was an early density illustration, not a target count. Partial tiles can be visible at any edge. There is no decorative landscape behind the grid.
 
 The tiles are stylized, deliberately restrained stone objects. Historical Mesoamerican masonry was an early inspiration, but the desired result is an original design language, not an imitation. Each tile carries a legible **engraved project title**, project-specific engravings, and a recessed, colored **portal**. The portal displays the project's visual identity or a view into its world.
 

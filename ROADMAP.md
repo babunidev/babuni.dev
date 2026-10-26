@@ -15,10 +15,10 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 **Milestone 0 status:** Complete. Astro foundation, documentation, main-only workflow, and active ChatGPT project instructions are established.
 
 ## Milestone 1 — Mechanically correct grid
-- [ ] Decide tile sizing and responsive visible-cell formula.
-- [ ] Build a modest set of representative project tiles.
-- [ ] Implement pointer/touch panning across an endless wrapping field.
-- [ ] Recycle offscreen render instances without breaking project identity.
+- [x] Decide initial tile sizing and center-first responsive visible-cell formula (creator-approved approximate scale; unit-tested).
+- [x] Implement temporary representative tiles (not final stone assets or real projects).
+- [x] Implement pointer-event mouse/touch dragging, keyboard pan, and reset (desktop pointer tested, real touch pending).
+- [x] Implement bounded DOM tile recycling, keeping stable logical coordinates (unit tested and browser preview checked).
 - [ ] Prove responsive coverage on phone, laptop, and wide desktop.
 - [ ] Implement slow horizontal and vertical row/column shifts with repeatable seeded tests.
 - [ ] Pause or defer conflicting moves during drag and bloom.

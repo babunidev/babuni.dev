@@ -110,3 +110,15 @@ This is an edited account of the development process, not a verbatim transcript 
 - **Outcome / next hypothesis:** What exists now and what remains.
 
 Write in readable narrative prose, with evidence links where available. Do not invent exchanges, quotes, tests, or conclusions.
+
+## 2026-10-26 — A centered anchor that can drift away
+
+**Creator direction and correction.** The creator rejected a proposal that prioritized fitting rows and columns into the screen: the crucial visual requirement is one full tile exactly at the center, even on desktop and tablet. They approved the approximate density of a straight-down mosaic of stone tiles with no perspective. In the subsequent discussion, the creator asked for familiar map-like interaction: hold the mouse and pull, or move the grid with a thumb on mobile. When tiles leave the viewport, reuse those same loaded visual instances beyond the opposite edge to keep the field filled continuously.
+
+**AI interpretation.** The assistant separated the initial screen-centered tile from a permanent fixed center. It proposed calculating neighboring cells from an integer coordinate system and translating the entire field with the pointer. A finite ring buffer reuses offscreen DOM tile elements; source project identities remain conceptually separate from those visual slots. The assistant supplied provisional 240/200/phone-relative CSS-pixel tile sizes and proposed two offscreen buffer bands.
+
+**Development.** A first Astro/TypeScript prototype implements centered tiles, free pointer/touch dragging, bounded recycling, keyboard navigation, a reset control and temporary simple tile visuals. The prototype is intentionally not the final stone-tile art; row/column dice shifts and blooms have not been attempted.
+
+**Verification.** Five unit tests for grid math passed locally, as did isolated Chromium checks for initial centering and pointer-drag coverage at 1920×1080, 768×1024 and 390×844. These tests used a compiled standalone preview, not a complete Astro production build. Physical mobile testing, actual production build verification and performance measurement remain open.
+
+**Result.** The geometry and movement contract is represented in source, with the creator's initial-center correction preserved as a design decision rather than silently buried in code.

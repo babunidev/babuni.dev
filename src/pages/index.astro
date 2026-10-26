@@ -1,16 +1,61 @@
 ---
+const title='babuni.dev — Living Grid Prototype';
 ---
-
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#141518" />
+  <meta name="description" content="An interactive portfolio toy-box prototype: explore a freely draggable wall of creative project tiles." />
+  <title>{title}</title>
+</head>
+<body>
+  <main class="experience" aria-label="Living grid prototype">
+    <div id="grid-viewport" class="grid-viewport" tabindex="0" aria-label="Endless project grid. Drag with a mouse or finger to move. Focus and use arrow keys, or press Home to recenter.">
+      <div id="grid-world" class="grid-world" aria-hidden="true"></div>
+    </div>
+    <header class="site-header">
+      <div class="brand">BABUNI.DEV</div>
+      <span class="header-note">Living grid prototype</span>
+    </header>
+    <div class="help-panel">
+      <span class="instruction">Drag or swipe to explore · Arrow keys also work</span>
+      <button id="reset-view" type="button">Return to center</button>
+    </div>
+    <div id="grid-status" class="sr-only" role="status" aria-live="polite"></div>
+  </main>
+  <script>
+    import '../scripts/grid';
+  </script>
+</body>
 </html>
+<style is:global>
+  :root {font-family:Georgia,'Times New Roman',serif;color-scheme:dark;font-synthesis:none}
+  *{box-sizing:border-box}
+  html,body{width:100%;height:100%;margin:0;background:#17181a;overflow:hidden}
+  button{font:inherit}
+  .experience,.grid-viewport{position:fixed;inset:0;width:100%;height:100%}
+  .grid-viewport{overflow:hidden;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;outline-offset:-4px}
+  .grid-viewport.is-dragging{cursor:grabbing}
+  .grid-viewport:focus-visible{outline:3px solid #beabd8}
+  .grid-world{position:absolute;top:0;left:0;will-change:transform;pointer-events:none}
+  .grid-tile{position:absolute;width:var(--tile-size,240px);height:var(--tile-size,240px);padding:2px;background:#111215}
+  .tile-face{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7%;position:relative;border:1px solid #686461;background:radial-gradient(ellipse at 42% 40%,#55514e 0%,#423f3e 50%,#292929 100%);box-shadow:inset 0 0 0 4px #393837,inset 0 0 0 5px #6a6258}
+  .tile-face::before{content:'';position:absolute;inset:9px;border:1px solid #777068;opacity:.43;pointer-events:none}
+  .tile-mark{width:7px;height:7px;border:1px solid #b6a487;transform:rotate(45deg)}
+  .tile-portal{width:59%;aspect-ratio:1;max-height:59%;flex:none;border-radius:50%;border:6px solid #77716d;box-shadow:0 0 0 2px #2b2826,inset 0 0 0 3px #18191e,inset 0 0 24px #08070d;background:radial-gradient(circle at 43% 38%,color-mix(in srgb,var(--portal-color) 75%,white),var(--portal-color) 23%,#121323 70%,#05060c 100%)}
+  .tile-name{font-size:clamp(12px,calc(var(--tile-size,240px) * .068),17px);max-width:89%;text-align:center;letter-spacing:.08em;color:#d8cab7;text-shadow:0 1px 1px #000;white-space:nowrap}
+  .grid-tile--origin .tile-face{border-color:#ac9a86}
+  .site-header{position:absolute;z-index:2;inset:0 0 auto;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(18px,5vw,72px);background:rgba(14,15,18,.94);border-bottom:1px solid #5b554e;pointer-events:none}
+  .brand{font-size:17px;font-weight:bold;letter-spacing:.19em;white-space:nowrap;color:#e8ddc9}
+  .header-note{color:#a49b92;font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.05em}
+  .help-panel{position:absolute;z-index:2;right:18px;bottom:18px;left:18px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;pointer-events:none;font-family:system-ui,sans-serif;font-size:12px;color:#d6d3d0}
+  .instruction{padding:8px 13px;border-radius:30px;background:rgba(10,10,12,.82)}
+  .help-panel button{pointer-events:auto;cursor:pointer;padding:8px 13px;border:1px solid #90816c;border-radius:24px;color:#eee4d3;background:rgba(21,19,20,.93)}
+  .help-panel button:hover{background:#453c36}
+  .help-panel button:focus-visible{outline:2px solid #d0b594;outline-offset:3px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  @media(max-width:520px){.header-note{display:none}.help-panel{bottom:12px}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>

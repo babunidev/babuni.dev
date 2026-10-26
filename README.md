@@ -8,7 +8,7 @@ The website itself is intended to become one of its exhibits: a record of its co
 
 ## Project status
 
-**Foundation complete; interactive prototype not yet implemented.** Astro 7 with TypeScript and the initial documentation now exist together on GitHub `main` (merge commit `5902121`). The creator reported running the starter locally; no grid, portal, or bloom behavior has been implemented or verified.
+**Mechanical grid prototype underway.** Astro 7 and documentation are on `main`, along with a top-down, screen-centered grid featuring free mouse/touch pan and a reusable pool of placeholder tiles. Colored circles and project titles are temporary mechanical stand-ins, not approved final art or content. Unit and isolated browser tests passed; a full post-commit Astro build and physical device tests are still pending.
 
 ## Local development
 

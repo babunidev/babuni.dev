@@ -7,6 +7,14 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 ## [Unreleased]
 
 ### Added
+- Initial mechanical grid prototype: responsive square tiles, initially centered logical origin, unrestricted pointer dragging, fixed-size recycled DOM pool, keyboard pan and recenter controls.
+- Unit test suite for sizing, exact center alignment, edge coverage, ring-buffer reassignment, and stable placeholder mapping.
+- Temporary colored-circle tiles for mechanics testing; not final stone and portal designs.
+
+### Verification
+- Five grid geometry unit tests passed locally. Isolated Chromium preview checks verified initial centering and drag coverage for 1920×1080, 768×1024 and 390×844 viewports. Full Astro build and physical touch testing remain pending.
+
+### Added
 - Dated foundation review (`docs/REVIEW-2026-10-26.md`) with findings, verification scope, and human–AI attribution.
 - README local development prerequisites and install/run/build commands.
 - Initial Astro 7 project foundation: package scripts, lockfile, TypeScript configuration, base page, favicons, and editor configuration (creator's commit `294831c`).
