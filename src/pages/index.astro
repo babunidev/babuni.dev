@@ -42,6 +42,13 @@ const title='babuni.dev — Living Grid Prototype';
   .grid-world{position:absolute;top:0;left:0;will-change:transform;pointer-events:none}
   .grid-tile{position:absolute;width:var(--tile-size,240px);height:var(--tile-size,240px);padding:2px;background:#111215}
   .tile-face{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7%;position:relative;border:1px solid #686461;background:radial-gradient(ellipse at 42% 40%,#55514e 0%,#423f3e 50%,#292929 100%);box-shadow:inset 0 0 0 4px #393837,inset 0 0 0 5px #6a6258}
+  /* The child face grows into place; the parent remains free for line movement. */
+  .grid-tile--spawning .tile-face{animation:tile-spawn 373ms cubic-bezier(.18,.78,.22,1) var(--tile-spawn-delay,0ms) both;transform-origin:center}
+  @keyframes tile-spawn{
+    0%{opacity:0;transform:scale(.28)}
+    73%{opacity:1;transform:scale(1.065)}
+    100%{opacity:1;transform:scale(1)}
+  }
   .tile-face::before{content:'';position:absolute;inset:9px;border:1px solid #777068;opacity:.43;pointer-events:none}
   .tile-mark{width:7px;height:7px;border:1px solid #b6a487;transform:rotate(45deg)}
   .tile-portal{width:59%;aspect-ratio:1;max-height:59%;flex:none;border-radius:50%;border:6px solid #77716d;box-shadow:0 0 0 2px #2b2826,inset 0 0 0 3px #18191e,inset 0 0 24px #08070d;background:radial-gradient(circle at 43% 38%,color-mix(in srgb,var(--portal-color) 75%,white),var(--portal-color) 23%,#121323 70%,#05060c 100%)}

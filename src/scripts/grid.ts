@@ -3,6 +3,7 @@ import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/g
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 import { demoProjects } from '../lib/demo-projects';
+import { introSequence, INTRO_SPAWN_STAGGER_MS } from '../lib/grid-intro';
 
 interface TileSlot { element: HTMLDivElement; column: number; row: number; projectIndex?: number; }
 const viewport = document.querySelector<HTMLElement>('#grid-viewport');
@@ -19,6 +20,8 @@ if (viewport && world && resetButton && status) {
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
   let slots:TileSlot[]=[];
   let visibleWindowSignature='';
+  let viewportWidth=0, viewportHeight=0;
+  let introPlayed=false, introPending=0;
   let activePointer:number|null=null, lastX=0, lastY=0;
   const heldArrows=new Set<string>();
   let manualPan=createManualPanState();
@@ -59,9 +62,42 @@ if (viewport && world && resetButton && status) {
     const label=slot.element.querySelector<HTMLElement>('.tile-name');
     if(label) label.textContent=project.name;
   }
+  /** The introduction only affects the first visible tiles, once on page load. */
+  function cancelIntro():void {
+    if(introPending===0)return;
+    for(const slot of slots){
+      slot.element.classList.remove('grid-tile--spawning');
+      slot.element.style.removeProperty('--tile-spawn-delay');
+    }
+    introPending=0;
+  }
+  function startIntro(frame:{originX:number;originY:number},rect:{width:number;height:number}):void {
+    if(prefersReduced.matches)return;
+    const visible=slots.filter(slot=>{
+      const x=frame.originX+slot.column*tileSize;
+      const y=frame.originY+slot.row*tileSize;
+      return x<rect.width&&x+tileSize>0&&y<rect.height&&y+tileSize>0;
+    });
+    const ordered=introSequence(visible,slot=>sourceCell(slot.column,slot.row,history));
+    introPending=ordered.length;
+    for(const [index,slot] of ordered.entries()){
+      slot.element.style.setProperty('--tile-spawn-delay',(index*INTRO_SPAWN_STAGGER_MS)+'ms');
+      slot.element.classList.add('grid-tile--spawning');
+      slot.element.addEventListener('animationend',event=>{
+        if(event.animationName!=='tile-spawn'||!slot.element.classList.contains('grid-tile--spawning'))return;
+        slot.element.classList.remove('grid-tile--spawning');
+        slot.element.style.removeProperty('--tile-spawn-delay');
+        introPending=Math.max(0,introPending-1);
+      },{once:true});
+    }
+  }
   function rebuildPool():void {
     const rect=surface.getBoundingClientRect();
     if(!rect.width||!rect.height) return;
+    // ResizeObserver repeats the initial size; never rebuild/replay for that.
+    if(rect.width===viewportWidth&&rect.height===viewportHeight&&slots.length)return;
+    cancelIntro();
+    viewportWidth=rect.width;viewportHeight=rect.height;
     tileSize=tileSizeForWidth(rect.width);
     surface.style.setProperty('--tile-size',tileSize+'px');
     const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells});
@@ -77,6 +113,10 @@ if (viewport && world && resetButton && status) {
     }
     layer.replaceChildren(fragment);
     updateField(true);
+    if(!introPlayed){
+      introPlayed=true;
+      startIntro(frame,rect);
+    }
   }
   /** Update content reservations only when the set of visible tile cells changes.
    * This keeps manual camera dragging fast and prevents same-screen duplicates.
@@ -157,6 +197,7 @@ if (viewport && world && resetButton && status) {
     const visibleColumns=Array.from({length:right-left+1},(_,i)=>left+i);
     const round=planShiftRound(visibleRows,visibleColumns);
     if(!round.moves.length){nextRound(restWait);return;}
+    cancelIntro();
     // All incoming tiles already exist just outside the viewport. Give them
     // their final project identity NOW, before their shift reveals them.
     // Otherwise the completed sync could visibly replace their name and tint.
@@ -240,6 +281,7 @@ if (viewport && world && resetButton && status) {
 
   surface.addEventListener('pointerdown',event=>{
     if(activePointer!==null||!event.isPrimary||(event.pointerType==='mouse'&&event.button!==0)) return;
+    cancelIntro();
     activePointer=event.pointerId; lastX=event.clientX; lastY=event.clientY;
     surface.setPointerCapture(event.pointerId);
     surface.classList.add('is-dragging');
@@ -269,12 +311,14 @@ if (viewport && world && resetButton && status) {
   const arrowNames=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown']);
   surface.addEventListener('keydown',event=>{
     if(event.key==='Home'){
+      cancelIntro();
       event.preventDefault();
       resetManualInput();
       panX=0;panY=0;updateField();
       return;
     }
     if(!arrowNames.has(event.key))return;
+    cancelIntro();
     event.preventDefault();
     if(!heldArrows.has(event.key)){
       heldArrows.add(event.key);
@@ -301,6 +345,7 @@ if (viewport && world && resetButton && status) {
     resumeMovement();
   });
   reset.addEventListener('click',()=>{
+    cancelIntro();
     resetManualInput();
     panX=0;panY=0;updateField();
     liveStatus.textContent='Returned to the starting tile.';
@@ -309,7 +354,8 @@ if (viewport && world && resetButton && status) {
     if(document.hidden)pauseMovement();else resumeMovement();
   });
   prefersReduced.addEventListener('change',()=>{
-    if(!prefersReduced.matches)nextRound(firstWait);
+    if(prefersReduced.matches)cancelIntro();
+    else nextRound(firstWait);
   });
   nextRound(firstWait);
   new ResizeObserver(rebuildPool).observe(surface);

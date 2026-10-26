@@ -151,3 +151,11 @@ The creator ran the Astro prototype locally, confirmed all five unit tests passe
 **AI diagnosis and decision:** The end-of-shift visibility allocator can reassign an incoming source that was provisionally filled with another identity during movement. Stage an arrival's final project before animation, prioritizing an existing nonconflicting identity or otherwise the project's identity leaving the opposite edge. Do not change currently visible source assignments while staging. This preserves the creator's clockwise spiral and offscreen reuse goals.
 
 **Status:** Code and regression tests committed for evaluation; local browser reproduction and creator visual acceptance pending. Temporary duplicated partial-edge tiles during a shift may be unavoidable when all resting visible project identities are in use.
+
+## D-020 — A staged clockwise entrance, not artificial loading (2026-10-26)
+
+**Creator direction:** Instead of having an already-fast page simply pop up, reveal BABUNI.DEV first and then the numbered projects along the clockwise spiral. Each tile should appear at its final cell by quickly growing into position, with **373 ms** as a suggested per-tile duration.
+
+**AI implementation choices:** Use a CSS scale/opacity introduction lasting 373 ms, with a preliminary 68 ms start-to-start stagger, slight overshoot, and no actual loading delay. Apply the effect only to initially visible tile faces, never to newly recycled offscreen tiles, so the established row/column transform animation remains independent. Cancel if the visitor navigates or the layout changes; skip it for reduced motion.
+
+**Status:** Implemented prototype pending creator visual approval. The stagger, easing and overshoot are experimental; the initial spiral and existing movement timings are unchanged.

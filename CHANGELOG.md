@@ -6,6 +6,12 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Added — spiral entrance animation (2026-10-26)
+- On initial page load, grow the initially visible demo tiles into place one by one in center-out clockwise spiral order, beginning with BABUNI.DEV. Each tile animation lasts 373 ms; 68 ms stagger makes a 45-tile view complete in approximately 3.4 seconds.
+- Animate the stone face independently of the grid-tile transforms used for row and column motion. The scene itself does not wait for a simulated network load.
+- Run the sequence only once per page load, not on recycled tiles or resize. Cancel unfinished entrances when navigation or autonomous shifting starts; bypass the effect for reduced-motion users.
+- Added pure ordering and timing regression tests. Browser appearance and full local suite still require creator verification.
+
 ### Fixed — project identity swapping at the end of an autonomous shift (2026-10-26)
 - Before moving a row or column, reserve project identities for the incoming offscreen tiles. Previously, a tile could slide into view as one numbered/color-coded project and abruptly turn into another when the shift completed.
 - Prefer an already safe offscreen identity, or reuse the identity of the tile departing at the opposite edge. Keep existing visible tile identities unchanged. The ordinary spiral placement, manual speeds and shift timing are not changed.
