@@ -6,6 +6,14 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — 45-project demo and stale test correction (2026-10-26)
+- Added 45 distinct demo identities: BABUNI.DEV and PROJECT 02–45, so the centered 1920×1080 viewport can initially display 45 unique project tiles. Repeats remain necessary if panning exposes more than 45 partially visible tiles.
+- Moved demo content into a small independent module and added catalog/desktop spiral coverage tests. The spiral allocator and movement controls were not changed.
+- Updated two stale movement tests found in the creator's 28/30 run: assertions expecting prior (half-speed) settings, and an unrealistic speed-peak requirement with a 180px cursor-lead brake. The new test explicitly exercises maximum speed with sufficient lead.
+
+### Verification
+- Creator's previous local suite: 28 passing, 2 outdated movement-test failures. Fresh full tests and real desktop inspection remain pending for the new revision.
+
 ### Added — spiral-first project recycling (2026-10-26)
 - Switched placeholder assignment from an indefinitely repeated coordinate hash to a clockwise center-out spiral, starting with BABUNI.DEV and then PROJECT 02 above, PROJECT 03 upper-right, through PROJECT 09 upper-left, and PROJECT 10 above the next ring.
 - Added visibility-aware project residency: keep content identifiers while visible or in a two-tile offscreen band, release older offscreen positions, and prioritize distinct projects in the current viewport before repeating.

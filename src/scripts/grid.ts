@@ -2,16 +2,8 @@ import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../li
 import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
+import { demoProjects } from '../lib/demo-projects';
 
-interface ProjectPlaceholder { name: string; tint: string; }
-const projects: ProjectPlaceholder[] = [
-  {name:'PROJECT 02',tint:'#568cdb'}, {name:'PROJECT 03',tint:'#d3a457'},
-  {name:'PROJECT 04',tint:'#6ac0a5'}, {name:'PROJECT 05',tint:'#c778b9'},
-  {name:'PROJECT 06',tint:'#db7859'}, {name:'PROJECT 07',tint:'#8c8be3'},
-  {name:'PROJECT 08',tint:'#7eb875'}, {name:'PROJECT 09',tint:'#c1b56d'},
-  {name:'PROJECT 10',tint:'#61afb9'}, {name:'PROJECT 11',tint:'#ab88d1'},
-  {name:'PROJECT 12',tint:'#d08e79'}, {name:'PROJECT 13',tint:'#70a3c2'}
-];
 interface TileSlot { element: HTMLDivElement; column: number; row: number; projectIndex?: number; }
 const viewport = document.querySelector<HTMLElement>('#grid-viewport');
 const world = document.querySelector<HTMLElement>('#grid-world');
@@ -22,7 +14,7 @@ if (viewport && world && resetButton && status) {
   const surface=viewport, layer=world, reset=resetButton, liveStatus=status;
   const bufferCells=2;
   // Index zero is the real BABUNI.DEV tile. Demo project IDs then start at 02.
-  const placement=new ProjectPlacement(projects.length+1);
+  const placement=new ProjectPlacement(demoProjects.length);
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
   let slots:TileSlot[]=[];
@@ -61,7 +53,7 @@ if (viewport && world && resetButton && status) {
     if(!force&&slot.projectIndex===projectIndex)return;
     slot.projectIndex=projectIndex;
     const isOrigin=projectIndex===0;
-    const project=isOrigin?{name:'BABUNI.DEV',tint:'#b78af9'}:projects[projectIndex-1];
+    const project=demoProjects[projectIndex];
     slot.element.style.setProperty('--portal-color',project.tint);
     slot.element.classList.toggle('grid-tile--origin',isOrigin);
     const label=slot.element.querySelector<HTMLElement>('.tile-name');

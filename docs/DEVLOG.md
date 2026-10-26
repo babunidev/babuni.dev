@@ -206,3 +206,13 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **AI implementation.** A new pure `ProjectPlacement` module computes a clockwise spiral index and maintains project-to-original-cell reservations across camera panning and the existing line-shift source mapping. Incoming visible cells receive unused identities preferentially; offscreen assignments are retained within two cells and reclaimed beyond the band. Repeats continue to use real project records rather than blank or neutral filler. The renderer now synchronizes project reservations at visible-cell window changes and after completed shifts. The numbered sample list is 02–13 plus BABUNI.DEV.
 
 **Verification and remaining uncertainty.** Ten isolated Node tests pass for spiral order, five-project repetition, uniqueness with at least as many projects as visible cells, offscreen retention, returning within the buffer, partial tile entry at either screen edge, mobile/desktop simulated viewport movement and synthetic shift-source preservation. These tests do not yet establish full browser correctness at pan speed, slow-shift transitions, resizing, or on physical phone hardware. The creator has not reviewed the new placement visually. The earlier concept of an endless tactile grid is preserved while the meaning of reuse is brought closer to the creator's intent.
+
+## 2026-10-26 — 45 original demo identities to fill a desktop view
+
+**Creator direction:** Expand the temporary project set to 45 so the creator can check that the spiral fills the desktop without repeating identities when there are enough available. The creator supplied a local test run reporting 28/30 passes; all spiral tests passed and only the older manual-motion tests failed.
+
+**AI implementation:** Preserve the spiral assignment algorithm and grid controls. Split placeholder identities into a small pure catalog comprising BABUNI.DEV plus PROJECT 02–45. Preserve the original twelve demo colors and generate additional sample hues. Add tests proving the catalog contains 45 different names and that the centered 1920×1080 viewport initially shows 45 different source assignments.
+
+**Test failure correction:** The two previously failing control tests did not reflect the creator's subsequent doubling of speed or the 180px cursor-lead braking constraint. The assertions now check the latest requested settings, acceleration under ordinary lead, and maximum reachability under deliberately sufficient lead. No application motion values were changed.
+
+**Open:** A camera offset can show more than 45 partly visible tiles; such views must still repeat. Fresh local test results and creator visual acceptance of the 45-project layout are outstanding.

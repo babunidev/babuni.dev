@@ -23,7 +23,8 @@ test('pointer movement accelerates briefly but never exceeds maximum speed', () 
     assert.ok(speed <= PAN_TUNING.pointerMaxSpeed + 1e-6, `pointer speed ${speed}`);
   }
   assert.ok(speeds[0] < speeds[4]);
-  assert.ok(Math.max(...speeds) > PAN_TUNING.pointerMaxSpeed * 0.9);
+  // The standard 180px cursor lead can trigger braking before the theoretical top speed.
+  assert.ok(Math.max(...speeds) > speeds[0] * 3);
 });
 test('pointer catches up a modest drag without overshooting and stops on release', () => {
   let state = queuePointerTravel(createManualPanState(), 90, -30);
@@ -69,11 +70,22 @@ test('hidden-tab frame interval is capped to avoid a sudden large jump', () => {
   assert.ok(Math.hypot(step.delta.x, step.delta.y) <= PAN_TUNING.pointerMaxSpeed*0.05+1e-8);
 });
 
-test('doubled manual motion speeds and accelerations match the creator request', () => {
-  assert.equal(PAN_TUNING.pointerMaxSpeed, 880);
-  assert.equal(PAN_TUNING.pointerAcceleration, 3600);
-  assert.equal(PAN_TUNING.keyboardMaxSpeed, 260);
-  assert.equal(PAN_TUNING.keyboardAcceleration, 1040);
-  assert.equal(PAN_TUNING.keyboardDeceleration, 1400);
-  assert.equal(PAN_TUNING.pointerLagLimit, 180);
+test('current manual movement speeds match the latest creator request',()=>{
+  assert.equal(PAN_TUNING.pointerMaxSpeed,1760);
+  assert.equal(PAN_TUNING.pointerAcceleration,7200);
+  assert.equal(PAN_TUNING.keyboardMaxSpeed,520);
+  assert.equal(PAN_TUNING.keyboardAcceleration,2080);
+  assert.equal(PAN_TUNING.keyboardDeceleration,2800);
+  assert.equal(PAN_TUNING.pointerLagLimit,180);
+});
+test('the top pointer speed can be reached when enough cursor lead is available',()=>{
+  const tuning={...PAN_TUNING,pointerLagLimit:1600};
+  let state=queuePointerTravel(createManualPanState(),1600,0,tuning);
+  let peak=0;
+  for(let i=0;i<40;i++){
+    const step=stepManualPan(state,.016,true,none,tuning);
+    state=step.state;
+    peak=Math.max(peak,Math.hypot(step.delta.x,step.delta.y)/.016);
+  }
+  assert.ok(peak>PAN_TUNING.pointerMaxSpeed*.99);
 });

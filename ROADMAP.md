@@ -72,3 +72,5 @@ Update CHANGELOG for implemented changes; DEVLOG for context and experiments; DE
 **Manual-speed iteration (2026-10-26):** The creator requested twice the current mouse/touch and arrow-key movement speed. Updated control limits are implemented (880 and 260 CSS px/s, with proportionally faster acceleration and deceleration). Actual browser feel and acceptance are pending.
 
 **Speed tuning (2026-10-26):** The creator requested doubling the mouse/touch and arrow-key movement speeds. The new tuning is implemented (880 and 260 CSS px/s maximum respectively) with proportionally doubled acceleration/deceleration. Hands-on approval and fresh local tests remain pending.
+
+**45-identity visual check (2026-10-26):** Added demo projects through PROJECT 45 and tests for uniqueness across all 45 cells initially visible at 1920×1080. Updated two stale control tests from the creator's preceding 28/30 run. Full post-change suite and visual inspection are pending.

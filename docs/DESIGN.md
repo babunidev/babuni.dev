@@ -120,3 +120,7 @@ PROJECT 10 appears directly above the center in the second ring, at coordinate (
 **Interaction with movement:** Independent row and column shifts move project identities along with their original source tiles. Manual pan only changes the camera. A finite pool of visual DOM elements is not the same as the project identity pool; neither directly controls the other's lifetime. The twelve temporary projects are now numbered 02 through 13, with BABUNI.DEV as the first identity.
 
 **Verification status:** The placement rules passed focused logic tests but have not yet been inspected by the creator on a physical screen in this revision. A smooth offscreen-to-onscreen content transition and identity correctness during slow line animation still require visual evaluation.
+
+## 45 demo project identities — desktop spiral review, 2026-10-26
+
+The creator requested 45 distinctly named placeholders (BABUNI.DEV plus PROJECT 02–45) to visually judge the spiral reuse rule. An initial centered 1920×1080 viewport with 240px tiles has 45 visible cells, including partial edge tiles, so all may have different project names. Some panned positions have more visible cells and must repeat if only 45 identities exist. These demo entries are not 45 published portfolio projects; no filler/neutral stones have been introduced and the spiral placement algorithm is unchanged.
