@@ -76,3 +76,11 @@ Click/tap behaviors should be discoverable; provide visible back controls and ke
 The creator described interaction as Google Maps-style dragging: hold the primary mouse button or touch with a finger and pull the entire grid in any direction. Drag follows the pointer with no snapping or mandatory return to the starting center. Releasing currently stops movement; kinetic inertia has not been requested or implemented. A keyboard-accessible alternative uses arrow keys and Home or the reset button.
 
 Reuse the existing visual tile elements when they travel wholly offscreen. A moving tile reappears in the offscreen buffer on the opposite side and later becomes visible again. Maintain two extra tile-wide buffer bands initially; the DOM pool should not grow indefinitely as a visitor travels. The prototype uses decorative sample projects; real project records and future bloom interactions remain separate.
+
+## Autonomous row and column shifts — experimental implementation (2026-10-26)
+
+The first implementation uses the creator's previously discussed dice idea: a random round selects rows or columns, visible lines are randomly ordered by initiative, every line rolls d20 and a provisional bonus (+4, +3, +2, +1, then zero), and adjusted results above ten shift by one full tile. Each successful line independently chooses a direction. Several lines may move in a single round, always sharing the selected axis.
+
+Prototype values (AI-chosen, not locked by the creator): about 6.5 seconds before the first round, 4.4 seconds of smoothstep easing for a move, and an 8-second rest between rounds. While holding and dragging, an ongoing shift freezes and resumes at the same progress on release, while upcoming rounds wait. The grid camera's approved manual-drag behavior is unchanged. The application also suspends ongoing movement when the page is hidden and disables automatic movement for users requesting reduced motion. Status text in the header is temporary visual feedback.
+
+The probabilities, pace, simultaneous movements, and direction rules still require creator testing. Bloom interactions will need a later policy for suspending nearby line movement.

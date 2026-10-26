@@ -1,4 +1,5 @@
 import { demoProjectIndex, gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
+import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 
 interface ProjectPlaceholder { name: string; tint: string; }
 const projects: ProjectPlaceholder[] = [
@@ -22,6 +23,14 @@ if (viewport && world && resetButton && status) {
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
   let slots:TileSlot[]=[];
   let activePointer:number|null=null, lastX=0, lastY=0;
+  // Experimental movement values, not yet confirmed by the creator.
+  const duration=4400, firstWait=6500, restWait=8000;
+  const history:ShiftEvent[]=[];
+  interface Moving {moves:ShiftEvent[]; started:number; pausedAt:number|null; fraction:number}
+  let moving:Moving|null=null;
+  const prefersReduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const heading=document.querySelector<HTMLElement>('.header-note');
+  let timer:ReturnType<typeof setTimeout>|null=null;
 
   function makeTile():HTMLDivElement {
     const element=document.createElement('div');
@@ -30,14 +39,15 @@ if (viewport && world && resetButton && status) {
     element.innerHTML='<div class="tile-face"><div class="tile-mark"></div><div class="tile-portal"></div><div class="tile-name"></div></div>';
     return element;
   }
-  function populate(slot:TileSlot,column:number,row:number):void {
-    if(slot.column===column && slot.row===row) return;
+  function populate(slot:TileSlot,column:number,row:number,force=false):void {
+    if(!force&&slot.column===column&&slot.row===row)return;
     slot.column=column; slot.row=row;
     slot.element.style.left=(column*tileSize)+'px';
     slot.element.style.top=(row*tileSize)+'px';
-    const isOrigin=column===0&&row===0;
+    const source=sourceCell(column,row,history);
+    const isOrigin=source.column===0&&source.row===0;
     const project=isOrigin ? {name:'BABUNI.DEV',tint:'#b78af9'} :
-      projects[demoProjectIndex(column,row,projects.length)];
+      projects[demoProjectIndex(source.column,source.row,projects.length)];
     slot.element.style.setProperty('--portal-color',project.tint);
     slot.element.classList.toggle('grid-tile--origin',isOrigin);
     const label=slot.element.querySelector<HTMLElement>('.tile-name');
@@ -85,12 +95,73 @@ if (viewport && world && resetButton && status) {
       }
     }
     layer.style.transform='translate3d('+frame.originX+'px,'+frame.originY+'px,0)';
+    if(moving)paintMovement(moving.fraction);
+  }
+  function paintMovement(fraction:number):void {
+    const movingRows=new Map<number,number>(), movingColumns=new Map<number,number>();
+    for(const move of moving?.moves??[]){
+      (move.axis==='row'?movingRows:movingColumns).set(move.line,move.direction);
+    }
+    const p=easeInOut(fraction);
+    for(const slot of slots){
+      const dx=(movingRows.get(slot.row)??0)*tileSize*p;
+      const dy=(movingColumns.get(slot.column)??0)*tileSize*p;
+      slot.element.style.transform=(dx||dy)?'translate3d('+dx+'px,'+dy+'px,0)':'';
+    }
+  }
+  function nextRound(delay:number):void {
+    if(timer!==null)clearTimeout(timer);
+    timer=setTimeout(startRound,delay);
+  }
+  function startRound():void {
+    timer=null;
+    if(activePointer!==null||document.hidden||prefersReduced.matches||moving){
+      nextRound(1000);
+      return;
+    }
+    const rect=surface.getBoundingClientRect();
+    const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells});
+    const top=Math.floor(-frame.originY/tileSize);
+    const bottom=Math.ceil((rect.height-frame.originY)/tileSize)-1;
+    const left=Math.floor(-frame.originX/tileSize);
+    const right=Math.ceil((rect.width-frame.originX)/tileSize)-1;
+    const visibleRows=Array.from({length:bottom-top+1},(_,i)=>top+i);
+    const visibleColumns=Array.from({length:right-left+1},(_,i)=>left+i);
+    const round=planShiftRound(visibleRows,visibleColumns);
+    if(!round.moves.length){nextRound(restWait);return;}
+    moving={moves:round.moves,started:performance.now(),pausedAt:null,fraction:0};
+    if(heading)heading.textContent=round.axis==='row'?'Rows are shifting':'Columns are shifting';
+    requestAnimationFrame(frameMovement);
+  }
+  function frameMovement(now:number):void {
+    if(!moving||moving.pausedAt!==null)return;
+    moving.fraction=Math.min(1,Math.max(0,(now-moving.started)/duration));
+    paintMovement(moving.fraction);
+    if(moving.fraction<1){requestAnimationFrame(frameMovement);return;}
+    history.push(...moving.moves);
+    moving=null;
+    for(const slot of slots){
+      populate(slot,slot.column,slot.row,true);
+      slot.element.style.transform='';
+    }
+    if(heading)heading.textContent='Living grid prototype';
+    nextRound(restWait);
+  }
+  function pauseMovement():void {
+    if(moving&&moving.pausedAt===null)moving.pausedAt=performance.now();
+  }
+  function resumeMovement():void {
+    if(!moving||moving.pausedAt===null||activePointer!==null||document.hidden)return;
+    moving.started+=performance.now()-moving.pausedAt;
+    moving.pausedAt=null;
+    requestAnimationFrame(frameMovement);
   }
   surface.addEventListener('pointerdown',event=>{
     if(activePointer!==null||!event.isPrimary||(event.pointerType==='mouse'&&event.button!==0)) return;
     activePointer=event.pointerId; lastX=event.clientX; lastY=event.clientY;
     surface.setPointerCapture(event.pointerId);
     surface.classList.add('is-dragging');
+    pauseMovement();
   });
   surface.addEventListener('pointermove',event=>{
     if(event.pointerId!==activePointer)return;
@@ -101,6 +172,7 @@ if (viewport && world && resetButton && status) {
   function release(event:PointerEvent):void {
     if(event.pointerId!==activePointer)return;
     activePointer=null; surface.classList.remove('is-dragging');
+    resumeMovement();
     if(surface.hasPointerCapture(event.pointerId))surface.releasePointerCapture(event.pointerId);
   }
   surface.addEventListener('pointerup',release);
@@ -122,6 +194,13 @@ if (viewport && world && resetButton && status) {
     panX=0;panY=0;updateField();
     liveStatus.textContent='Returned to the starting tile.';
   });
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden)pauseMovement();else resumeMovement();
+  });
+  prefersReduced.addEventListener('change',()=>{
+    if(!prefersReduced.matches)nextRound(firstWait);
+  });
+  nextRound(firstWait);
   new ResizeObserver(rebuildPool).observe(surface);
   rebuildPool();
 }

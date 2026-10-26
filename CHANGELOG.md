@@ -7,6 +7,14 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 ## [Unreleased]
 
 ### Added
+- Experimental autonomous one-cell row/column movement, including randomized direction and provisional d20/initiative rolls (+4, +3, +2, +1, then zero).
+- Pausing an in-progress line shift during mouse/touch dragging; resuming after release; deferring new rounds during drag and tab invisibility; disabling automatic motion under reduced-motion preference.
+- Five additional seeded shift-engine tests covering dice, line eligibility, source identity through alternating axes, and easing.
+
+### Verification
+- Ten Node tests and strict TypeScript checking passed locally. Isolated Chromium previews passed pause/resume, desktop and phone-sized layout, and reduced-motion checks. Physical mobile testing and a full post-commit Astro build remain open.
+
+### Added
 - Initial mechanical grid prototype: responsive square tiles, initially centered logical origin, unrestricted pointer dragging, fixed-size recycled DOM pool, keyboard pan and recenter controls.
 - Unit test suite for sizing, exact center alignment, edge coverage, ring-buffer reassignment, and stable placeholder mapping.
 - Temporary colored-circle tiles for mechanics testing; not final stone and portal designs.

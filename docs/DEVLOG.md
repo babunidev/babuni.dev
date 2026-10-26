@@ -134,3 +134,15 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **Implementation and evidence.** No application code was altered in this feedback session. The assistant recorded the creator's first desktop acceptance results in the roadmap and decision history. Physical touch interaction, multi-device coverage, browser resizing, and autonomous row/column shifting still need separate verification.
 
 **Outcome.** Basic desktop panning, initial centering, and visible endlessness have passed creator review. This provides a usable interaction baseline for subsequent shifting-grid experiments.
+
+## 2026-10-26 — The first independently shifting stone lines
+
+**Creator direction.** Following successful hands-on desktop tests of the endless draggable grid, the creator approved moving to the next part of Milestone 1. They wanted the grid to begin moving autonomously by rows and columns, but did not want to lose the map-like dragging experience they had already praised. The creator also asked whether the development website could be reached from their phone on the same Wi-Fi, suggesting practical mobile checks while continuing desktop-first development.
+
+**AI contribution.** The assistant explained that the Astro dev server can bind to the PC's LAN interface, allowing a phone on the same Wi-Fi to visit the PC's local IP at port 4321. This is an available test workflow, not a claim that the creator has already performed it. The assistant then separated the mechanical movement rules from the visual renderer: rounds randomly select an axis; visible lines roll d20 in randomized initiative order; winning lines travel one grid cell in an independently selected direction. Timings and dice bonuses remain tunable experiments.
+
+**Implementation.** A new TypeScript helper models ordered row/column shift events and preserves project identities even when horizontal and vertical operations alternate. The tile renderer animates those line movements in the existing finite pool, freezes them during mouse/touch dragging and inactive browser tabs, and resumes from the same animation progress afterward. Reduced-motion preference suppresses the autonomous movement. The temporary grid artwork and reset button remain unchanged.
+
+**Verification.** The assistant passed five additional Node tests, including seeded repeatability and mixed-axis identity, alongside the original five geometry tests. A strict TypeScript check passed. Isolated Chromium previews were checked at desktop and phone-sized viewports, covering movement, frozen animation during manual dragging, no expanding DOM pool, and reduced-motion suppression. This is not yet an independently verified post-commit Astro production build or hands-on phone test.
+
+**Outcome and open questions.** The autonomous system is ready for the creator's review of how it looks and feels. The precise animation cadence, movement directions, initiative bias and amount of simultaneous shifting must be accepted or refined after observation.

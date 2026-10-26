@@ -22,8 +22,8 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 
 **Creator's first desktop acceptance test (2026-10-26):** Local Astro 7.4.2 server returned the page successfully. On the creator's desktop, the centered BABUNI.DEV tile appeared correctly, mouse dragging felt smooth and appropriately paced, and the grid could be dragged indefinitely without encountering an edge. This verifies the manual desktop experience by user observation; physical phone/tablet, resizing, automated shift mechanics, and reduced-motion tests remain open.
 - [ ] Prove responsive coverage on phone, laptop, and wide desktop.
-- [ ] Implement slow horizontal and vertical row/column shifts with repeatable seeded tests.
-- [ ] Pause or defer conflicting moves during drag and bloom.
+- [x] Prototype slow one-cell row/column shifts with testable seeded dice rounds (timing and initiative mechanics provisional; creator review outstanding).
+- [x] Pause an active autonomous shift while dragging, resume afterward and defer new rounds while dragging. Bloom-specific conflict handling awaits bloom implementation.
 - [ ] Validate keyboard and reduced-motion alternatives.
 
 ## Milestone 2 — The first portal
