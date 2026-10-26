@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spiralIndex,ProjectPlacement} from '../src/lib/project-placement.ts';
+import {spiralIndex,visibleCellBounds,ProjectPlacement} from '../src/lib/project-placement.ts';
 const p=(column,row)=>({column,row});
 const spiral=[p(0,0),p(0,-1),p(1,-1),p(1,0),p(1,1),p(0,1),p(-1,1),p(-1,0),p(-1,-1),p(0,-2),p(1,-2),p(2,-2)];
 const box=(cx,cy,halfX,halfY)=>{
@@ -70,4 +70,11 @@ test('shifted row retains source project identity and uniqueness',()=>{
   mgr.sync(shifted,band);
   assert.equal(mgr.get(p(0,0)),origin);
   assert.equal(new Set(shifted.map(c=>mgr.get(c))).size,cells.length);
+});
+
+test('both viewport edges detect a newly entering partially visible tile',()=>{
+  const before=visibleCellBounds(385,900,240,0,0);
+  const after=visibleCellBounds(385,900,240,-100,0);
+  assert.equal(before.firstColumn,after.firstColumn);
+  assert.notEqual(before.lastColumn,after.lastColumn);
 });
