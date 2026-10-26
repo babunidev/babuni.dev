@@ -66,3 +66,5 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 ## Documentation requirement for every milestone
 
 Update CHANGELOG for implemented changes; DEVLOG for context and experiments; DECISIONS for durable choices; DESIGN/ARCHITECTURE/CONTENT as applicable; and ROADMAP as work changes. Distinguish creator requests, agent proposals, completed work, and evidence.
+
+**Manual-speed iteration (2026-10-26):** The creator requested twice the current mouse/touch and arrow-key movement speed. Updated control limits are implemented (880 and 260 CSS px/s, with proportionally faster acceleration and deceleration). Actual browser feel and acceptance are pending.
