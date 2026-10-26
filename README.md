@@ -36,6 +36,7 @@ The starter build was independently verified on 2026-10-26 against commit `ea901
 - [Design reference](docs/DESIGN.md) — interaction and visual behavior
 - [Architecture](docs/ARCHITECTURE.md) — technical approach and constraints
 - [Content model](docs/CONTENT.md) — project data and media modules
+- [Candidate project inventory](docs/PROJECT_INVENTORY.md) — provisional creative-work memory for prototype content; not approved publication data
 - [Human–AI collaboration](docs/AI_COLLABORATION.md) — attribution and evidence rules
 - [ChatGPT project instructions](.chatgpt/PROJECT_INSTRUCTIONS.md) — instructions to paste into the ChatGPT project's settings
 
