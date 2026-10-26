@@ -98,3 +98,7 @@ The probabilities, pace, simultaneous movements, and direction rules still requi
 ## Manual navigation speed doubled — 2026-10-26
 
 The creator asked to make movement twice as fast as the previous mouse/touch and arrow-key controls. Current prototype configuration in `src/lib/grid-controls.ts`: mouse/touch maximum **880 CSS px/s** (previously 440), acceleration **3600 CSS px/s²** (previously 1800); keyboard maximum **260 CSS px/s** (previously 130), acceleration **1040 CSS px/s²** (previously 520), deceleration **1400 CSS px/s²** (previously 700). The **180 CSS px** pointer-lag limit and autonomous row/column shift timings remain unchanged. Multiplying both speed and acceleration by two retains approximately the same ramp-up time. Final feel requires hands-on evaluation.
+
+## Faster manual navigation — 2026-10-26
+
+The creator requested doubling the previous navigation speed. Updated mouse/touch maximum: 880 CSS px/s (formerly 440), acceleration: 3600 CSS px/s² (formerly 1800). Keyboard maximum: 260 CSS px/s (formerly 130), acceleration: 1040 CSS px/s² (formerly 520), deceleration: 1400 CSS px/s² (formerly 700). The cursor lag limit remains at 180 CSS px, and autonomous row/column shift timings are unchanged. Values remain subject to the creator's hands-on review.
