@@ -1,11 +1,390 @@
-/** Temporary demo identities for the spiral experiment, not published portfolio projects. */
-export interface DemoProject { name:string; tint:string }
-export const DEMO_PROJECT_COUNT=45;
-const initialTints=["#568cdb","#d3a457","#6ac0a5","#c778b9","#db7859","#8c8be3","#7eb875","#c1b56d","#61afb9","#ab88d1","#d08e79","#70a3c2"];
-export const demoProjects:readonly DemoProject[]=Array.from({length:DEMO_PROJECT_COUNT},(_,index)=>{
-  if(index===0)return {name:'BABUNI.DEV',tint:'#b78af9'};
-  const number=index+1;
-  return {name:'PROJECT '+String(number).padStart(2,'0'),
-    tint:index<=initialTints.length?initialTints[index-1]:
-      'hsl('+Math.round((number*137.508)%360)+' 58% 62%)'};
-});
+/**
+ * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
+ * (53 candidates, 2026-10-26). NOT verified or approved portfolio exhibits.
+ * Earlier variants, concepts, related works and name-only repos intentionally
+ * remain separate for this temporary exploration. This is a data snapshot:
+ * revisit/verify the source before promoting an entry to real portfolio content.
+ */
+export interface DemoProject {
+  /** Provisional stable candidate key, independent of recycled tile position. */
+  id: string;
+  name: string;
+  shortSummary: string;
+  /** The inventory's evidence classification, not a release status. */
+  evidence: string;
+  tint: string;
+}
+export const DEMO_PROJECT_COUNT=53;
+export const demoProjects:readonly DemoProject[]=[
+  {
+    "id": "babuni-dev",
+    "name": "BABUNI.DEV",
+    "shortSummary": "Interactive creative portfolio with a living tile grid and exploratory project views.",
+    "evidence": "repo",
+    "tint": "#b78af9"
+  },
+  {
+    "id": "button-game",
+    "name": "Button Game",
+    "shortSummary": "Android reaction game with scores, leaderboard and local multiplayer hosting.",
+    "evidence": "repo",
+    "tint": "#568cdb"
+  },
+  {
+    "id": "socialforever",
+    "name": "SocialForever",
+    "shortSummary": "WoW social memory and player encounter addon.",
+    "evidence": "repo",
+    "tint": "#d3a457"
+  },
+  {
+    "id": "roarforever",
+    "name": "RoarForever",
+    "shortSummary": "Restores missing player emote voice sounds in WoW Forever.",
+    "evidence": "repo",
+    "tint": "#6ac0a5"
+  },
+  {
+    "id": "flourishforever",
+    "name": "FlourishForever",
+    "shortSummary": "Configurable ability-triggered roleplay emotes.",
+    "evidence": "repo",
+    "tint": "#c778b9"
+  },
+  {
+    "id": "azeroth-moments",
+    "name": "Azeroth Moments",
+    "shortSummary": "Automated screenshot/video posting from a local folder to social channels.",
+    "evidence": "repo",
+    "tint": "#db7859"
+  },
+  {
+    "id": "anskar-grotzschnapf",
+    "name": "Anskar Grotzschnapf",
+    "shortSummary": "Poetry-to-image automated artist and digital-print publishing experiment.",
+    "evidence": "repo",
+    "tint": "#8c8be3"
+  },
+  {
+    "id": "local-prompt-lab",
+    "name": "Local Prompt Lab",
+    "shortSummary": "Local image-generation experiments with styles, seeds and prompts.",
+    "evidence": "conversation",
+    "tint": "#7eb875"
+  },
+  {
+    "id": "local-ai-workstation",
+    "name": "Local AI Workstation",
+    "shortSummary": "Local language-model and image-generation development environment.",
+    "evidence": "conversation",
+    "tint": "#c1b56d"
+  },
+  {
+    "id": "resistforever",
+    "name": "ResistForever",
+    "shortSummary": "Partial-resist and spell-miss tooltip calculations.",
+    "evidence": "repo",
+    "tint": "#61afb9"
+  },
+  {
+    "id": "favorcraft",
+    "name": "FavorCraft",
+    "shortSummary": "Merchant's Favor profession, recipe and materials planner.",
+    "evidence": "repo",
+    "tint": "#ab88d1"
+  },
+  {
+    "id": "redridge-recipe-planner",
+    "name": "Redridge Recipe Planner",
+    "shortSummary": "Earlier planning addon that preceded FavorCraft.",
+    "evidence": "repo-lineage",
+    "tint": "#d08e79"
+  },
+  {
+    "id": "wow-forever-talent-design-atlas",
+    "name": "WoW Forever Talent Design Atlas",
+    "shortSummary": "Analysis of 466 class talents and game-design variety.",
+    "evidence": "repo",
+    "tint": "#70a3c2"
+  },
+  {
+    "id": "ethera-the-stonewrought",
+    "name": "Ethera: The Stonewrought",
+    "shortSummary": "Godot RPG/simulation chapter set in the Morkahja universe.",
+    "evidence": "repo",
+    "tint": "hsl(125 58% 62%)"
+  },
+  {
+    "id": "enchantvisuals",
+    "name": "EnchantVisuals",
+    "shortSummary": "Native client mod combining weapon enchant and imbue visuals.",
+    "evidence": "repo",
+    "tint": "hsl(263 58% 62%)"
+  },
+  {
+    "id": "totemtimers",
+    "name": "TotemTimers",
+    "shortSummary": "Shaman totem, shield and weapon-enhancement tracking.",
+    "evidence": "repo",
+    "tint": "hsl(40 58% 62%)"
+  },
+  {
+    "id": "groupbufftoggle",
+    "name": "GroupBuffToggle",
+    "shortSummary": "Toggleable party and target unit-frame buffs.",
+    "evidence": "repo",
+    "tint": "hsl(178 58% 62%)"
+  },
+  {
+    "id": "lootfeed",
+    "name": "LootFeed",
+    "shortSummary": "Animated loot and group-roll information display.",
+    "evidence": "repo",
+    "tint": "hsl(315 58% 62%)"
+  },
+  {
+    "id": "gathermap",
+    "name": "GatherMap",
+    "shortSummary": "Self-learning resource gathering map overlay.",
+    "evidence": "repo",
+    "tint": "hsl(93 58% 62%)"
+  },
+  {
+    "id": "battlereport",
+    "name": "BattleReport",
+    "shortSummary": "Personal encounter and combat-statistics reporter.",
+    "evidence": "repo",
+    "tint": "hsl(230 58% 62%)"
+  },
+  {
+    "id": "roarguild",
+    "name": "RoarGuild",
+    "shortSummary": "Guild roleplay emotes, recruitment and shared message board.",
+    "evidence": "repo",
+    "tint": "hsl(8 58% 62%)"
+  },
+  {
+    "id": "workthatgodbod",
+    "name": "WorkThatGodBod",
+    "shortSummary": "In-game posture, movement and hydration reminders.",
+    "evidence": "repo",
+    "tint": "hsl(145 58% 62%)"
+  },
+  {
+    "id": "the-great-iceflow-relay",
+    "name": "The Great Iceflow Relay",
+    "shortSummary": "Player-organized WoW ball-passing checkpoint minigame.",
+    "evidence": "repo",
+    "tint": "hsl(283 58% 62%)"
+  },
+  {
+    "id": "roarrunlimited",
+    "name": "ROARRunlimited",
+    "shortSummary": "Multiple action-slot emote triggers with independent options.",
+    "evidence": "repo-lineage",
+    "tint": "hsl(60 58% 62%)"
+  },
+  {
+    "id": "roarr",
+    "name": "ROARR",
+    "shortSummary": "Earlier action-slot battle-emote addon.",
+    "evidence": "repo-lineage",
+    "tint": "hsl(198 58% 62%)"
+  },
+  {
+    "id": "roarsounds",
+    "name": "ROARSounds",
+    "shortSummary": "Earlier restoration of roar audio effects.",
+    "evidence": "repo-lineage",
+    "tint": "hsl(335 58% 62%)"
+  },
+  {
+    "id": "roaremotetrigger",
+    "name": "ROARemoteTrigger",
+    "shortSummary": "Battle-emote triggers for the Wrath client.",
+    "evidence": "repo-lineage",
+    "tint": "hsl(113 58% 62%)"
+  },
+  {
+    "id": "roar",
+    "name": "ROAR",
+    "shortSummary": "Early random battle-emote tool.",
+    "evidence": "repo-lineage",
+    "tint": "hsl(250 58% 62%)"
+  },
+  {
+    "id": "meleestartattack",
+    "name": "MeleeStartAttack",
+    "shortSummary": "Attack-start helper for several melee classes.",
+    "evidence": "repo",
+    "tint": "hsl(28 58% 62%)"
+  },
+  {
+    "id": "buxbrewresist",
+    "name": "BuxbrewResist",
+    "shortSummary": "Earlier spell-resistance tooltip addon.",
+    "evidence": "repo-lineage",
+    "tint": "hsl(165 58% 62%)"
+  },
+  {
+    "id": "buxbrewding",
+    "name": "BuxbrewDing",
+    "shortSummary": "Named WoW addon; purpose not yet confirmed.",
+    "evidence": "name-only",
+    "tint": "hsl(303 58% 62%)"
+  },
+  {
+    "id": "buxbrewcharge",
+    "name": "BuxbrewCharge",
+    "shortSummary": "Charge-related WoW addon.",
+    "evidence": "repo",
+    "tint": "hsl(80 58% 62%)"
+  },
+  {
+    "id": "buxbrew",
+    "name": "Buxbrew",
+    "shortSummary": "Named character-related repository; purpose not yet confirmed.",
+    "evidence": "name-only",
+    "tint": "hsl(218 58% 62%)"
+  },
+  {
+    "id": "amazin",
+    "name": "Amazin",
+    "shortSummary": "Stealth-emote addon with rested experience reporting.",
+    "evidence": "repo",
+    "tint": "hsl(355 58% 62%)"
+  },
+  {
+    "id": "warriorstartattack",
+    "name": "WarriorStartAttack",
+    "shortSummary": "Auto-attack helper for warrior abilities.",
+    "evidence": "repo-lineage",
+    "tint": "hsl(133 58% 62%)"
+  },
+  {
+    "id": "guildchatai",
+    "name": "GuildChatAI",
+    "shortSummary": "Experimental guild chat project with limited public description.",
+    "evidence": "repo",
+    "tint": "hsl(270 58% 62%)"
+  },
+  {
+    "id": "practical-templates-creator",
+    "name": "Practical Templates Creator",
+    "shortSummary": "Concept for an automated creator of practical digital templates.",
+    "evidence": "conversation",
+    "tint": "hsl(48 58% 62%)"
+  },
+  {
+    "id": "human-ai-development-journal",
+    "name": "Human–AI Development Journal",
+    "shortSummary": "Record of creator direction, AI work, decisions and technical verification.",
+    "evidence": "repository-doc",
+    "tint": "hsl(185 58% 62%)"
+  },
+  {
+    "id": "roar-guild-and-community",
+    "name": "ROAR Guild and Community",
+    "shortSummary": "WoW guild community design and shared roleplaying rituals.",
+    "evidence": "conversation",
+    "tint": "hsl(323 58% 62%)"
+  },
+  {
+    "id": "the-amberbrew-family",
+    "name": "The Amberbrew Family",
+    "shortSummary": "Warcraft character and family lore centered on the Amberbrew household.",
+    "evidence": "conversation",
+    "tint": "hsl(100 58% 62%)"
+  },
+  {
+    "id": "buxbrew-character-story",
+    "name": "Buxbrew — character story",
+    "shortSummary": "Roleplaying story of Jasmine 'Buxbrew' Amberbrew.",
+    "evidence": "conversation",
+    "tint": "hsl(238 58% 62%)"
+  },
+  {
+    "id": "fantasy-rpg-assets",
+    "name": "Fantasy RPG Assets",
+    "shortSummary": "Top-down trees and other environmental art studies.",
+    "evidence": "conversation",
+    "tint": "hsl(15 58% 62%)"
+  },
+  {
+    "id": "fantasy-architecture",
+    "name": "Fantasy Architecture",
+    "shortSummary": "Fantasy building plans, gateways and architectural studies.",
+    "evidence": "conversation",
+    "tint": "hsl(153 58% 62%)"
+  },
+  {
+    "id": "warehouse-performance-model",
+    "name": "Warehouse Performance Model",
+    "shortSummary": "Fairness-focused warehouse performance scoring proposal.",
+    "evidence": "conversation",
+    "tint": "hsl(290 58% 62%)"
+  },
+  {
+    "id": "dual-pc-streaming-setup",
+    "name": "Dual-PC Streaming Setup",
+    "shortSummary": "Explored separate gaming and streaming computers.",
+    "evidence": "conversation",
+    "tint": "hsl(68 58% 62%)"
+  },
+  {
+    "id": "morkahja-world-and-peoples",
+    "name": "Morkahja — World and Peoples",
+    "shortSummary": "Original fantasy worldbuilding centered on elemental peoples and places.",
+    "evidence": "document",
+    "tint": "hsl(205 58% 62%)"
+  },
+  {
+    "id": "grimnir",
+    "name": "Grimnir",
+    "shortSummary": "Cultural and narrative material within the Morkahja world.",
+    "evidence": "repo-context",
+    "tint": "hsl(343 58% 62%)"
+  },
+  {
+    "id": "morkahja-rpg",
+    "name": "Morkahja RPG",
+    "shortSummary": "Multiplayer fantasy adventure game and development history.",
+    "evidence": "repo-context",
+    "tint": "hsl(120 58% 62%)"
+  },
+  {
+    "id": "morkahja-admin-console",
+    "name": "Morkahja Admin Console",
+    "shortSummary": "Web interface for player moderation, server activity and game content.",
+    "evidence": "repo",
+    "tint": "hsl(258 58% 62%)"
+  },
+  {
+    "id": "morkahjaworld",
+    "name": "MorkahjaWorld",
+    "shortSummary": "Morkahja-named repository; detailed role not yet checked.",
+    "evidence": "name-only",
+    "tint": "hsl(35 58% 62%)"
+  },
+  {
+    "id": "arcanitebrothers",
+    "name": "Arcanitebrothers",
+    "shortSummary": "Development identity/repository associated with the Morkahja admin console.",
+    "evidence": "repo",
+    "tint": "hsl(173 58% 62%)"
+  },
+  {
+    "id": "mech-arena",
+    "name": "Mech-Arena",
+    "shortSummary": "Historical science-fiction RPG project; release claims await archival evidence.",
+    "evidence": "conversation",
+    "tint": "hsl(310 58% 62%)"
+  },
+  {
+    "id": "analubia",
+    "name": "Analubia",
+    "shortSummary": "Historical fantasy RPG project associated with Sundust Studios.",
+    "evidence": "conversation",
+    "tint": "hsl(88 58% 62%)"
+  }
+];

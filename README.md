@@ -8,7 +8,7 @@ The website itself is intended to become one of its exhibits: a record of its co
 
 ## Project status
 
-**Mechanical grid prototype underway.** Astro 7 and documentation are on `main`, along with a top-down, screen-centered grid featuring free mouse/touch pan and a reusable pool of placeholder tiles. Colored circles and project titles are temporary mechanical stand-ins, not approved final art or content. Unit and isolated browser tests passed; a full post-commit Astro build and physical device tests are still pending.
+**Living-grid prototype underway.** Astro 7 and the mechanical grid are on `main`: a screen-centered, freely pannable, recycling grid with autonomous row/column shifts and a one-time clockwise entrance animation. Its temporary content catalog uses **53 named candidates** from [the inventory](docs/PROJECT_INVENTORY.md), including one-line descriptions for future information bubbles. These are provisional visual test entries, **not 53 verified or approved published portfolio exhibits**. Colored portals and stone faces are temporary; functionality takes priority over finished portal textures. The latest changes still need a full local build and physical-device verification.
 
 ## Local development
 

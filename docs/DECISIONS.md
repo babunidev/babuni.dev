@@ -159,3 +159,11 @@ The creator ran the Astro prototype locally, confirmed all five unit tests passe
 **AI implementation choices:** Use a CSS scale/opacity introduction lasting 373 ms, with a preliminary 68 ms start-to-start stagger, slight overshoot, and no actual loading delay. Apply the effect only to initially visible tile faces, never to newly recycled offscreen tiles, so the established row/column transform animation remains independent. Cancel if the visitor navigates or the layout changes; skip it for reduced motion.
 
 **Status:** Implemented prototype pending creator visual approval. The stagger, easing and overshoot are experimental; the initial spiral and existing movement timings are unchanged.
+
+## D-021 — Provisional real project names in the grid; functionality before final portal art (2026-10-26)
+
+**Creator request and decision:** Use all 53 named candidates gathered into the repository inventory as a playful visual prototype, rather than retaining generic PROJECT NN placeholders. Keep the initial BABUNI.DEV tile, the clockwise spiral and existing movement. No artificial filler projects are needed at this count. Preserve the inventory's one-line information for future use. Prioritize implementation of functional milestones before treating unique finished portal textures as a requirement; final art remains optional/deferred, not prohibited.
+
+**AI contribution:** Snapshot the inventory's order, candidate titles, brief descriptions and evidence classes into stable provisional project records. Keep temporary colored portals and adapt title typography only for long names. Maintain explicit separation between a mechanically represented candidate and a verified portfolio exhibit.
+
+**Status:** Prototype content integration committed, awaiting creator visual review. Individual project identities, relationships, assets, rights and publication claims are not yet verified or approved.

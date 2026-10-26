@@ -6,6 +6,16 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — use 53 real candidate names in the prototype grid (2026-10-26)
+- Replaced 45 numbered demo labels with 53 distinct named candidates from `docs/PROJECT_INVENTORY.md`, preserving the inventory's provisional recent-to-old order and BABUNI.DEV at the center.
+- Attached a provisional ID, one-line summary, evidence category and portal tint to each candidate so future information bubbles can reuse short descriptions. The titles and metadata are **not** verified or approved portfolio exhibits.
+- Kept the original spiral assignment, offscreen recycling, manual controls, slow shifts, and the 373 ms initial reveal. No final portal textures or new navigation features were introduced.
+- Allowed long authentic titles to wrap and fit more comfortably on the same tile component.
+- Updated catalog and spiral/intro tests for the 53-candidate source.
+
+### Verification
+- Inventory row count, consecutive ordering, and 53 distinct generated IDs were checked against the current inventory. A fresh full Node/Astro build and visual review on the creator's PC remain pending.
+
 ### Added — spiral entrance animation (2026-10-26)
 - On initial page load, grow the initially visible demo tiles into place one by one in center-out clockwise spiral order, beginning with BABUNI.DEV. Each tile animation lasts 373 ms; 68 ms stagger makes a 45-tile view complete in approximately 3.4 seconds.
 - Animate the stone face independently of the grid-tile transforms used for row and column motion. The scene itself does not wait for a simulated network load.

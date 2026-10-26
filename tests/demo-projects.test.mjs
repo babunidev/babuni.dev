@@ -2,16 +2,30 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {demoProjects,DEMO_PROJECT_COUNT} from '../src/lib/demo-projects.ts';
 import {gridWindow} from '../src/lib/grid-math.ts';
-import {ProjectPlacement,visibleCellBounds} from '../src/lib/project-placement.ts';
-test('45 unique demo identities from BABUNI.DEV to PROJECT 45',()=>{
- assert.equal(DEMO_PROJECT_COUNT,45);
- assert.equal(demoProjects.length,45);
- assert.equal(demoProjects[0].name,'BABUNI.DEV');
- assert.equal(demoProjects[1].name,'PROJECT 02');
- assert.equal(demoProjects[44].name,'PROJECT 45');
- assert.equal(new Set(demoProjects.map(p=>p.name)).size,45);
+import {ProjectPlacement,visibleCellBounds,spiralIndex} from '../src/lib/project-placement.ts';
+
+test('exactly 53 named inventory candidates have unique provisional IDs and summaries',()=>{
+  assert.equal(DEMO_PROJECT_COUNT,53);
+  assert.equal(demoProjects.length,53);
+  assert.equal(demoProjects[0].name,'BABUNI.DEV');
+  assert.deepEqual(demoProjects.slice(1,5).map(x=>x.name),[
+    'Button Game','SocialForever','RoarForever','FlourishForever'
+  ]);
+  assert.equal(demoProjects[52].name,'Analubia');
+  assert.equal(new Set(demoProjects.map(x=>x.id)).size,53);
+  assert.equal(new Set(demoProjects.map(x=>x.name)).size,53);
+  assert.ok(demoProjects.every(x=>x.id&&x.shortSummary&&x.evidence&&x.tint));
+  assert.ok(demoProjects.every(x=>!/^PROJECT \d+$/.test(x.name)));
 });
-test('the initial 1920x1080 spiral contains exactly 45 unique visible projects',()=>{
+test('candidate descriptions and evidence are snapshots of the provisional inventory',()=>{
+  assert.match(demoProjects[1].shortSummary,/Android reaction game/);
+  assert.equal(demoProjects[1].evidence,'repo');
+  assert.equal(demoProjects[30].name,'BuxbrewDing');
+  assert.equal(demoProjects[30].evidence,'name-only');
+  assert.equal(demoProjects[45].name,'Morkahja — World and Peoples');
+  assert.equal(demoProjects[45].evidence,'document');
+});
+test('initial 1920x1080 desktop still contains 45 distinct named projects in spiral order',()=>{
  const width=1920,height=1080,tileSize=240;
  const window=gridWindow({width,height,tileSize,panX:0,panY:0,bufferCells:2});
  const b=visibleCellBounds(width,height,tileSize,window.originX,window.originY);
@@ -24,9 +38,13 @@ test('the initial 1920x1080 spiral contains exactly 45 unique visible projects',
  assert.equal(visible.length,45);
  const planner=new ProjectPlacement(demoProjects.length);
  planner.sync(visible,retained);
- assert.equal(new Set(visible.map(cell=>planner.get(cell))).size,45);
- assert.equal(planner.get({column:0,row:0}),0);
- assert.equal(planner.get({column:0,row:-1}),1);
- assert.equal(planner.get({column:1,row:-1}),2);
- assert.equal(planner.get({column:0,row:-2}),9);
+ const names=visible.map(cell=>demoProjects[planner.get(cell)].name);
+ assert.equal(new Set(names).size,45);
+ assert.equal(demoProjects[planner.get({column:0,row:0})].name,'BABUNI.DEV');
+ assert.equal(demoProjects[planner.get({column:0,row:-1})].name,'Button Game');
+ assert.equal(demoProjects[planner.get({column:1,row:-1})].name,'SocialForever');
+ assert.equal(demoProjects[planner.get({column:0,row:-2})].name,'ResistForever');
+ assert.deepEqual(visible
+   .slice().sort((a,b)=>spiralIndex(a.column,a.row)-spiralIndex(b.column,b.row))
+   .map(cell=>planner.get(cell)),Array.from({length:45},(_,i)=>i));
 });

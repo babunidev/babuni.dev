@@ -14,7 +14,7 @@ const status = document.querySelector<HTMLElement>('#grid-status');
 if (viewport && world && resetButton && status) {
   const surface=viewport, layer=world, reset=resetButton, liveStatus=status;
   const bufferCells=2;
-  // Index zero is the real BABUNI.DEV tile. Demo project IDs then start at 02.
+  // First inventory entry is BABUNI.DEV; all 53 candidates remain provisional.
   const placement=new ProjectPlacement(demoProjects.length);
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
@@ -57,8 +57,11 @@ if (viewport && world && resetButton && status) {
     slot.projectIndex=projectIndex;
     const isOrigin=projectIndex===0;
     const project=demoProjects[projectIndex];
+    slot.element.dataset.projectId=project.id;
+    slot.element.dataset.projectSummary=project.shortSummary;
     slot.element.style.setProperty('--portal-color',project.tint);
     slot.element.classList.toggle('grid-tile--origin',isOrigin);
+    slot.element.classList.toggle('grid-tile--long-title',project.name.length>18);
     const label=slot.element.querySelector<HTMLElement>('.tile-name');
     if(label) label.textContent=project.name;
   }

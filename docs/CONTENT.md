@@ -51,3 +51,9 @@ The public repository is not a full chat archive. Summarize project-relevant pro
 ## Open design work
 
 Schema implementation, media hosting policy, thumbnail generation, image resolution variants, embed consent/privacy, download serving, content validation and AI publishing permissions.
+
+## Provisional candidate catalog for the living-grid prototype (2026-10-26)
+
+The temporary `src/lib/demo-projects.ts` now contains **53 candidate identities**, transcribed in approximate recent-to-old order from `PROJECT_INVENTORY.md`. Each carries a provisional slug-like `id`, visible `name`, `shortSummary`, original inventory `evidence` label and decorative `tint`. BABUNI.DEV stays at the center and is rendered uppercase. These are **prototype names**, not a set of 53 verified, approved, independent releases. Related addon lineages, alternative names, lore works, and conceptual studies have deliberately not been merged yet.
+
+The one-line descriptions are stored for future info points or bloom content but are not yet displayed as new information bubbles. Before converting any entry into a portfolio exhibit, confirm individual title, relationship to parent works, authorship, status, source links, rights and creator approval. The later production schema must not assume the provisional catalog IDs will remain final.
