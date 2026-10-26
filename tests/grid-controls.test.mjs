@@ -68,3 +68,12 @@ test('hidden-tab frame interval is capped to avoid a sudden large jump', () => {
   const step = stepManualPan(state, 300, true, none);
   assert.ok(Math.hypot(step.delta.x, step.delta.y) <= PAN_TUNING.pointerMaxSpeed*0.05+1e-8);
 });
+
+test('doubled manual motion speeds and accelerations match the creator request', () => {
+  assert.equal(PAN_TUNING.pointerMaxSpeed, 880);
+  assert.equal(PAN_TUNING.pointerAcceleration, 3600);
+  assert.equal(PAN_TUNING.keyboardMaxSpeed, 260);
+  assert.equal(PAN_TUNING.keyboardAcceleration, 1040);
+  assert.equal(PAN_TUNING.keyboardDeceleration, 1400);
+  assert.equal(PAN_TUNING.pointerLagLimit, 180);
+});
