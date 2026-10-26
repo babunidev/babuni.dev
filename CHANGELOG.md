@@ -11,10 +11,10 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 - Added visibility-aware project residency: keep content identifiers while visible or in a two-tile offscreen band, release older offscreen positions, and prioritize distinct projects in the current viewport before repeating.
 - Preserve a completely filled grid, even with fewer distinct project records than visible cells: repeat the real project list rather than rendering empty or neutral filler.
 - Keep the existing finite DOM tile pool, manual movement controller, and autonomous row/column movement intact.
-- Eight new placement tests cover spiral order, repeats with five projects, uniqueness during scrolling, offscreen retention, and line-shift identity mapping.
+- Ten new placement tests cover spiral order, repeats with five projects, uniqueness during scrolling and responsive viewport simulations, offscreen retention, both-edge entrance detection, and line-shift identity mapping.
 
 ### Verification — spiral-first project recycling
-- Eight focused pure-placement Node tests passed in an isolated local run. A full Astro build, local integration suite and creator's desktop/mobile visual review are still pending.
+- Ten focused pure-placement Node tests passed in an isolated local run. A full Astro build, local integration suite and creator's desktop/mobile visual review are still pending.
 
 ### Changed — manual movement tuning (2026-10-26)
 - Doubled mouse/touch maximum pan speed (440 to 880 CSS px/s) and arrow-key speed (130 to 260 CSS px/s), with correspondingly doubled acceleration and deceleration settings.
