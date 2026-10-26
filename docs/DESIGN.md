@@ -102,3 +102,21 @@ The creator asked to make movement twice as fast as the previous mouse/touch and
 ## Faster manual navigation — 2026-10-26
 
 The creator requested doubling the previous navigation speed. Updated mouse/touch maximum: 880 CSS px/s (formerly 440), acceleration: 3600 CSS px/s² (formerly 1800). Keyboard maximum: 260 CSS px/s (formerly 130), acceleration: 1040 CSS px/s² (formerly 520), deceleration: 1400 CSS px/s² (formerly 700). The cursor lag limit remains at 180 CSS px, and autonomous row/column shift timings are unchanged. Values remain subject to the creator's hands-on review.
+
+## Project placement and reuse — new creator-confirmed rule (2026-10-26)
+
+**Start position:** BABUNI.DEV (number 1) is centered. The next eight original projects form the first clockwise ring, beginning above the center:
+
+```text
+PROJECT 09   PROJECT 02   PROJECT 03
+PROJECT 08   BABUNI.DEV   PROJECT 04
+PROJECT 07   PROJECT 06   PROJECT 05
+```
+
+PROJECT 10 appears directly above the center in the second ring, at coordinate (0,-2), and the spiral continues clockwise and outward. This is a content assignment order, not a visual movement animation.
+
+**Reuse rule:** Every visible tile displays an actual project, even when only five project records exist. Never substitute an empty stone or neutral filler. Start with each distinct project in the spiral order, then cycle/reuse records as needed to fill the screen. Once the library contains at least as many distinct projects as there are visible tiles, there must be **no repeated project identity anywhere in the visible viewport**. Preserve tiles' assignments while visible. Hold offscreen assignments for up to two tile widths/heights where practical; reclaim them beyond that border. To keep the no-duplicate promise when the library size only just covers the screen, the allocator may reuse an already-offscreen project earlier than the preferred two-tile grace period. Offscreen project instances may therefore share identities with visible instances; they must not become simultaneously visible duplicates.
+
+**Interaction with movement:** Independent row and column shifts move project identities along with their original source tiles. Manual pan only changes the camera. A finite pool of visual DOM elements is not the same as the project identity pool; neither directly controls the other's lifetime. The twelve temporary projects are now numbered 02 through 13, with BABUNI.DEV as the first identity.
+
+**Verification status:** The placement rules passed focused logic tests but have not yet been inspected by the creator on a physical screen in this revision. A smooth offscreen-to-onscreen content transition and identity correctness during slow line animation still require visual evaluation.
