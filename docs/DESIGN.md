@@ -215,3 +215,11 @@ The autonomous duration remains **4400 ms**, with the existing smoothstep easing
 **AI diagnosis/fix:** A steady open bloom inadvertently retained transform transitions. Slot reassignment at the end of a downward shift could therefore animate its new resting transform upward. Only bloom opening/closing may now use that transition; open-bloom autonomous motion and its committed resting layout have zero CSS transition duration. Occupied visual columns and reversible source assignment remain.
 
 **Alternative authorized by Babuni.dev:** Fade tiles out and content in instead of displacement if needed for reliability. This fix retains the displacement Babuni.dev said was otherwise nice; no fade substitution was made. Full bloom is still unimplemented, so its future smoothness is not verified.
+
+## Waiting acknowledgement and first portal artwork — 2026-10-26
+
+**Babuni.dev feedback:** Right-side shifts in both directions, drag-to-close, natural surrounding motion and waiting through moving-tile selection/closing looked smooth during their desktop testing. This is human observation, not exhaustive device verification.
+
+**Babuni.dev requested:** Pulse while a requested action waits for a shift, and replace BABUNI.DEV’s colored ball with their supplied square PNG seen through a round opening. **AI implemented:** A gold outline on the queued destination (or current project when closing) pulses in opacity while waiting. It never scales/moves the tile or alters the shift clock. AI chose a gentle 1600 ms cycle; reduced-motion mode leaves the indication steady. The pulse stops when waiting ends or selection is cancelled.
+
+The original square logo image remains centered and fills the circular aperture; its corners are clipped, with a dark recessed rim drawn above it. Portal diameter, marker placement, topic reveal and all existing movement timings remain unchanged. Other projects keep their colored portal fallback. No source image editing, new logo generation or automatic image pan/zoom is introduced. Final pulse feel and device-level image readability remain open.

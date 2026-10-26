@@ -134,12 +134,15 @@ if (viewport && world && resetButton && status) {
   }
   function highlightSelection():void {
     const choice=pendingChoice??selectedChoice;
+    const waiting=!!moving&&(pendingChoice!==null||closeAfterShift!==null);
     for(const slot of slots){
       const source=sourceCell(slot.column,slot.row,history);
       const selected=!!choice&&source.column===choice.source.column
         &&source.row===choice.source.row
         &&demoProjects[slot.projectIndex??-1]?.id===choice.projectId;
       slot.element.classList.toggle('grid-tile--selected',selected);
+      slot.element.classList.toggle('grid-tile--waiting',selected&&waiting);
+      slot.element.querySelector('.tile-select')?.setAttribute('aria-busy',String(selected&&waiting));
     }
   }
   function portalFrom(target:EventTarget|null):HTMLButtonElement|null {
@@ -182,8 +185,23 @@ if (viewport && world && resetButton && status) {
       if(bubble)bubble.textContent=topics[point];
     }
     const portal=slot.element.querySelector<HTMLButtonElement>('.tile-portal');
-    if(portal)portal.setAttribute('aria-label',
-      project.name+': '+TOPIC_POINTS.map(point=>topics[point]).join(', '));
+    if(portal){
+      portal.setAttribute('aria-label',
+        project.name+': '+TOPIC_POINTS.map(point=>topics[point]).join(', '));
+      // Artwork follows semantic project identity, never a recycled tile index.
+      // Clear children on reassignment so the logo cannot leak to another project.
+      portal.replaceChildren();
+      const hasArtwork=project.id==='babuni-dev';
+      portal.classList.toggle('tile-portal--artwork',hasArtwork);
+      if(hasArtwork){
+        const image=document.createElement('img');
+        image.className='tile-portal-image';image.alt='';
+        image.loading='lazy';image.decoding='async';image.draggable=false;
+        image.width=1254;image.height=1254;
+        image.src='/portal-content/PortalContentBabuniDev.png';
+        portal.appendChild(image);
+      }
+    }
     const select=slot.element.querySelector<HTMLButtonElement>('.tile-select');
     if(select)select.setAttribute('aria-label','Explore '+project.name);
   }

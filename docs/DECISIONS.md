@@ -248,3 +248,9 @@ Accessibility refinement: keyboard-visible focus on a project control suppresses
 **AI correction:** Remove duration overrides, queue all selections through normal completion, scope bloom transitions to actual opening/closing, and check visibility in occupied visual coordinates. Centering, expansion/return, manual-pan tuning, dice rules and topic timing were not retuned.
 
 **Alternatives:** Babuni.dev explicitly permits fading occupying tiles out and content in if displacement cannot be made reliable. AI retained displacement after finding a concrete transition lifecycle defect; pure coordinate reassignment was already represented by visual occupancy/history, while CSS erroneously animated committed slot resets. No global suspension or diagonal detour is added. This preserves the currently liked spatial behavior without claiming that all future full-bloom states are tested.
+
+## 2026-10-26 — Acknowledge queued actions without changing motion
+
+**Status: Babuni.dev requested; implemented, final feel acceptance open.** After reporting smooth movement in both directions and natural waiting/closing, Babuni.dev requested a waiting pulse. AI implemented opacity-only gold outline feedback instead of scaling the tile or changing shift speed. A 1600 ms cadence is an AI implementation choice within the requested pulse; established movement/positioning remains intact. Reduced motion uses a steady indication.
+
+**Portal image decision:** Babuni.dev requested the supplied square logo behind a circular opening. AI retained the PNG unchanged, used centered cover with a round clip and overlaid rim, and tied it to semantic project identity. Alternatives were JPEG conversion (unnecessary quality loss for the supplied logo) or editing the original into a circle (would discard source corners). CSS clipping preserves the source and existing portal size. No animated image motion or repositioning was added.

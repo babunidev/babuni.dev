@@ -79,3 +79,9 @@ Babuni.dev explicitly allows topic snippets to overlap neighboring tiles. Existi
 **2026-10-26 presentation update:** Babuni.dev requested random sequential topic discovery. Existing labels remain unchanged; portal exploration now accumulates the three snippets in shuffled order rather than showing all simultaneously.
 
 **2026-10-26 calm-shift correction:** Summary, notes and topic text are unchanged. Pending selections retain their source/project identity while waiting for the current shift. Visibility reservations now check occupied visual positions, avoiding decisions based on pre-displacement positions. Fading content in place was authorized as an alternative but not implemented in this correction.
+
+## First supplied portal image — 2026-10-26
+
+**Babuni.dev supplied** `PortalContentImages/PortalContentBabuniDev.png` and identified it as the logo they made for BABUNI.DEV. The agent inspected and copied that file unchanged into `public/portal-content/PortalContentBabuniDev.png`; the agent did not generate or redraw it. Source and served copy have identical SHA-256 digests. It is assigned only to semantic project ID `babuni-dev`, independent of visual position or recycled DOM slot.
+
+The square artwork is displayed behind a round crop; the original is retained intact. PNG preserves the supplied logo’s pixels and supports transparency if later versions use it; a JPEG conversion was unnecessary for this first integration. Other projects’ portal art remains unprovided. No new provenance, rights, release-status or project-summary claims are inferred from the image.

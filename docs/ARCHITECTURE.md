@@ -196,3 +196,9 @@ CSS in `src/pages/index.astro` raises `.grid-tile--topic-open` to z-index 3 (blo
 `.is-bloom-opening` exclusively enables the opening transform transition; `.is-bloom-closing` enables the return. `.is-blooming` alone does not animate slot transform changes. This matters because shift completion synchronously reassigns source identities to resting DOM slots: CSS must not interpolate those slot resets. Pure geometry alone did not expose this CSS lifecycle defect.
 
 `syncProjects` maps cells through the active vacancies before checking visibility/retention, matching visual occupancy used by rendering and entrance staging. Visual-to-resting inversion and source history remain the coordinate model; no diagonal path correction or fade replacement is added.
+
+## Waiting presentation and portal artwork — 2026-10-26
+
+`highlightSelection` assigns `.grid-tile--waiting` only to the highlighted semantic source while an active shift blocks a pending selection or queued close. It also sets `aria-busy` on that tile’s select button. The pulse animates only opacity on `.tile-select::after`; the grid tile transform remains owned by the motion renderer. Existing reduced-motion CSS disables the animation. Completing or cancelling the queue clears the class and busy indication.
+
+`populate` creates an empty-alt, non-draggable, lazy/async image only for project ID `babuni-dev`; it clears portal children and the artwork class when reassigning a recycled slot. The image is served from `public/portal-content/PortalContentBabuniDev.png`. The button keeps its topic accessibility label and pointer handling. CSS clips image overflow at the 50% rounded aperture, uses centered `object-fit:cover`, and layers an inset rim above the image. The original PNG is 1254×1254, 1,868,243 bytes; no derivative or image optimization pipeline is introduced. Cache reuse avoids a separate source file per repeated tile; performance on slow devices remains unmeasured.

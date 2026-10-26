@@ -195,3 +195,9 @@ Each future entry should include the change, its user-visible or technical effec
 - Removed shortened shift completion when closing or switching a bloom. The fixed 4.4-second shift duration and easing remain in force; all tile selections show gold and wait for the active shift before centering/opening.
 - Limited bloom transform transitions to opening/closing phases, preventing displaced tiles from animating backward after vertical shift slot reassignment.
 - Project visibility reservations use occupied visual positions while bloom rows are displaced.
+
+## 2026-10-26 — Waiting pulse and first portal artwork
+
+### Added
+- A gentle gold outline pulse on the queued project while opening, switching or closing waits for a shift. Reduced motion keeps a steady outline; the selected control exposes its busy state.
+- Babuni.dev’s supplied `PortalContentBabuniDev.png` in the BABUNI.DEV portal, centered behind a circular mask and recessed rim. Artwork follows semantic identity through tile reuse.
