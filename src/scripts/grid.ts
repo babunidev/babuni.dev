@@ -1,7 +1,7 @@
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
-import { ProjectPlacement, spiralIndex, type CellCoordinate } from '../lib/project-placement';
+import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 
 interface ProjectPlaceholder { name: string; tint: string; }
 const projects: ProjectPlaceholder[] = [
@@ -26,6 +26,7 @@ if (viewport && world && resetButton && status) {
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
   let slots:TileSlot[]=[];
+  let visibleWindowSignature='';
   let activePointer:number|null=null, lastX=0, lastY=0;
   const heldArrows=new Set<string>();
   let manualPan=createManualPanState();
@@ -126,7 +127,10 @@ if (viewport && world && resetButton && status) {
       }
     }
     layer.style.transform='translate3d('+frame.originX+'px,'+frame.originY+'px,0)';
-    if(dx||dy||forceSync)syncProjects(frame,rect);
+    const bounds=visibleCellBounds(rect.width,rect.height,tileSize,frame.originX,frame.originY);
+    const signature=bounds.firstColumn+','+bounds.lastColumn+','+bounds.firstRow+','+bounds.lastRow;
+    if(dx||dy||forceSync||signature!==visibleWindowSignature)syncProjects(frame,rect);
+    visibleWindowSignature=signature;
     if(moving)paintMovement(moving.fraction);
   }
   function paintMovement(fraction:number):void {
