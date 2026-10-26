@@ -4,16 +4,16 @@ These rules apply to cloud and local coding agents working on this repository.
 
 ## Primary responsibility
 
-Develop the creator's interactive, exploratory portfolio without replacing stated decisions with conventional portfolio patterns. Read CONCEPT.md, docs/DESIGN.md, and relevant existing code before modifying features. An image mockup or conversation is not proof that a feature is implemented.
+Develop Babuni.dev's interactive, exploratory portfolio without replacing stated decisions with conventional portfolio patterns. Read CONCEPT.md, docs/DESIGN.md, and relevant existing code before modifying features. An image mockup or conversation is not proof that a feature is implemented.
 
 ## Human–AI authorship is mandatory
 
-The creator's instructions, questions, corrections, experiments, and accept/reject decisions are part of development history, not disposable chat context.
+Babuni.dev's instructions, questions, corrections, experiments, and accept/reject decisions are part of development history, not disposable chat context.
 
 For each substantial change, preserve this causal sequence:
-1. **Creator direction:** a faithful paraphrase of what the human requested and why; quote only when explicitly useful and appropriate for publication.
+1. **Babuni.dev direction:** a faithful paraphrase of what the human requested and why; quote only when explicitly useful and appropriate for publication.
 2. **Agent interpretation/proposal:** what the AI inferred, recommended, or offered; mark it as AI-originated.
-3. **Alternatives and decisions:** what was considered and which choice the creator confirmed. Do not convert unapproved suggestions into agreed requirements.
+3. **Alternatives and decisions:** what was considered and which choice Babuni.dev confirmed. Do not convert unapproved suggestions into agreed requirements.
 4. **Execution:** concrete files or behaviors changed, with code/commit/PR references.
 5. **Verification and outcome:** commands run, observations, failures, limitations, and what remains unresolved.
 
@@ -26,7 +26,7 @@ See docs/AI_COLLABORATION.md for entry templates, attribution, provenance, and p
 - docs/DECISIONS.md: decisions with status, alternatives, rationale, and ability to revisit.
 - docs/DESIGN.md, docs/ARCHITECTURE.md, docs/CONTENT.md: maintain consistency with changed behavior.
 - ROADMAP.md: keep status truthful and distinguish planned from built.
-- CONCEPT.md: revise only when the creator confirms a substantial change to vision.
+- CONCEPT.md: revise only when Babuni.dev confirms a substantial change to vision.
 
 Prefer documentation updates in the same commit as the implementation. If a discussion changed direction but produced no code, record it as a design entry, **not** an implementation in CHANGELOG.
 
@@ -36,12 +36,12 @@ Only write claims based on material actually available to the agent: this conver
 
 Do not automatically publish raw private chats, identity details, tokens, keys, VPS credentials, unrelated personal or financial information, or third-party material. Public-facing development history should paraphrase relevant project directions, preserve meaningful attribution, and omit irrelevant personal content. Public release of verbatim quotes or sensitive materials requires explicit approval.
 
-Use labels **Creator requested**, **AI proposed**, **Creator decided**, **Implemented**, **Tested**, and **Open** where appropriate. Never fabricate a test, outcome, conversation, date, feature, or acceptance.
+Use labels **Babuni.dev requested**, **AI proposed**, **Babuni.dev decided**, **Implemented**, **Tested**, and **Open** where appropriate. Never fabricate a test, outcome, conversation, date, feature, or acceptance.
 
 ## Development safeguards
 
 - Preserve existing Git history and uncommitted local changes.
-- Work directly on `main` unless the creator explicitly requests otherwise. Do not assume permission to deploy to production.
+- Work directly on `main` unless Babuni.dev explicitly requests otherwise. Do not assume permission to deploy to production.
 - Build and run appropriate tests where possible; report what was actually run.
 - Keep semantic, stable project identifiers independent from recycled visual tile instances.
 - Consider mobile, keyboard, reduced motion, performance, and readability.
@@ -50,7 +50,7 @@ Use labels **Creator requested**, **AI proposed**, **Creator decided**, **Implem
 
 ## Scope
 
-This file governs babuni.dev. The human–AI documentation method may be copied to the creator's other repositories **only when deliberately adopted there**; this file cannot automatically control other projects or ChatGPT conversations.
+This file governs babuni.dev. The human–AI documentation method may be copied to Babuni.dev's other repositories **only when deliberately adopted there**; this file cannot automatically control other projects or ChatGPT conversations.
 
 
 ---
@@ -80,7 +80,7 @@ Consult these guides before working on related tasks:
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
 
-## Creator's local testing handoff
+## Babuni.dev's local testing handoff
 
 When providing a GitHub update for local testing, include the full terminal sequence to pull the commit, stop any running Astro server, and start a new Astro server (with LAN access for phone testing):
 
@@ -90,4 +90,8 @@ npx astro dev stop
 npm run dev -- --host 0.0.0.0
 ```
 
-Give the creator this restart sequence with each future published change, even if the running server could hot-reload.
+Give Babuni.dev this restart sequence with each future published change, even if the running server could hot-reload.
+
+## Author attribution
+
+Identify the project's human author by the artist name **Babuni.dev**. Avoid using “creator” as a title or generic name for Babuni.dev. Attribute AI implementation and documentation work distinctly; preserve historical evidence and third-party credits.
