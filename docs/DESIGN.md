@@ -94,3 +94,7 @@ The probabilities, pace, simultaneous movements, and direction rules still requi
 **New shift constraint:** Per autonomous round, select at most one successful row to shift left and one to shift right. Earlier successful dice/initiative rolls get priority within each direction. The assistant extends the same constraint to columns (one up, one down maximum) to avoid equivalent vertical blocks; column-specific approval is pending creator review. Shifts remain one full cell over the existing slow easing interval and pause during active pointer or keyboard navigation.
 
 **Future visual evidence:** The creator intends to add images and videos to a folder named `Visual Documentation Material` for inclusion in curated development records. No such media have been received or integrated as part of this change.
+
+## Manual navigation speed doubled — 2026-10-26
+
+The creator asked to make movement twice as fast as the previous mouse/touch and arrow-key controls. Current prototype configuration in `src/lib/grid-controls.ts`: mouse/touch maximum **880 CSS px/s** (previously 440), acceleration **3600 CSS px/s²** (previously 1800); keyboard maximum **260 CSS px/s** (previously 130), acceleration **1040 CSS px/s²** (previously 520), deceleration **1400 CSS px/s²** (previously 700). The **180 CSS px** pointer-lag limit and autonomous row/column shift timings remain unchanged. Multiplying both speed and acceleration by two retains approximately the same ramp-up time. Final feel requires hands-on evaluation.
