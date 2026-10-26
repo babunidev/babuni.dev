@@ -1,5 +1,7 @@
 # babuni.dev
 
+**Author:** Babuni.dev
+
 **An interactive creative portfolio and digital workshop.**
 
 Projects appear as engraved stone tiles with colored portal windows. An endlessly recyclable grid slowly shifts around the visitor. Projects unfold from small previews into fully explorable galleries, documents, videos, and development histories.
