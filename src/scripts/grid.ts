@@ -26,6 +26,7 @@ if (viewport && world && resetButton && status) {
   let activePointer:number|null=null, lastX=0, lastY=0;
   let pointerDownX=0, pointerDownY=0, pointerDragged=false;
   let pinnedBeforeDown:HTMLDivElement|null=null;
+  let pointerDownPortal:HTMLButtonElement|null=null;
   let activeTopic:HTMLDivElement|null=null;
   let pinnedTopic:HTMLDivElement|null=null;
   const heldArrows=new Set<string>();
@@ -360,6 +361,7 @@ if (viewport && world && resetButton && status) {
     if(activePointer!==null||!event.isPrimary||(event.pointerType==='mouse'&&event.button!==0))return;
     cancelIntro();
     pinnedBeforeDown=pinnedTopic;
+    pointerDownPortal=portalFrom(event.target);
     pointerDownX=event.clientX;pointerDownY=event.clientY;pointerDragged=false;
     activePointer=event.pointerId; lastX=event.clientX; lastY=event.clientY;
     surface.setPointerCapture(event.pointerId);
@@ -389,7 +391,7 @@ if (viewport && world && resetButton && status) {
       // actual portal location. Everywhere else simply dismisses the bubble.
       const portal=portalFrom(document.elementFromPoint(event.clientX,event.clientY));
       const tile=portal?.closest<HTMLDivElement>('.grid-tile');
-      if(tile&&surface.contains(tile)){
+      if(tile&&pointerDownPortal===portal&&surface.contains(tile)){
         if(pinnedBeforeDown===tile){
           hideTopic();
           portal?.blur();
@@ -400,6 +402,7 @@ if (viewport && world && resetButton && status) {
       }else hideTopic();
     }
     pinnedBeforeDown=null;
+    pointerDownPortal=null;
     if(event.type==='pointercancel')hideTopic();
     // Discard remaining cursor lag on release: no delayed ghost-chase.
     manualPan.pending={x:0,y:0};
