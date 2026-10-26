@@ -6,7 +6,9 @@ import { demoProjects } from '../lib/demo-projects';
 import { topicForProject } from '../lib/project-topics';
 import { introSequence, INTRO_SPAWN_STAGGER_MS } from '../lib/grid-intro';
 import { centeredPan, interpolateCenter, bloomModuleCell, shiftsForBloom,
-  CENTER_DURATION_MS, BLOOM_SHIFT_DURATION_MS, ambientWait, AMBIENT_VISIBLE_MS
+  CENTER_DURATION_MS, BLOOM_SHIFT_DURATION_MS, AMBIENT_INTERVAL_MS,
+  AMBIENT_VISIBLE_MS, AMBIENT_RETRY_MS, ambientInsets,
+  ambientTileIsEligible, ambientPollDelay
 } from '../lib/grid-focus';
 
 interface TileSlot { element: HTMLDivElement; column: number; row: number; projectIndex?: number; }
@@ -39,6 +41,8 @@ if (viewport && world && resetButton && status) {
   let teaserTile:HTMLDivElement|null=null;
   let teaserTimer:ReturnType<typeof setTimeout>|null=null;
   let ambientTimer:ReturnType<typeof setTimeout>|null=null;
+  let nextAmbientAt=performance.now()+AMBIENT_INTERVAL_MS;
+  let lastAmbientProjectId:string|null=null;
   let pointerDownSelect:HTMLButtonElement|null=null;
   let pinnedBeforeDown:HTMLDivElement|null=null;
   let pointerDownPortal:HTMLButtonElement|null=null;
@@ -504,35 +508,57 @@ if (viewport && world && resetButton && status) {
     centerFrame=requestAnimationFrame(frameCenter);
   }
 
-  /** Occasional, quiet ambient flavor. Never interrupt a visitor's interaction
-   * and never create a second simultaneous topic bubble.
+  /** Tiny ambient hints on a steady ~5-second clock. A blocked attempt
+   * retries shortly rather than restarting the whole interval: a moving row
+   * must not make the teasers disappear for 10+ seconds.
    */
-  function scheduleAmbient():void {
+  function scheduleAmbient(delay:number):void {
     if(ambientTimer!==null)clearTimeout(ambientTimer);
-    ambientTimer=setTimeout(()=>{
-      ambientTimer=null;
-      if(!document.hidden&&!prefersReduced.matches&&!selectedChoice
-         &&!pendingChoice&&!moving&&activePointer===null&&heldArrows.size===0
-         &&!panIsMoving(manualPan)&&!activeTopic&&introPending===0
-         &&document.activeElement!==surface
-         &&!slots.some(slot=>slot.element.contains(document.activeElement)
-           &&document.activeElement!==slot.element)){
-        const candidates=slots.filter(slot=>
-          slot.projectIndex!==undefined
-          &&slot.element.getAttribute('aria-hidden')==='false'
-          &&slot.element.querySelector('.tile-portal')!==null
-          &&slot.element!==teaserTile);
-        if(candidates.length){
-          const tile=candidates[Math.floor(Math.random()*candidates.length)].element;
-          showTopic(tile);teaserTile=tile;
-          teaserTimer=setTimeout(()=>{
-            teaserTimer=null;
-            if(activeTopic===tile&&!pinnedTopic)hideTopic();
-          },AMBIENT_VISIBLE_MS);
-        }
-      }
-      scheduleAmbient();
-    },ambientWait(Math.random()));
+    ambientTimer=setTimeout(tryAmbient,Math.max(0,delay));
+  }
+  function tryAmbient():void {
+    ambientTimer=null;
+    const focused=document.activeElement;
+    const focusedProjectControl=focused instanceof Element
+      &&focused.matches('.tile-select:focus-visible, .tile-portal:focus-visible, .bloom-close:focus-visible');
+    // Only visible keyboard focus blocks hints. Pointer/touch focus can
+    // persist after a tap even when the visitor is just watching.
+    // Focusing the viewport itself is also safe.
+    const blocked=document.hidden||prefersReduced.matches||selectedChoice!==null
+      ||pendingChoice!==null||centering!==null||bloomModule!==null
+      ||moving!==null||activePointer!==null||heldArrows.size>0
+      ||panIsMoving(manualPan)||activeTopic!==null||introPending>0
+      ||focusedProjectControl;
+    const wait=ambientPollDelay(performance.now(),nextAmbientAt,blocked);
+    if(wait>0){scheduleAmbient(wait);return;}
+
+    const viewportRect=surface.getBoundingClientRect();
+    const headerHeight=document.querySelector('.site-header')?.getBoundingClientRect().height??52;
+    const footerHeight=document.querySelector('.help-panel')?.getBoundingClientRect().height??48;
+    const insets=ambientInsets(tileSize,headerHeight,footerHeight);
+    // getBoundingClientRect reflects the actual viewport and CSS transforms,
+    // unlike resting row/column indices or a simple aria-hidden check.
+    const eligible=slots.filter(slot=>
+      slot.projectIndex!==undefined
+      &&slot.element.getAttribute('aria-hidden')==='false'
+      &&ambientTileIsEligible(slot.element.getBoundingClientRect(),viewportRect,insets));
+    if(!eligible.length){
+      scheduleAmbient(AMBIENT_RETRY_MS);
+      return;
+    }
+    const fresh=eligible.filter(slot=>slot.element.dataset.projectId!==lastAmbientProjectId);
+    const candidates=fresh.length?fresh:eligible;
+    const chosen=candidates[Math.floor(Math.random()*candidates.length)];
+    const tile=chosen.element;
+    showTopic(tile);
+    teaserTile=tile;
+    lastAmbientProjectId=tile.dataset.projectId??null;
+    teaserTimer=setTimeout(()=>{
+      teaserTimer=null;
+      if(activeTopic===tile&&!pinnedTopic)hideTopic();
+    },AMBIENT_VISIBLE_MS);
+    nextAmbientAt=performance.now()+AMBIENT_INTERVAL_MS;
+    scheduleAmbient(AMBIENT_INTERVAL_MS);
   }
 
   function resetManualInput():void {
@@ -724,7 +750,7 @@ if (viewport && world && resetButton && status) {
     else nextRound(firstWait);
   });
   nextRound(firstWait);
-  scheduleAmbient();
+  scheduleAmbient(AMBIENT_INTERVAL_MS);
   new ResizeObserver(rebuildPool).observe(surface);
   rebuildPool();
 }

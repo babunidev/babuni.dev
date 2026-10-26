@@ -160,3 +160,5 @@ This is **not** a complete four-point system, a small bloom, a full project prev
 **Ambient hints:** Randomly every 6.5–10.5 seconds while idle, one existing top marker may glow and its short topic appear for 1.7 seconds. Never compete with explicit interaction, shifting, selection, initial entrance or reduced-motion use. No automatic long descriptions, marketing text, or multiple simultaneous bubbles.
 
 Full four-point information design, multi-module blooms, selection switching refinements, and collision-safe grid motion during bloom are still future work. Finished portal artwork is not a prerequisite.
+
+Keyboard-visible project focus blocks automated bubbles, but stale pointer/touch focus on a button does not suppress passive hints forever. This is distinct from an actively open project topic, which continues to take precedence.

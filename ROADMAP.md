@@ -89,3 +89,5 @@ Update CHANGELOG for implemented changes; DEVLOG for context and experiments; DE
 **Milestone 2 ambient topic prototype (2026-10-26):** Babuni.dev requested occasional gentle, unprompted glowing topic hints alongside on-demand portal bubbles. One-at-a-time randomized idle teasers are implemented; pacing and browser/device behavior await review.
 
 **Milestone 3 initial small-bloom prototype (2026-10-26):** Babuni.dev directed: click any project tile → move the whole grid until it is centered → only then displace neighbors to clear a real adjacent square. The prototype uses a pinned logical source, 720 ms camera movement, a one-cell shift of the entire right-hand row segment, and one provisional summary module. Automatic shifting pauses while the bloom is open. Geometry tests authored; visual/keyboard/touch checks and further design iterations pending. This is not completion of Milestone 3.
+
+The focus gate now distinguishes keyboard-visible focus from stale mouse/touch focus to avoid unnecessary indefinite suppression.

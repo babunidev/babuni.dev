@@ -289,3 +289,5 @@ Write in readable narrative prose, with evidence links where available. Do not i
 **Ambient flavor.** At randomized 6.5–10.5 s intervals, an idle grid can reveal one existing tiny topic bubble for 1.7 s. This is one at a time and does not interrupt active hover/focus/tap, dragging, shifting, selected projects, the entrance sequence, hidden tabs or reduced-motion use. The intervals and duration are assistant experiments, not fixed creative canon.
 
 **Verification.** Pure helper tests for exact recentering, non-overlapping row displacement and hint cadence have been authored, along with a selected-identity regression test. Browser behavior and the full suite still need running. No new external dependencies or finished stone/portal assets were introduced.
+
+The implementation additionally limits focus suppression to keyboard-visible focus rather than stale mouse/touch focus: clicking a portal can leave the browser's activeElement on its button even after the visitor stops interacting. This distinction is relevant to the creator's observation that tapping away and back seemed to change whether hints appeared.

@@ -128,3 +128,5 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 ## Conventions
 
 Each future entry should include the change, its user-visible or technical effect, and optionally a PR/commit reference. Avoid duplicating brainstorm narratives from DEVLOG. Date releases when actual releases happen; do not invent version numbers.
+
+- Distinguish keyboard-visible project focus from stale pointer/touch button focus, preventing another indefinite suppression path.
