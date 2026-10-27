@@ -166,3 +166,8 @@ AnskarGrotzschnapf.png, AzerothMoments.png, LocalAAIWorkstation.png, LocalPrompt
 ## 2026-10-27 — Framed detail reader
 
 All module types retain their full detail content in the new framed square reader. Long text, galleries and video collections scroll inside the panel. No summaries, source claims or media changed. Explicit image fullscreen remains a separate opt-in action.
+
+
+## 2026-10-27 — Hidden scrollbars
+
+Long text and media collections retain native scrolling with hidden scrollbars; no content is removed or truncated by this presentation change.

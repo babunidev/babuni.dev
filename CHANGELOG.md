@@ -301,3 +301,9 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Changed
 - Module detail now opens as a centered square panel with a visible grid surround, gold frame, internal scrolling and a gentle 420 ms fade/grow entrance.
+
+
+## 2026-10-27 — Hidden scrollbars
+
+### Changed
+- Hide scrollbars across the site while preserving native content scrolling.

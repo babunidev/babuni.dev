@@ -197,3 +197,8 @@ Built: five additional supplied portal images wired to their project tiles. Cont
 ## 2026-10-27 — Framed detail reader
 
 Built: user-requested framed square detail panel with visible grid surround, internal scrolling and fade/grow entrance. This replaces the opaque full-screen reader presentation. Babuni.dev visual/phone acceptance remains pending; content review and CI remain separate next work.
+
+
+## 2026-10-27 — Hidden scrollbars
+
+Built: user-requested hidden scrollbars across preview modules and detail reader; native scrolling retained. Physical-device review remains separate.

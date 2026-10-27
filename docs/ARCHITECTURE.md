@@ -287,3 +287,8 @@ Added five static PNG files under `public/portal-content` and explicit URLs on e
 ## 2026-10-27 — Framed detail reader
 
 Detail retains the existing native HTML dialog lifecycle, focus trap, Escape return and media cleanup in module-detail.ts. Global styles in index.astro now bound the panel as a centered square and animate its entrance/backdrop. No asynchronous close state or new interaction timers were added. Overflow remains inside the dialog; reduced motion uses the existing global animation override.
+
+
+## 2026-10-27 — Hidden scrollbars
+
+Global CSS uses scrollbar-width:none and a hidden ::-webkit-scrollbar fallback. Existing overflow:auto containers remain intact; detail no longer reserves scrollbar-gutter space.
