@@ -1,0 +1,255 @@
+{
+  "babuni-dev": {
+    "status": "connected",
+    "repository": "babunidev/babuni.dev",
+    "branch": "main"
+  },
+  "button-game": {
+    "status": "connected",
+    "repository": "babunidev/ButtonGame",
+    "branch": "main"
+  },
+  "socialforever": {
+    "status": "connected",
+    "repository": "babunidev/SocialForever",
+    "branch": "main"
+  },
+  "roarforever": {
+    "status": "connected",
+    "repository": "babunidev/RoarForever",
+    "branch": "main"
+  },
+  "flourishforever": {
+    "status": "connected",
+    "repository": "babunidev/FlourishForever",
+    "branch": "main"
+  },
+  "azeroth-moments": {
+    "status": "connected",
+    "repository": "babunidev/AzerothMoments",
+    "branch": "main",
+    "note": "Public documentation shell; active implementation is separate and excluded by the public-only rule."
+  },
+  "anskar-grotzschnapf": {
+    "status": "connected",
+    "repository": "babunidev/AsnkarGrotzschnapf",
+    "branch": "master"
+  },
+  "local-prompt-lab": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "local-ai-workstation": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "resistforever": {
+    "status": "connected",
+    "repository": "babunidev/ResistForever",
+    "branch": "main"
+  },
+  "favorcraft": {
+    "status": "connected",
+    "repository": "babunidev/favorcraft",
+    "branch": "main"
+  },
+  "redridge-recipe-planner": {
+    "status": "connected",
+    "repository": "babunidev/Redridge-Recipe-Planner",
+    "branch": "main"
+  },
+  "wow-forever-talent-design-atlas": {
+    "status": "connected",
+    "repository": "babunidev/wowforeverstuff",
+    "branch": "main"
+  },
+  "ethera-the-stonewrought": {
+    "status": "private-review",
+    "note": "Matching private repository excluded from public content."
+  },
+  "enchantvisuals": {
+    "status": "connected",
+    "repository": "babunidev/EnchantVisuals",
+    "branch": "main"
+  },
+  "totemtimers": {
+    "status": "connected",
+    "repository": "babunidev/TotemTimers",
+    "branch": "main"
+  },
+  "groupbufftoggle": {
+    "status": "connected",
+    "repository": "babunidev/GroupBuffToggle",
+    "branch": "main"
+  },
+  "lootfeed": {
+    "status": "connected",
+    "repository": "babunidev/LootFeed",
+    "branch": "main"
+  },
+  "gathermap": {
+    "status": "connected",
+    "repository": "babunidev/GatherMap",
+    "branch": "main"
+  },
+  "battlereport": {
+    "status": "connected",
+    "repository": "babunidev/BattleReport",
+    "branch": "main"
+  },
+  "roarguild": {
+    "status": "connected",
+    "repository": "babunidev/RoarGuild",
+    "branch": "main"
+  },
+  "workthatgodbod": {
+    "status": "connected",
+    "repository": "babunidev/WorkThatGodBod",
+    "branch": "main"
+  },
+  "the-great-iceflow-relay": {
+    "status": "connected",
+    "repository": "babunidev/TheGreatIceflowRelay",
+    "branch": "main"
+  },
+  "roarrunlimited": {
+    "status": "connected",
+    "repository": "babunidev/ROARRunlimited",
+    "branch": "main"
+  },
+  "roarr": {
+    "status": "connected",
+    "repository": "babunidev/roarr",
+    "branch": "main"
+  },
+  "roarsounds": {
+    "status": "connected",
+    "repository": "babunidev/ROARSounds",
+    "branch": "main"
+  },
+  "roaremotetrigger": {
+    "status": "connected",
+    "repository": "babunidev/ROARemoteTrigger",
+    "branch": "main"
+  },
+  "roar": {
+    "status": "connected",
+    "repository": "babunidev/roar",
+    "branch": "main"
+  },
+  "meleestartattack": {
+    "status": "connected",
+    "repository": "babunidev/MeleeStartAttack",
+    "branch": "main"
+  },
+  "buxbrewresist": {
+    "status": "connected",
+    "repository": "babunidev/BuxbrewResist",
+    "branch": "main"
+  },
+  "buxbrewding": {
+    "status": "connected",
+    "repository": "babunidev/BuxbrewDing",
+    "branch": "main"
+  },
+  "buxbrewcharge": {
+    "status": "connected",
+    "repository": "babunidev/BuxbrewCharge",
+    "branch": "main"
+  },
+  "buxbrew": {
+    "status": "connected",
+    "repository": "babunidev/Buxbrew",
+    "branch": "main"
+  },
+  "amazin": {
+    "status": "connected",
+    "repository": "babunidev/amazin",
+    "branch": "main"
+  },
+  "warriorstartattack": {
+    "status": "connected",
+    "repository": "babunidev/WarriorStartAttack",
+    "branch": "main"
+  },
+  "guildchatai": {
+    "status": "connected",
+    "repository": "babunidev/GuildChatAI",
+    "branch": "main"
+  },
+  "practical-templates-creator": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "human-ai-development-journal": {
+    "status": "connected",
+    "repository": "babunidev/babuni.dev",
+    "branch": "main",
+    "paths": [
+      "docs/DEVLOG.md",
+      "docs/AI_COLLABORATION.md",
+      "docs/DECISIONS.md"
+    ],
+    "note": "Shared methodology source, not a separate repository."
+  },
+  "roar-guild-and-community": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "the-amberbrew-family": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "buxbrew-character-story": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "fantasy-rpg-assets": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "fantasy-architecture": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "warehouse-performance-model": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "dual-pc-streaming-setup": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "morkahja-world-and-peoples": {
+    "status": "needs-confirmation",
+    "note": "Related project family is known, but an independent public repository is not confirmed."
+  },
+  "grimnir": {
+    "status": "needs-confirmation",
+    "note": "Related project family is known, but an independent public repository is not confirmed."
+  },
+  "morkahja-rpg": {
+    "status": "private-review",
+    "note": "Matching private repository excluded from public content."
+  },
+  "morkahja-admin-console": {
+    "status": "needs-confirmation",
+    "note": "Related project family is known, but an independent public repository is not confirmed."
+  },
+  "morkahjaworld": {
+    "status": "private-review",
+    "note": "Matching private repository excluded from public content."
+  },
+  "arcanitebrothers": {
+    "status": "private-review",
+    "note": "Matching private repository excluded from public content."
+  },
+  "mech-arena": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  },
+  "analubia": {
+    "status": "needs-repository",
+    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+  }
+}

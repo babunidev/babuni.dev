@@ -14,7 +14,9 @@
     "astro": "astro",
     "content:check": "node --experimental-strip-types scripts/content-tools.mjs",
     "content:template": "node --experimental-strip-types scripts/content-tools.mjs template",
-    "prebuild": "npm run content:check"
+    "prebuild": "npm run content:check",
+    "content:sync": "node --experimental-strip-types scripts/sync-repositories.mjs",
+    "content:report": "node --experimental-strip-types scripts/repository-report.mjs"
   },
   "dependencies": {
     "astro": "^7.4.2"

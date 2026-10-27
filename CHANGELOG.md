@@ -307,3 +307,13 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Changed
 - Hide scrollbars across the site while preserving native content scrolling.
+
+
+## 2026-10-27 — Repository-backed project documentation
+
+### Added
+- Explicit repository/status mapping for all 53 project tiles, a standard ten-document extraction contract, revision-pinned public source snapshots, repository refresh/report commands and source validation.
+- Connected 34 tiles to 33 public repositories, including the shared Human–AI Development Journal source. Imported 303 documents from 32 remote repositories; BABUNI.DEV documents use local source text.
+- Public repository-coverage report listing missing sources, private-review tiles and unresolved project families.
+### Changed
+- Matching text modules now use source documentation directly; curated previews and existing media/resources are retained. Empty or missing upstream documents do not create filler modules.

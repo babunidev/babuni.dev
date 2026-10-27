@@ -340,3 +340,10 @@ The initial five editorial families reuse four renderer types: journal/history i
 ## 2026-10-27 — Hidden scrollbars
 
 **Implemented, user-directed:** Hide scrollbar chrome throughout the site rather than disabling overflow. Keep wheel, touch and keyboard scrolling available for long content. Remove the detail reader’s scrollbar gutter so no empty scrollbar strip remains.
+
+
+## 2026-10-27 — Repository-backed project documentation
+
+**Status: Implemented. Human direction:** Reuse the shared documentation structure across all available projects; public repositories only. **AI implementation choices:** Explicit stable-ID mapping, ten allowlisted documentation paths, anonymous public-visibility verification at refresh, commit-pinned raw downloads, atomic snapshot replacement and offline build validation. Missing/empty paths omit modules. One refresh failure preserves the previous complete snapshot. Existing matching text bodies are replaced by upstream text while media/resources and curated previews survive.
+
+**Alternatives:** Fuzzy name guessing can misassign families; full clones/recursive Markdown imports can pull unrelated material; browser-time GitHub fetches create availability/rate-limit dependencies. A content-collection/CMS migration is unnecessary to preserve the current runtime contract. Source updates are published through explicit refresh/review rather than webhooks at this stage. Revisit delivery splitting because bundling the entire imported corpus increases first-load size. Private content and uncertain family associations remain excluded until separately resolved.

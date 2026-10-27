@@ -55,3 +55,12 @@ Before publishing, review the actual module at small, big and detail depth: the 
 ## 2026-10-27 — Framed detail reader
 
 Detail presentation update: Read more from big bloom opens the complete module inside a centered, framed square over the grid, with internal scrolling. It no longer fills the viewport. Back/Escape still returns to the retained big-bloom camera; image fullscreen stays available.
+
+
+## 2026-10-27 — Repository-backed project documentation
+
+This supersedes the earlier two-project/manual text-only workflow: `src/content/project-repositories.json` records each project’s source and status. See REPOSITORY_CONNECTIONS.md for coverage and unresolved projects. To connect another public repository, set status connected, repository owner/name and its verified branch. Private/unresolved entries cannot specify a publishable source. Optional paths select a subset of the ten standard documents.
+
+Run `npm run content:sync` to fetch source documentation, then `npm run content:report`, `npm run content:check`, tests and build. Sync uses anonymous public reads, saves exact commit IDs and preserves the old snapshot on any refresh error. Missing 404 files and empty bodies are omitted; authorization/rate-limit/network failures are errors. Ordinary builds do not fetch GitHub; commit a reviewed snapshot to update what visitors read. BABUNI.DEV uses local raw documents immediately.
+
+Standard text modules are generated automatically from source documents. The manual project-modules.json remains for curated previews, media, resources and project-specific extras. Matching text bodies come from the source; source imports can populate formerly empty text definitions. Do not edit the generated remote snapshot by hand. Excerpts are literal source text rather than independent AI summaries. New local registered documents use the shared document-path contract in repository-content.ts plus raw imports in project-content.ts. No media is automatically discovered or downloaded from README links.

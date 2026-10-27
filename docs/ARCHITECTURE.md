@@ -1,13 +1,13 @@
-# Technical Architecture — Proposed
+# Technical Architecture
 
-**Status:** Astro 7 + TypeScript foundation committed to GitHub `main` (`5902121`); interactive grid architecture remains proposed. Babuni.dev previously reported Astro 7.4.2 running locally.
+**Current status (2026-10-27):** Astro 7 with a TypeScript living grid, physical bloom reservations, preview/detail navigation and repository-backed documentation is implemented. Device, performance and release acceptance remain open. Historical proposals and implementation entries below preserve the development record.
 
 ## Responsibilities
 
 - **Astro:** routing, layout shell, static content generation, HTML metadata, deployable build.
 - **TypeScript interactive engine:** grid coordinates, viewport sizing, drag, shifting, wrap/recycling, selection, cell reservation, and preload scheduling.
-- **Svelte (candidate):** UI rendering for the grid island and blooms; select only after a small prototype.
-- **Structured Markdown/MDX content:** per-project narratives, modules, metadata and dev logs.
+- **UI rendering:** Native DOM controllers render the grid and blooms; Svelte was an early candidate and is not used.
+- **Content:** JSON module/repository definitions and raw Markdown documents. MDX is not implemented.
 - **GitHub:** source of truth on `main`; automated CI and deployments are future work.
 - **VPS:** eventual static deployment with HTTPS; deployment not configured.
 
@@ -292,3 +292,10 @@ Detail retains the existing native HTML dialog lifecycle, focus trap, Escape ret
 ## 2026-10-27 — Hidden scrollbars
 
 Global CSS uses scrollbar-width:none and a hidden ::-webkit-scrollbar fallback. Existing overflow:auto containers remain intact; detail no longer reserves scrollbar-gutter space.
+
+
+## 2026-10-27 — Repository-backed project documentation
+
+`src/content/project-repositories.json` maps every stable tile ID to a public repository/branch or explicit unresolved status. `src/lib/repository-content.ts` defines ten supported document paths and pure composition/excerpt logic. `scripts/sync-repositories.mjs` checks anonymous public metadata, resolves a branch once with git ls-remote, downloads only allowlisted files at that commit, tolerates only 404 for absent paths, bounds response size/time and writes `repository-documents.json` only after a successful complete refresh. No GitHub token reaches browser or refresh requests.
+
+`project-content.ts` resolves BABUNI.DEV’s local raw imports and the versioned remote snapshot through the same module contract; curated assets/resources survive. `content:check` validates mappings, snapshot identities and the resulting modules before build. `content:report` regenerates REPOSITORY_CONNECTIONS.md. Ordinary builds remain offline and use committed content; fetching latest source requires `content:sync`. All imported bodies are currently bundled with the interactive client; the build emits a large-chunk warning. Per-project lazy loading remains open rather than hiding the cost or changing interaction timing in this task.

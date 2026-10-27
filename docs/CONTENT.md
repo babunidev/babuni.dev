@@ -171,3 +171,12 @@ All module types retain their full detail content in the new framed square reade
 ## 2026-10-27 — Hidden scrollbars
 
 Long text and media collections retain native scrolling with hidden scrollbars; no content is removed or truncated by this presentation change.
+
+
+## 2026-10-27 — Repository-backed project documentation
+
+The repository-backed source contract is now implemented in project-repositories.json and REPOSITORY_CONNECTIONS.md. Standard files map to Overview, Concept, Development journal, Changelog, Architecture, Design, Decisions, Human–AI collaboration, Roadmap and Content. Source bodies are preserved, not rewritten by AI. Existing curated teasers may still introduce them; other teasers are literal source excerpts. Source links identify an exact fetched commit; local BABUNI.DEV sources link to main.
+
+Coverage: 34 connected tiles via 33 public repositories, twelve with no match found, four private-review and three unresolved family mappings. One additional public repository, Rocketgame42, has no existing tile. Missing documents are omitted rather than filled. Button Game’s old five-populated/four-empty description is historical: its actual source documentation now populates additional text modules; images/video remain empty until supplied. BABUNI.DEV now has 13 populated modules, including existing gallery/video/resources.
+
+Babuni.dev explicitly chose public-only extraction. Private documents were not fetched; their URLs and review notes are handed off outside the public checkout. No source repo is changed. Public source availability is checked at refresh time, not on every visitor request; source factual claims, rights and advanced Markdown fidelity remain editorial review items.

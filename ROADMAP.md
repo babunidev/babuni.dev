@@ -59,9 +59,10 @@ Functional prototype built; prolonged/device acceptance remains separate from im
 Functional prototype built; local video remains until YouTube links are supplied. Rich Markdown fidelity and final image-gallery composition are not declared complete.
 
 ## Milestone 5 — Content and automation
-- [ ] Define and validate project schema and MDX blocks.
-- [ ] Add 2–3 real projects, including babuni.dev itself.
-- [ ] Surface development notes as first-class modules.
+- [x] Validate the implemented JSON module schema and repository-source mappings.
+- [ ] Add MDX blocks if future authoring requirements justify them.
+- [x] Populate source-backed project modules, including babuni.dev (34 tiles connected to 33 public repositories; release/editorial acceptance is separate).
+- [x] Surface repository development notes as first-class modules.
 - [ ] Validate AI-created entries and require accurate attribution.
 - [ ] Add CI build checks and preview deployments.
 - [ ] Set controlled publishing authorization.
@@ -202,3 +203,10 @@ Built: user-requested framed square detail panel with visible grid surround, int
 ## 2026-10-27 — Hidden scrollbars
 
 Built: user-requested hidden scrollbars across preview modules and detail reader; native scrolling retained. Physical-device review remains separate.
+
+
+## 2026-10-27 — Repository-backed project documentation
+
+Built: repository-backed documentation for all confirmed public matches, an explicit status for every current tile, source refresh/validation commands, and a coverage report. Public-only extraction was confirmed by Babuni.dev. Current coverage is 34 connected tiles via 33 public repositories; twelve unmatched, four private-review and three family clarifications remain. The shared journal reuses BABUNI.DEV; Rocketgame42 is reported without adding a new tile.
+
+Milestone 5 now has real multi-project source content and validation; MDX blocks, CI/preview automation, controlled deployment, source editorial review and per-project content delivery remain open. Refresh is explicit and builds use the committed snapshot; automated upstream-triggered refresh is not implemented.

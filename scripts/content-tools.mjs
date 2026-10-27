@@ -3,8 +3,10 @@ import {resolve, sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {demoProjects} from '../src/lib/demo-projects.ts';
 import {moduleHasContent, safeEmbedUrl} from '../src/lib/project-modules.ts';
+import {REPOSITORY_DOCUMENTS,repositoryModules,composeProjectModules} from '../src/lib/repository-content.ts';
+import {validateConnections,validateSnapshots} from './sync-repositories.mjs';
 
-export const documentPaths = ['CONCEPT.md', 'docs/DEVLOG.md', 'CHANGELOG.md', 'docs/ARCHITECTURE.md', 'docs/AI_COLLABORATION.md'];
+export const documentPaths = REPOSITORY_DOCUMENTS.map(document=>document.path);
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const string = value => typeof value === 'string' && !!value.trim();
 const http = value => {try {const u=new URL(value); return ['http:','https:'].includes(u.protocol) && !u.username && !u.password;} catch {return false;}};
@@ -82,7 +84,21 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
     if(process.argv[2]==='template')console.log(JSON.stringify(moduleTemplate(process.argv[3],process.argv[4]),null,2));
     else {
       const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url),'utf8'));
-      const {errors,counts}=validateContent(catalog);
+      const connections=JSON.parse(readFileSync(new URL('../src/content/project-repositories.json',import.meta.url),'utf8'));
+      const snapshots=JSON.parse(readFileSync(new URL('../src/content/repository-documents.json',import.meta.url),'utf8'));
+      const local=Object.fromEntries(documentPaths.map(path=>[path,readFileSync(new URL('../'+path,import.meta.url),'utf8')]));
+      const repositoryErrors=[...validateConnections(connections,demoProjects.map(p=>p.id)),...validateSnapshots(connections,snapshots)];
+      if(repositoryErrors.length)throw new Error(repositoryErrors.join('\n'));
+      const original=validateContent(catalog);
+      if(original.errors.length)throw new Error(original.errors.join('\n'));
+      const resolved=Object.fromEntries(demoProjects.map(project=>{
+        const connection=connections[project.id],snapshot=snapshots[connection?.repository];
+        const sourced=repositoryModules(connection,snapshot,local);
+        const curated=(catalog[project.id]??[]).map(({document,...entry})=>({...entry,body:document?local[document]:entry.body}));
+        return [project.id,composeProjectModules(curated,sourced,connection?.status==='connected'?connection.repository:undefined)];
+      }));
+      const rendered=validateContent(resolved);
+      const errors=[...repositoryErrors,...original.errors,...rendered.errors],counts=rendered.counts;
       for(const count of counts)console.log(`${count.project}: ${count.populated} populated, ${count.empty} empty`);
       if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}else console.log('Content validation passed. Local files and definitions checked; external destinations and factual accuracy require editorial review.');
     }

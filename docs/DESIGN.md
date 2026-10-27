@@ -311,3 +311,8 @@ Module detail now occupies a centered square with a thin warm frame, inset edge 
 ## 2026-10-27 — Hidden scrollbars
 
 All site scrollbars are visually hidden at Babuni.dev’s request. Long modules and reader content remain scrollable through existing wheel, touch and keyboard behavior.
+
+
+## 2026-10-27 — Repository-backed project documentation
+
+Repository connections change module content, not grid placement, motion, timing, navigation or reader styling. Matching documentation fills text modules directly; absent/empty documents do not create cards. Existing source teasers remain where curated; new previews quote a deterministic leading paragraph. Small bloom still shows at most eight random populated modules; big bloom exposes the larger complete set with its existing downward extension. Full detail shows the source text in the framed reader, and View source opens the fetched GitHub revision. Unconnected/private-review tiles retain their provisional summary.
