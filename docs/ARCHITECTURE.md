@@ -338,3 +338,10 @@ The design avoids expensive global image preloads and leaves `SHIFT_DURATION_MS`
 `scripts/import-portal-artwork.mjs` is an opt-in local helper for Babuni.dev's already-converted WebP files, not an image converter. It validates the expected twelve local files by normalized basename and RIFF/WEBP signature, copies bytes into `public/portal-content/` if the source is elsewhere, or renames noncanonical filenames in-place if they already reside there. It leaves conversion, quality, colors, transparency and dimensions untouched. Use `git add -A public/portal-content` to stage both new WebPs and old PNG deletions. `tests/portal-webp.test.mjs` covers catalog mapping and importer behavior.
 
 The existing `content:check` validates that every assigned artwork path exists in `public/`. As a result, the code-only change cannot pass CI until the second, user-owned binary commit arrives. Do not disable this safety check to mask missing files.
+
+
+## 2026-10-27 — Complete supplied WebP artwork and retain reader attribution
+
+All fifteen explicitly assigned portal WebP binaries are now versioned with their metadata. The PNG variants are superseded and removed. Asset existence validation and WebP assignment tests prevent missing deployment files. Actual image decoding was checked separately from header-only import checks.
+
+`src/scripts/document-body.ts` owns asynchronous text/loading/error/retry rendering within its own element. `module-detail.ts` mounts that element alongside source/credit footers and supplies the existing AbortSignal and current-view guard. Tests exercise success, retry and stale/cancelled responses without adding a DOM dependency. Generated document assets continue to be prepared before dev/test/build.

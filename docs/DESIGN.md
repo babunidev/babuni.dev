@@ -338,3 +338,8 @@ This behavior was an AI implementation choice after Babuni.dev authorized faster
 Babuni.dev already converted twelve portal images from PNG to WebP. The project now references the original **WebP files directly**, including the newly assigned BuxbrewResist emblem. Do not generate replacement logos or recompress the originals. No changes were made to the portal's existing 56%-wide circle, glow, three marker points, bubble placement, circular image crop, or bloom animation.
 
 The file paths are published source references, not proof that the separate artwork binaries were pushed. Babuni.dev will add their local files to `public/portal-content/` and commit them; check their rendering and decoding in the actual desktop browser afterward.
+
+
+## 2026-10-27 — Complete supplied WebP artwork and retain reader attribution
+
+Fifteen supplied project logos use the existing circular portal crop; ROARR, The Great Iceflow Relay and WorkThatGodBod now have their assigned artwork. Original WebP pixels and established portal, topic, grid and bloom sizing/timing are retained. Reader View source and credit remain visible after document load or retry; the panel’s appearance and navigation remain unchanged.

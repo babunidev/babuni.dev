@@ -193,3 +193,10 @@ Only the short index is included when the browser first loads the grid. Full sou
 The catalog's twelve `portalArtwork` paths now target WebP files, including BuxbrewResist. Babuni.dev provided and already converted the images locally; their source bytes are *not* accessible from the file-manager screenshot in this cloud session. No image was generated, re-encoded, extracted from a thumbnail, or falsely attributed to AI.
 
 The expected source path is `public/portal-content/<canonical>.webp`. The optional byte-preserving `npm run artwork:import -- "folder"` helper aligns local filenames, and Babuni.dev's subsequent local Git commit will add the original images. Only the image binary commit and a green CI content check can verify that the paths resolve in GitHub.
+
+
+## 2026-10-27 — Complete supplied WebP artwork and retain reader attribution
+
+Supplied portal artwork now covers fifteen projects. The additional ROARR.webp, TheGreatIceflowRelay.webp and WorkThatGodBod.webp are explicitly assigned; BuxbrewResist.webp and the earlier eleven are included in Git as well. All WebPs are byte-preserved, with old portal PNGs removed as superseded. This adds identity artwork, not invented gallery/module content.
+
+Source links and attribution credits remain available throughout asynchronous document loading, including failures and retries. No repository document bodies or factual claims were rewritten.

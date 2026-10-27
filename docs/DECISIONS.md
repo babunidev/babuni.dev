@@ -383,3 +383,10 @@ The initial five editorial families reuse four renderer types: journal/history i
 **Implementation:** Twelve direct `portalArtwork` URLs with `.webp`, unchanged image renderer, and an optional byte-preserving local file arranger for canonical asset paths. The local user performs the separate Git binary push; `git add -A` tracks additions and deletions. Existing logo design and interaction geometry stay unchanged.
 
 **Status:** Code-side paths implemented. Until Babuni.dev pushes the original WebPs, the remote code points to assets not yet in GitHub and CI asset validation can fail. Post-upload tests and visual review are required.
+
+
+## 2026-10-27 — Complete supplied WebP artwork and retain reader attribution
+
+**Status: Implemented, user-authorized.** Publish every supplied WebP together with its matching stable project metadata, including ROARR, The Great Iceflow Relay and WorkThatGodBod. Keep original bytes; remove superseded PNGs in line with the local conversion rather than shipping duplicate unused formats. Historical originals remain in Git history.
+
+The asynchronous document body owns a dedicated child container. Source and credit footers are siblings and survive success, failure and retry. This replaces destructive updates to the complete article while retaining abort/stale-view guards. No motion/design alternatives were applied beyond the requested repairs.

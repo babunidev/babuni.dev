@@ -351,3 +351,14 @@ Each future entry should include the change, its user-visible or technical effec
 ### Added — client bundle-size report (2026-10-27)
 - GitHub Actions now reports raw and gzip sizes of the largest emitted JavaScript files after a successful build, with a read-only local measurement script.
 - Clean Node 24 CI verification on `3041e01`: 97 tests passed and Astro build succeeded. A >500 kB chunk warning remains, so no claim of completed bundle optimization is made.
+
+
+## 2026-10-27 — Complete supplied WebP artwork and retain reader attribution
+
+### Added
+- Commit all fifteen supplied WebP portal images, including newly assigned ROARR, The Great Iceflow Relay and WorkThatGodBod artwork.
+### Fixed
+- Restore clean-checkout content validation/builds by including the WebP binaries referenced by project metadata.
+- Preserve View source and credit footers when asynchronous document reading succeeds, fails or retries.
+### Removed
+- Superseded portal PNGs, matching Babuni.dev’s local WebP conversion; historical originals remain recoverable from Git.

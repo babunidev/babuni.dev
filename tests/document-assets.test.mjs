@@ -77,6 +77,8 @@ test('interactive browser bundle no longer imports full snapshots or raw Markdow
   const reader=fromRoot('src/scripts/module-detail.ts');
   assert.doesNotMatch(content,/import snapshots from|repository-documents\.json|\?raw/);
   assert.match(content,/generated\/document-index\.json/);
-  assert.match(reader,/loadIndexedBody\(/);
-  assert.match(reader,/Retry document/);
+  assert.match(reader,/createDocumentBody\(/);
+  const body=fromRoot('src/scripts/document-body.ts');
+  assert.match(body,/loadIndexedBody\(/);
+  assert.match(body,/Retry document/);
 });

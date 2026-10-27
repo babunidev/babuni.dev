@@ -1,7 +1,7 @@
 import {videosForModule,type ProjectModule} from '../lib/project-modules';
 import {renderVideo} from './module-preview';
 import {renderDocument} from './document-reader';
-import {loadIndexedBody} from '../lib/repository-content';
+import {createDocumentBody} from './document-body';
 /** Detail is modal; big bloom itself belongs to the living grid. */
 export function createModuleDetails(onChange:(open:boolean)=>void){
   let detail:HTMLDialogElement|null=null;
@@ -16,31 +16,13 @@ export function createModuleDetails(onChange:(open:boolean)=>void){
     const content=document.createElement('article');content.className='module-detail-content';
     if(module.type==='text'){
       if(module.bodyUrl){
-        const progress=document.createElement('p');
-        progress.setAttribute('role','status');
-        progress.textContent='Loading document…';
-        content.append(progress);
         const request=new AbortController();
         documentRequest=request;
-        const load=async()=>{
-          progress.textContent='Loading document…';
-          try {
-            const body=await loadIndexedBody(module.bodyUrl!,fetch,request.signal);
-            if(detail!==view||request.signal.aborted)return;
-            content.replaceChildren(renderDocument(body));
-          }catch(error){
-            if(detail!==view||request.signal.aborted)return;
-            progress.textContent='Could not load this document. Please try again.';
-            const retry=document.createElement('button');
-            retry.type='button';retry.className='bloom-action';
-            retry.textContent='Retry document';
-            retry.addEventListener('click',()=>{
-              retry.remove();void load();
-            },{once:true});
-            content.replaceChildren(progress,retry);
-          }
-        };
-        void load();
+        const body=createDocumentBody(module.bodyUrl,{
+          signal:request.signal,isCurrent:()=>detail===view
+        });
+        content.append(body.element);
+        void body.load();
       }else content.append(renderDocument(module.body??''));
     }
     if(module.type==='gallery')for(const item of module.images??[]){

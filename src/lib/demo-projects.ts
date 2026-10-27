@@ -178,6 +178,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "workthatgodbod",
+    "portalArtwork": "/portal-content/WorkThatGodBod.webp",
     "name": "WorkThatGodBod",
     "shortSummary": "In-game posture, movement and hydration reminders.",
     "evidence": "repo",
@@ -185,6 +186,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "the-great-iceflow-relay",
+    "portalArtwork": "/portal-content/TheGreatIceflowRelay.webp",
     "name": "The Great Iceflow Relay",
     "shortSummary": "Player-organized WoW ball-passing checkpoint minigame.",
     "evidence": "repo",
@@ -199,6 +201,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roarr",
+    "portalArtwork": "/portal-content/ROARR.webp",
     "name": "ROARR",
     "shortSummary": "Earlier action-slot battle-emote addon.",
     "evidence": "repo-lineage",
