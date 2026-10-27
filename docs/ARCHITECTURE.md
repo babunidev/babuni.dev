@@ -394,3 +394,12 @@ As of this tree: **53 candidates**, **34 tiles tied to 33 public repos**, **15 s
 ## Spatial keyboard layer — 2026-10-27
 
 `spatial-navigation.ts` chooses directional neighbors, preferring aligned items and supporting arbitrary larger-bloom rows. `spatial-keyboard.ts` owns input mode, roving focus and outline; arrow movement does not call activation. Space/Enter invokes the existing button action once, and transition guards ignore repeats/busy activation. `grid.ts` provides painted tile/module coordinates and stage return hooks; its previous held-arrow panning path is removed. Focus restoration uses the existing identity/occupancy model, separate from open-bloom selectedChoice. Only reveal an offscreen target enough to keep it usable; native focus must not scroll the grid surface itself.
+
+## Browser branding — 2026-10-27
+
+`astro.config.mjs` disables `devToolbar.enabled` for this project. The document head links `/favicon.webp?v=b-mark-1` as `image/webp`, size 64×64; the suffix distinguishes cached earlier icons. Only the compact derived favicon is public, not the full-resolution generated source. This configuration and static-asset change adds no interactive runtime work.
+
+
+### Header B mark — 2026-10-27
+
+Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.

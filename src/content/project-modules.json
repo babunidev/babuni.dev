@@ -199,6 +199,16 @@
           "src": "/media/babuni-dev/images/verification/spatial-keyboard-highlight.webp",
           "alt": "Keyboard-highlighted Human–AI collaboration module after closing its reader back to big bloom.",
           "caption": "AI desktop browser verification, 2026-10-27: reader Escape restored focus to its big-bloom module. Highlight is separate from opening."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/browser-branding.webp",
+          "alt": "Living grid without the Astro development toolbar.",
+          "caption": "AI desktop browser check, 2026-10-27: toolbar absent and B favicon metadata checked. Browser tab chrome is outside this capture."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/header-branding.webp",
+          "alt": "Graphic-only B beside BABUNI.DEV in the header.",
+          "caption": "AI desktop browser verification, 2026-10-27: transparent WebP B displayed beside the brand; Astro toolbar absent."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

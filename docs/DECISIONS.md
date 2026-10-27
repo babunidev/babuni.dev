@@ -439,3 +439,12 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ## 2026-10-27 — Spatial highlight and explicit keyboard activation
 
 **Status: Implemented from Babuni.dev clarification.** Tab enters at the center item; arrows change keyboard focus/highlight without activating. Space/Enter opens the focused tile/module; Escape goes back one depth. This supersedes arrow-key continuous grid panning. The header retains conventional keyboard behavior; Tab from a highlighted primary grid control reaches Projects. Keep focus on the corresponding item on return. AI implementation may minimally bring an offscreen highlighted neighbor into view; this is not continuous keyboard camera control. Long-session/cross-browser keyboard acceptance remains open.
+
+## 2026-10-27 — Graphic-only browser identity
+
+**Status:** implemented at Babuni.dev’s request. Use the supplied B without its bottom wordmark for the browser favicon. AI chose a compact transparent 64×64 WebP and project-level toolbar disabling instead of CSS concealment. Keep the header text and project portal art unchanged. The image editor assisted extraction; provenance and exact prompt are in FAVICON_ASSET.md. Revisit favicon sizing if human tab testing finds it unclear.
+
+
+### Header B mark — 2026-10-27
+
+Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.

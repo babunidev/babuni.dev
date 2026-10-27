@@ -390,3 +390,12 @@ Babuni.dev rejected the momentary pointerdown freeze and requested organic braki
 ## Highlight-first keyboard exploration — 2026-10-27
 
 Babuni.dev distinguishes keyboard selection from opening. First Tab into the grid highlights the item nearest its visual center. Arrows choose the next spatial neighbor; Space/Enter explicitly activates the highlighted tile/module. Grid tiles enter small bloom; small modules enter big bloom; big modules enter the reader. Reader Escape restores its trigger, big-bloom Escape restores a small-module highlight, and small-bloom Escape restores the project tile. Tab from a primary grid control reaches Projects. Remove free arrow panning; adjust the camera only enough to reveal a chosen offscreen neighbor. Header/document/media controls retain native handling. Mouse/touch and calm shift timing are unchanged.
+
+## Browser identity refinement — 2026-10-27
+
+Babuni.dev requested a graphic-only B browser icon and removal of the Astro development menu. The transparent 64×64 WebP omits the wordmark. Header branding, portal artwork, layout and accepted interaction feel remain unchanged. Browser page verification confirms toolbar absence; tab-chrome legibility remains a human check.
+
+
+### Header B mark — 2026-10-27
+
+Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.

@@ -289,3 +289,12 @@ Built: eliminate press-induced shift freeze, gradually brake active shifts only 
 ## 2026-10-27 — Keyboard scope clarified by Babuni.dev
 
 Built: replace free arrow panning with highlight-first spatial navigation, center entry, explicit Space/Enter activation and one-depth Escape/focus return. Header navigation remains conventional. Browser sampled the full grid → small → big → reader → big → small → grid sequence and header project search. This implements the requested model, not a claim of exhaustive keyboard/accessibility acceptance. No new pointer or motion tuning is implied.
+
+## Browser branding refinement — 2026-10-27
+
+Built at Babuni.dev’s request: toolbar disabled and graphic-only transparent B favicon installed. Tests/build and page DOM checks passed; human confirmation of browser-tab appearance/cache refresh remains open. This refinement does not close other milestone acceptance or content work.
+
+
+### Header B mark — 2026-10-27
+
+Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.

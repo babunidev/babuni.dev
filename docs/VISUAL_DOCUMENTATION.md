@@ -51,3 +51,9 @@ All 24 archived AI captures now publish as actual WebP. Earlier `.png` filenames
 ## Spatial keyboard highlight, 2026-10-27
 
 - `spatial-keyboard-highlight.webp` — Human–AI collaboration highlighted in big bloom after reader Escape, with no reader open. AI desktop evidence; not complete keyboard/device acceptance.
+
+## Browser branding — 2026-10-27
+
+- `browser-branding.webp` — AI desktop browser capture of the grid with no Astro toolbar. Favicon link metadata was checked separately; browser tab chrome is not captured. Original JPEG bytes are preserved outside public assets; published capture is WebP.
+
+- `header-branding.webp` — AI desktop browser capture, 2026-10-27: B WebP beside BABUNI.DEV, no Astro toolbar. Original capture is JPEG, preserved outside public assets.

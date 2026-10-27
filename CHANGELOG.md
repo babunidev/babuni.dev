@@ -425,3 +425,12 @@ Each future entry should include the change, its user-visible or technical effec
 - First Tab into the grid highlights its center item. Arrows choose spatial neighbors without opening or continuously panning; Space/Enter activates the highlighted tile or module.
 - Keyboard highlight survives opening/return across small bloom, big bloom and reader; Escape returns one stage. Tab from the highlighted primary control reaches the header menu.
 - Updated controls help. Pointer/touch behavior and approved motion timings remain unchanged.
+
+### Changed — browser branding (2026-10-27)
+
+Disabled the Astro development toolbar through project configuration. Replaced the favicon with a transparent, graphic-only B WebP (64×64, 7,926 bytes), with a versioned URL to refresh cached icons. Archived the browser verification capture.
+
+
+### Header B mark — 2026-10-27
+
+Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.

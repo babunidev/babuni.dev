@@ -8,7 +8,7 @@ const title='babuni.dev — Living Grid Prototype';
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#141518" />
   <meta name="description" content="An interactive portfolio toy-box prototype: explore a freely draggable wall of creative project tiles." />
-  <link rel="icon" type="image/webp" href="/favicon.webp" />
+  <link rel="icon" type="image/webp" sizes="64x64" href="/favicon.webp?v=b-mark-1" />
   <title>{title}</title>
 </head>
 <body>
@@ -17,7 +17,7 @@ const title='babuni.dev — Living Grid Prototype';
       <div id="grid-world" class="grid-world"></div>
     </div>
     <header class="site-header">
-      <div class="brand">BABUNI.DEV</div>
+      <div class="brand"><img src="/favicon.webp?v=b-mark-1" width="32" height="32" alt="" aria-hidden="true" />BABUNI.DEV</div>
       <nav class="site-nav" aria-label="Main navigation">
         <button id="projects-toggle" type="button" aria-expanded="false" aria-controls="projects-menu">Projects</button>
         <button id="about-toggle" type="button">About</button>
@@ -140,7 +140,8 @@ const title='babuni.dev — Living Grid Prototype';
   .grid-tile--origin .tile-face{border-color:#ac9a86}
   :root{--header-height:52px}
   .site-header{position:fixed;z-index:20;inset:0 0 auto;height:var(--header-height);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(18px,5vw,72px);background:rgba(14,15,18,.94);border-bottom:1px solid #5b554e;pointer-events:auto}
-  .brand{font-size:17px;font-weight:bold;letter-spacing:.19em;white-space:nowrap;color:#e8ddc9}
+  .brand{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:bold;letter-spacing:.19em;white-space:nowrap;color:#e8ddc9}
+  .brand img{width:32px;height:32px;object-fit:contain;flex:none}
   .site-nav{display:flex;align-items:center;gap:16px;margin-left:auto;font:14px system-ui,sans-serif}
   .site-nav button{font:inherit;color:#e9dfd2;background:transparent;border:1px solid #81715a;padding:7px 12px;cursor:pointer}
   .site-nav button:hover,.site-nav button:focus-visible{background:#49404a;outline:2px solid #ae9875}

@@ -249,3 +249,12 @@ Babuni.dev’s report of uncomfortable uneven motion is actual desktop feedback.
 ## Keyboard controls language and evidence — 2026-10-27
 
 Controls help now describes highlight-first spatial navigation: Tab to center, arrows choose, Space/Enter opens, Escape returns. Selection/focus wording must not imply automatic opening. Keyboard screenshots are AI desktop browser evidence, distinct from human acceptance or phone testing. Existing project text/media remain unchanged.
+
+## B favicon asset — 2026-10-27
+
+Babuni.dev supplied Enchanted Stone Portal Logo.png and directed use of only its B graphic. AI used the built-in image editor to isolate the graphic, then resized and encoded the transparent 64×64 WebP (7,926 bytes). Original artwork is unchanged outside public assets; do not describe AI-assisted extraction as a pixel-identical crop. See FAVICON_ASSET.md for the exact prompt. Browser verification imagery is AI evidence, separate from human artwork and phone acceptance.
+
+
+### Header B mark — 2026-10-27
+
+Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
