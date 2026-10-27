@@ -415,3 +415,13 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ## 2026-10-27 — Responsive reading and activity cues
 
 **Status: Implemented from Babuni.dev phone feedback.** Below 600px, reader is full-width and taller, frame-free with a minimum 64px dismissal strip below (plus safe-area allowance). Desktop retains the square. Dismissal mirrors the accepted 420ms opening; reduced motion skips the animation. Grid shift/reveal tempo is unchanged. Centered header activity identifies project/depth/document; small headers allow a second row. Help is far right and works by hover, focus or tap. Small bloom closes through the original tile, another project or Escape; its redundant Close button is removed. About is an explicitly evolving draft, synthesized by AI from available evidence at Babuni.dev’s request; unsupported personal history is deferred.
+
+## 2026-10-27 — Dated documentation audit #28 (editorial clarification; no new approval)
+
+**Already-decided interaction contract:** Babuni.dev selected the toy-box metaphor, engraved/colored portals, living recycled stone grid, contextual bubbles and **spatially reserved** small/big bloom. The creator explicitly corrected an earlier AI rendering of blooms as floating dashboard panels; a full-screen conventional portfolio replacement remains **unapproved**. Later user-requested revisions added Markdown-aware previews, reader backdrop dismissal, shared navigation and direct project search. Those are source-implemented and preserve established line-shift timing.
+
+**Current evidence reconciliation:** Earlier README counted eleven supplied portal artworks and last referred to the 97-test stage; later checked-in media and journal now establish fifteen WebPs and a reported 126-test milestone. That updates documentary evidence only, not the creator's art or the tested code.
+
+**Repository synchronization is a separate action:** The portfolio reads a manually reviewed imported document snapshot. Although other Babuni.dev project Markdown was revised in this numbered audit, updating the portfolio's snapshot requires a **distinct review, explicit sync, verification and commit**. No user approval of unreviewed automatic live ingestion is inferred. The 53 named candidates still are not 53 public, finished projects.
+
+**Open (not approved):** Svelte framework adoption, changes to spatial timing/appearance, site deployment, release license, full native-phone/mobile/reduced-motion signoff and choice of performance thresholds. Only Babuni.dev can approve these decisions.

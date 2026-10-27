@@ -62,3 +62,11 @@ See [Human–AI collaboration](docs/AI_COLLABORATION.md) and [Development journa
 ## Open design questions
 
 Exact tile aspect ratio and visual assets; repeat spacing and stable keys in infinite wrap; precise bloom cell-reservation algorithm; mobile gestures and accessibility; shift collision / interruption rules; image-gallery and video-preview behavior; performance thresholds; full-bloom arrangement constraints; how the site's self-exhibit should be positioned. Resolve by prototyping and recording decisions rather than guessing.
+
+## 27 October 2026 — Audit of vision versus current implementation
+
+Babuni.dev's **toy-box, moving engraved-stone tiles, colored project portals, point-origin information bubbles and layered grid-native exploration** remain the creative contract. Those elements were proposed, corrected, selected and built over several iterations, not invented by a later documentation assistant. The current prototype now includes all four interaction depths, a shared header, searchable direct project discovery, Markdown in preview and detail, and a living project-history exhibit. It should still feel like exploring physical objects rather than choosing ordinary portfolio cards.
+
+The 53 named tiles are **candidate content**, not 53 approved exhibitions; fifteen portal artworks are committed, not one per tile. Imported repository documents are currently compiled into a static revision-pinned snapshot; keeping the external development history fresh requires a deliberate sync/review/build, not casual claims of automatic synchronization. The existence of code and earlier reported regression/browser tests is separate from future real-phone, long-session, accessibility and hosting acceptance.
+
+The site is also itself an exhibit. Keep Babuni.dev's decisions visible, including the correction from floating dashboard panels to truly reserved bloom cells, rejection of scroll-wheel navigation, preservation of calm shift timing, and the more recent user-requested reader backdrop dismissal and persistent menu.

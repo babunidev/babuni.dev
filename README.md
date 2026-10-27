@@ -10,7 +10,7 @@ The website itself is intended to become one of its exhibits: a record of its co
 
 ## Project status
 
-**Living-grid portfolio prototype with multiple depths of exploration.** Astro 7 and the mechanical grid are on `main`: screen-centered dragging, autonomous shifting and 53 named provisional project tiles. Visitors can explore three-point topic bubbles, open a small bloom of up to eight neighboring modules, expand into a larger grid-native bloom, and read full documentation or open galleries, videos and source links. Eleven projects have supplied portal artwork. The repository-backed content pipeline currently maps 34 candidate tiles to 33 public repositories, including BABUNI.DEV itself; other tiles remain explicitly unresolved or provisional. **These are not 53 verified or approved published portfolio exhibits.** Full public project documents are built as separate static assets and loaded only when opened in the reader, keeping the initial grid bundle lighter. The work remains an active prototype, with long-session, keyboard, mobile and reduced-motion acceptance still outstanding.
+**Living-grid portfolio prototype with multiple depths of exploration.** Astro 7 and the mechanical grid are on `main`: screen-centered dragging, autonomous shifting and 53 named provisional project tiles. Visitors can explore three-point topic bubbles, open a small bloom of up to eight neighboring modules, expand into a larger grid-native bloom, and read full documentation or open galleries, videos and source links. Fifteen projects have supplied original WebP portal artwork, while other candidate tiles remain provisional. The repository-backed content pipeline currently maps 34 candidate tiles to 33 public repositories, including BABUNI.DEV itself; other tiles remain explicitly unresolved or provisional. **These are not 53 verified or approved published portfolio exhibits.** Full public project documents are built as separate static assets and loaded only when opened in the reader, keeping the initial grid bundle lighter. The work remains an active prototype, with long-session, keyboard, mobile and reduced-motion acceptance still outstanding.
 
 ## Local development
 
@@ -25,7 +25,7 @@ Open the local address printed by Astro (normally http://localhost:4321). For ag
 
 `npm run test:grid` runs the regression suite. `npm run build` validates content, prepares the public document assets and creates the static site in `dist/`. `npm run preview` serves that build locally. `npm run content:prepare` rebuilds local preview metadata/static Markdown from reviewed sources without network access; it is invoked automatically before dev, tests and builds.
 
-Babuni.dev's 2026-10-27 local terminal output verified **92 passing tests** and a successful build on the preceding version, with a >500 kB JavaScript chunk warning. The optimized version subsequently passed **97 tests** and a clean GitHub Actions build (2026-10-27). The client JavaScript measures **584.7 KiB raw / 174.0 KiB gzip**, and Vite's >500 KiB raw-chunk warning remains; actual browser load-time acceptance is still open. [GitHub Actions](.github/workflows/ci.yml) now runs tests and the production build on main pushes and pull requests; check the workflow result before relying on a change. A separate full type-check command is not yet configured; see [foundation review](docs/REVIEW-2026-10-26.md).
+Babuni.dev's 2026-10-27 local terminal output verified **92 passing tests** and a successful build on the preceding version, with a >500 kB JavaScript chunk warning. An earlier optimized version passed **97 tests** and a clean GitHub Actions build (2026-10-27); the subsequent development journal reports **126 passing Node tests** and a production build for the persistent-navigation update, with browser observations recorded separately. The client JavaScript measures **584.7 KiB raw / 174.0 KiB gzip**, and Vite's >500 KiB raw-chunk warning remains; actual browser load-time acceptance is still open. [GitHub Actions](.github/workflows/ci.yml) now runs tests and the production build on main pushes and pull requests; check the workflow result before relying on a change. A separate full type-check command is not yet configured; see [foundation review](docs/REVIEW-2026-10-26.md).
 
 ## Documentation
 
@@ -46,7 +46,7 @@ Babuni.dev's 2026-10-27 local terminal output verified **92 passing tests** and 
 
 ## Intended technology
 
-Astro, TypeScript and a dedicated interactive UI layer (Svelte is under consideration); GitHub-based content and development; eventual deployment to the owner's VPS at babuni.dev.
+The implemented prototype uses Astro 7, TypeScript/native browser DOM modules and Marked for safely rendered Markdown; Svelte is only a potential future option, **not a current dependency**. GitHub-backed content and eventual deployment to the owner's VPS at babuni.dev remain part of the plan.
 
 ## Working principles
 
@@ -55,3 +55,11 @@ Explore before explaining. Delight without obscuring usability. Record not just 
 ## License
 
 No software license has been selected. Public visibility does not imply permission to reuse the source code.
+
+## Documentation audit #28 — 27 October 2026
+
+The 11 core portfolio documents already contain a detailed, evidence-backed record. This audit preserves the original **toy-box metaphor**, endlessly recycled engraved-stone grid, contextual portal bubbles, **grid-native small and big blooms**, and a separate reader. It does not redesign those interactions or promote unapproved ideas into features.
+
+**Current source snapshot:** 53 named **candidate** project tiles; 34 mapped tiles connected to 33 public repository sources; fifteen committed creator-supplied WebP portal images; working full-depth header, project search and About; Markdown-formatted previews/detail with source attribution. The latest journal reports **126 passed regression tests**, plus a production build and desktop browser checks. Those are **historical reported verification results**, not tests performed in this documentation audit. Native-phone/keyboard/reduced-motion/long-session acceptance and public deployment remain open.
+
+**Documentation publication dependency:** The portfolio's imported project documents are **revision-pinned static snapshots**, not automatically live GitHub content. Changes just committed to other Babuni.dev repositories will not appear in project blooms until a deliberate `npm run content:sync`, `npm run content:check`, `npm run test:grid` and `npm run build` cycle is reviewed and the resulting content snapshot is committed. This audit edits Markdown **only**; it does not sync generated snapshots or deploy the site.

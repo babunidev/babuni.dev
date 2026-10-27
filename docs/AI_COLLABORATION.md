@@ -56,3 +56,13 @@ This is a reusable policy for Babuni.dev's other repositories, but each project 
 ## Accountability
 
 Babuni.dev sets direction. Agents should be useful collaborators, not ghost authors of design decisions. Do not infer human approval from silence. If a chat changes a requirement without resulting in code, log the decision but do not present it in CHANGELOG as a shipped feature.
+
+## 2026-10-27 — Documentation audit #28: scope and provenance
+
+**User direction:** Continue the documented GitHub portfolio-audit sequence, now reaching `babunidev/babuni.dev` immediately after ButtonGame. Preserve the origin as a **human-directed toy-box interaction** and the site as a living record of how Babuni.dev conceived, corrected, accepted, rejected and tested work with AI. Do not flatten those detailed records into a one-line “AI built the portfolio” credit.
+
+**AI contribution in this audit:** Examine the current Git tree, Astro/TypeScript dependencies, latest navigation/Markdown commits and the substantial existing journals; reconcile README **11 artworks → 15** and older **97-test** reports with the later **126-test** journal. Record the distinction between 53 candidate tiles, 34 mapped tiles/33 public sources, existing original WebP binaries and 21 archived AI captures. Identify that external project-doc commits require an **explicit source refresh** before they appear in this portfolio's static snapshot.
+
+**Iteration already documented elsewhere:** The user corrected AI's suggestion of floating bloom cards, rejected scroll-as-navigation, insisted that tiles retain a coherent stone-and-portal identity through motion, supplied WebP artwork and required visible attribution in the reader. More recent requested adjustments include safe Markdown rendering and persistent header/search navigation; a browser-tested buffered-identity issue was then corrected. Do not invent private dialogue or attribute AI-origin alternatives to human acceptance.
+
+**Verification and nonchanges:** The checked-in journal reports prior 126 Node tests and browser/build findings, but the assistant **did not run new tests, content sync, a production build, real-device trials, or deployment** during this document audit. No site source, media, tests, content snapshot, CI, package manifests or artwork was modified. Any future automation, release-license choice or performance change requires its own creator direction and evidence.

@@ -395,3 +395,17 @@ Each future entry should include the change, its user-visible or technical effec
 - Reader dismissal shrinks/fades the panel before removal; reduced motion closes immediately. Header activity is centered and names the project, bloom depth or document being read.
 - Replaced bottom instruction text and big-bloom help with a far-right header help control supporting hover, keyboard and tap. Removed the small-bloom Close button.
 - Expanded About into a WIP introduction with source-backed project interests and GitHub, CurseForge, Instagram and YouTube links.
+
+## 2026-10-27 — Documentation audit #28 (documentation-only)
+
+### Corrected
+- Refresh README's stale **11-image** description to the **15 original WebP portal artworks** already checked into the Git tree.
+- Bring README test wording forward from the historically successful 97-test CI stage to also record the later **126-test** result in the development journal, without claiming another run during this audit.
+- Clarify that Astro 7, TypeScript/browser DOM modules and Marked are implemented dependencies, whereas Svelte is **not installed** and remains only a possible future technology.
+
+### Recorded
+- The current four-depth interaction contract, 53 **candidate** tiles versus 34/33 repository connections, 15 supplied portals, shared header/Projects search, safe Markdown reader and archived screenshot provenance.
+- External GitHub project documentation is captured in **static, revision-pinned snapshots** requiring explicit `content:sync` and subsequent checking/building; today's docs-only commit does not refresh or deploy those snapshots.
+- Preserved the original extensive journals, decisions, source, media and client tests without reformatting away earlier creative corrections.
+
+**Verification:** GitHub tree, source, docs and dated Git review; Markdown relative-path and unchanged-file checks following commit. No new Node tests, Astro build, browser session or physical phone test executed here.

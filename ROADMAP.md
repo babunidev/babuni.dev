@@ -257,3 +257,13 @@ Built: site header in all four depths, Projects dropdown with search and direct 
 ## 2026-10-27 — Phone reader and activity refinements
 
 Built from Babuni.dev’s actual-phone feedback: larger full-width phone reader, shrinking dismissal, centered contextual activity, shared header help and removal of redundant small-bloom Close. About is now a source-backed WIP with public profile links; richer personal history remains ongoing content authoring. Agent browser checks are separate from the next physical-phone acceptance pass. Existing grid tempo and four depths remain unchanged.
+
+## 2026-10-27 — #28 documentation-audit checkpoint
+
+**Already in main:** 53 provisional candidate tiles; 34 mapped tiles/33 public repositories; 15 original WebP portal artworks; moving/dragging recycled grid; small/big blooms and reader; safe Markdown previews; searchable projects/constant header; archived visual browser evidence. These source capabilities are **not** newly implemented by this audit.
+
+**Reported latest historical verification:** The October 27 journal records **126 passing Node tests**, successful content preparation and production build, and browser checks of direct navigation after a stale buffered-project identity was corrected. It does **not** claim every test was rerun today or that the project has native-phone acceptance.
+
+**Next integration step (not executed here):** Following the sequential documentation commits in other Babuni.dev repositories, explicitly review external source revisions, run `npm run content:sync`, `npm run content:check`, `npm run test:grid`, `npm run build` and `npm run content:report` (or inspect the resulting report) before committing revised imported document snapshots. Verify source/credit references, no invented data, and unchanged project placements. Auto-sync on page load or unreviewed network fetching is **not** approved.
+
+**Still open:** genuine mobile and keyboard/reduced-motion acceptance, long-session behavior, initial bundle-size warning, publication-content editorial approval, hosting/deployment on the intended VPS, and license selection. Do not turn “finish all 53 portfolio articles” into a release gate: Babuni.dev specifically described content as a living/WIP project.

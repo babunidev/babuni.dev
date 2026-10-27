@@ -368,3 +368,11 @@ Babuni.dev requested the site header across grid, small bloom, big bloom and rea
 ## Phone reading and centered activity — 2026-10-27
 
 Supersedes the universal square-reader rule on phones: viewport below 600px uses full width, starts beneath the persistent header and leaves at least 64px below for outside dismissal. No phone border/inset frame. Reader opens with the accepted growth and closes with matching shrink/fade; reduced motion removes both. Desktop retains its framed square. Header center shows project-specific centering, opening, waiting for shift, small/big exploration and reading module. At compact widths the status occupies a second header row. Bottom instructions and small-bloom Close are removed; far-right question mark reveals controls by hover/focus/tap, including Return to center.
+
+## 2026-10-27 — Four-depth consistency check (not a redesign)
+
+**Babuni.dev's direction still governs:** the visitor encounters a continuous field of engraved stone, a colored portal window and a context-origin information cue before seeing deeper content. The small and big blooms **reserve living grid cells**, not floating cards. The visitor can interrupt exploration by selecting a project from the persistent Projects menu, but this should follow existing, calm centering/reveal behavior without accelerating an active shift.
+
+**Implemented refinement, source/date verified:** the header persists in grid, small bloom, big bloom and reader; search supports project name/summary, and About uses the already documented workshop identity. Reader Markdown is rendered as structured, safe content, its inner panel scrolls, and clicking outside or pressing Escape dismisses without wiping the earlier bloom. Small and big previews share formatting but keep links noninteractive until full reading.
+
+**Visual provenance and incompleteness:** fifteen supplied WebP logos are now actually in Git, including the late three assignments; the screenshot archive keeps **21 AI browser captures** separately from two supplied originals and may include superseded appearances. Native phone, keyboard/focus, reduced-motion and small-view testing remain open in places, despite browser regression evidence. This audit did **not** change tile appearance, logo bytes, typography, interaction timing, animation or screenshots.

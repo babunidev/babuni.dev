@@ -107,3 +107,12 @@ Babuni.dev directed on 2026-10-26: prioritize architecture and underlying struct
 ## Browser screenshot archive
 
 Babuni.dev requested on 2026-10-27 that browser test screenshots be added to the project's visual documentation. Save verification screenshots under `public/media/babuni-dev/images/verification/`, add them to BABUNI.DEV's Visual documentation gallery and `docs/VISUAL_DOCUMENTATION.md`, and caption the test context and historical status. Distinguish AI browser captures from human-supplied art and actual phone acceptance. Preserve earlier captures even when their design is superseded. Do not claim unavailable or unsaved screenshots were recovered.
+
+## Audit #28 — 27 October 2026: source, history and synchronization safeguards
+
+- Treat the **current tree** as the implementation authority and dated journals as evidence of how it evolved. The four exploration depths, persistent header and Markdown reader are implemented; 53 candidates are not 53 approved projects. The Git tree holds **15** original WebP portals. Keep unrelated tile motion, bloom geometry and author-provided artwork unchanged during a docs-only audit.
+- The **site's repository-backed documents are static imported snapshots**, not live GitHub documents. A change to another repository's README/DEVLOG/DECISIONS requires a deliberate public-source `npm run content:sync` plus `content:check`, test and production-build validation before its text appears here. Never silently refresh `src/content/repository-documents.json` or claim automatic publishing.
+- Use provenance labels: Babuni.dev's instruction/correction, AI interpretation/proposal, explicit human decision, concrete commit, automated/browser/physical test and remaining open checks. A preview/screenshot is not an approved visual redesign; historical captures include superseded states.
+- Current Markdown rendering uses **Marked to construct safe DOM**, not raw HTML execution. Maintain source-relative link handling and original copyright/credit data. Svelte is not an installed runtime; don't describe it as the current framework.
+- The previous journal reports 126 Node tests and build for the latest navigation update. **Do not claim reruns** unless commands execute and outputs are recorded in the actual work environment.
+- The owner's requirement is architecture/interaction integrity first, not redesign-by-agent. Never accelerate the 4.4-second line shift or revise already accepted art, timing, or reader dismissal while “just fixing docs.”

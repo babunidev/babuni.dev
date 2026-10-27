@@ -225,3 +225,13 @@ Babuni.dev requested About and searchable direct project navigation. Search uses
 ## WIP About and interface language — 2026-10-27
 
 Babuni.dev requested a more personal About and authorized gathering available chats/known project information as WIP. AI drafted `src/content/about.md` from established project interests and creative-process discussions, using the artist name Babuni.dev. FavorCraft’s public README supplies exact Babunigaming Instagram, YouTube and CurseForge URLs; the connected repository owner supports the GitHub profile. No exact place of origin, personal legal name or life-history dates were verified; these remain future authoring rather than placeholders presented as facts. About wording is an AI-assisted editorial draft. Public profile references do not imply the accounts were live-login tested. Activity labels use current project/module names. Controls are contextual help rather than persistent bottom copy.
+
+## 2026-10-27 — Source freshness, tile coverage and media inventory
+
+The current inventory of **53 named tiles** is a prototype/candidate set. Of those, **34 tile entries** are associated with **33 public repository sources**; 15 distinct creator-supplied WebP portal images are committed at `public/portal-content/`. A candidate tile lacking a repository, release, media, author-approved text or full documentary set must be shown as provisional rather than filled with AI-invented biography.
+
+GitHub source material is ingested as **reviewed revisions**, currently represented by `src/content/project-repositories.json` and `src/content/repository-documents.json`. The latter contains a **static snapshot**, so the sequential documentation commits in other repositories do **not** automatically refresh the site. The explicit `npm run content:sync` flow must be followed by `content:check`, test/build, source/credit review and a new commit. This audit has **not** run that sync or updated generated assets.
+
+The reader delivers full Markdown **on demand**, while smaller modules retain compact, formatted previews and existing media. Raw HTML, MDX and executable embeds from external documents do not become trusted active content; images inside Markdown remain links rather than automatic media. The Visual documentation gallery stores **21 dated/context-captioned AI browser captures plus two originally supplied images**, including earlier superseded designs; see [visual manifest](VISUAL_DOCUMENTATION.md).
+
+**Not a release claim:** A tracked WebP filename, public repository link or earlier successful browser screenshot is not proof of current user approval for every tile, native-phone usability or hosted availability.
