@@ -277,3 +277,8 @@ Four additional project records now declare `portalArtwork` URLs. The existing r
 ## 2026-10-27 — Content validation and authoring
 
 `scripts/content-tools.mjs` validates catalog data before production build via `prebuild`, reusing runtime populated-content and embed rules. It checks the stable project inventory, local public files and registered document paths. It reports precise errors and exits unsuccessfully on invalid content. `content:template` prints an empty definition without mutation. No runtime requests, dependencies or CMS were added. Document registration currently remains explicit in both the runtime provider and validator.
+
+
+## 2026-10-27 — Five more project portals
+
+Added five static PNG files under `public/portal-content` and explicit URLs on existing stable project records. The existing content validator checks their file existence; no renderer changes are needed.

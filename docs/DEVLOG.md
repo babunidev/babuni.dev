@@ -540,3 +540,10 @@ Phone-sized browser (mouse input, not native-device acceptance): at 390×844, me
 **Verification:** Initial new test incorrectly expected all secondary diagnostics from an already-invalid record; corrected it to test missing previews independently. Final suite/build results are recorded below. No new phone or browser interaction test was performed for this tooling-only change.
 
 **Tested:** All 13 test files passed with `npm run test:grid`; `npm run build` passed including the new content gate; `git diff --check` passed. Template tests cover all four empty module kinds, malformed definitions, source/media errors, duplicate IDs, preview requirements and document ambiguity. Browser/phone verification was not repeated because no interaction code changed.
+
+
+## 2026-10-27 — Five more project portals
+
+**Babuni.dev supplied:** A folder screenshot showing five additional portal images, continuing the established logo-assignment workflow. **AI interpretation and implementation:** Match filenames to stable project IDs and copy the PNG files unchanged. Preserve the supplied `LocalAAIWorkstation.png` spelling. No motion, content or layout changes. **Verification:** Recorded below after checks; no new human device acceptance is claimed.
+
+**Tested:** All 13 test files, production build (including content validation) and whitespace checks passed. Renderer code was unchanged; no browser or physical-phone visual check was repeated. Final circular crops remain available for Babuni.dev’s visual review.

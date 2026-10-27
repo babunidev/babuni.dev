@@ -156,3 +156,8 @@ Babuni.dev’s positive assessment of the current design and request for stronge
 ## 2026-10-27 — Content validation and authoring
 
 Babuni.dev requested Content Validation and Authoring. Existing nine BABUNI.DEV populated modules and five populated/four empty Button Game modules are retained. Use `npm run content:check` and the blank-template workflow in MODULE_AUTHORING.md. Empty definitions stay hidden; incomplete media/link records fail validation. Sources and credits are checked structurally, not independently fact-checked or license-cleared. No additional project content was invented.
+
+
+## 2026-10-27 — Five more project portals
+
+AnskarGrotzschnapf.png, AzerothMoments.png, LocalAAIWorkstation.png, LocalPromptLab.png and RoarForever.png are supplied project portal images, copied unchanged and assigned to their matching project IDs. Portal artwork does not populate gallery modules or establish project release readiness.

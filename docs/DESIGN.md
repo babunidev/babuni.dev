@@ -296,3 +296,8 @@ User-authorized feedback refinement: pointer/keyboard presses brighten the contr
 ## 2026-10-27 — Content validation and authoring
 
 Content authoring now has local validation and invisible blank templates. No timing, placement, navigation or visual behavior changed. Structural validation is separate from Babuni.dev’s hands-on acceptance and editorial review.
+
+
+## 2026-10-27 — Five more project portals
+
+Five additional projects use supplied artwork inside the existing round portal opening. Shared sizing, clipping, interaction and timing are unchanged.

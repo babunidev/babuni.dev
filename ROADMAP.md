@@ -187,3 +187,8 @@ Built: stronger tile/preparation pulse and pointer/keyboard button acknowledgeme
 **Babuni.dev direction:** Move forward with Content Validation and Authoring after positive interaction feedback.
 
 Built: field-level catalog validation, build gate, blank templates and practical authoring instructions. Retained current JSON modules; MDX blocks are not implemented. Two populated projects and document-backed development modules already exist. Still open: editorial review of content/attribution, another real project if desired, CI/preview checks and controlled publishing. Device/accessibility acceptance items remain separately tracked.
+
+
+## 2026-10-27 — Five more project portals
+
+Built: five additional supplied portal images wired to their project tiles. Content editorial review and CI remain open; this asset assignment does not complete those milestones.

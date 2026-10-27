@@ -44,6 +44,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roarforever",
+    "portalArtwork": "/portal-content/RoarForever.png",
     "name": "RoarForever",
     "shortSummary": "Restores missing player emote voice sounds in WoW Forever.",
     "evidence": "repo",
@@ -59,6 +60,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "azeroth-moments",
+    "portalArtwork": "/portal-content/AzerothMoments.png",
     "name": "Azeroth Moments",
     "shortSummary": "Automated screenshot/video posting from a local folder to social channels.",
     "evidence": "repo",
@@ -66,6 +68,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "anskar-grotzschnapf",
+    "portalArtwork": "/portal-content/AnskarGrotzschnapf.png",
     "name": "Anskar Grotzschnapf",
     "shortSummary": "Poetry-to-image automated artist and digital-print publishing experiment.",
     "evidence": "repo",
@@ -73,6 +76,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "local-prompt-lab",
+    "portalArtwork": "/portal-content/LocalPromptLab.png",
     "name": "Local Prompt Lab",
     "shortSummary": "Local image-generation experiments with styles, seeds and prompts.",
     "evidence": "conversation",
@@ -80,6 +84,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "local-ai-workstation",
+    "portalArtwork": "/portal-content/LocalAAIWorkstation.png",
     "name": "Local AI Workstation",
     "shortSummary": "Local language-model and image-generation development environment.",
     "evidence": "conversation",

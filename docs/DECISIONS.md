@@ -325,3 +325,8 @@ The initial five editorial families reuse four renderer types: journal/history i
 ## 2026-10-27 — Content validation and authoring
 
 **Status: Implemented AI implementation choice within Babuni.dev’s requested content-validation scope.** Retain the existing JSON authoring format; provide local checks and blank templates rather than introducing a CMS or MDX migration. Empty modules are valid drafts; partial media records are errors. Build failures prevent structurally broken content from being packaged. Remote availability and editorial accuracy remain human review responsibilities. Revisit the format when real authoring needs justify it.
+
+
+## 2026-10-27 — Five more project portals
+
+**Implemented:** Reuse explicit `portalArtwork` assignments and existing circular clipping for five more supplied images. Keep original filenames and pixels; do not infer assignments dynamically or introduce new rendering behavior.

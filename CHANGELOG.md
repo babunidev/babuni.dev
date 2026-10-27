@@ -289,3 +289,9 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Added
 - Local content validation with field-specific errors, automatic validation before production builds, and blank module templates that leave live content untouched.
+
+
+## 2026-10-27 — Five more project portals
+
+### Added
+- Supplied portal artwork assigned to Anskar Grotzschnapf, Azeroth Moments, Local AI Workstation, Local Prompt Lab and RoarForever.
