@@ -232,3 +232,8 @@ Milestone 5 now has real multi-project source content and validation; MDX blocks
 ## 2026-10-27 — Complete supplied WebP artwork and retain reader attribution
 
 Built: complete fifteen-image WebP migration, three additional project assignments and source/credit preservation during asynchronous reading. This closes the missing-artwork build failure and disappearing-footer findings from the preceding review. Physical phone/long-session visual acceptance remains separate; CI confirmation follows the published commit.
+
+
+## 2026-10-27 — Render repository Markdown as document structure
+
+Built: common Markdown/GFM formatting in detail, including emphasis, code, quotes, tables, nested/ordered/task lists and source-relative/reader-heading links. This addresses the reported raw-markup display problem. No MDX, math, raw HTML execution or automatic document-image loading is introduced. Existing physical-device and full accessibility acceptance tracks remain open.

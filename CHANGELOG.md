@@ -362,3 +362,12 @@ Each future entry should include the change, its user-visible or technical effec
 - Preserve View source and credit footers when asynchronous document reading succeeds, fails or retries.
 ### Removed
 - Superseded portal PNGs, matching Babuni.dev’s local WebP conversion; historical originals remain recoverable from Git.
+
+
+## 2026-10-27 — Render repository Markdown as document structure
+
+### Fixed
+- Render repository Markdown emphasis, inline/fenced code, blockquotes, hard breaks, nested/ordered lists, task lists, strikeout and tables in the detail reader instead of exposing raw formatting markers.
+- Resolve relative documentation links against the original source and support reader-local heading navigation.
+### Added
+- Maintained Markdown token parsing with explicit safe-DOM rendering and regression coverage for the reported WorkThatGodBod document plus all 303 imported documents.

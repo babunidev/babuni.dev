@@ -19,11 +19,11 @@ export function createModuleDetails(onChange:(open:boolean)=>void){
         const request=new AbortController();
         documentRequest=request;
         const body=createDocumentBody(module.bodyUrl,{
-          signal:request.signal,isCurrent:()=>detail===view
+          signal:request.signal,isCurrent:()=>detail===view,sourceUrl:module.source
         });
         content.append(body.element);
         void body.load();
-      }else content.append(renderDocument(module.body??''));
+      }else content.append(renderDocument(module.body??'',module.source));
     }
     if(module.type==='gallery')for(const item of module.images??[]){
       const figure=document.createElement('figure'),image=document.createElement('img'),caption=document.createElement('figcaption');

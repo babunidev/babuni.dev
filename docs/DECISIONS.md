@@ -390,3 +390,8 @@ The initial five editorial families reuse four renderer types: journal/history i
 **Status: Implemented, user-authorized.** Publish every supplied WebP together with its matching stable project metadata, including ROARR, The Great Iceflow Relay and WorkThatGodBod. Keep original bytes; remove superseded PNGs in line with the local conversion rather than shipping duplicate unused formats. Historical originals remain in Git history.
 
 The asynchronous document body owns a dedicated child container. Source and credit footers are siblings and survive success, failure and retry. This replaces destructive updates to the complete article while retaining abort/stale-view guards. No motion/design alternatives were applied beyond the requested repairs.
+
+
+## 2026-10-27 — Render repository Markdown as document structure
+
+**Status: Implemented user-requested correction.** Use a maintained Markdown lexer rather than expanding the partial regex parser. The renderer builds an allowlisted set of DOM elements from Marked tokens, never raw HTML. Supports common Markdown/GFM formatting, tables and tasks. Relative links resolve to their source document; known heading references scroll inside the reader. Raw HTML remains literal; unsafe schemes and credential-bearing links are inert. Markdown image references stay explicit links, so importing a document does not introduce automatic media downloads. Revisit advanced syntax only when supported by actual authoring needs.

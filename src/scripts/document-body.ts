@@ -3,7 +3,7 @@ import {renderDocument} from './document-reader.ts';
 
 /** Async reading owns only this body; source links and credits are siblings. */
 export function createDocumentBody(url:string,options:{
-  signal:AbortSignal;isCurrent:()=>boolean;
+  signal:AbortSignal;isCurrent:()=>boolean;sourceUrl?:string;
   loadBody?:(url:string,signal:AbortSignal)=>Promise<string>;
 }){
   const element=document.createElement('div');element.className='module-detail-body';
@@ -14,7 +14,7 @@ export function createDocumentBody(url:string,options:{
     try{
       const body=await loadBody(url,options.signal);
       if(!options.isCurrent()||options.signal.aborted)return;
-      element.replaceChildren(renderDocument(body));
+      element.replaceChildren(renderDocument(body,options.sourceUrl));
     }catch{
       if(!options.isCurrent()||options.signal.aborted)return;
       progress.textContent='Could not load this document. Please try again.';

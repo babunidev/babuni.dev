@@ -200,3 +200,8 @@ The expected source path is `public/portal-content/<canonical>.webp`. The option
 Supplied portal artwork now covers fifteen projects. The additional ROARR.webp, TheGreatIceflowRelay.webp and WorkThatGodBod.webp are explicitly assigned; BuxbrewResist.webp and the earlier eleven are included in Git as well. All WebPs are byte-preserved, with old portal PNGs removed as superseded. This adds identity artwork, not invented gallery/module content.
 
 Source links and attribution credits remain available throughout asynchronous document loading, including failures and retries. No repository document bodies or factual claims were rewritten.
+
+
+## 2026-10-27 — Render repository Markdown as document structure
+
+Imported Markdown is preserved unchanged while the detail reader now displays its common Markdown/GFM structure correctly, including the WorkThatGodBod Content example supplied by Babuni.dev. Relative/reference links and heading navigation work without rewriting stored documents. Raw HTML, scripts and embeds are not executed; Markdown images remain explicit links, with galleries/videos still authored as their existing module types. This supersedes earlier descriptions of a headings-and-flat-lists-only reader. Advanced extensions such as math/MDX and GitHub-specific alert styling are not claimed.

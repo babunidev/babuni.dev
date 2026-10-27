@@ -24,6 +24,7 @@
     "artwork:import": "node --experimental-strip-types scripts/import-portal-artwork.mjs"
   },
   "dependencies": {
-    "astro": "^7.4.2"
+    "astro": "^7.4.2",
+    "marked": "^18.1.2"
   }
 }

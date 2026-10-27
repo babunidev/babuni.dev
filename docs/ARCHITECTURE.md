@@ -345,3 +345,8 @@ The existing `content:check` validates that every assigned artwork path exists i
 All fifteen explicitly assigned portal WebP binaries are now versioned with their metadata. The PNG variants are superseded and removed. Asset existence validation and WebP assignment tests prevent missing deployment files. Actual image decoding was checked separately from header-only import checks.
 
 `src/scripts/document-body.ts` owns asynchronous text/loading/error/retry rendering within its own element. `module-detail.ts` mounts that element alongside source/credit footers and supplies the existing AbortSignal and current-view guard. Tests exercise success, retry and stale/cancelled responses without adding a DOM dependency. Generated document assets continue to be prepared before dev/test/build.
+
+
+## 2026-10-27 — Render repository Markdown as document structure
+
+document-reader.ts now uses Marked tokens and constructs semantic DOM directly. It never assigns untrusted HTML to an HTML parser. Text/entities are decoded only into text nodes; inline code/fenced code remain literal. Raw HTML tokens remain visible text. Link targets are checked for HTTP(S) and credentials; relative references use module.source, passed through document-body.ts and module-detail.ts. Heading links use reader-scoped targets rather than moving the grid. Markdown image syntax produces an explicit link instead of loading media. Tables use a local overflow wrapper; source/credit siblings retain their independent lifecycle. Marked is recorded in package.json/package-lock.json.

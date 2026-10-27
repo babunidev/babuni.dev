@@ -343,3 +343,8 @@ The file paths are published source references, not proof that the separate artw
 ## 2026-10-27 — Complete supplied WebP artwork and retain reader attribution
 
 Fifteen supplied project logos use the existing circular portal crop; ROARR, The Great Iceflow Relay and WorkThatGodBod now have their assigned artwork. Original WebP pixels and established portal, topic, grid and bloom sizing/timing are retained. Reader View source and credit remain visible after document load or retry; the panel’s appearance and navigation remain unchanged.
+
+
+## 2026-10-27 — Render repository Markdown as document structure
+
+Detail now expresses the source Markdown structure: bold and italic emphasis, inline code, quoted blocks, ordered/nested lists, read-only task checkboxes, strikeout, hard breaks and tables. Tables can pan horizontally within the reading field, with the existing hidden-scrollbar policy. Minimal code/quote/table styling makes structure legible; panel geometry, entrance animation, grid timing, return controls and attribution placement are unchanged.
