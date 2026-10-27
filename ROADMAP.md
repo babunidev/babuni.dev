@@ -21,7 +21,7 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 - [x] Implement bounded DOM tile recycling, keeping stable logical coordinates (unit tested and browser preview checked).
 - [x] Prototype clockwise spiral-first project assignment with visibility-aware source identity recycling; fill the viewport by repeating the original project library when necessary. Ten pure-placement tests passed in isolation.
 - [x] Babuni.dev visually approved the initial 45-project spiral on desktop, describing the result as looking fantastic (2026-10-26).
-- [ ] Verify project uniqueness and stable identity during extended panning and ongoing autonomous shifts; full Astro build and physical-device checks remain outstanding.
+- [ ] Verify project uniqueness and stable identity during extended panning and ongoing autonomous shifts; extended physical-device checks remain outstanding; current production builds pass.
 
 **Babuni.dev's first desktop acceptance test (2026-10-26):** Local Astro 7.4.2 server returned the page successfully. On Babuni.dev's desktop, the centered BABUNI.DEV tile appeared correctly, mouse dragging felt smooth and appropriately paced, and the grid could be dragged indefinitely without encountering an edge. This verifies the manual desktop experience by user observation; physical phone/tablet, resizing, automated shift mechanics, and reduced-motion tests remain open.
 - [ ] Prove responsive coverage on phone, laptop, and wide desktop.
@@ -51,12 +51,12 @@ Functional prototype built; prolonged/device acceptance remains separate from im
 - [x] Grow big bloom inside the living grid with 2×2 modules and surrounding tiles.
 - [x] Retain the original-size project tile in the selected module’s lower-left quarter as a one-step return to centered small bloom.
 - [x] Compose all populated intros; center the chosen module and reveal others top-first clockwise, with additional rows extending down.
-- [x] Expand text into a scrollable reader with basic document formatting.
+- [x] Expand text into a scrollable reader with safe Markdown/GFM document formatting.
 - [x] Provide a scrollable image collection and browser fullscreen control where supported.
 - [x] Provide deliberate video collection playback and source/resource links.
 - [ ] Complete native-phone, keyboard/reduced-motion, cross-browser/fullscreen and long-session acceptance; refine advanced document/gallery presentation.
 
-Functional prototype built; local video remains until YouTube links are supplied. Rich Markdown fidelity and final image-gallery composition are not declared complete.
+Functional prototype built; local video remains until YouTube links are supplied. Common Markdown/GFM rendering is implemented; advanced gallery composition and broader acceptance remain open.
 
 ## Milestone 5 — Content and automation
 - [x] Validate the implemented JSON module schema and repository-source mappings.
@@ -64,7 +64,8 @@ Functional prototype built; local video remains until YouTube links are supplied
 - [x] Populate source-backed project modules, including babuni.dev (34 tiles connected to 33 public repositories; release/editorial acceptance is separate).
 - [x] Surface repository development notes as first-class modules.
 - [ ] Validate AI-created entries and require accurate attribution.
-- [ ] Add CI build checks and preview deployments.
+- [x] Add CI build checks.
+- [ ] Add preview deployments.
 - [ ] Set controlled publishing authorization.
 
 ## Milestone 6 — Release
@@ -276,3 +277,10 @@ Built: all published images use WebP, including gallery screenshots and video po
 ## 2026-10-27 — Desktop motion investigation
 
 Built: eliminate press-induced shift freeze, gradually brake active shifts only during actual dragging, cache repeated source/vacancy mappings and avoid redundant writes. Tests preserve normal tempo and geometry. Desktop smoothness remains open: local frame samples contain occasional longer gaps and do not establish a universal FPS improvement. Continue targeted desktop acceptance; do not mask stutter by speeding up or retiming approved transitions.
+
+
+## 2026-10-27 — Human desktop feedback and recommended next acceptance work
+
+**Babuni.dev reports:** Movement feels smoother after `cfd4c25`. This is positive desktop feel feedback, not an exhaustive performance or long-session sign-off.
+
+**AI recommendation, not yet authorized implementation:** Next verify keyboard/focus/reduced-motion navigation across all four depths, plus extended grid recycling/project identity. Keep the revised phone reader acceptance open. Then prepare controlled preview/staging deployment and release checks. Content stays ongoing secondary work; no new visual redesign or timing changes are implied.
