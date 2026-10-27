@@ -363,3 +363,8 @@ Babuni.dev requested formatted text in both preview depths. Cards display emphas
 ## Persistent header and direct discovery — 2026-10-27
 
 Babuni.dev requested the site header across grid, small bloom, big bloom and reader, superseding header hiding in big bloom. Projects opens a compact scrollable list with a search field, all current project names alphabetically, and an empty-result message. Search matches name/summary words without case sensitivity. Arrow Down moves from search to results; Enter selects a unique result; Escape dismisses the menu first. About opens a framed introduction. Header stays above the reader, whose square frame leaves clearance beneath it. Existing center/shift/reveal timing remains unchanged.
+
+
+## Phone reading and centered activity — 2026-10-27
+
+Supersedes the universal square-reader rule on phones: viewport below 600px uses full width, starts beneath the persistent header and leaves at least 64px below for outside dismissal. No phone border/inset frame. Reader opens with the accepted growth and closes with matching shrink/fade; reduced motion removes both. Desktop retains its framed square. Header center shows project-specific centering, opening, waiting for shift, small/big exploration and reading module. At compact widths the status occupies a second header row. Bottom instructions and small-bloom Close are removed; far-right question mark reveals controls by hover/focus/tap, including Return to center.

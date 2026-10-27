@@ -13,6 +13,19 @@ export function attachReaderHeader(view:HTMLElement):()=>void {
   return ()=>{parent.insertBefore(header,next);};
 }
 export function installSiteNavigation(select:(id:string)=>void,about:(trigger:HTMLButtonElement)=>void){
+  const help=document.querySelector<HTMLElement>('.site-help')!;
+  const helpToggle=document.querySelector<HTMLButtonElement>('#help-toggle')!;
+  const closeHelp=()=>{help.classList.remove('is-open');helpToggle.setAttribute('aria-expanded','false');};
+  helpToggle.addEventListener('click',()=>{
+    const open=help.classList.toggle('is-open');helpToggle.setAttribute('aria-expanded',String(open));
+    if(!open)helpToggle.blur();
+  });
+  document.addEventListener('pointerdown',event=>{if(event.target instanceof Node&&!help.contains(event.target))closeHelp();});
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&help.classList.contains('is-open')){
+      event.preventDefault();event.stopImmediatePropagation();closeHelp();helpToggle.blur();
+    }
+  },true);
   const toggle=document.querySelector<HTMLButtonElement>('#projects-toggle')!;
   const menu=document.querySelector<HTMLElement>('#projects-menu')!;
   const search=document.querySelector<HTMLInputElement>('#project-search')!;

@@ -20,6 +20,14 @@ const title='babuni.dev — Living Grid Prototype';
       <nav class="site-nav" aria-label="Main navigation">
         <button id="projects-toggle" type="button" aria-expanded="false" aria-controls="projects-menu">Projects</button>
         <button id="about-toggle" type="button">About</button>
+        <div class="site-help">
+          <button id="help-toggle" type="button" aria-label="How to use the site" aria-expanded="false" aria-controls="site-help-content">?</button>
+          <div id="site-help-content" role="region" aria-label="Site controls">
+            <p>Drag or swipe to explore. Arrow keys move the grid. Choose a project to open its small bloom, then a module for its big bloom. Read more opens the reader.</p>
+            <p>The project tile returns one step. Tap or click outside the reader, or press Escape, to close it. Projects lets you find a project directly.</p>
+            <button id="reset-view" type="button">Return to center</button>
+          </div>
+        </div>
         <div id="projects-menu" hidden>
           <label for="project-search">Find a project</label>
           <input id="project-search" type="search" placeholder="Search projects…" autocomplete="off" />
@@ -29,11 +37,6 @@ const title='babuni.dev — Living Grid Prototype';
       </nav>
       <span class="header-note">Living grid prototype</span>
     </header>
-    <div class="help-panel">
-      <span class="instruction">Drag or swipe to explore · Arrow keys also work</span>
-      <button id="reset-view" type="button">Return to center</button>
-    </div>
-    <div class="bloom-help"><button type="button" aria-label="Help exploring the bloom" aria-describedby="bloom-help-text">?</button><span id="bloom-help-text" role="tooltip">Drag or swipe to explore. Arrow keys move the grid. Read more opens detail. The project tile returns one step.</span></div>
     <div id="grid-status" class="sr-only" role="status" aria-live="polite"></div>
   </main>
   <script>
@@ -133,25 +136,21 @@ const title='babuni.dev — Living Grid Prototype';
   .tile-name{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:89%;font-size:clamp(12px,calc(var(--tile-size,240px) * .068),17px);max-width:89%;text-align:center;letter-spacing:.08em;color:#d8cab7;text-shadow:0 1px 1px #000;white-space:normal;overflow-wrap:break-word;text-wrap:balance;line-height:1.18}
   .grid-tile--long-title .tile-name{width:95%;font-size:clamp(9px,calc(var(--tile-size,240px) * .052),14px);letter-spacing:.025em;line-height:1.12;max-width:95%}
   .grid-tile--origin .tile-face{border-color:#ac9a86}
-  .site-header{position:fixed;z-index:20;inset:0 0 auto;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(18px,5vw,72px);background:rgba(14,15,18,.94);border-bottom:1px solid #5b554e;pointer-events:auto}
+  :root{--header-height:52px}
+  .site-header{position:fixed;z-index:20;inset:0 0 auto;height:var(--header-height);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(18px,5vw,72px);background:rgba(14,15,18,.94);border-bottom:1px solid #5b554e;pointer-events:auto}
   .brand{font-size:17px;font-weight:bold;letter-spacing:.19em;white-space:nowrap;color:#e8ddc9}
   .site-nav{display:flex;align-items:center;gap:16px;margin-left:auto;font:14px system-ui,sans-serif}
   .site-nav button{font:inherit;color:#e9dfd2;background:transparent;border:1px solid #81715a;padding:7px 12px;cursor:pointer}
   .site-nav button:hover,.site-nav button:focus-visible{background:#49404a;outline:2px solid #ae9875}
-  #projects-menu{position:fixed;top:60px;right:clamp(12px,5vw,72px);width:min(360px,calc(100vw - 24px));padding:16px;background:#202027;border:1px solid #ae9875;box-shadow:0 12px 36px #0008;color:#e9dfd2}
+  #projects-menu{position:fixed;top:calc(var(--header-height) + 8px);right:clamp(12px,5vw,72px);width:min(360px,calc(100vw - 24px));padding:16px;background:#202027;border:1px solid #ae9875;box-shadow:0 12px 36px #0008;color:#e9dfd2}
   #projects-menu[hidden]{display:none}
   #project-search{display:block;width:100%;margin-top:8px;padding:10px;font:inherit;background:#15151b;color:inherit;border:1px solid #81715a}
   #project-result-count{font-size:12px;color:#c8c2cb;margin:10px 0}
   #project-results{display:flex;flex-direction:column;gap:4px;max-height:min(50dvh,420px);overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
   #project-results button{text-align:left;min-height:42px}
-  .header-note{color:#a49b92;font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.05em}
-  .help-panel{position:absolute;z-index:2;right:18px;bottom:18px;left:18px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;pointer-events:none;font-family:system-ui,sans-serif;font-size:12px;color:#d6d3d0}
-  .instruction{padding:8px 13px;border-radius:30px;background:rgba(10,10,12,.82)}
-  .help-panel button{pointer-events:auto;cursor:pointer;padding:8px 13px;border:1px solid #90816c;border-radius:24px;color:#eee4d3;background:rgba(21,19,20,.93)}
-  .help-panel button:hover{background:#453c36}
-  .help-panel button:focus-visible{outline:2px solid #d0b594;outline-offset:3px}
+  .header-note{position:absolute;left:50%;transform:translateX(-50%);max-width:calc(100% - 620px);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;pointer-events:none;color:#a49b92;font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.05em}
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-  @media(max-width:520px){.site-header{gap:8px;padding:0 12px}.brand{font-size:14px;letter-spacing:.12em}.site-nav{gap:8px;font-size:13px}.site-nav button{padding:7px 9px}.header-note{display:none}.help-panel{bottom:12px}}
+  @media(max-width:760px){.site-header{gap:8px;padding:0 12px}.brand{font-size:14px;letter-spacing:.12em}.site-nav{gap:8px;font-size:13px}.site-nav button{padding:7px 9px}.header-note{display:block;left:12px;right:12px;top:48px;max-width:none;transform:none;font-size:10px}.site-header{align-items:flex-start;padding-top:8px}:root{--header-height:76px}}
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   .bloom-preview-content{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:8px;flex:1;scrollbar-width:none}
   .bloom-close{flex-shrink:0}
@@ -162,7 +161,6 @@ const title='babuni.dev — Living Grid Prototype';
   .video-item .bloom-media{max-height:none;min-height:0}
   .is-big-bloom-waiting .grid-tile--selected .tile-select::after{content:'';position:absolute;inset:4px;border:3px solid #ffe0a3;box-shadow:inset 0 0 24px #ffd2827a,0 0 24px #ffd282b3;pointer-events:none;animation:selection-wait 1400ms ease-in-out infinite}
   .grid-viewport.is-big-bloom{overflow:clip}
-  .experience:has(.is-big-bloom) .help-panel{display:none}
   .is-bloom-opening .grid-tile--depth-transition{transition:transform 520ms cubic-bezier(.22,.75,.25,1)}
   .grid-tile--big-anchor{z-index:4}
   .big-bloom-card{padding:clamp(12px,calc(var(--tile-size) * .085),24px);gap:12px;overflow:hidden;transform-origin:top left}
@@ -173,15 +171,19 @@ const title='babuni.dev — Living Grid Prototype';
   .big-bloom-card--selected .bloom-preview-content{flex:0 1 auto;max-height:calc(var(--tile-size) - 32px)}
   .bloom-preview-credit,.bloom-collection-list{font:12px/1.5 system-ui,sans-serif;color:#b8afbc;margin:6px 0}
   .bloom-collection-list{padding-left:20px}
-  .bloom-help{display:none;position:fixed;z-index:6;right:16px;bottom:16px;font:13px/1.5 system-ui,sans-serif}
-  .experience:has(.is-big-bloom) .bloom-help{display:block}
-  .bloom-help button{width:32px;height:32px;border-radius:50%;border:1px solid #a7977e;background:#242329;color:#e9dfd2;cursor:help}
-  .bloom-help span{display:none;position:absolute;right:0;bottom:40px;width:230px;padding:12px;background:#242329;border:1px solid #a7977e;color:#e9dfd2}
-  .bloom-help:hover span,.bloom-help:focus-within span{display:block}
+  .site-help{position:relative}
+  .site-nav #help-toggle{width:32px;height:32px;padding:0;border-radius:50%;cursor:help}
+  #site-help-content{display:none;position:fixed;right:12px;top:calc(var(--header-height) + 8px);width:min(320px,calc(100vw - 24px));padding:16px;font:13px/1.5 system-ui,sans-serif;background:#242329;border:1px solid #a7977e;box-shadow:0 12px 36px #0008;color:#e9dfd2}
+  .site-help.is-open #site-help-content{display:block}
+  @media(hover:hover){.site-help:hover #site-help-content{display:block}}
+  .site-help:has(:focus-visible) #site-help-content{display:block}
   .module-detail::backdrop{background:#11121855;animation:detail-backdrop-in 420ms ease-out both}
   .module-detail{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;overflow:hidden;pointer-events:auto}
   .module-detail>.site-header{pointer-events:auto}
-  .module-detail-panel{pointer-events:auto;box-sizing:border-box;position:fixed;inset:52px 0 0;margin:auto;width:min(980px,calc(100vw - 32px),calc(100dvh - 88px));height:min(980px,calc(100vw - 32px),calc(100dvh - 88px));max-width:none;max-height:none;padding:clamp(16px,3vw,40px);border:2px solid #ae9875;background:#202027;color:#e9dfd2;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;user-select:text}
+  .module-detail-panel{pointer-events:auto;box-sizing:border-box;position:fixed;inset:var(--header-height) 0 0;margin:auto;width:min(980px,calc(100vw - 32px),calc(100dvh - 88px));height:min(980px,calc(100vw - 32px),calc(100dvh - 88px));max-width:none;max-height:none;padding:clamp(16px,3vw,40px);border:2px solid #ae9875;background:#202027;color:#e9dfd2;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;user-select:text}
+  @media(max-width:599px){
+    .module-detail-panel{inset:var(--header-height) 0 auto;width:100%;height:calc(100dvh - var(--header-height) - max(64px,env(safe-area-inset-bottom)));margin:0;border:0;box-shadow:none;padding:20px 16px}
+  }
   .module-detail[open] .module-detail-panel{animation:detail-panel-in 420ms cubic-bezier(.2,.7,.2,1) both}
   @keyframes detail-panel-in{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
   @keyframes detail-backdrop-in{from{background:#11121800}to{background:#11121855}}

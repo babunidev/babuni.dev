@@ -1,3 +1,4 @@
+import aboutText from '../content/about.md?raw';
 import {installSiteNavigation} from './site-navigation';
 import {installInteractionFeedback} from './interaction-feedback';
 import {modulesForProject} from '../lib/project-content';
@@ -83,8 +84,14 @@ if (viewport && world && resetButton && status) {
   const mobileTopics=matchMedia('(hover: none) and (pointer: coarse)');
   const heading=document.querySelector<HTMLElement>('.header-note');
   let timer:ReturnType<typeof setTimeout>|null=null;
-  const details=createModuleDetails(open=>{
+  function projectName(){return demoProjects.find(project=>project.id===selectedChoice?.projectId)?.name??'project';}
+  function explorationStatus(){return selectedChoice?`Exploring ${projectName()} · ${bigBloomOpen?'big':'small'} bloom`:'Living grid';}
+  let readerActivity:string|null=null;
+  function activity(message:string){if(heading)heading.textContent=readerActivity??message;}
+  const details=createModuleDetails((open,title)=>{
     detailOpen=open;
+    readerActivity=open?(title==='About BABUNI.DEV'?'About BABUNI.DEV':`Reading ${projectName()} · ${title}`):null;
+    activity(explorationStatus());
     if(open){pauseBloomMedia();heldArrows.clear();manualPan=createManualPanState();pauseMovement();}
     else{surface.scrollTop=0;surface.scrollLeft=0;resumeMovement();if(!moving)nextRound(restWait);}
   });
@@ -97,8 +104,8 @@ if (viewport && world && resetButton && status) {
     if(index<0)return;
     const navigate=()=>{
       directNavigationTimer=null;
-      if(moving||bigTransitioning||bloomClosingTimer!==null||centering){
-        if(heading)heading.textContent='Waiting to open '+demoProjects[index].name;
+      if(details.isOpen()||moving||bigTransitioning||bloomClosingTimer!==null||centering){
+        activity(`${moving?'Waiting for shift to finish':'Switching projects'} · ${demoProjects[index].name}`);
         directNavigationTimer=setTimeout(navigate,100);return;
       }
       if(selectedChoice||bloomModule){stopSelection();directNavigationTimer=setTimeout(navigate,100);return;}
@@ -117,8 +124,8 @@ if (viewport && world && resetButton && status) {
   },trigger=>{
     if(directNavigationTimer!==null){clearTimeout(directNavigationTimer);directNavigationTimer=null;}
     details.open({id:'about',type:'text',title:'About BABUNI.DEV',preview:'',
-      body:'**Babuni.dev** is a living creative workshop: projects, experiments, artwork and ideas, including work in progress.\n\nExplore the grid, open a project’s small bloom, choose a module for its big bloom, then read more for the full detail.\n\nCreative direction and authorship: **Babuni.dev**. AI-assisted implementation and development decisions are recorded in the project documentation.',
-      source:'https://github.com/babunidev/babuni.dev'},trigger);
+      body:aboutText,
+      source:'https://github.com/babunidev/babuni.dev/blob/main/src/content/about.md'},trigger);
   });
 
   /** Direct exploration reveals all three snippets; an ambient hint lights
@@ -480,7 +487,7 @@ if (viewport && world && resetButton && status) {
     for(const slot of slots)populate(slot,slot.column,slot.row);
     moving={moves:round.moves,started:performance.now(),pausedAt:null,fraction:0};
     surface.classList.add('is-autoshifting');
-    if(heading)heading.textContent=round.axis==='row'?'Rows are shifting':'Columns are shifting';
+    if(!detailOpen)activity(`${round.axis==='row'?'Rows':'Columns'} are shifting${selectedChoice?' · '+explorationStatus():''}`);
     requestAnimationFrame(frameMovement);
   }
   /** Transfer the already-rendered, already-decoded tile *element* to the
@@ -519,7 +526,7 @@ if (viewport && world && resetButton && status) {
     paintMovement(0);
     surface.classList.remove('is-autoshifting');
     if(pendingBigBloom){const open=pendingBigBloom;pendingBigBloom=null;open();return;}
-    if(heading)heading.textContent=selectedChoice?'Exploring project':'Living grid prototype';
+    if(!detailOpen)activity(explorationStatus());
     if(closeAfterShift){
       const next=closeAfterShift.next;closeAfterShift=null;
       stopSelection(true,next);
@@ -574,12 +581,14 @@ if (viewport && world && resetButton && status) {
     pendingBigBloom=null;clearDepthFeedback();surface.classList.remove('is-big-bloom-waiting');
     const wasActive=!!selectedChoice||!!centering||!!bloomModule||!!pendingChoice;
     const hadBloom=!!bloomModule;
+    const closingName=projectName();
     if(hadBloom&&moving&&animateReturn){
       // Keep the current clock and easing curve. Selection/collapse waits
       // for this event to finish at its established tempo.
       closeAfterShift={next:nextChoice};
       pendingChoice=nextChoice;
       highlightSelection();
+      activity(`Waiting for shift to finish · ${closingName}`);
       if(nextChoice)liveStatus.textContent='Project selected. Waiting for the current shift to finish at its normal pace.';
       resumeMovement();
       return;
@@ -614,7 +623,7 @@ if (viewport && world && resetButton && status) {
     // Keep independent paused motion while displaced runs return home.
     paintMovement(moving?.fraction??0);
     highlightSelection();
-    if(heading)heading.textContent=nextChoice?'Switching projects':'Living grid prototype';
+    activity(hadBloom&&animateReturn?`Closing ${closingName} bloom`:'Living grid');
     if(hadBloom&&animateReturn&&!prefersReduced.matches){
       bloomClosingTimer=setTimeout(()=>{
         surface.classList.remove('is-bloom-closing');
@@ -623,6 +632,7 @@ if (viewport && world && resetButton && status) {
           slot.element.style.removeProperty('transition');
         }
         bloomClosingTimer=null;
+        activity(explorationStatus());
         if(pendingChoice){
           const following=pendingChoice;pendingChoice=null;
           beginSelection(following);
@@ -661,13 +671,7 @@ if (viewport && world && resetButton && status) {
     });
     bloomModule=bloomModules[0]??null;
     if(activeTopic===chosen.element)hideTopic();
-    if(bloomModule){
-      const close=document.createElement('button');close.className='bloom-close';close.type='button';
-      close.textContent='Close';close.setAttribute('aria-label','Close '+project.name);
-      close.addEventListener('click',event=>{
-        event.stopPropagation();stopSelection();surface.focus({preventScroll:true});
-      });bloomModule.insertBefore(close,bloomModule.querySelector('.bloom-read-more'));
-    }
+    activity(`Opening ${project.name} · small bloom`);
     paintMovement(0);
     // Reserve the entire footprint first; reveal previews only after the
     // displacement settles. Pending timers belong to this bloom instance.
@@ -679,6 +683,7 @@ if (viewport && world && resetButton && status) {
         if(prefersReduced.matches||reveal.delay===0)reveal.item.classList.add('is-open');
         else bloomRevealTimers.push(setTimeout(()=>reveal.item.classList.add('is-open'),reveal.delay));
       }
+      activity(`Exploring ${project.name} · small bloom`);
       liveStatus.textContent=project.name+': '+modules.length+' preview modules opened.';
       for(const slot of slots)slot.element.style.removeProperty('transition');
       if(moving)resumeMovement();else nextRound(1500);
@@ -729,11 +734,11 @@ if (viewport && world && resetButton && status) {
   }
   function queueDepthChange(change:()=>void,control:HTMLElement|null=null):void {
     clearDepthFeedback();
-    const run=()=>{clearDepthFeedback();change();};
+    const run=()=>{clearDepthFeedback();activity(`Opening ${projectName()} · ${bigBloomOpen?'small':'big'} bloom`);change();};
     if(moving){
       pendingDepthControl=control;control?.classList.add('is-waiting');control?.setAttribute('aria-busy','true');
       pendingBigBloom=run;surface.classList.add('is-big-bloom-waiting');highlightSelection();
-      liveStatus.textContent='Waiting for the current shift before changing bloom depth.';resumeMovement();
+      activity(`Waiting for shift to finish · ${projectName()}`);liveStatus.textContent='Waiting for the current shift before changing bloom depth.';resumeMovement();
     }else run();
   }
   function requestBigBloom(moduleId:string):void {
@@ -775,6 +780,7 @@ if (viewport && world && resetButton && status) {
           if(prefersReduced.matches||reveal.delay===0)show();else bloomRevealTimers.push(setTimeout(show,reveal.delay));
         }
         if(activePointer===null)surface.focus({preventScroll:true});
+        activity(`Exploring ${project.name} · big bloom`);
         liveStatus.textContent=project.name+': '+bloomModules.length+' large modules in the living grid.';
       });
     },bloomModules.find(panel=>panel.dataset.moduleId===moduleId)?.querySelector<HTMLElement>('.bloom-read-more')??null);
@@ -793,7 +799,7 @@ if (viewport && world && resetButton && status) {
       depthTransition(centeredPan(bloomAnchor,tileSize),()=>{
         bloomModules.forEach(panel=>panel.classList.add('is-open'));
         surface.scrollTop=0;surface.scrollLeft=0;
-        surface.focus({preventScroll:true});liveStatus.textContent='Returned to the same small bloom.';
+        activity(explorationStatus());surface.focus({preventScroll:true});liveStatus.textContent='Returned to the same small bloom.';
       });
     });
   }
@@ -856,7 +862,7 @@ if (viewport && world && resetButton && status) {
       // Selection never retimes an active shift. Mark gold now, then
       // begin the opening procedure once this round has finished.
       pendingChoice=choice;highlightSelection();
-      if(heading)heading.textContent='Waiting to open '+demoProjects[chosen.projectIndex??0].name;
+      if(heading)heading.textContent='Waiting for shift to finish · '+demoProjects[chosen.projectIndex??0].name;
       liveStatus.textContent='Project selected. Waiting for the current shift to finish at its normal pace.';
       resumeMovement();
       return;
@@ -904,7 +910,7 @@ if (viewport && world && resetButton && status) {
 
     const viewportRect=surface.getBoundingClientRect();
     const headerHeight=document.querySelector('.site-header')?.getBoundingClientRect().height??52;
-    const footerHeight=document.querySelector('.help-panel')?.getBoundingClientRect().height??48;
+    const footerHeight=0;
     const insets=ambientInsets(tileSize,headerHeight,footerHeight);
     // getBoundingClientRect reflects the actual viewport and CSS transforms,
     // unlike resting row/column indices or a simple aria-hidden check.
@@ -1120,6 +1126,9 @@ if (viewport && world && resetButton && status) {
   });
   window.addEventListener('focus',refreshMobileTopics);
   reset.addEventListener('click',()=>{
+    details.close();
+    document.querySelector('.site-help')?.classList.remove('is-open');
+    document.querySelector('#help-toggle')?.setAttribute('aria-expanded','false');
     stopSelection(false);
     hideTopic();
     cancelIntro();

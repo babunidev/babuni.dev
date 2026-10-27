@@ -410,3 +410,8 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ## 2026-10-27 — Header navigation survives every depth
 
 **Status: Accepted direction from Babuni.dev; implemented by AI.** The site header persists through all four stages, superseding the earlier big-bloom header hiding rule. This is the site navigation, separate from the rejected big-bloom instruction bar. Projects contains a searchable alphabetical list of current candidate tiles; choosing one waits for existing movement, closes an existing bloom, centers and opens a small bloom. About provides verified project context. The same header moves into the reader modal top layer and returns on dismissal. AI implementation preserves existing motion durations. All available saved AI screenshots become historical visual documentation with provenance; future saved verification captures should join the archive.
+
+
+## 2026-10-27 — Responsive reading and activity cues
+
+**Status: Implemented from Babuni.dev phone feedback.** Below 600px, reader is full-width and taller, frame-free with a minimum 64px dismissal strip below (plus safe-area allowance). Desktop retains the square. Dismissal mirrors the accepted 420ms opening; reduced motion skips the animation. Grid shift/reveal tempo is unchanged. Centered header activity identifies project/depth/document; small headers allow a second row. Help is far right and works by hover, focus or tap. Small bloom closes through the original tile, another project or Escape; its redundant Close button is removed. About is an explicitly evolving draft, synthesized by AI from available evidence at Babuni.dev’s request; unsupported personal history is deferred.

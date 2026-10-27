@@ -252,3 +252,8 @@ Built: Markdown formatting in small and big bloom previews, with bounded excerpt
 ## 2026-10-27 — Direct discovery and persistent navigation
 
 Built: site header in all four depths, Projects dropdown with search and direct center/open behavior, About introduction, and archive of all 19 available prior saved browser screenshots in Visual documentation. Future saved verification captures belong in that archive. Content remains living/WIP; physical-device and long-session acceptance remain separate.
+
+
+## 2026-10-27 — Phone reader and activity refinements
+
+Built from Babuni.dev’s actual-phone feedback: larger full-width phone reader, shrinking dismissal, centered contextual activity, shared header help and removal of redundant small-bloom Close. About is now a source-backed WIP with public profile links; richer personal history remains ongoing content authoring. Agent browser checks are separate from the next physical-phone acceptance pass. Existing grid tempo and four depths remain unchanged.

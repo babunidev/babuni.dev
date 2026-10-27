@@ -30,3 +30,10 @@ New browser verification screenshots should be archived here and in the gallery 
 - `persistent-header-big-bloom.png` — Site header above grid-native big bloom.
 
 Both are AI browser captures added with this change. Total archived AI captures: 21, alongside two original supplied images.
+
+## Reader and activity refinement, 2026-10-27
+
+- `reader-controls-about-wip.png` — WIP About, source-backed links, centered activity.
+- `reader-contextual-activity.png` — Reading BABUNI.DEV Overview, centered contextual label and header-end help.
+
+Both captures are desktop browser evidence; the full-width phone reader needs physical-phone confirmation. Total AI browser captures: 23, alongside two original supplied images.

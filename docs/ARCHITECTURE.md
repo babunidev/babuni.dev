@@ -365,3 +365,8 @@ reader-dismissal.ts installs backdrop gesture and native dialog cancel handlers.
 ## Persistent navigation — 2026-10-27
 
 `site-navigation.ts` owns the searchable list and shared-header modal attachment/restoration. `grid.ts` resolves stable project IDs into current tile residents, waiting for active shifts/transitions and closing existing blooms before centering/opening; a missing project can reserve an offscreen cell through `ProjectPlacement.assign`. No grid reset or shift retiming is required. Reader modal occupies the viewport with an independently animated/scrolled square panel and fixed header. Dismissal measures the inner panel, preserving outside-click and Escape behavior. Screenshot assets are static gallery entries, with inventory in `docs/VISUAL_DOCUMENTATION.md`.
+
+
+## Reader exit lifecycle and contextual header — 2026-10-27
+
+`reader-transition.ts` owns a cancellable 420ms Web Animation completion, keeping modal and header alive until shrink finishes; reduced motion/no animation support finishes immediately. Replacement cancels stale completion. `module-detail.ts` reports document title to the grid’s activity callback and still aborts body fetches/stops media on dismissal. Responsive CSS scopes edge-to-edge rectangular geometry to phone widths, with dynamic viewport/safe-area sizing. Shared-header help supports tap state, hover/focus and outside/Escape dismissal. About Markdown is editable at `src/content/about.md`; no chat history is shipped in the client.

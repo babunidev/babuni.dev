@@ -220,3 +220,8 @@ Babuni.dev clarified that this is a living, growing project: WIP content is expe
 ## About, project search and screenshot history — 2026-10-27
 
 Babuni.dev requested About and searchable direct project navigation. Search uses the existing 53-candidate inventory, including WIP/unresolved entries, not a new claim that every project is complete. About summarizes the existing creative workshop concept and human/AI attribution. All 19 locally available saved AI browser verification screenshots have been added to Visual documentation, with historical captions identifying superseded states and distinguishing browser evidence from actual phone tests. The original supplied artwork/prototype images remain. See `VISUAL_DOCUMENTATION.md` for the archive manifest.
+
+
+## WIP About and interface language — 2026-10-27
+
+Babuni.dev requested a more personal About and authorized gathering available chats/known project information as WIP. AI drafted `src/content/about.md` from established project interests and creative-process discussions, using the artist name Babuni.dev. FavorCraft’s public README supplies exact Babunigaming Instagram, YouTube and CurseForge URLs; the connected repository owner supports the GitHub profile. No exact place of origin, personal legal name or life-history dates were verified; these remain future authoring rather than placeholders presented as facts. About wording is an AI-assisted editorial draft. Public profile references do not imply the accounts were live-login tested. Activity labels use current project/module names. Controls are contextual help rather than persistent bottom copy.

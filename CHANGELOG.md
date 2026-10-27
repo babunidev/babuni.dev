@@ -388,3 +388,10 @@ Each future entry should include the change, its user-visible or technical effec
 ### Added — Persistent project navigation and visual history (2026-10-27)
 - Header available across grid, small bloom, big bloom and reader, with About and a searchable list of all 53 project tiles. Selecting a project centers and opens it through the existing shift/close sequence.
 - Archived all 19 available saved browser verification captures in the Visual documentation gallery with historical-context captions.
+
+
+### Changed — Mobile reader, activity and contextual controls (2026-10-27)
+- Phone readers use an edge-to-edge taller rectangle below the header, without the decorative frame, retaining at least 64px below for dismissal. Desktop retains the square framed reader.
+- Reader dismissal shrinks/fades the panel before removal; reduced motion closes immediately. Header activity is centered and names the project, bloom depth or document being read.
+- Replaced bottom instruction text and big-bloom help with a far-right header help control supporting hover, keyboard and tap. Removed the small-bloom Close button.
+- Expanded About into a WIP introduction with source-backed project interests and GitHub, CurseForge, Instagram and YouTube links.
