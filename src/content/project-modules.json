@@ -189,6 +189,11 @@
           "src": "/media/babuni-dev/images/verification/webp-publication-check.webp",
           "alt": "Browser verification of WebP portal artwork, gallery image and video poster in the small bloom.",
           "caption": "AI desktop browser verification, 2026-10-27: WebP media loaded and gallery Next image worked. Not physical-phone acceptance."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/desktop-shift-playback.webp",
+          "alt": "Desktop grid after dragging with gradual active-shift braking.",
+          "caption": "AI desktop browser verification, 2026-10-27: drag braking and shift playback investigation. A still image does not establish frame rate; see the performance report."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

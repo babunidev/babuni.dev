@@ -239,3 +239,8 @@ The reader delivers full Markdown **on demand**, while smaller modules retain co
 ## WebP assets and archive fidelity — 2026-10-27
 
 All locally published image assets are WebP. Historical verification filenames now use `.webp`; captions/credits and capture context remain unchanged. The prior `.png` capture files were actually JPEG, verified by decoding rather than extension. Their quality-85 derivatives retain dimensions and use smaller files; original bytes remain in the local task image-originals archive. Source repository Markdown is unmodified. Favicon SVG was rasterized losslessly and the unused ICO duplicate was removed from public assets.
+
+
+## Performance evidence — 2026-10-27
+
+Babuni.dev’s report of uncomfortable uneven motion is actual desktop feedback. AI measurements are local in-app desktop browser samples and synthetic computation benchmarks, not physical-phone evidence or a full browser trace. See PERFORMANCE-2026-10-27.md. Verification captures remain WebP and carry development-context captions. No project source text, artwork or authored media was changed by the playback/performance work.

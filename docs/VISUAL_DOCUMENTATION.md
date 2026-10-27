@@ -43,3 +43,7 @@ Both captures are desktop browser evidence; the full-width phone reader needs ph
 - `webp-publication-check.webp` — browser-loaded WebP portal artwork, gallery and video poster; Next image worked.
 
 All 24 archived AI captures now publish as actual WebP. Earlier `.png` filenames contained JPEG bytes, despite the previous extension-based description. Captions preserve history; original bytes remain outside public assets.
+
+## Desktop shift playback, 2026-10-27
+
+- `desktop-shift-playback.webp` — grid after a real drag during an active shift. AI desktop browser evidence; still image is not FPS proof. See PERFORMANCE-2026-10-27.md for measured callback intervals and limits.

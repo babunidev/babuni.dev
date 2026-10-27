@@ -271,3 +271,8 @@ Built from Babuni.dev’s actual-phone feedback: larger full-width phone reader,
 ## 2026-10-27 — WebP publishing consistency
 
 Built: all published images use WebP, including gallery screenshots and video posters; image format/signature checks prevent regression. Existing converted media set is 31.5% smaller before adding this session’s verification capture. Originals remain outside publication. Actual phone acceptance remains a separate track.
+
+
+## 2026-10-27 — Desktop motion investigation
+
+Built: eliminate press-induced shift freeze, gradually brake active shifts only during actual dragging, cache repeated source/vacancy mappings and avoid redundant writes. Tests preserve normal tempo and geometry. Desktop smoothness remains open: local frame samples contain occasional longer gaps and do not establish a universal FPS improvement. Continue targeted desktop acceptance; do not mask stutter by speeding up or retiming approved transitions.

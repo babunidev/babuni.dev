@@ -380,3 +380,8 @@ Supersedes the universal square-reader rule on phones: viewport below 600px uses
 ## WebP publication — 2026-10-27
 
 Babuni.dev requested WebP throughout the website. Preserve image dimensions, captions, alt text, round portal masks and lazy/on-demand delivery. Existing JPEG captures/posters use quality-85 WebP derivatives; existing portal WebPs retain their original bytes. This changes asset delivery, not bloom geometry or interaction tempo.
+
+
+## Uninterrupted click and gradual drag braking — 2026-10-27
+
+Babuni.dev rejected the momentary pointerdown freeze and requested organic braking during actual dragging. A press retains immediate gold feedback and lets the current shift continue normally. Drag begins only beyond 9px travel; shift playback rate then approaches zero over 280ms, resuming smoothly when manual movement ends. Camera drag follow, bloom timing, shift rest intervals and the normal 4.4-second line motion are unchanged. Hidden-page and reader pauses remain hard pauses. User clarified the perceived uneven motion is on desktop; frame smoothness remains subject to desktop acceptance.

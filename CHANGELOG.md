@@ -413,3 +413,9 @@ Each future entry should include the change, its user-visible or technical effec
 ### Changed — WebP for every published image (2026-10-27)
 - Converted all remaining screenshot/gallery/poster images and SVG favicon to WebP, updated gallery/poster references, and removed the unused legacy ICO duplicate from publication. Existing portal WebPs remain unchanged.
 - Public-image format/signature checks now run before builds; originals are preserved outside public assets.
+
+
+### Fixed — Clicks no longer pause active shifts (2026-10-27)
+- Pointer presses acknowledge selection without freezing an active line shift. Only actual drag movement past the existing 9px threshold brakes playback.
+- Dragging gradually brakes and resumes shift playback over 280ms; the normal uninterrupted shift still takes 4.4 seconds. Hidden-page and reader pauses remain immediate.
+- Cached source-coordinate and row-vacancy calculations reduce repeated rendering work without changing geometry; stable transforms and busy attributes avoid redundant writes. Added an opt-in local development frame sampler.

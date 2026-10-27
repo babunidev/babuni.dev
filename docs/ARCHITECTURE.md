@@ -384,3 +384,8 @@ As of this tree: **53 candidates**, **34 tiles tied to 33 public repos**, **15 s
 ## Public image guard — 2026-10-27
 
 `check-webp.mjs` recursively checks public image extensions and RIFF/WEBP/VP8 container signatures, and runs in `content:check` before build. Regression tests cover current assets and renamed-invalid/legacy fixtures. Gallery/poster references target WebP; full source Markdown references are preserved as documentation links. No new runtime image codec dependency. Original captures remain outside the deployed public directory.
+
+
+## Playback clock and render caches — 2026-10-27
+
+`shift-playback.ts` integrates logical elapsed time and playback rate with a frame-partition-independent linear speed ramp. Pointerdown does not pause; actual drag/keyboard panning requests braking. `grid-render-cache.ts` memoizes reverse-history coordinates by history length with a bounded map and compiles immutable vacancy footprints into sorted row mappings. Geometry equivalence tests include extended/3x3-sized cases. `grid-profile.ts` creates a hidden local output only in development with `?grid-profile=1`, sampling bounded rAF intervals by phase; no telemetry and no production sampling. It measures callback gaps, not GPU paint or physical display FPS.

@@ -429,3 +429,8 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ## 2026-10-27 — All published images use WebP
 
 **Status: Implemented from Babuni.dev request.** Public artwork, screenshots, gallery images, posters and favicon use real WebP containers. Originals stay outside public. AI selected quality 85 for current JPEG-source media after lossless trials increased size; retain dimensions. Genuine future PNG screenshots should use measured lossless WebP when practical. Validate extension and container before build. Imported Markdown image references remain source text/explicit links, not downloaded or rewritten assets.
+
+
+## 2026-10-27 — Shift playback responds to drag, never to a press
+
+**Status: Implemented from Babuni.dev request.** A tile press does not pause or retime an active shift. Existing 9px pointer travel distinguishes drag; actual dragging brakes logical shift speed over 280ms and release ramps it back up. AI selected that short ramp within the requested organic-stop behavior; its feel remains for human acceptance. Uninterrupted shifts retain 4400ms. Reader/background pauses stay immediate. Source/vacancy caches must remain equivalent to existing geometry, including future larger footprints. Desktop performance is an open empirical acceptance track; the measured cache speedup is not a claimed end-to-end FPS gain.
