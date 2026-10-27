@@ -448,3 +448,7 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ### Header B mark — 2026-10-27
 
 Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
+
+## 2026-10-27 — Reader-only frameless scrolling
+
+**Status:** implemented from Babuni.dev’s direction, awaiting visual acceptance. Native browser chrome stays hidden; a floating gold thumb has no track/frame. AI chose a 24px transparent hit area around a 6px visible mark and a 36–96px thumb, with full-range proportional dragging. A conventional framed scrollbar was rejected by the human request; hiding every indicator would prevent the requested fast drag. The reader scroll element is separate from its animated shell so the handle stays visible during content scrolling.

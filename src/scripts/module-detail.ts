@@ -1,3 +1,4 @@
+import {installReaderScroll} from './reader-scroll';
 import {shrinkReader} from './reader-transition';
 import {attachReaderHeader} from './site-navigation';
 import {videosForModule,type ProjectModule} from '../lib/project-modules';
@@ -8,13 +9,14 @@ import {installReaderDismissal} from './reader-dismissal';
 /** Detail is modal; big bloom itself belongs to the living grid. */
 export function createModuleDetails(onChange:(open:boolean,title?:string)=>void){
   let detail:HTMLDialogElement|null=null;
+  let disposeScroll:(()=>void)|null=null;
   let cancelClosing:(()=>void)|null=null;
   let closing=false;
   let dismissReader:(()=>void)|null=null;
   let restoreHeader:(()=>void)|null=null;
   let documentRequest:AbortController|null=null;
   function stopPlayers(root:HTMLElement){root.querySelectorAll('video').forEach(video=>video.pause());root.querySelectorAll('iframe').forEach(frame=>{const figure=frame.closest('figure');if(figure)figure.replaceWith(renderVideo({embed:frame.src,title:frame.title}));else frame.remove();});}
-  function closeDetail(){cancelClosing?.();cancelClosing=null;closing=false;dismissReader=null;if(!detail)return;documentRequest?.abort();documentRequest=null;stopPlayers(detail);restoreHeader?.();restoreHeader=null;detail.close();detail.remove();detail=null;onChange(false);}
+  function closeDetail(){disposeScroll?.();disposeScroll=null;cancelClosing?.();cancelClosing=null;closing=false;dismissReader=null;if(!detail)return;documentRequest?.abort();documentRequest=null;stopPlayers(detail);restoreHeader?.();restoreHeader=null;detail.close();detail.remove();detail=null;onChange(false);}
   function openDetail(module:ProjectModule,trigger:HTMLButtonElement){
     closeDetail();
     onChange(true,module.title);
@@ -53,9 +55,9 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
       });
     }
     dismissReader=backToBloom;
-    const panel=document.createElement('div');panel.className='module-detail-panel';panel.append(title,content);
+    const panel=document.createElement('div');panel.className='module-detail-panel';const scroller=document.createElement('div');scroller.className='reader-scroll-content';scroller.append(title,content);panel.append(scroller);
     installReaderDismissal(view,backToBloom,panel);
-    view.append(panel);document.body.append(view);restoreHeader=attachReaderHeader(view);view.showModal();title.focus({preventScroll:true});
+    view.append(panel);document.body.append(view);restoreHeader=attachReaderHeader(view);view.showModal();disposeScroll=installReaderScroll(panel,scroller,content);title.focus({preventScroll:true});
   }
   return {open:openDetail,close:()=>dismissReader?.(),isOpen:()=>detail!==null};
 }

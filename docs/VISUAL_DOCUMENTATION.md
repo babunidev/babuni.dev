@@ -57,3 +57,10 @@ All 24 archived AI captures now publish as actual WebP. Earlier `.png` filenames
 - `browser-branding.webp` — AI desktop browser capture of the grid with no Astro toolbar. Favicon link metadata was checked separately; browser tab chrome is not captured. Original JPEG bytes are preserved outside public assets; published capture is WebP.
 
 - `header-branding.webp` — AI desktop browser capture, 2026-10-27: B WebP beside BABUNI.DEV, no Astro toolbar. Original capture is JPEG, preserved outside public assets.
+
+## Reader position handle — 2026-10-27
+
+- `reader-scroll-first-preview.webp` — AI desktop browser capture of the initial long proportional thumb, superseded by the compact version.
+- `reader-scroll-dragged.webp` — AI desktop browser capture after dragging the compact thumb to the final About links. Scroll position changed from 0 to 345, then Home returned to 0.
+
+Both originals were JPEG bytes and were converted to WebP for publication. These are desktop observations, not physical-phone acceptance.

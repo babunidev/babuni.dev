@@ -258,3 +258,7 @@ Babuni.dev supplied Enchanted Stone Portal Logo.png and directed use of only its
 ### Header B mark — 2026-10-27
 
 Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
+
+## Reader handle verification imagery — 2026-10-27
+
+Existing B WebP header/favicon art and branding captures remain intact. Added two AI browser captures to Visual documentation: the superseded first proportional-thumb preview and the compact handle after dragging. Published captures are WebP; original JPEG bytes remain outside public assets. No content sync, repository text rewrite or new human artwork is implied.

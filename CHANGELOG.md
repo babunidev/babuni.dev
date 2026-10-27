@@ -434,3 +434,9 @@ Disabled the Astro development toolbar through project configuration. Replaced t
 ### Header B mark — 2026-10-27
 
 Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
+
+## 2026-10-27 — Reader scroll handle
+
+### Added
+- A reader-only frameless gold scroll thumb: drag to move quickly through long content and see the current position. It hides when content fits; native wheel/touch reading remains available with generic scrollbars hidden.
+- Keyboard support for the focused thumb (arrows, Page Up/Down, Home/End), live overflow resizing, and geometry tests. Both browser captures are archived as WebP, including the superseded first preview.

@@ -183,10 +183,18 @@ const title='babuni.dev — Living Grid Prototype';
   .module-detail::backdrop{background:#11121855;animation:detail-backdrop-in 420ms ease-out both}
   .module-detail{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;overflow:hidden;pointer-events:auto}
   .module-detail>.site-header{pointer-events:auto}
-  .module-detail-panel{pointer-events:auto;box-sizing:border-box;position:fixed;inset:var(--header-height) 0 0;margin:auto;width:min(980px,calc(100vw - 32px),calc(100dvh - 88px));height:min(980px,calc(100vw - 32px),calc(100dvh - 88px));max-width:none;max-height:none;padding:clamp(16px,3vw,40px);border:2px solid #ae9875;background:#202027;color:#e9dfd2;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;user-select:text}
+  .module-detail-panel{pointer-events:auto;box-sizing:border-box;position:fixed;inset:var(--header-height) 0 0;margin:auto;width:min(980px,calc(100vw - 32px),calc(100dvh - 88px));height:min(980px,calc(100vw - 32px),calc(100dvh - 88px));max-width:none;max-height:none;padding:0;border:2px solid #ae9875;background:#202027;color:#e9dfd2;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:hidden;user-select:text}
   @media(max-width:599px){
-    .module-detail-panel{inset:var(--header-height) 0 auto;width:100%;height:calc(100dvh - var(--header-height) - max(64px,env(safe-area-inset-bottom)));margin:0;border:0;box-shadow:none;padding:20px 16px}
+    .module-detail-panel{inset:var(--header-height) 0 auto;width:100%;height:calc(100dvh - var(--header-height) - max(64px,env(safe-area-inset-bottom)));margin:0;border:0;box-shadow:none;padding:0}
   }
+  .reader-scroll-content{height:100%;box-sizing:border-box;padding:clamp(16px,3vw,40px);overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
+  .reader-scroll-thumb{position:absolute;right:3px;width:24px;touch-action:none;cursor:grab;user-select:none;z-index:1;border:0;background:transparent}
+  .reader-scroll-thumb[hidden]{display:none}
+  .reader-scroll-thumb::after{content:"";display:block;position:absolute;inset:0 9px;border-radius:8px;background:#bba079cc;transition:background 160ms,box-shadow 160ms}
+  .reader-scroll-thumb:hover::after,.reader-scroll-thumb:focus-visible::after,.reader-scroll-thumb.is-dragging::after{background:#f2d29d;box-shadow:0 0 7px #d6ae6b88}
+  .reader-scroll-thumb:focus-visible{outline:1px solid #e8d3b0;outline-offset:-4px;border-radius:12px}
+  .reader-scroll-thumb.is-dragging{cursor:grabbing}
+  @media(max-width:599px){.reader-scroll-content{padding:20px 28px 20px 16px}.reader-scroll-thumb{right:0}}
   .module-detail[open] .module-detail-panel{animation:detail-panel-in 420ms cubic-bezier(.2,.7,.2,1) both}
   @keyframes detail-panel-in{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
   @keyframes detail-backdrop-in{from{background:#11121800}to{background:#11121855}}

@@ -403,3 +403,7 @@ As of this tree: **53 candidates**, **34 tiles tied to 33 public repos**, **15 s
 ### Header B mark — 2026-10-27
 
 Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
+
+## Reader scrolling — 2026-10-27
+
+`reader-scroll.ts` installs a pointer-captured thumb beside `.reader-scroll-content` inside the existing animated `.module-detail-panel`. ScrollTop remains the position authority; pure `readerScrollMetrics` maps clamped scroll position onto the available handle travel. ResizeObserver watches viewport and article for async document/media changes; native scroll events update the indicator. Close/replacement removes observers and the thumb. The fixed shell clips while its inner content scrolls; no per-frame loop or dependency is added.

@@ -399,3 +399,7 @@ Babuni.dev requested a graphic-only B browser icon and removal of the Astro deve
 ### Header B mark — 2026-10-27
 
 Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
+
+## Reader position handle — 2026-10-27
+
+Babuni.dev requested a little standalone draggable reader indicator without a frame. A gold mark follows reading position at the reader’s right edge, glows on interaction and appears only when content overflows. It has no visible track. Mouse dragging, finger dragging and focused keyboard scrolling are supported; ordinary text scrolling stays native. Other exploration stages gain no scrollbar. Reader size and transition durations are preserved.

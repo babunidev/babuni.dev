@@ -298,3 +298,7 @@ Built at Babuni.dev’s request: toolbar disabled and graphic-only transparent B
 ### Header B mark — 2026-10-27
 
 Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
+
+## Reader navigation refinement — 2026-10-27
+
+Built: reader-only frameless position thumb with direct dragging, overflow updates and keyboard support. Desktop browser dragging and Home verified; physical-phone dragging, long-gallery edge cases and human acceptance remain open. Content remains a living work in progress; this addition does not close unrelated milestone acceptance.

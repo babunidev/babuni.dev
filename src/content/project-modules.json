@@ -209,6 +209,16 @@
           "src": "/media/babuni-dev/images/verification/header-branding.webp",
           "alt": "Graphic-only B beside BABUNI.DEV in the header.",
           "caption": "AI desktop browser verification, 2026-10-27: transparent WebP B displayed beside the brand; Astro toolbar absent."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/reader-scroll-first-preview.webp",
+          "alt": "AI desktop browser, 2026-10-27: first thumb preview before its length was capped; superseded.",
+          "caption": "AI desktop browser, 2026-10-27: first thumb preview before its length was capped; superseded."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/reader-scroll-dragged.webp",
+          "alt": "AI desktop browser, 2026-10-27: compact frameless reader handle dragged down to the final About links; native scrollbar remains hidden.",
+          "caption": "AI desktop browser, 2026-10-27: compact frameless reader handle dragged down to the final About links; native scrollbar remains hidden."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
