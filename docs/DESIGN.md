@@ -332,3 +332,9 @@ This behavior was an AI implementation choice after Babuni.dev authorized faster
 **Implementation:** The tile that a visitor sees moving is now the DOM element that occupies the destination once the shift completes, so the same already-loaded portal image remains visible. Recycle only the fully out-of-view pool wraparound cell. Continue honoring the physical bloom-displaced layout when resolving which column/row is moved. No new crossfade, delay or portal artwork sizing is introduced.
 
 **Review needed:** Watch several automatic row/column shifts with and without a bloom and confirm no visible image blink, identity swap, overlap or focus discontinuity at the final frame.
+
+## Original WebP logo references (2026-10-27)
+
+Babuni.dev already converted twelve portal images from PNG to WebP. The project now references the original **WebP files directly**, including the newly assigned BuxbrewResist emblem. Do not generate replacement logos or recompress the originals. No changes were made to the portal's existing 56%-wide circle, glow, three marker points, bubble placement, circular image crop, or bloom animation.
+
+The file paths are published source references, not proof that the separate artwork binaries were pushed. Babuni.dev will add their local files to `public/portal-content/` and commit them; check their rendering and decoding in the actual desktop browser afterward.

@@ -373,3 +373,13 @@ The initial five editorial families reuse four renderer types: journal/history i
 **Rejected approaches:** Fade or hide the handoff; eagerly preload all source logos; assign an entirely new image element to each destination; change the viewport's approved motion.
 
 **Status:** Source fix and tests prepared for review, not accepted as a verified visual fix. Regression tests/build and Babuni.dev's actual screen observation required.
+
+## D-031 — Link directly to Babuni.dev's already-converted WebP originals (2026-10-27)
+
+**Babuni.dev direction:** Portal PNGs were already converted to WebP locally. Change the website's image paths, add the previously absent BuxbrewResist image mapping, and explain how the originals are committed to GitHub.
+
+**AI interpretation corrected:** The earlier assumption that Babuni.dev still needed conversion or substitute image generation was wrong. Do not synthesize or re-encode the original portal art from screenshots.
+
+**Implementation:** Twelve direct `portalArtwork` URLs with `.webp`, unchanged image renderer, and an optional byte-preserving local file arranger for canonical asset paths. The local user performs the separate Git binary push; `git add -A` tracks additions and deletions. Existing logo design and interaction geometry stay unchanged.
+
+**Status:** Code-side paths implemented. Until Babuni.dev pushes the original WebPs, the remote code points to assets not yet in GitHub and CI asset validation can fail. Post-upload tests and visual review are required.

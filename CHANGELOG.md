@@ -6,6 +6,11 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — WebP portal paths and BuxbrewResist artwork (2026-10-27)
+- Replaced eleven existing `portalArtwork` URL extensions from PNG to **WebP** and assigned `/portal-content/BuxbrewResist.webp` to the previously unillustrated BuxbrewResist project.
+- Added an opt-in local helper `npm run artwork:import -- "/path/to/folder"` to normalize source WebP filenames (including spaces and casing), check container signatures, and copy or rename the **already-converted original files** into `public/portal-content/` without recompression.
+- Added mapping/import tests. No original WebP file bytes were uploaded in the AI commit: the source images exist on Babuni.dev's local machine, outside this cloud chat's file access.
+- **Temporary integration requirement:** content validation and GitHub CI cannot pass on the code-only commit until Babuni.dev stages and pushes all twelve original WebPs. Legacy PNGs may then be deleted and their deletions included in the artwork commit.
 
 ### Fixed — reuse living-grid tile elements at shift settlement (2026-10-27)
 - Addressed a reported momentary **portal artwork flicker** immediately after autonomous rows/columns finish shifting.

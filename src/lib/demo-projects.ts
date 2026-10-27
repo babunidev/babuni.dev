@@ -20,7 +20,7 @@ export const DEMO_PROJECT_COUNT=53;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
-    "portalArtwork": "/portal-content/PortalContentBabuniDev.png",
+    "portalArtwork": "/portal-content/PortalContentBabuniDev.webp",
     "name": "BABUNI.DEV",
     "shortSummary": "Interactive creative portfolio with a living tile grid and exploratory project views.",
     "evidence": "repo",
@@ -28,7 +28,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "button-game",
-    "portalArtwork": "/portal-content/PortalContentButtonGame.png",
+    "portalArtwork": "/portal-content/PortalContentButtonGame.webp",
     "name": "Button Game",
     "shortSummary": "Android reaction game with scores, leaderboard and local multiplayer hosting.",
     "evidence": "repo",
@@ -36,7 +36,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "socialforever",
-    "portalArtwork": "/portal-content/SocialForever.png",
+    "portalArtwork": "/portal-content/SocialForever.webp",
     "name": "SocialForever",
     "shortSummary": "WoW social memory and player encounter addon.",
     "evidence": "repo",
@@ -44,7 +44,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roarforever",
-    "portalArtwork": "/portal-content/RoarForever.png",
+    "portalArtwork": "/portal-content/RoarForever.webp",
     "name": "RoarForever",
     "shortSummary": "Restores missing player emote voice sounds in WoW Forever.",
     "evidence": "repo",
@@ -52,7 +52,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "flourishforever",
-    "portalArtwork": "/portal-content/FlourishForever.png",
+    "portalArtwork": "/portal-content/FlourishForever.webp",
     "name": "FlourishForever",
     "shortSummary": "Configurable ability-triggered roleplay emotes.",
     "evidence": "repo",
@@ -60,7 +60,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "azeroth-moments",
-    "portalArtwork": "/portal-content/AzerothMoments.png",
+    "portalArtwork": "/portal-content/AzerothMoments.webp",
     "name": "Azeroth Moments",
     "shortSummary": "Automated screenshot/video posting from a local folder to social channels.",
     "evidence": "repo",
@@ -68,7 +68,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "anskar-grotzschnapf",
-    "portalArtwork": "/portal-content/AnskarGrotzschnapf.png",
+    "portalArtwork": "/portal-content/AnskarGrotzschnapf.webp",
     "name": "Anskar Grotzschnapf",
     "shortSummary": "Poetry-to-image automated artist and digital-print publishing experiment.",
     "evidence": "repo",
@@ -76,7 +76,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "local-prompt-lab",
-    "portalArtwork": "/portal-content/LocalPromptLab.png",
+    "portalArtwork": "/portal-content/LocalPromptLab.webp",
     "name": "Local Prompt Lab",
     "shortSummary": "Local image-generation experiments with styles, seeds and prompts.",
     "evidence": "conversation",
@@ -84,7 +84,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "local-ai-workstation",
-    "portalArtwork": "/portal-content/LocalAAIWorkstation.png",
+    "portalArtwork": "/portal-content/LocalAAIWorkstation.webp",
     "name": "Local AI Workstation",
     "shortSummary": "Local language-model and image-generation development environment.",
     "evidence": "conversation",
@@ -92,7 +92,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "resistforever",
-    "portalArtwork": "/portal-content/ResistForever.png",
+    "portalArtwork": "/portal-content/ResistForever.webp",
     "name": "ResistForever",
     "shortSummary": "Partial-resist and spell-miss tooltip calculations.",
     "evidence": "repo",
@@ -100,7 +100,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "favorcraft",
-    "portalArtwork": "/portal-content/FavorCraft.png",
+    "portalArtwork": "/portal-content/FavorCraft.webp",
     "name": "FavorCraft",
     "shortSummary": "Merchant's Favor profession, recipe and materials planner.",
     "evidence": "repo",
@@ -234,6 +234,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "buxbrewresist",
+    "portalArtwork": "/portal-content/BuxbrewResist.webp",
     "name": "BuxbrewResist",
     "shortSummary": "Earlier spell-resistance tooltip addon.",
     "evidence": "repo-lineage",
