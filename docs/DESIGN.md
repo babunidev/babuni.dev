@@ -316,3 +316,10 @@ All site scrollbars are visually hidden at Babuni.dev’s request. Long modules 
 ## 2026-10-27 — Repository-backed project documentation
 
 Repository connections change module content, not grid placement, motion, timing, navigation or reader styling. Matching documentation fills text modules directly; absent/empty documents do not create cards. Existing source teasers remain where curated; new previews quote a deterministic leading paragraph. Small bloom still shows at most eight random populated modules; big bloom exposes the larger complete set with its existing downward extension. Full detail shows the source text in the framed reader, and View source opens the fetched GitHub revision. Unconnected/private-review tiles retain their provisional summary.
+
+
+## Full document reader loads text on demand — 2026-10-27
+
+The small bloom keeps its immediately available module titles and curated short previews; big bloom retains its existing body-derived intro depth and physical 2×2 layout. No timing, movement, tile appearance or random module selection changes. Opening a full text detail may show a brief “Loading document…” status before rendering its complete, unmodified Markdown. If the file cannot load, an inline Retry document button is offered; Back/Escape still work and cancel the request. Manual/project-authored text not sourced from the generated documents can still open instantly. The HTML reader remains a safe text-node-based, basic-Markdown renderer.
+
+This behavior was an AI implementation choice after Babuni.dev authorized faster loading, rather than a new artistic direction. Verify the transition feels natural on slow connections and assistive technologies.

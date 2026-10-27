@@ -5,7 +5,7 @@ export interface ModuleLink {label:string;href:string}
 export interface ModuleVideo {src?:string;embed?:string;poster?:string;title:string}
 export interface ProjectModule {
   id:string;type:ModuleType;title:string;preview:string;
-  body?:string;images?:ModuleImage[];
+  body?:string;intro?:string;bodyUrl?:string;images?:ModuleImage[];
   video?:ModuleVideo;
   videos?:ModuleVideo[];
   links?:ModuleLink[];
@@ -26,7 +26,7 @@ export function safeEmbedUrl(value:string):string|null {
 }
 export function moduleHasContent(module:ProjectModule):boolean {
   switch(module.type){
-    case 'text':return !!module.body?.trim();
+    case 'text':return !!module.body?.trim()||!!module.bodyUrl?.trim();
     case 'gallery':return !!module.images?.some(image=>image.src.trim()&&image.alt.trim());
     case 'video':return videosForModule(module).some(video=>!!video.src?.trim()||!!(video.embed&&safeEmbedUrl(video.embed)));
     case 'resources':return !!module.links?.some(link=>link.label.trim()&&link.href.trim());

@@ -10,7 +10,7 @@ The website itself is intended to become one of its exhibits: a record of its co
 
 ## Project status
 
-**Living-grid prototype underway.** Astro 7 and the mechanical grid are on `main`: a screen-centered, freely pannable, recycling grid with autonomous row/column shifts and a one-time clockwise entrance animation. Its temporary content catalog uses **53 named candidates** from [the inventory](docs/PROJECT_INVENTORY.md), including one-line descriptions for future information bubbles. These are provisional visual test entries, **not 53 verified or approved published portfolio exhibits**. Colored portals and stone faces are temporary; functionality takes priority over finished portal textures. The latest changes still need a full local build and physical-device verification.
+**Living-grid portfolio prototype with multiple depths of exploration.** Astro 7 and the mechanical grid are on `main`: screen-centered dragging, autonomous shifting and 53 named provisional project tiles. Visitors can explore three-point topic bubbles, open a small bloom of up to eight neighboring modules, expand into a larger grid-native bloom, and read full documentation or open galleries, videos and source links. Eleven projects have supplied portal artwork. The repository-backed content pipeline currently maps 34 candidate tiles to 33 public repositories, including BABUNI.DEV itself; other tiles remain explicitly unresolved or provisional. **These are not 53 verified or approved published portfolio exhibits.** Full public project documents are built as separate static assets and loaded only when opened in the reader, keeping the initial grid bundle lighter. The work remains an active prototype, with long-session, keyboard, mobile and reduced-motion acceptance still outstanding.
 
 ## Local development
 
@@ -23,9 +23,9 @@ npm run dev
 
 Open the local address printed by Astro (normally http://localhost:4321). For agents, use `npm run dev -- --background`; manage it with `npm run astro -- dev status`, `npm run astro -- dev logs`, and `npm run astro -- dev stop`.
 
-`npm run build` creates the static site in `dist/`. `npm run preview` serves that build locally.
+`npm run test:grid` runs the regression suite. `npm run build` validates content, prepares the public document assets and creates the static site in `dist/`. `npm run preview` serves that build locally. `npm run content:prepare` rebuilds local preview metadata/static Markdown from reviewed sources without network access; it is invoked automatically before dev, tests and builds.
 
-The starter build was independently verified on 2026-10-26 against commit `ea90117`. This verifies compilation, not browser behavior or the planned interactions. CI and a dedicated type-check command are not yet configured; see [foundation review](docs/REVIEW-2026-10-26.md).
+Babuni.dev's 2026-10-27 local terminal output verified **92 passing tests** and a successful build on the preceding version, with a >500 kB JavaScript chunk warning. The documentation-loading optimization requires its own post-change build verification. [GitHub Actions](.github/workflows/ci.yml) now runs tests and the production build on main pushes and pull requests; check the workflow result before relying on a change. A separate full type-check command is not yet configured; see [foundation review](docs/REVIEW-2026-10-26.md).
 
 ## Documentation
 
@@ -38,6 +38,8 @@ The starter build was independently verified on 2026-10-26 against commit `ea901
 - [Design reference](docs/DESIGN.md) — interaction and visual behavior
 - [Architecture](docs/ARCHITECTURE.md) — technical approach and constraints
 - [Content model](docs/CONTENT.md) — project data and media modules
+- [Module authoring](docs/MODULE_AUTHORING.md) — previews, full source documents and media authoring
+- [Repository connections](docs/REPOSITORY_CONNECTIONS.md) — public sources and unresolved candidates
 - [Candidate project inventory](docs/PROJECT_INVENTORY.md) — provisional creative-work memory for prototype content; not approved publication data
 - [Human–AI collaboration](docs/AI_COLLABORATION.md) — attribution and evidence rules
 - [ChatGPT project instructions](.chatgpt/PROJECT_INSTRUCTIONS.md) — instructions to paste into the ChatGPT project's settings

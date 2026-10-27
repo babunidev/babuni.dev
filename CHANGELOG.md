@@ -7,6 +7,18 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 ## [Unreleased]
 
 
+## 2026-10-27 — Lazy project documents and automated verification
+
+### Changed
+- Replaced the interactive bundle's monolithic repository-document and raw-local-Markdown imports with a compact, build-generated index of module previews and up-to-1,600-character intros. The full original Markdown is emitted as separate same-origin static assets, and loaded only when a reader is opened.
+- The small and big blooms still select modules synchronously, preserving established camera, movement, reveal and selection timing. Document detail displays loading/retry states, and cancels pending network work when closed.
+- Added deterministic offline document-asset preparation before development, grid tests and production builds. Generated files are ignored in Git; reviewed snapshots and original Markdown remain the single source of truth.
+- Added GitHub Actions on main pushes, pull requests and manual dispatch, running a locked install, tests and content-validated Astro build with Node 24.
+- Added tests for source parity, public-only export, initial-bundle separation, intro fidelity, local asset existence and reader errors. This commit does not change project content, portal artwork, animation timing or user-approved bloom design.
+
+### Verification
+- Prior local result supplied by Babuni.dev: 92 grid tests passed, production build succeeded and npm audit found zero vulnerabilities, with a large JavaScript chunk warning. Post-change CI and browser performance measurements are pending; no speedup is claimed without evidence.
+
 ## 2026-10-26 — Uniform portal and symmetric indicator geometry
 
 ### Changed

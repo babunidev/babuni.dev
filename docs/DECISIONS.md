@@ -347,3 +347,16 @@ The initial five editorial families reuse four renderer types: journal/history i
 **Status: Implemented. Human direction:** Reuse the shared documentation structure across all available projects; public repositories only. **AI implementation choices:** Explicit stable-ID mapping, ten allowlisted documentation paths, anonymous public-visibility verification at refresh, commit-pinned raw downloads, atomic snapshot replacement and offline build validation. Missing/empty paths omit modules. One refresh failure preserves the previous complete snapshot. Existing matching text bodies are replaced by upstream text while media/resources and curated previews survive.
 
 **Alternatives:** Fuzzy name guessing can misassign families; full clones/recursive Markdown imports can pull unrelated material; browser-time GitHub fetches create availability/rate-limit dependencies. A content-collection/CMS migration is unnecessary to preserve the current runtime contract. Source updates are published through explicit refresh/review rather than webhooks at this stage. Revisit delivery splitting because bundling the entire imported corpus increases first-load size. Private content and uncertain family associations remain excluded until separately resolved.
+
+
+## D-028 — Eager summaries, lazy full documents, and GitHub CI (2026-10-27)
+
+**Status:** Babuni.dev accepted the AI's recommended performance and verification work; implementation prepared, post-change verification pending.
+
+**Babuni.dev direction:** Proceed with the recommended on-demand loading of project documentation and automatic GitHub test/build checks. Preserve the project's distinctive interaction design and existing timing.
+
+**AI decision:** Keep a small synchronous index of supported public documentation modules (current teaser and existing big-bloom intro), so selecting and expanding a project never waits for network. Emit exact original Markdown into allowlisted, versioned-in-Git-but-generated-on-build same-origin static resources. Fetch one actual document only when the user opens its detail. On an error show a retry, never substitute invented content. Generate these files offline from the checked-in public snapshot and local source files before dev/test/build; ignore the duplicate build products in Git. Enable read-only GitHub Actions on main/PR/manual dispatch, using Node 24 and locked dependency installs.
+
+**Alternatives:** Vite lazy import of the whole 1.34 MB JSON (still unnecessarily downloads every project's content at first project open); network fetch at small-bloom time (changes approved reveal timing); live GitHub API calls in the visitor browser (introduces quota, privacy, and reliability issues). None adopted.
+
+**Verification open:** Build size reduction, CI green status, user-visible network behavior, long-text scroll/retry and device regression. Static base URL assumes domain-root hosting; revisit if deploying under a URL prefix.

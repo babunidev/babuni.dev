@@ -1,18 +1,48 @@
 import {videosForModule,type ProjectModule} from '../lib/project-modules';
 import {renderVideo} from './module-preview';
 import {renderDocument} from './document-reader';
+import {loadIndexedBody} from '../lib/repository-content';
 /** Detail is modal; big bloom itself belongs to the living grid. */
 export function createModuleDetails(onChange:(open:boolean)=>void){
   let detail:HTMLDialogElement|null=null;
+  let documentRequest:AbortController|null=null;
   function stopPlayers(root:HTMLElement){root.querySelectorAll('video').forEach(video=>video.pause());root.querySelectorAll('iframe').forEach(frame=>{const figure=frame.closest('figure');if(figure)figure.replaceWith(renderVideo({embed:frame.src,title:frame.title}));else frame.remove();});}
-  function closeDetail(){if(!detail)return;stopPlayers(detail);detail.close();detail.remove();detail=null;onChange(false);}
+  function closeDetail(){if(!detail)return;documentRequest?.abort();documentRequest=null;stopPlayers(detail);detail.close();detail.remove();detail=null;onChange(false);}
   function openDetail(module:ProjectModule,trigger:HTMLButtonElement){
     onChange(true);
     const view=document.createElement('dialog');view.className='module-detail';view.setAttribute('aria-label',module.title+' detail');detail=view;
     const back=document.createElement('button');back.type='button';back.className='bloom-action detail-back';back.textContent='Back to big bloom';
     const title=document.createElement('h1');title.textContent=module.title;
     const content=document.createElement('article');content.className='module-detail-content';
-    if(module.type==='text')content.append(renderDocument(module.body??''));
+    if(module.type==='text'){
+      if(module.bodyUrl){
+        const progress=document.createElement('p');
+        progress.setAttribute('role','status');
+        progress.textContent='Loading document…';
+        content.append(progress);
+        const request=new AbortController();
+        documentRequest=request;
+        const load=async()=>{
+          progress.textContent='Loading document…';
+          try {
+            const body=await loadIndexedBody(module.bodyUrl!,fetch,request.signal);
+            if(detail!==view||request.signal.aborted)return;
+            content.replaceChildren(renderDocument(body));
+          }catch(error){
+            if(detail!==view||request.signal.aborted)return;
+            progress.textContent='Could not load this document. Please try again.';
+            const retry=document.createElement('button');
+            retry.type='button';retry.className='bloom-action';
+            retry.textContent='Retry document';
+            retry.addEventListener('click',()=>{
+              retry.remove();void load();
+            },{once:true});
+            content.replaceChildren(progress,retry);
+          }
+        };
+        void load();
+      }else content.append(renderDocument(module.body??''));
+    }
     if(module.type==='gallery')for(const item of module.images??[]){
       const figure=document.createElement('figure'),image=document.createElement('img'),caption=document.createElement('figcaption');
       image.src=item.src;image.alt=item.alt;image.loading='lazy';caption.textContent=item.caption??'';

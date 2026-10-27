@@ -14,9 +14,12 @@
     "astro": "astro",
     "content:check": "node --experimental-strip-types scripts/content-tools.mjs",
     "content:template": "node --experimental-strip-types scripts/content-tools.mjs template",
-    "prebuild": "npm run content:check",
+    "prebuild": "npm run content:check && npm run content:prepare",
     "content:sync": "node --experimental-strip-types scripts/sync-repositories.mjs",
-    "content:report": "node --experimental-strip-types scripts/repository-report.mjs"
+    "content:report": "node --experimental-strip-types scripts/repository-report.mjs",
+    "content:prepare": "node --experimental-strip-types scripts/build-document-assets.mjs",
+    "predev": "npm run content:prepare",
+    "pretest:grid": "npm run content:prepare"
   },
   "dependencies": {
     "astro": "^7.4.2"

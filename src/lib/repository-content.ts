@@ -56,3 +56,42 @@ export function composeProjectModules(curated:ProjectModule[],sourced:ProjectMod
   if(repository&&!result.some(module=>module.id==='source'))result.push({id:'source',type:'resources',title:'Project source',preview:'Read the project repository and its documentation.',links:[{label:'Repository',href:`https://github.com/${repository}`} ]});
   return result;
 }
+
+/** Compact, build-generated source metadata. The full Markdown is a separate
+ * static asset fetched only if its detail reader is opened.
+ */
+export interface IndexedDocument {path:string;url:string;preview:string;intro:string}
+export interface IndexedRepository {
+  repository:string;branch:string;commit:string|null;documents:IndexedDocument[];
+}
+export function indexedRepositoryModules(
+  connection:RepositoryConnection|undefined,index:IndexedRepository|undefined
+):ProjectModule[]{
+  if(connection?.status!=='connected'||!connection.repository||!connection.branch
+    ||!index||index.repository!==connection.repository||index.branch!==connection.branch)
+    return [];
+  const local=connection.repository==='babunidev/babuni.dev';
+  if(!local&&!/^[a-f0-9]{40}$/.test(index.commit??''))return [];
+  return REPOSITORY_DOCUMENTS
+    .filter(doc=>!connection.paths||connection.paths.includes(doc.path))
+    .flatMap(doc=>{
+      const document=index.documents.find(item=>item.path===doc.path);
+      if(!document)return [];
+      const source='https://github.com/'+connection.repository+'/blob/'+
+        (local?connection.branch:index.commit)+'/'+doc.path;
+      return [{
+        id:doc.id,type:'text' as const,title:doc.title,preview:document.preview,
+        intro:document.intro,body:'',bodyUrl:document.url,source
+      }];
+    });
+}
+/** The allowed source is local, generated and same-origin. Never fetch a
+ * remote repository or follow Markdown-provided URLs to display its body.
+ */
+export async function loadIndexedBody(url:string,fetcher:typeof fetch=fetch,signal?:AbortSignal):Promise<string>{
+  if(!/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/.test(url))
+    throw new Error('Invalid project document URL');
+  const response=await fetcher(url,{signal});
+  if(!response.ok)throw new Error('Document unavailable (HTTP '+response.status+')');
+  return response.text();
+}

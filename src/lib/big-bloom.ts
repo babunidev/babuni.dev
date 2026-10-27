@@ -29,7 +29,7 @@ export function bigBloomRevealPlan<T>(items:readonly T[],random:()=>number=Math.
 }
 /** The larger preview quotes actual body content, rather than reusing its teaser. */
 export function moduleIntro(module:ProjectModule,limit=1600):string {
-  const text=(module.body??module.preview).replace(/```[\s\S]*?```/g,'')
+  const text=(module.intro??module.body??module.preview).replace(/```[\s\S]*?```/g,'')
     .replace(/^#{1,6}\s+.*$/gm,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')
     .replace(/[*`]/g,'').replace(/\s+/g,' ').trim()||module.preview;
   if(text.length<=limit)return text;
