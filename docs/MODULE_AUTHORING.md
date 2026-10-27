@@ -50,3 +50,8 @@ Run `npm run content:check` before committing content. `npm run build` runs this
 Generate a blank definition with `npm run content:template -- gallery visual-history` (replace `gallery` with `text`, `video` or `resources`). Copy the printed JSON object into the chosen project's array in `src/content/project-modules.json`, with a comma between entries. This command writes no files. Choose a unique lowercase hyphenated ID and an accurate title. Add a preview and real content together when ready. Preserve source links and credits; do not invent claims to fill a slot. For a new project, first use its stable ID from `src/lib/demo-projects.ts`. New document sources still need a raw import/mapping in `src/lib/project-content.ts` and registration in `scripts/content-tools.mjs`.
 
 Before publishing, review the actual module at small, big and detail depth: the summary must fairly represent the source, images need useful descriptions, links should lead to the intended destination, and third-party permissions/credits need human review. Validation checks local structure and file existence, not factual truth, remote URL availability, image quality, codecs or permission to publish. No remote content is downloaded. Existing source-linked Button Game summaries remain editorial snapshots.
+
+
+## 2026-10-27 — Framed detail reader
+
+Detail presentation update: Read more from big bloom opens the complete module inside a centered, framed square over the grid, with internal scrolling. It no longer fills the viewport. Back/Escape still returns to the retained big-bloom camera; image fullscreen stays available.

@@ -156,9 +156,12 @@ const title='babuni.dev — Living Grid Prototype';
   .bloom-help button{width:32px;height:32px;border-radius:50%;border:1px solid #a7977e;background:#242329;color:#e9dfd2;cursor:help}
   .bloom-help span{display:none;position:absolute;right:0;bottom:40px;width:230px;padding:12px;background:#242329;border:1px solid #a7977e;color:#e9dfd2}
   .bloom-help:hover span,.bloom-help:focus-within span{display:block}
-  .module-detail::backdrop{background:#17181d}
-  .module-detail{position:fixed;inset:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;padding:24px clamp(18px,5vw,80px);border:0;background:#202027;color:#e9dfd2;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;user-select:text}
-  .detail-back{position:sticky;top:0;z-index:2;width:max-content;font-size:14px;margin-bottom:24px}
+  .module-detail::backdrop{background:#11121855;animation:detail-backdrop-in 420ms ease-out both}
+  .module-detail{box-sizing:border-box;position:fixed;inset:0;margin:auto;width:min(980px,calc(100vw - 32px),calc(100dvh - 48px));height:min(980px,calc(100vw - 32px),calc(100dvh - 48px));max-width:none;max-height:none;padding:clamp(16px,3vw,40px);border:2px solid #ae9875;background:#202027;color:#e9dfd2;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;user-select:text;scrollbar-gutter:stable}
+  .module-detail[open]{animation:detail-panel-in 420ms cubic-bezier(.2,.7,.2,1) both}
+  @keyframes detail-panel-in{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+  @keyframes detail-backdrop-in{from{background:#11121800}to{background:#11121855}}
+  .detail-back{position:sticky;top:0;z-index:2;width:max-content;font-size:14px;margin-bottom:24px;background:#242329}
   .module-detail h1,.module-detail-content{max-width:900px;margin-left:auto;margin-right:auto}
   .module-document{overflow-wrap:anywhere;font:17px/1.7 system-ui,sans-serif}
   .module-document pre{white-space:pre-wrap;padding:16px;background:#15151b;overflow:auto}

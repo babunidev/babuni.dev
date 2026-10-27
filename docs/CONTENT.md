@@ -161,3 +161,8 @@ Babuni.dev requested Content Validation and Authoring. Existing nine BABUNI.DEV 
 ## 2026-10-27 — Five more project portals
 
 AnskarGrotzschnapf.png, AzerothMoments.png, LocalAAIWorkstation.png, LocalPromptLab.png and RoarForever.png are supplied project portal images, copied unchanged and assigned to their matching project IDs. Portal artwork does not populate gallery modules or establish project release readiness.
+
+
+## 2026-10-27 — Framed detail reader
+
+All module types retain their full detail content in the new framed square reader. Long text, galleries and video collections scroll inside the panel. No summaries, source claims or media changed. Explicit image fullscreen remains a separate opt-in action.

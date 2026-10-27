@@ -301,3 +301,8 @@ Content authoring now has local validation and invisible blank templates. No tim
 ## 2026-10-27 — Five more project portals
 
 Five additional projects use supplied artwork inside the existing round portal opening. Shared sizing, clipping, interaction and timing are unchanged.
+
+
+## 2026-10-27 — Framed detail reader
+
+Module detail now occupies a centered square with a thin warm frame, inset edge and soft shadow. Grid remains visible through a lightly darkened surround on all four sides. Panel uses the smaller viewport dimension with margins and a 980px cap. Its contents scroll inside; Back remains reachable. Opening fades/grows over 420ms, disabled for reduced motion. This supersedes earlier full-screen detail descriptions; explicit image fullscreen remains available.

@@ -282,3 +282,8 @@ Four additional project records now declare `portalArtwork` URLs. The existing r
 ## 2026-10-27 — Five more project portals
 
 Added five static PNG files under `public/portal-content` and explicit URLs on existing stable project records. The existing content validator checks their file existence; no renderer changes are needed.
+
+
+## 2026-10-27 — Framed detail reader
+
+Detail retains the existing native HTML dialog lifecycle, focus trap, Escape return and media cleanup in module-detail.ts. Global styles in index.astro now bound the panel as a centered square and animate its entrance/backdrop. No asynchronous close state or new interaction timers were added. Overflow remains inside the dialog; reduced motion uses the existing global animation override.

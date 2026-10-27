@@ -295,3 +295,9 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Added
 - Supplied portal artwork assigned to Anskar Grotzschnapf, Azeroth Moments, Local AI Workstation, Local Prompt Lab and RoarForever.
+
+
+## 2026-10-27 — Framed detail reader
+
+### Changed
+- Module detail now opens as a centered square panel with a visible grid surround, gold frame, internal scrolling and a gentle 420 ms fade/grow entrance.

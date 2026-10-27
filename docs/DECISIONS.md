@@ -330,3 +330,8 @@ The initial five editorial families reuse four renderer types: journal/history i
 ## 2026-10-27 — Five more project portals
 
 **Implemented:** Reuse explicit `portalArtwork` assignments and existing circular clipping for five more supplied images. Keep original filenames and pixels; do not infer assignments dynamically or introduce new rendering behavior.
+
+
+## 2026-10-27 — Framed detail reader
+
+**Status: Implemented user-directed revision.** Detail is a framed square modal over the living grid rather than a full-viewport opaque reader. AI selected responsive viewport-bounded dimensions, a 980px cap and 420ms fade/grow entrance. A fade alone was possible; subtle scale accompanies opacity to follow the requested growing-element feel. Keep native dialog semantics and internal scroll; do not make background grid interactive while reading. Exact visual feel remains subject to Babuni.dev review.

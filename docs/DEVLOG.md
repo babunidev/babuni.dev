@@ -547,3 +547,10 @@ Phone-sized browser (mouse input, not native-device acceptance): at 390×844, me
 **Babuni.dev supplied:** A folder screenshot showing five additional portal images, continuing the established logo-assignment workflow. **AI interpretation and implementation:** Match filenames to stable project IDs and copy the PNG files unchanged. Preserve the supplied `LocalAAIWorkstation.png` spelling. No motion, content or layout changes. **Verification:** Recorded below after checks; no new human device acceptance is claimed.
 
 **Tested:** All 13 test files, production build (including content validation) and whitespace checks passed. Renderer code was unchanged; no browser or physical-phone visual check was repeated. Final circular crops remain available for Babuni.dev’s visual review.
+
+
+## 2026-10-27 — Framed detail reader
+
+**Babuni.dev requested:** Replace the abrupt full-screen detail overlay with a framed square, visible grid on all sides and scrolling inside; introduce a fade/grow entrance. **AI implementation choice:** Size the square to the smaller viewport dimension, capped at 980 CSS pixels, leaving at least 16px side and 24px vertical margins. Use a 420ms fade from 96% scale and a translucent backdrop. Retain native modal focus/Escape/back behavior and existing playback cleanup. Reduced-motion preference removes the animation via the existing global rule. Only detail presentation changed; grid and bloom clocks are untouched.
+
+**Tested:** All 13 test files passed; production build and whitespace checks passed. At 1280×720 in the browser, the settled panel measured 672×672 with visible surround, computed entrance duration 0.42s, and overflowing text. PageDown advanced dialog scrollTop to 584 while window scroll stayed zero. Back and Escape removed detail and retained big bloom. Screenshot: framed-detail-reader.png (workspace artifact, not repository content). Phone and reduced-motion device checks were not performed; CSS retains the existing global reduced-motion override. The initial sandbox preview could not start; the approved local preview succeeded.
