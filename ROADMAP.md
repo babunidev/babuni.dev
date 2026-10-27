@@ -216,3 +216,6 @@ Milestone 5 now has real multi-project source content and validation; MDX blocks
 
 
 **Post-implementation CI feedback (2026-10-27):** New GitHub Actions was activated by commit `10c7249`; first run found 96 passing tests and one exact-intro-parity regression. Corrected double truncation in `moduleIntro` and updated the runner actions; await a green follow-up CI run and final static bundle-size inspection. This is an active fix, not grounds to declare the performance task complete yet.
+
+
+**Post-change verification (2026-10-27):** GitHub Actions run on `3041e01` passed all **97** tests, content validation and production build. The reported Vite large-chunk warning remains; the next CI step will print detailed raw/gzip client bundle sizes before making further compression/splitting decisions. Maintain distinction between successful builds and unverified end-user load time.

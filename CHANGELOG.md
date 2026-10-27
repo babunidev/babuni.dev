@@ -334,3 +334,8 @@ Each future entry should include the change, its user-visible or technical effec
 ### Fixed — first CI finding (2026-10-27)
 - Preserve generated big-bloom intros exactly instead of re-truncating them when displayed. The first CI run passed 96/97 tests and exposed this one-character mismatch.
 - Update GitHub Actions checkout/setup-node to v5 for the Node 24 runner. Post-fix CI verification is still pending.
+
+
+### Added — client bundle-size report (2026-10-27)
+- GitHub Actions now reports raw and gzip sizes of the largest emitted JavaScript files after a successful build, with a read-only local measurement script.
+- Clean Node 24 CI verification on `3041e01`: 97 tests passed and Astro build succeeded. A >500 kB chunk warning remains, so no claim of completed bundle optimization is made.

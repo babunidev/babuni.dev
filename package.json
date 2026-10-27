@@ -19,7 +19,8 @@
     "content:report": "node --experimental-strip-types scripts/repository-report.mjs",
     "content:prepare": "node --experimental-strip-types scripts/build-document-assets.mjs",
     "predev": "npm run content:prepare",
-    "pretest:grid": "npm run content:prepare"
+    "pretest:grid": "npm run content:prepare",
+    "bundle:report": "node scripts/report-bundle-size.mjs"
   },
   "dependencies": {
     "astro": "^7.4.2"

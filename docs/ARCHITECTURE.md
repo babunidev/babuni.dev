@@ -315,3 +315,6 @@ Global CSS uses scrollbar-width:none and a hidden ::-webkit-scrollbar fallback. 
 
 
 **CI-driven parity correction:** The first 97-test GitHub Actions run found that applying `moduleIntro` to an already generated intro can trim its trailing ellipsis twice. `moduleIntro` now returns `intro` untouched, and only builds a new intro from `body` or `preview` when no precomputed intro is available. Source bodies and module IDs are unchanged.
+
+
+**Measuring the next bottleneck:** Even after the full source Markdown moved to separate static assets, the clean CI build on `3041e01` still warned about a >500 kB JavaScript chunk. `scripts/report-bundle-size.mjs` now reports raw and gzip file sizes for emitted `dist/_astro/*.js` after builds via `npm run bundle:report`. This tool does not change bundling, request scheduling or the living grid; it provides concrete evidence for possible future per-project preview-index code splitting.

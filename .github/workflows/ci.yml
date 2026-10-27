@@ -28,3 +28,5 @@ jobs:
         run: npm run test:grid
       - name: Check content and build site
         run: npm run build
+      - name: Report client JavaScript sizes
+        run: npm run bundle:report
