@@ -106,7 +106,7 @@ Babuni.dev directed on 2026-10-26: prioritize architecture and underlying struct
 
 ## Browser screenshot archive
 
-Babuni.dev requested on 2026-10-27 that browser test screenshots be added to the project's visual documentation. Save verification screenshots under `public/media/babuni-dev/images/verification/`, add them to BABUNI.DEV's Visual documentation gallery and `docs/VISUAL_DOCUMENTATION.md`, and caption the test context and historical status. Distinguish AI browser captures from human-supplied art and actual phone acceptance. Preserve earlier captures even when their design is superseded. Do not claim unavailable or unsaved screenshots were recovered.
+Babuni.dev requested on 2026-10-27 that browser test screenshots be added to the project's visual documentation. Publish all website images as WebP. Capture temporary PNGs outside `public/` if needed, convert genuine PNG screenshots to lossless WebP where practical, and inspect actual encoded format rather than relying on filenames. Save verification screenshots under `public/media/babuni-dev/images/verification/`, add them to BABUNI.DEV's Visual documentation gallery and `docs/VISUAL_DOCUMENTATION.md`, and caption the test context and historical status. Distinguish AI browser captures from human-supplied art and actual phone acceptance. Preserve earlier captures even when their design is superseded. Do not claim unavailable or unsaved screenshots were recovered.
 
 ## Audit #28 — 27 October 2026: source, history and synchronization safeguards
 

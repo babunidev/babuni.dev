@@ -376,3 +376,7 @@ Supersedes the universal square-reader rule on phones: viewport below 600px uses
 **Implemented refinement, source/date verified:** the header persists in grid, small bloom, big bloom and reader; search supports project name/summary, and About uses the already documented workshop identity. Reader Markdown is rendered as structured, safe content, its inner panel scrolls, and clicking outside or pressing Escape dismisses without wiping the earlier bloom. Small and big previews share formatting but keep links noninteractive until full reading.
 
 **Visual provenance and incompleteness:** fifteen supplied WebP logos are now actually in Git, including the late three assignments; the screenshot archive keeps **21 AI browser captures** separately from two supplied originals and may include superseded appearances. Native phone, keyboard/focus, reduced-motion and small-view testing remain open in places, despite browser regression evidence. This audit did **not** change tile appearance, logo bytes, typography, interaction timing, animation or screenshots.
+
+## WebP publication — 2026-10-27
+
+Babuni.dev requested WebP throughout the website. Preserve image dimensions, captions, alt text, round portal masks and lazy/on-demand delivery. Existing JPEG captures/posters use quality-85 WebP derivatives; existing portal WebPs retain their original bytes. This changes asset delivery, not bloom geometry or interaction tempo.

@@ -267,3 +267,7 @@ Built from Babuni.dev’s actual-phone feedback: larger full-width phone reader,
 **Next integration step (not executed here):** Following the sequential documentation commits in other Babuni.dev repositories, explicitly review external source revisions, run `npm run content:sync`, `npm run content:check`, `npm run test:grid`, `npm run build` and `npm run content:report` (or inspect the resulting report) before committing revised imported document snapshots. Verify source/credit references, no invented data, and unchanged project placements. Auto-sync on page load or unreviewed network fetching is **not** approved.
 
 **Still open:** genuine mobile and keyboard/reduced-motion acceptance, long-session behavior, initial bundle-size warning, publication-content editorial approval, hosting/deployment on the intended VPS, and license selection. Do not turn “finish all 53 portfolio articles” into a release gate: Babuni.dev specifically described content as a living/WIP project.
+
+## 2026-10-27 — WebP publishing consistency
+
+Built: all published images use WebP, including gallery screenshots and video posters; image format/signature checks prevent regression. Existing converted media set is 31.5% smaller before adding this session’s verification capture. Originals remain outside publication. Actual phone acceptance remains a separate track.

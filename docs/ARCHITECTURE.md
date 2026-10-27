@@ -380,3 +380,7 @@ The content pipeline is deliberately **offline at visitor runtime** for the repo
 `src/scripts/document-reader.ts` uses Marked tokens and explicit safe DOM construction, without executing raw HTML. `src/scripts/module-preview.ts` shares noninteractive formatting, while `document-body.ts`, `module-detail.ts` and `reader-dismissal.ts` manage loading/error/retry, source/credit continuity, panel lifecycle and backdrop/Escape return. Both navigation and reading retain the current bloom camera and normal shift timing.
 
 As of this tree: **53 candidates**, **34 tiles tied to 33 public repos**, **15 supplied WebP portals**, and **21 archived AI test captures plus two original images** according to the visual manifest. Prior journal reports 126 tests/build and desktop browser checks; no tests were run in this docs-only audit. Real-device, full accessibility, bundle-performance and deployment acceptance remain separate.
+
+## Public image guard — 2026-10-27
+
+`check-webp.mjs` recursively checks public image extensions and RIFF/WEBP/VP8 container signatures, and runs in `content:check` before build. Regression tests cover current assets and renamed-invalid/legacy fixtures. Gallery/poster references target WebP; full source Markdown references are preserved as documentation links. No new runtime image codec dependency. Original captures remain outside the deployed public directory.

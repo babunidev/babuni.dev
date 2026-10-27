@@ -11,11 +11,11 @@ Project definitions live in `src/content/project-modules.json`, keyed by stable 
 - `public/media/babuni-dev/images/` — website screenshots, sketches and artwork.
 - `public/media/babuni-dev/videos/` — web-ready clips and poster images.
 - Use the same structure under `public/media/button-game/` when its media is ready.
-- Refer to these as `/media/babuni-dev/images/filename.jpg`, without `public` in the URL.
+- Refer to these as `/media/babuni-dev/images/filename.webp`, without `public` in the URL.
 
 GitHub versions the assets. The deployed website serves them; GitHub is not a video streaming backend. The current native player progressively loads an MP4/WebM URL on demand (`preload="none"`), with no autoplay. MP4 exports here have their metadata at the beginning for playback/seek support. Larger future libraries can use an external media host without changing module identity. A file alone does not create a module: add it to the catalog explicitly.
 
-Keep original visual documentation in its source folder. Only selected website-ready derivatives belong under `public/media/`. The originals were not modified. Current exports derive from four short files in Babuni.dev’s `visualdocumentationmaterial/moduleContentVideo`; they crop browser chrome and encode a 960px-wide H.264 MP4. The mixed 26-minute recording is not published here. The two JPG screenshots are copied unchanged.
+Keep original visual documentation in its source folder. Only selected website-ready derivatives belong under `public/media/`. The originals were not modified. Current exports derive from four short files in Babuni.dev’s `visualdocumentationmaterial/moduleContentVideo`; they crop browser chrome and encode a 960px-wide H.264 MP4. The mixed 26-minute recording is not published here. The original JPG screenshots now have quality-85 WebP publishing derivatives; the originals remain outside the published directory.
 
 ## Supported definitions
 
@@ -41,7 +41,7 @@ Big bloom belongs to the same draggable living grid. Every module occupies 2×2 
 
 ## 2026-10-26 — Button Game portal artwork
 
-Portal identity images belong in `public/portal-content/`. Assign their public URL through `portalArtwork` in `src/lib/demo-projects.ts`; filenames alone do not assign artwork. Button Game uses `/portal-content/PortalContentButtonGame.png`. Portal artwork is separate from gallery module content.
+Portal identity images belong in `public/portal-content/`. Assign their public URL through `portalArtwork` in `src/lib/demo-projects.ts`; filenames alone do not assign artwork. Button Game uses `/portal-content/PortalContentButtonGame.webp`. Portal artwork is separate from gallery module content.
 
 ## Content validation and blank templates
 
@@ -71,3 +71,8 @@ Standard text modules are generated automatically from source documents. The man
 Full source Markdown is no longer shipped inside the grid JavaScript bundle. `npm run content:prepare` creates a compact synchronous module preview index and a collection of exact static Markdown files under `public/_project-docs/`, using only committed public repository snapshots and the current local Markdown. They are generated artifacts excluded from Git; do not hand-edit or commit them. `npm run dev`, `npm run test:grid` and `npm run build` prepare them automatically, so local work needs no additional setup. If editing docs while the dev server stays running, rerun `npm run content:prepare` (or restart dev) to refresh local source previews/assets. Before publishing fresh external documents: `npm run content:sync`, `npm run content:report`, then check/tests/build and review as usual.
 
 The small/big blooms still display immediate source-based excerpts and the existing up-to-1,600-character introduction. Only opening a *full text detail* requests its source file, with loading, retry and cancellable close. This prevents network timing from changing the grid's approved bloom choreography. Video/gallery data remains unchanged. Verify the actual reader on desktop and phone and confirm its text parity with the original source.
+
+
+## WebP publishing policy — 2026-10-27
+
+All published images, including gallery captures, portal artwork, video posters and the favicon, use WebP. Current screenshot captures were found to contain JPEG bytes despite their historical `.png` names; these and JPEG posters use quality-85 WebP with unchanged dimensions. Future genuine PNG screenshots should use lossless WebP where practical, measuring output size and checking readability. Keep originals outside `public/`. `npm run content:check` rejects other image formats and invalid WebP container signatures before building. The browser capture may start as temporary PNG; convert it before adding it to the gallery and visual manifest.

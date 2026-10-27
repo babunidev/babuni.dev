@@ -425,3 +425,7 @@ The asynchronous document body owns a dedicated child container. Source and cred
 **Repository synchronization is a separate action:** The portfolio reads a manually reviewed imported document snapshot. Although other Babuni.dev project Markdown was revised in this numbered audit, updating the portfolio's snapshot requires a **distinct review, explicit sync, verification and commit**. No user approval of unreviewed automatic live ingestion is inferred. The 53 named candidates still are not 53 public, finished projects.
 
 **Open (not approved):** Svelte framework adoption, changes to spatial timing/appearance, site deployment, release license, full native-phone/mobile/reduced-motion signoff and choice of performance thresholds. Only Babuni.dev can approve these decisions.
+
+## 2026-10-27 — All published images use WebP
+
+**Status: Implemented from Babuni.dev request.** Public artwork, screenshots, gallery images, posters and favicon use real WebP containers. Originals stay outside public. AI selected quality 85 for current JPEG-source media after lossless trials increased size; retain dimensions. Genuine future PNG screenshots should use measured lossless WebP when practical. Validate extension and container before build. Imported Markdown image references remain source text/explicit links, not downloaded or rewritten assets.

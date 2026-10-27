@@ -409,3 +409,7 @@ Each future entry should include the change, its user-visible or technical effec
 - Preserved the original extensive journals, decisions, source, media and client tests without reformatting away earlier creative corrections.
 
 **Verification:** GitHub tree, source, docs and dated Git review; Markdown relative-path and unchanged-file checks following commit. No new Node tests, Astro build, browser session or physical phone test executed here.
+
+### Changed — WebP for every published image (2026-10-27)
+- Converted all remaining screenshot/gallery/poster images and SVG favicon to WebP, updated gallery/poster references, and removed the unused legacy ICO duplicate from publication. Existing portal WebPs remain unchanged.
+- Public-image format/signature checks now run before builds; originals are preserved outside public assets.

@@ -235,3 +235,7 @@ GitHub source material is ingested as **reviewed revisions**, currently represen
 The reader delivers full Markdown **on demand**, while smaller modules retain compact, formatted previews and existing media. Raw HTML, MDX and executable embeds from external documents do not become trusted active content; images inside Markdown remain links rather than automatic media. The Visual documentation gallery stores **21 dated/context-captioned AI browser captures plus two originally supplied images**, including earlier superseded designs; see [visual manifest](VISUAL_DOCUMENTATION.md).
 
 **Not a release claim:** A tracked WebP filename, public repository link or earlier successful browser screenshot is not proof of current user approval for every tile, native-phone usability or hosted availability.
+
+## WebP assets and archive fidelity — 2026-10-27
+
+All locally published image assets are WebP. Historical verification filenames now use `.webp`; captions/credits and capture context remain unchanged. The prior `.png` capture files were actually JPEG, verified by decoding rather than extension. Their quality-85 derivatives retain dimensions and use smaller files; original bytes remain in the local task image-originals archive. Source repository Markdown is unmodified. Favicon SVG was rasterized losslessly and the unused ICO duplicate was removed from public assets.

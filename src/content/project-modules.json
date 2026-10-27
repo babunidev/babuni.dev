@@ -61,129 +61,134 @@
       "preview": "Portal artwork, prototypes and browser verification captures from the project’s development.",
       "images": [
         {
-          "src": "/media/babuni-dev/images/small-bloom.jpg",
+          "src": "/media/babuni-dev/images/small-bloom.webp",
           "alt": "BABUNI.DEV with adjacent summary and project notes modules.",
           "caption": "Small-bloom prototype, October 2026."
         },
         {
-          "src": "/media/babuni-dev/images/portal-artwork.jpg",
+          "src": "/media/babuni-dev/images/portal-artwork.webp",
           "alt": "Babuni.dev’s supplied logo inside its round stone portal.",
           "caption": "First supplied portal artwork, October 2026."
         },
         {
-          "src": "/media/babuni-dev/images/verification/big-bloom-grid-preview.png",
+          "src": "/media/babuni-dev/images/verification/big-bloom-grid-preview.webp",
           "alt": "Development browser capture: big bloom grid preview",
           "caption": "AI browser verification — big bloom grid preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/big-bloom-preview.png",
+          "src": "/media/babuni-dev/images/verification/big-bloom-preview.webp",
           "alt": "Development browser capture: big bloom preview",
           "caption": "AI browser verification — big bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/bloom-preview.png",
+          "src": "/media/babuni-dev/images/verification/bloom-preview.webp",
           "alt": "Development browser capture: bloom preview",
           "caption": "AI browser verification — bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/calm-bloom-preview.png",
+          "src": "/media/babuni-dev/images/verification/calm-bloom-preview.webp",
           "alt": "Development browser capture: calm bloom preview",
           "caption": "AI browser verification — calm bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/framed-detail-reader.png",
+          "src": "/media/babuni-dev/images/verification/framed-detail-reader.webp",
           "alt": "Development browser capture: framed detail reader",
           "caption": "AI browser verification — framed detail reader. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/markdown-bloom-preview.png",
+          "src": "/media/babuni-dev/images/verification/markdown-bloom-preview.webp",
           "alt": "Development browser capture: markdown bloom preview",
           "caption": "AI browser verification — markdown bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/markdown-reader-workthatgodbod.png",
+          "src": "/media/babuni-dev/images/verification/markdown-reader-workthatgodbod.webp",
           "alt": "Development browser capture: markdown reader workthatgodbod",
           "caption": "AI browser verification — markdown reader workthatgodbod. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/mobile-center-topics-preview.png",
+          "src": "/media/babuni-dev/images/verification/mobile-center-topics-preview.webp",
           "alt": "Development browser capture: mobile center topics preview",
           "caption": "AI browser verification — mobile center topics preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/mobile-persistent-bloom-preview.png",
+          "src": "/media/babuni-dev/images/verification/mobile-persistent-bloom-preview.webp",
           "alt": "Development browser capture: mobile persistent bloom preview",
           "caption": "AI browser verification — mobile persistent bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/module-previews.png",
+          "src": "/media/babuni-dev/images/verification/module-previews.webp",
           "alt": "Development browser capture: module previews",
           "caption": "AI browser verification — module previews. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/new-portal-artworks.png",
+          "src": "/media/babuni-dev/images/verification/new-portal-artworks.webp",
           "alt": "Development browser capture: new portal artworks",
           "caption": "AI browser verification — new portal artworks. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/open-bloom-no-topics-preview.png",
+          "src": "/media/babuni-dev/images/verification/open-bloom-no-topics-preview.webp",
           "alt": "Development browser capture: open bloom no topics preview",
           "caption": "AI browser verification — open bloom no topics preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/portal-logo-preview.png",
+          "src": "/media/babuni-dev/images/verification/portal-logo-preview.webp",
           "alt": "Development browser capture: portal logo preview",
           "caption": "AI browser verification — portal logo preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-outside-dismissal.png",
+          "src": "/media/babuni-dev/images/verification/reader-outside-dismissal.webp",
           "alt": "Development browser capture: reader outside dismissal",
           "caption": "AI browser verification — reader outside dismissal. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/repository-backed-roar-detail.png",
+          "src": "/media/babuni-dev/images/verification/repository-backed-roar-detail.webp",
           "alt": "Development browser capture: repository backed roar detail",
           "caption": "AI browser verification — repository backed roar detail. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/restored-reader-attribution.png",
+          "src": "/media/babuni-dev/images/verification/restored-reader-attribution.webp",
           "alt": "Development browser capture: restored reader attribution",
           "caption": "AI browser verification — restored reader attribution. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/stronger-waiting-feedback.png",
+          "src": "/media/babuni-dev/images/verification/stronger-waiting-feedback.webp",
           "alt": "Development browser capture: stronger waiting feedback",
           "caption": "AI browser verification — stronger waiting feedback. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/topic-wings-preview.png",
+          "src": "/media/babuni-dev/images/verification/topic-wings-preview.webp",
           "alt": "Development browser capture: topic wings preview",
           "caption": "AI browser verification — topic wings preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/unified-tile-preview.png",
+          "src": "/media/babuni-dev/images/verification/unified-tile-preview.webp",
           "alt": "Development browser capture: unified tile preview",
           "caption": "AI browser verification — unified tile preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/persistent-header-project-search.png",
+          "src": "/media/babuni-dev/images/verification/persistent-header-project-search.webp",
           "alt": "Projects search available inside the About reader",
           "caption": "AI browser verification, 2026-10-27: Projects search available inside the About reader. Development state; not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/persistent-header-big-bloom.png",
+          "src": "/media/babuni-dev/images/verification/persistent-header-big-bloom.webp",
           "alt": "Persistent site header above grid-native big bloom",
           "caption": "AI browser verification, 2026-10-27: Persistent site header above grid-native big bloom. Development state; not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-controls-about-wip.png",
+          "src": "/media/babuni-dev/images/verification/reader-controls-about-wip.webp",
           "alt": "WIP About with verified public profile links and centered activity",
           "caption": "AI desktop browser verification, 2026-10-27: WIP About with verified public profile links and centered activity. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-contextual-activity.png",
+          "src": "/media/babuni-dev/images/verification/reader-contextual-activity.webp",
           "alt": "Reader with project/document activity and header-end controls help",
           "caption": "AI desktop browser verification, 2026-10-27: Reader with project/document activity and header-end controls help. Not physical-phone acceptance."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/webp-publication-check.webp",
+          "alt": "Browser verification of WebP portal artwork, gallery image and video poster in the small bloom.",
+          "caption": "AI desktop browser verification, 2026-10-27: WebP media loaded and gallery Next image worked. Not physical-phone acceptance."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
@@ -196,22 +201,22 @@
       "videos": [
         {
           "src": "/media/babuni-dev/videos/grid-motion.mp4",
-          "poster": "/media/babuni-dev/videos/grid-motion.jpg",
+          "poster": "/media/babuni-dev/videos/grid-motion.webp",
           "title": "Living grid"
         },
         {
           "src": "/media/babuni-dev/videos/column-shifts.mp4",
-          "poster": "/media/babuni-dev/videos/column-shifts.jpg",
+          "poster": "/media/babuni-dev/videos/column-shifts.webp",
           "title": "Shifting columns"
         },
         {
           "src": "/media/babuni-dev/videos/bloom-motion.mp4",
-          "poster": "/media/babuni-dev/videos/bloom-motion.jpg",
+          "poster": "/media/babuni-dev/videos/bloom-motion.webp",
           "title": "Movement study"
         },
         {
           "src": "/media/babuni-dev/videos/small-bloom.mp4",
-          "poster": "/media/babuni-dev/videos/small-bloom.jpg",
+          "poster": "/media/babuni-dev/videos/small-bloom.webp",
           "title": "Small bloom recording"
         }
       ],

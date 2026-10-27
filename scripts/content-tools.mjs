@@ -15,7 +15,7 @@ export function validateContent(catalog, {projects=demoProjects, root=resolve(fi
   const fail=(at,message)=>errors.push(`${at}: ${message}`);
   const keys=(entry,allowed,at)=>Object.keys(entry).forEach(key=>{if(!allowed.includes(key))fail(`${at}.${key}`,'unknown field');});
   const asset=(value,at)=>{
-    if(typeof value!=='string'||!value.startsWith('/')||value.startsWith('//')||/[?#\\%]/.test(value)||value.split('/').includes('..'))return fail(at,'use a public URL such as /media/project/image.jpg');
+    if(typeof value!=='string'||!value.startsWith('/')||value.startsWith('//')||/[?#\\%]/.test(value)||value.split('/').includes('..'))return fail(at,'use a public URL such as /media/project/image.webp');
     const base=resolve(root,'public'), path=resolve(base,`.${value}`);
     if(!existsSync(path))return fail(at,`missing asset ${value}`);
     if(!statSync(path).isFile())fail(at,'expected a file');
