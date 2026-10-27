@@ -262,3 +262,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## Reader handle verification imagery — 2026-10-27
 
 Existing B WebP header/favicon art and branding captures remain intact. Added two AI browser captures to Visual documentation: the superseded first proportional-thumb preview and the compact handle after dragging. Published captures are WebP; original JPEG bytes remain outside public assets. No content sync, repository text rewrite or new human artwork is implied.
+
+## Performance evidence and accepted interactions — 2026-10-27
+
+Babuni.dev’s keyboard round-trip and reader-handle acceptance, positive reader scrolling and Firefox observations are human evidence. The long-session calculation benchmark is AI measurement; it is not a device frame-rate claim. Project text, imported snapshots, portal art and existing image credits are unchanged by caching work. Browser verification captures remain AI evidence with historical captions.

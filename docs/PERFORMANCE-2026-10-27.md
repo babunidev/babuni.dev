@@ -32,3 +32,13 @@ For local diagnosis, run the development server and open `/?grid-profile=1`; rea
 The final real-drag sample recorded playback rate dropping from 1 to 0.328 while the pointer was held, with progress increasing from 0.593 to 0.626; the shift then recovered and finished. The retained shift intervals in this later sample had p95 6.4ms but maximum **84.9ms**, including one gap above 50ms. This reinforces the need to distinguish typical pacing from occasional hitches; their cause is not established by rAF sampling.
 
 Saved samples: [before](performance/grid-profile-before.json) and [after](performance/grid-profile-after.json). They are different random/local-load windows, not a controlled comparison. The archived WebP is visual development history, not video/FPS evidence.
+
+## Retained source cache — 2026-10-27 follow-up
+
+Babuni.dev reports that a long-open tab becomes less smooth when dragging, while Firefox feels better than Chrome. No heap leak has been proven. The bounded tile pool and pruned placement assignments are separate from the append-only shift history. Previously every settlement cleared the coordinate cache, so rebuilding sources replayed increasing history.
+
+The new cache retains up to 2,048 coordinate sources and advances them through appended moves; individual LRU eviction avoids whole-cache flushes. Unseen coordinates still replay full history, and the history itself is not bounded by this change. The vacancy-free source fast path avoids unnecessary occupied/resting allocations. All approved timings and scroll behavior stay unchanged.
+
+Reproduce with `node --experimental-strip-types scripts/benchmark-source-cache.mjs`. Final local sample: previous cache 577.36ms; retained cache 98.83ms; 1,500 seeded shifts × 120 cells, identical checksum -185418. Both benchmark variants use the current vacancy-free history fast path. This is a synthetic computation comparison, not measured display FPS, an hours-long browser run or proof of no Chrome hitches.
+
+Regression coverage includes 1,000 settlements with no full-history replay for warm unaffected cells, mixed vacancy histories, and eviction after more than 2,048 cells. Direct cache tests 4/4 and shift tests 7/7 passed; the project command reported 29 passing test-file entries and production build passed. Follow-up: compare initial and long-open dragging in the affected Chrome and Firefox setups; profile main thread/heap if unevenness persists.

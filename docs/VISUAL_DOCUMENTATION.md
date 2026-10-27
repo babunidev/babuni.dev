@@ -64,3 +64,7 @@ All 24 archived AI captures now publish as actual WebP. Earlier `.png` filenames
 - `reader-scroll-dragged.webp` — AI desktop browser capture after dragging the compact thumb to the final About links. Scroll position changed from 0 to 345, then Home returned to 0.
 
 Both originals were JPEG bytes and were converted to WebP for publication. These are desktop observations, not physical-phone acceptance.
+
+## Retained source cache — 2026-10-27
+
+- `retained-cache-bloom.webp` — AI desktop smoke capture after normal dragging, queued selection/shift completion, eight-module small-bloom opening and dragging with the bloom retained. Not an hours-long or FPS check. Original encoded JPEG is held outside public; published asset is WebP.

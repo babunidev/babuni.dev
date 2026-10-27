@@ -1,12 +1,34 @@
 import {sourceCell,type ShiftEvent} from './grid-shifts.ts';
 import {type Cell} from './bloom-geometry.ts';
-/** Coordinates only change when a line settles; avoid replaying history every frame. */
-export function createSourceLookup(history:readonly ShiftEvent[]){
- let revision=-1;const cache=new Map<string,Cell>();
+/** Retain warm coordinates across settlements; evict oldest entries individually.
+ * History remains authoritative for genuinely unseen cells in the infinite grid. */
+export function createSourceLookup(history:readonly ShiftEvent[],resolve=sourceCell){
+ let revision=0;let cache=new Map<string,Cell>();
+ const key=(column:number,row:number)=>column+','+row;
+ function advance(){
+  if(revision===history.length)return;
+  const previous=cache;cache=new Map();
+  if(revision<history.length){
+   const added=history.slice(revision);
+   let prefix:readonly ShiftEvent[]|null=null;
+   for(const id of previous.keys()){
+    const [column,row]=id.split(',').map(Number);
+    const prior=sourceCell(column,row,added);
+    // Most destinations already have their previous resident cached.
+    const value=previous.get(key(prior.column,prior.row))??resolve(prior.column,prior.row,prefix??(prefix=history.slice(0,revision)));
+    cache.set(id,value);
+   }
+  }
+  revision=history.length;
+ }
  return (column:number,row:number):Cell=>{
-  if(revision!==history.length||cache.size>2048){cache.clear();revision=history.length;}
-  const key=column+','+row;let value=cache.get(key);
-  if(!value){value=sourceCell(column,row,history);cache.set(key,value);}return value;
+  advance();
+  const id=key(column,row);let value=cache.get(id);
+  if(value)cache.delete(id); // LRU promotion, without flushing the whole viewport.
+  else value=resolve(column,row,history);
+  cache.set(id,value);
+  if(cache.size>2048)cache.delete(cache.keys().next().value!);
+  return value;
  };
 }
 /** Compile the same physical row mapping once per immutable vacancy footprint. */

@@ -37,7 +37,12 @@ export function planShiftRound(rows:number[],columns:number[],random:RandomSourc
 export function sourceCell(column:number,row:number,history:readonly ShiftEvent[]):{column:number;row:number}{
  for(let i=history.length-1;i>=0;i--){
   const shift=history[i];
-  const visual=occupiedCell({column,row},shift.vacancies??[]);
+  if(!shift.vacancies?.length){
+   if(shift.axis==='row'&&shift.line===row)column-=shift.direction;
+   else if(shift.axis==='column'&&shift.line===column)row-=shift.direction;
+   continue;
+  }
+  const visual=occupiedCell({column,row},shift.vacancies);
   column=visual.column;row=visual.row;
   if(shift.axis==='row'&&shift.line===row)column-=shift.direction;
   if(shift.axis==='column'&&shift.line===column)row-=shift.direction;

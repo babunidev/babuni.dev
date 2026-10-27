@@ -440,3 +440,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ### Added
 - A reader-only frameless gold scroll thumb: drag to move quickly through long content and see the current position. It hides when content fits; native wheel/touch reading remains available with generic scrollbars hidden.
 - Keyboard support for the focused thumb (arrows, Page Up/Down, Home/End), live overflow resizing, and geometry tests. Both browser captures are archived as WebP, including the superseded first preview.
+
+## 2026-10-27 — Retain grid coordinates through long sessions
+
+### Fixed
+- Preserve cached source coordinates across settled shifts instead of clearing the complete cache each time. Remap cached destinations through only newly appended shifts, falling back to authoritative history for uncached residents.
+- Evict individual least-recently-used entries at the 2,048-entry bound instead of flushing the viewport. Avoid vacancy allocations in historical shifts without vacancies. Add long-history/eviction regressions and a reproducible calculation benchmark. No timing, scrolling or geometry changes.

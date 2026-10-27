@@ -219,6 +219,11 @@
           "src": "/media/babuni-dev/images/verification/reader-scroll-dragged.webp",
           "alt": "AI desktop browser, 2026-10-27: compact frameless reader handle dragged down to the final About links; native scrollbar remains hidden.",
           "caption": "AI desktop browser, 2026-10-27: compact frameless reader handle dragged down to the final About links; native scrollbar remains hidden."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/retained-cache-bloom.webp",
+          "alt": "BABUNI.DEV small bloom remains open after dragging the optimized grid.",
+          "caption": "AI desktop smoke check, 2026-10-27: selection waited for normal shift completion, opened eight modules, and retained bloom during dragging. This still capture is not long-session/FPS evidence."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

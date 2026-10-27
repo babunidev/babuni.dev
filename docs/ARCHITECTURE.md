@@ -407,3 +407,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## Reader scrolling — 2026-10-27
 
 `reader-scroll.ts` installs a pointer-captured thumb beside `.reader-scroll-content` inside the existing animated `.module-detail-panel`. ScrollTop remains the position authority; pure `readerScrollMetrics` maps clamped scroll position onto the available handle travel. ResizeObserver watches viewport and article for async document/media changes; native scroll events update the indicator. Close/replacement removes observers and the thumb. The fixed shell clips while its inner content scrolls; no per-frame loop or dependency is added.
+
+## Session-aware source cache — 2026-10-27
+
+`createSourceLookup` advances its resident map from its previous history revision by applying inverse appended moves to destination coordinates and consulting the prior cache. Edge misses replay only the old prefix. New-coordinate misses use full history. LRU promotion/individual eviction caps cached cells at 2,048; historical shift events remain authoritative and append-only. `sourceCell` bypasses occupied/resting vacancy allocations for empty footprints. This reduces repeated long-history replay for warm cells, not unbounded historical storage or every rendering cost. The benchmark script isolates calculation work, not display FPS.

@@ -403,3 +403,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## Reader position handle — 2026-10-27
 
 Babuni.dev requested a little standalone draggable reader indicator without a frame. A gold mark follows reading position at the reader’s right edge, glows on interaction and appears only when content overflows. It has no visible track. Mouse dragging, finger dragging and focused keyboard scrolling are supported; ordinary text scrolling stays native. Other exploration stages gain no scrollbar. Reader size and transition durations are preserved.
+
+## Long-session performance, unchanged interaction — 2026-10-27
+
+Babuni.dev accepts the highlight-first keyboard round trip for shipping and reader scrolling, and reports Firefox feels better than Chrome. Long-running dragging can lose smoothness. AI optimized internal coordinate caching only: keep the calm shift tempo, existing transitions, physical vacancies and native scrolling. No new visual tuning or controls are introduced.

@@ -302,3 +302,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## Reader navigation refinement — 2026-10-27
 
 Built: reader-only frameless position thumb with direct dragging, overflow updates and keyboard support. Desktop browser dragging and Home verified; physical-phone dragging, long-gallery edge cases and human acceptance remain open. Content remains a living work in progress; this addition does not close unrelated milestone acceptance.
+
+## Latest acceptance and long-session follow-up — 2026-10-27
+
+**Human accepted:** keyboard round trip for shipping; frameless reader handle; reader scrolling works well. **Human observed:** Firefox works and feels better than Chrome; general long-running dragging can become less smooth. Earlier generic keyboard-pending notes are historical; exhaustive screen-reader coverage is still separate. Do not infer new phone acceptance from unclear speech.
+
+**Built:** retained bounded source cache, individual LRU eviction, vacancy-free history fast path, long-history/eviction tests and a calculation benchmark. All checks passed locally; user long-session acceptance remains open. Reduced-motion, long-gallery edge cases, heap/load profiling and full cross-browser/fullscreen acceptance remain checks, alongside hosting/release work. Content completion remains secondary.

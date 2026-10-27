@@ -452,3 +452,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-27 — Reader-only frameless scrolling
 
 **Status:** implemented from Babuni.dev’s direction, awaiting visual acceptance. Native browser chrome stays hidden; a floating gold thumb has no track/frame. AI chose a 24px transparent hit area around a 6px visible mark and a 36–96px thumb, with full-range proportional dragging. A conventional framed scrollbar was rejected by the human request; hiding every indicator would prevent the requested fast drag. The reader scroll element is separate from its animated shell so the handle stays visible during content scrolling.
+
+## 2026-10-27 — Retain warm coordinate identities
+
+**Status:** AI implementation responding to Babuni.dev’s long-session slowdown report; performance acceptance pending. Keep the full authoritative shift history and at most 2,048 cached coordinates. Advance cached identities using only appended inverse shifts; use the old prefix on previously uncached edges. Prefer individual LRU eviction to whole-map flushes. Do not truncate history or change visual motion to hide increasing calculation costs. Infinite unseen areas still need history; a bounded exact history representation is future research, not claimed solved. Human keyboard and reader-handle acceptance and positive Firefox evidence are recorded in DEVLOG.
