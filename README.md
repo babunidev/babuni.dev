@@ -25,7 +25,7 @@ Open the local address printed by Astro (normally http://localhost:4321). For ag
 
 `npm run test:grid` runs the regression suite. `npm run build` validates content, prepares the public document assets and creates the static site in `dist/`. `npm run preview` serves that build locally. `npm run content:prepare` rebuilds local preview metadata/static Markdown from reviewed sources without network access; it is invoked automatically before dev, tests and builds.
 
-Babuni.dev's 2026-10-27 local terminal output verified **92 passing tests** and a successful build on the preceding version, with a >500 kB JavaScript chunk warning. The documentation-loading optimization requires its own post-change build verification. [GitHub Actions](.github/workflows/ci.yml) now runs tests and the production build on main pushes and pull requests; check the workflow result before relying on a change. A separate full type-check command is not yet configured; see [foundation review](docs/REVIEW-2026-10-26.md).
+Babuni.dev's 2026-10-27 local terminal output verified **92 passing tests** and a successful build on the preceding version, with a >500 kB JavaScript chunk warning. The optimized version subsequently passed **97 tests** and a clean GitHub Actions build (2026-10-27). The client JavaScript measures **584.7 KiB raw / 174.0 KiB gzip**, and Vite's >500 KiB raw-chunk warning remains; actual browser load-time acceptance is still open. [GitHub Actions](.github/workflows/ci.yml) now runs tests and the production build on main pushes and pull requests; check the workflow result before relying on a change. A separate full type-check command is not yet configured; see [foundation review](docs/REVIEW-2026-10-26.md).
 
 ## Documentation
 

@@ -219,3 +219,6 @@ Milestone 5 now has real multi-project source content and validation; MDX blocks
 
 
 **Post-change verification (2026-10-27):** GitHub Actions run on `3041e01` passed all **97** tests, content validation and production build. The reported Vite large-chunk warning remains; the next CI step will print detailed raw/gzip client bundle sizes before making further compression/splitting decisions. Maintain distinction between successful builds and unverified end-user load time.
+
+
+**Performance verification checkpoint (2026-10-27):** GitHub Actions run on `a12fde3` passed **97/97 tests** and the production build. Measured output: **584.7 KiB raw / 174.0 KiB gzip** JavaScript in one chunk. The original >500 KiB warning persists; the exact original long documents are now separate, lazily loaded static assets. Next evaluate browser request timing and whether splitting the small preview/intro index by project materially helps; do not alter approved bloom behavior merely to suppress a build warning.

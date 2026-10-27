@@ -318,3 +318,6 @@ Global CSS uses scrollbar-width:none and a hidden ::-webkit-scrollbar fallback. 
 
 
 **Measuring the next bottleneck:** Even after the full source Markdown moved to separate static assets, the clean CI build on `3041e01` still warned about a >500 kB JavaScript chunk. `scripts/report-bundle-size.mjs` now reports raw and gzip file sizes for emitted `dist/_astro/*.js` after builds via `npm run bundle:report`. This tool does not change bundling, request scheduling or the living grid; it provides concrete evidence for possible future per-project preview-index code splitting.
+
+
+**Observed payload, 2026-10-27:** On passing GitHub Actions commit `a12fde3`, `npm run bundle:report` measured one JS chunk of **584.7 KiB raw, 174.0 KiB gzip**; Vite retained its default >500 KiB warning. These are compiled-file sizes, not transfer or first-contentful-paint metrics. The complete Markdown is not in this JS; the remaining metadata index still has intro text for synchronous big-bloom rendering. Future work can split the compact index by project if warranted by a real waterfall/UX problem, but must not make tile selection or its reveal choreography wait unexpectedly.
