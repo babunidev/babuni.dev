@@ -2,6 +2,7 @@ import {videosForModule,type ProjectModule} from '../lib/project-modules';
 import {renderVideo} from './module-preview';
 import {renderDocument} from './document-reader';
 import {createDocumentBody} from './document-body';
+import {installReaderDismissal} from './reader-dismissal';
 /** Detail is modal; big bloom itself belongs to the living grid. */
 export function createModuleDetails(onChange:(open:boolean)=>void){
   let detail:HTMLDialogElement|null=null;
@@ -11,8 +12,7 @@ export function createModuleDetails(onChange:(open:boolean)=>void){
   function openDetail(module:ProjectModule,trigger:HTMLButtonElement){
     onChange(true);
     const view=document.createElement('dialog');view.className='module-detail';view.setAttribute('aria-label',module.title+' detail');detail=view;
-    const back=document.createElement('button');back.type='button';back.className='bloom-action detail-back';back.textContent='Back to big bloom';
-    const title=document.createElement('h1');title.textContent=module.title;
+    const title=document.createElement('h1');title.textContent=module.title;title.tabIndex=-1;
     const content=document.createElement('article');content.className='module-detail-content';
     if(module.type==='text'){
       if(module.bodyUrl){
@@ -38,8 +38,8 @@ export function createModuleDetails(onChange:(open:boolean)=>void){
     if(module.source){const source=document.createElement('a');source.href=module.source;source.textContent='View source';source.target='_blank';source.rel='noopener noreferrer';content.append(source);}
     if(module.credit){const credit=document.createElement('p');credit.className='module-credit';credit.textContent=module.credit;content.append(credit);}
     function backToBloom(){closeDetail();trigger.focus({preventScroll:true});}
-    back.addEventListener('click',backToBloom);view.addEventListener('cancel',event=>{event.preventDefault();backToBloom();});
-    view.append(back,title,content);document.body.append(view);view.showModal();back.focus({preventScroll:true});
+    installReaderDismissal(view,backToBloom);
+    view.append(title,content);document.body.append(view);view.showModal();title.focus({preventScroll:true});
   }
   return {open:openDetail,close:closeDetail,isOpen:()=>detail!==null};
 }

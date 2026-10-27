@@ -350,3 +350,8 @@ All fifteen explicitly assigned portal WebP binaries are now versioned with thei
 ## 2026-10-27 — Render repository Markdown as document structure
 
 document-reader.ts now uses Marked tokens and constructs semantic DOM directly. It never assigns untrusted HTML to an HTML parser. Text/entities are decoded only into text nodes; inline code/fenced code remain literal. Raw HTML tokens remain visible text. Link targets are checked for HTTP(S) and credentials; relative references use module.source, passed through document-body.ts and module-detail.ts. Heading links use reader-scoped targets rather than moving the grid. Markdown image syntax produces an explicit link instead of loading media. Tables use a local overflow wrapper; source/credit siblings retain their independent lifecycle. Marked is recorded in package.json/package-lock.json.
+
+
+## 2026-10-27 — Dismiss the reader from its surround
+
+reader-dismissal.ts installs backdrop gesture and native dialog cancel handlers. It checks primary pointer origin, target identity and current panel bounds before consuming an outside click and invoking the existing return path. module-detail.ts removes the old button and focuses the title on opening. Closing still aborts pending document requests, stops media, restores the trigger focus and resumes the retained big bloom.

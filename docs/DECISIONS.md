@@ -395,3 +395,8 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ## 2026-10-27 — Render repository Markdown as document structure
 
 **Status: Implemented user-requested correction.** Use a maintained Markdown lexer rather than expanding the partial regex parser. The renderer builds an allowlisted set of DOM elements from Marked tokens, never raw HTML. Supports common Markdown/GFM formatting, tables and tasks. Relative links resolve to their source document; known heading references scroll inside the reader. Raw HTML remains literal; unsafe schemes and credential-bearing links are inert. Markdown image references stay explicit links, so importing a document does not introduce automatic media downloads. Revisit advanced syntax only when supported by actual authoring needs.
+
+
+## 2026-10-27 — Dismiss the reader from its surround
+
+**Status: Implemented, explicit user direction.** Replace the reader’s visible Back to big bloom button with outside-click/tap dismissal while retaining Escape. Use a deliberate backdrop gesture that starts and ends outside, rather than closing whenever a click targets the dialog: native dialog padding also targets the dialog, and text selection may end beyond its edge. Restore the originating module control’s focus and retain the same big-bloom camera and cleanup behavior.

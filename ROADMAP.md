@@ -237,3 +237,8 @@ Built: complete fifteen-image WebP migration, three additional project assignmen
 ## 2026-10-27 — Render repository Markdown as document structure
 
 Built: common Markdown/GFM formatting in detail, including emphasis, code, quotes, tables, nested/ordered/task lists and source-relative/reader-heading links. This addresses the reported raw-markup display problem. No MDX, math, raw HTML execution or automatic document-image loading is introduced. Existing physical-device and full accessibility acceptance tracks remain open.
+
+
+## 2026-10-27 — Dismiss the reader from its surround
+
+Built: requested outside-reader click/tap dismissal and removal of its Back to big bloom button, with Escape retained and accidental text-drag dismissal guarded. This is a navigation-control refinement, not another bloom depth or motion change. Native-phone and extended accessibility acceptance remain open.

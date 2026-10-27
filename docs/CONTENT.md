@@ -205,3 +205,8 @@ Source links and attribution credits remain available throughout asynchronous do
 ## 2026-10-27 — Render repository Markdown as document structure
 
 Imported Markdown is preserved unchanged while the detail reader now displays its common Markdown/GFM structure correctly, including the WorkThatGodBod Content example supplied by Babuni.dev. Relative/reference links and heading navigation work without rewriting stored documents. Raw HTML, scripts and embeds are not executed; Markdown images remain explicit links, with galleries/videos still authored as their existing module types. This supersedes earlier descriptions of a headings-and-flat-lists-only reader. Advanced extensions such as math/MDX and GitHub-specific alert styling are not claimed.
+
+
+## 2026-10-27 — Dismiss the reader from its surround
+
+The complete module content, source links and attribution remain in the reader. Its navigation chrome now omits Back to big bloom; outside click/tap or Escape returns one level without rewriting content or resetting the big-bloom camera.

@@ -348,3 +348,8 @@ Fifteen supplied project logos use the existing circular portal crop; ROARR, The
 ## 2026-10-27 — Render repository Markdown as document structure
 
 Detail now expresses the source Markdown structure: bold and italic emphasis, inline code, quoted blocks, ordered/nested lists, read-only task checkboxes, strikeout, hard breaks and tables. Tables can pan horizontally within the reading field, with the existing hidden-scrollbar policy. Minimal code/quote/table styling makes structure legible; panel geometry, entrance animation, grid timing, return controls and attribution placement are unchanged.
+
+
+## 2026-10-27 — Dismiss the reader from its surround
+
+Reader dismissal is now a click/tap on the visible surround outside its frame, or Escape. The Back to big bloom button is removed. Inside-panel clicks, reading scroll and text-selection drags do not dismiss. Initial keyboard focus goes to the reader heading; returning restores focus to the module that opened it. Panel dimensions, animation and hidden-scrollbar policy remain unchanged.

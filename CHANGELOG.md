@@ -371,3 +371,11 @@ Each future entry should include the change, its user-visible or technical effec
 - Resolve relative documentation links against the original source and support reader-local heading navigation.
 ### Added
 - Maintained Markdown token parsing with explicit safe-DOM rendering and regression coverage for the reported WorkThatGodBod document plus all 303 imported documents.
+
+
+## 2026-10-27 — Dismiss the reader from its surround
+
+### Changed
+- Close the detail reader by clicking/tapping its outside surround or pressing Escape. Remove the Back to big bloom button.
+### Fixed
+- Keep text-selection drags and inside-panel clicks from accidentally dismissing the reader.
