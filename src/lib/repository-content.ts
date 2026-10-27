@@ -1,3 +1,4 @@
+import {markdownExcerpt} from './markdown-excerpt.ts';
 import {type ProjectModule} from './project-modules.ts';
 /** Public documentation contract; path overrides must select from this list. */
 export const REPOSITORY_DOCUMENTS=[
@@ -31,8 +32,7 @@ export function documentPreview(body:string):string {
     if(/^(?:#|\||>|[-*]\s|\d+\.\s|---|\*\*(?:Author|Owner|State|Status|Recorded|Origin))/i.test(text))continue;
     paragraph.push(text);
   }
-  const text=(paragraph.join(' ')||lines.find(line=>line.trim()&&!/^#/.test(line))||'').replace(/\[([^\]]+)\]\([^)]*\)/g,'$1').replace(/[*_`]/g,'').trim();
-  return text.length>180?text.slice(0,177).trimEnd()+'…':text;
+  return markdownExcerpt(paragraph.join(' ')||body,180);
 }
 export function repositoryModules(connection:RepositoryConnection|undefined,snapshot:RepositorySnapshot|undefined,localDocuments:Record<string,string>={}):ProjectModule[]{
   if(connection?.status!=='connected'||!connection.repository||!connection.branch)return [];

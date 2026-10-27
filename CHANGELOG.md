@@ -379,3 +379,7 @@ Each future entry should include the change, its user-visible or technical effec
 - Close the detail reader by clicking/tapping its outside surround or pressing Escape. Remove the Back to big bloom button.
 ### Fixed
 - Keep text-selection drags and inside-panel clicks from accidentally dismissing the reader.
+
+
+### Fixed — Markdown in bloom previews (2026-10-27)
+- Small and big bloom text now renders Markdown using the same safe DOM renderer as the reader. Generated excerpts retain formatting instead of flattening it. Preview links remain labels so card navigation stays consistent.

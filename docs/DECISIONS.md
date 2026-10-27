@@ -400,3 +400,8 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ## 2026-10-27 — Dismiss the reader from its surround
 
 **Status: Implemented, explicit user direction.** Replace the reader’s visible Back to big bloom button with outside-click/tap dismissal while retaining Escape. Use a deliberate backdrop gesture that starts and ends outside, rather than closing whenever a click targets the dialog: native dialog padding also targets the dialog, and text selection may end beyond its edge. Restore the originating module control’s focus and retain the same big-bloom camera and cleanup behavior.
+
+
+## 2026-10-27 — Markdown previews and ongoing content
+
+**Status: Implemented from Babuni.dev direction.** Small and big bloom previews interpret Markdown, with a shared safe DOM renderer and bounded source excerpts. AI chose inert link labels in cards to preserve established depth navigation; full reader links remain interactive. Raw HTML remains literal and document images remain explicit links. Content completion is ongoing, secondary work rather than a release gate; functional validation remains required. Revisit excerpt selection as source authoring evolves.

@@ -210,3 +210,8 @@ Imported Markdown is preserved unchanged while the detail reader now displays it
 ## 2026-10-27 — Dismiss the reader from its surround
 
 The complete module content, source links and attribution remain in the reader. Its navigation chrome now omits Back to big bloom; outside click/tap or Escape returns one level without rewriting content or resetting the big-bloom camera.
+
+
+## Preview formatting and living content — 2026-10-27
+
+Babuni.dev clarified that this is a living, growing project: WIP content is expected and completion is secondary. Curated previews may contain Markdown. Generated teasers preserve inline formatting; longer intros preserve fitting Markdown blocks and bounded paragraph excerpts. Initial document H1 is omitted to avoid duplicating the module title. Preview text links remain labels until reading the document. No AI-authored factual summaries replace repository text.

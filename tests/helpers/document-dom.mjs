@@ -1,6 +1,6 @@
 /** DOM surface used by the reader tests; no HTML parsing or browser emulation. */
 class Node {
- constructor(tagName='',value=''){this.tagName=tagName.toLowerCase();this.children=[];this.value=value;this.style={};this.attributes={};this.listeners=new Map();}
+ constructor(tagName='',value=''){this.tagName=tagName.toLowerCase();this.children=[];this.value=value;this.style={};this.dataset={};this.attributes={};this.listeners=new Map();}
  get textContent(){return this.value+this.children.map(n=>n.textContent).join('');}
  set textContent(value){this.value=String(value);this.children=[];}
  append(...nodes){this.children.push(...nodes);}

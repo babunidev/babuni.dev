@@ -1,5 +1,6 @@
-import {moduleIntro} from '../lib/big-bloom';
-import {safeEmbedUrl,videosForModule,type ModuleVideo,type ProjectModule} from '../lib/project-modules';
+import {renderDocument} from './document-reader.ts';
+import {moduleIntro} from '../lib/big-bloom.ts';
+import {safeEmbedUrl,videosForModule,type ModuleVideo,type ProjectModule} from '../lib/project-modules.ts';
 /** Players are deliberately activated; no autoplay or eager video fetch. */
 export function renderVideo(video:ModuleVideo):HTMLElement {
   const container=document.createElement('figure');container.className='video-item';
@@ -27,7 +28,8 @@ export function renderModulePreview(module:ProjectModule,projectName:string,onRe
   panel.className='grid-bloom-module';panel.dataset.moduleId=module.id;
   panel.dataset.moduleType=module.type;panel.setAttribute('aria-label',projectName+': '+module.title);
   const title=document.createElement('h2');title.className='bloom-title';title.textContent=module.title;
-  const summary=document.createElement('p');summary.className='bloom-summary';summary.textContent=depth==='big'?moduleIntro(module):module.preview;
+  const summary=renderDocument(depth==='big'?moduleIntro(module):module.preview,module.source,false);
+  summary.className='bloom-summary module-document';
   const content=document.createElement('div');content.className='bloom-preview-content';
   content.append(title,summary);panel.append(content);
   if(module.type==='gallery'&&module.images?.length){

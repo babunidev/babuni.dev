@@ -242,3 +242,8 @@ Built: common Markdown/GFM formatting in detail, including emphasis, code, quote
 ## 2026-10-27 — Dismiss the reader from its surround
 
 Built: requested outside-reader click/tap dismissal and removal of its Back to big bloom button, with Escape retained and accidental text-drag dismissal guarded. This is a navigation-control refinement, not another bloom depth or motion change. Native-phone and extended accessibility acceptance remain open.
+
+
+## 2026-10-27 — Markdown at every reading depth
+
+Built: Markdown formatting in small and big bloom previews, with bounded excerpts and shared safe rendering. Babuni.dev clarified that content completeness is secondary and ongoing, not an acceptance gate. Remaining functional/device/accessibility checks still matter independently of WIP content.

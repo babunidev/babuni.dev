@@ -1,3 +1,4 @@
+import {markdownExcerpt} from './markdown-excerpt.ts';
 import {moduleHasContent,shuffled,type ProjectModule} from './project-modules.ts';
 import {type Cell} from './bloom-geometry.ts';
 /** Same top-first clockwise order as the site's first spiral ring. Additional
@@ -32,9 +33,5 @@ export function moduleIntro(module:ProjectModule,limit=1600):string {
   // Generated intros are already normalized and truncated once. Returning the
   // stored copy preserves the exact last word/ellipsis across both depths.
   if(module.intro!==undefined)return module.intro;
-  const text=(module.body??module.preview).replace(/```[\s\S]*?```/g,'')
-    .replace(/^#{1,6}\s+.*$/gm,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')
-    .replace(/[*`]/g,'').replace(/\s+/g,' ').trim()||module.preview;
-  if(text.length<=limit)return text;
-  const cut=text.lastIndexOf(' ',limit);return text.slice(0,cut>limit/2?cut:limit)+'…';
+  return markdownExcerpt(module.body??module.preview,limit)||module.preview;
 }

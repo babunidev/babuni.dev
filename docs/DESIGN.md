@@ -353,3 +353,8 @@ Detail now expresses the source Markdown structure: bold and italic emphasis, in
 ## 2026-10-27 — Dismiss the reader from its surround
 
 Reader dismissal is now a click/tap on the visible surround outside its frame, or Escape. The Back to big bloom button is removed. Inside-panel clicks, reading scroll and text-selection drags do not dismiss. Initial keyboard focus goes to the reader heading; returning restores focus to the module that opened it. Panel dimensions, animation and hidden-scrollbar policy remain unchanged.
+
+
+## Markdown in previews — 2026-10-27
+
+Babuni.dev requested formatted text in both preview depths. Cards display emphasis, inline code and block structure with compact spacing, using existing card bounds and scrolling. Clicking preview text retains depth navigation; document links activate in the reader. Reveal timing, placement and gestures are unchanged.

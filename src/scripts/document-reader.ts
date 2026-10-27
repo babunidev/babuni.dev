@@ -18,16 +18,16 @@ export function safeDocumentUrl(value:string,sourceUrl?:string):string|null {
   }catch{return null;}
 }
 /** Parse Markdown tokens, then construct safe DOM nodes. Never insert raw HTML. */
-export function renderDocument(source:string,sourceUrl?:string):HTMLElement {
+export function renderDocument(source:string,sourceUrl?:string,interactive=true):HTMLElement {
   const article=document.createElement('div');article.className='module-document';
   const headings=new Map<string,HTMLElement>(),counts=new Map<string,number>();
   const links:{element:HTMLAnchorElement;href:string}[]=[];
   const text=(parent:HTMLElement,value:string)=>parent.append(document.createTextNode(decodeText(value)));
   function link(parent:HTMLElement,token:Token,image=false){
-    const element=document.createElement('a');
+    const element=document.createElement(interactive?'a':'span');
     if(image)text(element,token.text||'Image');else render(element,token.tokens??[]);
     if(token.title)element.title=decodeText(token.title);
-    links.push({element,href:token.href});parent.append(element);
+    if(interactive)links.push({element:element as HTMLAnchorElement,href:token.href});parent.append(element);
   }
   function render(parent:HTMLElement,tokens:readonly Token[]):void {
     for(const token of tokens){
@@ -43,7 +43,7 @@ export function renderDocument(source:string,sourceUrl?:string):HTMLElement {
           const h=document.createElement('h'+Math.min(6,token.depth+1));render(h,token.tokens);
           const slug=(h.textContent??'').toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu,'').replace(/\s/g,'-')||'section';
           const count=counts.get(slug)??0;counts.set(slug,count+1);
-          const key=slug+(count?'-'+count:'');h.id='document-'+key;headings.set(key,h);parent.append(h);break;
+          const key=slug+(count?'-'+count:'');if(interactive){h.id='document-'+key;headings.set(key,h);}parent.append(h);break;
         }
         case 'strong':case 'em':case 'del':{
           const node=document.createElement(token.type);render(node,token.tokens);parent.append(node);break;
