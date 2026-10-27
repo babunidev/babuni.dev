@@ -1,3 +1,4 @@
+import {attachReaderHeader} from './site-navigation';
 import {videosForModule,type ProjectModule} from '../lib/project-modules';
 import {renderVideo} from './module-preview';
 import {renderDocument} from './document-reader';
@@ -6,10 +7,12 @@ import {installReaderDismissal} from './reader-dismissal';
 /** Detail is modal; big bloom itself belongs to the living grid. */
 export function createModuleDetails(onChange:(open:boolean)=>void){
   let detail:HTMLDialogElement|null=null;
+  let restoreHeader:(()=>void)|null=null;
   let documentRequest:AbortController|null=null;
   function stopPlayers(root:HTMLElement){root.querySelectorAll('video').forEach(video=>video.pause());root.querySelectorAll('iframe').forEach(frame=>{const figure=frame.closest('figure');if(figure)figure.replaceWith(renderVideo({embed:frame.src,title:frame.title}));else frame.remove();});}
-  function closeDetail(){if(!detail)return;documentRequest?.abort();documentRequest=null;stopPlayers(detail);detail.close();detail.remove();detail=null;onChange(false);}
+  function closeDetail(){if(!detail)return;documentRequest?.abort();documentRequest=null;stopPlayers(detail);restoreHeader?.();restoreHeader=null;detail.close();detail.remove();detail=null;onChange(false);}
   function openDetail(module:ProjectModule,trigger:HTMLButtonElement){
+    closeDetail();
     onChange(true);
     const view=document.createElement('dialog');view.className='module-detail';view.setAttribute('aria-label',module.title+' detail');detail=view;
     const title=document.createElement('h1');title.textContent=module.title;title.tabIndex=-1;
@@ -38,8 +41,9 @@ export function createModuleDetails(onChange:(open:boolean)=>void){
     if(module.source){const source=document.createElement('a');source.href=module.source;source.textContent='View source';source.target='_blank';source.rel='noopener noreferrer';content.append(source);}
     if(module.credit){const credit=document.createElement('p');credit.className='module-credit';credit.textContent=module.credit;content.append(credit);}
     function backToBloom(){closeDetail();trigger.focus({preventScroll:true});}
-    installReaderDismissal(view,backToBloom);
-    view.append(title,content);document.body.append(view);view.showModal();title.focus({preventScroll:true});
+    const panel=document.createElement('div');panel.className='module-detail-panel';panel.append(title,content);
+    installReaderDismissal(view,backToBloom,panel);
+    view.append(panel);document.body.append(view);restoreHeader=attachReaderHeader(view);view.showModal();title.focus({preventScroll:true});
   }
   return {open:openDetail,close:closeDetail,isOpen:()=>detail!==null};
 }

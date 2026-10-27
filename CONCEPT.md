@@ -18,7 +18,7 @@ The viewport is filled edge to edge by a tight field of square **tiles**, viewed
 
 The tiles are stylized, deliberately restrained stone objects. Historical Mesoamerican masonry was an early inspiration, but the desired result is an original design language, not an imitation. Each tile carries a legible **engraved project title**, project-specific engravings, and a recessed, colored **portal**. The portal displays the project's visual identity or a view into its world.
 
-A slim persistent top bar contains BABUNI.DEV, Projects (dropdown), Gallery, and About. Search is a possible enhancement rather than a locked requirement.
+A slim persistent top bar contains BABUNI.DEV, Projects (dropdown), Gallery, and About. Babuni.dev confirmed searchable direct project finding in October 2026: choosing a project moves the grid to it and opens its small bloom. The header remains available across all four stages.
 
 ## Living motion
 

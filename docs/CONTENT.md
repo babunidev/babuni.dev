@@ -215,3 +215,8 @@ The complete module content, source links and attribution remain in the reader. 
 ## Preview formatting and living content — 2026-10-27
 
 Babuni.dev clarified that this is a living, growing project: WIP content is expected and completion is secondary. Curated previews may contain Markdown. Generated teasers preserve inline formatting; longer intros preserve fitting Markdown blocks and bounded paragraph excerpts. Initial document H1 is omitted to avoid duplicating the module title. Preview text links remain labels until reading the document. No AI-authored factual summaries replace repository text.
+
+
+## About, project search and screenshot history — 2026-10-27
+
+Babuni.dev requested About and searchable direct project navigation. Search uses the existing 53-candidate inventory, including WIP/unresolved entries, not a new claim that every project is complete. About summarizes the existing creative workshop concept and human/AI attribution. All 19 locally available saved AI browser verification screenshots have been added to Visual documentation, with historical captions identifying superseded states and distinguishing browser evidence from actual phone tests. The original supplied artwork/prototype images remain. See `VISUAL_DOCUMENTATION.md` for the archive manifest.

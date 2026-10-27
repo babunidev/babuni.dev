@@ -41,6 +41,11 @@ export class ProjectPlacement {
     this.projectCount=projectCount;
   }
   get(cell:CellCoordinate):number|undefined{return this.assigned.get(key(cell));}
+  /** Direct navigation may reserve a currently offscreen recycled cell. */
+  assign(cell:CellCoordinate,index:number):void {
+    if(!Number.isInteger(index)||index<0||index>=this.projectCount)throw new RangeError('Unknown project');
+    this.assigned.set(key(cell),index);
+  }
   get size():number{return this.assigned.size;}
   private choose(usedVisible:Set<number>,usedRetained:Set<number>):number {
     // Prefer entirely free IDs, then IDs only offscreen, then unavoidable repeats.

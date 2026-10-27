@@ -103,3 +103,7 @@ Babuni.dev explicitly requested on 2026-10-26: do not independently change estab
 ## Current development priority and test attribution
 
 Babuni.dev directed on 2026-10-26: prioritize architecture and underlying structures before visual/readability polish. Discuss and refine module kinds/structure before implementing full bloom; do not treat AI module proposals as approved requirements. Babuni.dev clarified that their mobile feedback is based on actual phone testing. Record that as human device evidence, separately from agent browser mocks or automated tests.
+
+## Browser screenshot archive
+
+Babuni.dev requested on 2026-10-27 that browser test screenshots be added to the project's visual documentation. Save verification screenshots under `public/media/babuni-dev/images/verification/`, add them to BABUNI.DEV's Visual documentation gallery and `docs/VISUAL_DOCUMENTATION.md`, and caption the test context and historical status. Distinguish AI browser captures from human-supplied art and actual phone acceptance. Preserve earlier captures even when their design is superseded. Do not claim unavailable or unsaved screenshots were recovered.

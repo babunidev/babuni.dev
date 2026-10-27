@@ -383,3 +383,8 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Fixed — Markdown in bloom previews (2026-10-27)
 - Small and big bloom text now renders Markdown using the same safe DOM renderer as the reader. Generated excerpts retain formatting instead of flattening it. Preview links remain labels so card navigation stays consistent.
+
+
+### Added — Persistent project navigation and visual history (2026-10-27)
+- Header available across grid, small bloom, big bloom and reader, with About and a searchable list of all 53 project tiles. Selecting a project centers and opens it through the existing shift/close sequence.
+- Archived all 19 available saved browser verification captures in the Visual documentation gallery with historical-context captions.

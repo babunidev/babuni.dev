@@ -1,9 +1,9 @@
 /** Only an intentional primary click that starts and ends on the backdrop closes. */
-export function installReaderDismissal(view:HTMLDialogElement,dismiss:()=>void):void {
+export function installReaderDismissal(view:HTMLDialogElement,dismiss:()=>void,panel:HTMLElement=view):void {
   let startedOutside=false;
   const outside=(event:MouseEvent)=>{
     if(event.target!==view)return false;
-    const box=view.getBoundingClientRect();
+    const box=panel.getBoundingClientRect();
     return event.clientX<box.left||event.clientX>=box.right||event.clientY<box.top||event.clientY>=box.bottom;
   };
   view.addEventListener('pointerdown',event=>{

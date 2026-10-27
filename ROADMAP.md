@@ -247,3 +247,8 @@ Built: requested outside-reader click/tap dismissal and removal of its Back to b
 ## 2026-10-27 — Markdown at every reading depth
 
 Built: Markdown formatting in small and big bloom previews, with bounded excerpts and shared safe rendering. Babuni.dev clarified that content completeness is secondary and ongoing, not an acceptance gate. Remaining functional/device/accessibility checks still matter independently of WIP content.
+
+
+## 2026-10-27 — Direct discovery and persistent navigation
+
+Built: site header in all four depths, Projects dropdown with search and direct center/open behavior, About introduction, and archive of all 19 available prior saved browser screenshots in Visual documentation. Future saved verification captures belong in that archive. Content remains living/WIP; physical-device and long-session acceptance remain separate.

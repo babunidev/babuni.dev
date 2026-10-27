@@ -36,3 +36,10 @@ test('cancelled, secondary and synthetic clicks do not dismiss',()=>{
 test('Escape cancellation returns through the same dismissal path',()=>{
  const s=setup();const event=s.send('cancel');assert.equal(s.count(),1);assert.equal(event.defaultPrevented,true);
 });
+test('full-viewport modal uses the inner reading panel for backdrop bounds',()=>{
+ const view=new Dialog();view.getBoundingClientRect=()=>({left:0,top:0,right:1000,bottom:1000});
+ let dismissals=0;const panel={getBoundingClientRect:()=>({left:100,top:100,right:500,bottom:500})};
+ installReaderDismissal(view,()=>dismissals++,panel);
+ for(const type of ['pointerdown','click']){const event=new Event(type,{cancelable:true});Object.assign(event,{clientX:50,clientY:250,button:0,isPrimary:true});view.dispatchEvent(event);}
+ assert.equal(dismissals,1);
+});

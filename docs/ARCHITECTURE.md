@@ -360,3 +360,8 @@ reader-dismissal.ts installs backdrop gesture and native dialog cancel handlers.
 ## Shared Markdown preview rendering — 2026-10-27
 
 `module-preview.ts` reuses `renderDocument` in noninteractive mode: no document anchors or duplicate heading IDs in cards. `markdown-excerpt.ts` retains complete Markdown blocks when they fit and closes inline wrappers when shortening paragraphs. Preparation writes Markdown previews/intros into the compact index; full document bodies still load only for the reader. DOM construction and URL/media safety policies are shared across depths.
+
+
+## Persistent navigation — 2026-10-27
+
+`site-navigation.ts` owns the searchable list and shared-header modal attachment/restoration. `grid.ts` resolves stable project IDs into current tile residents, waiting for active shifts/transitions and closing existing blooms before centering/opening; a missing project can reserve an offscreen cell through `ProjectPlacement.assign`. No grid reset or shift retiming is required. Reader modal occupies the viewport with an independently animated/scrolled square panel and fixed header. Dismissal measures the inner panel, preserving outside-click and Escape behavior. Screenshot assets are static gallery entries, with inventory in `docs/VISUAL_DOCUMENTATION.md`.

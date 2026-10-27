@@ -1,3 +1,4 @@
+import {installSiteNavigation} from './site-navigation';
 import {installInteractionFeedback} from './interaction-feedback';
 import {modulesForProject} from '../lib/project-content';
 import {selectModules,MODULE_OFFSETS,moduleRevealPlan} from '../lib/project-modules';
@@ -86,6 +87,38 @@ if (viewport && world && resetButton && status) {
     detailOpen=open;
     if(open){pauseBloomMedia();heldArrows.clear();manualPan=createManualPanState();pauseMovement();}
     else{surface.scrollTop=0;surface.scrollLeft=0;resumeMovement();if(!moving)nextRound(restWait);}
+  });
+
+  let directNavigationTimer:ReturnType<typeof setTimeout>|null=null;
+  installSiteNavigation(id=>{
+    details.close();
+    if(directNavigationTimer!==null)clearTimeout(directNavigationTimer);
+    const index=demoProjects.findIndex(project=>project.id===id);
+    if(index<0)return;
+    const navigate=()=>{
+      directNavigationTimer=null;
+      if(moving||bigTransitioning||bloomClosingTimer!==null||centering){
+        if(heading)heading.textContent='Waiting to open '+demoProjects[index].name;
+        directNavigationTimer=setTimeout(navigate,100);return;
+      }
+      if(selectedChoice||bloomModule){stopSelection();directNavigationTimer=setTimeout(navigate,100);return;}
+      let slot=slots.find(slot=>slot.projectIndex===index);
+      if(!slot){
+        slot=slots.find(slot=>slot.element.getAttribute('aria-hidden')==='true');
+        if(!slot){liveStatus.textContent='Project navigation unavailable. Please try again.';return;}
+      }
+      // Buffered render slots can still carry an identity from a former
+      // viewport. Pin the requested source before the camera recycles them.
+      placement.assign(sourceCell(slot.column,slot.row,history),index);
+      populate(slot,slot.column,slot.row);
+      beginSelection({source:sourceCell(slot.column,slot.row,history),projectId:id});
+    };
+    navigate();
+  },trigger=>{
+    if(directNavigationTimer!==null){clearTimeout(directNavigationTimer);directNavigationTimer=null;}
+    details.open({id:'about',type:'text',title:'About BABUNI.DEV',preview:'',
+      body:'**Babuni.dev** is a living creative workshop: projects, experiments, artwork and ideas, including work in progress.\n\nExplore the grid, open a project’s small bloom, choose a module for its big bloom, then read more for the full detail.\n\nCreative direction and authorship: **Babuni.dev**. AI-assisted implementation and development decisions are recorded in the project documentation.',
+      source:'https://github.com/babunidev/babuni.dev'},trigger);
   });
 
   /** Direct exploration reveals all three snippets; an ambient hint lights

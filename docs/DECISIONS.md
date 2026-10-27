@@ -405,3 +405,8 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ## 2026-10-27 — Markdown previews and ongoing content
 
 **Status: Implemented from Babuni.dev direction.** Small and big bloom previews interpret Markdown, with a shared safe DOM renderer and bounded source excerpts. AI chose inert link labels in cards to preserve established depth navigation; full reader links remain interactive. Raw HTML remains literal and document images remain explicit links. Content completion is ongoing, secondary work rather than a release gate; functional validation remains required. Revisit excerpt selection as source authoring evolves.
+
+
+## 2026-10-27 — Header navigation survives every depth
+
+**Status: Accepted direction from Babuni.dev; implemented by AI.** The site header persists through all four stages, superseding the earlier big-bloom header hiding rule. This is the site navigation, separate from the rejected big-bloom instruction bar. Projects contains a searchable alphabetical list of current candidate tiles; choosing one waits for existing movement, closes an existing bloom, centers and opens a small bloom. About provides verified project context. The same header moves into the reader modal top layer and returns on dismissal. AI implementation preserves existing motion durations. All available saved AI screenshots become historical visual documentation with provenance; future saved verification captures should join the archive.

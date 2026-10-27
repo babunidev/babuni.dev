@@ -358,3 +358,8 @@ Reader dismissal is now a click/tap on the visible surround outside its frame, o
 ## Markdown in previews — 2026-10-27
 
 Babuni.dev requested formatted text in both preview depths. Cards display emphasis, inline code and block structure with compact spacing, using existing card bounds and scrolling. Clicking preview text retains depth navigation; document links activate in the reader. Reveal timing, placement and gestures are unchanged.
+
+
+## Persistent header and direct discovery — 2026-10-27
+
+Babuni.dev requested the site header across grid, small bloom, big bloom and reader, superseding header hiding in big bloom. Projects opens a compact scrollable list with a search field, all current project names alphabetically, and an empty-result message. Search matches name/summary words without case sensitivity. Arrow Down moves from search to results; Enter selects a unique result; Escape dismisses the menu first. About opens a framed introduction. Header stays above the reader, whose square frame leaves clearance beneath it. Existing center/shift/reveal timing remains unchanged.
