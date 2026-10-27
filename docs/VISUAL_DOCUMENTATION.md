@@ -47,3 +47,7 @@ All 24 archived AI captures now publish as actual WebP. Earlier `.png` filenames
 ## Desktop shift playback, 2026-10-27
 
 - `desktop-shift-playback.webp` — grid after a real drag during an active shift. AI desktop browser evidence; still image is not FPS proof. See PERFORMANCE-2026-10-27.md for measured callback intervals and limits.
+
+## Spatial keyboard highlight, 2026-10-27
+
+- `spatial-keyboard-highlight.webp` — Human–AI collaboration highlighted in big bloom after reader Escape, with no reader open. AI desktop evidence; not complete keyboard/device acceptance.

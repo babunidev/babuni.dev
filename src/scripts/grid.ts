@@ -1,3 +1,4 @@
+import {installSpatialKeyboard,type KeyboardItem} from './spatial-keyboard';
 import {stepShiftPlayback,type ShiftPlayback} from '../lib/shift-playback';
 import {createSourceLookup,compileVacancies} from '../lib/grid-render-cache';
 import {installGridProfile} from './grid-profile';
@@ -73,7 +74,6 @@ if (viewport && world && resetButton && status) {
   let pointerDownSelect:HTMLButtonElement|null=null;
   let pointerDownPanel:HTMLElement|null=null;
   let activeTopic:HTMLDivElement|null=null;
-  const heldArrows=new Set<string>();
   let manualPan=createManualPanState();
   let manualFrame:number|null=null;
   let previousManualTime:number|null=null;
@@ -105,7 +105,7 @@ if (viewport && world && resetButton && status) {
     detailOpen=open;
     readerActivity=open?(title==='About BABUNI.DEV'?'About BABUNI.DEV':`Reading ${projectName()} · ${title}`):null;
     activity(explorationStatus());
-    if(open){pauseBloomMedia();heldArrows.clear();manualPan=createManualPanState();pauseMovement();}
+    if(open){pauseBloomMedia();manualPan=createManualPanState();pauseMovement();}
     else{surface.scrollTop=0;surface.scrollLeft=0;resumeMovement();if(!moving)nextRound(restWait);}
   });
 
@@ -139,6 +139,37 @@ if (viewport && world && resetButton && status) {
     details.open({id:'about',type:'text',title:'About BABUNI.DEV',preview:'',
       body:aboutText,
       source:'https://github.com/babunidev/babuni.dev/blob/main/src/content/about.md'},trigger);
+  });
+
+  function keyboardItems():KeyboardItem[]{
+    const tiles=slots.filter(slot=>slot.projectIndex!==undefined).map(slot=>{
+      const cell=paintedCell(slot);
+      return {element:slot.element.querySelector<HTMLButtonElement>('.tile-select')!,container:slot.element,x:cell.column+.5,y:cell.row+.5};
+    });
+    const modules=bloomModules.filter(panel=>panel.classList.contains('is-open')).map(panel=>({
+      element:panel.querySelector<HTMLButtonElement>('.bloom-read-more')!,container:panel,
+      x:parseFloat(panel.style.left)/tileSize+(bigBloomOpen?1:.5),
+      y:parseFloat(panel.style.top)/tileSize+(bigBloomOpen?1:.5)
+    }));
+    return [...tiles,...modules];
+  }
+  const keyboard=installSpatialKeyboard(surface,{
+    items:keyboardItems,
+    entry:()=>{
+      const items=keyboardItems();
+      const center={x:.5-panX/tileSize,y:.5-panY/tileSize};
+      return items.filter(item=>item.container.getAttribute('aria-hidden')!=='true')
+        .sort((a,b)=>(a.x-center.x)**2+(a.y-center.y)**2-((b.x-center.x)**2+(b.y-center.y)**2))[0];
+    },
+    blocked:()=>!!centering||bigTransitioning||bloomClosingTimer!==null||bloomOpeningTimer!==null,
+    reveal:item=>{
+      const box=item.element.getBoundingClientRect(),bounds=surface.getBoundingClientRect();
+      const top=bounds.top+(document.querySelector('.site-header')?.getBoundingClientRect().height??52)+8;
+      let dx=box.left<bounds.left+8?bounds.left+8-box.left:box.right>bounds.right-8?bounds.right-8-box.right:0;
+      let dy=box.top<top?top-box.top:box.bottom>bounds.bottom-8?bounds.bottom-8-box.bottom:0;
+      if(dx||dy){panX+=dx;panY+=dy;updateField();}
+      surface.scrollLeft=0;surface.scrollTop=0;
+    }
   });
 
   /** Direct exploration reveals all three snippets; an ambient hint lights
@@ -368,7 +399,7 @@ if (viewport && world && resetButton && status) {
       slot.element.setAttribute('aria-hidden',String(!isVisible));
       const select=slot.element.querySelector<HTMLButtonElement>('.tile-select');
       if(select){
-        select.tabIndex=isVisible?0:-1;
+        select.tabIndex=-1;
         if(!isVisible&&document.activeElement===select)select.blur();
       }
       if(!isVisible&&activeTopic===slot.element)hideTopic();
@@ -448,7 +479,7 @@ if (viewport && world && resetButton && status) {
       nextRound(1000);
       return;
     }
-    if(activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)||document.hidden||prefersReduced.matches||moving){
+    if(activePointer!==null||panIsMoving(manualPan)||document.hidden||prefersReduced.matches||moving){
       nextRound(1000);
       return;
     }
@@ -527,7 +558,7 @@ if (viewport && world && resetButton && status) {
   }
   function frameMovement(now:number):void {
     if(!moving||moving.pausedAt!==null)return;
-    const dragging=(activePointer!==null&&pointerDragged)||heldArrows.size>0||panIsMoving(manualPan);
+    const dragging=(activePointer!==null&&pointerDragged)||panIsMoving(manualPan);
     moving.playback=stepShiftPlayback(moving.playback,now-moving.lastFrame,dragging);
     moving.lastFrame=now;
     moving.fraction=Math.min(1,moving.playback.elapsed/SHIFT_DURATION_MS);
@@ -563,17 +594,11 @@ if (viewport && world && resetButton && status) {
     }
   }
   function resumeMovement():void {
-    if(detailOpen||!moving||moving.pausedAt===null||activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)||document.hidden)return;
+    if(detailOpen||!moving||moving.pausedAt===null||activePointer!==null||panIsMoving(manualPan)||document.hidden)return;
     moving.pausedAt=null;
     moving.lastFrame=performance.now();
     surface.classList.add('is-autoshifting');
     requestAnimationFrame(frameMovement);
-  }
-  function arrowDirection():{x:number;y:number}{
-    return {
-      x:Number(heldArrows.has('ArrowLeft'))-Number(heldArrows.has('ArrowRight')),
-      y:Number(heldArrows.has('ArrowUp'))-Number(heldArrows.has('ArrowDown'))
-    };
   }
   function scheduleManualFrame():void {
     if(manualFrame===null) manualFrame=requestAnimationFrame(animateManual);
@@ -582,13 +607,13 @@ if (viewport && world && resetButton && status) {
     manualFrame=null;
     const elapsed=previousManualTime===null?1/60:(now-previousManualTime)/1000;
     previousManualTime=now;
-    const step=stepManualPan(manualPan,elapsed,activePointer!==null,arrowDirection());
+    const step=stepManualPan(manualPan,elapsed,activePointer!==null,{x:0,y:0});
     manualPan=step.state;
     if(step.delta.x!==0||step.delta.y!==0){
       panX+=step.delta.x;panY+=step.delta.y;
       updateField();
     }
-    if(activePointer!==null||heldArrows.size>0||panIsMoving(manualPan)){
+    if(activePointer!==null||panIsMoving(manualPan)){
       scheduleManualFrame();
     }else{
       previousManualTime=null;
@@ -603,6 +628,7 @@ if (viewport && world && resetButton && status) {
     const wasActive=!!selectedChoice||!!centering||!!bloomModule||!!pendingChoice;
     const hadBloom=!!bloomModule;
     const closingName=projectName();
+    const keyboardAnchor=selectedChoice?locate(selectedChoice)?.element.querySelector<HTMLButtonElement>('.tile-select')??null:null;
     if(hadBloom&&moving&&animateReturn){
       // Keep the current clock and easing curve. Selection/collapse waits
       // for this event to finish at its established tempo.
@@ -654,6 +680,7 @@ if (viewport && world && resetButton && status) {
         }
         bloomClosingTimer=null;
         activity(explorationStatus());
+        if(keyboard.active()&&!pendingChoice){if(keyboardAnchor?.isConnected)keyboard.focusElement(keyboardAnchor);else keyboard.focusEntry();}
         if(pendingChoice){
           const following=pendingChoice;pendingChoice=null;
           beginSelection(following);
@@ -704,6 +731,7 @@ if (viewport && world && resetButton && status) {
         if(prefersReduced.matches||reveal.delay===0)reveal.item.classList.add('is-open');
         else bloomRevealTimers.push(setTimeout(()=>reveal.item.classList.add('is-open'),reveal.delay));
       }
+      if(keyboard.active())keyboard.focusElement(chosen.element.querySelector<HTMLButtonElement>('.tile-select'));
       activity(`Exploring ${project.name} · small bloom`);
       liveStatus.textContent=project.name+': '+modules.length+' preview modules opened.';
       for(const slot of slots)slot.element.style.removeProperty('transition');
@@ -731,7 +759,7 @@ if (viewport && world && resetButton && status) {
     for(const panel of bloomModules)panel.querySelectorAll('video').forEach(video=>video.pause());
   }
   function depthTransition(target:{x:number;y:number},settled:()=>void):void {
-    bigTransitioning=true;heldArrows.clear();manualPan=createManualPanState();hideTopic();
+    bigTransitioning=true;manualPan=createManualPanState();hideTopic();
     if(timer!==null){clearTimeout(timer);timer=null;}
     surface.classList.add('is-bloom-opening');
     for(const slot of slots)slot.element.classList.add('grid-tile--depth-transition');
@@ -800,7 +828,8 @@ if (viewport && world && resetButton && status) {
           };
           if(prefersReduced.matches||reveal.delay===0)show();else bloomRevealTimers.push(setTimeout(show,reveal.delay));
         }
-        if(activePointer===null)surface.focus({preventScroll:true});
+        if(keyboard.active())keyboard.focusElement(bloomModules[0]?.querySelector<HTMLButtonElement>('.bloom-read-more')??null);
+        else if(activePointer===null)surface.focus({preventScroll:true});
         activity(`Exploring ${project.name} · big bloom`);
         liveStatus.textContent=project.name+': '+bloomModules.length+' large modules in the living grid.';
       });
@@ -808,6 +837,7 @@ if (viewport && world && resetButton && status) {
   }
   function requestSmallBloom():void {
     if(!bigBloomOpen||bigTransitioning||closeAfterShift||!smallBloom||!bloomAnchor)return;
+    const keyboardReturnModule=bigLayout[0]?.module.id;
     queueDepthChange(()=>{
       if(!smallBloom||!bloomAnchor)return;
       clearBloomTimers();pauseBloomMedia();layer.getBoundingClientRect();
@@ -820,7 +850,9 @@ if (viewport && world && resetButton && status) {
       depthTransition(centeredPan(bloomAnchor,tileSize),()=>{
         bloomModules.forEach(panel=>panel.classList.add('is-open'));
         surface.scrollTop=0;surface.scrollLeft=0;
-        activity(explorationStatus());surface.focus({preventScroll:true});liveStatus.textContent='Returned to the same small bloom.';
+        activity(explorationStatus());
+        if(keyboard.active())keyboard.focusElement(bloomModules.find(panel=>panel.dataset.moduleId===keyboardReturnModule)?.querySelector<HTMLButtonElement>('.bloom-read-more')??null);
+        else surface.focus({preventScroll:true});liveStatus.textContent='Returned to the same small bloom.';
       });
     });
   }
@@ -875,7 +907,7 @@ if (viewport && world && resetButton && status) {
     }
     cancelIntro();hideTopic();
     if(timer!==null){clearTimeout(timer);timer=null;}
-    heldArrows.clear();manualPan=createManualPanState();
+    manualPan=createManualPanState();
 
     const cell={column:chosen.column,row:chosen.row};
     const movementAction=moving?selectionShiftAction(moving.moves,cell):null;
@@ -923,7 +955,7 @@ if (viewport && world && resetButton && status) {
       ||(bloomModule!==null&&!bloomModule.classList.contains('is-open'));
     const blocked=bigBloomOpen||document.hidden||prefersReduced.matches
       ||pendingChoice!==null||centering!==null||bloomClosingTimer!==null
-      ||bloomTransitioning||activePointer!==null||heldArrows.size>0
+      ||bloomTransitioning||activePointer!==null
       ||panIsMoving(manualPan)||activeTopic!==null||introPending>0
       ||focusedProjectControl;
     const wait=ambientPollDelay(performance.now(),nextAmbientAt,blocked);
@@ -967,7 +999,7 @@ if (viewport && world && resetButton && status) {
   }
 
   function resetManualInput():void {
-    heldArrows.clear();
+
     manualPan=createManualPanState();
     previousManualTime=null;
     resumeMovement();
@@ -989,15 +1021,6 @@ if (viewport && world && resetButton && status) {
     if(!select?.matches(':focus-visible')&&activeTopic===tile)hideTopic();
   });
   surface.addEventListener('focusin',event=>{
-    if(bigBloomOpen&&event.target instanceof HTMLElement&&event.target.matches(':focus-visible')){
-      const panel=event.target.closest<HTMLElement>('.big-bloom-card');
-      if(panel){const rect=event.target.getBoundingClientRect(),bounds=surface.getBoundingClientRect();
-        if(rect.right<=bounds.left||rect.left>=bounds.right||rect.bottom<=bounds.top||rect.top>=bounds.bottom){
-          panX=-parseFloat(panel.style.left)-tileSize/2;panY=-parseFloat(panel.style.top)-tileSize/2;
-          updateField();surface.scrollTop=0;surface.scrollLeft=0;
-        }
-      }
-    }
     if(mobileTopics.matches)return;
     const tile=selectFrom(event.target)?.closest<HTMLDivElement>('.grid-tile');
     if(tile){
@@ -1087,41 +1110,8 @@ if (viewport && world && resetButton && status) {
   surface.addEventListener('pointerup',release);
   surface.addEventListener('pointercancel',release);
   surface.addEventListener('lostpointercapture',release);
-  const arrowNames=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown']);
-  surface.addEventListener('keydown',event=>{
-    if(event.target instanceof Element&&event.target.closest('button,a,video,iframe'))return;
-    if(bigTransitioning&&centering&&(event.key==='Home'||arrowNames.has(event.key))){centering=null;centerCompletion=null;if(centerFrame!==null)cancelAnimationFrame(centerFrame);centerFrame=null;}
-    if(event.key==='Home'&&bigBloomOpen&&bloomAnchor){
-      event.preventDefault();panX=-bloomAnchor.column*tileSize-tileSize/2;panY=-bloomAnchor.row*tileSize+tileSize/2;updateField();return;
-    }
-    if(event.key==='Home'){
-      stopSelection(false);
-      hideTopic();
-      cancelIntro();
-      event.preventDefault();
-      resetManualInput();
-      panX=0;panY=0;updateField();
-      return;
-    }
-    if(!arrowNames.has(event.key))return;
-    if(!bloomModule&&(selectedChoice||pendingChoice||centering))stopSelection();
-    if(!mobileTopics.matches)hideTopic();
-    cancelIntro();
-    event.preventDefault();
-    if(!heldArrows.has(event.key)){
-      heldArrows.add(event.key);
-      scheduleManualFrame();
-    }
-  });
-  window.addEventListener('keyup',event=>{
-    if(!arrowNames.has(event.key))return;
-    if(heldArrows.delete(event.key)){
-      event.preventDefault();
-      scheduleManualFrame();
-    }
-  });
   window.addEventListener('keydown',event=>{
-    if(detailOpen)return;
+    if(detailOpen||event.repeat)return;
     if(event.key==='Escape'&&bigBloomOpen){event.preventDefault();requestSmallBloom();return;}
     if(event.key==='Escape'&&(selectedChoice||pendingChoice)){
       event.preventDefault();
@@ -1131,7 +1121,7 @@ if (viewport && world && resetButton && status) {
   });
   window.addEventListener('blur',()=>{
     hideTopic();
-    heldArrows.clear();
+
     manualPan.keyboardVelocity={x:0,y:0};
     if(activePointer!==null){
       activePointer=null;

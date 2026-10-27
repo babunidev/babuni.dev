@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {installSpatialKeyboard} from '../src/scripts/spatial-keyboard.ts';
+test('keyboard focus and arrows never activate; Space activates once; Tab exits to menu',t=>{
+ const old=globalThis.document;t.after(()=>{globalThis.document=old;});
+ const document=new EventTarget();document.activeElement=null;globalThis.document=document;
+ let activated=0,blocked=false;
+ const make=()=>({tabIndex:-1,classList:{add(){},remove(){}},focus(){document.activeElement=this;},click(){activated++;}});
+ const center=make(),right=make(),menu=make();
+ const surface=new EventTarget();surface.tabIndex=0;surface.querySelectorAll=()=>[];surface.contains=element=>[center,right,surface].includes(element);
+ document.querySelector=()=>menu;
+ const items=[{element:center,container:center,x:0,y:0},{element:right,container:right,x:1,y:0}];
+ const controls=installSpatialKeyboard(surface,{items:()=>items,entry:()=>items[0],reveal(){},blocked:()=>blocked});
+ const key=(target,key,extra={})=>{const event=new Event('keydown',{cancelable:true});Object.assign(event,{key,...extra});target.dispatchEvent(event);return event;};
+ key(document,'Tab');surface.dispatchEvent(new Event('focusin'));
+ assert.equal(document.activeElement,center);assert.equal(activated,0);
+ key(surface,'ArrowRight');assert.equal(document.activeElement,right);assert.equal(activated,0);
+ key(surface,' ');assert.equal(activated,1);
+ key(surface,' ',{repeat:true});assert.equal(activated,1);
+ blocked=true;key(surface,'Enter');key(surface,'ArrowLeft');assert.equal(activated,1);assert.equal(document.activeElement,right);
+ key(surface,'Tab');assert.equal(document.activeElement,menu);assert.equal(controls.active(),true);
+});

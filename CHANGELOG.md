@@ -419,3 +419,9 @@ Each future entry should include the change, its user-visible or technical effec
 - Pointer presses acknowledge selection without freezing an active line shift. Only actual drag movement past the existing 9px threshold brakes playback.
 - Dragging gradually brakes and resumes shift playback over 280ms; the normal uninterrupted shift still takes 4.4 seconds. Hidden-page and reader pauses remain immediate.
 - Cached source-coordinate and row-vacancy calculations reduce repeated rendering work without changing geometry; stable transforms and busy attributes avoid redundant writes. Added an opt-in local development frame sampler.
+
+
+### Changed — Highlight-first keyboard exploration (2026-10-27)
+- First Tab into the grid highlights its center item. Arrows choose spatial neighbors without opening or continuously panning; Space/Enter activates the highlighted tile or module.
+- Keyboard highlight survives opening/return across small bloom, big bloom and reader; Escape returns one stage. Tab from the highlighted primary control reaches the header menu.
+- Updated controls help. Pointer/touch behavior and approved motion timings remain unchanged.

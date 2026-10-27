@@ -434,3 +434,8 @@ The asynchronous document body owns a dedicated child container. Source and cred
 ## 2026-10-27 — Shift playback responds to drag, never to a press
 
 **Status: Implemented from Babuni.dev request.** A tile press does not pause or retime an active shift. Existing 9px pointer travel distinguishes drag; actual dragging brakes logical shift speed over 280ms and release ramps it back up. AI selected that short ramp within the requested organic-stop behavior; its feel remains for human acceptance. Uninterrupted shifts retain 4400ms. Reader/background pauses stay immediate. Source/vacancy caches must remain equivalent to existing geometry, including future larger footprints. Desktop performance is an open empirical acceptance track; the measured cache speedup is not a claimed end-to-end FPS gain.
+
+
+## 2026-10-27 — Spatial highlight and explicit keyboard activation
+
+**Status: Implemented from Babuni.dev clarification.** Tab enters at the center item; arrows change keyboard focus/highlight without activating. Space/Enter opens the focused tile/module; Escape goes back one depth. This supersedes arrow-key continuous grid panning. The header retains conventional keyboard behavior; Tab from a highlighted primary grid control reaches Projects. Keep focus on the corresponding item on return. AI implementation may minimally bring an offscreen highlighted neighbor into view; this is not continuous keyboard camera control. Long-session/cross-browser keyboard acceptance remains open.

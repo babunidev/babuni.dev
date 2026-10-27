@@ -244,3 +244,8 @@ All locally published image assets are WebP. Historical verification filenames n
 ## Performance evidence — 2026-10-27
 
 Babuni.dev’s report of uncomfortable uneven motion is actual desktop feedback. AI measurements are local in-app desktop browser samples and synthetic computation benchmarks, not physical-phone evidence or a full browser trace. See PERFORMANCE-2026-10-27.md. Verification captures remain WebP and carry development-context captions. No project source text, artwork or authored media was changed by the playback/performance work.
+
+
+## Keyboard controls language and evidence — 2026-10-27
+
+Controls help now describes highlight-first spatial navigation: Tab to center, arrows choose, Space/Enter opens, Escape returns. Selection/focus wording must not imply automatic opening. Keyboard screenshots are AI desktop browser evidence, distinct from human acceptance or phone testing. Existing project text/media remain unchanged.

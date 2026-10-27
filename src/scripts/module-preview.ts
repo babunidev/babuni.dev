@@ -59,7 +59,7 @@ export function renderModulePreview(module:ProjectModule,projectName:string,onRe
   if(depth==='big'&&module.credit){const credit=document.createElement('p');credit.className='bloom-preview-credit';credit.textContent=module.credit;content.append(credit);}
   if(onReadMore){
     const read=document.createElement('button');read.type='button';read.className='bloom-action bloom-read-more';
-    read.textContent='Read more';read.setAttribute('aria-label','Read more: '+module.title);
+    read.tabIndex=-1;read.textContent='Read more';read.setAttribute('aria-label','Read more: '+module.title);
     read.addEventListener('click',event=>{event.stopPropagation();onReadMore();});panel.append(read);
     panel.addEventListener('click',event=>{
       if(event.target instanceof Element&&event.target.closest('button,a,video,iframe'))return;

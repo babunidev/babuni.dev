@@ -194,6 +194,11 @@
           "src": "/media/babuni-dev/images/verification/desktop-shift-playback.webp",
           "alt": "Desktop grid after dragging with gradual active-shift braking.",
           "caption": "AI desktop browser verification, 2026-10-27: drag braking and shift playback investigation. A still image does not establish frame rate; see the performance report."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/spatial-keyboard-highlight.webp",
+          "alt": "Keyboard-highlighted Human–AI collaboration module after closing its reader back to big bloom.",
+          "caption": "AI desktop browser verification, 2026-10-27: reader Escape restored focus to its big-bloom module. Highlight is separate from opening."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

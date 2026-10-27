@@ -385,3 +385,8 @@ Babuni.dev requested WebP throughout the website. Preserve image dimensions, cap
 ## Uninterrupted click and gradual drag braking — 2026-10-27
 
 Babuni.dev rejected the momentary pointerdown freeze and requested organic braking during actual dragging. A press retains immediate gold feedback and lets the current shift continue normally. Drag begins only beyond 9px travel; shift playback rate then approaches zero over 280ms, resuming smoothly when manual movement ends. Camera drag follow, bloom timing, shift rest intervals and the normal 4.4-second line motion are unchanged. Hidden-page and reader pauses remain hard pauses. User clarified the perceived uneven motion is on desktop; frame smoothness remains subject to desktop acceptance.
+
+
+## Highlight-first keyboard exploration — 2026-10-27
+
+Babuni.dev distinguishes keyboard selection from opening. First Tab into the grid highlights the item nearest its visual center. Arrows choose the next spatial neighbor; Space/Enter explicitly activates the highlighted tile/module. Grid tiles enter small bloom; small modules enter big bloom; big modules enter the reader. Reader Escape restores its trigger, big-bloom Escape restores a small-module highlight, and small-bloom Escape restores the project tile. Tab from a primary grid control reaches Projects. Remove free arrow panning; adjust the camera only enough to reveal a chosen offscreen neighbor. Header/document/media controls retain native handling. Mouse/touch and calm shift timing are unchanged.

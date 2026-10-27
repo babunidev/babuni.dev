@@ -389,3 +389,8 @@ As of this tree: **53 candidates**, **34 tiles tied to 33 public repos**, **15 s
 ## Playback clock and render caches — 2026-10-27
 
 `shift-playback.ts` integrates logical elapsed time and playback rate with a frame-partition-independent linear speed ramp. Pointerdown does not pause; actual drag/keyboard panning requests braking. `grid-render-cache.ts` memoizes reverse-history coordinates by history length with a bounded map and compiles immutable vacancy footprints into sorted row mappings. Geometry equivalence tests include extended/3x3-sized cases. `grid-profile.ts` creates a hidden local output only in development with `?grid-profile=1`, sampling bounded rAF intervals by phase; no telemetry and no production sampling. It measures callback gaps, not GPU paint or physical display FPS.
+
+
+## Spatial keyboard layer — 2026-10-27
+
+`spatial-navigation.ts` chooses directional neighbors, preferring aligned items and supporting arbitrary larger-bloom rows. `spatial-keyboard.ts` owns input mode, roving focus and outline; arrow movement does not call activation. Space/Enter invokes the existing button action once, and transition guards ignore repeats/busy activation. `grid.ts` provides painted tile/module coordinates and stage return hooks; its previous held-arrow panning path is removed. Focus restoration uses the existing identity/occupancy model, separate from open-bloom selectedChoice. Only reveal an offscreen target enough to keep it usable; native focus must not scroll the grid surface itself.

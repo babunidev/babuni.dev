@@ -13,7 +13,7 @@ const title='babuni.dev — Living Grid Prototype';
 </head>
 <body>
   <main class="experience" aria-label="Living grid prototype">
-    <div id="grid-viewport" class="grid-viewport" tabindex="0" aria-label="Endless project grid. Drag with a mouse or finger to move. Focus and use arrow keys, or press Home to recenter.">
+    <div id="grid-viewport" class="grid-viewport" tabindex="0" aria-label="Endless project grid. Drag with a mouse or finger to move. Tab highlights the center tile. Arrow keys choose a tile or module; Space opens it; Escape returns one stage.">
       <div id="grid-world" class="grid-world"></div>
     </div>
     <header class="site-header">
@@ -24,7 +24,7 @@ const title='babuni.dev — Living Grid Prototype';
         <div class="site-help">
           <button id="help-toggle" type="button" aria-label="How to use the site" aria-expanded="false" aria-controls="site-help-content">?</button>
           <div id="site-help-content" role="region" aria-label="Site controls">
-            <p>Drag or swipe to explore. Arrow keys move the grid. Choose a project to open its small bloom, then a module for its big bloom. Read more opens the reader.</p>
+            <p>Drag or swipe to explore. Tab highlights the center tile. Arrow keys choose a tile or module; Space or Enter opens it. Escape returns one stage. Choose a project to open its small bloom, then a module for its big bloom. Read more opens the reader.</p>
             <p>The project tile returns one step. Tap or click outside the reader, or press Escape, to close it. Projects lets you find a project directly.</p>
             <button id="reset-view" type="button">Return to center</button>
           </div>
@@ -64,6 +64,7 @@ const title='babuni.dev — Living Grid Prototype';
   .grid-viewport.is-bloom-closing .grid-tile--bloom-returning{transition:transform 520ms cubic-bezier(.22,.75,.25,1)}
   .grid-tile--selected .tile-face{border-color:#d8bd91;box-shadow:inset 0 0 0 4px #393837,inset 0 0 0 5px #b39973,0 0 15px rgba(224,190,138,.48)}
   .tile-select{position:absolute;inset:0;z-index:4;appearance:none;border:0;background:transparent;cursor:pointer;pointer-events:auto}
+  .grid-tile.keyboard-highlight .tile-face,.grid-bloom-module.keyboard-highlight{outline:3px solid #e3c99b;outline-offset:-7px}
   .tile-select:focus-visible{outline:3px solid #e3c99b;outline-offset:-10px}
   /* Acknowledgement only: opacity changes, never the tile's shift transform. */
   .grid-tile--waiting .tile-select::after{content:'';position:absolute;inset:4px;border:3px solid #ffe0a3;box-shadow:inset 0 0 24px rgba(255,210,130,.48),0 0 24px rgba(255,210,130,.7);pointer-events:none;animation:selection-wait 1400ms ease-in-out infinite}

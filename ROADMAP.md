@@ -17,7 +17,7 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 ## Milestone 1 — Mechanically correct grid
 - [x] Decide initial tile sizing and center-first responsive visible-cell formula (Babuni.dev-approved approximate scale; unit-tested).
 - [x] Implement temporary representative tiles (not final stone assets or real projects).
-- [x] Implement pointer-event mouse/touch dragging, keyboard pan, and reset (desktop pointer tested, real touch pending).
+- [x] Implement pointer-event mouse/touch dragging, spatial keyboard highlight/activation, and reset (desktop pointer tested, real touch pending).
 - [x] Implement bounded DOM tile recycling, keeping stable logical coordinates (unit tested and browser preview checked).
 - [x] Prototype clockwise spiral-first project assignment with visibility-aware source identity recycling; fill the viewport by repeating the original project library when necessary. Ten pure-placement tests passed in isolation.
 - [x] Babuni.dev visually approved the initial 45-project spiral on desktop, describing the result as looking fantastic (2026-10-26).
@@ -284,3 +284,8 @@ Built: eliminate press-induced shift freeze, gradually brake active shifts only 
 **Babuni.dev reports:** Movement feels smoother after `cfd4c25`. This is positive desktop feel feedback, not an exhaustive performance or long-session sign-off.
 
 **AI recommendation, not yet authorized implementation:** Next verify keyboard/focus/reduced-motion navigation across all four depths, plus extended grid recycling/project identity. Keep the revised phone reader acceptance open. Then prepare controlled preview/staging deployment and release checks. Content stays ongoing secondary work; no new visual redesign or timing changes are implied.
+
+
+## 2026-10-27 — Keyboard scope clarified by Babuni.dev
+
+Built: replace free arrow panning with highlight-first spatial navigation, center entry, explicit Space/Enter activation and one-depth Escape/focus return. Header navigation remains conventional. Browser sampled the full grid → small → big → reader → big → small → grid sequence and header project search. This implements the requested model, not a claim of exhaustive keyboard/accessibility acceptance. No new pointer or motion tuning is implied.
