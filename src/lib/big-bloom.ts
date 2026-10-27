@@ -29,7 +29,10 @@ export function bigBloomRevealPlan<T>(items:readonly T[],random:()=>number=Math.
 }
 /** The larger preview quotes actual body content, rather than reusing its teaser. */
 export function moduleIntro(module:ProjectModule,limit=1600):string {
-  const text=(module.intro??module.body??module.preview).replace(/```[\s\S]*?```/g,'')
+  // Generated intros are already normalized and truncated once. Returning the
+  // stored copy preserves the exact last word/ellipsis across both depths.
+  if(module.intro!==undefined)return module.intro;
+  const text=(module.body??module.preview).replace(/```[\s\S]*?```/g,'')
     .replace(/^#{1,6}\s+.*$/gm,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')
     .replace(/[*`]/g,'').replace(/\s+/g,' ').trim()||module.preview;
   if(text.length<=limit)return text;

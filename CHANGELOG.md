@@ -329,3 +329,8 @@ Each future entry should include the change, its user-visible or technical effec
 - Public repository-coverage report listing missing sources, private-review tiles and unresolved project families.
 ### Changed
 - Matching text modules now use source documentation directly; curated previews and existing media/resources are retained. Empty or missing upstream documents do not create filler modules.
+
+
+### Fixed — first CI finding (2026-10-27)
+- Preserve generated big-bloom intros exactly instead of re-truncating them when displayed. The first CI run passed 96/97 tests and exposed this one-character mismatch.
+- Update GitHub Actions checkout/setup-node to v5 for the Node 24 runner. Post-fix CI verification is still pending.

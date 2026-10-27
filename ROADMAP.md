@@ -213,3 +213,6 @@ Milestone 5 now has real multi-project source content and validation; MDX blocks
 
 
 **2026-10-27 — On-demand source text and automated CI (post-build-warning refinement):** Babuni.dev supplied a successful prior local verification (92/92 tests, Astro build passed, zero npm audit vulnerabilities), with Vite warning about an initial >500 kB JavaScript chunk. Babuni.dev authorized the AI recommendation to split source documentation out of the initial bundle and add GitHub Actions. Implemented build-time per-document static Markdown files and a compact eager preview/intro index, leaving small/big bloom timing and content selection synchronous; full text loads in the reader on demand. Added offline export/content fidelity and error-path tests, and a read-only GitHub workflow for npm ci, grid tests and build. CI result, new bundle size and hands-on detail-reader behavior are still unverified at commit time; verify before marking performance work complete.
+
+
+**Post-implementation CI feedback (2026-10-27):** New GitHub Actions was activated by commit `10c7249`; first run found 96 passing tests and one exact-intro-parity regression. Corrected double truncation in `moduleIntro` and updated the runner actions; await a green follow-up CI run and final static bundle-size inspection. This is an active fix, not grounds to declare the performance task complete yet.

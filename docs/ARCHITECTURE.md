@@ -312,3 +312,6 @@ Global CSS uses scrollbar-width:none and a hidden ::-webkit-scrollbar fallback. 
 **CI.** `.github/workflows/ci.yml` triggers on pushes to main, pull requests and manual dispatch, uses a read-only token, installs locked dependencies with Node 24, runs `npm run test:grid` (which prepares content automatically) and `npm run build` (which includes content validation). No release, secret or deployment action is configured.
 
 **Limits:** The initial compact index still grows with source-document counts and may need further splitting in a larger future portfolio. Generated documents are static and public just like their GitHub source; no private repository content is exported. All source links retain their snapshot SHA (local Babuni.dev docs link to main). Verify actual chunk sizes, MIME/CORS behavior on deployment, network errors, browser interaction and CI completion before claiming success.
+
+
+**CI-driven parity correction:** The first 97-test GitHub Actions run found that applying `moduleIntro` to an already generated intro can trim its trailing ellipsis twice. `moduleIntro` now returns `intro` untouched, and only builds a new intro from `body` or `preview` when no precomputed intro is available. Source bodies and module IDs are unchanged.
