@@ -321,3 +321,12 @@ Global CSS uses scrollbar-width:none and a hidden ::-webkit-scrollbar fallback. 
 
 
 **Observed payload, 2026-10-27:** On passing GitHub Actions commit `a12fde3`, `npm run bundle:report` measured one JS chunk of **584.7 KiB raw, 174.0 KiB gzip**; Vite retained its default >500 KiB warning. These are compiled-file sizes, not transfer or first-contentful-paint metrics. The complete Markdown is not in this JS; the remaining metadata index still has intro text for synchronous big-bloom rendering. Future work can split the compact index by project if warranted by a real waterfall/UX problem, but must not make tile selection or its reveal choreography wait unexpectedly.
+
+
+## 2026-10-27 — Transfer resident tiles at autonomous shift completion
+
+`src/lib/shift-settlement.ts` builds a pure destination→source-slot permutation for each independent `ShiftEvent` of a round. It chooses shifted tiles using `occupiedCell(slot,bloomCells)` so the column index matches the *actual visual* line when the bloom has reserved neighboring cells. Rows/columns are sorted along the moving axis; a shift by one cell rotates the ordered residents by one. The one wrapping element goes to the opposite edge of the bounded DOM buffer. The round planner already chooses a single axis and distinct line indices, so these permutations are independent.
+
+In `src/scripts/grid.ts`, `settleMovedResidents` captures an immutable snapshot of each slot's current `{element,projectIndex}` and applies the permutation to both fields. Each reassigned DOM element receives its new slot's absolute `left`/`top` and its per-tile transform is reset, which matches the position it reached at animation fraction 1. No DOM image nodes are detached, and no new `<img>` elements are created just to settle an onscreen tile. **Only then** does `frameMovement` append the completed moves to `history`, call `updateField(true)` and paint the non-moving layout. `populate` continues to legitimately rebuild artwork on true project identity changes in offscreen recycled slots.
+
+The design avoids expensive global image preloads and leaves `SHIFT_DURATION_MS`, easing, identity assignment history, bloom vacancies and selection/depth controls unchanged. Tests cover both move directions, opposing independent lines, bloom-displaced visual coordinates and renderer call order. Actual browser compositing and identity continuity must be verified on desktop and phone before this is declared a completed visual correction.

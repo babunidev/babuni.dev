@@ -360,3 +360,16 @@ The initial five editorial families reuse four renderer types: journal/history i
 **Alternatives:** Vite lazy import of the whole 1.34 MB JSON (still unnecessarily downloads every project's content at first project open); network fetch at small-bloom time (changes approved reveal timing); live GitHub API calls in the visitor browser (introduces quota, privacy, and reliability issues). None adopted.
 
 **Verification open:** Build size reduction, CI green status, user-visible network behavior, long-text scroll/retry and device regression. Static base URL assumes domain-root hosting; revisit if deploying under a URL prefix.
+
+
+## D-030 — Carry already-loaded portal artwork through shift completion (2026-10-27)
+
+**Babuni.dev observation:** Logo artwork sometimes flickers immediately after row/column shifts finish. Preserve approved movement while investigating the end-of-shift handoff.
+
+**AI root-cause hypothesis (grounded in inspected code):** A completed movement repopulated static DOM slots. Changed `projectIndex` values caused `portal.replaceChildren()` and a newly constructed lazy-loading image, although that same artwork was already decoded in the tile visually arriving from the adjacent cell. This can produce a brief blank/missing artwork frame.
+
+**AI decision:** Rotate the actual tile DOM residents through shifted logical slots **before** committing shift history and synchronizing project identities, keeping each `projectIndex` paired with its existing element and decoded logo. Only the wrapped offscreen pool slot gets normal recycling. Use bloom-aware `occupiedCell` to identify the real shifted line. Do not change shift times, motion paths or visual treatment.
+
+**Rejected approaches:** Fade or hide the handoff; eagerly preload all source logos; assign an entirely new image element to each destination; change the viewport's approved motion.
+
+**Status:** Source fix and tests prepared for review, not accepted as a verified visual fix. Regression tests/build and Babuni.dev's actual screen observation required.

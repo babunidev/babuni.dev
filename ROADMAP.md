@@ -222,3 +222,6 @@ Milestone 5 now has real multi-project source content and validation; MDX blocks
 
 
 **Performance verification checkpoint (2026-10-27):** GitHub Actions run on `a12fde3` passed **97/97 tests** and the production build. Measured output: **584.7 KiB raw / 174.0 KiB gzip** JavaScript in one chunk. The original >500 KiB warning persists; the exact original long documents are now separate, lazily loaded static assets. Next evaluate browser request timing and whether splitting the small preview/intro index by project materially helps; do not alter approved bloom behavior merely to suppress a build warning.
+
+
+**2026-10-27 — Portal artwork blink at end of shift:** Babuni.dev reported a brief logo flicker when tiles reach their settled positions. Code inspection traced a likely cause to a post-shift `populate` remounting lazy portal images into fixed DOM slots. Implemented a source-aware permutation of existing DOM tile residents (including their loaded images) at shift settlement, with normal buffer recycling only offscreen. Added row/column/bloom-aware regression tests. CI and browser confirmation of no blink, overlap or identity regression remain pending; no change to the approved shift tempo.

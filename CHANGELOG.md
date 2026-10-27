@@ -7,6 +7,13 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 ## [Unreleased]
 
 
+### Fixed — reuse living-grid tile elements at shift settlement (2026-10-27)
+- Addressed a reported momentary **portal artwork flicker** immediately after autonomous rows/columns finish shifting.
+- The shift-finish handoff previously updated logical history and repopulated stationary DOM cells, recreating affected portal image elements after arrival. It now rotates the *already-rendered tile DOM elements and their project-index identities* into the corresponding destination slots, then commits the shift history. Logos and their decoded image elements travel with the tiles and need no reattachment on visible settlement.
+- The wrapping element moves only to the opposite offscreen buffer edge, where normal identity recycling is still allowed; spatial shifting, the 4.4-second tempo, bloom vacancy mapping, subject bubbles, manual dragging and project selection remain unchanged.
+- Added tests for rows and columns in both directions, simultaneous independent lines, bloom-displaced visual columns, and settle-before-sync ordering.
+- Root cause is supported by source inspection but real desktop/phone flicker resolution still requires Babuni.dev's eyes and browser checks.
+
 ## 2026-10-27 — Lazy project documents and automated verification
 
 ### Changed

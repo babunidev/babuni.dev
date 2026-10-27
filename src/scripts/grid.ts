@@ -7,6 +7,7 @@ import {bigBloomLayout,bigBloomVacancies,bigModuleCell,bigBloomRevealPlan} from 
 import {occupiedCell,restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
 import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
+import {settledResidents} from '../lib/shift-settlement';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 import { demoProjects } from '../lib/demo-projects';
@@ -449,14 +450,38 @@ if (viewport && world && resetButton && status) {
     if(heading)heading.textContent=round.axis==='row'?'Rows are shifting':'Columns are shifting';
     requestAnimationFrame(frameMovement);
   }
+  /** Transfer the already-rendered, already-decoded tile *element* to the
+   * cell its movement landed on, instead of rebuilding its portal image.
+   * Keep projectIndex paired with that element until syncProjects reconciles
+   * only the (offscreen) wrapped pool edges.
+   */
+  function settleMovedResidents(moves:readonly ShiftEvent[]):void {
+    const mappings=settledResidents(slots,moves,bloomModule?bloomCells:[]);
+    const old=new Map(slots.map(slot=>[slot,{
+      element:slot.element,projectIndex:slot.projectIndex
+    }]));
+    for(const {destination,source} of mappings){
+      const resident=old.get(source)!;
+      destination.element=resident.element;
+      destination.projectIndex=resident.projectIndex;
+    }
+    for(const {destination} of mappings){
+      destination.element.style.left=(destination.column*tileSize)+'px';
+      destination.element.style.top=(destination.row*tileSize)+'px';
+      destination.element.style.transform='';
+    }
+  }
   function frameMovement(now:number):void {
     if(!moving||moving.pausedAt!==null)return;
     moving.fraction=Math.min(1,Math.max(0,(now-moving.started)/SHIFT_DURATION_MS));
     paintMovement(moving.fraction);
     if(moving.fraction<1){requestAnimationFrame(frameMovement);return;}
+    // Move the actual resident DOM elements into their landed cells before
+    // committing history. Otherwise a normal placement sync recreates their
+    // <img> logos just after the tiles visually arrive.
+    settleMovedResidents(moving.moves);
     history.push(...moving.moves);
     moving=null;
-    // The source identity is carried by the shifted tile, not by its old slot.
     updateField(true);
     paintMovement(0);
     surface.classList.remove('is-autoshifting');

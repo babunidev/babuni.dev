@@ -323,3 +323,12 @@ Repository connections change module content, not grid placement, motion, timing
 The small bloom keeps its immediately available module titles and curated short previews; big bloom retains its existing body-derived intro depth and physical 2×2 layout. No timing, movement, tile appearance or random module selection changes. Opening a full text detail may show a brief “Loading document…” status before rendering its complete, unmodified Markdown. If the file cannot load, an inline Retry document button is offered; Back/Escape still work and cancel the request. Manual/project-authored text not sourced from the generated documents can still open instantly. The HTML reader remains a safe text-node-based, basic-Markdown renderer.
 
 This behavior was an AI implementation choice after Babuni.dev authorized faster loading, rather than a new artistic direction. Verify the transition feels natural on slow connections and assistive technologies.
+
+
+## Preserve portal-image continuity through the final shift frame (2026-10-27)
+
+**Bug observed by Babuni.dev:** Portal artwork momentarily blinked only after a line visually arrived. This is unwanted; a stone and its circular logo must remain a continuous object as it shifts and comes to rest. The solution must not change the grid's calm 4.4-second movement or alter existing bloom behavior.
+
+**Implementation:** The tile that a visitor sees moving is now the DOM element that occupies the destination once the shift completes, so the same already-loaded portal image remains visible. Recycle only the fully out-of-view pool wraparound cell. Continue honoring the physical bloom-displaced layout when resolving which column/row is moved. No new crossfade, delay or portal artwork sizing is introduced.
+
+**Review needed:** Watch several automatic row/column shifts with and without a bloom and confirm no visible image blink, identity swap, overlap or focus discontinuity at the final frame.
