@@ -4,16 +4,16 @@ import {demoProjects,DEMO_PROJECT_COUNT} from '../src/lib/demo-projects.ts';
 import {gridWindow} from '../src/lib/grid-math.ts';
 import {ProjectPlacement,visibleCellBounds,spiralIndex} from '../src/lib/project-placement.ts';
 
-test('exactly 44 retained project entries have unique provisional IDs and summaries',()=>{
-  assert.equal(DEMO_PROJECT_COUNT,44);
-  assert.equal(demoProjects.length,44);
+test('exactly 43 retained project entries have unique provisional IDs and summaries',()=>{
+  assert.equal(DEMO_PROJECT_COUNT,43);
+  assert.equal(demoProjects.length,43);
   assert.equal(demoProjects[0].name,'BABUNI.DEV');
   assert.deepEqual(demoProjects.slice(1,5).map(x=>x.name),[
     'Button Game','SocialForever','RoarForever','FlourishForever'
   ]);
   assert.equal(demoProjects.at(-1).name,'Analubia');
-  assert.equal(new Set(demoProjects.map(x=>x.id)).size,44);
-  assert.equal(new Set(demoProjects.map(x=>x.name)).size,44);
+  assert.equal(new Set(demoProjects.map(x=>x.id)).size,43);
+  assert.equal(new Set(demoProjects.map(x=>x.name)).size,43);
   assert.ok(demoProjects.every(x=>x.id&&x.shortSummary&&x.evidence&&x.tint));
   assert.ok(demoProjects.every(x=>!/^PROJECT \d+$/.test(x.name)));
 });
@@ -48,7 +48,7 @@ test('initial desktop fills 45 visible cells with the retained library in spiral
 });
 
 test('human-withdrawn entries are absent and BABUNI keeps the collaboration documents',()=>{
- for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model','guildchatai','dual-pc-streaming-setup'])assert.equal(demoProjects.some(p=>p.id===id),false);
+ for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model','guildchatai','dual-pc-streaming-setup','mech-arena'])assert.equal(demoProjects.some(p=>p.id===id),false);
  assert.equal(demoProjects.filter(p=>p.id==='morkahjaworld').length,1);
  assert.match(demoProjects.find(p=>p.id==='morkahjaworld').shortSummary,/Worldbuilding/);
 });

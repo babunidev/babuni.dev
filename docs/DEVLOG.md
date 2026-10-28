@@ -813,3 +813,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 **Babuni.dev requested:** remove Dual-PC Streaming Setup too. **AI implementation:** removed its active semantic ID, topics and unresolved repository mapping. It had no connected source snapshot or curated module content. All other sources, projects, artwork and interactions remain unchanged; historical mentions remain historical. Current totals: 44 entries, 34 connected public sources, eight missing-repository entries and two family-clarification entries. No repository deletion or new timing/layout change. Verification is recorded in DEVLOG.
 
 **Verification:** 30 test-file entries passed; direct repository suite 11/11, catalog suite 4/4 and intro suite 3/3 passed; production build/content guards and whitespace check passed. Smaller inventory exposed stale tests expecting 45 distinct projects on a 45-cell desktop: expectations now cover the existing modulo-repeat behavior with 44 entries while preserving 45 filled cells and spiral order. No runtime placement behavior changed. No new browser/physical-device test claimed for this catalog-only follow-up.
+
+## 2026-10-28 — Mech-Arena withdrawn
+
+**Babuni.dev requested:** remove Mech-Arena too. **AI implementation:** removed its active semantic ID, topic records and unresolved repository mapping. It had no connected source snapshot or curated module content. Other projects, documents, artwork, layout and timing remain unchanged; historical research mentions remain historical. Totals: 43 entries, 34 connected public sources, seven missing-repository entries and two family-clarification entries. No repository deletion. Verification is recorded in DEVLOG.
+
+**Verified:** full test command passed 30 test-file entries; direct repository suite passed 11/11; production build/content guards and whitespace checks passed. No new browser or physical-device test claimed for this catalog-only change.

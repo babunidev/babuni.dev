@@ -502,3 +502,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Removed
 - Removed Dual-PC Streaming Setup from active grid/search, both topic maps and unresolved repository mappings at Babuni.dev’s request. The active list now contains 44 projects; no imported documents or repository were deleted.
+
+## 2026-10-28 — Mech-Arena withdrawal
+
+### Removed
+- Removed Mech-Arena from active grid/search, both topic maps and unresolved repository mappings at Babuni.dev’s request. The active catalog now has 43 entries; connected sources and imported documents are unchanged.

@@ -1,6 +1,6 @@
 /**
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
- * (53 initial candidates, 2026-10-26; 44 retained after human curation on 2026-10-28).
+ * (53 initial candidates, 2026-10-26; 43 retained after human curation on 2026-10-28).
  * Removed duplicates and non-projects are documented in the source inventory.
  * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
@@ -16,7 +16,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=44;
+export const DEMO_PROJECT_COUNT=43;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -331,13 +331,6 @@ export const demoProjects:readonly DemoProject[]=[
     "evidence": "repo",
     "tint": "hsl(173 58% 62%)",
     "portalArtwork": "/portal-content/ArcaniteBrothers.webp"
-  },
-  {
-    "id": "mech-arena",
-    "name": "Mech-Arena",
-    "shortSummary": "Historical science-fiction RPG project; release claims await archival evidence.",
-    "evidence": "conversation",
-    "tint": "hsl(310 58% 62%)"
   },
   {
     "id": "analubia",

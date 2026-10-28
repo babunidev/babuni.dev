@@ -47,7 +47,6 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "morkahja-admin-console": "Admin tools",
   "morkahjaworld": "Worldbuilding",
   "arcanitebrothers": "Development tools",
-  "mech-arena": "Sci-fi RPG",
   "analubia": "Fantasy RPG"
 });
 export function topicForProject(projectId:string):string {
@@ -230,10 +229,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
   "arcanitebrothers": [
     "Development identity",
     "Admin console"
-  ],
-  "mech-arena": [
-    "Science fiction",
-    "Historical RPG"
   ],
   "analubia": [
     "Sundust Studios",
