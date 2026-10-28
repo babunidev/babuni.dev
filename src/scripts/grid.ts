@@ -37,7 +37,7 @@ if (viewport && world && resetButton && status) {
   installInteractionFeedback();
   const bufferCells=2;
   let columnBufferCells=2;
-  // First inventory entry is BABUNI.DEV; all 53 candidates remain provisional.
+  // First inventory entry is BABUNI.DEV; remaining candidates are human-curated but retain provisional evidence labels.
   const placement=new ProjectPlacement(demoProjects.length);
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;

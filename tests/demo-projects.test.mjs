@@ -4,26 +4,24 @@ import {demoProjects,DEMO_PROJECT_COUNT} from '../src/lib/demo-projects.ts';
 import {gridWindow} from '../src/lib/grid-math.ts';
 import {ProjectPlacement,visibleCellBounds,spiralIndex} from '../src/lib/project-placement.ts';
 
-test('exactly 53 named inventory candidates have unique provisional IDs and summaries',()=>{
-  assert.equal(DEMO_PROJECT_COUNT,53);
-  assert.equal(demoProjects.length,53);
+test('exactly 49 retained project entries have unique provisional IDs and summaries',()=>{
+  assert.equal(DEMO_PROJECT_COUNT,49);
+  assert.equal(demoProjects.length,49);
   assert.equal(demoProjects[0].name,'BABUNI.DEV');
   assert.deepEqual(demoProjects.slice(1,5).map(x=>x.name),[
     'Button Game','SocialForever','RoarForever','FlourishForever'
   ]);
-  assert.equal(demoProjects[52].name,'Analubia');
-  assert.equal(new Set(demoProjects.map(x=>x.id)).size,53);
-  assert.equal(new Set(demoProjects.map(x=>x.name)).size,53);
+  assert.equal(demoProjects.at(-1).name,'Analubia');
+  assert.equal(new Set(demoProjects.map(x=>x.id)).size,49);
+  assert.equal(new Set(demoProjects.map(x=>x.name)).size,49);
   assert.ok(demoProjects.every(x=>x.id&&x.shortSummary&&x.evidence&&x.tint));
   assert.ok(demoProjects.every(x=>!/^PROJECT \d+$/.test(x.name)));
 });
 test('candidate descriptions and evidence are snapshots of the provisional inventory',()=>{
   assert.match(demoProjects[1].shortSummary,/Android reaction game/);
   assert.equal(demoProjects[1].evidence,'repo');
-  assert.equal(demoProjects[30].name,'BuxbrewDing');
-  assert.equal(demoProjects[30].evidence,'name-only');
-  assert.equal(demoProjects[45].name,'Morkahja — World and Peoples');
-  assert.equal(demoProjects[45].evidence,'document');
+  assert.equal(demoProjects.find(p=>p.id==='buxbrewding').evidence,'name-only');
+  assert.equal(demoProjects.find(p=>p.id==='morkahjaworld').evidence,'human-confirmed');
 });
 test('initial 1920x1080 desktop still contains 45 distinct named projects in spiral order',()=>{
  const width=1920,height=1080,tileSize=240;
@@ -47,4 +45,10 @@ test('initial 1920x1080 desktop still contains 45 distinct named projects in spi
  assert.deepEqual(visible
    .slice().sort((a,b)=>spiralIndex(a.column,a.row)-spiralIndex(b.column,b.row))
    .map(cell=>planner.get(cell)),Array.from({length:45},(_,i)=>i));
+});
+
+test('human-withdrawn entries are absent and BABUNI keeps the collaboration documents',()=>{
+ for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples'])assert.equal(demoProjects.some(p=>p.id===id),false);
+ assert.equal(demoProjects.filter(p=>p.id==='morkahjaworld').length,1);
+ assert.match(demoProjects.find(p=>p.id==='morkahjaworld').shortSummary,/Worldbuilding/);
 });

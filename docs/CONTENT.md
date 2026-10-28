@@ -278,3 +278,9 @@ Babuni.dev published all four prepared editions. The site imports their exact pu
 ## Four additional original portal WebPs — 2026-10-28
 
 Babuni.dev supplied BattleReport.webp, Ethera.webp, ROARGuild.webp and WarriorStartAttack.webp in the local public/portal-content folder and asked for them to be added. Each decoded as 1254×1254 WebP and was copied unchanged to its matching project mapping; there are nineteen original portal artworks. No AI image generation, crop, resize or recompression occurred in this import. SHA-256 records are in PERFORMANCE-2026-10-28.md. Browser resize captures are AI verification evidence and include an explicitly superseded failed local-server preview; all are published as WebP. Current source snapshots and text content are not refreshed by this task.
+
+## Human content curation — 2026-10-28
+
+Babuni.dev withdraws Talent Design Atlas (non-project/gimmick), Redridge Recipe Planner (duplicate of FavorCraft), Human–AI Development Journal (already within BABUNI.DEV), and Morkahja — World and Peoples (duplicate of retained MorkahjaWorld). These are authoritative curation decisions, not automated content scoring. Historical inventory entries and screenshots document prior states rather than active offerings. The remaining worldbuilding tile gains an attributed scope module because its existing public edition still reflects an earlier reserved-repository description.
+
+ArcaniteBrothers.webp is a newly supplied 1536×1536, 169,052-byte WebP, copied unchanged to the existing project ID. Source hash and human/AI roles are recorded in DEVLOG. There are twenty mapped supplied portal artworks. Existing human–AI documents remain available through BABUNI.DEV; no journal text or contribution history was deleted.

@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-38 of 53 tiles are connected to 37 public repositories. BABUNI.DEV uses its local working documents; the Human–AI Development Journal shares three of those documents. Other sources use committed snapshots refreshed with npm run content:sync.
+35 of 49 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -17,8 +17,6 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 | Anskar Grotzschnapf | [babunidev/AsnkarGrotzschnapf](https://github.com/babunidev/AsnkarGrotzschnapf) | master | 8: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md` |
 | ResistForever | [babunidev/ResistForever](https://github.com/babunidev/ResistForever) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | FavorCraft | [babunidev/favorcraft](https://github.com/babunidev/favorcraft) | main | 7: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `ROADMAP.md` |
-| Redridge Recipe Planner | [babunidev/Redridge-Recipe-Planner](https://github.com/babunidev/Redridge-Recipe-Planner) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| WoW Forever Talent Design Atlas | [babunidev/wowforeverstuff](https://github.com/babunidev/wowforeverstuff) | main | 7: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `ROADMAP.md` |
 | Ethera: The Stonewrought | [babunidev/Ethera-docs](https://github.com/babunidev/Ethera-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | EnchantVisuals | [babunidev/EnchantVisuals](https://github.com/babunidev/EnchantVisuals) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | TotemTimers | [babunidev/TotemTimers](https://github.com/babunidev/TotemTimers) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
@@ -42,7 +40,6 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 | Amazin | [babunidev/amazin](https://github.com/babunidev/amazin) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | WarriorStartAttack | [babunidev/WarriorStartAttack](https://github.com/babunidev/WarriorStartAttack) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | GuildChatAI | [babunidev/GuildChatAI](https://github.com/babunidev/GuildChatAI) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| Human–AI Development Journal | [babunidev/babuni.dev](https://github.com/babunidev/babuni.dev) | main | 3: `docs/DEVLOG.md`, `docs/AI_COLLABORATION.md`, `docs/DECISIONS.md` |
 | Morkahja RPG | [babunidev/Morkahja-docs](https://github.com/babunidev/Morkahja-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | MorkahjaWorld | [babunidev/MorkahjaWorld-docs](https://github.com/babunidev/MorkahjaWorld-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Arcanitebrothers | [babunidev/arcanitebrothers-docs](https://github.com/babunidev/arcanitebrothers-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
@@ -72,7 +69,6 @@ Private implementations remain excluded. Ethera, Morkahja RPG, MorkahjaWorld and
 
 ## Project-family clarification needed
 
-- Morkahja — World and Peoples (morkahja-world-and-peoples)
 - Grimnir (grimnir)
 - Morkahja Admin Console (morkahja-admin-console)
 
@@ -81,9 +77,9 @@ Related sources are known, but an independent public repository is not confirmed
 ## Naming and coverage notes
 
 - Anskar Grotzschnapf maps to the verified `AsnkarGrotzschnapf` spelling and its `master` branch.
-- WoW Forever Talent Design Atlas maps to `wowforeverstuff`.
 - Azeroth Moments uses the public `AzerothMoments` documentation shell. Its README states that the active application lives separately; that private implementation was not imported.
-- Human–AI Development Journal shares BABUNI.DEV’s journal, decisions and collaboration documents. It does not need another repository solely to display that material.
+- Human curation on 2026-10-28 removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples from the active catalog. Their historical inventory evidence is retained; no GitHub repository was deleted.
+- MorkahjaWorld is the retained worldbuilding tile, as clarified by Babuni.dev. Its public edition predates this correction; a later reviewed public-source refresh can expand it.
 - `babunidev/Rocketgame42` is an additional public repository found during discovery, but has no matching current tile. It was not silently added to the approved grid inventory.
 
 ## Shared documentation contract

@@ -53,16 +53,6 @@
     "repository": "babunidev/favorcraft",
     "branch": "main"
   },
-  "redridge-recipe-planner": {
-    "status": "connected",
-    "repository": "babunidev/Redridge-Recipe-Planner",
-    "branch": "main"
-  },
-  "wow-forever-talent-design-atlas": {
-    "status": "connected",
-    "repository": "babunidev/wowforeverstuff",
-    "branch": "main"
-  },
   "ethera-the-stonewrought": {
     "status": "connected",
     "repository": "babunidev/Ethera-docs",
@@ -183,17 +173,6 @@
     "status": "needs-repository",
     "note": "No matching repository found in the accessible account inventory on 2026-10-27."
   },
-  "human-ai-development-journal": {
-    "status": "connected",
-    "repository": "babunidev/babuni.dev",
-    "branch": "main",
-    "paths": [
-      "docs/DEVLOG.md",
-      "docs/AI_COLLABORATION.md",
-      "docs/DECISIONS.md"
-    ],
-    "note": "Shared methodology source, not a separate repository."
-  },
   "roar-guild-and-community": {
     "status": "needs-repository",
     "note": "No matching repository found in the accessible account inventory on 2026-10-27."
@@ -222,10 +201,6 @@
     "status": "needs-repository",
     "note": "No matching repository found in the accessible account inventory on 2026-10-27."
   },
-  "morkahja-world-and-peoples": {
-    "status": "needs-confirmation",
-    "note": "Related project family is known, but an independent public repository is not confirmed."
-  },
   "grimnir": {
     "status": "needs-confirmation",
     "note": "Related project family is known, but an independent public repository is not confirmed."
@@ -244,7 +219,7 @@
     "status": "connected",
     "repository": "babunidev/MorkahjaWorld-docs",
     "branch": "main",
-    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
+    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28. Babuni.dev identifies this tile as the worldbuilding project; duplicate World and Peoples tile removed 2026-10-28. Existing public edition is an earlier limited snapshot."
   },
   "arcanitebrothers": {
     "status": "connected",

@@ -244,6 +244,11 @@
           "src": "/media/babuni-dev/images/verification/production-big-bloom-resize.webp",
           "alt": "AI production browser, 2026-10-28: same thirteen big-bloom modules retained after desktop and phone-size resize; reader also survived and returned to this bloom.",
           "caption": "AI production browser, 2026-10-28: same thirteen big-bloom modules retained after desktop and phone-size resize; reader also survived and returned to this bloom."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/arcanitebrothers-banner-verified.webp",
+          "alt": "Arcanitebrothers selected with the supplied banner in its circular portal and eight preview modules.",
+          "caption": "AI desktop browser, 2026-10-28: supplied 1536px ArcaniteBrothers WebP decoded successfully; 49-entry menu excludes the four withdrawn projects. Historical screenshot after catalog curation."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
@@ -377,6 +382,16 @@
       "title": "Collaboration",
       "preview": "",
       "body": ""
+    }
+  ],
+  "morkahjaworld": [
+    {
+      "id": "scope-clarification",
+      "type": "text",
+      "title": "Worldbuilding",
+      "preview": "Worldbuilding for Morkahja: its peoples, places, cultures and lore.",
+      "body": "Babuni.dev identifies MorkahjaWorld as the worldbuilding project. The separate World and Peoples tile was removed as a duplicate on 2026-10-28. The linked public documentation edition predates this clarification and remains a limited initial snapshot.",
+      "credit": "Project scope clarified by Babuni.dev; AI editorial implementation recorded in the website development journal."
     }
   ]
 }

@@ -470,3 +470,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 **Status:** implemented from Babuni.dev’s correction, awaiting human resize acceptance. A viewport change rebuilds the bounded tile pool, not the selected project's exploration state. Preserve existing bloom panel instances, module choices, reservations and pending selections. Responsive tile-size changes rescale the camera in cell units and in-flight endpoints without changing elapsed timing. Closing/reopening was rejected by the human report.
 
 **Performance decision:** report the current warning honestly. Keep synchronous intros and original supplied artwork bytes in this fix; no raised warning threshold, shortened intros, unapproved async opening gate or silently recompressed originals. Per-project preview chunks and separate smaller image derivatives remain AI proposals, not confirmed design changes.
+
+## 2026-10-28 — Owner-curated active project list
+
+**Status:** accepted human direction, implemented. Withdraw the four named gimmick/duplicate/shared-document tiles. A discovered repository is not sufficient reason to keep a project that Babuni.dev does not consider a distinct work. Keep journal/decision/collaboration material inside BABUNI.DEV; retain one MorkahjaWorld worldbuilding tile. Do not infer authorization to delete repositories, rewrite history or merge other unresolved families. Existing public documentation snapshots retain their provenance; a separate attributed scope note records the worldbuilding correction until its public edition is updated.

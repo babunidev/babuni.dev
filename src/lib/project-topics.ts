@@ -16,8 +16,6 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "local-ai-workstation": "Local AI",
   "resistforever": "Combat mechanics",
   "favorcraft": "Crafting tools",
-  "redridge-recipe-planner": "Crafting planner",
-  "wow-forever-talent-design-atlas": "Game design",
   "ethera-the-stonewrought": "Fantasy RPG",
   "enchantvisuals": "Visual effects",
   "totemtimers": "Shaman addon",
@@ -42,7 +40,6 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "warriorstartattack": "Combat helper",
   "guildchatai": "Chat experiment",
   "practical-templates-creator": "Digital templates",
-  "human-ai-development-journal": "Creative process",
   "roar-guild-and-community": "Community",
   "the-amberbrew-family": "Character lore",
   "buxbrew-character-story": "Character story",
@@ -50,11 +47,10 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "fantasy-architecture": "Architecture",
   "warehouse-performance-model": "Scoring systems",
   "dual-pc-streaming-setup": "Streaming setup",
-  "morkahja-world-and-peoples": "Worldbuilding",
   "grimnir": "Fantasy culture",
   "morkahja-rpg": "Fantasy RPG",
   "morkahja-admin-console": "Admin tools",
-  "morkahjaworld": "World project",
+  "morkahjaworld": "Worldbuilding",
   "arcanitebrothers": "Development tools",
   "mech-arena": "Sci-fi RPG",
   "analubia": "Fantasy RPG"
@@ -115,14 +111,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
   "favorcraft": [
     "Professions",
     "Materials"
-  ],
-  "redridge-recipe-planner": [
-    "Recipes",
-    "Earlier prototype"
-  ],
-  "wow-forever-talent-design-atlas": [
-    "Class talents",
-    "Design variety"
   ],
   "ethera-the-stonewrought": [
     "Godot",
@@ -220,10 +208,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Automation idea",
     "Useful templates"
   ],
-  "human-ai-development-journal": [
-    "Design decisions",
-    "Development history"
-  ],
   "roar-guild-and-community": [
     "WoW community",
     "Shared rituals"
@@ -252,10 +236,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Gaming PC",
     "Streaming PC"
   ],
-  "morkahja-world-and-peoples": [
-    "Elemental peoples",
-    "Fantasy places"
-  ],
   "grimnir": [
     "Morkahja world",
     "Cultural stories"
@@ -269,8 +249,8 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Server moderation"
   ],
   "morkahjaworld": [
-    "Named repository",
-    "Details to explore"
+    "Elemental peoples",
+    "Fantasy places"
   ],
   "arcanitebrothers": [
     "Development identity",

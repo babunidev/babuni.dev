@@ -57,5 +57,5 @@ test('every imported document parses without introducing executable source eleme
   for(const tag of ['script','iframe','object','img','style'])assert.equal(nodes(reader,tag).length,0);
   count++;
  }
- assert.equal(count,343);
+ assert.equal(count,326);
 });

@@ -8,7 +8,7 @@ export function repositoryReport(projects,connections,snapshots){
  const connected=rows.filter(p=>p.connection.status==='connected');
  const section=(status,title)=>['',`## ${title}`,'',...(rows.some(p=>p.connection.status===status)?rows.filter(p=>p.connection.status===status).map(p=>`- ${p.name} (${p.id})`):['- None currently.'])];
  const lines=['# Project repository connections','','Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.','',
- `${connected.length} of ${projects.length} tiles are connected to ${new Set(connected.map(p=>p.connection.repository)).size} public repositories. BABUNI.DEV uses its local working documents; the Human–AI Development Journal shares three of those documents. Other sources use committed snapshots refreshed with npm run content:sync.`,
+ `${connected.length} of ${projects.length} tiles are connected to ${new Set(connected.map(p=>p.connection.repository)).size} public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.`,
  '', '## Connected public sources','','| Project | Repository | Branch | Available standard documents |','|---|---|---|---|'];
  for(const p of connected){
   const c=p.connection,s=snapshots[c.repository],local=c.repository==='babunidev/babuni.dev';
@@ -20,9 +20,9 @@ export function repositoryReport(projects,connections,snapshots){
  ...section('needs-confirmation','Project-family clarification needed'),'', 'Related sources are known, but an independent public repository is not confirmed. Decide whether each is a separate project or a section of its parent before connecting documentation.',
  '', '## Naming and coverage notes','',
  '- Anskar Grotzschnapf maps to the verified `AsnkarGrotzschnapf` spelling and its `master` branch.',
- '- WoW Forever Talent Design Atlas maps to `wowforeverstuff`.',
  '- Azeroth Moments uses the public `AzerothMoments` documentation shell. Its README states that the active application lives separately; that private implementation was not imported.',
- '- Human–AI Development Journal shares BABUNI.DEV’s journal, decisions and collaboration documents. It does not need another repository solely to display that material.',
+ '- Human curation on 2026-10-28 removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples from the active catalog. Their historical inventory evidence is retained; no GitHub repository was deleted.',
+ '- MorkahjaWorld is the retained worldbuilding tile, as clarified by Babuni.dev. Its public edition predates this correction; a later reviewed public-source refresh can expand it.',
  '- `babunidev/Rocketgame42` is an additional public repository found during discovery, but has no matching current tile. It was not silently added to the approved grid inventory.',
  '', '## Shared documentation contract','',
  ...REPOSITORY_DOCUMENTS.map(d=>`- ${d.title}: \`${d.path}\``),

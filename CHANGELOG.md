@@ -470,3 +470,15 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Original supplied WebPs for BattleReport, Ethera, RoarGuild and WarriorStartAttack, mapped to their existing semantic project IDs. Nineteen original portal artworks are now present; imported files were not edited/recompressed.
 - Responsive coordinate regression coverage, production artifact-size reporting (`npm run production:report`), local uncached loading measurements and an explicit analysis of the existing large-chunk warning. The warning is not suppressed or claimed resolved.
 - Archived all three browser captures, including a failed measurement-server preview, as WebP with historical context.
+
+## 2026-10-28 — Human curation of the project catalog
+
+### Removed
+- Removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples as independent website projects, as directed by Babuni.dev. Removed their topic/search data and source mappings, plus the now-unconnected wowforeverstuff and Redridge cached documents. No GitHub repositories were deleted.
+
+### Changed
+- Retain 49 project entries, with 35 connected tiles / 35 public sources. BABUNI.DEV still contains its journal, decisions and human–AI collaboration modules.
+- Identify retained MorkahjaWorld as the worldbuilding project in the tile summary/topics and add a human-scope clarification module. Existing public source text predates this correction and was not silently rewritten.
+
+### Added
+- Map supplied ArcaniteBrothers.webp to Arcanitebrothers, preserving its exact original bytes. Twenty portal artworks are now mapped. Added removal/coverage regressions and updated active-catalog reports.

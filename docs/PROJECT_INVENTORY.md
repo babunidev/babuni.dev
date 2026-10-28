@@ -3,6 +3,10 @@
 **Recorded:** 2026-10-26  
 **Status:** Preliminary, for prototype planning and further verification; **not published portfolio data**.
 
+## Current curation override — 2026-10-28
+
+The original research table below is historical. Babuni.dev withdrew WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples as standalone website entries. The active catalog now contains 49 retained entries. MorkahjaWorld is the retained worldbuilding project; journal/decisions/collaboration remain within BABUNI.DEV. Existing repositories were not deleted. These human decisions supersede the original inventory’s optimistic candidate classifications.
+
 ## Purpose and provenance
 
 Babuni.dev asked to collect work discussed across chats, projects and repositories, including abandoned concepts, small addons, old games, visual studies and works in progress, then order it approximately by most recent work. The AI assembled the list from available conversations, uploaded/project material and connected GitHub README/repository evidence. This is a **working memory** to help choose authentic prototype tile titles and later research actual exhibits.

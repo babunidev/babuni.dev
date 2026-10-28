@@ -11,11 +11,11 @@ const local=Object.fromEntries(REPOSITORY_DOCUMENTS.map(d=>[d.path,readFileSync(
 const commit='a'.repeat(40),connection={status:'connected',repository:'babunidev/example',branch:'master'};
 const metadata={private:false,visibility:'public',full_name:'babunidev/example'};
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
-test('all 53 tiles have explicit status; all public source snapshots match their mapping',()=>{
+test('all 49 tiles have explicit status; all public source snapshots match their mapping',()=>{
  assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
  assert.deepEqual(validateSnapshots(connections,snapshots),[]);
- assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,38);
- assert.equal(Object.keys(snapshots).length,36);
+ assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,35);
+ assert.equal(Object.keys(snapshots).length,34);
  for(const [id,c] of Object.entries(connections)){
   const source=repositoryModules(c,snapshots[c.repository],local);
   if(c.status!=='connected'){assert.deepEqual(source,[]);continue;}
@@ -39,9 +39,10 @@ test('source text replaces curated bodies; existing media and meaningful preview
  assert.equal(merged.filter(moduleHasContent).length,13);
  assert.ok(composeProjectModules(catalog['button-game'],repositoryModules(connections['button-game'],snapshots['babunidev/ButtonGame']), 'babunidev/ButtonGame').filter(moduleHasContent).length>5);
 });
-test('shared source selects only its explicit documents; missing docs do not create filler',()=>{
- const selected=repositoryModules(connections['human-ai-development-journal'],undefined,local);
+test('explicit document subsets remain supported; missing docs do not create filler',()=>{
+ const selected=repositoryModules({...connections['babuni-dev'],paths:['docs/DEVLOG.md','docs/DECISIONS.md','docs/AI_COLLABORATION.md']},undefined,local);
  assert.deepEqual(selected.map(m=>m.id),['journal','decisions','collaboration']);
+ assert.equal(connections['human-ai-development-journal'],undefined);
  const sparse={repository:connection.repository,branch:'master',commit,documents:[{path:'README.md',body:'# Example\n\nA real source introduction.'}]};
  assert.deepEqual(repositoryModules(connection,sparse).map(m=>m.id),['overview']);
  assert.equal(repositoryModules(connection,{...sparse,branch:'main'}).length,0);
@@ -105,4 +106,13 @@ test('public edition previews describe the project rather than edition metadata'
  const concept=repositoryModules(c,snapshots[c.repository]).find(m=>m.id==='concept');
  assert.ok(concept.preview.startsWith('Ethera is the current Grimnir chapter'));
  assert.ok(!concept.preview.includes('Curated public documentation'));
+});
+
+test('retired sources are absent while BABUNI journal material remains available',()=>{
+ for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples'])assert.equal(connections[id],undefined);
+ for(const repo of ['babunidev/wowforeverstuff','babunidev/Redridge-Recipe-Planner'])assert.equal(snapshots[repo],undefined);
+ const c=connections['babuni-dev'];const modules=composeProjectModules(catalog['babuni-dev'],repositoryModules(c,undefined,local),c.repository);
+ for(const id of ['journal','decisions','collaboration'])assert.ok(modules.some(m=>m.id===id&&moduleHasContent(m)));
+ const world=composeProjectModules(catalog['morkahjaworld'],repositoryModules(connections['morkahjaworld'],snapshots[connections['morkahjaworld'].repository]));
+ assert.ok(world.some(m=>m.id==='scope-clarification'&&m.body.includes('worldbuilding project')));
 });

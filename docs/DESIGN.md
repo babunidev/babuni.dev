@@ -419,3 +419,7 @@ Four existing project tiles now gain the standard text modules from their public
 ## Resize continuity and supplied artwork — 2026-10-28
 
 Babuni.dev requests the same open bloom and map location through fullscreen/window changes. Small/big blooms retain their selected modules and project identity; the reader remains open. Responsive tile sizing preserves logical position, while transition durations and reader/grid scrolling stay unchanged. Four supplied portal WebPs now illustrate BattleReport, Ethera, RoarGuild and WarriorStartAttack; they use existing circular masks and are not redrawn. Agent viewport tests are separate from physical-phone orientation acceptance.
+
+## Curated discovery surface — 2026-10-28
+
+Babuni.dev removes four entries that should not appear as independent projects. The grid and direct-finding menu now share 49 retained entries, preserving semantic IDs and the order of remaining projects. MorkahjaWorld carries worldbuilding/peoples/places topics; World and Peoples is no longer a separate tile. BABUNI.DEV houses the human–AI development history. Arcanitebrothers uses the supplied WebP inside the existing portal mask. No interaction timing, tile scale, bloom geometry or scrolling behavior changes.

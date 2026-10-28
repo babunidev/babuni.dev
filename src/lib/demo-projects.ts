@@ -1,8 +1,8 @@
 /**
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
- * (53 candidates, 2026-10-26). NOT verified or approved portfolio exhibits.
- * Earlier variants, concepts, related works and name-only repos intentionally
- * remain separate for this temporary exploration. This is a data snapshot:
+ * (53 initial candidates, 2026-10-26; 49 retained after human curation on 2026-10-28).
+ * Removed duplicates and non-projects are documented in the source inventory.
+ * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
  */
 export interface DemoProject {
@@ -16,7 +16,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=53;
+export const DEMO_PROJECT_COUNT=49;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -105,20 +105,6 @@ export const demoProjects:readonly DemoProject[]=[
     "shortSummary": "Merchant's Favor profession, recipe and materials planner.",
     "evidence": "repo",
     "tint": "#ab88d1"
-  },
-  {
-    "id": "redridge-recipe-planner",
-    "name": "Redridge Recipe Planner",
-    "shortSummary": "Earlier planning addon that preceded FavorCraft.",
-    "evidence": "repo-lineage",
-    "tint": "#d08e79"
-  },
-  {
-    "id": "wow-forever-talent-design-atlas",
-    "name": "WoW Forever Talent Design Atlas",
-    "shortSummary": "Analysis of 466 class talents and game-design variety.",
-    "evidence": "repo",
-    "tint": "#70a3c2"
   },
   {
     "id": "ethera-the-stonewrought",
@@ -297,13 +283,6 @@ export const demoProjects:readonly DemoProject[]=[
     "tint": "hsl(48 58% 62%)"
   },
   {
-    "id": "human-ai-development-journal",
-    "name": "Human–AI Development Journal",
-    "shortSummary": "Record of creator direction, AI work, decisions and technical verification.",
-    "evidence": "repository-doc",
-    "tint": "hsl(185 58% 62%)"
-  },
-  {
     "id": "roar-guild-and-community",
     "name": "ROAR Guild and Community",
     "shortSummary": "WoW guild community design and shared roleplaying rituals.",
@@ -353,13 +332,6 @@ export const demoProjects:readonly DemoProject[]=[
     "tint": "hsl(68 58% 62%)"
   },
   {
-    "id": "morkahja-world-and-peoples",
-    "name": "Morkahja — World and Peoples",
-    "shortSummary": "Original fantasy worldbuilding centered on elemental peoples and places.",
-    "evidence": "document",
-    "tint": "hsl(205 58% 62%)"
-  },
-  {
     "id": "grimnir",
     "name": "Grimnir",
     "shortSummary": "Cultural and narrative material within the Morkahja world.",
@@ -383,8 +355,8 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "morkahjaworld",
     "name": "MorkahjaWorld",
-    "shortSummary": "Morkahja-named repository; detailed role not yet checked.",
-    "evidence": "name-only",
+    "shortSummary": "Worldbuilding for Morkahja: its peoples, places, cultures and lore.",
+    "evidence": "human-confirmed",
     "tint": "hsl(35 58% 62%)"
   },
   {
@@ -392,7 +364,8 @@ export const demoProjects:readonly DemoProject[]=[
     "name": "Arcanitebrothers",
     "shortSummary": "Development identity/repository associated with the Morkahja admin console.",
     "evidence": "repo",
-    "tint": "hsl(173 58% 62%)"
+    "tint": "hsl(173 58% 62%)",
+    "portalArtwork": "/portal-content/ArcaniteBrothers.webp"
   },
   {
     "id": "mech-arena",

@@ -80,3 +80,7 @@ Both originals were JPEG bytes and were converted to WebP for publication. These
 - `production-big-bloom-resize.webp` — verified thirteen-module big bloom after desktop/phone resize and reader return.
 
 AI desktop browser viewport evidence; no physical-device acceptance claimed. Encoded originals were JPEG and are retained outside public; published versions are WebP.
+
+## Owner project curation — 2026-10-28
+
+- `arcanitebrothers-banner-verified.webp` — AI desktop browser capture of supplied ArcaniteBrothers artwork loaded in the selected portal with eight preview modules. Menu was separately verified to contain 49 entries, zero withdrawn names and one MorkahjaWorld. Original capture is JPEG, retained outside public assets; publication is WebP. No physical-device check claimed.

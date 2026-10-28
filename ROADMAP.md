@@ -340,3 +340,15 @@ This supersedes the pending-publication state in the preceding preparation entry
 - [ ] Measure real hosting compression/network performance during deployment preparation.
 
 **Human long-session evidence:** Babuni.dev now reports no progressive slowdown after hours, little/no issue in Firefox and some remaining Chrome unevenness. This narrows the performance gap; no general Chrome/GPU or computer-uptime cause is proven. Existing keyboard and reader-control acceptance remain in force.
+
+## Owner curation and banner follow-up — 2026-10-28
+
+- [x] Remove the four explicitly withdrawn independent entries from grid/search/topics/mappings.
+- [x] Verify journal, decisions and collaboration remain within BABUNI.DEV.
+- [x] Keep MorkahjaWorld as the single retained worldbuilding entry and add an attributed scope clarification.
+- [x] Connect supplied Arcanitebrothers artwork without recompression.
+- [x] Prune only orphaned cached sources and pass catalog/content/tests/build checks.
+- [ ] Publish the website changes and perform human visual acceptance.
+- [ ] Later content work: bring the public MorkahjaWorld documentation edition into line with the newly confirmed worldbuilding scope.
+
+Active inventory is now 49 entries / 35 public-source connections. Earlier 53-entry counts are historical evidence, not current catalog totals. No additional project-family mergers or repository deletions are implied.
