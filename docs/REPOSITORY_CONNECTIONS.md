@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-34 of 42 tiles are connected to 34 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+35 of 43 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -39,14 +39,15 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 | Buxbrew | [babunidev/Buxbrew](https://github.com/babunidev/Buxbrew) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Amazin | [babunidev/amazin](https://github.com/babunidev/amazin) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | WarriorStartAttack | [babunidev/WarriorStartAttack](https://github.com/babunidev/WarriorStartAttack) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| Morkahja RPG | [babunidev/Morkahja-docs](https://github.com/babunidev/Morkahja-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| MorkahjaWorld | [babunidev/MorkahjaWorld-docs](https://github.com/babunidev/MorkahjaWorld-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Morkahja | [babunidev/Morkahja-docs](https://github.com/babunidev/Morkahja-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Morkahja Worldbuilding | [babunidev/MorkahjaWorld-docs](https://github.com/babunidev/MorkahjaWorld-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Arcanitebrothers | [babunidev/arcanitebrothers-docs](https://github.com/babunidev/arcanitebrothers-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Rocket Game 42 | [babunidev/Rocketgame42](https://github.com/babunidev/Rocketgame42) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 
 ## No matching repository found
 
 - Local AI Workstation (local-ai-workstation)
-- ROAR Guild and Community (roar-guild-and-community)
+- Roar Guild (roar-guild-and-community)
 - Buxbrew — character story (buxbrew-character-story)
 - Fantasy RPG Assets (fantasy-rpg-assets)
 - Fantasy Architecture (fantasy-architecture)
@@ -73,7 +74,7 @@ Related sources are known, but an independent public repository is not confirmed
 - Azeroth Moments uses the public `AzerothMoments` documentation shell. Its README states that the active application lives separately; that private implementation was not imported.
 - Human curation on 2026-10-28 removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples from the active catalog. Their historical inventory evidence is retained; no GitHub repository was deleted.
 - MorkahjaWorld is the retained worldbuilding tile, as clarified by Babuni.dev. Its public edition predates this correction; a later reviewed public-source refresh can expand it.
-- `babunidev/Rocketgame42` is an additional public repository found during discovery, but has no matching current tile. It was not silently added to the approved grid inventory.
+- Babuni.dev explicitly added Rocket Game 42 on 2026-10-28; it maps to the anonymously verified public Rocketgame42 repository. Historical discovery alone was not treated as approval.
 
 ## Shared documentation contract
 

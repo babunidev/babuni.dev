@@ -4,16 +4,16 @@ import {demoProjects,DEMO_PROJECT_COUNT} from '../src/lib/demo-projects.ts';
 import {gridWindow} from '../src/lib/grid-math.ts';
 import {ProjectPlacement,visibleCellBounds,spiralIndex} from '../src/lib/project-placement.ts';
 
-test('exactly 42 retained project entries have unique provisional IDs and summaries',()=>{
-  assert.equal(DEMO_PROJECT_COUNT,42);
-  assert.equal(demoProjects.length,42);
+test('exactly 43 retained project entries have unique provisional IDs and summaries',()=>{
+  assert.equal(DEMO_PROJECT_COUNT,43);
+  assert.equal(demoProjects.length,43);
   assert.equal(demoProjects[0].name,'BABUNI.DEV');
   assert.deepEqual(demoProjects.slice(1,5).map(x=>x.name),[
     'Button Game','SocialForever','RoarForever','FlourishForever'
   ]);
-  assert.equal(demoProjects.at(-1).name,'Analubia');
-  assert.equal(new Set(demoProjects.map(x=>x.id)).size,42);
-  assert.equal(new Set(demoProjects.map(x=>x.name)).size,42);
+  assert.equal(demoProjects.at(-1).name,'Rocket Game 42');
+  assert.equal(new Set(demoProjects.map(x=>x.id)).size,43);
+  assert.equal(new Set(demoProjects.map(x=>x.name)).size,43);
   assert.ok(demoProjects.every(x=>x.id&&x.shortSummary&&x.evidence&&x.tint));
   assert.ok(demoProjects.every(x=>!/^PROJECT \d+$/.test(x.name)));
 });
@@ -34,17 +34,17 @@ test('initial desktop fills 45 visible cells with the retained library in spiral
    if(column>=b.firstColumn&&column<=b.lastColumn&&row>=b.firstRow&&row<=b.lastRow)visible.push(cell);
   }
  assert.equal(visible.length,45);
- const planner=new ProjectPlacement(demoProjects.length);
+ const planner=new ProjectPlacement(demoProjects.length,5);
  planner.sync(visible,retained);
- const names=visible.map(cell=>demoProjects[planner.get(cell)].name);
- assert.equal(new Set(names).size,Math.min(visible.length,demoProjects.length));
+ const names=visible.map(cell=>demoProjects[planner.get(cell)]?.name);
+ assert.equal(new Set(names.filter(Boolean)).size,Math.min(visible.length,demoProjects.length));
  assert.equal(demoProjects[planner.get({column:0,row:0})].name,'BABUNI.DEV');
  assert.equal(demoProjects[planner.get({column:0,row:-1})].name,'Button Game');
  assert.equal(demoProjects[planner.get({column:1,row:-1})].name,'SocialForever');
  assert.equal(demoProjects[planner.get({column:0,row:-2})].name,'FavorCraft');
  assert.deepEqual(visible
    .slice().sort((a,b)=>spiralIndex(a.column,a.row)-spiralIndex(b.column,b.row))
-   .map(cell=>planner.get(cell)),Array.from({length:45},(_,i)=>i%demoProjects.length));
+   .map(cell=>planner.get(cell)),Array.from({length:45},(_,i)=>i));
 });
 
 test('human-withdrawn entries are absent and BABUNI keeps the collaboration documents',()=>{

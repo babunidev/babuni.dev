@@ -498,3 +498,10 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — Local Prompt Lab is part of Anskar Grotzschnapf
 
 **Babuni.dev clarified:** Local Prompt Lab is part of the Anskar Grotzschnapf project, not an independent project. **AI implementation:** removed the standalone catalog/topic/mapping records, retaining Anskar Grotzschnapf and its existing public source unchanged. No imported Local Prompt Lab snapshot or curated modules existed to transfer. Preserve supplied LocalPromptLab.webp as historical artwork rather than delete it. Active totals: 42 entries, 34 connected public sources, six missing-repository entries and two family-clarification entries. Nineteen active artwork assignments; twenty supplied portal WebPs retained. No repository deletion, automatic source rewrite or interaction change. Verification is recorded in DEVLOG.
+
+
+## 2026-10-28 — Neutral capacity without resizing (implemented)
+
+**Babuni.dev direction/decision:** five gray decorative placeholders, no portal or project, rather than the AI's proposed tile enlargement. Preserve timing and position feel. **AI implementation:** real-project uniqueness includes entering/departing overlap; continuing assignments are never repaired by visible renaming. Five neutral identities can repeat decoratively if exhausted; no extra project records are invented. Stable fillers may remain until recycled. Alternative of reusing a departing real project during animation rejected because both copies are still visible. Revisit filler aesthetics after human testing.
+
+Requested names and Rocket Game 42 addition are implemented. Menu-only grouping is **proposed, not approved/implemented**; see PROJECT_GROUPING_PROPOSAL.md. RoarGuild vs Roar Guild and the two admin-console candidates remain separate pending review.

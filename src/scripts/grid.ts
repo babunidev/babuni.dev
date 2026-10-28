@@ -38,7 +38,7 @@ if (viewport && world && resetButton && status) {
   const bufferCells=2;
   let columnBufferCells=2;
   // First inventory entry is BABUNI.DEV; remaining candidates are human-curated but retain provisional evidence labels.
-  const placement=new ProjectPlacement(demoProjects.length);
+  const placement=new ProjectPlacement(demoProjects.length,5);
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
   let slots:TileSlot[]=[];
@@ -142,7 +142,7 @@ if (viewport && world && resetButton && status) {
   });
 
   function keyboardItems():KeyboardItem[]{
-    const tiles=slots.filter(slot=>slot.projectIndex!==undefined).map(slot=>{
+    const tiles=slots.filter(slot=>slot.projectIndex!==undefined&&slot.projectIndex<demoProjects.length).map(slot=>{
       const cell=paintedCell(slot);
       return {element:slot.element.querySelector<HTMLButtonElement>('.tile-select')!,container:slot.element,x:cell.column+.5,y:cell.row+.5};
     });
@@ -187,6 +187,7 @@ if (viewport && world && resetButton && status) {
     activeTopic=null;
   }
   function showTopic(tile:HTMLDivElement,point:TopicPoint|'all'='all'):void {
+    if(tile.classList.contains('grid-tile--placeholder')){hideTopic();return;}
     if(tile.getAttribute('aria-hidden')==='true')return;
     // Suppress only the open bloom's physical anchor, not other copies
     // of that project or the queued destination of a selection switch.
@@ -228,7 +229,7 @@ if (viewport && world && resetButton && status) {
   }
   function choiceFor(tile:HTMLDivElement):ProjectChoice|null {
     const slot=slots.find(slot=>slot.element===tile);
-    if(!slot||slot.projectIndex===undefined)return null;
+    if(!slot||slot.projectIndex===undefined||!demoProjects[slot.projectIndex])return null;
     // A shifting tile can already be visibly entering from the buffer while
     // its resting-position aria-hidden flag still says it is offscreen.
     const box=tile.getBoundingClientRect(),view=surface.getBoundingClientRect();
@@ -284,12 +285,23 @@ if (viewport && world && resetButton && status) {
     const source=sourceAtCell(column,row);
     // Unreserved outer buffer cells receive a temporary visual ID until they
     // approach the retention band; this never consumes a visible project.
-    const projectIndex=placement.get(source)??spiralIndex(source.column,source.row)%placement.projectCount;
+    const projectIndex=placement.get(source)??spiralIndex(source.column,source.row)%placement.capacity;
     if(!force&&slot.projectIndex===projectIndex)return;
     if(activeTopic===slot.element)hideTopic();
     slot.projectIndex=projectIndex;
     const isOrigin=projectIndex===0;
     const project=demoProjects[projectIndex];
+    slot.element.classList.toggle('grid-tile--placeholder',!project);
+    const control=slot.element.querySelector<HTMLButtonElement>('.tile-select');
+    if(control)control.disabled=!project;
+    if(!project){
+      delete slot.element.dataset.projectId;delete slot.element.dataset.projectSummary;
+      slot.element.classList.remove('grid-tile--origin','grid-tile--long-title','grid-tile--topic-open');
+      slot.element.querySelector('.tile-portal')?.replaceChildren();
+      const name=slot.element.querySelector('.tile-name');if(name)name.textContent='';
+      control?.removeAttribute('aria-label');
+      return;
+    }
     slot.element.dataset.projectId=project.id;
     slot.element.dataset.projectSummary=project.shortSummary;
     slot.element.style.setProperty('--portal-color',project.tint);
@@ -978,7 +990,7 @@ if (viewport && world && resetButton && status) {
     // unlike resting row/column indices or a simple aria-hidden check.
     const chosenSlot=bloomModule?bloomAnchor:null;
     const eligible=slots.filter(slot=>
-      slot.projectIndex!==undefined
+      slot.projectIndex!==undefined&&slot.projectIndex<demoProjects.length
       &&slot.element.getAttribute('aria-hidden')==='false'
       // Avoid the centered tile, its bloom row, and actively moving tiles.
       &&(!chosenSlot||slot.row!==chosenSlot.row)

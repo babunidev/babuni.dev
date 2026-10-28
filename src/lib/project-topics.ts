@@ -6,6 +6,7 @@
  */
 export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "babuni-dev": "Interactive portfolio",
+  "rocket-game-42": "Arcade defence",
   "button-game": "Reaction game",
   "socialforever": "Social addon",
   "roarforever": "Game audio",
@@ -64,6 +65,10 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
   "babuni-dev": [
     "Living grid",
     "Creative process"
+  ],
+  "rocket-game-42": [
+    "Mothership defence",
+    "Browser and Electron"
   ],
   "button-game": [
     "Android game",

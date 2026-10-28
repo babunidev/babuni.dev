@@ -84,3 +84,11 @@ AI desktop browser viewport evidence; no physical-device acceptance claimed. Enc
 ## Owner project curation — 2026-10-28
 
 - `arcanitebrothers-banner-verified.webp` — AI desktop browser capture of supplied ArcaniteBrothers artwork loaded in the selected portal with eight preview modules. Menu was separately verified to contain 49 entries, zero withdrawn names and one MorkahjaWorld. Original capture is JPEG, retained outside public assets; publication is WebP. No physical-device check claimed.
+
+
+## Curation and neutral grid verification — 2026-10-28
+
+AI browser captures, not human phone acceptance. Original encoded captures retained outside public assets; published versions converted to quality-85 WebP.
+
+- `curated-grid-default.webp` — default viewport with curated project artwork.
+- `curated-grid-desktop.webp` — 1920×1080 viewport with partially visible edges and neutral vacancy at left; autonomous shift active. Not evidence of a new tile-size decision.

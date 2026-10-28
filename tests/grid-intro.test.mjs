@@ -19,10 +19,10 @@ test('tiles spawn center-first clockwise, independently of DOM pool iteration',(
 test('45 initial desktop tiles spawn in assigned project-number order',()=>{
   const cells=[];
   for(let y=-2;y<=2;y++)for(let x=-4;x<=4;x++)cells.push(at(x,y));
-  const placement=new ProjectPlacement(demoProjects.length);
+  const placement=new ProjectPlacement(demoProjects.length,5);
   const retained=[];
   for(let y=-4;y<=4;y++)for(let x=-6;x<=6;x++)retained.push(at(x,y));
   placement.sync(cells,retained);
   const ordered=introSequence(cells,c=>c);
-  assert.deepEqual(ordered.map(c=>placement.get(c)),Array.from({length:45},(_,i)=>i%demoProjects.length));
+  assert.deepEqual(ordered.map(c=>placement.get(c)),Array.from({length:45},(_,i)=>i));
 });

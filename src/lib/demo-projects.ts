@@ -1,6 +1,6 @@
 /**
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
- * (53 initial candidates, 2026-10-26; 42 retained after human curation on 2026-10-28).
+ * (53 initial candidates, 2026-10-26; 43 retained after curation and Rocket Game 42 addition on 2026-10-28).
  * Removed duplicates and non-projects are documented in the source inventory.
  * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
@@ -16,7 +16,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=42;
+export const DEMO_PROJECT_COUNT=43;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -262,10 +262,11 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roar-guild-and-community",
-    "name": "ROAR Guild and Community",
+    "name": "Roar Guild",
     "shortSummary": "WoW guild community design and shared roleplaying rituals.",
     "evidence": "conversation",
-    "tint": "hsl(323 58% 62%)"
+    "tint": "hsl(323 58% 62%)",
+    "portalArtwork": "/portal-content/ROARGuild.webp"
   },
   {
     "id": "buxbrew-character-story",
@@ -297,7 +298,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "morkahja-rpg",
-    "name": "Morkahja RPG",
+    "name": "Morkahja",
     "shortSummary": "Multiplayer fantasy adventure game and development history.",
     "evidence": "repo-context",
     "tint": "hsl(120 58% 62%)"
@@ -311,7 +312,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "morkahjaworld",
-    "name": "MorkahjaWorld",
+    "name": "Morkahja Worldbuilding",
     "shortSummary": "Worldbuilding for Morkahja: its peoples, places, cultures and lore.",
     "evidence": "human-confirmed",
     "tint": "hsl(35 58% 62%)"
@@ -330,5 +331,12 @@ export const demoProjects:readonly DemoProject[]=[
     "shortSummary": "Historical fantasy RPG project associated with Sundust Studios.",
     "evidence": "conversation",
     "tint": "hsl(88 58% 62%)"
+  },
+  {
+    "id": "rocket-game-42",
+    "name": "Rocket Game 42",
+    "shortSummary": "Arcade mothership-defence game reconstructed for the browser and packaged with Electron.",
+    "evidence": "repo",
+    "tint": "#b57348"
   }
 ];

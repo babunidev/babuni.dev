@@ -249,6 +249,16 @@
           "src": "/media/babuni-dev/images/verification/arcanitebrothers-banner-verified.webp",
           "alt": "Arcanitebrothers selected with the supplied banner in its circular portal and eight preview modules.",
           "caption": "AI desktop browser, 2026-10-28: supplied 1536px ArcaniteBrothers WebP decoded successfully; 49-entry menu excludes the four withdrawn projects. Historical screenshot after catalog curation."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/curated-grid-default.webp",
+          "alt": "curated grid default",
+          "caption": "AI browser capture at the default viewport; curated projects before the dense desktop check."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/curated-grid-desktop.webp",
+          "alt": "curated grid desktop",
+          "caption": "AI browser capture at 1920×1080, including partly visible edges and a neutral tile at the left edge. Shifts were active; this is not physical-device acceptance."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

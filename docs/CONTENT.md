@@ -308,3 +308,10 @@ Babuni.dev additionally withdraws The Amberbrew Family and Practical Templates C
 ## 2026-10-28 — Local Prompt Lab is part of Anskar Grotzschnapf
 
 **Babuni.dev clarified:** Local Prompt Lab is part of the Anskar Grotzschnapf project, not an independent project. **AI implementation:** removed the standalone catalog/topic/mapping records, retaining Anskar Grotzschnapf and its existing public source unchanged. No imported Local Prompt Lab snapshot or curated modules existed to transfer. Preserve supplied LocalPromptLab.webp as historical artwork rather than delete it. Active totals: 42 entries, 34 connected public sources, six missing-repository entries and two family-clarification entries. Nineteen active artwork assignments; twenty supplied portal WebPs retained. No repository deletion, automatic source rewrite or interaction change. Verification is recorded in DEVLOG.
+
+
+## 2026-10-28 — Curated catalog and Rocket Game 42
+
+Babuni.dev requested Rocket Game 42 (`rocket-game-42`), connected to public `babunidev/Rocketgame42`. Ten allowlisted documents were imported at `29028bcd2ed476de92bbed96d6f464e0c2968383`, verifying public access without publishing private sources. Existing snapshots were preserved. The catalog contains 43 projects and 35 public repository connections. Requested display renames preserve existing semantic IDs: Morkahja, Morkahja Worldbuilding, Roar Guild. The latter shares `ROARGuild.webp` with the still-separate addon. Twenty active project-art assignments use nineteen unique supplied files; older unused supplied art is retained.
+
+Five neutral tile identities are renderer-only decoration, excluded from catalog/search/modules. The complete menu grouping proposal lists all 43 projects; classification and potential duplicate merges remain for Babuni.dev review, not automatic implementation.

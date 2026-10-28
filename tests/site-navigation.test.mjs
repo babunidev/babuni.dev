@@ -34,3 +34,11 @@ test('direct reservation replaces a stale buffered identity before camera recycl
  placement.sync([source],[source,{column:6,row:0}],source);
  assert.equal(placement.get(source),3);
 });
+
+test('renamed and newly added projects are directly findable; fillers are not projects',()=>{
+ assert.equal(matchingProjects('Rocket Game 42')[0].id,'rocket-game-42');
+ assert.equal(matchingProjects('Worldbuilding')[0].id,'morkahjaworld');
+ assert.ok(matchingProjects('Roar Guild').some(p=>p.id==='roar-guild-and-community'&&p.name==='Roar Guild'));
+ assert.equal(matchingProjects('placeholder').length,0);
+ assert.equal(matchingProjects('').length,43);
+});

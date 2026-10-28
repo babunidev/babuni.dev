@@ -11,11 +11,11 @@ const local=Object.fromEntries(REPOSITORY_DOCUMENTS.map(d=>[d.path,readFileSync(
 const commit='a'.repeat(40),connection={status:'connected',repository:'babunidev/example',branch:'master'};
 const metadata={private:false,visibility:'public',full_name:'babunidev/example'};
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
-test('all 42 tiles have explicit status; all public source snapshots match their mapping',()=>{
+test('all 43 tiles have explicit status; all public source snapshots match their mapping',()=>{
  assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
  assert.deepEqual(validateSnapshots(connections,snapshots),[]);
- assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,34);
- assert.equal(Object.keys(snapshots).length,33);
+ assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,35);
+ assert.equal(Object.keys(snapshots).length,34);
  for(const [id,c] of Object.entries(connections)){
   const source=repositoryModules(c,snapshots[c.repository],local);
   if(c.status!=='connected'){assert.deepEqual(source,[]);continue;}

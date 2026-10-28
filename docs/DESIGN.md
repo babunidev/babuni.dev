@@ -447,3 +447,8 @@ Babuni.dev additionally removes The Amberbrew Family and Practical Templates Cre
 ## 2026-10-28 — Local Prompt Lab is part of Anskar Grotzschnapf
 
 **Babuni.dev clarified:** Local Prompt Lab is part of the Anskar Grotzschnapf project, not an independent project. **AI implementation:** removed the standalone catalog/topic/mapping records, retaining Anskar Grotzschnapf and its existing public source unchanged. No imported Local Prompt Lab snapshot or curated modules existed to transfer. Preserve supplied LocalPromptLab.webp as historical artwork rather than delete it. Active totals: 42 entries, 34 connected public sources, six missing-repository entries and two family-clarification entries. Nineteen active artwork assignments; twenty supplied portal WebPs retained. No repository deletion, automatic source rewrite or interaction change. Verification is recorded in DEVLOG.
+
+
+## 2026-10-28 — Decorative vacancies after curation
+
+Babuni.dev chose five neutral gray filler identities, with no portal/name/project and a subtle central mark. AI supplied a CSS incised diamond. Use these vacancies when unique real projects cannot fill the visible/incoming area; preserve them until recycled rather than visibly swapping their identity. They are inert, do not show bubbles and never appear in the Projects menu. Larger windows may repeat neutral decoration. Tile dimensions and the calm shift tempo are unchanged. Display names now include Morkahja, Morkahja Worldbuilding and Roar Guild. Proposed menu groups are in PROJECT_GROUPING_PROPOSAL.md; grid ordering is not categorized.

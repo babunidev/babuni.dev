@@ -185,3 +185,57 @@ test('open bloom source survives panning beyond the DOM pool and returning',()=>
  mgr.sync(box(100,100,2,2),box(100,100,4,4));
  assert.equal(mgr.get(anchor),undefined,'unselected distant identity can be reclaimed');
 });
+
+test('decorative capacity avoids real-project duplicates and identity swaps after catalog changes',()=>{
+ for(const count of [12,42,43,53]){
+  const manager=new ProjectPlacement(count,5),visible=box(0,0,4,2),buffer=box(0,0,6,4),history=[];
+  const source=cell=>sourceCell(cell.column,cell.row,history);
+  manager.sync(visible,buffer);
+  for(let round=0;round<240;round++){
+   const before=visible.map(source),old=new Map(before.map(c=>[c.column+','+c.row,manager.get(c)]));
+   const axis=round%2?'row':'column',direction=round%4<2?1:-1;
+   const move={axis,line:0,direction},pair=enteringAndDeparting(move);
+   manager.stageEntrances([{incoming:source(pair.incoming),departing:source(pair.departing)}]);
+   const incomingSource=source(pair.incoming),entering=manager.get(incomingSource);
+   if(entering<count)assert.ok(![...old.values()].includes(entering),'new project must not duplicate a still-visible departing tile');
+   history.push(move);const after=visible.map(source);manager.sync(after,buffer.map(source));
+   const projects=after.map(c=>manager.get(c)).filter(id=>id<count);
+   assert.equal(new Set(projects).size,projects.length,'real project duplicated');
+   for(const c of after){const id=c.column+','+c.row;if(old.has(id))assert.equal(manager.get(c),old.get(id),'continuing tile changed identity');}
+   assert.equal(manager.get(incomingSource),entering,'entering tile changed identity at settlement');
+   for(const c of after){const index=manager.get(c);assert.ok(index>=0&&index<manager.capacity);}
+  }
+ }
+});
+test('panning with a reduced library uses anonymous fillers and preserves continuing residents',()=>{
+ const manager=new ProjectPlacement(20,5);
+ let previous=new Map();
+ for(let step=0;step<80;step++){
+  const visible=box(step,Math.floor(step/9),4,2),retained=box(step,Math.floor(step/9),6,4);
+  manager.sync(visible,retained);
+  const projects=visible.map(c=>manager.get(c)).filter(id=>id<manager.projectCount);
+  assert.equal(new Set(projects).size,projects.length);
+  for(const c of visible){const k=c.column+','+c.row;if(previous.has(k))assert.equal(manager.get(c),previous.get(k));}
+  previous=new Map(visible.map(c=>[c.column+','+c.row,manager.get(c)]));
+ }
+});
+
+import {moduleVacancies,restingCell} from '../src/lib/bloom-geometry.ts';
+import {MODULE_OFFSETS} from '../src/lib/project-modules.ts';
+test('reduced catalog stays stable while visual columns beside a bloom shift',()=>{
+ const holes=moduleVacancies(p(0,0),MODULE_OFFSETS),history=[],manager=new ProjectPlacement(43,5);
+ const clear=cell=>!holes.some(h=>h.column===cell.column&&h.row===cell.row);
+ const cells=box(0,0,4,2).filter(clear),band=box(0,0,6,4).filter(clear);
+ const source=cell=>{const resting=restingCell(cell,holes);return sourceCell(resting.column,resting.row,history);};
+ const pinned=p(0,0);manager.sync(cells.map(source),band.map(source),pinned);
+ for(let round=0;round<100;round++){
+  const move={axis:'column',line:3,direction:round%2?1:-1,vacancies:holes};
+  const old=new Map(cells.map(source).map(c=>[c.column+','+c.row,manager.get(c)]));
+  const pair=enteringAndDeparting(move),incoming=source(pair.incoming);
+  manager.stageEntrances([{incoming,departing:source(pair.departing)}]);const expected=manager.get(incoming);
+  history.push(move);const after=cells.map(source);manager.sync(after,band.map(source),pinned);
+  const real=after.map(c=>manager.get(c)).filter(id=>id<43);assert.equal(new Set(real).size,real.length);
+  for(const c of after){const k=c.column+','+c.row;if(old.has(k))assert.equal(manager.get(c),old.get(k));}
+  assert.equal(manager.get(incoming),expected);
+ }
+});

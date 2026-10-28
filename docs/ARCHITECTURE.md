@@ -453,3 +453,10 @@ Removed two unresolved IDs consistently from the catalog, repository mappings an
 ## 2026-10-28 — Local Prompt Lab is part of Anskar Grotzschnapf
 
 **Babuni.dev clarified:** Local Prompt Lab is part of the Anskar Grotzschnapf project, not an independent project. **AI implementation:** removed the standalone catalog/topic/mapping records, retaining Anskar Grotzschnapf and its existing public source unchanged. No imported Local Prompt Lab snapshot or curated modules existed to transfer. Preserve supplied LocalPromptLab.webp as historical artwork rather than delete it. Active totals: 42 entries, 34 connected public sources, six missing-repository entries and two family-clarification entries. Nineteen active artwork assignments; twenty supplied portal WebPs retained. No repository deletion, automatic source rewrite or interaction change. Verification is recorded in DEVLOG.
+
+
+## 2026-10-28 — Placement capacity and shift identity
+
+`ProjectPlacement(projectCount, placeholderCount)` separates real catalog indices from optional neutral indices. Runtime uses five neutral identities. `stageEntrances` reserves all last-visible values (including departures), plus the pinned selection, then assigns final incoming identities before movement. `sync` preserves continuing source assignments and reserves an offscreen pinned project against clones. Free real IDs are preferred; neutral capacity absorbs shortages and may repeat decoratively. Legacy zero-filler callers retain the old saturation fallback. Source coordinates still reverse completed shift history, including displaced bloom columns; no diagonal animation workaround was added.
+
+Rendering explicitly clears project datasets/art/text and disables neutral controls; keyboard, topics and selection filter neutral indices. Fillers are not content records. Shared portal filename imports are deduplicated, allowing two retained guild entries to use one WebP without duplicate processing. Current content: 43 real projects, 35 connected public repositories including this site, 34 external snapshots, 326 external plus ten local documents prepared separately.

@@ -4,9 +4,9 @@ import {fileURLToPath} from 'node:url';
 import {demoProjects} from '../src/lib/demo-projects.ts';
 
 const repositoryRoot=fileURLToPath(new URL('..',import.meta.url));
-export const PORTAL_WEBP_ASSETS=demoProjects
+export const PORTAL_WEBP_ASSETS=[...new Map(demoProjects
   .filter(project=>Boolean(project.portalArtwork))
-  .map(project=>({projectId:project.id,filename:basename(project.portalArtwork)}));
+  .map(project=>[basename(project.portalArtwork),{projectId:project.id,filename:basename(project.portalArtwork)}])).values()];
 
 /** Linux file managers may show spaces or alternate capitalization. Keep
  * the original WebP bytes; only standardize names in the repository.

@@ -512,3 +512,19 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Removed
 - Removed Local Prompt Lab as an independent grid/search project, including topics and its unresolved repository mapping, at Babuni.dev’s direction that it belongs within Anskar Grotzschnapf. Active catalog: 42 projects. Its supplied WebP remains preserved, with no standalone assignment.
+
+
+## 2026-10-28 — Stable curated grid and neutral fillers
+
+### Fixed
+- Preserve continuing tile identities when shifts settle; protect departing projects until their animation finishes. Entering tiles receive their final identity before moving.
+- Use five neutral filler identities instead of cloning visible projects when the catalog cannot fill all occupied positions. Fillers have no project, portal, bubbles, navigation or menu entry.
+
+### Added
+- Rocket Game 42, its public repository connection and ten reviewed source-document snapshots.
+- Gray engraved-diamond filler styling and regression coverage for catalog size changes, panning and displaced bloom columns.
+- Two archived WebP browser captures and a complete menu-grouping proposal for human review.
+
+### Changed
+- Display names: Morkahja, Morkahja Worldbuilding and Roar Guild; stable identifiers retained. Community Roar Guild now uses the existing guild WebP, shared with the addon entry.
+- No tile sizing or animation timing changes; menu grouping remains a proposal.

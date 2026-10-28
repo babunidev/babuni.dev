@@ -23,7 +23,7 @@ export function repositoryReport(projects,connections,snapshots){
  '- Azeroth Moments uses the public `AzerothMoments` documentation shell. Its README states that the active application lives separately; that private implementation was not imported.',
  '- Human curation on 2026-10-28 removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples from the active catalog. Their historical inventory evidence is retained; no GitHub repository was deleted.',
  '- MorkahjaWorld is the retained worldbuilding tile, as clarified by Babuni.dev. Its public edition predates this correction; a later reviewed public-source refresh can expand it.',
- '- `babunidev/Rocketgame42` is an additional public repository found during discovery, but has no matching current tile. It was not silently added to the approved grid inventory.',
+ '- Babuni.dev explicitly added Rocket Game 42 on 2026-10-28; it maps to the anonymously verified public Rocketgame42 repository. Historical discovery alone was not treated as approval.',
  '', '## Shared documentation contract','',
  ...REPOSITORY_DOCUMENTS.map(d=>`- ${d.title}: \`${d.path}\``),
  '', 'Only existing, nonempty files become modules. Missing paths are omitted, not filled with invented text. Existing manual media/resources remain. Small bloom still samples up to eight; big bloom exposes all populated modules. Source buttons point to the exact fetched revision; BABUNI.DEV working documents link to main.',

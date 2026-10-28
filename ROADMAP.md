@@ -376,3 +376,14 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 ## 2026-10-28 — Local Prompt Lab is part of Anskar Grotzschnapf
 
 **Babuni.dev clarified:** Local Prompt Lab is part of the Anskar Grotzschnapf project, not an independent project. **AI implementation:** removed the standalone catalog/topic/mapping records, retaining Anskar Grotzschnapf and its existing public source unchanged. No imported Local Prompt Lab snapshot or curated modules existed to transfer. Preserve supplied LocalPromptLab.webp as historical artwork rather than delete it. Active totals: 42 entries, 34 connected public sources, six missing-repository entries and two family-clarification entries. Nineteen active artwork assignments; twenty supplied portal WebPs retained. No repository deletion, automatic source rewrite or interaction change. Verification is recorded in DEVLOG.
+
+
+## 2026-10-28 — Curation integrity follow-up
+
+- [x] Diagnose visible identity replacement at shift completion and protect departing/incoming identities.
+- [x] Implement Babuni.dev's five neutral filler identities, preserving tile size and shift timing.
+- [x] Regression checks across catalog growth/reduction, 960 shifts, panning and displaced bloom columns; short desktop browser uniqueness check.
+- [x] Add Rocket Game 42, requested names and shared Roar Guild artwork.
+- [x] Draft complete 43-project menu grouping proposal.
+- [ ] Babuni.dev review/approve menu grouping and possible duplicate project entries before implementation.
+- [ ] Extended desktop/phone verification after catalog changes: no identity swaps, stable blooms/direct navigation, neutral tiles inert. Short browser checks do not close this acceptance task.

@@ -94,6 +94,9 @@ const title='babuni.dev — Living Grid Prototype';
     73%{opacity:1;transform:scale(1.065)}
     100%{opacity:1;transform:scale(1)}
   }
+  .grid-tile--placeholder .tile-portal-cluster,.grid-tile--placeholder .tile-name,.grid-tile--placeholder .tile-select{display:none}
+  .grid-tile--placeholder .tile-face{background:radial-gradient(ellipse at 42% 40%,#49494a,#363638 65%,#2d2d2f);border-color:#646466}
+  .grid-tile--placeholder .tile-face::after{content:"";position:absolute;left:50%;top:50%;width:24px;height:24px;transform:translate(-50%,-50%) rotate(45deg);border:1px solid #81818466;box-shadow:inset 2px 2px 3px #1117,1px 1px 1px #aaa2;pointer-events:none}
   .tile-face::before{content:'';position:absolute;inset:9px;border:1px solid #777068;opacity:.43;pointer-events:none}
   /* One shared portal circle; its three diamond markers use the same radius.
      Anchoring to the portal rather than the label keeps every tile symmetric. */

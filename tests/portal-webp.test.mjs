@@ -10,7 +10,7 @@ test('all supplied portal artworks are mapped to direct WebP paths',()=>{
   assert.equal(PORTAL_WEBP_ASSETS.length,19);
   assert.equal(new Set(PORTAL_WEBP_ASSETS.map(x=>x.filename)).size,19);
   const items=demoProjects.filter(x=>x.portalArtwork);
-  assert.equal(items.length,19);
+  assert.equal(items.length,20);
   for(const project of items){
     assert.match(project.portalArtwork,/^\/portal-content\/[A-Za-z0-9]+\.webp$/);
     assert.ok(existsSync(new URL('../public'+project.portalArtwork,import.meta.url)),project.id);
@@ -57,4 +57,9 @@ test('renderer uses the direct image path without a PNG fallback',()=>{
   const source=readFileSync(new URL('../src/scripts/grid.ts',import.meta.url),'utf8');
   assert.match(source,/image\.src=project\.portalArtwork!/);
   assert.doesNotMatch(source,/portalArtworkWebp/);
+});
+
+test('community Roar Guild shares the supplied guild artwork without duplicate file imports',()=>{
+ assert.equal(demoProjects.find(p=>p.id==='roar-guild-and-community').portalArtwork,'/portal-content/ROARGuild.webp');
+ assert.equal(PORTAL_WEBP_ASSETS.filter(p=>p.filename==='ROARGuild.webp').length,1);
 });

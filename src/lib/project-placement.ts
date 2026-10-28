@@ -29,16 +29,20 @@ export function visibleCellBounds(width:number,height:number,tileSize:number,ori
 
 /** Content remains resident until beyond the two-cell retention band.
  * Offscreen duplicates are allowed; visible cells first claim unused projects.
- * When there are fewer distinct projects than visible cells, repeats are required.
+ * Optional decorative filler identities avoid repeating real projects in dense views.
  */
 export class ProjectPlacement {
   private assigned=new Map<string,number>();
   private lastVisible=new Set<string>();
   private cursor=0;
+  private fillerCursor=0;
+  private pinnedKey:string|null=null;
   readonly projectCount:number;
-  constructor(projectCount:number){
+  readonly placeholderCount:number;
+  constructor(projectCount:number,placeholderCount=0){
     if(!Number.isInteger(projectCount)||projectCount<1)throw new RangeError('No projects to place');
-    this.projectCount=projectCount;
+    if(!Number.isInteger(placeholderCount)||placeholderCount<0)throw new RangeError('Invalid filler count');
+    this.projectCount=projectCount;this.placeholderCount=placeholderCount;
   }
   get(cell:CellCoordinate):number|undefined{return this.assigned.get(key(cell));}
   /** Direct navigation may reserve a currently offscreen recycled cell. */
@@ -47,25 +51,32 @@ export class ProjectPlacement {
     this.assigned.set(key(cell),index);
   }
   get size():number{return this.assigned.size;}
+  get capacity():number{return this.projectCount+this.placeholderCount;}
   private choose(usedVisible:Set<number>,usedRetained:Set<number>):number {
-    // Prefer entirely free IDs, then IDs only offscreen, then unavoidable repeats.
-    for(let pass=0;pass<3;pass++){
-      for(let n=0;n<this.projectCount;n++){
-        const index=(this.cursor+n)%this.projectCount;
-        if(pass===0&&(usedVisible.has(index)||usedRetained.has(index)))continue;
-        if(pass===1&&usedVisible.has(index))continue;
-        this.cursor=(index+1)%this.projectCount;
-        return index;
-      }
+    // Use real projects uniquely first; decorative fillers absorb shortages.
+    for(let pass=0;pass<2;pass++)for(let n=0;n<this.projectCount;n++){
+      const index=(this.cursor+n)%this.projectCount;
+      if(usedVisible.has(index)||(pass===0&&usedRetained.has(index)))continue;
+      this.cursor=(index+1)%this.projectCount;return index;
     }
-    throw new Error('Unreachable project selection');
+    if(this.placeholderCount){
+      for(let n=0;n<this.placeholderCount;n++){
+        const offset=(this.fillerCursor+n)%this.placeholderCount,index=this.projectCount+offset;
+        if(usedVisible.has(index))continue;
+        this.fillerCursor=(offset+1)%this.placeholderCount;return index;
+      }
+      const index=this.projectCount+this.fillerCursor;
+      this.fillerCursor=(this.fillerCursor+1)%this.placeholderCount;return index;
+    }
+    // Legacy mathematical fallback for callers without decorative filler capacity.
+    const index=this.cursor;this.cursor=(index+1)%this.projectCount;return index;
   }
   /** Give each entering offscreen tile its FINAL project before a line begins moving.
    * An incoming buffer tile may currently duplicate a visible project; without
    * staging, sync() would rename it on the final animation frame.
    *
-   * Prefer its existing identity when it will be unique at rest; otherwise reuse
-   * the project leaving at the opposite side. Do not change any currently
+   * Protect all still-visible projects, including departures. Prefer an existing
+   * unique project or a free project; use neutral filler capacity when necessary. Do not change any currently
    * visible source-cell assignment while a shift is in progress.
    */
   stageEntrances(pairs:readonly {incoming:CellCoordinate;departing:CellCoordinate}[]):void {
@@ -77,19 +88,22 @@ export class ProjectPlacement {
       const project=this.assigned.get(id);
       if(project!==undefined)continuing.add(project);
     }
-    const reserved=new Set(continuing);
+    // Departing tiles remain on screen during the animation: protect them too.
+    const reserved=new Set<number>();
+    for(const id of this.lastVisible){const value=this.assigned.get(id);if(value!==undefined)reserved.add(value);}
+    if(this.pinnedKey){const value=this.assigned.get(this.pinnedKey);if(value!==undefined)reserved.add(value);}
     const currentlyReserved=new Set(this.assigned.values());
     for(const pair of pairs){
       const incomingKey=key(pair.incoming);
       // An already visible tile must never be reassigned by staging.
       if(this.lastVisible.has(incomingKey))continue;
       const current=this.assigned.get(incomingKey);
-      if(current!==undefined&&!reserved.has(current)){
+      if(current!==undefined&&current<this.projectCount&&!reserved.has(current)){
         reserved.add(current);
         continue;
       }
       const exiting=this.assigned.get(key(pair.departing));
-      const project=exiting!==undefined&&!reserved.has(exiting)
+      const project=!this.placeholderCount&&reserved.size>=this.projectCount&&exiting!==undefined&&!continuing.has(exiting)
         ?exiting:this.choose(reserved,currentlyReserved);
       this.assigned.set(incomingKey,project);
       currentlyReserved.add(project);
@@ -108,7 +122,10 @@ export class ProjectPlacement {
     const visibleKeys=new Set(visible.map(key));
     const usedRetained=new Set(this.assigned.values());
     const seenVisible=new Set<number>();
-    const pinnedKey=pinned?key(pinned):null;
+    const pinnedKey=pinned?key(pinned):null;this.pinnedKey=pinnedKey;
+    if(pinnedKey&&!visibleKeys.has(pinnedKey)){
+      const selected=this.assigned.get(pinnedKey);if(selected!==undefined)seenVisible.add(selected);
+    }
     const ordered=[...visible].sort((a,b)=>{
       const pinA=key(a)===pinnedKey?0:1;
       const pinB=key(b)===pinnedKey?0:1;
@@ -120,7 +137,7 @@ export class ProjectPlacement {
     for(const cell of ordered){
       const id=key(cell);
       const existing=this.assigned.get(id);
-      if(existing!==undefined&&(!seenVisible.has(existing)||seenVisible.size===this.projectCount)){
+      if(existing!==undefined&&(this.lastVisible.has(id)||!seenVisible.has(existing)||existing>=this.projectCount||(!this.placeholderCount&&seenVisible.size===this.projectCount))){
         seenVisible.add(existing);
         continue;
       }
