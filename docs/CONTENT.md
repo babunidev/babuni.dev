@@ -315,3 +315,12 @@ Babuni.dev additionally withdraws The Amberbrew Family and Practical Templates C
 Babuni.dev requested Rocket Game 42 (`rocket-game-42`), connected to public `babunidev/Rocketgame42`. Ten allowlisted documents were imported at `29028bcd2ed476de92bbed96d6f464e0c2968383`, verifying public access without publishing private sources. Existing snapshots were preserved. The catalog contains 43 projects and 35 public repository connections. Requested display renames preserve existing semantic IDs: Morkahja, Morkahja Worldbuilding, Roar Guild. The latter shares `ROARGuild.webp` with the still-separate addon. Twenty active project-art assignments use nineteen unique supplied files; older unused supplied art is retained.
 
 Five neutral tile identities are renderer-only decoration, excluded from catalog/search/modules. The complete menu grouping proposal lists all 43 projects; classification and potential duplicate merges remain for Babuni.dev review, not automatic implementation.
+
+
+## 2026-10-28 — Community/addon clarification and music outlets
+
+Babuni.dev confirmed Morkahja Admin Console duplicates Arcanitebrothers: remove the former catalog/mapping entry and retain the latter's public docs. Analubia is retained after the same-message retraction of its proposed removal. Stable ID `roarguild` now displays RoarGuild Add-on and describes the human-confirmed guild invitation/character behavior tool; its supplied artwork mapping is removed. Community ID `roar-guild-and-community` retains `ROARGuild.webp`. Nineteen active project assignments use nineteen unique supplied WebPs.
+
+New IDs: `mighty-morkah` (Mighty Morkah, piano/music videos at https://www.youtube.com/@MightyMorkah/videos) and `elixior` (Elixior, music/audio art at https://soundcloud.com/elexior-ludwig). Both have attributed Overview and Listen resources modules, and no invented repository/recording metadata. Direct web retrieval was unavailable, so these are human-supplied links/descriptions, not independently verified media catalogs. Mighty Morkah's move to music-only and migration of WoW videos to Babuni Gaming remain plans. No Babuni Gaming tile is added without its own supplied outlet.
+
+All 44 current projects appear once in the approved menu groups; Music contains the two new outlets. Three neutral render identities are excluded from the project/content counts. Source snapshot contents were unchanged.

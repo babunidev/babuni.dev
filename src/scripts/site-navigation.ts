@@ -1,8 +1,13 @@
 import {demoProjects} from '../lib/demo-projects.ts';
+import {PROJECT_GROUPS} from '../lib/project-groups.ts';
 export function matchingProjects(query:string){
   const words=query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
   return demoProjects.filter(project=>words.every(word=>(project.name+' '+project.shortSummary).toLocaleLowerCase().includes(word)))
     .sort((a,b)=>a.name.localeCompare(b.name));
+}
+export function groupedProjects(query:string){
+  const matches=matchingProjects(query);
+  return PROJECT_GROUPS.map(group=>({title:group.title,projects:matches.filter(project=>(group.ids as readonly string[]).includes(project.id))})).filter(group=>group.projects.length);
 }
 /** One header is moved into the modal top layer while reading, then restored. */
 export function attachReaderHeader(view:HTMLElement):()=>void {
@@ -34,9 +39,15 @@ export function installSiteNavigation(select:(id:string)=>void,about:(trigger:HT
   function close(){menu.hidden=true;toggle.setAttribute('aria-expanded','false');}
   function render(){
     list.replaceChildren();const projects=matchingProjects(search.value);
-    for(const project of projects){
-      const button=document.createElement('button');button.type='button';button.textContent=project.name;
-      button.addEventListener('click',()=>{close();select(project.id);});list.append(button);
+    for(const group of groupedProjects(search.value)){
+      const section=document.createElement('section');section.className='project-menu-group';
+      const heading=document.createElement('h3');heading.textContent=group.title;section.append(heading);
+      section.setAttribute('aria-label',group.title);
+      for(const project of group.projects){
+        const button=document.createElement('button');button.type='button';button.textContent=project.name;
+        button.addEventListener('click',()=>{close();select(project.id);});section.append(button);
+      }
+      list.append(section);
     }
     count.textContent=projects.length?`${projects.length} ${projects.length===1?'project':'projects'}`:'No projects found.';
   }

@@ -29,7 +29,7 @@ export function visibleCellBounds(width:number,height:number,tileSize:number,ori
 
 /** Content remains resident until beyond the two-cell retention band.
  * Offscreen duplicates are allowed; visible cells first claim unused projects.
- * Optional decorative filler identities avoid repeating real projects in dense views.
+ * Optional decorative fillers are unique; project repeats fill unavoidable shortages.
  */
 export class ProjectPlacement {
   private assigned=new Map<string,number>();
@@ -37,6 +37,7 @@ export class ProjectPlacement {
   private cursor=0;
   private fillerCursor=0;
   private pinnedKey:string|null=null;
+  private staged=new Set<string>();
   readonly projectCount:number;
   readonly placeholderCount:number;
   constructor(projectCount:number,placeholderCount=0){
@@ -65,10 +66,8 @@ export class ProjectPlacement {
         if(usedVisible.has(index))continue;
         this.fillerCursor=(offset+1)%this.placeholderCount;return index;
       }
-      const index=this.projectCount+this.fillerCursor;
-      this.fillerCursor=(this.fillerCursor+1)%this.placeholderCount;return index;
     }
-    // Legacy mathematical fallback for callers without decorative filler capacity.
+    // Once unique capacity is exhausted, repeat a real project, never a filler.
     const index=this.cursor;this.cursor=(index+1)%this.projectCount;return index;
   }
   /** Give each entering offscreen tile its FINAL project before a line begins moving.
@@ -81,6 +80,7 @@ export class ProjectPlacement {
    */
   stageEntrances(pairs:readonly {incoming:CellCoordinate;departing:CellCoordinate}[]):void {
     if(pairs.length===0)return;
+    this.staged.clear();
     const departures=new Set(pairs.map(pair=>key(pair.departing)));
     const continuing=new Set<number>();
     for(const id of this.lastVisible){
@@ -97,6 +97,7 @@ export class ProjectPlacement {
       const incomingKey=key(pair.incoming);
       // An already visible tile must never be reassigned by staging.
       if(this.lastVisible.has(incomingKey))continue;
+      this.staged.add(incomingKey);
       const current=this.assigned.get(incomingKey);
       if(current!==undefined&&current<this.projectCount&&!reserved.has(current)){
         reserved.add(current);
@@ -126,6 +127,13 @@ export class ProjectPlacement {
     if(pinnedKey&&!visibleKeys.has(pinnedKey)){
       const selected=this.assigned.get(pinnedKey);if(selected!==undefined)seenVisible.add(selected);
     }
+    for(const id of this.staged){
+      const value=this.assigned.get(id);if(value!==undefined)seenVisible.add(value);
+    }
+    for(const cell of visible){
+      const id=key(cell),value=this.assigned.get(id);
+      if(value!==undefined&&(this.lastVisible.has(id)||this.staged.has(id)))seenVisible.add(value);
+    }
     const ordered=[...visible].sort((a,b)=>{
       const pinA=key(a)===pinnedKey?0:1;
       const pinB=key(b)===pinnedKey?0:1;
@@ -137,7 +145,7 @@ export class ProjectPlacement {
     for(const cell of ordered){
       const id=key(cell);
       const existing=this.assigned.get(id);
-      if(existing!==undefined&&(this.lastVisible.has(id)||!seenVisible.has(existing)||existing>=this.projectCount||(!this.placeholderCount&&seenVisible.size===this.projectCount))){
+      if(existing!==undefined&&(id===pinnedKey||this.lastVisible.has(id)||this.staged.has(id)||(!seenVisible.has(existing)&&existing<this.projectCount))){
         seenVisible.add(existing);
         continue;
       }
@@ -152,10 +160,13 @@ export class ProjectPlacement {
     for(const cell of bufferOnly){
       const id=key(cell);
       if(this.assigned.has(id))continue;
-      const project=this.choose(seenVisible,usedRetained);
+      // Buffer decoration must not accumulate into walls when panning.
+      // Recheck these real-project candidates when they actually enter view.
+      const project=spiralIndex(cell.column,cell.row)%this.projectCount;
       this.assigned.set(id,project);
       usedRetained.add(project);
     }
     this.lastVisible=visibleKeys;
+    for(const id of this.staged)if(visibleKeys.has(id)||!keep.has(id))this.staged.delete(id);
   }
 }

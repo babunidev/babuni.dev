@@ -4,9 +4,9 @@ import {demoProjects} from '../src/lib/demo-projects.ts';
 import {projectTopics,topicForProject,TOPIC_POINTS,supplementalTopics,topicLabelsForProject,chooseAmbientPoint} from '../src/lib/project-topics.ts';
 
 test('each provisional project has exactly one concise first-bubble topic',()=>{
-  assert.equal(demoProjects.length,43);
-  assert.equal(Object.keys(projectTopics).length,43);
-  assert.equal(new Set(Object.keys(projectTopics)).size,43);
+  assert.equal(demoProjects.length,44);
+  assert.equal(Object.keys(projectTopics).length,44);
+  assert.equal(new Set(Object.keys(projectTopics)).size,44);
   for(const project of demoProjects){
     const topic=topicForProject(project.id);
     assert.equal(projectTopics[project.id],topic,project.name);
@@ -23,7 +23,7 @@ test('a bubble offers just a subject, not a description or release claim',()=>{
   assert.equal(topicForProject('not-in-inventory'),'Creative work');
 });
 
-test('each of the 43 retained tiles has three short, distinct, evidence-grounded flavor snippets',()=>{
+test('each of the 44 retained tiles has three short, distinct, evidence-grounded flavor snippets',()=>{
   assert.deepEqual(TOPIC_POINTS,['top','left','right']);
   assert.equal(Object.keys(supplementalTopics).length,demoProjects.length);
   for(const project of demoProjects){

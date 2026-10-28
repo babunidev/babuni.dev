@@ -259,6 +259,26 @@
           "src": "/media/babuni-dev/images/verification/curated-grid-desktop.webp",
           "alt": "curated grid desktop",
           "caption": "AI browser capture at 1920×1080, including partly visible edges and a neutral tile at the left edge. Shifts were active; this is not physical-device acceptance."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/neutral-wall-human-report.webp",
+          "alt": "Human desktop report showing repeated gray tiles forming walls.",
+          "caption": "Babuni.dev supplied this desktop screenshot on 2026-10-28. It documents the rejected five-filler behavior before the bounded-neutral fix; it is not a current success capture."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/bounded-neutral-desktop.webp",
+          "alt": "bounded neutral desktop",
+          "caption": "AI browser capture at 1920×1080 before wide panning; three-neutral policy active. Short verification, not physical-device acceptance."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/bounded-neutral-after-pan.webp",
+          "alt": "bounded neutral after pan",
+          "caption": "AI browser capture after two wide desktop drags. DOM checks counted three distinct neutral identities among 54 partly/full visible tiles; real project repeats are intentional capacity fallback."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/music-project-menu.webp",
+          "alt": "music project menu",
+          "caption": "AI browser capture of Music search in the approved grouped menu, showing Mighty Morkah and Elixior. Profile descriptions and links were supplied by Babuni.dev."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
@@ -402,6 +422,54 @@
       "preview": "Worldbuilding for Morkahja: its peoples, places, cultures and lore.",
       "body": "Babuni.dev identifies MorkahjaWorld as the worldbuilding project. The separate World and Peoples tile was removed as a duplicate on 2026-10-28. The linked public documentation edition predates this clarification and remains a limited initial snapshot.",
       "credit": "Project scope clarified by Babuni.dev; AI editorial implementation recorded in the website development journal."
+    }
+  ],
+  "mighty-morkah": [
+    {
+      "id": "overview",
+      "type": "text",
+      "title": "Overview",
+      "preview": "Piano music and videos by Babuni.dev, published on the Mighty Morkah YouTube channel.",
+      "body": "Piano music and videos by Babuni.dev. Mighty Morkah is being focused on music. Babuni.dev plans to move World of Warcraft videos to Babuni Gaming; that migration is not recorded as completed here.",
+      "credit": "Project authorship and description: Babuni.dev. AI-assisted editorial summary of the supplied direction.",
+      "source": "https://www.youtube.com/@MightyMorkah/videos"
+    },
+    {
+      "id": "listen",
+      "type": "resources",
+      "title": "Listen on YouTube",
+      "preview": "Explore Mighty Morkah on YouTube.",
+      "links": [
+        {
+          "label": "Mighty Morkah on YouTube",
+          "href": "https://www.youtube.com/@MightyMorkah/videos"
+        }
+      ],
+      "credit": "Public profile link supplied by Babuni.dev."
+    }
+  ],
+  "elixior": [
+    {
+      "id": "overview",
+      "type": "text",
+      "title": "Overview",
+      "preview": "Music and audio art by Babuni.dev, including earlier pieces published on SoundCloud.",
+      "body": "Music and audio art by Babuni.dev, including pieces published over earlier years. Elixior is the music project represented by this SoundCloud profile.",
+      "credit": "Project authorship and description: Babuni.dev. AI-assisted editorial summary of the supplied direction.",
+      "source": "https://soundcloud.com/elexior-ludwig"
+    },
+    {
+      "id": "listen",
+      "type": "resources",
+      "title": "Listen on SoundCloud",
+      "preview": "Explore Elixior on SoundCloud.",
+      "links": [
+        {
+          "label": "Elixior on SoundCloud",
+          "href": "https://soundcloud.com/elexior-ludwig"
+        }
+      ],
+      "credit": "Public profile link supplied by Babuni.dev."
     }
   ]
 }

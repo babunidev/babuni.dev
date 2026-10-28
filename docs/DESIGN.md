@@ -452,3 +452,10 @@ Babuni.dev additionally removes The Amberbrew Family and Practical Templates Cre
 ## 2026-10-28 — Decorative vacancies after curation
 
 Babuni.dev chose five neutral gray filler identities, with no portal/name/project and a subtle central mark. AI supplied a CSS incised diamond. Use these vacancies when unique real projects cannot fill the visible/incoming area; preserve them until recycled rather than visibly swapping their identity. They are inert, do not show bubbles and never appear in the Projects menu. Larger windows may repeat neutral decoration. Tile dimensions and the calm shift tempo are unchanged. Display names now include Morkahja, Morkahja Worldbuilding and Roar Guild. Proposed menu groups are in PROJECT_GROUPING_PROPOSAL.md; grid ordering is not categorized.
+
+
+## 2026-10-28 — Three unique neutral tiles and menu categories
+
+Babuni.dev's desktop test rejected gray filler walls. The current design uses at most three visible neutral identities (diamond, circle, square), with no repeated neutral identity even when entering/leaving tiles coexist. When unique capacity is exhausted, repeat real projects instead. Existing residents keep their identity until recycling; no tile resizing, tempo adjustment or visible repair swap. The approved menu-only headings are World of Warcraft, Morkahja, AI, Games and Music. Search keeps headings for matching groups only. The grid itself retains its original ordering/navigation.
+
+RoarGuild Add-on has the generic colored portal until supplied artwork exists; Roar Guild community keeps the guild artwork. Mighty Morkah and Elixior are separate music portals with real profile links and concise author-supplied context.

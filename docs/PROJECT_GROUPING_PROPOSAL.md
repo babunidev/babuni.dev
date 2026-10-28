@@ -1,6 +1,6 @@
 # Project menu grouping proposal — 2026-10-28
 
-**Status: AI proposal for Babuni.dev’s review. Not implemented.** This changes only the Projects menu, never grid order or positions. Every one of the 43 active projects appears once below.
+**Historical proposal, now approved and implemented with the corrections below on 2026-10-28.** This changes only the Projects menu, never grid order or positions. Every one of the 43 active projects appears once below.
 
 ## World of Warcraft (29)
 
@@ -66,3 +66,7 @@
 - **Analubia** is provisionally under Games from the existing historical RPG description; status and completeness are not release claims.
 
 No runtime group metadata, headings or ordering is added until Babuni.dev reviews this list. The requested project renames and Rocket Game 42 addition are separate authorized changes.
+
+## Approved correction and implementation — 2026-10-28
+
+Babuni.dev approved the menu-only grouping. Runtime membership is in `src/lib/project-groups.ts`: World of Warcraft (29), Morkahja (5), AI (5), Games (3), Music (2), totaling 44. The earlier list above is historical: Morkahja Admin Console was removed as a duplicate of retained Arcanitebrothers; RoarGuild is now RoarGuild Add-on and has no supplied image; Roar Guild community alone retains the guild image. Analubia remains after the human withdrew the removal suggestion. Music adds Mighty Morkah and Elixior as separate linked profiles. Other provisional placements follow the approved proposal. No category influences grid order or geometry.

@@ -44,9 +44,10 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "fantasy-architecture": "Architecture",
   "grimnir": "Fantasy culture",
   "morkahja-rpg": "Fantasy RPG",
-  "morkahja-admin-console": "Admin tools",
   "morkahjaworld": "Worldbuilding",
   "arcanitebrothers": "Development tools",
+  "mighty-morkah": "Piano music",
+  "elixior": "Music and audio art",
   "analubia": "Fantasy RPG"
 });
 export function topicForProject(projectId:string):string {
@@ -135,8 +136,8 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Combat statistics"
   ],
   "roarguild": [
-    "Guild roleplay",
-    "Message board"
+    "Guild invitations",
+    "Character behavior"
   ],
   "workthatgodbod": [
     "Movement cues",
@@ -218,10 +219,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Multiplayer",
     "Adventure design"
   ],
-  "morkahja-admin-console": [
-    "Web interface",
-    "Server moderation"
-  ],
   "morkahjaworld": [
     "Elemental peoples",
     "Fantasy places"
@@ -230,6 +227,8 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Development identity",
     "Admin console"
   ],
+  "mighty-morkah": ["Piano videos", "YouTube channel"],
+  "elixior": ["SoundCloud", "Earlier audio work"],
   "analubia": [
     "Sundust Studios",
     "Historical RPG"

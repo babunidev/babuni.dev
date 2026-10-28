@@ -92,3 +92,19 @@ AI browser captures, not human phone acceptance. Original encoded captures retai
 
 - `curated-grid-default.webp` — default viewport with curated project artwork.
 - `curated-grid-desktop.webp` — 1920×1080 viewport with partially visible edges and neutral vacancy at left; autonomous shift active. Not evidence of a new tile-size decision.
+
+
+## Human neutral-wall regression report — 2026-10-28
+
+`neutral-wall-human-report.webp` is Babuni.dev's supplied desktop screenshot of the rejected repeated-placeholder walls. Converted from actual PNG to lossless WebP, with original retained outside public assets. It is failure evidence for the superseded five-filler policy, not an AI verification capture or proof of the corrected behavior.
+
+
+## Bounded neutral and music menu checks — 2026-10-28
+
+AI browser captures at 1920×1080, published as quality-85 WebP after checking actual encoding (JPEG originals retained outside public assets). All available captures from this pass are archived:
+
+- `bounded-neutral-desktop.webp` — corrected grid before wide drags.
+- `bounded-neutral-after-pan.webp` — after two wide drags; three unique neutral identities, no gray walls; real project repeats are allowed.
+- `music-project-menu.webp` — grouped Music search showing both author-supplied outlets.
+
+These are short browser observations, not real-phone or prolonged-session acceptance. The human's earlier wall screenshot remains separately archived as failure evidence.

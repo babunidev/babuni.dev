@@ -38,7 +38,7 @@ if (viewport && world && resetButton && status) {
   const bufferCells=2;
   let columnBufferCells=2;
   // First inventory entry is BABUNI.DEV; remaining candidates are human-curated but retain provisional evidence labels.
-  const placement=new ProjectPlacement(demoProjects.length,5);
+  const placement=new ProjectPlacement(demoProjects.length,3);
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
   let slots:TileSlot[]=[];
@@ -295,6 +295,7 @@ if (viewport && world && resetButton && status) {
     const control=slot.element.querySelector<HTMLButtonElement>('.tile-select');
     if(control)control.disabled=!project;
     if(!project){
+      slot.element.dataset.neutralVariant=String(projectIndex-demoProjects.length);
       delete slot.element.dataset.projectId;delete slot.element.dataset.projectSummary;
       slot.element.classList.remove('grid-tile--origin','grid-tile--long-title','grid-tile--topic-open');
       slot.element.querySelector('.tile-portal')?.replaceChildren();
@@ -302,6 +303,7 @@ if (viewport && world && resetButton && status) {
       control?.removeAttribute('aria-label');
       return;
     }
+    delete slot.element.dataset.neutralVariant;
     slot.element.dataset.projectId=project.id;
     slot.element.dataset.projectSummary=project.shortSummary;
     slot.element.style.setProperty('--portal-color',project.tint);

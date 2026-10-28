@@ -505,3 +505,10 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 **Babuni.dev direction/decision:** five gray decorative placeholders, no portal or project, rather than the AI's proposed tile enlargement. Preserve timing and position feel. **AI implementation:** real-project uniqueness includes entering/departing overlap; continuing assignments are never repaired by visible renaming. Five neutral identities can repeat decoratively if exhausted; no extra project records are invented. Stable fillers may remain until recycled. Alternative of reusing a departing real project during animation rejected because both copies are still visible. Revisit filler aesthetics after human testing.
 
 Requested names and Rocket Game 42 addition are implemented. Menu-only grouping is **proposed, not approved/implemented**; see PROJECT_GROUPING_PROPOSAL.md. RoarGuild vs Roar Guild and the two admin-console candidates remain separate pending review.
+
+
+## 2026-10-28 — Replace the five-filler policy (implemented)
+
+**Babuni.dev rejected:** repeated empty decoration forming walls; absolute uniqueness at the expense of a populated grid. **Confirmed choice:** three unique neutral tiles, with occasional real-project repeats when necessary, while keeping the identity-stability fix. **AI implementation:** never prefill the offscreen band with neutral decoration, reserve all continuing and staged identities, exhaust unique real/neutral options before real-project fallback. Alternatives of resizing tiles or returning to visible identity repair remain rejected. Decorative neutral marks distinguish the three identities; they are still inert, not projects.
+
+**Menu grouping approved:** implement the earlier World of Warcraft/Morkahja/AI/Games list, removing duplicate Admin Console; add Music for the two new profiles. Grouping has no grid-layout effect. **Curation:** retain Arcanitebrothers; rename addon to RoarGuild Add-on and assign guild artwork solely to the community; retain Analubia after the human's immediate correction. Keep Mighty Morkah and Elixior distinct; a separate Babuni Gaming project/link was not supplied or added.

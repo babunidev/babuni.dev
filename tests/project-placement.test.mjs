@@ -186,9 +186,9 @@ test('open bloom source survives panning beyond the DOM pool and returning',()=>
  assert.equal(mgr.get(anchor),undefined,'unselected distant identity can be reclaimed');
 });
 
-test('decorative capacity avoids real-project duplicates and identity swaps after catalog changes',()=>{
+test('unique neutral capacity permits real repeats without identity swaps after catalog changes',()=>{
  for(const count of [12,42,43,53]){
-  const manager=new ProjectPlacement(count,5),visible=box(0,0,4,2),buffer=box(0,0,6,4),history=[];
+  const manager=new ProjectPlacement(count,3),visible=box(0,0,4,2),buffer=box(0,0,6,4),history=[];
   const source=cell=>sourceCell(cell.column,cell.row,history);
   manager.sync(visible,buffer);
   for(let round=0;round<240;round++){
@@ -197,24 +197,30 @@ test('decorative capacity avoids real-project duplicates and identity swaps afte
    const move={axis,line:0,direction},pair=enteringAndDeparting(move);
    manager.stageEntrances([{incoming:source(pair.incoming),departing:source(pair.departing)}]);
    const incomingSource=source(pair.incoming),entering=manager.get(incomingSource);
-   if(entering<count)assert.ok(![...old.values()].includes(entering),'new project must not duplicate a still-visible departing tile');
+   if(entering>=count)assert.ok(![...old.values()].includes(entering),'neutral entrant duplicates a still-visible neutral');
+   manager.sync(before,buffer.map(source)); // Intermediate camera sync must retain a staged offscreen identity.
+   assert.equal(manager.get(incomingSource),entering);
    history.push(move);const after=visible.map(source);manager.sync(after,buffer.map(source));
    const projects=after.map(c=>manager.get(c)).filter(id=>id<count);
-   assert.equal(new Set(projects).size,projects.length,'real project duplicated');
+   const neutrals=after.map(c=>manager.get(c)).filter(id=>id>=count);
+   assert.equal(new Set(neutrals).size,neutrals.length,'neutral duplicated');
+   assert.ok(neutrals.length<=3);
+   if(count>=visible.length+1)assert.equal(new Set(projects).size,projects.length,'real repeat despite spare capacity');
    for(const c of after){const id=c.column+','+c.row;if(old.has(id))assert.equal(manager.get(c),old.get(id),'continuing tile changed identity');}
    assert.equal(manager.get(incomingSource),entering,'entering tile changed identity at settlement');
    for(const c of after){const index=manager.get(c);assert.ok(index>=0&&index<manager.capacity);}
   }
  }
 });
-test('panning with a reduced library uses anonymous fillers and preserves continuing residents',()=>{
- const manager=new ProjectPlacement(20,5);
+test('long panning caps neutral tiles and preserves continuing residents despite a reduced library',()=>{
+ const manager=new ProjectPlacement(20,3);
  let previous=new Map();
  for(let step=0;step<80;step++){
   const visible=box(step,Math.floor(step/9),4,2),retained=box(step,Math.floor(step/9),6,4);
   manager.sync(visible,retained);
   const projects=visible.map(c=>manager.get(c)).filter(id=>id<manager.projectCount);
-  assert.equal(new Set(projects).size,projects.length);
+  const neutral=visible.map(c=>manager.get(c)).filter(id=>id>=manager.projectCount);
+  assert.ok(neutral.length<=3,'neutral walls accumulated');assert.equal(new Set(neutral).size,neutral.length);
   for(const c of visible){const k=c.column+','+c.row;if(previous.has(k))assert.equal(manager.get(c),previous.get(k));}
   previous=new Map(visible.map(c=>[c.column+','+c.row,manager.get(c)]));
  }
@@ -223,7 +229,7 @@ test('panning with a reduced library uses anonymous fillers and preserves contin
 import {moduleVacancies,restingCell} from '../src/lib/bloom-geometry.ts';
 import {MODULE_OFFSETS} from '../src/lib/project-modules.ts';
 test('reduced catalog stays stable while visual columns beside a bloom shift',()=>{
- const holes=moduleVacancies(p(0,0),MODULE_OFFSETS),history=[],manager=new ProjectPlacement(43,5);
+ const holes=moduleVacancies(p(0,0),MODULE_OFFSETS),history=[],manager=new ProjectPlacement(43,3);
  const clear=cell=>!holes.some(h=>h.column===cell.column&&h.row===cell.row);
  const cells=box(0,0,4,2).filter(clear),band=box(0,0,6,4).filter(clear);
  const source=cell=>{const resting=restingCell(cell,holes);return sourceCell(resting.column,resting.row,history);};
@@ -238,4 +244,29 @@ test('reduced catalog stays stable while visual columns beside a bloom shift',()
   for(const c of after){const k=c.column+','+c.row;if(old.has(k))assert.equal(manager.get(c),old.get(k));}
   assert.equal(manager.get(incoming),expected);
  }
+});
+
+// A viewport can exceed all available unique identities. Never repair this by renaming residents.
+test('saturated panning never repeats a neutral while real projects may repeat',()=>{
+ const manager=new ProjectPlacement(6,3);let visible=box(0,0,2,1);const band=box(0,0,4,3);
+ manager.sync(visible,band);
+ for(let step=0;step<100;step++){
+  const neutral=visible.map(c=>manager.get(c)).filter(id=>id>=6);assert.equal(new Set(neutral).size,neutral.length);assert.ok(neutral.length<=3);
+  visible=box(step+1,0,2,1);manager.sync(visible,box(step+1,0,4,3));
+ }
+});
+test('offscreen prefetch never fills the retained band with neutral decoration',()=>{
+ const manager=new ProjectPlacement(44,3),visible=box(0,0,4,2),band=box(0,0,6,4);
+ manager.sync(visible,band);const keys=new Set(visible.map(c=>c.column+','+c.row));
+ for(const c of band)if(!keys.has(c.column+','+c.row))assert.ok(manager.get(c)<44);
+ const neutrals=visible.map(c=>manager.get(c)).filter(id=>id>=44);assert.equal(neutrals.length,1);
+});
+
+test('menu-selected offscreen source keeps its identity when another copy is still visible',()=>{
+ const manager=new ProjectPlacement(44,3),visible=box(0,0,4,2),band=box(0,0,6,4);
+ manager.sync(visible,band);const target=p(5,0),selected=manager.get(p(0,0));
+ manager.assign(target,selected);manager.sync(visible,band,target);
+ manager.sync(box(1,0,4,2),box(1,0,6,4),target);
+ assert.equal(manager.get(target),selected,'pinned menu destination must not be repaired into another project');
+ assert.equal(manager.get(p(0,0)),selected,'continuing resident retains its identity too');
 });

@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-35 of 43 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+35 of 44 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -24,7 +24,7 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 | LootFeed | [babunidev/LootFeed](https://github.com/babunidev/LootFeed) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | GatherMap | [babunidev/GatherMap](https://github.com/babunidev/GatherMap) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | BattleReport | [babunidev/BattleReport](https://github.com/babunidev/BattleReport) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| RoarGuild | [babunidev/RoarGuild](https://github.com/babunidev/RoarGuild) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| RoarGuild Add-on | [babunidev/RoarGuild](https://github.com/babunidev/RoarGuild) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | WorkThatGodBod | [babunidev/WorkThatGodBod](https://github.com/babunidev/WorkThatGodBod) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | The Great Iceflow Relay | [babunidev/TheGreatIceflowRelay](https://github.com/babunidev/TheGreatIceflowRelay) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | ROARRunlimited | [babunidev/ROARRunlimited](https://github.com/babunidev/ROARRunlimited) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
@@ -52,6 +52,8 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 - Fantasy RPG Assets (fantasy-rpg-assets)
 - Fantasy Architecture (fantasy-architecture)
 - Analubia (analubia)
+- Mighty Morkah (mighty-morkah)
+- Elixior (elixior)
 
 These are inventory results, not proof that a repository cannot exist under another account or name. Supply a repository URL or create one; then update its explicit mapping.
 
@@ -64,7 +66,6 @@ Private implementations remain excluded. Ethera, Morkahja RPG, MorkahjaWorld and
 ## Project-family clarification needed
 
 - Grimnir (grimnir)
-- Morkahja Admin Console (morkahja-admin-console)
 
 Related sources are known, but an independent public repository is not confirmed. Decide whether each is a separate project or a section of its parent before connecting documentation.
 

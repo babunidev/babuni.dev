@@ -528,3 +528,20 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ### Changed
 - Display names: Morkahja, Morkahja Worldbuilding and Roar Guild; stable identifiers retained. Community Roar Guild now uses the existing guild WebP, shared with the addon entry.
 - No tile sizing or animation timing changes; menu grouping remains a proposal.
+
+
+## 2026-10-28 — Bound neutral tiles, grouped menu and music projects
+
+### Fixed
+- Stop neutral tiles accumulating through the offscreen retention band. Three neutral identities are unique in the viewport and shift overlap; repeated real projects fill unavoidable shortages. Continuing/staged tile identities remain stable, including intermediate camera synchronization.
+
+### Changed
+- Use three subtle neutral marks (diamond, circle and square) instead of five indefinitely repeatable fillers. Tile size and movement timing remain unchanged.
+- Group only the Projects menu into World of Warcraft, Morkahja, AI, Games and Music. Search filters within the same headings and direct navigation remains unchanged.
+- Rename the repository-backed addon to RoarGuild Add-on, remove its supplied logo assignment, and retain the existing guild logo only on the Roar Guild community tile.
+
+### Removed
+- Duplicate Morkahja Admin Console tile; retain Arcanitebrothers and its existing public documentation connection. No repository or document snapshot was deleted.
+
+### Added
+- Mighty Morkah and Elixior as separate music projects with author-supplied descriptions and public YouTube/SoundCloud links. The planned gaming-video migration is labeled as planned, not completed. Analubia remains after Babuni.dev withdrew the removal suggestion.

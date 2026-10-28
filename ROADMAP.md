@@ -385,5 +385,17 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 - [x] Regression checks across catalog growth/reduction, 960 shifts, panning and displaced bloom columns; short desktop browser uniqueness check.
 - [x] Add Rocket Game 42, requested names and shared Roar Guild artwork.
 - [x] Draft complete 43-project menu grouping proposal.
-- [ ] Babuni.dev review/approve menu grouping and possible duplicate project entries before implementation.
+- [x] Babuni.dev approved menu grouping and clarified community/addon plus the duplicate Admin Console; implemented in the follow-up below.
 - [ ] Extended desktop/phone verification after catalog changes: no identity swaps, stable blooms/direct navigation, neutral tiles inert. Short browser checks do not close this acceptance task.
+
+
+## 2026-10-28 — Follow-up to human neutral-wall testing
+
+- [x] Replace repeatable filler walls with three unique neutral identities and real-project fallback when necessary.
+- [x] Preserve staged/continuing identities through panning and shift completion; add saturation and offscreen-buffer regression cases.
+- [x] Implement approved menu-only categories and music search grouping.
+- [x] Remove duplicate Admin Console; distinguish community/addon names and artwork.
+- [x] Add Mighty Morkah and Elixior linked music modules; retain Analubia per the human's correction.
+- [ ] Human desktop/phone check: pan widely, verify no gray walls, no identity swaps and grouped search opens the correct project. Earlier stationary checks did not catch the original accumulation.
+- [ ] Human-managed Mighty Morkah gaming-video migration; no completed migration is claimed here.
+- [ ] Optional future individual music/video embeds after specific media links are supplied; current profile resources are usable without them.

@@ -186,10 +186,6 @@
     "branch": "main",
     "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
   },
-  "morkahja-admin-console": {
-    "status": "needs-confirmation",
-    "note": "Related project family is known, but an independent public repository is not confirmed."
-  },
   "morkahjaworld": {
     "status": "connected",
     "repository": "babunidev/MorkahjaWorld-docs",
@@ -211,5 +207,13 @@
     "repository": "babunidev/Rocketgame42",
     "branch": "main",
     "note": "Explicitly added by Babuni.dev; anonymously verified public source on 2026-10-28."
+  },
+  "mighty-morkah": {
+    "status": "needs-repository",
+    "note": "Public music profile supplied by Babuni.dev on 2026-10-28; no repository required to browse the linked work. No repository has been supplied."
+  },
+  "elixior": {
+    "status": "needs-repository",
+    "note": "Public music profile supplied by Babuni.dev on 2026-10-28; no repository required to browse the linked work. No repository has been supplied."
   }
 }

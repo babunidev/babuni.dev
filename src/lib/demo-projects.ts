@@ -1,6 +1,6 @@
 /**
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
- * (53 initial candidates, 2026-10-26; 43 retained after curation and Rocket Game 42 addition on 2026-10-28).
+ * (53 initial candidates, 2026-10-26; 44 retained after curation and music additions on 2026-10-28).
  * Removed duplicates and non-projects are documented in the source inventory.
  * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
@@ -16,7 +16,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=43;
+export const DEMO_PROJECT_COUNT=44;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -151,9 +151,8 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roarguild",
-    "portalArtwork": "/portal-content/ROARGuild.webp",
-    "name": "RoarGuild",
-    "shortSummary": "Guild roleplay emotes, recruitment and shared message board.",
+    "name": "RoarGuild Add-on",
+    "shortSummary": "WoW guild add-on for invitations and guild-character behavior, as described by Babuni.dev.",
     "evidence": "repo",
     "tint": "hsl(8 58% 62%)"
   },
@@ -304,13 +303,6 @@ export const demoProjects:readonly DemoProject[]=[
     "tint": "hsl(120 58% 62%)"
   },
   {
-    "id": "morkahja-admin-console",
-    "name": "Morkahja Admin Console",
-    "shortSummary": "Web interface for player moderation, server activity and game content.",
-    "evidence": "repo",
-    "tint": "hsl(258 58% 62%)"
-  },
-  {
     "id": "morkahjaworld",
     "name": "Morkahja Worldbuilding",
     "shortSummary": "Worldbuilding for Morkahja: its peoples, places, cultures and lore.",
@@ -338,5 +330,19 @@ export const demoProjects:readonly DemoProject[]=[
     "shortSummary": "Arcade mothership-defence game reconstructed for the browser and packaged with Electron.",
     "evidence": "repo",
     "tint": "#b57348"
+  },
+  {
+    "id": "mighty-morkah",
+    "name": "Mighty Morkah",
+    "shortSummary": "Piano music and videos by Babuni.dev, published on the Mighty Morkah YouTube channel.",
+    "evidence": "human-confirmed",
+    "tint": "#9b86bc"
+  },
+  {
+    "id": "elixior",
+    "name": "Elixior",
+    "shortSummary": "Music and audio art by Babuni.dev, including earlier pieces published on SoundCloud.",
+    "evidence": "human-confirmed",
+    "tint": "#d59057"
   }
 ];

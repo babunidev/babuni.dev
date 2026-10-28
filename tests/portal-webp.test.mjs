@@ -10,12 +10,12 @@ test('all supplied portal artworks are mapped to direct WebP paths',()=>{
   assert.equal(PORTAL_WEBP_ASSETS.length,19);
   assert.equal(new Set(PORTAL_WEBP_ASSETS.map(x=>x.filename)).size,19);
   const items=demoProjects.filter(x=>x.portalArtwork);
-  assert.equal(items.length,20);
+  assert.equal(items.length,19);
   for(const project of items){
     assert.match(project.portalArtwork,/^\/portal-content\/[A-Za-z0-9]+\.webp$/);
     assert.ok(existsSync(new URL('../public'+project.portalArtwork,import.meta.url)),project.id);
   }
-  for(const [id,name] of [['arcanitebrothers','ArcaniteBrothers.webp'],['battlereport','BattleReport.webp'],['ethera-the-stonewrought','Ethera.webp'],['roarguild','ROARGuild.webp'],['warriorstartattack','WarriorStartAttack.webp'],['roarr','ROARR.webp'],['the-great-iceflow-relay','TheGreatIceflowRelay.webp'],['workthatgodbod','WorkThatGodBod.webp']])
+  for(const [id,name] of [['arcanitebrothers','ArcaniteBrothers.webp'],['battlereport','BattleReport.webp'],['ethera-the-stonewrought','Ethera.webp'],['roar-guild-and-community','ROARGuild.webp'],['warriorstartattack','WarriorStartAttack.webp'],['roarr','ROARR.webp'],['the-great-iceflow-relay','TheGreatIceflowRelay.webp'],['workthatgodbod','WorkThatGodBod.webp']])
     assert.equal(demoProjects.find(p=>p.id===id).portalArtwork,'/portal-content/'+name);
   assert.equal(demoProjects.find(x=>x.id==='buxbrewresist').portalArtwork,
     '/portal-content/BuxbrewResist.webp');
@@ -59,7 +59,8 @@ test('renderer uses the direct image path without a PNG fallback',()=>{
   assert.doesNotMatch(source,/portalArtworkWebp/);
 });
 
-test('community Roar Guild shares the supplied guild artwork without duplicate file imports',()=>{
+test('community alone owns the supplied guild artwork; addon has no supplied logo',()=>{
  assert.equal(demoProjects.find(p=>p.id==='roar-guild-and-community').portalArtwork,'/portal-content/ROARGuild.webp');
  assert.equal(PORTAL_WEBP_ASSETS.filter(p=>p.filename==='ROARGuild.webp').length,1);
+ assert.equal(demoProjects.find(p=>p.id==='roarguild').portalArtwork,undefined);
 });
