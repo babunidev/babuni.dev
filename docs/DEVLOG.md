@@ -885,3 +885,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 
 **Final verification:** 161 tests passed in direct Node execution across all 30 test files; production build passed with the existing >500 kB JavaScript warning. Browser search found Babuni Gaming under Games and opened three previews; the cat loaded at 1000×1000 and all three supplied profile URLs were present. One AI browser screenshot was saved and archived as WebP in the gallery/visual manifest. External media playback, social account actions and physical-device acceptance were not tested or performed.
+
+
+## 2026-10-28 — EnchantVisuals supplied artwork
+
+**Babuni.dev requested:** EnchantVisuals.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and assigned it to stable ID `enchantvisuals`. No image editing, geometry or timing changes. **Verification:** checked WebP signature; targeted artwork tests and production build run before publication. Human visual acceptance remains open.

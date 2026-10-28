@@ -574,3 +574,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Catalog/search/topic/artwork coverage now includes 45 projects and 23 supplied portal-art assignments. No grid geometry or timing change.
+
+
+## 2026-10-28 — EnchantVisuals artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `EnchantVisuals.webp` to EnchantVisuals, preserving original WebP bytes.

@@ -351,3 +351,8 @@ Babuni.dev supplied the project description and exact profiles:
 The three Babuni Gaming modules describe gaming/streaming and sharing experiences, current WoW emphasis, the connection to some addons/Azeroth Moments, and public profile resources. AI editorial text is attributed to the supplied human direction; no activity schedule or completed video migration is claimed. CurseForge's public profile was readable during this pass; YouTube and Instagram retrieval was unavailable, so their profile contents were not independently inspected.
 
 Source image `/home/babuni/Pictures/babunidev/Morningex1.jpg` is retained in the local image-originals archive outside public assets. Public asset `/portal-content/BabuniGaming.webp` is lossless at the original 1000×1000 dimensions, with exact decoded RGB pixel equality verified; no AI generation, crop or resizing. All public image assets remain WebP. Current artwork coverage: 23 active project assignments. No dedicated repository was supplied for this project; existing public snapshots are unchanged.
+
+
+## 2026-10-28 — EnchantVisuals supplied WebP
+
+EnchantVisuals.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-four active project artwork assignments now reference twenty-four unique supplied WebPs. No additional authorship or source claims are inferred from the image.

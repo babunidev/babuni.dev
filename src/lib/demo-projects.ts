@@ -108,6 +108,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "enchantvisuals",
+    "portalArtwork": "/portal-content/EnchantVisuals.webp",
     "name": "EnchantVisuals",
     "shortSummary": "Native client mod combining weapon enchant and imbue visuals.",
     "evidence": "repo",
