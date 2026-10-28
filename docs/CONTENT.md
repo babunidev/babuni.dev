@@ -270,3 +270,7 @@ Babuni.dev’s keyboard round-trip and reader-handle acceptance, positive reader
 ## Four curated public editions — 2026-10-28
 
 Babuni.dev approved documentation-only publication for four private projects. AI prepared initial public summaries from their inspected README/CONCEPT, keeping attribution and evidence limits while excluding private links, code, assets, configuration and history. This is a narrower public edition, not a mirror of every original document. MorkahjaWorld remains reserved; arcanitebrothers documents Morkahja Admin. Publication was blocked before creation; no new source text enters the current site yet. See PUBLIC_DOCUMENTATION_PLAN.md.
+
+## Verified public edition import — 2026-10-28
+
+Babuni.dev published all four prepared editions. The site imports their exact public Markdown (ten documents each), retaining human/AI attribution and evidence limitations. Ethera and Morkahja RPG describe distinct applications; MorkahjaWorld stays reserved; arcanitebrothers describes Morkahja Admin. These are curated public summaries, not full private histories or runnable distributions. Revision-pinned source links point only to the public editions. Other project snapshots and media remain unchanged.

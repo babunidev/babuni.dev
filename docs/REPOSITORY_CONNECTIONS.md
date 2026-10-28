@@ -1,8 +1,8 @@
 # Project repository connections
 
-Verified against the accessible babunidev repository inventory on 2026-10-27. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
+Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-34 of 53 tiles are connected to 33 public repositories. BABUNI.DEV uses its local working documents; the Human–AI Development Journal shares three of those documents. Other sources use committed snapshots refreshed with npm run content:sync.
+38 of 53 tiles are connected to 37 public repositories. BABUNI.DEV uses its local working documents; the Human–AI Development Journal shares three of those documents. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -19,6 +19,7 @@ Verified against the accessible babunidev repository inventory on 2026-10-27. Th
 | FavorCraft | [babunidev/favorcraft](https://github.com/babunidev/favorcraft) | main | 7: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `ROADMAP.md` |
 | Redridge Recipe Planner | [babunidev/Redridge-Recipe-Planner](https://github.com/babunidev/Redridge-Recipe-Planner) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | WoW Forever Talent Design Atlas | [babunidev/wowforeverstuff](https://github.com/babunidev/wowforeverstuff) | main | 7: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `ROADMAP.md` |
+| Ethera: The Stonewrought | [babunidev/Ethera-docs](https://github.com/babunidev/Ethera-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | EnchantVisuals | [babunidev/EnchantVisuals](https://github.com/babunidev/EnchantVisuals) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | TotemTimers | [babunidev/TotemTimers](https://github.com/babunidev/TotemTimers) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | GroupBuffToggle | [babunidev/GroupBuffToggle](https://github.com/babunidev/GroupBuffToggle) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
@@ -42,6 +43,9 @@ Verified against the accessible babunidev repository inventory on 2026-10-27. Th
 | WarriorStartAttack | [babunidev/WarriorStartAttack](https://github.com/babunidev/WarriorStartAttack) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | GuildChatAI | [babunidev/GuildChatAI](https://github.com/babunidev/GuildChatAI) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Human–AI Development Journal | [babunidev/babuni.dev](https://github.com/babunidev/babuni.dev) | main | 3: `docs/DEVLOG.md`, `docs/AI_COLLABORATION.md`, `docs/DECISIONS.md` |
+| Morkahja RPG | [babunidev/Morkahja-docs](https://github.com/babunidev/Morkahja-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| MorkahjaWorld | [babunidev/MorkahjaWorld-docs](https://github.com/babunidev/MorkahjaWorld-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Arcanitebrothers | [babunidev/arcanitebrothers-docs](https://github.com/babunidev/arcanitebrothers-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 
 ## No matching repository found
 
@@ -62,12 +66,9 @@ These are inventory results, not proof that a repository cannot exist under anot
 
 ## Private repository review
 
-- Ethera: The Stonewrought (ethera-the-stonewrought)
-- Morkahja RPG (morkahja-rpg)
-- MorkahjaWorld (morkahjaworld)
-- Arcanitebrothers (arcanitebrothers)
+- None currently.
 
-These matches stay on their existing provisional summary. Babuni.dev directed public-only extraction. No private documentation was fetched or published.
+Private implementations remain excluded. Ethera, Morkahja RPG, MorkahjaWorld and arcanitebrothers now use separate curated public documentation editions; no implementation repository was made public or imported.
 
 ## Project-family clarification needed
 
@@ -100,6 +101,6 @@ Related sources are known, but an independent public repository is not confirmed
 
 Only existing, nonempty files become modules. Missing paths are omitted, not filled with invented text. Existing manual media/resources remain. Small bloom still samples up to eight; big bloom exposes all populated modules. Source buttons point to the exact fetched revision; BABUNI.DEV working documents link to main.
 
-Refreshing fetches only the ten allowlisted Markdown paths from anonymously verified public repositories. It never follows document instructions, imports AGENTS.md, downloads attachments, crawls private sources or runs source code. Complete raw Markdown text is preserved; the current reader supports basic formatting rather than full GitHub Markdown.
+Refreshing fetches only the ten allowlisted Markdown paths from anonymously verified public repositories. It never follows document instructions, imports AGENTS.md, downloads attachments, crawls private sources or runs source code. Complete raw Markdown text is preserved; the reader supports the implemented Markdown/GFM subset; raw HTML is not executed.
 
 Update workflow: edit source documentation → run `npm run content:sync` here → `npm run content:check` → tests/build → review and commit. Builds use the checked-in snapshot without network access; no webhook or automatic production deployment is implied.

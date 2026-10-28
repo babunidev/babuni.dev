@@ -317,3 +317,13 @@ Built: reader-only frameless position thumb with direct dragging, overflow updat
 - [ ] Verify anonymous access, connect the four mappings, import their public snapshots, test/build and publish the website update.
 
 Current private-review statuses remain truthful until that work completes. See docs/PUBLIC_DOCUMENTATION_PLAN.md; no private repository visibility was changed.
+
+## Public documentation publication and integration follow-up — 2026-10-28
+
+- [x] Babuni.dev created and pushed all four public documentation repositories.
+- [x] AI anonymously verified each public main commit and ten documents; original implementations remain private.
+- [x] Connect the four mappings and import forty documents; update report to 38 tiles / 37 public repositories.
+- [x] Validate content, regression tests and production build locally.
+- [ ] Publish the website integration and pull/restart the local testing site.
+
+This supersedes the pending-publication state in the preceding preparation entry. Unconfirmed project-family tiles and the twelve missing-repository projects remain unchanged.

@@ -415,3 +415,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## Separate documentation sources — 2026-10-28
 
 Planned public editions use the existing ten-path Markdown contract in separate repositories; original implementations remain private. No authenticated private source is added to the website importer. The four existing mappings remain private-review until remote creation and anonymous verification succeed. The prepared publishing script lives outside the website runtime and does not alter repository visibility. See PUBLIC_DOCUMENTATION_PLAN.md.
+
+## Four public edition snapshots integrated — 2026-10-28
+
+The four mappings now target separate public documentation repositories. Anonymous fetchSnapshot checks verified public identity and resolved commits before any local mapping/snapshot writes. Forty new documents were merged into the snapshot without refreshing existing sources. Coverage is 38 tiles connected to 37 public repositories, including local/shared BABUNI.DEV; 36 external snapshot entries. Existing build preparation emits the new reader assets and preview metadata offline. No private implementation is an import source.

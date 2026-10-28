@@ -224,6 +224,11 @@
           "src": "/media/babuni-dev/images/verification/retained-cache-bloom.webp",
           "alt": "BABUNI.DEV small bloom remains open after dragging the optimized grid.",
           "caption": "AI desktop smoke check, 2026-10-27: selection waited for normal shift completion, opened eight modules, and retained bloom during dragging. This still capture is not long-session/FPS evidence."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/public-documentation-reader.webp",
+          "alt": "Ethera Concept from its public documentation edition rendered in the reader.",
+          "caption": "AI desktop browser verification, 2026-10-28: Ethera opened eight small-bloom modules, eleven big-bloom modules and the Markdown Concept reader. View source points to the pinned public Ethera-docs commit."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

@@ -1,5 +1,7 @@
 # Public documentation editions — 2026-10-28
 
+**Current status:** Babuni.dev has published all four editions. Anonymous verification and the website mapping/import are complete locally. The preparation/blocker narrative below is historical; website publication/restart remains pending.
+
 Babuni.dev chose separate public documentation for Ethera: The Stonewrought, Morkahja RPG, MorkahjaWorld and Morkahja Admin (the arcanitebrothers project). The existing implementations must stay private.
 
 ## Prepared destinations
@@ -30,3 +32,12 @@ A syntax-checked publishing script is available outside this website repository 
 ## Next integration
 
 After publication, verify anonymous public access and exact commits for all four new repositories. Update only their four website mappings; fetch the new public documentation snapshots, preserving the existing 33 sources unchanged. Then validate content, run tests/build, regenerate the connection report and commit/push the website update. Do not mark these editions connected before anonymous verification succeeds. Do not automatically repurpose the still-unconfirmed Morkahja Admin Console tile or other family tiles without scope clarification.
+
+## Verified public commits
+
+- Ethera-docs: `41d64beff3e3c51dad49f46b6ab67efc4d97c6cc`
+- Morkahja-docs: `e19d0aea48f6cccaf74bfb0a50f3b545b124e5ed`
+- MorkahjaWorld-docs: `f27191426e68af739a904e8cb14beec5be580700`
+- arcanitebrothers-docs: `da8b818e0be9fc14ba8176da25ab99ab774223be`
+
+The importer fetched all forty documents anonymously. Existing external snapshots were preserved; authenticated metadata separately confirms all four implementations remain private. The site mapping and snapshot are locally integrated, with tests/build passing; remote website publication remains separate.

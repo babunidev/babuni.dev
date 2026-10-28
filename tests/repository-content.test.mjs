@@ -14,8 +14,8 @@ const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
 test('all 53 tiles have explicit status; all public source snapshots match their mapping',()=>{
  assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
  assert.deepEqual(validateSnapshots(connections,snapshots),[]);
- assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,34);
- assert.equal(Object.keys(snapshots).length,32);
+ assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,38);
+ assert.equal(Object.keys(snapshots).length,36);
  for(const [id,c] of Object.entries(connections)){
   const source=repositoryModules(c,snapshots[c.repository],local);
   if(c.status!=='connected'){assert.deepEqual(source,[]);continue;}
@@ -86,6 +86,23 @@ test('repository coverage report matches the map and never lists private reposit
  assert.ok(report.includes('Local Prompt Lab'));
  assert.equal(Object.values(connections).filter(c=>c.status==='needs-repository').length,12);
  assert.ok(report.includes('AsnkarGrotzschnapf'));assert.ok(report.includes('| master |'));
- assert.ok(!report.includes('https://github.com/babunidev/Ethera'));
- assert.ok(!report.includes('https://github.com/babunidev/Morkahja'));
+ for(const name of ['Ethera','Morkahja','MorkahjaWorld','arcanitebrothers'])assert.doesNotMatch(report,new RegExp('https://github\\.com/babunidev/'+name+'(?:[)/#?\\s]|$)'));
+ assert.ok(report.includes('https://github.com/babunidev/Ethera-docs'));
+});
+
+test('four documentation-only projects use pinned public editions rather than private implementations',()=>{
+ const editions={'ethera-the-stonewrought':'Ethera-docs','morkahja-rpg':'Morkahja-docs','morkahjaworld':'MorkahjaWorld-docs',arcanitebrothers:'arcanitebrothers-docs'};
+ for(const [id,name] of Object.entries(editions)){
+  const c=connections[id];assert.equal(c.status,'connected');assert.equal(c.repository,'babunidev/'+name);
+  const snapshot=snapshots[c.repository];assert.match(snapshot.commit,/^[a-f0-9]{40}$/);assert.equal(snapshot.documents.length,10);
+  assert.equal(repositoryModules(c,snapshot).length,10);
+ }
+ for(const name of ['Ethera','Morkahja','MorkahjaWorld','arcanitebrothers'])assert.equal(snapshots['babunidev/'+name],undefined);
+});
+
+test('public edition previews describe the project rather than edition metadata',()=>{
+ const c=connections['ethera-the-stonewrought'];
+ const concept=repositoryModules(c,snapshots[c.repository]).find(m=>m.id==='concept');
+ assert.ok(concept.preview.startsWith('Ethera is the current Grimnir chapter'));
+ assert.ok(!concept.preview.includes('Curated public documentation'));
 });

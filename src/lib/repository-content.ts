@@ -29,7 +29,7 @@ export function documentPreview(body:string):string {
     if(fenced)continue;
     const text=line.trim();
     if(!text){if(paragraph.length)break;continue;}
-    if(/^(?:#|\||>|[-*]\s|\d+\.\s|---|\*\*(?:Author|Owner|State|Status|Recorded|Origin))/i.test(text))continue;
+    if(/^(?:#|\||>|[-*]\s|\d+\.\s|---|\*\*(?:Author|Owner|State|Status|Recorded|Origin|Edition))/i.test(text))continue;
     paragraph.push(text);
   }
   return markdownExcerpt(paragraph.join(' ')||body,180);

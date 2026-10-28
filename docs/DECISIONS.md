@@ -460,3 +460,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — Separate public editions for private projects
 
 **Status:** human direction confirmed; publication pending. Babuni.dev chose public documentation only for Ethera, Morkahja RPG, MorkahjaWorld and arcanitebrothers. Keep existing implementation repositories private. AI prepared separate curated Markdown editions with the standard website paths; copying entire private histories was not selected. Only anonymously verified public editions may become portfolio sources. See PUBLIC_DOCUMENTATION_PLAN.md.
+
+## 2026-10-28 — Public edition mapping verified
+
+**Status:** four public documentation repositories published by Babuni.dev and anonymously verified by AI. Use Ethera-docs, Morkahja-docs, MorkahjaWorld-docs and arcanitebrothers-docs for exactly the four formerly private-review tiles. Keep implementation sources private and outside the snapshot. Preserve existing other snapshots and unconfirmed family mappings. Full source commits are pinned in repository-documents.json; this is a reviewed static import, not private/live fetching.

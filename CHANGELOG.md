@@ -451,3 +451,12 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Added
 - Recorded the chosen public-documentation/private-implementation boundary and the four prepared editions in docs/PUBLIC_DOCUMENTATION_PLAN.md. No repository visibility or website source status has changed; remote publication and import remain pending.
+
+## 2026-10-28 — Connect four public documentation editions
+
+### Added
+- Connected Ethera, Morkahja RPG, MorkahjaWorld and arcanitebrothers to their separate public documentation repositories. Imported exactly forty anonymously verified Markdown documents pinned to their public commits; existing snapshots remain unchanged.
+- Added boundary regression coverage excluding private implementation snapshots, and updated the connection report to 38 mapped tiles / 37 public sources.
+
+### Fixed
+- Skip Edition metadata when selecting a source preview paragraph, so newly connected project cards show actual project content; preserve full document text and attribution in the reader.

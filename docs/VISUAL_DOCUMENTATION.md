@@ -68,3 +68,7 @@ Both originals were JPEG bytes and were converted to WebP for publication. These
 ## Retained source cache — 2026-10-27
 
 - `retained-cache-bloom.webp` — AI desktop smoke capture after normal dragging, queued selection/shift completion, eight-module small-bloom opening and dragging with the bloom retained. Not an hours-long or FPS check. Original encoded JPEG is held outside public; published asset is WebP.
+
+## Four public documentation editions — 2026-10-28
+
+- `public-documentation-reader.webp` — AI desktop browser verification of Ethera’s public Concept in the reader, after small → big → reader navigation. Public pinned source link checked in the accessibility tree. No physical-phone check claimed. Original JPEG bytes preserved outside public assets.

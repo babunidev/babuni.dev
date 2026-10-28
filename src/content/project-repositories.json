@@ -64,8 +64,10 @@
     "branch": "main"
   },
   "ethera-the-stonewrought": {
-    "status": "private-review",
-    "note": "Matching private repository excluded from public content."
+    "status": "connected",
+    "repository": "babunidev/Ethera-docs",
+    "branch": "main",
+    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
   },
   "enchantvisuals": {
     "status": "connected",
@@ -229,20 +231,26 @@
     "note": "Related project family is known, but an independent public repository is not confirmed."
   },
   "morkahja-rpg": {
-    "status": "private-review",
-    "note": "Matching private repository excluded from public content."
+    "status": "connected",
+    "repository": "babunidev/Morkahja-docs",
+    "branch": "main",
+    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
   },
   "morkahja-admin-console": {
     "status": "needs-confirmation",
     "note": "Related project family is known, but an independent public repository is not confirmed."
   },
   "morkahjaworld": {
-    "status": "private-review",
-    "note": "Matching private repository excluded from public content."
+    "status": "connected",
+    "repository": "babunidev/MorkahjaWorld-docs",
+    "branch": "main",
+    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
   },
   "arcanitebrothers": {
-    "status": "private-review",
-    "note": "Matching private repository excluded from public content."
+    "status": "connected",
+    "repository": "babunidev/arcanitebrothers-docs",
+    "branch": "main",
+    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
   },
   "mech-arena": {
     "status": "needs-repository",

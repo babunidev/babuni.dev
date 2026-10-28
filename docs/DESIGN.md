@@ -411,3 +411,7 @@ Babuni.dev accepts the highlight-first keyboard round trip for shipping and read
 ## Public project explanations, private implementations — 2026-10-28
 
 Babuni.dev chose documentation-only editions for four currently private projects. Public explanations must distinguish source-reported functionality from tested behavior, reserved scope from implemented projects, and Morkahja Admin from the public game. This preparation does not redesign the site or modify its motion, artwork or interactions.
+
+## Documentation editions available at all depths — 2026-10-28
+
+Four existing project tiles now gain the standard text modules from their public documentation editions. Small bloom still samples up to eight populated modules; big bloom exposes all populated modules and readers show the selected source with a public revision-pinned link. Existing artwork, tile identifiers, motion and reveal geometry are unchanged. The arcanitebrothers edition explains that its application is Morkahja Admin.
