@@ -12,7 +12,6 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "flourishforever": "Roleplay",
   "azeroth-moments": "Media automation",
   "anskar-grotzschnapf": "Generative art",
-  "local-prompt-lab": "Image experiments",
   "local-ai-workstation": "Local AI",
   "resistforever": "Combat mechanics",
   "favorcraft": "Crafting tools",
@@ -89,10 +88,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
   "anskar-grotzschnapf": [
     "Poetry",
     "Digital prints"
-  ],
-  "local-prompt-lab": [
-    "Prompts & seeds",
-    "Visual styles"
   ],
   "local-ai-workstation": [
     "Language models",

@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-34 of 43 tiles are connected to 34 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+34 of 42 tiles are connected to 34 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -45,7 +45,6 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 
 ## No matching repository found
 
-- Local Prompt Lab (local-prompt-lab)
 - Local AI Workstation (local-ai-workstation)
 - ROAR Guild and Community (roar-guild-and-community)
 - Buxbrew — character story (buxbrew-character-story)

@@ -35,10 +35,6 @@
     "repository": "babunidev/AsnkarGrotzschnapf",
     "branch": "master"
   },
-  "local-prompt-lab": {
-    "status": "needs-repository",
-    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
-  },
   "local-ai-workstation": {
     "status": "needs-repository",
     "note": "No matching repository found in the accessible account inventory on 2026-10-27."

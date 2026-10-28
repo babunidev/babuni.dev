@@ -507,3 +507,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Removed
 - Removed Mech-Arena from active grid/search, both topic maps and unresolved repository mappings at Babuni.dev’s request. The active catalog now has 43 entries; connected sources and imported documents are unchanged.
+
+## 2026-10-28 — Local Prompt Lab folded into Anskar Grotzschnapf
+
+### Removed
+- Removed Local Prompt Lab as an independent grid/search project, including topics and its unresolved repository mapping, at Babuni.dev’s direction that it belongs within Anskar Grotzschnapf. Active catalog: 42 projects. Its supplied WebP remains preserved, with no standalone assignment.

@@ -7,10 +7,10 @@ import {demoProjects} from '../src/lib/demo-projects.ts';
 import {PORTAL_WEBP_ASSETS,normalizePortalFilename,importPortalArtwork} from '../scripts/import-portal-artwork.mjs';
 
 test('all supplied portal artworks are mapped to direct WebP paths',()=>{
-  assert.equal(PORTAL_WEBP_ASSETS.length,20);
-  assert.equal(new Set(PORTAL_WEBP_ASSETS.map(x=>x.filename)).size,20);
+  assert.equal(PORTAL_WEBP_ASSETS.length,19);
+  assert.equal(new Set(PORTAL_WEBP_ASSETS.map(x=>x.filename)).size,19);
   const items=demoProjects.filter(x=>x.portalArtwork);
-  assert.equal(items.length,20);
+  assert.equal(items.length,19);
   for(const project of items){
     assert.match(project.portalArtwork,/^\/portal-content\/[A-Za-z0-9]+\.webp$/);
     assert.ok(existsSync(new URL('../public'+project.portalArtwork,import.meta.url)),project.id);
@@ -41,7 +41,7 @@ test('WebP import preserves original bytes and creates all mapped paths',()=>{
       writeFileSync(join(src,sourceName),bytes);
     }
     const imported=importPortalArtwork(src,{destination:dest});
-    assert.equal(imported.length,20);
+    assert.equal(imported.length,19);
     for(const asset of PORTAL_WEBP_ASSETS)
       assert.deepEqual(readFileSync(join(dest,asset.filename)),bytes);
   }finally{rmSync(tmp,{recursive:true,force:true});}
@@ -49,7 +49,7 @@ test('WebP import preserves original bytes and creates all mapped paths',()=>{
 test('missing WebPs fail before copying, protecting previous artwork',()=>{
   const tmp=mkdtempSync(join(tmpdir(),'babuni-webp-missing-'));
   try{
-    assert.throws(()=>importPortalArtwork(tmp,{destination:join(tmp,'out')}),/Missing 20 WebP/);
+    assert.throws(()=>importPortalArtwork(tmp,{destination:join(tmp,'out')}),/Missing 19 WebP/);
     assert.equal(existsSync(join(tmp,'out')),false);
   }finally{rmSync(tmp,{recursive:true,force:true});}
 });
