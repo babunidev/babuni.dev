@@ -449,3 +449,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign the supplied BuxbrewAddon.webp to Buxbrew Addon.
 - [ ] Human visual check through the existing round portal mask.
+
+
+## 2026-10-29 — RoarGuild Add-on artwork
+
+- [x] Assign supplied RoarGuildAddon.webp to the addon, retaining the distinct community artwork.
+- [ ] Human visual check of the addon artwork through the round portal mask.

@@ -598,3 +598,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `BuxbrewAddon.webp` to Buxbrew Addon, preserving original WebP bytes.
+
+
+## 2026-10-29 — RoarGuild Add-on artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `RoarGuildAddon.webp` to RoarGuild Add-on, preserving original bytes. Community Roar Guild retains its separate artwork.

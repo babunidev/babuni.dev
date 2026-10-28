@@ -153,6 +153,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roarguild",
+    "portalArtwork": "/portal-content/RoarGuildAddon.webp",
     "name": "RoarGuild Add-on",
     "shortSummary": "WoW guild add-on for invitations and guild-character behavior, as described by Babuni.dev.",
     "evidence": "repo",

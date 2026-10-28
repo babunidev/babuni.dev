@@ -499,3 +499,8 @@ BuxbrewCharge displays its supplied WebP through the existing circular mask. Sca
 ## 2026-10-28 — Buxbrew Addon portal
 
 Buxbrew Addon displays its supplied WebP through the existing circular mask. The character-story artwork remains distinct; scale, positioning and motion are unchanged.
+
+
+## 2026-10-29 — RoarGuild Add-on portal
+
+RoarGuild Add-on now displays RoarGuildAddon.webp through the existing round mask. Community Roar Guild keeps its distinct ROARGuild.webp. Scale, position and timing remain unchanged.

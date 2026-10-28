@@ -7,15 +7,15 @@ import {demoProjects} from '../src/lib/demo-projects.ts';
 import {PORTAL_WEBP_ASSETS,normalizePortalFilename,importPortalArtwork} from '../scripts/import-portal-artwork.mjs';
 
 test('all supplied portal artworks are mapped to direct WebP paths',()=>{
-  assert.equal(PORTAL_WEBP_ASSETS.length,26);
-  assert.equal(new Set(PORTAL_WEBP_ASSETS.map(x=>x.filename)).size,26);
+  assert.equal(PORTAL_WEBP_ASSETS.length,27);
+  assert.equal(new Set(PORTAL_WEBP_ASSETS.map(x=>x.filename)).size,27);
   const items=demoProjects.filter(x=>x.portalArtwork);
-  assert.equal(items.length,26);
+  assert.equal(items.length,27);
   for(const project of items){
     assert.match(project.portalArtwork,/^\/portal-content\/[A-Za-z0-9]+\.webp$/);
     assert.ok(existsSync(new URL('../public'+project.portalArtwork,import.meta.url)),project.id);
   }
-  for(const [id,name] of [['buxbrew','BuxbrewAddon.webp'],['buxbrewcharge','BuxbrewCharge.webp'],['enchantvisuals','EnchantVisuals.webp'],['babuni-gaming','BabuniGaming.webp'],['totemtimers','TotemTimers.webp'],['morkahja-rpg','Morkahja.webp'],['buxbrew-character-story','BuxbrewCharacter.webp'],['arcanitebrothers','ArcaniteBrothers.webp'],['battlereport','BattleReport.webp'],['ethera-the-stonewrought','Ethera.webp'],['roar-guild-and-community','ROARGuild.webp'],['warriorstartattack','WarriorStartAttack.webp'],['roarr','ROARR.webp'],['the-great-iceflow-relay','TheGreatIceflowRelay.webp'],['workthatgodbod','WorkThatGodBod.webp']])
+  for(const [id,name] of [['roarguild','RoarGuildAddon.webp'],['buxbrew','BuxbrewAddon.webp'],['buxbrewcharge','BuxbrewCharge.webp'],['enchantvisuals','EnchantVisuals.webp'],['babuni-gaming','BabuniGaming.webp'],['totemtimers','TotemTimers.webp'],['morkahja-rpg','Morkahja.webp'],['buxbrew-character-story','BuxbrewCharacter.webp'],['arcanitebrothers','ArcaniteBrothers.webp'],['battlereport','BattleReport.webp'],['ethera-the-stonewrought','Ethera.webp'],['roar-guild-and-community','ROARGuild.webp'],['warriorstartattack','WarriorStartAttack.webp'],['roarr','ROARR.webp'],['the-great-iceflow-relay','TheGreatIceflowRelay.webp'],['workthatgodbod','WorkThatGodBod.webp']])
     assert.equal(demoProjects.find(p=>p.id===id).portalArtwork,'/portal-content/'+name);
   assert.equal(demoProjects.find(x=>x.id==='buxbrewresist').portalArtwork,
     '/portal-content/BuxbrewResist.webp');
@@ -41,7 +41,7 @@ test('WebP import preserves original bytes and creates all mapped paths',()=>{
       writeFileSync(join(src,sourceName),bytes);
     }
     const imported=importPortalArtwork(src,{destination:dest});
-    assert.equal(imported.length,26);
+    assert.equal(imported.length,27);
     for(const asset of PORTAL_WEBP_ASSETS)
       assert.deepEqual(readFileSync(join(dest,asset.filename)),bytes);
   }finally{rmSync(tmp,{recursive:true,force:true});}
@@ -49,7 +49,7 @@ test('WebP import preserves original bytes and creates all mapped paths',()=>{
 test('missing WebPs fail before copying, protecting previous artwork',()=>{
   const tmp=mkdtempSync(join(tmpdir(),'babuni-webp-missing-'));
   try{
-    assert.throws(()=>importPortalArtwork(tmp,{destination:join(tmp,'out')}),/Missing 26 WebP/);
+    assert.throws(()=>importPortalArtwork(tmp,{destination:join(tmp,'out')}),/Missing 27 WebP/);
     assert.equal(existsSync(join(tmp,'out')),false);
   }finally{rmSync(tmp,{recursive:true,force:true});}
 });
@@ -59,8 +59,8 @@ test('renderer uses the direct image path without a PNG fallback',()=>{
   assert.doesNotMatch(source,/portalArtworkWebp/);
 });
 
-test('community alone owns the supplied guild artwork; addon has no supplied logo',()=>{
+test('community and addon have distinct supplied guild artworks',()=>{
  assert.equal(demoProjects.find(p=>p.id==='roar-guild-and-community').portalArtwork,'/portal-content/ROARGuild.webp');
  assert.equal(PORTAL_WEBP_ASSETS.filter(p=>p.filename==='ROARGuild.webp').length,1);
- assert.equal(demoProjects.find(p=>p.id==='roarguild').portalArtwork,undefined);
+ assert.equal(demoProjects.find(p=>p.id==='roarguild').portalArtwork,'/portal-content/RoarGuildAddon.webp');
 });

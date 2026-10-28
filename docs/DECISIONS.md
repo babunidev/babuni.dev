@@ -552,3 +552,8 @@ Babuni.dev selected BuxbrewCharge.webp. AI assigned the supplied asset directly 
 ## 2026-10-28 — Buxbrew Addon artwork (implemented)
 
 Babuni.dev selected BuxbrewAddon.webp. AI assigned the supplied asset directly to Buxbrew Addon (`buxbrew`), retaining original bytes and the established portal renderer.
+
+
+## 2026-10-29 — Distinct RoarGuild Add-on artwork (implemented)
+
+Babuni.dev selected RoarGuildAddon.webp for the addon. AI mapped the supplied asset to `roarguild`; the community continues using ROARGuild.webp. The earlier no-addon-artwork state is superseded, with original bytes retained.
