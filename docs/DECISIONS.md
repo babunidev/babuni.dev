@@ -537,3 +537,8 @@ Babuni.dev chose TotemTimers.webp. AI assigned the existing supplied asset direc
 ## 2026-10-28 — EnchantVisuals artwork (implemented)
 
 Babuni.dev selected the supplied EnchantVisuals.webp. AI mapped the existing asset directly to EnchantVisuals, retaining its bytes and the established portal renderer.
+
+
+## 2026-10-28 — Buxbrew Addon (implemented)
+
+Babuni.dev chose the exact display name Buxbrew Addon for stable ID `buxbrew`. AI applied a display-only rename; no merge with the character story or repository rename.

@@ -484,3 +484,8 @@ Babuni Gaming uses Babuni.dev's original cat drawing from Morningex1.jpg, conver
 ## 2026-10-28 — EnchantVisuals portal
 
 EnchantVisuals displays the supplied EnchantVisuals.webp through the existing circular mask. Scale, positioning and motion remain unchanged.
+
+
+## 2026-10-28 — Buxbrew naming
+
+The tile and project menu display Buxbrew Addon. Buxbrew — character story retains its existing name and artwork; geometry and timing are unchanged.

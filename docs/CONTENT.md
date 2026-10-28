@@ -356,3 +356,8 @@ Source image `/home/babuni/Pictures/babunidev/Morningex1.jpg` is retained in the
 ## 2026-10-28 — EnchantVisuals supplied WebP
 
 EnchantVisuals.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-four active project artwork assignments now reference twenty-four unique supplied WebPs. No additional authorship or source claims are inferred from the image.
+
+
+## 2026-10-28 — Buxbrew Addon label
+
+Babuni.dev renamed Buxbrew to Buxbrew Addon. This is a display-name correction; no new functionality claims are added. The character-story project and source snapshots are unchanged.

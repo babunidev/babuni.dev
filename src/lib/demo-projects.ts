@@ -241,7 +241,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "buxbrew",
-    "name": "Buxbrew",
+    "name": "Buxbrew Addon",
     "shortSummary": "Named character-related repository; purpose not yet confirmed.",
     "evidence": "name-only",
     "tint": "hsl(218 58% 62%)"

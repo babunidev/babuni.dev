@@ -890,3 +890,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — EnchantVisuals supplied artwork
 
 **Babuni.dev requested:** EnchantVisuals.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and assigned it to stable ID `enchantvisuals`. No image editing, geometry or timing changes. **Verification:** checked WebP signature; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+
+
+## 2026-10-28 — Buxbrew Addon naming
+
+**Babuni.dev requested:** rename Buxbrew to Buxbrew Addon. **AI execution:** changed the catalog display name only, preserving stable ID `buxbrew`, repository mapping and the separate Buxbrew — character story entry. Regenerated the repository report to match. **Verification:** existing catalog/navigation checks and production build run before publication; no interaction, timing or positioning changes.

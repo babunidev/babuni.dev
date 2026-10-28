@@ -494,3 +494,8 @@ Stable ID `babuni-gaming` is a real catalog entry, with `/portal-content/BabuniG
 ## 2026-10-28 — EnchantVisuals asset mapping
 
 Catalog ID `enchantvisuals` references `/portal-content/EnchantVisuals.webp`. Existing rendering and catalog-derived artwork import logic handle the asset without new behavior.
+
+
+## 2026-10-28 — Buxbrew display label
+
+Catalog ID `buxbrew` now displays Buxbrew Addon. Existing identity-based repository, menu membership and module lookup remain valid without migration.
