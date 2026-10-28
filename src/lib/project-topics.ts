@@ -38,7 +38,6 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "buxbrew": "Character work",
   "amazin": "Stealth addon",
   "warriorstartattack": "Combat helper",
-  "guildchatai": "Chat experiment",
   "roar-guild-and-community": "Community",
   "buxbrew-character-story": "Character story",
   "fantasy-rpg-assets": "Fantasy art",
@@ -196,10 +195,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
   "warriorstartattack": [
     "Warrior abilities",
     "Auto-attack"
-  ],
-  "guildchatai": [
-    "Guild chat",
-    "Early experiment"
   ],
   "roar-guild-and-community": [
     "WoW community",

@@ -492,3 +492,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Removed
 - Removed Warehouse Performance Model from the active grid/search catalog, topic maps and unresolved repository mappings at Babuni.dev’s request. The list now contains 46 projects; connected sources and documents are unchanged.
+
+## 2026-10-28 — GuildChatAI withdrawal
+
+### Removed
+- Removed GuildChatAI from active grid/search, both topic maps and repository mapping at Babuni.dev’s request. Removed its ten now-unconnected cached documents; the GitHub repository is untouched. Active totals: 45 projects / 34 public sources.

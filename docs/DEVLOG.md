@@ -801,3 +801,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 **Babuni.dev requested:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.
 
 **Verified:** full command passed 30 test-file entries; direct repository suite passed 11/11; content checks, production build and whitespace check passed. No new browser or physical-device test claimed for this catalog-only follow-up.
+
+## 2026-10-28 — GuildChatAI withdrawn
+
+**Babuni.dev requested:** remove GuildChatAI too. **AI implementation:** removed its active catalog/topic/mapping records and the orphaned public GuildChatAI snapshot (ten documents). All other retained snapshots, projects, artwork and interaction behavior remain unchanged. No repository deletion was requested or performed. Active totals: 45 entries, 34 connected public sources, 33 external snapshots and 316 external documents. Historical research mentions remain historical. Verification is recorded in DEVLOG.
+
+**Verified:** 30 passing test-file entries, direct repository suite 11/11, production build/content guards and whitespace checks passed. Compared snapshots to confirm only GuildChatAI was removed and all retained source objects are unchanged. No new browser or physical-device check claimed for this data-only follow-up.

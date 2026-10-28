@@ -164,11 +164,6 @@
     "repository": "babunidev/WarriorStartAttack",
     "branch": "main"
   },
-  "guildchatai": {
-    "status": "connected",
-    "repository": "babunidev/GuildChatAI",
-    "branch": "main"
-  },
   "roar-guild-and-community": {
     "status": "needs-repository",
     "note": "No matching repository found in the accessible account inventory on 2026-10-27."

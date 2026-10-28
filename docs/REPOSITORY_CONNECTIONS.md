@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-35 of 46 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+34 of 45 tiles are connected to 34 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -39,7 +39,6 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 | Buxbrew | [babunidev/Buxbrew](https://github.com/babunidev/Buxbrew) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Amazin | [babunidev/amazin](https://github.com/babunidev/amazin) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | WarriorStartAttack | [babunidev/WarriorStartAttack](https://github.com/babunidev/WarriorStartAttack) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| GuildChatAI | [babunidev/GuildChatAI](https://github.com/babunidev/GuildChatAI) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Morkahja RPG | [babunidev/Morkahja-docs](https://github.com/babunidev/Morkahja-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | MorkahjaWorld | [babunidev/MorkahjaWorld-docs](https://github.com/babunidev/MorkahjaWorld-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Arcanitebrothers | [babunidev/arcanitebrothers-docs](https://github.com/babunidev/arcanitebrothers-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
