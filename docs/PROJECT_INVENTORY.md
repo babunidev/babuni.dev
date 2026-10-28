@@ -96,3 +96,7 @@ Babuni.dev asked to collect work discussed across chats, projects and repositori
 ## Additional curation override — 2026-10-28
 
 Babuni.dev additionally withdrew The Amberbrew Family and Practical Templates Creator. The historical research table is retained; the active catalog now contains 47 entries. This supersedes the earlier 49-entry count. No reason beyond the explicit human removal instruction is inferred.
+
+## 2026-10-28 — Warehouse Performance Model withdrawn
+
+**Babuni.dev requested:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.

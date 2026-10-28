@@ -478,3 +478,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — Additional owner withdrawals
 
 **Status:** accepted and implemented. Babuni.dev additionally withdraws The Amberbrew Family and Practical Templates Creator as standalone website entries. Remove their active grid/search/topic/mapping records; preserve historical research and unrelated projects. Neither entry had an imported source to delete.
+
+## 2026-10-28 — Warehouse Performance Model withdrawn
+
+**Babuni.dev requested:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.

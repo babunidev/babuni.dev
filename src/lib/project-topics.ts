@@ -43,7 +43,6 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "buxbrew-character-story": "Character story",
   "fantasy-rpg-assets": "Fantasy art",
   "fantasy-architecture": "Architecture",
-  "warehouse-performance-model": "Scoring systems",
   "dual-pc-streaming-setup": "Streaming setup",
   "grimnir": "Fantasy culture",
   "morkahja-rpg": "Fantasy RPG",
@@ -217,10 +216,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
   "fantasy-architecture": [
     "Building plans",
     "Fantasy gateways"
-  ],
-  "warehouse-performance-model": [
-    "Fair scoring",
-    "Workplace systems"
   ],
   "dual-pc-streaming-setup": [
     "Gaming PC",

@@ -433,3 +433,7 @@ The four withdrawn IDs are removed from demoProjects, repository connections and
 ## Two further catalog withdrawals — 2026-10-28
 
 Removed two unresolved IDs consistently from the catalog, repository mappings and both topic dictionaries. Search continues to derive from the same catalog as the grid. There are 47 active entries, 35 connected public sources and 34 external snapshots; no imported document snapshot changed in this withdrawal.
+
+## 2026-10-28 — Warehouse Performance Model withdrawn
+
+**Babuni.dev requested:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.

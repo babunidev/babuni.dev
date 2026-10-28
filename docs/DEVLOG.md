@@ -795,3 +795,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 **Babuni.dev requested:** also remove The Amberbrew Family and Practical Templates Creator. **AI execution:** removed their semantic IDs from the shared grid/search catalog, both topic dictionaries and unresolved repository mappings. Neither had a connected repository snapshot or curated module content. Retained all other projects, sources, artwork and interactions. Active totals: 47 entries, 35 connected public sources, 10 missing-repository entries and two family-clarification entries. Extended existing withdrawal regressions and refreshed active reports. This is owner-directed curation; no speculative reason for withdrawal is invented. Verification is recorded below.
 
 **Verification:** full test command passed 30 test-file entries, direct catalog suite 4/4 and repository suite 11/11 passed, production build/content guards and whitespace check passed. No new browser/phone capture or physical-device acceptance is claimed for this data-only follow-up.
+
+## 2026-10-28 — Warehouse Performance Model withdrawn
+
+**Babuni.dev requested:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.
+
+**Verified:** full command passed 30 test-file entries; direct repository suite passed 11/11; content checks, production build and whitespace check passed. No new browser or physical-device test claimed for this catalog-only follow-up.

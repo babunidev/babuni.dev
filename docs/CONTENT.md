@@ -288,3 +288,7 @@ ArcaniteBrothers.webp is a newly supplied 1536×1536, 169,052-byte WebP, copied 
 ## Family/template withdrawals — 2026-10-28
 
 Babuni.dev additionally withdraws The Amberbrew Family and Practical Templates Creator. Their historical inventory mentions remain research history, not active projects. Neither had connected source text or curated module content. Other family/character entries are not implicitly removed.
+
+## 2026-10-28 — Warehouse Performance Model withdrawn
+
+**Babuni.dev requested:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.

@@ -487,3 +487,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Removed
 - Removed The Amberbrew Family and Practical Templates Creator from the active catalog, both topic maps and unresolved repository mappings at Babuni.dev’s request. The active list now has 47 projects; no repository or source document was deleted.
+
+## 2026-10-28 — Warehouse candidate withdrawal
+
+### Removed
+- Removed Warehouse Performance Model from the active grid/search catalog, topic maps and unresolved repository mappings at Babuni.dev’s request. The list now contains 46 projects; connected sources and documents are unchanged.

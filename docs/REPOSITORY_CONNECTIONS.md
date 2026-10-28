@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-35 of 47 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+35 of 46 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -52,7 +52,6 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 - Buxbrew — character story (buxbrew-character-story)
 - Fantasy RPG Assets (fantasy-rpg-assets)
 - Fantasy Architecture (fantasy-architecture)
-- Warehouse Performance Model (warehouse-performance-model)
 - Dual-PC Streaming Setup (dual-pc-streaming-setup)
 - Mech-Arena (mech-arena)
 - Analubia (analubia)

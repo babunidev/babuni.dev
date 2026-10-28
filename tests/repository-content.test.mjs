@@ -11,7 +11,7 @@ const local=Object.fromEntries(REPOSITORY_DOCUMENTS.map(d=>[d.path,readFileSync(
 const commit='a'.repeat(40),connection={status:'connected',repository:'babunidev/example',branch:'master'};
 const metadata={private:false,visibility:'public',full_name:'babunidev/example'};
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
-test('all 47 tiles have explicit status; all public source snapshots match their mapping',()=>{
+test('all 46 tiles have explicit status; all public source snapshots match their mapping',()=>{
  assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
  assert.deepEqual(validateSnapshots(connections,snapshots),[]);
  assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,35);
@@ -85,7 +85,7 @@ test('repository coverage report matches the map and never lists private reposit
  const report=repositoryReport(demoProjects,connections,snapshots);
  assert.equal(report,readFileSync(new URL('../docs/REPOSITORY_CONNECTIONS.md',import.meta.url),'utf8'));
  assert.ok(report.includes('Local Prompt Lab'));
- assert.equal(Object.values(connections).filter(c=>c.status==='needs-repository').length,10);
+ assert.equal(Object.values(connections).filter(c=>c.status==='needs-repository').length,9);
  assert.ok(report.includes('AsnkarGrotzschnapf'));assert.ok(report.includes('| master |'));
  for(const name of ['Ethera','Morkahja','MorkahjaWorld','arcanitebrothers'])assert.doesNotMatch(report,new RegExp('https://github\\.com/babunidev/'+name+'(?:[)/#?\\s]|$)'));
  assert.ok(report.includes('https://github.com/babunidev/Ethera-docs'));
@@ -109,7 +109,7 @@ test('public edition previews describe the project rather than edition metadata'
 });
 
 test('retired sources are absent while BABUNI journal material remains available',()=>{
- for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator'])assert.equal(connections[id],undefined);
+ for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model'])assert.equal(connections[id],undefined);
  for(const repo of ['babunidev/wowforeverstuff','babunidev/Redridge-Recipe-Planner'])assert.equal(snapshots[repo],undefined);
  const c=connections['babuni-dev'];const modules=composeProjectModules(catalog['babuni-dev'],repositoryModules(c,undefined,local),c.repository);
  for(const id of ['journal','decisions','collaboration'])assert.ok(modules.some(m=>m.id===id&&moduleHasContent(m)));

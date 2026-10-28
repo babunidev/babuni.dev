@@ -356,3 +356,7 @@ Active inventory is now 49 entries / 35 public-source connections. Earlier 53-en
 ## Further owner curation — 2026-10-28
 
 Built: remove The Amberbrew Family and Practical Templates Creator from active grid/search/topics/mappings. Current list: 47 projects, 35 connected public sources, 10 without repositories and two needing family clarification. Repository creation for the two withdrawn candidates is no longer pending work. Publication and human visual acceptance remain separate.
+
+## 2026-10-28 — Warehouse Performance Model withdrawn
+
+**Babuni.dev requested:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.
