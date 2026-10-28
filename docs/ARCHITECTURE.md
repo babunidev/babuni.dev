@@ -474,3 +474,8 @@ Pinned direct-navigation destinations are preserved explicitly on entering view,
 ## 2026-10-28 — Character artwork mapping
 
 Stable ID `buxbrew-character-story` now maps to `/portal-content/BuxbrewCharacter.webp` in the catalog. The existing portal renderer/import inventory handles it without new rendering logic.
+
+
+## 2026-10-28 — Morkahja asset mapping
+
+Catalog ID `morkahja-rpg` references `/portal-content/Morkahja.webp`. Existing portal rendering and catalog-derived import inventory handle the supplied asset; no new rendering logic.

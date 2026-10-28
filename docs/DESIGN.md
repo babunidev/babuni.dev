@@ -464,3 +464,8 @@ RoarGuild Add-on has the generic colored portal until supplied artwork exists; R
 ## 2026-10-28 — Buxbrew character portal
 
 Buxbrew — character story uses the supplied `BuxbrewCharacter.webp` through the existing round portal mask, per Babuni.dev. Tile scale, positioning and motion remain unchanged.
+
+
+## 2026-10-28 — Morkahja portal
+
+Morkahja now shows Babuni.dev’s supplied Morkahja.webp through the existing circular portal. Tile geometry and motion remain unchanged.

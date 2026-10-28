@@ -405,3 +405,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign Babuni.dev’s supplied BuxbrewCharacter.webp to the character-story tile.
 - [ ] Human visual check of the character artwork through the existing round portal mask.
+
+
+## 2026-10-28 — Morkahja artwork
+
+- [x] Assign the supplied Morkahja.webp to Morkahja.
+- [ ] Human visual check of the artwork through the existing round portal mask.

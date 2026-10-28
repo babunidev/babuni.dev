@@ -329,3 +329,8 @@ All 44 current projects appear once in the approved menu groups; Music contains 
 ## 2026-10-28 — Buxbrew character asset
 
 Babuni.dev assigned the supplied `BuxbrewCharacter.webp` to Buxbrew — character story. Original WebP bytes copied unchanged from the local public/portal-content folder. Twenty active projects now have twenty unique supplied artwork mappings. No new authorship or source claims are inferred from the image.
+
+
+## 2026-10-28 — Supplied Morkahja WebP
+
+Morkahja (`morkahja-rpg`) uses Morkahja.webp, supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-one active project artwork assignments now reference twenty-one unique supplied WebPs. Morkahja Worldbuilding remains a separate entry.

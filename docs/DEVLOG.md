@@ -859,3 +859,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — Character-story portal correction
 
 **Babuni.dev requested:** use `BuxbrewCharacter.webp` for the Buxbrew — character story tile. **AI execution:** copied the existing supplied WebP from the local testing checkout unchanged and assigned it to stable ID `buxbrew-character-story`; the separate Buxbrew repository tile is unchanged. **Verification:** validated WebP signature and updated artwork mapping/import assertions; content checks and production build run for this change. No image editing or timing/geometry changes.
+
+
+## 2026-10-28 — Supplied Morkahja artwork
+
+**Babuni.dev requested:** use the newly supplied Morkahja.webp. **AI interpretation/execution:** assign it to Morkahja (`morkahja-rpg`), keeping the separate Worldbuilding entry as it is. Copied the existing WebP from the local testing checkout without editing or re-encoding. **Verification:** WebP signature checked, artwork mapping/import assertions updated, targeted artwork tests and production build run before publication. No timing, sizing or positioning changes.

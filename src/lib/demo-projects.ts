@@ -298,6 +298,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "morkahja-rpg",
+    "portalArtwork": "/portal-content/Morkahja.webp",
     "name": "Morkahja",
     "shortSummary": "Multiplayer fantasy adventure game and development history.",
     "evidence": "repo-context",

@@ -517,3 +517,8 @@ Requested names and Rocket Game 42 addition are implemented. Menu-only grouping 
 ## 2026-10-28 — Buxbrew character artwork (implemented)
 
 Babuni.dev explicitly chose the existing `BuxbrewCharacter.webp` for the character-story entry. AI mapped the supplied asset directly, preserving its bytes; no generated replacement or assignment to the separate Buxbrew addon/repository tile.
+
+
+## 2026-10-28 — Morkahja artwork (implemented)
+
+Babuni.dev supplied Morkahja.webp; AI mapped it to the Morkahja project rather than the distinct Worldbuilding project. Use the original file and existing round mask; no generated replacement.
