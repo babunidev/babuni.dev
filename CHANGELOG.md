@@ -446,3 +446,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ### Fixed
 - Preserve cached source coordinates across settled shifts instead of clearing the complete cache each time. Remap cached destinations through only newly appended shifts, falling back to authoritative history for uncached residents.
 - Evict individual least-recently-used entries at the 2,048-entry bound instead of flushing the viewport. Avoid vacancy allocations in historical shifts without vacancies. Add long-history/eviction regressions and a reproducible calculation benchmark. No timing, scrolling or geometry changes.
+
+## 2026-10-28 — Documentation-only publication preparation
+
+### Added
+- Recorded the chosen public-documentation/private-implementation boundary and the four prepared editions in docs/PUBLIC_DOCUMENTATION_PLAN.md. No repository visibility or website source status has changed; remote publication and import remain pending.

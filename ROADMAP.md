@@ -308,3 +308,12 @@ Built: reader-only frameless position thumb with direct dragging, overflow updat
 **Human accepted:** keyboard round trip for shipping; frameless reader handle; reader scrolling works well. **Human observed:** Firefox works and feels better than Chrome; general long-running dragging can become less smooth. Earlier generic keyboard-pending notes are historical; exhaustive screen-reader coverage is still separate. Do not infer new phone acceptance from unclear speech.
 
 **Built:** retained bounded source cache, individual LRU eviction, vacancy-free history fast path, long-history/eviction tests and a calculation benchmark. All checks passed locally; user long-session acceptance remains open. Reduced-motion, long-gallery edge cases, heap/load profiling and full cross-browser/fullscreen acceptance remain checks, alongside hosting/release work. Content completion remains secondary.
+
+## Four private projects: public documentation direction — 2026-10-28
+
+- [x] Babuni.dev chose separate public documentation rather than public implementations.
+- [x] Prepare and check four curated local ten-document editions.
+- [ ] Publish the four documentation repositories; automatic approval blocked the first creation/push.
+- [ ] Verify anonymous access, connect the four mappings, import their public snapshots, test/build and publish the website update.
+
+Current private-review statuses remain truthful until that work completes. See docs/PUBLIC_DOCUMENTATION_PLAN.md; no private repository visibility was changed.

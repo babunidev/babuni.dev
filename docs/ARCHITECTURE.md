@@ -411,3 +411,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## Session-aware source cache — 2026-10-27
 
 `createSourceLookup` advances its resident map from its previous history revision by applying inverse appended moves to destination coordinates and consulting the prior cache. Edge misses replay only the old prefix. New-coordinate misses use full history. LRU promotion/individual eviction caps cached cells at 2,048; historical shift events remain authoritative and append-only. `sourceCell` bypasses occupied/resting vacancy allocations for empty footprints. This reduces repeated long-history replay for warm cells, not unbounded historical storage or every rendering cost. The benchmark script isolates calculation work, not display FPS.
+
+## Separate documentation sources — 2026-10-28
+
+Planned public editions use the existing ten-path Markdown contract in separate repositories; original implementations remain private. No authenticated private source is added to the website importer. The four existing mappings remain private-review until remote creation and anonymous verification succeed. The prepared publishing script lives outside the website runtime and does not alter repository visibility. See PUBLIC_DOCUMENTATION_PLAN.md.

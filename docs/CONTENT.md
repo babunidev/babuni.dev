@@ -266,3 +266,7 @@ Existing B WebP header/favicon art and branding captures remain intact. Added tw
 ## Performance evidence and accepted interactions — 2026-10-27
 
 Babuni.dev’s keyboard round-trip and reader-handle acceptance, positive reader scrolling and Firefox observations are human evidence. The long-session calculation benchmark is AI measurement; it is not a device frame-rate claim. Project text, imported snapshots, portal art and existing image credits are unchanged by caching work. Browser verification captures remain AI evidence with historical captions.
+
+## Four curated public editions — 2026-10-28
+
+Babuni.dev approved documentation-only publication for four private projects. AI prepared initial public summaries from their inspected README/CONCEPT, keeping attribution and evidence limits while excluding private links, code, assets, configuration and history. This is a narrower public edition, not a mirror of every original document. MorkahjaWorld remains reserved; arcanitebrothers documents Morkahja Admin. Publication was blocked before creation; no new source text enters the current site yet. See PUBLIC_DOCUMENTATION_PLAN.md.

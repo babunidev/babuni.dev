@@ -407,3 +407,7 @@ Babuni.dev requested a little standalone draggable reader indicator without a fr
 ## Long-session performance, unchanged interaction — 2026-10-27
 
 Babuni.dev accepts the highlight-first keyboard round trip for shipping and reader scrolling, and reports Firefox feels better than Chrome. Long-running dragging can lose smoothness. AI optimized internal coordinate caching only: keep the calm shift tempo, existing transitions, physical vacancies and native scrolling. No new visual tuning or controls are introduced.
+
+## Public project explanations, private implementations — 2026-10-28
+
+Babuni.dev chose documentation-only editions for four currently private projects. Public explanations must distinguish source-reported functionality from tested behavior, reserved scope from implemented projects, and Morkahja Admin from the public game. This preparation does not redesign the site or modify its motion, artwork or interactions.

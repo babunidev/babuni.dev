@@ -456,3 +456,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-27 — Retain warm coordinate identities
 
 **Status:** AI implementation responding to Babuni.dev’s long-session slowdown report; performance acceptance pending. Keep the full authoritative shift history and at most 2,048 cached coordinates. Advance cached identities using only appended inverse shifts; use the old prefix on previously uncached edges. Prefer individual LRU eviction to whole-map flushes. Do not truncate history or change visual motion to hide increasing calculation costs. Infinite unseen areas still need history; a bounded exact history representation is future research, not claimed solved. Human keyboard and reader-handle acceptance and positive Firefox evidence are recorded in DEVLOG.
+
+## 2026-10-28 — Separate public editions for private projects
+
+**Status:** human direction confirmed; publication pending. Babuni.dev chose public documentation only for Ethera, Morkahja RPG, MorkahjaWorld and arcanitebrothers. Keep existing implementation repositories private. AI prepared separate curated Markdown editions with the standard website paths; copying entire private histories was not selected. Only anonymously verified public editions may become portfolio sources. See PUBLIC_DOCUMENTATION_PLAN.md.
