@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-35 of 49 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+35 of 47 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -48,9 +48,7 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 
 - Local Prompt Lab (local-prompt-lab)
 - Local AI Workstation (local-ai-workstation)
-- Practical Templates Creator (practical-templates-creator)
 - ROAR Guild and Community (roar-guild-and-community)
-- The Amberbrew Family (the-amberbrew-family)
 - Buxbrew — character story (buxbrew-character-story)
 - Fantasy RPG Assets (fantasy-rpg-assets)
 - Fantasy Architecture (fantasy-architecture)

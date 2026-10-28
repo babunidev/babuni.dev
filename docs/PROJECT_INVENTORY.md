@@ -92,3 +92,7 @@ Babuni.dev asked to collect work discussed across chats, projects and repositori
 5. Do not let this inventory override the approved tile/portal/interaction designs or silently replace existing placeholder layouts.
 
 **Unresolved:** Older chats and local files may contain more projects. The precise relationship and status of several historical repositories and early RPGs remain unverified; this list is deliberately expandable.
+
+## Additional curation override — 2026-10-28
+
+Babuni.dev additionally withdrew The Amberbrew Family and Practical Templates Creator. The historical research table is retained; the active catalog now contains 47 entries. This supersedes the earlier 49-entry count. No reason beyond the explicit human removal instruction is inferred.

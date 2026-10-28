@@ -474,3 +474,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — Owner-curated active project list
 
 **Status:** accepted human direction, implemented. Withdraw the four named gimmick/duplicate/shared-document tiles. A discovered repository is not sufficient reason to keep a project that Babuni.dev does not consider a distinct work. Keep journal/decision/collaboration material inside BABUNI.DEV; retain one MorkahjaWorld worldbuilding tile. Do not infer authorization to delete repositories, rewrite history or merge other unresolved families. Existing public documentation snapshots retain their provenance; a separate attributed scope note records the worldbuilding correction until its public edition is updated.
+
+## 2026-10-28 — Additional owner withdrawals
+
+**Status:** accepted and implemented. Babuni.dev additionally withdraws The Amberbrew Family and Practical Templates Creator as standalone website entries. Remove their active grid/search/topic/mapping records; preserve historical research and unrelated projects. Neither entry had an imported source to delete.

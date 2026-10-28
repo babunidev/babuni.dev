@@ -789,3 +789,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 **Tests:** the full command passes 30 test-file entries; direct catalog tests 4/4 and repository tests 11/11 pass; production build and content checks pass. Updated expected catalog/artwork/document totals and added cases proving withdrawals are absent while BABUNI collaboration material remains populated. Browser results follow separately; no new physical-device or long-session acceptance is claimed.
 
 **Browser result:** Projects menu reported 49 entries, zero matches for the four withdrawn names and exactly one MorkahjaWorld. Menu selection centered Arcanitebrothers and opened eight modules; its selected portal image decoded at 1536px from the supplied WebP. Archived the browser capture with human-art/AI-capture attribution.
+
+## 2026-10-28 — Remove family/template candidates
+
+**Babuni.dev requested:** also remove The Amberbrew Family and Practical Templates Creator. **AI execution:** removed their semantic IDs from the shared grid/search catalog, both topic dictionaries and unresolved repository mappings. Neither had a connected repository snapshot or curated module content. Retained all other projects, sources, artwork and interactions. Active totals: 47 entries, 35 connected public sources, 10 missing-repository entries and two family-clarification entries. Extended existing withdrawal regressions and refreshed active reports. This is owner-directed curation; no speculative reason for withdrawal is invented. Verification is recorded below.
+
+**Verification:** full test command passed 30 test-file entries, direct catalog suite 4/4 and repository suite 11/11 passed, production build/content guards and whitespace check passed. No new browser/phone capture or physical-device acceptance is claimed for this data-only follow-up.

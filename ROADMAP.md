@@ -352,3 +352,7 @@ This supersedes the pending-publication state in the preceding preparation entry
 - [ ] Later content work: bring the public MorkahjaWorld documentation edition into line with the newly confirmed worldbuilding scope.
 
 Active inventory is now 49 entries / 35 public-source connections. Earlier 53-entry counts are historical evidence, not current catalog totals. No additional project-family mergers or repository deletions are implied.
+
+## Further owner curation — 2026-10-28
+
+Built: remove The Amberbrew Family and Practical Templates Creator from active grid/search/topics/mappings. Current list: 47 projects, 35 connected public sources, 10 without repositories and two needing family clarification. Repository creation for the two withdrawn candidates is no longer pending work. Publication and human visual acceptance remain separate.

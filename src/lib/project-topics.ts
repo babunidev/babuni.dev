@@ -39,9 +39,7 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "amazin": "Stealth addon",
   "warriorstartattack": "Combat helper",
   "guildchatai": "Chat experiment",
-  "practical-templates-creator": "Digital templates",
   "roar-guild-and-community": "Community",
-  "the-amberbrew-family": "Character lore",
   "buxbrew-character-story": "Character story",
   "fantasy-rpg-assets": "Fantasy art",
   "fantasy-architecture": "Architecture",
@@ -204,17 +202,9 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Guild chat",
     "Early experiment"
   ],
-  "practical-templates-creator": [
-    "Automation idea",
-    "Useful templates"
-  ],
   "roar-guild-and-community": [
     "WoW community",
     "Shared rituals"
-  ],
-  "the-amberbrew-family": [
-    "Family stories",
-    "Warcraft lore"
   ],
   "buxbrew-character-story": [
     "Jasmine Amberbrew",

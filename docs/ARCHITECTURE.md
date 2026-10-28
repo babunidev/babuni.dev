@@ -429,3 +429,7 @@ The four mappings now target separate public documentation repositories. Anonymo
 ## Catalog withdrawal consistency — 2026-10-28
 
 The four withdrawn IDs are removed from demoProjects, repository connections and both topic maps. Removing connections also prunes newly orphaned external snapshots; preparation removes their generated reader assets on the next build. Retained mappings/snapshots and semantic IDs are preserved. Search continues to derive from the same active catalog as the grid. Current totals: 49 entries, 35 public-source connections, 34 external snapshot records and 326 external Markdown bodies (plus ten local documents). MorkahjaWorld's separate curated scope module records human clarification without altering pinned public source bodies. No repository API mutation is involved.
+
+## Two further catalog withdrawals — 2026-10-28
+
+Removed two unresolved IDs consistently from the catalog, repository mappings and both topic dictionaries. Search continues to derive from the same catalog as the grid. There are 47 active entries, 35 connected public sources and 34 external snapshots; no imported document snapshot changed in this withdrawal.

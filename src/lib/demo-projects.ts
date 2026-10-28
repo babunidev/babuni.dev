@@ -1,6 +1,6 @@
 /**
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
- * (53 initial candidates, 2026-10-26; 49 retained after human curation on 2026-10-28).
+ * (53 initial candidates, 2026-10-26; 47 retained after human curation on 2026-10-28).
  * Removed duplicates and non-projects are documented in the source inventory.
  * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
@@ -16,7 +16,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=49;
+export const DEMO_PROJECT_COUNT=47;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -276,25 +276,11 @@ export const demoProjects:readonly DemoProject[]=[
     "tint": "hsl(270 58% 62%)"
   },
   {
-    "id": "practical-templates-creator",
-    "name": "Practical Templates Creator",
-    "shortSummary": "Concept for an automated creator of practical digital templates.",
-    "evidence": "conversation",
-    "tint": "hsl(48 58% 62%)"
-  },
-  {
     "id": "roar-guild-and-community",
     "name": "ROAR Guild and Community",
     "shortSummary": "WoW guild community design and shared roleplaying rituals.",
     "evidence": "conversation",
     "tint": "hsl(323 58% 62%)"
-  },
-  {
-    "id": "the-amberbrew-family",
-    "name": "The Amberbrew Family",
-    "shortSummary": "Warcraft character and family lore centered on the Amberbrew household.",
-    "evidence": "conversation",
-    "tint": "hsl(100 58% 62%)"
   },
   {
     "id": "buxbrew-character-story",

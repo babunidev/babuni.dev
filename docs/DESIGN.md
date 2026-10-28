@@ -423,3 +423,7 @@ Babuni.dev requests the same open bloom and map location through fullscreen/wind
 ## Curated discovery surface — 2026-10-28
 
 Babuni.dev removes four entries that should not appear as independent projects. The grid and direct-finding menu now share 49 retained entries, preserving semantic IDs and the order of remaining projects. MorkahjaWorld carries worldbuilding/peoples/places topics; World and Peoples is no longer a separate tile. BABUNI.DEV houses the human–AI development history. Arcanitebrothers uses the supplied WebP inside the existing portal mask. No interaction timing, tile scale, bloom geometry or scrolling behavior changes.
+
+## Retained catalog count — 2026-10-28
+
+Babuni.dev additionally removes The Amberbrew Family and Practical Templates Creator. Grid and searchable menu now share 47 retained entries. No navigation, positioning or timing changes are introduced.

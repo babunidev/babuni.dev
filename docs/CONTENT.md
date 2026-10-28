@@ -284,3 +284,7 @@ Babuni.dev supplied BattleReport.webp, Ethera.webp, ROARGuild.webp and WarriorSt
 Babuni.dev withdraws Talent Design Atlas (non-project/gimmick), Redridge Recipe Planner (duplicate of FavorCraft), Human–AI Development Journal (already within BABUNI.DEV), and Morkahja — World and Peoples (duplicate of retained MorkahjaWorld). These are authoritative curation decisions, not automated content scoring. Historical inventory entries and screenshots document prior states rather than active offerings. The remaining worldbuilding tile gains an attributed scope module because its existing public edition still reflects an earlier reserved-repository description.
 
 ArcaniteBrothers.webp is a newly supplied 1536×1536, 169,052-byte WebP, copied unchanged to the existing project ID. Source hash and human/AI roles are recorded in DEVLOG. There are twenty mapped supplied portal artworks. Existing human–AI documents remain available through BABUNI.DEV; no journal text or contribution history was deleted.
+
+## Family/template withdrawals — 2026-10-28
+
+Babuni.dev additionally withdraws The Amberbrew Family and Practical Templates Creator. Their historical inventory mentions remain research history, not active projects. Neither had connected source text or curated module content. Other family/character entries are not implicitly removed.
