@@ -399,3 +399,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 - [ ] Human desktop/phone check: pan widely, verify no gray walls, no identity swaps and grouped search opens the correct project. Earlier stationary checks did not catch the original accumulation.
 - [ ] Human-managed Mighty Morkah gaming-video migration; no completed migration is claimed here.
 - [ ] Optional future individual music/video embeds after specific media links are supplied; current profile resources are usable without them.
+
+
+## 2026-10-28 — Character portal correction
+
+- [x] Assign Babuni.dev’s supplied BuxbrewCharacter.webp to the character-story tile.
+- [ ] Human visual check of the character artwork through the existing round portal mask.

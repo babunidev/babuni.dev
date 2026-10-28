@@ -469,3 +469,8 @@ The runtime now uses `ProjectPlacement(realCount,3)`. `choose` prefers unused re
 `src/lib/project-groups.ts` is a separate complete membership map used only by `groupedProjects` and menu rendering. Stable catalog IDs and grid spiral order do not depend on categories. The menu retains its search and existing keyboard/direct-selection handlers. Current catalog: 44 real projects (one duplicate removed, two music projects added), three renderer-only neutral identities, 35 connected public repositories and 336 prepared local/external documents. New music modules are manual text/resources; no music iframe, external script or automatic media download is introduced.
 
 Pinned direct-navigation destinations are preserved explicitly on entering view, even if another continuing tile shows the same real project. This avoids failed menu selection without reintroducing visible resident renaming. A focused regression covers this case.
+
+
+## 2026-10-28 — Character artwork mapping
+
+Stable ID `buxbrew-character-story` now maps to `/portal-content/BuxbrewCharacter.webp` in the catalog. The existing portal renderer/import inventory handles it without new rendering logic.

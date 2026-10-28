@@ -545,3 +545,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Added
 - Mighty Morkah and Elixior as separate music projects with author-supplied descriptions and public YouTube/SoundCloud links. The planned gaming-video migration is labeled as planned, not completed. Analubia remains after Babuni.dev withdrew the removal suggestion.
+
+
+## 2026-10-28 — Buxbrew character artwork
+
+### Changed
+- Assign the supplied `BuxbrewCharacter.webp` to Buxbrew — character story, as requested by Babuni.dev. Original WebP bytes preserved.

@@ -512,3 +512,8 @@ Requested names and Rocket Game 42 addition are implemented. Menu-only grouping 
 **Babuni.dev rejected:** repeated empty decoration forming walls; absolute uniqueness at the expense of a populated grid. **Confirmed choice:** three unique neutral tiles, with occasional real-project repeats when necessary, while keeping the identity-stability fix. **AI implementation:** never prefill the offscreen band with neutral decoration, reserve all continuing and staged identities, exhaust unique real/neutral options before real-project fallback. Alternatives of resizing tiles or returning to visible identity repair remain rejected. Decorative neutral marks distinguish the three identities; they are still inert, not projects.
 
 **Menu grouping approved:** implement the earlier World of Warcraft/Morkahja/AI/Games list, removing duplicate Admin Console; add Music for the two new profiles. Grouping has no grid-layout effect. **Curation:** retain Arcanitebrothers; rename addon to RoarGuild Add-on and assign guild artwork solely to the community; retain Analubia after the human's immediate correction. Keep Mighty Morkah and Elixior distinct; a separate Babuni Gaming project/link was not supplied or added.
+
+
+## 2026-10-28 — Buxbrew character artwork (implemented)
+
+Babuni.dev explicitly chose the existing `BuxbrewCharacter.webp` for the character-story entry. AI mapped the supplied asset directly, preserving its bytes; no generated replacement or assignment to the separate Buxbrew addon/repository tile.

@@ -324,3 +324,8 @@ Babuni.dev confirmed Morkahja Admin Console duplicates Arcanitebrothers: remove 
 New IDs: `mighty-morkah` (Mighty Morkah, piano/music videos at https://www.youtube.com/@MightyMorkah/videos) and `elixior` (Elixior, music/audio art at https://soundcloud.com/elexior-ludwig). Both have attributed Overview and Listen resources modules, and no invented repository/recording metadata. Direct web retrieval was unavailable, so these are human-supplied links/descriptions, not independently verified media catalogs. Mighty Morkah's move to music-only and migration of WoW videos to Babuni Gaming remain plans. No Babuni Gaming tile is added without its own supplied outlet.
 
 All 44 current projects appear once in the approved menu groups; Music contains the two new outlets. Three neutral render identities are excluded from the project/content counts. Source snapshot contents were unchanged.
+
+
+## 2026-10-28 — Buxbrew character asset
+
+Babuni.dev assigned the supplied `BuxbrewCharacter.webp` to Buxbrew — character story. Original WebP bytes copied unchanged from the local public/portal-content folder. Twenty active projects now have twenty unique supplied artwork mappings. No new authorship or source claims are inferred from the image.

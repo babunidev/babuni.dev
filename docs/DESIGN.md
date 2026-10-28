@@ -459,3 +459,8 @@ Babuni.dev chose five neutral gray filler identities, with no portal/name/projec
 Babuni.dev's desktop test rejected gray filler walls. The current design uses at most three visible neutral identities (diamond, circle, square), with no repeated neutral identity even when entering/leaving tiles coexist. When unique capacity is exhausted, repeat real projects instead. Existing residents keep their identity until recycling; no tile resizing, tempo adjustment or visible repair swap. The approved menu-only headings are World of Warcraft, Morkahja, AI, Games and Music. Search keeps headings for matching groups only. The grid itself retains its original ordering/navigation.
 
 RoarGuild Add-on has the generic colored portal until supplied artwork exists; Roar Guild community keeps the guild artwork. Mighty Morkah and Elixior are separate music portals with real profile links and concise author-supplied context.
+
+
+## 2026-10-28 — Buxbrew character portal
+
+Buxbrew — character story uses the supplied `BuxbrewCharacter.webp` through the existing round portal mask, per Babuni.dev. Tile scale, positioning and motion remain unchanged.
