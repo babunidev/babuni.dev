@@ -334,3 +334,8 @@ Babuni.dev assigned the supplied `BuxbrewCharacter.webp` to Buxbrew — characte
 ## 2026-10-28 — Supplied Morkahja WebP
 
 Morkahja (`morkahja-rpg`) uses Morkahja.webp, supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-one active project artwork assignments now reference twenty-one unique supplied WebPs. Morkahja Worldbuilding remains a separate entry.
+
+
+## 2026-10-28 — TotemTimers supplied WebP
+
+TotemTimers.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-two active project artwork assignments now reference twenty-two unique supplied WebPs. No additional content or authorship claims inferred.

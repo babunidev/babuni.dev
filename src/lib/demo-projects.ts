@@ -115,6 +115,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "totemtimers",
+    "portalArtwork": "/portal-content/TotemTimers.webp",
     "name": "TotemTimers",
     "shortSummary": "Shaman totem, shield and weapon-enhancement tracking.",
     "evidence": "repo",

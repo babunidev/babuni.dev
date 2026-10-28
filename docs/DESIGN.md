@@ -469,3 +469,8 @@ Buxbrew — character story uses the supplied `BuxbrewCharacter.webp` through th
 ## 2026-10-28 — Morkahja portal
 
 Morkahja now shows Babuni.dev’s supplied Morkahja.webp through the existing circular portal. Tile geometry and motion remain unchanged.
+
+
+## 2026-10-28 — TotemTimers portal
+
+TotemTimers displays the supplied TotemTimers.webp through the existing round mask. Scale, position and animation timing remain unchanged.

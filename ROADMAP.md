@@ -411,3 +411,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign the supplied Morkahja.webp to Morkahja.
 - [ ] Human visual check of the artwork through the existing round portal mask.
+
+
+## 2026-10-28 — TotemTimers artwork
+
+- [x] Assign the supplied TotemTimers.webp to TotemTimers.
+- [ ] Human visual check through the existing round portal mask.

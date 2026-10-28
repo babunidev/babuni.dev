@@ -479,3 +479,8 @@ Stable ID `buxbrew-character-story` now maps to `/portal-content/BuxbrewCharacte
 ## 2026-10-28 — Morkahja asset mapping
 
 Catalog ID `morkahja-rpg` references `/portal-content/Morkahja.webp`. Existing portal rendering and catalog-derived import inventory handle the supplied asset; no new rendering logic.
+
+
+## 2026-10-28 — TotemTimers asset mapping
+
+Catalog ID `totemtimers` references `/portal-content/TotemTimers.webp`. Existing catalog-derived artwork import inventory and portal rendering require no new logic.

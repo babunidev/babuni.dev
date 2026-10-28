@@ -522,3 +522,8 @@ Babuni.dev explicitly chose the existing `BuxbrewCharacter.webp` for the charact
 ## 2026-10-28 — Morkahja artwork (implemented)
 
 Babuni.dev supplied Morkahja.webp; AI mapped it to the Morkahja project rather than the distinct Worldbuilding project. Use the original file and existing round mask; no generated replacement.
+
+
+## 2026-10-28 — TotemTimers artwork (implemented)
+
+Babuni.dev chose TotemTimers.webp. AI assigned the existing supplied asset directly to TotemTimers through the established portal renderer; original bytes retained.

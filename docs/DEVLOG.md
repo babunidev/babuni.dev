@@ -864,3 +864,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — Supplied Morkahja artwork
 
 **Babuni.dev requested:** use the newly supplied Morkahja.webp. **AI interpretation/execution:** assign it to Morkahja (`morkahja-rpg`), keeping the separate Worldbuilding entry as it is. Copied the existing WebP from the local testing checkout without editing or re-encoding. **Verification:** WebP signature checked, artwork mapping/import assertions updated, targeted artwork tests and production build run before publication. No timing, sizing or positioning changes.
+
+
+## 2026-10-28 — TotemTimers supplied artwork
+
+**Babuni.dev requested:** TotemTimers.webp for the project portal. **AI execution:** copied the supplied local WebP unchanged and mapped it to stable ID `totemtimers`; no image generation, re-encoding, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.

@@ -557,3 +557,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `Morkahja.webp` to Morkahja (`morkahja-rpg`), preserving the original WebP bytes.
+
+
+## 2026-10-28 — TotemTimers artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `TotemTimers.webp` to the TotemTimers portal, preserving its original WebP bytes.
