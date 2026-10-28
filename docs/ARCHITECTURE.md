@@ -504,3 +504,8 @@ Catalog ID `buxbrew` now displays Buxbrew Addon. Existing identity-based reposit
 ## 2026-10-28 — BuxbrewCharge asset mapping
 
 Catalog ID `buxbrewcharge` references `/portal-content/BuxbrewCharge.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.
+
+
+## 2026-10-28 — Buxbrew Addon asset mapping
+
+Catalog ID `buxbrew` references `/portal-content/BuxbrewAddon.webp`. Existing catalog-derived artwork import and portal rendering handle the asset without new logic.

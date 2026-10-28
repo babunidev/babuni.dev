@@ -592,3 +592,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `BuxbrewCharge.webp` to BuxbrewCharge, preserving original WebP bytes.
+
+
+## 2026-10-28 — Buxbrew Addon artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `BuxbrewAddon.webp` to Buxbrew Addon, preserving original WebP bytes.

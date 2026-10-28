@@ -242,6 +242,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "buxbrew",
+    "portalArtwork": "/portal-content/BuxbrewAddon.webp",
     "name": "Buxbrew Addon",
     "shortSummary": "Named character-related repository; purpose not yet confirmed.",
     "evidence": "name-only",

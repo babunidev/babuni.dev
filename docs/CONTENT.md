@@ -366,3 +366,8 @@ Babuni.dev renamed Buxbrew to Buxbrew Addon. This is a display-name correction; 
 ## 2026-10-28 — BuxbrewCharge supplied WebP
 
 BuxbrewCharge.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-five active project artwork assignments now reference twenty-five unique supplied WebPs. No additional functionality or authorship claims inferred.
+
+
+## 2026-10-28 — Buxbrew Addon supplied WebP
+
+BuxbrewAddon.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-six active project artwork assignments now reference twenty-six unique supplied WebPs. BuxbrewCharacter.webp remains assigned solely to the character-story entry.

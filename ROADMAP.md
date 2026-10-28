@@ -443,3 +443,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign the supplied BuxbrewCharge.webp to BuxbrewCharge.
 - [ ] Human visual check through the existing round portal mask.
+
+
+## 2026-10-28 — Buxbrew Addon artwork
+
+- [x] Assign the supplied BuxbrewAddon.webp to Buxbrew Addon.
+- [ ] Human visual check through the existing round portal mask.

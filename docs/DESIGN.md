@@ -494,3 +494,8 @@ The tile and project menu display Buxbrew Addon. Buxbrew — character story ret
 ## 2026-10-28 — BuxbrewCharge portal
 
 BuxbrewCharge displays its supplied WebP through the existing circular mask. Scale, positioning and animation timing remain unchanged.
+
+
+## 2026-10-28 — Buxbrew Addon portal
+
+Buxbrew Addon displays its supplied WebP through the existing circular mask. The character-story artwork remains distinct; scale, positioning and motion are unchanged.

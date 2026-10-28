@@ -900,3 +900,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — BuxbrewCharge supplied artwork
 
 **Babuni.dev requested:** BuxbrewCharge.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrewcharge`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+
+
+## 2026-10-28 — Buxbrew Addon supplied artwork
+
+**Babuni.dev requested:** BuxbrewAddon.webp for the addon portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrew`. The character-story and BuxbrewCharge artwork mappings remain separate. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.

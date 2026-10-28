@@ -547,3 +547,8 @@ Babuni.dev chose the exact display name Buxbrew Addon for stable ID `buxbrew`. A
 ## 2026-10-28 — BuxbrewCharge artwork (implemented)
 
 Babuni.dev selected BuxbrewCharge.webp. AI assigned the supplied asset directly to BuxbrewCharge, retaining its original bytes and the existing portal renderer.
+
+
+## 2026-10-28 — Buxbrew Addon artwork (implemented)
+
+Babuni.dev selected BuxbrewAddon.webp. AI assigned the supplied asset directly to Buxbrew Addon (`buxbrew`), retaining original bytes and the established portal renderer.
