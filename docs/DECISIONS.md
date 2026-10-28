@@ -542,3 +542,8 @@ Babuni.dev selected the supplied EnchantVisuals.webp. AI mapped the existing ass
 ## 2026-10-28 — Buxbrew Addon (implemented)
 
 Babuni.dev chose the exact display name Buxbrew Addon for stable ID `buxbrew`. AI applied a display-only rename; no merge with the character story or repository rename.
+
+
+## 2026-10-28 — BuxbrewCharge artwork (implemented)
+
+Babuni.dev selected BuxbrewCharge.webp. AI assigned the supplied asset directly to BuxbrewCharge, retaining its original bytes and the existing portal renderer.

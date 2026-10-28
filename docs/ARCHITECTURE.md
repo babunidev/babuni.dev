@@ -499,3 +499,8 @@ Catalog ID `enchantvisuals` references `/portal-content/EnchantVisuals.webp`. Ex
 ## 2026-10-28 — Buxbrew display label
 
 Catalog ID `buxbrew` now displays Buxbrew Addon. Existing identity-based repository, menu membership and module lookup remain valid without migration.
+
+
+## 2026-10-28 — BuxbrewCharge asset mapping
+
+Catalog ID `buxbrewcharge` references `/portal-content/BuxbrewCharge.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.

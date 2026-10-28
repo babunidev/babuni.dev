@@ -234,6 +234,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "buxbrewcharge",
+    "portalArtwork": "/portal-content/BuxbrewCharge.webp",
     "name": "BuxbrewCharge",
     "shortSummary": "Charge-related WoW addon.",
     "evidence": "repo",

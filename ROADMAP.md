@@ -437,3 +437,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 ## 2026-10-28 — Buxbrew display rename
 
 - [x] Rename Buxbrew to Buxbrew Addon while preserving the separate character-story entry.
+
+
+## 2026-10-28 — BuxbrewCharge artwork
+
+- [x] Assign the supplied BuxbrewCharge.webp to BuxbrewCharge.
+- [ ] Human visual check through the existing round portal mask.

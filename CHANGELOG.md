@@ -586,3 +586,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Rename Buxbrew to Buxbrew Addon at Babuni.dev’s request. Stable ID and character-story entry retained.
+
+
+## 2026-10-28 — BuxbrewCharge artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `BuxbrewCharge.webp` to BuxbrewCharge, preserving original WebP bytes.

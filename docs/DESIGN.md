@@ -489,3 +489,8 @@ EnchantVisuals displays the supplied EnchantVisuals.webp through the existing ci
 ## 2026-10-28 — Buxbrew naming
 
 The tile and project menu display Buxbrew Addon. Buxbrew — character story retains its existing name and artwork; geometry and timing are unchanged.
+
+
+## 2026-10-28 — BuxbrewCharge portal
+
+BuxbrewCharge displays its supplied WebP through the existing circular mask. Scale, positioning and animation timing remain unchanged.
