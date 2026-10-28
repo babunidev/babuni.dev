@@ -46,6 +46,7 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "morkahja-rpg": "Fantasy RPG",
   "morkahjaworld": "Worldbuilding",
   "arcanitebrothers": "Development tools",
+  "babuni-gaming": "Gaming and streaming",
   "mighty-morkah": "Piano music",
   "elixior": "Music and audio art",
   "analubia": "Fantasy RPG"
@@ -227,6 +228,7 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Development identity",
     "Admin console"
   ],
+  "babuni-gaming": ["World of Warcraft", "Add-ons and moments"],
   "mighty-morkah": ["Piano videos", "YouTube channel"],
   "elixior": ["SoundCloud", "Earlier audio work"],
   "analubia": [

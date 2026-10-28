@@ -869,3 +869,19 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — TotemTimers supplied artwork
 
 **Babuni.dev requested:** TotemTimers.webp for the project portal. **AI execution:** copied the supplied local WebP unchanged and mapped it to stable ID `totemtimers`; no image generation, re-encoding, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+
+
+## 2026-10-28 — Babuni Gaming and the original cat
+
+**Babuni.dev direction:** add Babuni Gaming as its own gaming/streaming and experience-sharing project, open to all games but currently focused on World of Warcraft. Include the supplied YouTube, CurseForge and Instagram profiles. Explain the relationship to some add-on work and Azeroth Moments without replacing those projects. Use the original cat from `Morningex1.jpg` exactly as supplied and convert it to WebP.
+
+**AI interpretation/proposal:** place it under Games because its remit extends beyond WoW; the existing WoW project group and individual projects stay intact. Provide three populated modules: Overview, Gaming and add-ons, Watch and follow. Summaries are AI editorial paraphrases of the human's description, with attribution, not scraped channel descriptions. No streaming platform, schedule, individual video embed or repository was invented. The previous Mighty Morkah gaming-video migration remains a human plan, not a completion claim.
+
+**Execution:** stable ID `babuni-gaming`, public links copied exactly from the user, three concise topic labels, Games membership and explicit no-dedicated-repository note. Original JPEG retained outside public assets; lossless WebP conversion keeps all 1000×1000 decoded RGB pixels unchanged, verified by byte comparison of decoded image pixels. The source artwork is not cropped, retouched, regenerated or resized; the established round portal mask is the only display clipping. This is supplied human artwork, not AI art.
+
+**Source verification:** the public CurseForge page was readable and identifies BabuniGaming with its addon projects. Direct YouTube/Instagram retrieval failed, so those URLs and the streaming project description rely on Babuni.dev's explicit supplied information. No account changes, media migration or uploads were made.
+
+**Verification:** standard Node runner passed all 30 test files after adding catalog, topic, menu membership, exact profile-link and artwork coverage. Production build and browser checks recorded below before publication; physical desktop/phone visual acceptance remains open.
+
+
+**Final verification:** 161 tests passed in direct Node execution across all 30 test files; production build passed with the existing >500 kB JavaScript warning. Browser search found Babuni Gaming under Games and opened three previews; the cat loaded at 1000×1000 and all three supplied profile URLs were present. One AI browser screenshot was saved and archived as WebP in the gallery/visual manifest. External media playback, social account actions and physical-device acceptance were not tested or performed.

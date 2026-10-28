@@ -5,7 +5,7 @@
 
 ## Current curation override — 2026-10-28
 
-The original research table below is historical. Babuni.dev withdrew WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples as standalone website entries. The current active catalog contains 44 real projects after subsequent removals and the additions of Rocket Game 42, Mighty Morkah and Elixior. Three unique renderer-only decorative identities are not projects. See `PROJECT_GROUPING_PROPOSAL.md` for the complete current list; the original table below remains historical. MorkahjaWorld is the retained worldbuilding project; journal/decisions/collaboration remain within BABUNI.DEV. Existing repositories were not deleted. These human decisions supersede the original inventory’s optimistic candidate classifications.
+The original research table below is historical. Babuni.dev withdrew WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples as standalone website entries. The current active catalog contains 45 real projects after subsequent removals and the additions of Rocket Game 42, Mighty Morkah, Elixior and Babuni Gaming. Three unique renderer-only decorative identities are not projects. See `PROJECT_GROUPING_PROPOSAL.md` for the complete current list; the original table below remains historical. MorkahjaWorld is the retained worldbuilding project; journal/decisions/collaboration remain within BABUNI.DEV. Existing repositories were not deleted. These human decisions supersede the original inventory’s optimistic candidate classifications.
 
 ## Purpose and provenance
 

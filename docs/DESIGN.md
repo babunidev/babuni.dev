@@ -474,3 +474,8 @@ Morkahja now shows Babuni.dev’s supplied Morkahja.webp through the existing ci
 ## 2026-10-28 — TotemTimers portal
 
 TotemTimers displays the supplied TotemTimers.webp through the existing round mask. Scale, position and animation timing remain unchanged.
+
+
+## 2026-10-28 — Babuni Gaming portal and modules
+
+Babuni Gaming uses Babuni.dev's original cat drawing from Morningex1.jpg, converted without cropping, resizing or edits to lossless WebP. The existing circular portal masks the complete square image at display time. Its Games-menu placement reflects all-games scope; project copy explains the current WoW focus and links to YouTube, CurseForge and Instagram. Three modules offer overview, related addon/Azeroth Moments context and profile resources. Existing tiles, timings, geometry and related-project identities remain unchanged.

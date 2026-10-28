@@ -1,6 +1,6 @@
 /**
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
- * (53 initial candidates, 2026-10-26; 44 retained after curation and music additions on 2026-10-28).
+ * (53 initial candidates, 2026-10-26; 45 retained after curation, music and Babuni Gaming additions on 2026-10-28).
  * Removed duplicates and non-projects are documented in the source inventory.
  * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
@@ -16,7 +16,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=44;
+export const DEMO_PROJECT_COUNT=45;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -347,5 +347,13 @@ export const demoProjects:readonly DemoProject[]=[
     "shortSummary": "Music and audio art by Babuni.dev, including earlier pieces published on SoundCloud.",
     "evidence": "human-confirmed",
     "tint": "#d59057"
+  },
+  {
+    "id": "babuni-gaming",
+    "name": "Babuni Gaming",
+    "shortSummary": "Gaming, streaming and sharing experiences across games, currently focused on World of Warcraft, with connections to add-on work and Azeroth Moments.",
+    "evidence": "human-confirmed",
+    "tint": "#edaa35",
+    "portalArtwork": "/portal-content/BabuniGaming.webp"
   }
 ];

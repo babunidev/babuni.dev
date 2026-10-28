@@ -417,3 +417,12 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign the supplied TotemTimers.webp to TotemTimers.
 - [ ] Human visual check through the existing round portal mask.
+
+
+## 2026-10-28 — Babuni Gaming
+
+- [x] Add Babuni Gaming with original cat artwork and the three supplied public profile links.
+- [x] Add Games-menu/search/topic integration and three populated preview/detail modules, preserving related projects separately.
+- [x] Validate original-size lossless WebP conversion and catalog/content/artwork checks.
+- [ ] Human desktop/phone visual acceptance: cat in the round portal; menu search and project modules.
+- [ ] Future authored gaming media modules or individual video embeds, when specific content is supplied. No streaming schedule or completed channel migration is assumed.

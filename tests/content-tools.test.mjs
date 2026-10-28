@@ -32,3 +32,16 @@ test('partial video records are errors rather than silently empty drafts',()=>{
 });
 
 test('populated content requires a preview',()=>{assert.ok(check([{...moduleTemplate('text','intro'),body:'Actual content'}]).errors.some(e=>e.includes('needs a preview')));});
+
+test('Babuni Gaming contains populated context and all three supplied profile links',()=>{
+ const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url)));
+ const modules=catalog['babuni-gaming'];assert.equal(modules.length,3);
+ assert.deepEqual(modules.find(m=>m.id==='channels').links.map(l=>l.href),[
+  'https://www.youtube.com/@babunigamingg',
+  'https://www.curseforge.com/members/babunigaming/projects',
+  'https://www.instagram.com/babunigaming/'
+ ]);
+ assert.match(modules.find(m=>m.id==='overview').body,/all kinds of games/);
+ assert.match(modules.find(m=>m.id==='gaming-and-addons').body,/Azeroth Moments/);
+ assert.ok(modules.every(m=>m.credit.includes('Babuni.dev')));
+});

@@ -70,3 +70,8 @@ No runtime group metadata, headings or ordering is added until Babuni.dev review
 ## Approved correction and implementation — 2026-10-28
 
 Babuni.dev approved the menu-only grouping. Runtime membership is in `src/lib/project-groups.ts`: World of Warcraft (29), Morkahja (5), AI (5), Games (3), Music (2), totaling 44. The earlier list above is historical: Morkahja Admin Console was removed as a duplicate of retained Arcanitebrothers; RoarGuild is now RoarGuild Add-on and has no supplied image; Roar Guild community alone retains the guild image. Analubia remains after the human withdrew the removal suggestion. Music adds Mighty Morkah and Elixior as separate linked profiles. Other provisional placements follow the approved proposal. No category influences grid order or geometry.
+
+
+## Babuni Gaming addition — 2026-10-28
+
+Babuni.dev added Babuni Gaming as a distinct gaming, streaming and sharing project. AI placed it under Games for its all-games scope, despite the current WoW focus. Runtime counts now total 45: World of Warcraft 29, Morkahja 5, AI 5, Games 4, Music 2. The older proposed/approved lists above remain historical; Azeroth Moments and addon projects are not merged into this new project.

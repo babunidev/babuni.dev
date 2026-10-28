@@ -108,3 +108,8 @@ AI browser captures at 1920×1080, published as quality-85 WebP after checking a
 - `music-project-menu.webp` — grouped Music search showing both author-supplied outlets.
 
 These are short browser observations, not real-phone or prolonged-session acceptance. The human's earlier wall screenshot remains separately archived as failure evidence.
+
+
+## Babuni Gaming verification — 2026-10-28
+
+`babuni-gaming-project-preview.webp` — AI browser capture at the default viewport, showing the original cat in its round portal and the three new small-bloom modules. Menu search returned the project under Games; loaded image measured 1000×1000 and the resource module contained all three exact supplied profile URLs. Actual screenshot encoding was JPEG, converted to quality-85 WebP; original retained outside public assets. This is a browser check, not physical-device acceptance or external media playback verification.

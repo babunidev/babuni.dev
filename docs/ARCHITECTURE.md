@@ -484,3 +484,8 @@ Catalog ID `morkahja-rpg` references `/portal-content/Morkahja.webp`. Existing p
 ## 2026-10-28 — TotemTimers asset mapping
 
 Catalog ID `totemtimers` references `/portal-content/TotemTimers.webp`. Existing catalog-derived artwork import inventory and portal rendering require no new logic.
+
+
+## 2026-10-28 — Babuni Gaming catalog integration
+
+Stable ID `babuni-gaming` is a real catalog entry, with `/portal-content/BabuniGaming.webp`, three topic labels and Games-only menu membership. Its three manual modules use existing text/resources rendering; there are no new iframe hosts, scripts or network fetches at runtime. The explicit repository manifest marks no supplied dedicated repository, without blocking manually authored linked content. Current counts: 45 real projects, three unique optional neutral identities, 35 connected public repositories, 336 prepared source documents and 23 supplied portal artworks. Existing repository snapshots were not refreshed.

@@ -527,3 +527,8 @@ Babuni.dev supplied Morkahja.webp; AI mapped it to the Morkahja project rather t
 ## 2026-10-28 — TotemTimers artwork (implemented)
 
 Babuni.dev chose TotemTimers.webp. AI assigned the existing supplied asset directly to TotemTimers through the established portal renderer; original bytes retained.
+
+
+## 2026-10-28 — Babuni Gaming project (implemented)
+
+**Human direction:** Babuni Gaming is its own project spanning gaming, streaming, experience sharing and some related addon/media work; current focus WoW, broader than WoW in scope. Use the original supplied cat, unchanged, converted to WebP. **AI implementation choice:** Games menu category, three populated introduction/resources modules, original-size lossless conversion and the existing portal mask. This avoids restricting the project to the WoW category or merging away the distinct addon/Azeroth Moments histories. Profile resources are sufficient without inventing individual embeds or a dedicated GitHub repository. Revisit detailed modules as the human authors more content.

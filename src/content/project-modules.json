@@ -279,6 +279,11 @@
           "src": "/media/babuni-dev/images/verification/music-project-menu.webp",
           "alt": "music project menu",
           "caption": "AI browser capture of Music search in the approved grouped menu, showing Mighty Morkah and Elixior. Profile descriptions and links were supplied by Babuni.dev."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/babuni-gaming-project-preview.webp",
+          "alt": "Babuni Gaming with the original cat portal and three populated small-bloom modules.",
+          "caption": "AI browser verification, 2026-10-28: direct menu search opened Babuni Gaming, the original-size WebP cat loaded, and all three supplied profile links were present. Not physical-phone acceptance."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
@@ -470,6 +475,45 @@
         }
       ],
       "credit": "Public profile link supplied by Babuni.dev."
+    }
+  ],
+  "babuni-gaming": [
+    {
+      "id": "overview",
+      "type": "text",
+      "title": "Overview",
+      "preview": "Gaming, streaming and sharing experiences across games, currently focused on World of Warcraft.",
+      "body": "Babuni Gaming is Babuni.dev’s project for playing games, streaming and sharing the experiences that come with them. It is open to all kinds of games; the current focus is World of Warcraft.\n\nThe YouTube channel and Instagram profile provide places to share this work, alongside the BabuniGaming add-on profile on CurseForge.",
+      "credit": "Project authorship and direction: Babuni.dev. AI-assisted editorial summary of the supplied project description."
+    },
+    {
+      "id": "gaming-and-addons",
+      "type": "text",
+      "title": "Gaming and add-ons",
+      "preview": "A shared home for gaming experiences, some add-on work and the connection to Azeroth Moments.",
+      "body": "Babuni Gaming connects playing and sharing with some of Babuni.dev’s add-on work. Azeroth Moments belongs to this wider picture through capturing and sharing moments from games.\n\nThe add-ons and Azeroth Moments remain distinct projects with their own histories; Babuni Gaming brings their relationship to the gaming experience into view.",
+      "credit": "Project authorship and direction: Babuni.dev. AI-assisted editorial summary of the supplied project description."
+    },
+    {
+      "id": "channels",
+      "type": "resources",
+      "title": "Watch and follow",
+      "preview": "YouTube, Instagram and the BabuniGaming projects on CurseForge.",
+      "links": [
+        {
+          "label": "YouTube — Babuni Gaming",
+          "href": "https://www.youtube.com/@babunigamingg"
+        },
+        {
+          "label": "CurseForge — BabuniGaming projects",
+          "href": "https://www.curseforge.com/members/babunigaming/projects"
+        },
+        {
+          "label": "Instagram — Babuni Gaming",
+          "href": "https://www.instagram.com/babunigaming/"
+        }
+      ],
+      "credit": "Public profile links supplied by Babuni.dev."
     }
   ]
 }

@@ -563,3 +563,14 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `TotemTimers.webp` to the TotemTimers portal, preserving its original WebP bytes.
+
+
+## 2026-10-28 — Babuni Gaming
+
+### Added
+- Babuni Gaming as a separate Games-menu project with Overview, Gaming and add-ons, and Watch and follow modules.
+- Author-supplied YouTube, CurseForge and Instagram profile links; existing add-ons and Azeroth Moments retain their own project identities.
+- Original cat supplied by Babuni.dev as `Morningex1.jpg`, converted to lossless `/portal-content/BabuniGaming.webp` at its original dimensions without cropping or image edits.
+
+### Changed
+- Catalog/search/topic/artwork coverage now includes 45 projects and 23 supplied portal-art assignments. No grid geometry or timing change.

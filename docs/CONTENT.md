@@ -339,3 +339,15 @@ Morkahja (`morkahja-rpg`) uses Morkahja.webp, supplied by Babuni.dev and copied 
 ## 2026-10-28 — TotemTimers supplied WebP
 
 TotemTimers.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-two active project artwork assignments now reference twenty-two unique supplied WebPs. No additional content or authorship claims inferred.
+
+
+## 2026-10-28 — Babuni Gaming source and media
+
+Babuni.dev supplied the project description and exact profiles:
+- YouTube: https://www.youtube.com/@babunigamingg
+- CurseForge: https://www.curseforge.com/members/babunigaming/projects
+- Instagram: https://www.instagram.com/babunigaming/
+
+The three Babuni Gaming modules describe gaming/streaming and sharing experiences, current WoW emphasis, the connection to some addons/Azeroth Moments, and public profile resources. AI editorial text is attributed to the supplied human direction; no activity schedule or completed video migration is claimed. CurseForge's public profile was readable during this pass; YouTube and Instagram retrieval was unavailable, so their profile contents were not independently inspected.
+
+Source image `/home/babuni/Pictures/babunidev/Morningex1.jpg` is retained in the local image-originals archive outside public assets. Public asset `/portal-content/BabuniGaming.webp` is lossless at the original 1000×1000 dimensions, with exact decoded RGB pixel equality verified; no AI generation, crop or resizing. All public image assets remain WebP. Current artwork coverage: 23 active project assignments. No dedicated repository was supplied for this project; existing public snapshots are unchanged.
