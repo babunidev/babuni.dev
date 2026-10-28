@@ -497,3 +497,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Removed
 - Removed GuildChatAI from active grid/search, both topic maps and repository mapping at Babuni.dev’s request. Removed its ten now-unconnected cached documents; the GitHub repository is untouched. Active totals: 45 projects / 34 public sources.
+
+## 2026-10-28 — Dual-PC Streaming Setup withdrawal
+
+### Removed
+- Removed Dual-PC Streaming Setup from active grid/search, both topic maps and unresolved repository mappings at Babuni.dev’s request. The active list now contains 44 projects; no imported documents or repository were deleted.

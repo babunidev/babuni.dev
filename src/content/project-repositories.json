@@ -180,10 +180,6 @@
     "status": "needs-repository",
     "note": "No matching repository found in the accessible account inventory on 2026-10-27."
   },
-  "dual-pc-streaming-setup": {
-    "status": "needs-repository",
-    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
-  },
   "grimnir": {
     "status": "needs-confirmation",
     "note": "Related project family is known, but an independent public repository is not confirmed."

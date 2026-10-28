@@ -4,16 +4,16 @@ import {demoProjects,DEMO_PROJECT_COUNT} from '../src/lib/demo-projects.ts';
 import {gridWindow} from '../src/lib/grid-math.ts';
 import {ProjectPlacement,visibleCellBounds,spiralIndex} from '../src/lib/project-placement.ts';
 
-test('exactly 45 retained project entries have unique provisional IDs and summaries',()=>{
-  assert.equal(DEMO_PROJECT_COUNT,45);
-  assert.equal(demoProjects.length,45);
+test('exactly 44 retained project entries have unique provisional IDs and summaries',()=>{
+  assert.equal(DEMO_PROJECT_COUNT,44);
+  assert.equal(demoProjects.length,44);
   assert.equal(demoProjects[0].name,'BABUNI.DEV');
   assert.deepEqual(demoProjects.slice(1,5).map(x=>x.name),[
     'Button Game','SocialForever','RoarForever','FlourishForever'
   ]);
   assert.equal(demoProjects.at(-1).name,'Analubia');
-  assert.equal(new Set(demoProjects.map(x=>x.id)).size,45);
-  assert.equal(new Set(demoProjects.map(x=>x.name)).size,45);
+  assert.equal(new Set(demoProjects.map(x=>x.id)).size,44);
+  assert.equal(new Set(demoProjects.map(x=>x.name)).size,44);
   assert.ok(demoProjects.every(x=>x.id&&x.shortSummary&&x.evidence&&x.tint));
   assert.ok(demoProjects.every(x=>!/^PROJECT \d+$/.test(x.name)));
 });
@@ -23,7 +23,7 @@ test('candidate descriptions and evidence are snapshots of the provisional inven
   assert.equal(demoProjects.find(p=>p.id==='buxbrewding').evidence,'name-only');
   assert.equal(demoProjects.find(p=>p.id==='morkahjaworld').evidence,'human-confirmed');
 });
-test('initial 1920x1080 desktop still contains 45 distinct named projects in spiral order',()=>{
+test('initial desktop fills 45 visible cells with the retained library in spiral order',()=>{
  const width=1920,height=1080,tileSize=240;
  const window=gridWindow({width,height,tileSize,panX:0,panY:0,bufferCells:2});
  const b=visibleCellBounds(width,height,tileSize,window.originX,window.originY);
@@ -37,18 +37,18 @@ test('initial 1920x1080 desktop still contains 45 distinct named projects in spi
  const planner=new ProjectPlacement(demoProjects.length);
  planner.sync(visible,retained);
  const names=visible.map(cell=>demoProjects[planner.get(cell)].name);
- assert.equal(new Set(names).size,45);
+ assert.equal(new Set(names).size,Math.min(visible.length,demoProjects.length));
  assert.equal(demoProjects[planner.get({column:0,row:0})].name,'BABUNI.DEV');
  assert.equal(demoProjects[planner.get({column:0,row:-1})].name,'Button Game');
  assert.equal(demoProjects[planner.get({column:1,row:-1})].name,'SocialForever');
  assert.equal(demoProjects[planner.get({column:0,row:-2})].name,'ResistForever');
  assert.deepEqual(visible
    .slice().sort((a,b)=>spiralIndex(a.column,a.row)-spiralIndex(b.column,b.row))
-   .map(cell=>planner.get(cell)),Array.from({length:45},(_,i)=>i));
+   .map(cell=>planner.get(cell)),Array.from({length:45},(_,i)=>i%demoProjects.length));
 });
 
 test('human-withdrawn entries are absent and BABUNI keeps the collaboration documents',()=>{
- for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model','guildchatai'])assert.equal(demoProjects.some(p=>p.id===id),false);
+ for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model','guildchatai','dual-pc-streaming-setup'])assert.equal(demoProjects.some(p=>p.id===id),false);
  assert.equal(demoProjects.filter(p=>p.id==='morkahjaworld').length,1);
  assert.match(demoProjects.find(p=>p.id==='morkahjaworld').shortSummary,/Worldbuilding/);
 });
