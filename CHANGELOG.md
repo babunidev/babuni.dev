@@ -460,3 +460,13 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Fixed
 - Skip Edition metadata when selecting a source preview paragraph, so newly connected project cards show actual project content; preserve full document text and attribution in the reader.
+
+## 2026-10-28 — Preserve blooms on resize; add supplied portal artwork
+
+### Fixed
+- Keep selected/pending projects and small blooms during viewport pool rebuilds instead of closing them. Retain responsive logical map position and rescale active camera endpoints without restarting or accelerating motion. Existing big-bloom and reader states remain intact.
+
+### Added
+- Original supplied WebPs for BattleReport, Ethera, RoarGuild and WarriorStartAttack, mapped to their existing semantic project IDs. Nineteen original portal artworks are now present; imported files were not edited/recompressed.
+- Responsive coordinate regression coverage, production artifact-size reporting (`npm run production:report`), local uncached loading measurements and an explicit analysis of the existing large-chunk warning. The warning is not suppressed or claimed resolved.
+- Archived all three browser captures, including a failed measurement-server preview, as WebP with historical context.

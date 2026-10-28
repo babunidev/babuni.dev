@@ -327,3 +327,16 @@ Current private-review statuses remain truthful until that work completes. See d
 - [ ] Publish the website integration and pull/restart the local testing site.
 
 This supersedes the pending-publication state in the preceding preparation entry. Unconfirmed project-family tiles and the twelve missing-repository projects remain unchanged.
+
+## Resize continuity and measured production follow-up — 2026-10-28
+
+- [x] Preserve selected small bloom and pending selection when the viewport rebuilds.
+- [x] Retain logical map location and active camera progress across responsive tile-size changes.
+- [x] Browser viewport checks of small bloom, big bloom and reader through desktop/narrow/phone sizes; physical-device confirmation remains separate.
+- [x] Add four supplied original portal WebPs, bringing mapped art to nineteen.
+- [x] Measure static production bytes and local uncached loading; identify generated intro metadata as the main large-chunk contributor.
+- [ ] Human acceptance of the resize fix and real phone orientation behavior.
+- [ ] Decide on smaller portal derivatives and/or per-project preview loading without compromising approved opening feel; warning remains visible.
+- [ ] Measure real hosting compression/network performance during deployment preparation.
+
+**Human long-session evidence:** Babuni.dev now reports no progressive slowdown after hours, little/no issue in Firefox and some remaining Chrome unevenness. This narrows the performance gap; no general Chrome/GPU or computer-uptime cause is proven. Existing keyboard and reader-control acceptance remain in force.

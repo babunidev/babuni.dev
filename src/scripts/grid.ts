@@ -11,7 +11,7 @@ import {renderModulePreview} from './module-preview';
 import {createModuleDetails} from './module-detail';
 import {bigBloomLayout,bigBloomVacancies,bigModuleCell,bigBloomRevealPlan} from '../lib/big-bloom';
 import {restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
-import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth } from '../lib/grid-math';
+import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth, resizedPan } from '../lib/grid-math';
 import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import {settledResidents} from '../lib/shift-settlement';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
@@ -351,7 +351,7 @@ if (viewport && world && resetButton && status) {
     }
   }
   function rebuildPool(preserveBloom=false,force=false):void {
-    preserveBloom=preserveBloom||bigBloomOpen;
+    preserveBloom=preserveBloom||bigBloomOpen||!!selectedChoice||!!pendingChoice;
     const rect=surface.getBoundingClientRect();
     if(!rect.width||!rect.height) return;
     // ResizeObserver repeats the initial size; never rebuild/replay for that.
@@ -360,7 +360,16 @@ if (viewport && world && resetButton && status) {
     if(!preserveBloom)stopSelection(false);
     hideTopic();
     viewportWidth=rect.width;viewportHeight=rect.height;
-    tileSize=tileSizeForWidth(rect.width);
+    const newSize=tileSizeForWidth(rect.width);
+    if(newSize!==tileSize){
+      const pan=resizedPan({x:panX,y:panY},tileSize,newSize);panX=pan.x;panY=pan.y;
+      if(centering){
+        const from=resizedPan({x:centering.fromX,y:centering.fromY},tileSize,newSize);
+        const to=resizedPan({x:centering.toX,y:centering.toY},tileSize,newSize);
+        centering={...centering,fromX:from.x,fromY:from.y,toX:to.x,toY:to.y};
+      }
+    }
+    tileSize=newSize;
     surface.style.setProperty('--tile-size',tileSize+'px');
     const frame=gridWindow({width:rect.width,height:rect.height,tileSize,panX,panY,bufferCells,columnBufferCells});
     columns=frame.columns; rows=frame.rows;

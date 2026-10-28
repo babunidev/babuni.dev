@@ -21,7 +21,8 @@
     "predev": "npm run content:prepare",
     "pretest:grid": "npm run content:prepare",
     "bundle:report": "node scripts/report-bundle-size.mjs",
-    "artwork:import": "node --experimental-strip-types scripts/import-portal-artwork.mjs"
+    "artwork:import": "node --experimental-strip-types scripts/import-portal-artwork.mjs",
+    "production:report": "node scripts/report-production-size.mjs"
   },
   "dependencies": {
     "astro": "^7.4.2",

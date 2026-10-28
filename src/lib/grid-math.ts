@@ -47,3 +47,8 @@ export function demoProjectIndex(column: number, row: number, total: number): nu
   const variation = Math.floor(column / 7) * 2 + Math.floor(row / 7) * 3;
   return positiveModulo(column * 5 + row * 3 + variation, total);
 }
+
+/** Keep the same logical map point centered when responsive tile size changes. */
+export function resizedPan(pan:{x:number;y:number},oldSize:number,newSize:number){
+ const ratio=newSize/oldSize;return {x:pan.x*ratio,y:pan.y*ratio};
+}

@@ -122,6 +122,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "ethera-the-stonewrought",
+    "portalArtwork": "/portal-content/Ethera.webp",
     "name": "Ethera: The Stonewrought",
     "shortSummary": "Godot RPG/simulation chapter set in the Morkahja universe.",
     "evidence": "repo",
@@ -164,6 +165,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "battlereport",
+    "portalArtwork": "/portal-content/BattleReport.webp",
     "name": "BattleReport",
     "shortSummary": "Personal encounter and combat-statistics reporter.",
     "evidence": "repo",
@@ -171,6 +173,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roarguild",
+    "portalArtwork": "/portal-content/ROARGuild.webp",
     "name": "RoarGuild",
     "shortSummary": "Guild roleplay emotes, recruitment and shared message board.",
     "evidence": "repo",
@@ -273,6 +276,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "warriorstartattack",
+    "portalArtwork": "/portal-content/WarriorStartAttack.webp",
     "name": "WarriorStartAttack",
     "shortSummary": "Auto-attack helper for warrior abilities.",
     "evidence": "repo-lineage",

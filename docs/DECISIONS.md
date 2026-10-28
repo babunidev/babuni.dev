@@ -464,3 +464,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — Public edition mapping verified
 
 **Status:** four public documentation repositories published by Babuni.dev and anonymously verified by AI. Use Ethera-docs, Morkahja-docs, MorkahjaWorld-docs and arcanitebrothers-docs for exactly the four formerly private-review tiles. Keep implementation sources private and outside the snapshot. Preserve existing other snapshots and unconfirmed family mappings. Full source commits are pinned in repository-documents.json; this is a reviewed static import, not private/live fetching.
+
+## 2026-10-28 — Resize retains exploration state
+
+**Status:** implemented from Babuni.dev’s correction, awaiting human resize acceptance. A viewport change rebuilds the bounded tile pool, not the selected project's exploration state. Preserve existing bloom panel instances, module choices, reservations and pending selections. Responsive tile-size changes rescale the camera in cell units and in-flight endpoints without changing elapsed timing. Closing/reopening was rejected by the human report.
+
+**Performance decision:** report the current warning honestly. Keep synchronous intros and original supplied artwork bytes in this fix; no raised warning threshold, shortened intros, unapproved async opening gate or silently recompressed originals. Per-project preview chunks and separate smaller image derivatives remain AI proposals, not confirmed design changes.

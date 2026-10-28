@@ -419,3 +419,9 @@ Planned public editions use the existing ten-path Markdown contract in separate 
 ## Four public edition snapshots integrated — 2026-10-28
 
 The four mappings now target separate public documentation repositories. Anonymous fetchSnapshot checks verified public identity and resolved commits before any local mapping/snapshot writes. Forty new documents were merged into the snapshot without refreshing existing sources. Coverage is 38 tiles connected to 37 public repositories, including local/shared BABUNI.DEV; 36 external snapshot entries. Existing build preparation emits the new reader assets and preview metadata offline. No private implementation is an import source.
+
+## Responsive pool rebuilding and production measurement — 2026-10-28
+
+`rebuildPool` preserves active/pending selections as well as big bloom. It reuses bloom panel DOM and reservation data while recreating bounded tile slots. `resizedPan` converts pixel pan/camera endpoints between tile scales to preserve cell-space positions without restarting centering. No shift-history or motion timing change is involved.
+
+`report-production-size.mjs` inventories artifact bytes by type and estimates gzip/Brotli for JS; it does not assert compression is enabled on a deployed server. Local browser measurements used a temporary instrumented static build outside the source publication path. The probe is not a runtime dependency and is removed by a clean production build. Full Markdown remains separately fetched; synchronous generated preview/intro metadata remains the main large-chunk contributor. See PERFORMANCE-2026-10-28.md.

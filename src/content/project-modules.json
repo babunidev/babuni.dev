@@ -229,6 +229,21 @@
           "src": "/media/babuni-dev/images/verification/public-documentation-reader.webp",
           "alt": "Ethera Concept from its public documentation edition rendered in the reader.",
           "caption": "AI desktop browser verification, 2026-10-28: Ethera opened eight small-bloom modules, eleven big-bloom modules and the Markdown Concept reader. View source points to the pinned public Ethera-docs commit."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/resize-first-server-ended.webp",
+          "alt": "AI production test, 2026-10-28: initial resized small bloom; temporary measurement server had ended, so artwork reloads failed. Superseded by the verified capture.",
+          "caption": "AI production test, 2026-10-28: initial resized small bloom; temporary measurement server had ended, so artwork reloads failed. Superseded by the verified capture."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/production-small-bloom-resize.webp",
+          "alt": "AI production browser, 2026-10-28: same eight small-bloom modules retained at 900×680 after responsive resize; selected artwork loaded.",
+          "caption": "AI production browser, 2026-10-28: same eight small-bloom modules retained at 900×680 after responsive resize; selected artwork loaded."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/production-big-bloom-resize.webp",
+          "alt": "AI production browser, 2026-10-28: same thirteen big-bloom modules retained after desktop and phone-size resize; reader also survived and returned to this bloom.",
+          "caption": "AI production browser, 2026-10-28: same thirteen big-bloom modules retained after desktop and phone-size resize; reader also survived and returned to this bloom."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

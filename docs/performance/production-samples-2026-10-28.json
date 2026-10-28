@@ -1,0 +1,569 @@
+[
+  {
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "navigation": {
+      "domContentLoaded": 95.2000000178814,
+      "load": 117.7000000178814,
+      "response": 4.300000011920929,
+      "transfer": 2831,
+      "encoded": 2531
+    },
+    "firstTile": 76.09999999403954,
+    "paint": [
+      {
+        "name": "first-paint",
+        "ms": 156
+      },
+      {
+        "name": "first-contentful-paint",
+        "ms": 156
+      }
+    ],
+    "lcp": 196,
+    "resources": [
+      {
+        "name": "/_astro/index.Cnc3tx7W.css",
+        "kind": "link",
+        "transfer": 18278,
+        "encoded": 17978,
+        "end": 27.5
+      },
+      {
+        "name": "/favicon.webp",
+        "kind": "img",
+        "transfer": 8226,
+        "encoded": 7926,
+        "end": 40.900000005960464
+      },
+      {
+        "name": "/_astro/index.astro_astro_type_script_index_0_lang.CX2afZb8.js",
+        "kind": "script",
+        "transfer": 695637,
+        "encoded": 695337,
+        "end": 28.099999994039536
+      },
+      {
+        "name": "/portal-content/LocalAAIWorkstation.webp",
+        "kind": "img",
+        "transfer": 310426,
+        "encoded": 310126,
+        "end": 128.2000000178814
+      },
+      {
+        "name": "/portal-content/PortalContentButtonGame.webp",
+        "kind": "img",
+        "transfer": 253362,
+        "encoded": 253062,
+        "end": 128.40000000596046
+      },
+      {
+        "name": "/portal-content/LocalPromptLab.webp",
+        "kind": "img",
+        "transfer": 32754,
+        "encoded": 32454,
+        "end": 132.40000000596046
+      },
+      {
+        "name": "/portal-content/SocialForever.webp",
+        "kind": "img",
+        "transfer": 189622,
+        "encoded": 189322,
+        "end": 134.7000000178814
+      },
+      {
+        "name": "/portal-content/PortalContentBabuniDev.webp",
+        "kind": "img",
+        "transfer": 113478,
+        "encoded": 113178,
+        "end": 133.30000001192093
+      },
+      {
+        "name": "/portal-content/RoarForever.webp",
+        "kind": "img",
+        "transfer": 93378,
+        "encoded": 93078,
+        "end": 134.2000000178814
+      },
+      {
+        "name": "/portal-content/AzerothMoments.webp",
+        "kind": "img",
+        "transfer": 155010,
+        "encoded": 154710,
+        "end": 135.90000000596046
+      },
+      {
+        "name": "/portal-content/AnskarGrotzschnapf.webp",
+        "kind": "img",
+        "transfer": 468042,
+        "encoded": 467742,
+        "end": 136.7000000178814
+      },
+      {
+        "name": "/portal-content/FlourishForever.webp",
+        "kind": "img",
+        "transfer": 235040,
+        "encoded": 234740,
+        "end": 139.59999999403954
+      },
+      {
+        "name": "/portal-content/FavorCraft.webp",
+        "kind": "img",
+        "transfer": 334312,
+        "encoded": 334012,
+        "end": 146.7000000178814
+      },
+      {
+        "name": "/portal-content/Ethera.webp",
+        "kind": "img",
+        "transfer": 675332,
+        "encoded": 675032,
+        "end": 148.90000000596046
+      },
+      {
+        "name": "/portal-content/ResistForever.webp",
+        "kind": "img",
+        "transfer": 119070,
+        "encoded": 118770,
+        "end": 140
+      },
+      {
+        "name": "/portal-content/BuxbrewResist.webp",
+        "kind": "img",
+        "transfer": 241262,
+        "encoded": 240962,
+        "end": 146.80000001192093
+      },
+      {
+        "name": "/portal-content/WorkThatGodBod.webp",
+        "kind": "img",
+        "transfer": 375620,
+        "encoded": 375320,
+        "end": 148.40000000596046
+      },
+      {
+        "name": "/portal-content/WarriorStartAttack.webp",
+        "kind": "img",
+        "transfer": 597406,
+        "encoded": 597106,
+        "end": 149.2000000178814
+      },
+      {
+        "name": "/portal-content/TheGreatIceflowRelay.webp",
+        "kind": "img",
+        "transfer": 498744,
+        "encoded": 498444,
+        "end": 150.40000000596046
+      },
+      {
+        "name": "/portal-content/ROARGuild.webp",
+        "kind": "img",
+        "transfer": 596392,
+        "encoded": 596092,
+        "end": 152.2000000178814
+      },
+      {
+        "name": "/portal-content/BattleReport.webp",
+        "kind": "img",
+        "transfer": 430422,
+        "encoded": 430122,
+        "end": 152.7000000178814
+      },
+      {
+        "name": "/portal-content/ROARR.webp",
+        "kind": "img",
+        "transfer": 190866,
+        "encoded": 190566,
+        "end": 153
+      },
+      {
+        "name": "/favicon.webp",
+        "kind": "other",
+        "transfer": 8226,
+        "encoded": 7926,
+        "end": 138
+      }
+    ],
+    "tiles": 108
+  },
+  {
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "navigation": {
+      "domContentLoaded": 94.7999999821186,
+      "load": 112.09999999403954,
+      "response": 4.399999976158142,
+      "transfer": 2831,
+      "encoded": 2531
+    },
+    "firstTile": 78.09999999403954,
+    "paint": [
+      {
+        "name": "first-paint",
+        "ms": 80
+      },
+      {
+        "name": "first-contentful-paint",
+        "ms": 80
+      }
+    ],
+    "lcp": 176,
+    "resources": [
+      {
+        "name": "/_astro/index.Cnc3tx7W.css",
+        "kind": "link",
+        "transfer": 18278,
+        "encoded": 17978,
+        "end": 29.399999976158142
+      },
+      {
+        "name": "/_astro/index.astro_astro_type_script_index_0_lang.CX2afZb8.js",
+        "kind": "script",
+        "transfer": 695637,
+        "encoded": 695337,
+        "end": 28.599999994039536
+      },
+      {
+        "name": "/favicon.webp",
+        "kind": "img",
+        "transfer": 8226,
+        "encoded": 7926,
+        "end": 45.19999998807907
+      },
+      {
+        "name": "/portal-content/LocalAAIWorkstation.webp",
+        "kind": "img",
+        "transfer": 310426,
+        "encoded": 310126,
+        "end": 117.59999999403954
+      },
+      {
+        "name": "/portal-content/SocialForever.webp",
+        "kind": "img",
+        "transfer": 189622,
+        "encoded": 189322,
+        "end": 120.09999999403954
+      },
+      {
+        "name": "/portal-content/LocalPromptLab.webp",
+        "kind": "img",
+        "transfer": 32754,
+        "encoded": 32454,
+        "end": 118.69999998807907
+      },
+      {
+        "name": "/portal-content/PortalContentButtonGame.webp",
+        "kind": "img",
+        "transfer": 253362,
+        "encoded": 253062,
+        "end": 121.39999997615814
+      },
+      {
+        "name": "/portal-content/PortalContentBabuniDev.webp",
+        "kind": "img",
+        "transfer": 113478,
+        "encoded": 113178,
+        "end": 119.89999997615814
+      },
+      {
+        "name": "/portal-content/RoarForever.webp",
+        "kind": "img",
+        "transfer": 93378,
+        "encoded": 93078,
+        "end": 120.2999999821186
+      },
+      {
+        "name": "/portal-content/AzerothMoments.webp",
+        "kind": "img",
+        "transfer": 155010,
+        "encoded": 154710,
+        "end": 123.7999999821186
+      },
+      {
+        "name": "/portal-content/AnskarGrotzschnapf.webp",
+        "kind": "img",
+        "transfer": 468042,
+        "encoded": 467742,
+        "end": 124.7999999821186
+      },
+      {
+        "name": "/portal-content/FlourishForever.webp",
+        "kind": "img",
+        "transfer": 235040,
+        "encoded": 234740,
+        "end": 125.09999999403954
+      },
+      {
+        "name": "/portal-content/ResistForever.webp",
+        "kind": "img",
+        "transfer": 119070,
+        "encoded": 118770,
+        "end": 127.5
+      },
+      {
+        "name": "/portal-content/FavorCraft.webp",
+        "kind": "img",
+        "transfer": 334312,
+        "encoded": 334012,
+        "end": 127.89999997615814
+      },
+      {
+        "name": "/portal-content/Ethera.webp",
+        "kind": "img",
+        "transfer": 675332,
+        "encoded": 675032,
+        "end": 131
+      },
+      {
+        "name": "/portal-content/BuxbrewResist.webp",
+        "kind": "img",
+        "transfer": 241262,
+        "encoded": 240962,
+        "end": 132.19999998807907
+      },
+      {
+        "name": "/portal-content/WorkThatGodBod.webp",
+        "kind": "img",
+        "transfer": 375620,
+        "encoded": 375320,
+        "end": 133.5
+      },
+      {
+        "name": "/portal-content/WarriorStartAttack.webp",
+        "kind": "img",
+        "transfer": 597406,
+        "encoded": 597106,
+        "end": 134.39999997615814
+      },
+      {
+        "name": "/portal-content/TheGreatIceflowRelay.webp",
+        "kind": "img",
+        "transfer": 498744,
+        "encoded": 498444,
+        "end": 136.09999999403954
+      },
+      {
+        "name": "/portal-content/BattleReport.webp",
+        "kind": "img",
+        "transfer": 430422,
+        "encoded": 430122,
+        "end": 136.5
+      },
+      {
+        "name": "/portal-content/ROARGuild.webp",
+        "kind": "img",
+        "transfer": 596392,
+        "encoded": 596092,
+        "end": 136.69999998807907
+      },
+      {
+        "name": "/portal-content/ROARR.webp",
+        "kind": "img",
+        "transfer": 190866,
+        "encoded": 190566,
+        "end": 135.7999999821186
+      },
+      {
+        "name": "/favicon.webp",
+        "kind": "other",
+        "transfer": 8226,
+        "encoded": 7926,
+        "end": 129.7999999821186
+      }
+    ],
+    "tiles": 108
+  },
+  {
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "navigation": {
+      "domContentLoaded": 69.80000001192093,
+      "load": 86.90000000596046,
+      "response": 3,
+      "transfer": 2831,
+      "encoded": 2531
+    },
+    "firstTile": 53.900000005960464,
+    "paint": [
+      {
+        "name": "first-paint",
+        "ms": 112
+      },
+      {
+        "name": "first-contentful-paint",
+        "ms": 112
+      }
+    ],
+    "lcp": 144,
+    "resources": [
+      {
+        "name": "/_astro/index.Cnc3tx7W.css",
+        "kind": "link",
+        "transfer": 18278,
+        "encoded": 17978,
+        "end": 19.400000005960464
+      },
+      {
+        "name": "/_astro/index.astro_astro_type_script_index_0_lang.CX2afZb8.js",
+        "kind": "script",
+        "transfer": 695637,
+        "encoded": 695337,
+        "end": 20.900000005960464
+      },
+      {
+        "name": "/favicon.webp",
+        "kind": "img",
+        "transfer": 8226,
+        "encoded": 7926,
+        "end": 31.200000017881393
+      },
+      {
+        "name": "/portal-content/LocalAAIWorkstation.webp",
+        "kind": "img",
+        "transfer": 310426,
+        "encoded": 310126,
+        "end": 96.60000002384186
+      },
+      {
+        "name": "/portal-content/PortalContentButtonGame.webp",
+        "kind": "img",
+        "transfer": 253362,
+        "encoded": 253062,
+        "end": 98
+      },
+      {
+        "name": "/portal-content/LocalPromptLab.webp",
+        "kind": "img",
+        "transfer": 32754,
+        "encoded": 32454,
+        "end": 95
+      },
+      {
+        "name": "/portal-content/SocialForever.webp",
+        "kind": "img",
+        "transfer": 189622,
+        "encoded": 189322,
+        "end": 97.7000000178814
+      },
+      {
+        "name": "/portal-content/PortalContentBabuniDev.webp",
+        "kind": "img",
+        "transfer": 113478,
+        "encoded": 113178,
+        "end": 96.40000000596046
+      },
+      {
+        "name": "/portal-content/RoarForever.webp",
+        "kind": "img",
+        "transfer": 93378,
+        "encoded": 93078,
+        "end": 96.90000000596046
+      },
+      {
+        "name": "/portal-content/AzerothMoments.webp",
+        "kind": "img",
+        "transfer": 155010,
+        "encoded": 154710,
+        "end": 101.30000001192093
+      },
+      {
+        "name": "/portal-content/FlourishForever.webp",
+        "kind": "img",
+        "transfer": 235040,
+        "encoded": 234740,
+        "end": 102.5
+      },
+      {
+        "name": "/portal-content/FavorCraft.webp",
+        "kind": "img",
+        "transfer": 334312,
+        "encoded": 334012,
+        "end": 104
+      },
+      {
+        "name": "/portal-content/AnskarGrotzschnapf.webp",
+        "kind": "img",
+        "transfer": 468042,
+        "encoded": 467742,
+        "end": 104.2000000178814
+      },
+      {
+        "name": "/portal-content/Ethera.webp",
+        "kind": "img",
+        "transfer": 675332,
+        "encoded": 675032,
+        "end": 108
+      },
+      {
+        "name": "/portal-content/ResistForever.webp",
+        "kind": "img",
+        "transfer": 119070,
+        "encoded": 118770,
+        "end": 102.80000001192093
+      },
+      {
+        "name": "/portal-content/BuxbrewResist.webp",
+        "kind": "img",
+        "transfer": 241262,
+        "encoded": 240962,
+        "end": 108.2000000178814
+      },
+      {
+        "name": "/portal-content/WorkThatGodBod.webp",
+        "kind": "img",
+        "transfer": 375620,
+        "encoded": 375320,
+        "end": 109.5
+      },
+      {
+        "name": "/portal-content/TheGreatIceflowRelay.webp",
+        "kind": "img",
+        "transfer": 498744,
+        "encoded": 498444,
+        "end": 110.60000002384186
+      },
+      {
+        "name": "/portal-content/WarriorStartAttack.webp",
+        "kind": "img",
+        "transfer": 597406,
+        "encoded": 597106,
+        "end": 109.7000000178814
+      },
+      {
+        "name": "/portal-content/ROARGuild.webp",
+        "kind": "img",
+        "transfer": 596392,
+        "encoded": 596092,
+        "end": 111.10000002384186
+      },
+      {
+        "name": "/portal-content/ROARR.webp",
+        "kind": "img",
+        "transfer": 190866,
+        "encoded": 190566,
+        "end": 110.90000000596046
+      },
+      {
+        "name": "/portal-content/BattleReport.webp",
+        "kind": "img",
+        "transfer": 430422,
+        "encoded": 430122,
+        "end": 111.40000000596046
+      },
+      {
+        "name": "/favicon.webp",
+        "kind": "other",
+        "transfer": 8226,
+        "encoded": 7926,
+        "end": 98.30000001192093
+      }
+    ],
+    "tiles": 108
+  }
+]

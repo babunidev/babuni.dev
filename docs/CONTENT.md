@@ -274,3 +274,7 @@ Babuni.dev approved documentation-only publication for four private projects. AI
 ## Verified public edition import — 2026-10-28
 
 Babuni.dev published all four prepared editions. The site imports their exact public Markdown (ten documents each), retaining human/AI attribution and evidence limitations. Ethera and Morkahja RPG describe distinct applications; MorkahjaWorld stays reserved; arcanitebrothers describes Morkahja Admin. These are curated public summaries, not full private histories or runnable distributions. Revision-pinned source links point only to the public editions. Other project snapshots and media remain unchanged.
+
+## Four additional original portal WebPs — 2026-10-28
+
+Babuni.dev supplied BattleReport.webp, Ethera.webp, ROARGuild.webp and WarriorStartAttack.webp in the local public/portal-content folder and asked for them to be added. Each decoded as 1254×1254 WebP and was copied unchanged to its matching project mapping; there are nineteen original portal artworks. No AI image generation, crop, resize or recompression occurred in this import. SHA-256 records are in PERFORMANCE-2026-10-28.md. Browser resize captures are AI verification evidence and include an explicitly superseded failed local-server preview; all are published as WebP. Current source snapshots and text content are not refreshed by this task.

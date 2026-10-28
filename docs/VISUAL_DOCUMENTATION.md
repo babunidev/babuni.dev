@@ -72,3 +72,11 @@ Both originals were JPEG bytes and were converted to WebP for publication. These
 ## Four public documentation editions — 2026-10-28
 
 - `public-documentation-reader.webp` — AI desktop browser verification of Ethera’s public Concept in the reader, after small → big → reader navigation. Public pinned source link checked in the accessibility tree. No physical-phone check claimed. Original JPEG bytes preserved outside public assets.
+
+## Production resize checks — 2026-10-28
+
+- `resize-first-server-ended.webp` — first small-bloom resize capture, with failed artwork reloads after the temporary local server ended. Superseded; retained as requested development history, not successful image verification.
+- `production-small-bloom-resize.webp` — verified 900×680 production viewport, same eight small modules and loaded selected artwork after resize.
+- `production-big-bloom-resize.webp` — verified thirteen-module big bloom after desktop/phone resize and reader return.
+
+AI desktop browser viewport evidence; no physical-device acceptance claimed. Encoded originals were JPEG and are retained outside public; published versions are WebP.

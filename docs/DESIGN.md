@@ -415,3 +415,7 @@ Babuni.dev chose documentation-only editions for four currently private projects
 ## Documentation editions available at all depths — 2026-10-28
 
 Four existing project tiles now gain the standard text modules from their public documentation editions. Small bloom still samples up to eight populated modules; big bloom exposes all populated modules and readers show the selected source with a public revision-pinned link. Existing artwork, tile identifiers, motion and reveal geometry are unchanged. The arcanitebrothers edition explains that its application is Morkahja Admin.
+
+## Resize continuity and supplied artwork — 2026-10-28
+
+Babuni.dev requests the same open bloom and map location through fullscreen/window changes. Small/big blooms retain their selected modules and project identity; the reader remains open. Responsive tile sizing preserves logical position, while transition durations and reader/grid scrolling stay unchanged. Four supplied portal WebPs now illustrate BattleReport, Ethera, RoarGuild and WarriorStartAttack; they use existing circular masks and are not redrawn. Agent viewport tests are separate from physical-phone orientation acceptance.

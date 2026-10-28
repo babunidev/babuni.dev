@@ -1,0 +1,81 @@
+{
+  "files": 418,
+  "bytes": 16911137,
+  "groups": {
+    ".css": {
+      "files": 1,
+      "bytes": 17978
+    },
+    ".js": {
+      "files": 1,
+      "bytes": 695337
+    },
+    ".md": {
+      "files": 353,
+      "bytes": 1868421
+    },
+    ".webp": {
+      "files": 58,
+      "bytes": 8603896
+    },
+    ".html": {
+      "files": 1,
+      "bytes": 2531
+    },
+    ".mp4": {
+      "files": 4,
+      "bytes": 5722974
+    }
+  },
+  "javascript": [
+    {
+      "path": "_astro/index.astro_astro_type_script_index_0_lang.CX2afZb8.js",
+      "bytes": 695337,
+      "extension": ".js",
+      "gzip": 196482,
+      "brotli": 157507
+    }
+  ],
+  "largest": [
+    {
+      "path": "media/babuni-dev/videos/grid-motion.mp4",
+      "bytes": 2322836,
+      "extension": ".mp4"
+    },
+    {
+      "path": "media/babuni-dev/videos/column-shifts.mp4",
+      "bytes": 1494998,
+      "extension": ".mp4"
+    },
+    {
+      "path": "media/babuni-dev/videos/bloom-motion.mp4",
+      "bytes": 1115800,
+      "extension": ".mp4"
+    },
+    {
+      "path": "media/babuni-dev/videos/small-bloom.mp4",
+      "bytes": 789340,
+      "extension": ".mp4"
+    },
+    {
+      "path": "_astro/index.astro_astro_type_script_index_0_lang.CX2afZb8.js",
+      "bytes": 695337,
+      "extension": ".js"
+    },
+    {
+      "path": "portal-content/Ethera.webp",
+      "bytes": 675032,
+      "extension": ".webp"
+    },
+    {
+      "path": "portal-content/WarriorStartAttack.webp",
+      "bytes": 597106,
+      "extension": ".webp"
+    },
+    {
+      "path": "portal-content/ROARGuild.webp",
+      "bytes": 596092,
+      "extension": ".webp"
+    }
+  ]
+}
