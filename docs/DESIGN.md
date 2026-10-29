@@ -539,3 +539,10 @@ Mighty Morkah displays its supplied WebP through the existing circular mask. Sca
 ## 2026-10-29 — Elixior portal
 
 Elixior displays Elexior.webp through the existing round mask. Scale, positioning and timing remain unchanged.
+
+
+## 2026-10-29 — Chronological first spiral (current ordering)
+
+Babuni.dev requested that newest project work appear first and chose public documentation commit dates for private-code projects. The most recently committed connected public source begins in the center; the remaining dated projects follow newest-first along the existing clockwise spiral. BABUNI.DEV is no longer unconditionally pinned first. Equal-date entries retain catalog order, and projects without verified dates follow in their existing order. Menu categories/alphabetical search do not change.
+
+This is initial placement per build/page load, not a live resort during browsing. Tile dimensions, reveal cadence, shift tempo and interaction positioning rules remain unchanged. BABUNI.DEV's special treatment belongs to its stable ID, independent of chronological rank.

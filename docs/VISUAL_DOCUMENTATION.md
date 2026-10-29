@@ -118,3 +118,13 @@ These are short browser observations, not real-phone or prolonged-session accept
 ## Babuni Admin rename — 2026-10-29
 
 `babuni-admin-renamed-preview.webp` — AI browser capture at the default viewport: renamed tile, retained supplied artwork and Public documentation resource explaining the earlier project name. Menu search and bloom activation succeeded; its visible resource links only to the existing public documentation edition. Actual capture was JPEG, published as quality-85 WebP with original archived outside public assets. No private application or physical-device test was performed.
+
+
+## Chronological first spiral — 2026-10-29
+
+Two AI browser captures at 1920×1080, converted from actual JPEG to quality-85 WebP; originals retained outside public assets:
+
+- `chronological-first-spiral.webp` — early intro cascade with BABUNI.DEV, Ethera and Morkahja leading. Scaled/incomplete tiles are the existing reveal animation.
+- `chronological-grid-after-shifts.webp` — fully revealed field after normal autonomous shifts; this later frame is not the pristine initial order.
+
+The initial DOM contained 45 visible identities and the first nine spiral cells exactly matched the generated chronological IDs. Project menu categories remained intact; selecting Babuni Admin opened its eight-preview bloom with the correct public documentation link. A failed first DOM read used an unavailable parseFloat helper; a clean reload/read succeeded. No screenshot was saved from that failed read. These checks are not extended physical-device acceptance.

@@ -16,7 +16,7 @@ import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEve
 import {settledResidents} from '../lib/shift-settlement';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
-import { demoProjects } from '../lib/demo-projects';
+import {gridProjects as demoProjects} from '../lib/grid-projects';
 import { topicLabelsForProject, TOPIC_POINTS, chooseAmbientPoint, topicRevealPlan, type TopicPoint } from '../lib/project-topics';
 import { introSequence, INTRO_SPAWN_STAGGER_MS, INTRO_SPAWN_DURATION_MS } from '../lib/grid-intro';
 import { centeredPan, interpolateCenter,
@@ -37,7 +37,7 @@ if (viewport && world && resetButton && status) {
   installInteractionFeedback();
   const bufferCells=2;
   let columnBufferCells=2;
-  // First inventory entry is BABUNI.DEV; remaining candidates are human-curated but retain provisional evidence labels.
+  // Activity order is fixed for this loaded bundle; semantic IDs survive slot recycling.
   const placement=new ProjectPlacement(demoProjects.length,3);
   let panX=0, panY=0, tileSize=240, columns=0, rows=0;
   let firstColumn=0, firstRow=0, columnHead=0, rowHead=0;
@@ -289,8 +289,8 @@ if (viewport && world && resetButton && status) {
     if(!force&&slot.projectIndex===projectIndex)return;
     if(activeTopic===slot.element)hideTopic();
     slot.projectIndex=projectIndex;
-    const isOrigin=projectIndex===0;
     const project=demoProjects[projectIndex];
+    const isOrigin=project?.id==='babuni-dev';
     slot.element.classList.toggle('grid-tile--placeholder',!project);
     const control=slot.element.querySelector<HTMLButtonElement>('.tile-select');
     if(control)control.disabled=!project;

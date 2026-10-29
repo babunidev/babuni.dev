@@ -648,3 +648,14 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `Elexior.webp` to the Elixior music project, preserving original WebP bytes.
+
+
+## 2026-10-29 — Commit-date first spiral
+
+### Added
+- Build-time refresh of latest branch-head commit dates from connected public repositories, using public documentation editions for private projects.
+- Newest-first initial grid order, with stable catalog-order ties and undated projects afterward; no visitor-time requests or live reshuffling.
+- Last-verified public activity cache, explicit refresh warnings/fallback and optional reviewed baseline saving. Normal builds write only ignored generated metadata.
+
+### Fixed
+- BABUNI.DEV special tile styling follows its semantic ID rather than whichever project happens to rank first. Tile geometry and animation timings are unchanged.

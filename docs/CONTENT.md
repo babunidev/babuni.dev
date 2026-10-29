@@ -411,3 +411,10 @@ MightyMorkah.webp was supplied by Babuni.dev and copied byte-for-byte from the l
 ## 2026-10-29 — Elixior supplied WebP
 
 Elexior.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. It maps to the existing Elixior music project; its display name and SoundCloud URL are retained. Thirty-two active project artwork assignments now reference thirty-two unique supplied WebPs.
+
+
+## 2026-10-29 — Dates for initial ordering
+
+Babuni.dev chose **public documentation commit dates** for projects whose code is private. All 35 connected public sources contribute the latest configured branch-head commit's committer timestamp, including this site's public repository. Ten projects without connected sources receive no invented date. Newest dated projects precede stable undated projects; timestamp ties use the existing catalog order.
+
+Activity cache records only public repository identity, branch, commit SHA, committedAt and checkedAt. checkedAt is provenance, not sort priority; document snapshot syncedAt and local file dates are never substitutes. A fresh date can precede a later reviewed document sync: the existing content snapshot is not silently refreshed. Optional-token reads reject private visibility before reading commit metadata. Normal build output is generated/ignored; a separately saved checked-in baseline supplies offline fallback. Failed refreshes explicitly report stale or unavailable dates.

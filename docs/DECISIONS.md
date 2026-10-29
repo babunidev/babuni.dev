@@ -592,3 +592,10 @@ Babuni.dev selected MightyMorkah.webp. AI mapped the supplied asset directly to 
 ## 2026-10-29 — Elixior artwork (implemented)
 
 Babuni.dev supplied Elexior.webp. AI assigned it to existing music project `elixior`; the filename spelling does not rename the project. Original bytes and existing renderer retained.
+
+
+## 2026-10-29 — Newest-first spiral from public commits (implemented)
+
+**Human request/choice:** sort the initial spiral at each build by latest project commit, using public documentation dates for private-code projects. **AI choices:** use the latest commit on each explicitly connected branch; newest at center, following the existing clockwise spiral. Preserve base catalog order for equal timestamps and undated projects, with undated projects after dated ones. Reject import/check/build timestamps as activity proxies and do not read private implementation commits.
+
+Order is static per loaded bundle; no live rearrangement or timing change. Normal builds write refreshed metadata only to ignored generated files, with a checked-in fallback for offline/fresh clones. Explicit baseline saving is a separate reviewed command. Network/API failure warns and reuses only matching verified dates. Optional CI authentication may read commit metadata only after a public visibility check. Menu categories and alphabetical search order remain independent.

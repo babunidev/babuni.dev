@@ -289,6 +289,16 @@
           "src": "/media/babuni-dev/images/verification/babuni-admin-renamed-preview.webp",
           "alt": "Babuni Admin selected with its retained artwork and explicit public documentation resource.",
           "caption": "AI browser verification, 2026-10-29: Babuni Admin search opened the same stable project; its documentation link points only to the existing public edition, with earlier names explained. Historical source documents retain their original wording."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/chronological-first-spiral.webp",
+          "alt": "chronological first spiral",
+          "caption": "AI browser, 2026-10-29, 1920×1080: early intro cascade after live 35/35 public-date refresh. BABUNI.DEV, Ethera and Morkahja lead the first spiral; early scaled tiles are the existing reveal animation, not changed geometry."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/chronological-grid-after-shifts.webp",
+          "alt": "chronological grid after shifts",
+          "caption": "AI browser, 2026-10-29: fully revealed grid after normal autonomous shifts. Initial DOM placement for the first nine projects exactly matched the build-generated chronology; this later frame is movement history, not a second resort."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

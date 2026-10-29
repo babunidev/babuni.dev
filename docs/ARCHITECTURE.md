@@ -549,3 +549,12 @@ Catalog ID `mighty-morkah` references `/portal-content/MightyMorkah.webp`. Exist
 ## 2026-10-29 — Elixior asset mapping
 
 Catalog ID `elixior` references `/portal-content/Elexior.webp`. Existing catalog-derived artwork import and portal rendering handle the filename without changing stable identity.
+
+
+## 2026-10-29 — Public activity metadata and fixed runtime order
+
+`sync-project-activity.mjs` queries the latest commit on the configured branch for deduplicated `connected` public sources. Optional CI token requests verify public repository metadata first; anonymous successful commit reads establish public access directly. Only branch, SHA, committer timestamp and check timestamp are retained. Private/unresolved connections are excluded. `project-activity.ts` validates metadata and sorts real project identities; The preparation step also emits ignored `src/generated/grid-order.json` with only ordered project IDs; `grid-projects.ts` resolves that fixed runtime array without mutating `demo-projects.ts`. Commit metadata and sorting code are not added to the client bundle. Grid placement retains its existing index mechanics, while special branding now checks semantic ID.
+
+`prebuild` runs activity refresh before content validation/preparation. Runtime dates live in ignored `src/generated/project-activity.json`. Checked-in `src/content/project-activity.json` supplies last-verified fallback; normal builds never modify it. Offline content preparation merges the newest valid matching generated/baseline records and prunes inactive/mismatched branches. Explicit `activity:sync -- --save-baseline` updates the reviewed fallback. Failed refreshes retain matching verified dates and warn; unknown dates remain undated. Build environments may optionally supply GITHUB_TOKEN/GH_TOKEN to avoid anonymous rate limits, with the public-visibility guard retained. The existing CI workflow uses anonymous requests and verified-cache fallback; its permissions/configuration were not expanded. No credentials or author identities enter the cache/client.
+
+Document snapshots remain independent: a fresh chronological date does not fetch or rewrite full Markdown. Visitors make no GitHub requests; an already-loaded grid never changes identity order. Existing menu groups keep their base catalog/search behavior.

@@ -12,6 +12,8 @@ The website itself is intended to become one of its exhibits: a record of its co
 
 **Living-grid portfolio prototype with multiple depths of exploration.** Astro 7 and the mechanical grid are on `main`: screen-centered dragging, autonomous shifting and 45 retained project tiles and three unique neutral decorative identities. Visitors can explore three-point topic bubbles, open a small bloom of up to eight neighboring modules, expand into a larger grid-native bloom, and read full documentation or open galleries, videos and source links. Thirty-two active projects have supplied WebP portal artwork files, while other candidate tiles remain provisional. The repository-backed content pipeline currently maps 35 retained tiles to 35 public repositories, including BABUNI.DEV itself; other tiles remain explicitly unresolved or provisional. **Remaining candidate labels are not all verified or approved published exhibits.** Full public project documents are built as separate static assets and loaded only when opened in the reader, keeping the initial grid bundle lighter. The Projects menu groups the 45 projects under World of Warcraft, Morkahja, AI, Games and Music; categories do not rearrange the grid. Three neutral identities never repeat in view, while real projects may repeat when necessary. The work remains an active prototype, with long-session, keyboard, mobile and reduced-motion acceptance still outstanding.
 
+The first spiral is sorted newest-first by the latest commit on each connected public repository branch. Private-code projects use their public documentation edition dates. Each build refreshes public activity; ties and undated projects keep catalog order, and an active page never re-sorts. Offline/rate-limited builds warn and retain last-verified dates.
+
 ## Local development
 
 Requires Node.js `>=22.23.4` (the version range declared by the project and locked Astro package) and npm. Run these commands from the repository root:
@@ -22,6 +24,8 @@ npm run dev
 ```
 
 Open the local address printed by Astro (normally http://localhost:4321). For agents, use `npm run dev -- --background`; manage it with `npm run astro -- dev status`, `npm run astro -- dev logs`, and `npm run astro -- dev stop`.
+
+`npm run activity:sync` refreshes public commit metadata for local preview; add `-- --save-baseline` only when deliberately updating the checked-in fallback for review. Normal builds update only ignored generated metadata, so they do not dirty the checkout. Dev/test startup uses the last verified cache without network access.
 
 `npm run test:grid` runs the regression suite. `npm run build` validates content, prepares the public document assets and creates the static site in `dist/`. `npm run preview` serves that build locally. `npm run content:prepare` rebuilds local preview metadata/static Markdown from reviewed sources without network access; it is invoked automatically before dev, tests and builds.
 

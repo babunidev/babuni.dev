@@ -14,7 +14,7 @@
     "astro": "astro",
     "content:check": "node scripts/check-webp.mjs && node --experimental-strip-types scripts/content-tools.mjs",
     "content:template": "node --experimental-strip-types scripts/content-tools.mjs template",
-    "prebuild": "npm run content:check && npm run content:prepare",
+    "prebuild": "npm run activity:sync && npm run content:check && npm run content:prepare",
     "content:sync": "node --experimental-strip-types scripts/sync-repositories.mjs",
     "content:report": "node --experimental-strip-types scripts/repository-report.mjs",
     "content:prepare": "node --experimental-strip-types scripts/build-document-assets.mjs",
@@ -22,7 +22,8 @@
     "pretest:grid": "npm run content:prepare",
     "bundle:report": "node scripts/report-bundle-size.mjs",
     "artwork:import": "node --experimental-strip-types scripts/import-portal-artwork.mjs",
-    "production:report": "node scripts/report-production-size.mjs"
+    "production:report": "node scripts/report-production-size.mjs",
+    "activity:sync": "node --experimental-strip-types scripts/sync-project-activity.mjs"
   },
   "dependencies": {
     "astro": "^7.4.2",

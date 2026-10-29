@@ -4,6 +4,7 @@ import {fileURLToPath} from 'node:url';
 import {REPOSITORY_DOCUMENTS,documentPreview} from '../src/lib/repository-content.ts';
 import {moduleIntro} from '../src/lib/big-bloom.ts';
 import {demoProjects} from '../src/lib/demo-projects.ts';
+import {prepareProjectActivity} from './sync-project-activity.mjs';
 import {validateConnections,validateSnapshots} from './sync-repositories.mjs';
 
 const root=fileURLToPath(new URL('..',import.meta.url));
@@ -57,6 +58,7 @@ export function prepareDocumentAssets(connections,snapshots,localDocuments){
  * Invoked by npm predev, pretest:grid and prebuild.
  */
 export function writeDocumentAssets({base=root}={}){
+  prepareProjectActivity({base});
   const readJson=path=>JSON.parse(readFileSync(join(base,path),'utf8'));
   const connections=readJson('src/content/project-repositories.json');
   const snapshots=readJson('src/content/repository-documents.json');

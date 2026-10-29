@@ -499,3 +499,13 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign supplied Elexior.webp to the existing Elixior music project.
 - [ ] Human visual check through the existing round portal mask.
+
+
+## 2026-10-29 — Chronological opening spiral
+
+- [x] Confirm public documentation dates for private-code projects (Babuni.dev).
+- [x] Implement per-build public commit-date refresh and newest-first initial spiral, retaining stable ties/undated order.
+- [x] Keep visitor sessions fixed; preserve semantic identities, menu categories, geometry and timing.
+- [x] Add cache/network/public-only/initial-order regression coverage and offline dev/test preparation.
+- [ ] Human acceptance: newest dated project begins in the center after a build; undated projects follow; no reshuffle occurs during browsing.
+- [ ] Monitor date freshness warnings on offline or rate-limited builds; cached ordering is deliberate fallback, not proof of a fresh fetch.
