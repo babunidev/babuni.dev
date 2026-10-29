@@ -193,6 +193,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roarsounds",
+    "portalArtwork": "/portal-content/ROARsounds.webp",
     "name": "ROARSounds",
     "shortSummary": "Earlier restoration of roar audio effects.",
     "evidence": "repo-lineage",
