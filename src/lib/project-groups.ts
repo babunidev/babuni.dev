@@ -57,8 +57,7 @@ export const PROJECT_GROUPS=[
     "ids": [
       "button-game",
       "rocket-game-42",
-      "babuni-gaming",
-      "analubia"
+      "babuni-gaming"
     ]
   },
   {

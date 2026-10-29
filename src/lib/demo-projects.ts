@@ -1,6 +1,6 @@
 /**
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
- * (53 initial candidates, 2026-10-26; 43 retained after curation through 2026-10-29).
+ * (53 initial candidates, 2026-10-26; 42 retained after curation through 2026-10-29).
  * Removed duplicates and non-projects are documented in the source inventory.
  * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
@@ -16,7 +16,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=43;
+export const DEMO_PROJECT_COUNT=42;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -319,13 +319,6 @@ export const demoProjects:readonly DemoProject[]=[
     "evidence": "repo",
     "tint": "hsl(173 58% 62%)",
     "portalArtwork": "/portal-content/ArcaniteBrothers.webp"
-  },
-  {
-    "id": "analubia",
-    "name": "Analubia",
-    "shortSummary": "Historical fantasy RPG project associated with Sundust Studios.",
-    "evidence": "conversation",
-    "tint": "hsl(88 58% 62%)"
   },
   {
     "id": "rocket-game-42",

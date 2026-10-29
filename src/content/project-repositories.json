@@ -190,10 +190,6 @@
     "branch": "main",
     "note": "Babuni Admin public documentation repository renamed by Babuni.dev and anonymously verified public on 2026-10-29. Ten standard documents imported at the existing pinned revision; earlier project names within historical source text are preserved. Implementation remains private."
   },
-  "analubia": {
-    "status": "needs-repository",
-    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
-  },
   "rocket-game-42": {
     "status": "connected",
     "repository": "babunidev/Rocketgame42",
