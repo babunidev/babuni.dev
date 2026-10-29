@@ -35,7 +35,7 @@ test('populated content requires a preview',()=>{assert.ok(check([{...moduleTemp
 
 test('Babuni Gaming contains populated context and all three supplied profile links',()=>{
  const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url)));
- const modules=catalog['babuni-gaming'];assert.equal(modules.length,3);
+ const modules=catalog['babuni-gaming'];assert.equal(modules.length,4);
  assert.deepEqual(modules.find(m=>m.id==='channels').links.map(l=>l.href),[
   'https://www.youtube.com/@babunigamingg',
   'https://www.curseforge.com/members/babunigaming/projects',
@@ -43,5 +43,10 @@ test('Babuni Gaming contains populated context and all three supplied profile li
  ]);
  assert.match(modules.find(m=>m.id==='overview').body,/all kinds of games/);
  assert.match(modules.find(m=>m.id==='gaming-and-addons').body,/Azeroth Moments/);
+ const videos=modules.find(m=>m.id==='videos');
+ assert.equal(videos.type,'video');
+ assert.equal(videos.videos[0].embed,'https://www.youtube-nocookie.com/embed/9fnC1ZI1iSY');
+ assert.equal(videos.videos[0].src,undefined);
+ assert.match(videos.preview,/not the first recording/);
  assert.ok(modules.every(m=>m.credit.includes('Babuni.dev')));
 });

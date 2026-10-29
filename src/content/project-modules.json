@@ -529,6 +529,20 @@
         }
       ],
       "credit": "Public profile links supplied by Babuni.dev."
+    },
+    {
+      "id": "videos",
+      "type": "video",
+      "title": "Videos",
+      "preview": "A growing collection of Babuni Gaming recordings. Babuni.dev describes this first published video as a stream test and showcase, with microphone audio that turned out quiet. It was not the first recording, but the first one they chose to publish.",
+      "videos": [
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/9fnC1ZI1iSY",
+          "title": "Published stream test — quiet microphone audio"
+        }
+      ],
+      "source": "https://www.youtube.com/watch?v=9fnC1ZI1iSY",
+      "credit": "Video and context supplied by Babuni.dev: first published stream test/showcase, with quiet microphone audio. AI-assisted descriptive label, not a verified YouTube title."
     }
   ],
   "arcanitebrothers": [
