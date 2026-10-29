@@ -286,6 +286,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "grimnir",
+    "portalArtwork": "/portal-content/Grimnir.webp",
     "name": "Grimnir",
     "shortSummary": "Cultural and narrative material within the Morkahja world.",
     "evidence": "repo-context",

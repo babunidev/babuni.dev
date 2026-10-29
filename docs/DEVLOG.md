@@ -1003,3 +1003,8 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 **Babuni.dev requested:** remove Fantasy Architecture because it is not a project. **AI interpretation/execution:** remove active catalog, menu grouping, topics and unresolved source mapping; update counts and regression coverage, preserving historical records. **Verification:** full tests, content validation and static production build are run before publication using verified cached activity dates; no browser screenshot or fresh source synchronization in this pass.
 
 **Results:** initial test run caught the catalog count constant still at 44; AI corrected it to 43. Rerun passed all 31 test files, content validation and static production build.
+
+
+## 2026-10-29 — Grimnir portal artwork
+
+**Babuni.dev requested:** use the supplied Grimnir.webp for Grimnir. **AI execution:** map the existing stable project ID to `/portal-content/Grimnir.webp`, preserving the supplied WebP bytes and existing round portal mask. This replaces its provisional colored portal; 34 active projects now have supplied artwork. No project identity, source, timing or placement changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass. Original artwork is retained without re-encoding.

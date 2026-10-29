@@ -614,3 +614,8 @@ Babuni.dev chose Ethera and Local AI as the exact visible names. AI applied disp
 ## 2026-10-29 — Remove Fantasy Architecture
 
 **Babuni.dev decided:** remove Fantasy Architecture because it is not a project. **AI execution:** remove active metadata rather than rename or hide it; preserve historical records. Status: implemented; reversible through Git history.
+
+
+## 2026-10-29 — Grimnir portal artwork
+
+**Babuni.dev requested:** use the supplied Grimnir.webp for Grimnir. **AI execution:** map the existing stable project ID to `/portal-content/Grimnir.webp`, preserving the supplied WebP bytes and existing round portal mask. This replaces its provisional colored portal; 34 active projects now have supplied artwork. No project identity, source, timing or placement changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass. Original artwork is retained without re-encoding.

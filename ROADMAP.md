@@ -526,3 +526,8 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 ## 2026-10-29 — Remove Fantasy Architecture
 
 Babuni.dev removed Fantasy Architecture from scope. Implemented by AI: 43 retained projects; content completeness remains secondary.
+
+
+## 2026-10-29 — Grimnir portal artwork
+
+**Babuni.dev requested:** use the supplied Grimnir.webp for Grimnir. **AI execution:** map the existing stable project ID to `/portal-content/Grimnir.webp`, preserving the supplied WebP bytes and existing round portal mask. This replaces its provisional colored portal; 34 active projects now have supplied artwork. No project identity, source, timing or placement changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass. Original artwork is retained without re-encoding.
