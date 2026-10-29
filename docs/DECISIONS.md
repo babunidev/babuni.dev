@@ -609,3 +609,8 @@ Babuni.dev withdrew Fantasy RPG Assets as a standalone project and chose GatherM
 ## 2026-10-29 — Short project labels (implemented)
 
 Babuni.dev chose Ethera and Local AI as the exact visible names. AI applied display-only renames, retaining stable identity, historical source text and artwork filenames; no project merge or repository rename.
+
+
+## 2026-10-29 — Remove Fantasy Architecture
+
+**Babuni.dev decided:** remove Fantasy Architecture because it is not a project. **AI execution:** remove active metadata rather than rename or hide it; preserve historical records. Status: implemented; reversible through Git history.

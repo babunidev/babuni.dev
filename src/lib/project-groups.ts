@@ -49,8 +49,7 @@ export const PROJECT_GROUPS=[
     "ids": [
       "babuni-dev",
       "anskar-grotzschnapf",
-      "local-ai-workstation",
-      "fantasy-architecture"
+      "local-ai-workstation"
     ]
   },
   {

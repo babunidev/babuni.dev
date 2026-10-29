@@ -40,12 +40,12 @@ test('renamed and newly added projects are directly findable; fillers are not pr
  assert.equal(matchingProjects('Worldbuilding')[0].id,'morkahjaworld');
  assert.ok(matchingProjects('Roar Guild').some(p=>p.id==='roar-guild-and-community'&&p.name==='Roar Guild'));
  assert.equal(matchingProjects('placeholder').length,0);
- assert.equal(matchingProjects('').length,44);
+ assert.equal(matchingProjects('').length,43);
 });
 
 test('approved menu groups cover each project once and keep search restricted to matching groups',()=>{
  const groups=groupedProjects('');assert.deepEqual(groups.map(g=>g.title),['World of Warcraft','Morkahja','AI','Games','Music']);
- const ids=groups.flatMap(g=>g.projects.map(p=>p.id));assert.equal(ids.length,44);assert.equal(new Set(ids).size,44);
+ const ids=groups.flatMap(g=>g.projects.map(p=>p.id));assert.equal(ids.length,43);assert.equal(new Set(ids).size,43);
  assert.deepEqual(ids.slice().sort(),demoProjects.map(p=>p.id).sort());
  assert.deepEqual(groupedProjects('piano').map(g=>g.title),['Music']);
  assert.deepEqual(groupedProjects('soundcloud')[0].projects.map(p=>p.id),['elixior']);

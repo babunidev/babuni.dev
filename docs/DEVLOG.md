@@ -996,3 +996,10 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 ## 2026-10-29 — Ethera and Local AI labels
 
 **Babuni.dev requested:** shorten Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI. **AI execution:** change the two catalog display names, preserving stable IDs `ethera-the-stonewrought` and `local-ai-workstation`, public repository links, artwork and chronology. Regenerate the source report. Earlier names in historical source documents/screenshots remain unchanged. **Verification:** catalog/navigation/source tests and content/static build run before publication, reusing the last verified activity cache for this display-only change. No timing or positioning changes.
+
+
+## 2026-10-29 — Remove Fantasy Architecture
+
+**Babuni.dev requested:** remove Fantasy Architecture because it is not a project. **AI interpretation/execution:** remove active catalog, menu grouping, topics and unresolved source mapping; update counts and regression coverage, preserving historical records. **Verification:** full tests, content validation and static production build are run before publication using verified cached activity dates; no browser screenshot or fresh source synchronization in this pass.
+
+**Results:** initial test run caught the catalog count constant still at 44; AI corrected it to 43. Rerun passed all 31 test files, content validation and static production build.

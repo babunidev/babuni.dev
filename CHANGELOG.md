@@ -674,3 +674,10 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Rename Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI at Babuni.dev’s request. Stable IDs, source connections and artwork retained.
+
+
+## 2026-10-29 — Remove Fantasy Architecture
+
+### Removed
+
+- Babuni.dev requested removing Fantasy Architecture because it is not a project. AI removed its catalog, menu, topic and unresolved-source entries; 43 projects remain.

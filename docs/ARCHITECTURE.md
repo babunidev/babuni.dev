@@ -568,3 +568,8 @@ Remove `fantasy-rpg-assets` from active catalog, topic maps, AI menu membership 
 ## 2026-10-29 — Display labels independent of IDs
 
 `ethera-the-stonewrought` displays Ethera; `local-ai-workstation` displays Local AI. Existing source connections, menu categories, activity ordering and artwork mappings continue using stable IDs without migration.
+
+
+## 2026-10-29 — Remove Fantasy Architecture
+
+AI removed the Fantasy Architecture stable identity from active catalog, group, topic and source definitions at Babuni.dev’s request. Placement remains driven by catalog size; no motion or geometry changes.

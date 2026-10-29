@@ -521,3 +521,8 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 ## 2026-10-29 — Shorter labels
 
 - [x] Rename Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI, preserving stable identities.
+
+
+## 2026-10-29 — Remove Fantasy Architecture
+
+Babuni.dev removed Fantasy Architecture from scope. Implemented by AI: 43 retained projects; content completeness remains secondary.

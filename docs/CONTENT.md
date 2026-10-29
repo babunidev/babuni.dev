@@ -428,3 +428,8 @@ Babuni.dev clarified Fantasy RPG Assets is not a project and withdrew it from th
 ## 2026-10-29 — Shortened current labels
 
 Babuni.dev renamed the active entries to Ethera and Local AI. Historical names in imported documents and dated captures remain source history. No content, repository or artwork was removed.
+
+
+## 2026-10-29 — Remove Fantasy Architecture
+
+Babuni.dev confirmed Fantasy Architecture is not a project. AI removed its active metadata; 43 projects remain, with 35 connected public sources and seven needing repositories. Historical documentation remains intact.

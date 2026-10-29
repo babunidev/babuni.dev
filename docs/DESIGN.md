@@ -556,3 +556,8 @@ Fantasy RPG Assets no longer appears in the grid or Projects menu. GatherMap now
 ## 2026-10-29 — Ethera and Local AI
 
 The grid, project menu and activity labels now display Ethera and Local AI. Artwork, dimensions and animations remain unchanged.
+
+
+## 2026-10-29 — Remove Fantasy Architecture
+
+Babuni.dev requested removing Fantasy Architecture. AI removed its grid/menu presence without changing tile sizes, shift timing, artwork or bloom behavior.
