@@ -275,7 +275,7 @@ export const demoProjects:readonly DemoProject[]=[
     "shortSummary": "WoW guild community design and shared roleplaying rituals.",
     "evidence": "conversation",
     "tint": "hsl(323 58% 62%)",
-    "portalArtwork": "/portal-content/ROARGuild.webp"
+    "portalArtwork": "/portal-content/ROAR.webp"
   },
   {
     "id": "buxbrew-character-story",
@@ -303,6 +303,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "morkahjaworld",
+    "portalArtwork": "/portal-content/MorkahjaWorldbuilding.webp",
     "name": "Morkahja Worldbuilding",
     "shortSummary": "Worldbuilding for Morkahja: its peoples, places, cultures and lore.",
     "evidence": "human-confirmed",
