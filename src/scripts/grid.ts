@@ -598,6 +598,7 @@ if (viewport && world && resetButton && status) {
     history.push(...moving.moves);
     moving=null;
     updateField(true);
+    placement.finishEntrances();
     paintMovement(0);
     surface.classList.remove('is-autoshifting');
     if(pendingBigBloom){const open=pendingBigBloom;pendingBigBloom=null;open();return;}

@@ -112,11 +112,15 @@ export class ProjectPlacement {
     }
   }
 
+  /** Release entrance reservations only after the renderer commits its shift. */
+  finishEntrances():void {this.staged.clear();}
+
   /** Coordinates refer to original source tiles after reversing completed line shifts.
    * Retained cells comprise the visible viewport and two offscreen tile bands.
    */
   sync(visible:readonly CellCoordinate[],retained:readonly CellCoordinate[],pinned?:CellCoordinate):void {
     const keep=new Set(retained.map(key));
+    for(const id of this.staged)keep.add(id);
     // An open bloom can travel beyond the bounded DOM pool and return later.
     if(pinned)keep.add(key(pinned));
     for(const id of this.assigned.keys())if(!keep.has(id))this.assigned.delete(id);
@@ -167,6 +171,6 @@ export class ProjectPlacement {
       usedRetained.add(project);
     }
     this.lastVisible=visibleKeys;
-    for(const id of this.staged)if(visibleKeys.has(id)||!keep.has(id))this.staged.delete(id);
+    // Intermediate viewport syncs must not release a still-moving entrance.
   }
 }
