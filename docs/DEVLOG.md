@@ -915,3 +915,15 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-29 — MeleeStartAttack supplied artwork
 
 **Babuni.dev requested:** MeleeStartAttack.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `meleestartattack`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+
+
+## 2026-10-29 — Renamed admin implementation and public documentation
+
+**Babuni.dev requested:** update the website after renaming the Arcanitebrothers implementation repository to Babuni Admin. **AI verification:** connected GitHub metadata identifies the supplied renamed implementation as private; the separate arcanitebrothers-docs edition remains public on main. Only metadata was read, not private implementation files.
+
+**Decision/execution:** honor the existing public-only publishing direction without asking the human to repeat it. Display Babuni Admin, retaining stable ID `arcanitebrothers`, category and supplied artwork. Replace the generic repository resource with an explicit Public documentation resource explaining the earlier name. Keep the existing public edition connection and historical snapshots unchanged; do not substitute the private implementation as a website content source or expose its URL. No public repository rename or source-document rewrite was performed. The public edition can be renamed/refreshed later as a separate source update.
+
+**Verification:** catalog/search and public-source privacy regressions plus production build run before publication; browser checks and final results recorded below. No runtime/admin functionality testing is implied.
+
+
+**Final results:** direct Node execution passed 163 tests across 30 files; the standard runner passed all files and the production build passed (existing large-chunk warning retained). Browser search found Babuni Admin, opened eight previews and confirmed the public documentation URL plus renamed tile/activity labels. One screenshot was archived as WebP in the gallery and visual manifest. Existing source snapshot file remained unchanged.

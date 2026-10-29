@@ -509,3 +509,8 @@ RoarGuild Add-on now displays RoarGuildAddon.webp through the existing round mas
 ## 2026-10-29 — MeleeStartAttack portal
 
 MeleeStartAttack displays its supplied WebP through the existing circular mask. Scale, positioning and timing remain unchanged.
+
+
+## 2026-10-29 — Babuni Admin display
+
+Babuni Admin is the live project name formerly shown as Arcanitebrothers. Existing artwork is retained pending a replacement supplied by Babuni.dev. Topics describe administration tools and Morkahja origins. Public documentation resources explain the historical source names; geometry, timing and menu category remain unchanged.

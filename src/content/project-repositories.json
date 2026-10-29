@@ -196,7 +196,7 @@
     "status": "connected",
     "repository": "babunidev/arcanitebrothers-docs",
     "branch": "main",
-    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
+    "note": "Project renamed Babuni Admin by Babuni.dev on 2026-10-29. Implementation repository remains private (metadata checked); retain this separate verified public documentation edition, whose earlier names remain historical source text. No private implementation files imported."
   },
   "analubia": {
     "status": "needs-repository",

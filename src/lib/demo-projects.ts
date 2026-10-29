@@ -319,8 +319,8 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "arcanitebrothers",
-    "name": "Arcanitebrothers",
-    "shortSummary": "Development identity/repository associated with the Morkahja admin console.",
+    "name": "Babuni Admin",
+    "shortSummary": "Administration tool previously listed as Arcanitebrothers, with public documentation of its Morkahja admin origins.",
     "evidence": "repo",
     "tint": "hsl(173 58% 62%)",
     "portalArtwork": "/portal-content/ArcaniteBrothers.webp"

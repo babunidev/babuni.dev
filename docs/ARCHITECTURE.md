@@ -519,3 +519,8 @@ Catalog ID `roarguild` references `/portal-content/RoarGuildAddon.webp`; communi
 ## 2026-10-29 — MeleeStartAttack asset mapping
 
 Catalog ID `meleestartattack` references `/portal-content/MeleeStartAttack.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.
+
+
+## 2026-10-29 — Rename independent of source identity
+
+Stable catalog ID `arcanitebrothers` now displays Babuni Admin, so placement/menu identities require no migration. The implementation repository remains private; `project-repositories.json` retains only the separate public arcanitebrothers-docs edition and an updated explanatory note. A curated `source` resources module replaces the default auto-generated source link, labeling it Public documentation and explaining earlier names. Original source snapshots, pinned revisions and standard Markdown bodies are unchanged.

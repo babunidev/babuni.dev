@@ -59,3 +59,9 @@ test('Babuni Gaming is searchable within Games without merging its related proje
  assert.deepEqual(groupedProjects('Babuni Gaming').map(g=>g.title),['Games']);
  for(const id of ['babuni-gaming','azeroth-moments','socialforever','roarforever'])assert.ok(demoProjects.some(p=>p.id===id));
 });
+
+test('renamed Babuni Admin is directly searchable with the same stable project identity',()=>{
+ assert.equal(matchingProjects('Babuni Admin')[0].id,'arcanitebrothers');
+ assert.equal(demoProjects.some(p=>p.name==='Arcanitebrothers'),false);
+ assert.equal(demoProjects.filter(p=>p.id==='arcanitebrothers').length,1);
+});

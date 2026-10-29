@@ -381,3 +381,8 @@ RoarGuildAddon.webp was supplied by Babuni.dev and copied byte-for-byte from the
 ## 2026-10-29 — MeleeStartAttack supplied WebP
 
 MeleeStartAttack.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-eight active project artwork assignments now reference twenty-eight unique supplied WebPs. No additional functionality or authorship claims inferred.
+
+
+## 2026-10-29 — Babuni Admin and historical public documentation
+
+Babuni.dev renamed the Arcanitebrothers implementation project to Babuni Admin. Its supplied repository was confirmed private through metadata, while the existing public documentation edition remains public. The current website label is Babuni Admin; the source connection remains babunidev/arcanitebrothers-docs, with explicit historical-name context. Earlier names inside imported Markdown and prior screenshots are not silently rewritten. No private implementation documents or URLs are added to the website. Existing ArcaniteBrothers.webp remains assigned to the same stable project until replacement artwork is supplied.

@@ -11,7 +11,7 @@ const local=Object.fromEntries(REPOSITORY_DOCUMENTS.map(d=>[d.path,readFileSync(
 const commit='a'.repeat(40),connection={status:'connected',repository:'babunidev/example',branch:'master'};
 const metadata={private:false,visibility:'public',full_name:'babunidev/example'};
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
-test('all 43 tiles have explicit status; all public source snapshots match their mapping',()=>{
+test('all active tiles have explicit status; all public source snapshots match their mapping',()=>{
  assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
  assert.deepEqual(validateSnapshots(connections,snapshots),[]);
  assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,35);
@@ -115,4 +115,15 @@ test('retired sources are absent while BABUNI journal material remains available
  for(const id of ['journal','decisions','collaboration'])assert.ok(modules.some(m=>m.id===id&&moduleHasContent(m)));
  const world=composeProjectModules(catalog['morkahjaworld'],repositoryModules(connections['morkahjaworld'],snapshots[connections['morkahjaworld'].repository]));
  assert.ok(world.some(m=>m.id==='scope-clarification'&&m.body.includes('worldbuilding project')));
+});
+
+test('Babuni Admin retains its public edition and never links or imports the private implementation',()=>{
+ assert.equal(demoProjects.find(p=>p.id==='arcanitebrothers').name,'Babuni Admin');
+ const c=connections.arcanitebrothers;assert.equal(c.repository,'babunidev/arcanitebrothers-docs');
+ assert.equal(snapshots['babunidev/babuni.admin'],undefined);
+ const modules=composeProjectModules(catalog.arcanitebrothers,repositoryModules(c,snapshots[c.repository]),c.repository);
+ const source=modules.find(m=>m.id==='source');assert.equal(source.title,'Public documentation');
+ assert.match(source.preview,/previously listed as Arcanitebrothers/);
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/arcanitebrothers-docs']);
+ for(const m of modules){assert.ok(!m.source?.includes('/babuni.admin'));for(const link of m.links??[])assert.ok(!link.href.includes('/babuni.admin'));}
 });

@@ -116,3 +116,8 @@ Babuni.dev additionally withdrew The Amberbrew Family and Practical Templates Cr
 ## 2026-10-28 — Local Prompt Lab is part of Anskar Grotzschnapf
 
 **Babuni.dev clarified:** Local Prompt Lab is part of the Anskar Grotzschnapf project, not an independent project. **AI implementation:** removed the standalone catalog/topic/mapping records, retaining Anskar Grotzschnapf and its existing public source unchanged. No imported Local Prompt Lab snapshot or curated modules existed to transfer. Preserve supplied LocalPromptLab.webp as historical artwork rather than delete it. Active totals: 42 entries, 34 connected public sources, six missing-repository entries and two family-clarification entries. Nineteen active artwork assignments; twenty supplied portal WebPs retained. No repository deletion, automatic source rewrite or interaction change. Verification is recorded in DEVLOG.
+
+
+## Current naming correction — 2026-10-29
+
+Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.

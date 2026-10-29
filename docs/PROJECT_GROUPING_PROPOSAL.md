@@ -75,3 +75,8 @@ Babuni.dev approved the menu-only grouping. Runtime membership is in `src/lib/pr
 ## Babuni Gaming addition — 2026-10-28
 
 Babuni.dev added Babuni Gaming as a distinct gaming, streaming and sharing project. AI placed it under Games for its all-games scope, despite the current WoW focus. Runtime counts now total 45: World of Warcraft 29, Morkahja 5, AI 5, Games 4, Music 2. The older proposed/approved lists above remain historical; Azeroth Moments and addon projects are not merged into this new project.
+
+
+## Current naming correction — 2026-10-29
+
+Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.

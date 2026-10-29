@@ -562,3 +562,8 @@ Babuni.dev selected RoarGuildAddon.webp for the addon. AI mapped the supplied as
 ## 2026-10-29 — MeleeStartAttack artwork (implemented)
 
 Babuni.dev selected MeleeStartAttack.webp. AI mapped the supplied asset directly to MeleeStartAttack, retaining original bytes and the existing renderer.
+
+
+## 2026-10-29 — Babuni Admin naming with public-only sources (implemented)
+
+Babuni.dev renamed the implementation and requested website correction. AI metadata checks found it remains private and the old public docs edition remains public. Rename the visible project to Babuni Admin, keeping its stable ID/artwork. Keep the public edition as the content source and explain its historical naming in Public documentation. Switching the source to a private repository would conflict with the confirmed public-only rule; no private content import, repository visibility change or public-docs repository rename is authorized or performed.

@@ -610,3 +610,10 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `MeleeStartAttack.webp` to MeleeStartAttack, preserving original WebP bytes.
+
+
+## 2026-10-29 — Babuni Admin rename
+
+### Changed
+- Rename Arcanitebrothers to Babuni Admin in the live catalog, menu and activity labels; retain the stable project ID and existing artwork.
+- Clarify the Public documentation module: the renamed implementation remains private, so the website continues reading only the existing public documentation edition under its historical name. No private files imported.

@@ -113,3 +113,8 @@ These are short browser observations, not real-phone or prolonged-session accept
 ## Babuni Gaming verification — 2026-10-28
 
 `babuni-gaming-project-preview.webp` — AI browser capture at the default viewport, showing the original cat in its round portal and the three new small-bloom modules. Menu search returned the project under Games; loaded image measured 1000×1000 and the resource module contained all three exact supplied profile URLs. Actual screenshot encoding was JPEG, converted to quality-85 WebP; original retained outside public assets. This is a browser check, not physical-device acceptance or external media playback verification.
+
+
+## Babuni Admin rename — 2026-10-29
+
+`babuni-admin-renamed-preview.webp` — AI browser capture at the default viewport: renamed tile, retained supplied artwork and Public documentation resource explaining the earlier project name. Menu search and bloom activation succeeded; its visible resource links only to the existing public documentation edition. Actual capture was JPEG, published as quality-85 WebP with original archived outside public assets. No private application or physical-device test was performed.

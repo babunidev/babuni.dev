@@ -41,3 +41,8 @@ After publication, verify anonymous public access and exact commits for all four
 - arcanitebrothers-docs: `da8b818e0be9fc14ba8176da25ab99ab774223be`
 
 The importer fetched all forty documents anonymously. Existing external snapshots were preserved; authenticated metadata separately confirms all four implementations remain private. The site mapping and snapshot are locally integrated, with tests/build passing; remote website publication remains separate.
+
+
+## Current naming correction — 2026-10-29
+
+Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.

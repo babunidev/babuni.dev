@@ -284,6 +284,11 @@
           "src": "/media/babuni-dev/images/verification/babuni-gaming-project-preview.webp",
           "alt": "Babuni Gaming with the original cat portal and three populated small-bloom modules.",
           "caption": "AI browser verification, 2026-10-28: direct menu search opened Babuni Gaming, the original-size WebP cat loaded, and all three supplied profile links were present. Not physical-phone acceptance."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/babuni-admin-renamed-preview.webp",
+          "alt": "Babuni Admin selected with its retained artwork and explicit public documentation resource.",
+          "caption": "AI browser verification, 2026-10-29: Babuni Admin search opened the same stable project; its documentation link points only to the existing public edition, with earlier names explained. Historical source documents retain their original wording."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
@@ -514,6 +519,21 @@
         }
       ],
       "credit": "Public profile links supplied by Babuni.dev."
+    }
+  ],
+  "arcanitebrothers": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Public documentation",
+      "preview": "Babuni Admin was previously listed as Arcanitebrothers. Its public documentation edition still uses the earlier project names.",
+      "links": [
+        {
+          "label": "Public documentation — earlier project name",
+          "href": "https://github.com/babunidev/arcanitebrothers-docs"
+        }
+      ],
+      "credit": "Project rename directed by Babuni.dev; AI-assisted source-label clarification. Public source documents retain their historical wording."
     }
   ]
 }

@@ -461,3 +461,10 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign the supplied MeleeStartAttack.webp to MeleeStartAttack.
 - [ ] Human visual check through the existing round portal mask.
+
+
+## 2026-10-29 — Babuni Admin rename
+
+- [x] Update the live project name and source-label explanation while retaining stable identity and public-only documentation.
+- [ ] Optional future public documentation repository/content rename and reviewed refresh; the existing public edition retains earlier names.
+- [ ] Human visual acceptance of the renamed tile/menu and retained artwork.
