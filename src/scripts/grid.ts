@@ -307,6 +307,8 @@ if (viewport && world && resetButton && status) {
     slot.element.dataset.projectId=project.id;
     slot.element.dataset.projectSummary=project.shortSummary;
     slot.element.style.setProperty('--portal-color',project.tint);
+    const titleScale=project.name.length<=12?.105:project.name.length<=18?.09:.075;
+    slot.element.style.setProperty('--project-title-scale',String(titleScale));
     slot.element.classList.toggle('grid-tile--origin',isOrigin);
     slot.element.classList.toggle('grid-tile--long-title',project.name.length>18);
     const label=slot.element.querySelector<HTMLElement>('.tile-name');

@@ -72,11 +72,11 @@ const title='babuni.dev — Living Grid Prototype';
   @keyframes selection-wait{0%,100%{opacity:.45}50%{opacity:1}}
   .tile-portal{position:relative;z-index:2}
   .tile-name{position:relative;pointer-events:none}
-  .grid-bloom-module{position:absolute;z-index:2;width:var(--tile-size);height:var(--tile-size);padding:clamp(12px,calc(var(--tile-size) * .085),23px);display:flex;flex-direction:column;gap:10px;justify-content:center;border:2px solid #9b876e;background:radial-gradient(circle at 32% 20%,#32313b,#191a21 85%);box-shadow:inset 0 0 0 5px #37333a,0 0 22px rgba(0,0,0,.45);color:#e9dfd2;opacity:0;transform:scale(.92);transition:opacity 270ms ease,transform 330ms ease;overflow:auto;pointer-events:none}
+  .grid-bloom-module{position:absolute;z-index:2;width:var(--tile-size);height:var(--tile-size);padding:clamp(12px,calc(var(--tile-size) * .085),23px);display:flex;flex-direction:column;gap:10px;justify-content:center;border:2px solid #9b876e;background:radial-gradient(circle at 32% 20%,#343028,#1d1b18 85%);box-shadow:inset 0 0 0 5px #37333a,0 0 22px rgba(0,0,0,.45);color:#f2ddb8;opacity:0;transform:scale(.92);transition:opacity 270ms ease,transform 330ms ease;overflow:auto;pointer-events:none}
   .grid-bloom-module.is-open{opacity:1;transform:scale(1);pointer-events:auto}
   .bloom-kicker{font:600 9px/1.3 system-ui,sans-serif;letter-spacing:.18em;color:#b3a5ba}
-  .bloom-title{font:600 clamp(13px,calc(var(--tile-size) * .074),18px)/1.12 Georgia,serif;margin:0;overflow-wrap:anywhere}
-  .bloom-summary{font:400 clamp(11px,calc(var(--tile-size) * .053),14px)/1.35 system-ui,sans-serif;margin:0;color:#c8c2cb;overflow:auto}
+  .bloom-title{font:600 clamp(15px,calc(var(--tile-size) * .085),21px)/1.12 Georgia,serif;margin:0;overflow-wrap:anywhere}
+  .bloom-summary{font:400 clamp(13px,calc(var(--tile-size) * .0625),16px)/1.45 system-ui,sans-serif;margin:0;color:#e5d3b8;overflow:auto}
   .bloom-close{align-self:flex-start;border:1px solid #a7977e;border-radius:5px;background:#282730;color:#e6dccc;padding:5px 10px;cursor:pointer;pointer-events:auto}
   .bloom-close:focus-visible{outline:2px solid #e3c99b;outline-offset:3px}
   .grid-bloom-module{justify-content:flex-start;gap:8px;scrollbar-width:none}
@@ -85,7 +85,7 @@ const title='babuni.dev — Living Grid Prototype';
   .bloom-action{font:500 11px/1.3 system-ui,sans-serif;color:#e8d3b0;cursor:pointer;display:block;pointer-events:auto;background:#282730;border:1px solid #726858;padding:4px 6px;text-decoration:none}
   .bloom-action:focus-visible{outline:2px solid #e3c99b;outline-offset:2px}
   .grid-bloom-module .bloom-summary{flex-shrink:0}
-  @media(max-width:520px){.grid-bloom-module{padding:9px;gap:6px}.bloom-kicker{font-size:8px}.bloom-title{font-size:12px}.bloom-summary{font-size:10px}.bloom-close{font-size:10px;padding:3px 7px}}
+  @media(max-width:520px){.grid-bloom-module{padding:9px;gap:6px}.bloom-kicker{font-size:8px}.bloom-title{font-size:15px}.bloom-summary{font-size:13px}.bloom-close{font-size:10px;padding:3px 7px}}
 
   .tile-face{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7%;position:relative;border:1px solid #686461;background:radial-gradient(ellipse at 42% 40%,#55514e 0%,#423f3e 50%,#292929 100%);box-shadow:inset 0 0 0 4px #393837,inset 0 0 0 5px #6a6258}
   /* The child face grows into place; the parent remains free for line movement. */
@@ -141,8 +141,8 @@ const title='babuni.dev — Living Grid Prototype';
   .tile-portal--artwork{overflow:hidden;isolation:isolate}
   .tile-portal-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;pointer-events:none;z-index:0}
   .tile-portal--artwork::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 3px #18191e,inset 0 0 12px rgba(8,7,13,.6);pointer-events:none;z-index:1}
-  .tile-name{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:89%;font-size:clamp(12px,calc(var(--tile-size,240px) * .068),17px);max-width:89%;text-align:center;letter-spacing:.08em;color:#d8cab7;text-shadow:0 1px 1px #000;white-space:normal;overflow-wrap:break-word;text-wrap:balance;line-height:1.18}
-  .grid-tile--long-title .tile-name{width:95%;font-size:clamp(9px,calc(var(--tile-size,240px) * .052),14px);letter-spacing:.025em;line-height:1.12;max-width:95%}
+  .tile-name{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:89%;font-size:clamp(15px,calc(var(--tile-size,240px) * var(--project-title-scale,.09)),27px);max-width:89%;text-align:center;letter-spacing:.08em;color:#f0d9b2;text-shadow:0 1px 1px #000;white-space:normal;overflow-wrap:break-word;text-wrap:balance;line-height:1.18}
+  .grid-tile--long-title .tile-name{letter-spacing:.025em;line-height:1.12}
   .grid-tile--origin .tile-face{border-color:#ac9a86}
   :root{--header-height:52px;--footer-height:calc(var(--header-height) / 3)}
   .site-footer{position:fixed;z-index:20;inset:auto 0 0;height:var(--footer-height);background:rgba(14,15,18,.94);border-top:1px solid #5b554e;pointer-events:none}
@@ -155,7 +155,7 @@ const title='babuni.dev — Living Grid Prototype';
   #projects-menu{position:fixed;top:calc(var(--header-height) + 8px);right:clamp(12px,5vw,72px);width:min(360px,calc(100vw - 24px));padding:16px;background:#202027;border:1px solid #ae9875;box-shadow:0 12px 36px #0008;color:#e9dfd2}
   #projects-menu[hidden]{display:none}
   #project-search{display:block;width:100%;margin-top:8px;padding:10px;font:inherit;background:#15151b;color:inherit;border:1px solid #81715a}
-  #project-result-count{font-size:12px;color:#c8c2cb;margin:10px 0}
+  #project-result-count{font-size:12px;color:#e5d3b8;margin:10px 0}
   #project-results{display:flex;flex-direction:column;gap:4px;max-height:min(50dvh,420px);overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
   .project-menu-group{display:grid;gap:.35rem;}
   .project-menu-group h3{margin:.65rem 0 .15rem;color:#d5c19b;font-size:.85rem;}
@@ -170,18 +170,18 @@ const title='babuni.dev — Living Grid Prototype';
   .grid-bloom-module:has(.bloom-read-more){cursor:pointer}
   .video-item{margin:0;min-width:0;flex-shrink:0}
   .video-frame{width:100%;box-sizing:border-box;border:2px solid #9b876e;padding:5px;background:#37333a;box-shadow:inset 0 0 0 5px #37333a,0 0 22px rgba(0,0,0,.45)}
-  .video-item figcaption,.video-count{font:12px/1.4 system-ui,sans-serif;color:#c8c2cb}
+  .video-item figcaption,.video-count{font:13px/1.4 system-ui,sans-serif;color:#e5d3b8}
   .video-item .bloom-media{max-height:none;min-height:0}
   .is-big-bloom-waiting .grid-tile--selected .tile-select::after{content:'';position:absolute;inset:4px;border:3px solid #ffe0a3;box-shadow:inset 0 0 24px #ffd2827a,0 0 24px #ffd282b3;pointer-events:none;animation:selection-wait 1400ms ease-in-out infinite}
   .grid-viewport.is-big-bloom{overflow:clip}
   .is-bloom-opening .grid-tile--depth-transition{transition:transform 520ms cubic-bezier(.22,.75,.25,1)}
   .grid-tile--big-anchor{z-index:4}
   .big-bloom-card{padding:clamp(12px,calc(var(--tile-size) * .085),24px);gap:12px;overflow:hidden;transform-origin:top left}
-  .big-bloom-card .bloom-title{font-size:clamp(18px,calc(var(--tile-size) * .09),24px)}
-  .big-bloom-card .bloom-summary{font:400 clamp(12px,calc(var(--tile-size) * .067),16px)/1.55 system-ui,sans-serif;white-space:normal;max-height:none;overflow:visible}
+  .big-bloom-card .bloom-title{font-size:clamp(20px,calc(var(--tile-size) * .1),26px)}
+  .big-bloom-card .bloom-summary{font:400 clamp(14px,calc(var(--tile-size) * .071),18px)/1.55 system-ui,sans-serif;white-space:normal;max-height:none;overflow:visible}
   .big-bloom-card .bloom-media{max-height:calc(var(--tile-size) * .85)}
   .big-bloom-card--selected{border-color:#e3c99b;box-shadow:inset 0 0 0 5px #49404a,0 0 24px #d8bd9133}
-  .bloom-preview-credit,.bloom-collection-list{font:12px/1.5 system-ui,sans-serif;color:#b8afbc;margin:6px 0}
+  .bloom-preview-credit,.bloom-collection-list{font:13px/1.5 system-ui,sans-serif;color:#d6c3a8;margin:6px 0}
   .bloom-collection-list{padding-left:20px}
   .site-help{position:relative}
   .site-nav #help-toggle{width:32px;height:32px;padding:0;border-radius:50%;cursor:help}
@@ -192,7 +192,7 @@ const title='babuni.dev — Living Grid Prototype';
   .module-detail::backdrop{background:#11121855;animation:detail-backdrop-in 420ms ease-out both}
   .module-detail{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;overflow:hidden;pointer-events:auto}
   .module-detail>.site-header{pointer-events:auto}
-  .module-detail-panel{pointer-events:auto;box-sizing:border-box;position:fixed;inset:var(--header-height) 0 var(--footer-height);margin:auto;width:70vw;height:calc(100dvh - var(--header-height) - var(--footer-height));max-width:none;max-height:none;padding:0;border:2px solid #ae9875;background:#202027;color:#e9dfd2;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:hidden;user-select:text}
+  .module-detail-panel{pointer-events:auto;box-sizing:border-box;position:fixed;inset:var(--header-height) 0 var(--footer-height);margin:auto;width:70vw;height:calc(100dvh - var(--header-height) - var(--footer-height));max-width:none;max-height:none;padding:0;border:2px solid #ae9875;background:#25221e;color:#ead8bd;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:hidden;user-select:text}
   @media(max-width:599px){
     .module-detail-panel{inset:var(--header-height) 0 auto;width:100%;height:calc(100dvh - var(--header-height) - max(64px,env(safe-area-inset-bottom)));margin:0;border:0;box-shadow:none;padding:0}
   }
@@ -216,7 +216,7 @@ const title='babuni.dev — Living Grid Prototype';
   .bloom-summary.module-document blockquote{margin:.5em 0;padding:0 .6em}
   .bloom-summary.module-document pre{padding:.6em}
   .module-document{overflow-wrap:anywhere}
-  .module-document:not(.bloom-summary){font:17px/1.7 system-ui,sans-serif}
+  .module-document:not(.bloom-summary){font:18px/1.7 system-ui,sans-serif}
   .module-document pre{white-space:pre-wrap;padding:16px;background:#15151b;overflow:auto}
   .module-document h2,.module-document h3,.module-document h4{line-height:1.25;margin-top:1.8em}
   .module-document a,.module-detail-content>a{color:#e8d3b0}
