@@ -124,6 +124,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "groupbufftoggle",
+    "portalArtwork": "/portal-content/GroupBuff.webp",
     "name": "GroupBuffToggle",
     "shortSummary": "Toggleable party and target unit-frame buffs.",
     "evidence": "repo",

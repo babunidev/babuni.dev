@@ -571,3 +571,8 @@ Babuni.dev removed Fantasy Architecture from scope. Implemented by AI: 43 retain
 ## 2026-10-29 — Rocket Game 42 artwork
 
 **Babuni.dev supplied:** Rocketgame42.webp. **AI execution:** assign the unchanged supplied WebP to stable project ID `rocket-game-42`, replacing its provisional colored portal within the existing round mask. There are now 41 active artwork assignments. Project identity, source, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+
+
+## 2026-10-29 — GroupBuffToggle artwork
+
+**Babuni.dev supplied:** GroupBuff.webp. **AI execution:** assign the unchanged supplied WebP to the existing GroupBuffToggle project (`groupbufftoggle`), replacing its provisional colored portal within the existing round mask. All 42 current projects now have supplied portal artwork. Project names, source mappings, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
