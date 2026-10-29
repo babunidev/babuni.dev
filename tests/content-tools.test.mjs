@@ -52,3 +52,14 @@ test('Babuni Gaming contains populated context and all three supplied profile li
  assert.match(videos.preview,/not the first recording/);
  assert.ok(modules.every(m=>m.credit.includes('Babuni.dev')));
 });
+
+
+test('Mighty Morkah has one collection of ten verified channel video links',()=>{
+ const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url)));
+ const modules=catalog['mighty-morkah'];const collection=modules.filter(m=>m.type==='video');
+ assert.equal(collection.length,1);assert.equal(collection[0].videos.length,10);
+ assert.equal(new Set(collection[0].videos.map(v=>v.embed)).size,10);
+ assert.equal(collection[0].videos[0].embed,'https://www.youtube-nocookie.com/embed/PKLnccyciLk');
+ assert.equal(collection[0].videos[9].title,'Thinking of you...WIP');
+ assert.ok(collection[0].videos.every(v=>v.embed.startsWith('https://www.youtube-nocookie.com/embed/')&&!v.src));
+});

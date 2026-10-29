@@ -466,6 +466,56 @@
         }
       ],
       "credit": "Public profile link supplied by Babuni.dev."
+    },
+    {
+      "id": "videos",
+      "type": "video",
+      "title": "Videos",
+      "preview": "Piano music and videos from Mighty Morkah. Explore the collection, including earlier works in progress.",
+      "videos": [
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/PKLnccyciLk",
+          "title": "Dudududufidudidu"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/RJPyV3_pw0s",
+          "title": "Clinging to myself"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/aeBhuqptIBs",
+          "title": "Silver light dropping on glowing Stone"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/9uLebmSHj2U",
+          "title": "Whatever"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/u951DVP9VOU",
+          "title": "Carried"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/HKixi-J5MHc",
+          "title": "Highphiphe"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/tluc3eBWOe4",
+          "title": "Lulus Lächeln"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/UNmJWkKvavk",
+          "title": "Shüsh"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/6p-dFdxWSUQ",
+          "title": "Where are you...wip"
+        },
+        {
+          "embed": "https://www.youtube-nocookie.com/embed/RlaV28bO_Zk",
+          "title": "Thinking of you...WIP"
+        }
+      ],
+      "source": "https://www.youtube.com/@MightyMorkah/videos",
+      "credit": "Music and videos by Babuni.dev. AI imported the ten public video titles and links visible on the supplied Mighty Morkah channel on 2026-10-29; historical titles and WIP labels preserved."
     }
   ],
   "elixior": [
