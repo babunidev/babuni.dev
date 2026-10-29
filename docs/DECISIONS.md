@@ -582,3 +582,8 @@ Babuni.dev selected BuxbrewDing.webp. AI mapped the supplied asset directly to B
 ## 2026-10-29 — Amazin artwork (implemented)
 
 Babuni.dev selected Amazin.webp. AI mapped the supplied asset directly to Amazin, retaining original bytes and the established renderer.
+
+
+## 2026-10-29 — Mighty Morkah artwork (implemented)
+
+Babuni.dev selected MightyMorkah.webp. AI mapped the supplied asset directly to Mighty Morkah, retaining original bytes and the established renderer.

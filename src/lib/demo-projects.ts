@@ -343,6 +343,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "mighty-morkah",
+    "portalArtwork": "/portal-content/MightyMorkah.webp",
     "name": "Mighty Morkah",
     "shortSummary": "Piano music and videos by Babuni.dev, published on the Mighty Morkah YouTube channel.",
     "evidence": "human-confirmed",

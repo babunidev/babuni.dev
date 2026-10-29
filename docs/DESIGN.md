@@ -529,3 +529,8 @@ BuxbrewDing displays its supplied WebP through the existing circular mask. Scale
 ## 2026-10-29 — Amazin portal
 
 Amazin displays its supplied WebP through the existing circular mask. Scale, positioning and animation timing remain unchanged.
+
+
+## 2026-10-29 — Mighty Morkah portal
+
+Mighty Morkah displays its supplied WebP through the existing circular mask. Scale, positioning and animation timing remain unchanged.

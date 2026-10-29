@@ -636,3 +636,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `Amazin.webp` to Amazin, preserving original WebP bytes.
+
+
+## 2026-10-29 — Mighty Morkah artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `MightyMorkah.webp` to Mighty Morkah, preserving original WebP bytes.

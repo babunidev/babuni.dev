@@ -539,3 +539,8 @@ Catalog ID `buxbrewding` references `/portal-content/BuxbrewDing.webp`. Existing
 ## 2026-10-29 — Amazin asset mapping
 
 Catalog ID `amazin` references `/portal-content/Amazin.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.
+
+
+## 2026-10-29 — Mighty Morkah asset mapping
+
+Catalog ID `mighty-morkah` references `/portal-content/MightyMorkah.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.
