@@ -524,3 +524,8 @@ The Public documentation module now links to Babuni Admin public documentation u
 ## 2026-10-29 — BuxbrewDing portal
 
 BuxbrewDing displays its supplied WebP through the existing circular mask. Scale, positioning and animation timing remain unchanged.
+
+
+## 2026-10-29 — Amazin portal
+
+Amazin displays its supplied WebP through the existing circular mask. Scale, positioning and animation timing remain unchanged.

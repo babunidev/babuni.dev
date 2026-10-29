@@ -481,3 +481,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign the supplied BuxbrewDing.webp to BuxbrewDing.
 - [ ] Human visual check through the existing round portal mask.
+
+
+## 2026-10-29 — Amazin artwork
+
+- [x] Assign the supplied Amazin.webp to Amazin.
+- [ ] Human visual check through the existing round portal mask.

@@ -253,6 +253,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "amazin",
+    "portalArtwork": "/portal-content/Amazin.webp",
     "name": "Amazin",
     "shortSummary": "Stealth-emote addon with rested experience reporting.",
     "evidence": "repo",

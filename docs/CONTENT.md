@@ -396,3 +396,8 @@ Babuni.dev supplied the renamed public docs URL: https://github.com/babunidev/ba
 ## 2026-10-29 — BuxbrewDing supplied WebP
 
 BuxbrewDing.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-nine active project artwork assignments now reference twenty-nine unique supplied WebPs. No additional functionality or authorship claims inferred.
+
+
+## 2026-10-29 — Amazin supplied WebP
+
+Amazin.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Thirty active project artwork assignments now reference thirty unique supplied WebPs. No additional functionality or authorship claims inferred.

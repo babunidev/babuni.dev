@@ -534,3 +534,8 @@ Stable ID `arcanitebrothers` now maps to public repository `babunidev/babuni.adm
 ## 2026-10-29 — BuxbrewDing asset mapping
 
 Catalog ID `buxbrewding` references `/portal-content/BuxbrewDing.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.
+
+
+## 2026-10-29 — Amazin asset mapping
+
+Catalog ID `amazin` references `/portal-content/Amazin.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.

@@ -577,3 +577,8 @@ Babuni.dev renamed the separate public docs repository. AI verified public visib
 ## 2026-10-29 — BuxbrewDing artwork (implemented)
 
 Babuni.dev selected BuxbrewDing.webp. AI mapped the supplied asset directly to BuxbrewDing, retaining original bytes and the established renderer.
+
+
+## 2026-10-29 — Amazin artwork (implemented)
+
+Babuni.dev selected Amazin.webp. AI mapped the supplied asset directly to Amazin, retaining original bytes and the established renderer.

@@ -630,3 +630,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `BuxbrewDing.webp` to BuxbrewDing, preserving original WebP bytes.
+
+
+## 2026-10-29 — Amazin artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `Amazin.webp` to Amazin, preserving original WebP bytes.
