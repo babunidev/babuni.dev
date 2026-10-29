@@ -351,6 +351,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "elixior",
+    "portalArtwork": "/portal-content/Elexior.webp",
     "name": "Elixior",
     "shortSummary": "Music and audio art by Babuni.dev, including earlier pieces published on SoundCloud.",
     "evidence": "human-confirmed",

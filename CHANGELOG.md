@@ -642,3 +642,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `MightyMorkah.webp` to Mighty Morkah, preserving original WebP bytes.
+
+
+## 2026-10-29 — Elixior artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `Elexior.webp` to the Elixior music project, preserving original WebP bytes.

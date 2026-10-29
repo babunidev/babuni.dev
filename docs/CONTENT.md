@@ -406,3 +406,8 @@ Amazin.webp was supplied by Babuni.dev and copied byte-for-byte from the local p
 ## 2026-10-29 — Mighty Morkah supplied WebP
 
 MightyMorkah.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Thirty-one active project artwork assignments now reference thirty-one unique supplied WebPs. Existing music content and profile links remain unchanged.
+
+
+## 2026-10-29 — Elixior supplied WebP
+
+Elexior.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. It maps to the existing Elixior music project; its display name and SoundCloud URL are retained. Thirty-two active project artwork assignments now reference thirty-two unique supplied WebPs.

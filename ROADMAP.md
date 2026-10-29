@@ -493,3 +493,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 
 - [x] Assign the supplied MightyMorkah.webp to Mighty Morkah.
 - [ ] Human visual check through the existing round portal mask.
+
+
+## 2026-10-29 — Elixior artwork
+
+- [x] Assign supplied Elexior.webp to the existing Elixior music project.
+- [ ] Human visual check through the existing round portal mask.

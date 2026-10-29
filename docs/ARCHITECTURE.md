@@ -544,3 +544,8 @@ Catalog ID `amazin` references `/portal-content/Amazin.webp`. Existing catalog-d
 ## 2026-10-29 — Mighty Morkah asset mapping
 
 Catalog ID `mighty-morkah` references `/portal-content/MightyMorkah.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.
+
+
+## 2026-10-29 — Elixior asset mapping
+
+Catalog ID `elixior` references `/portal-content/Elexior.webp`. Existing catalog-derived artwork import and portal rendering handle the filename without changing stable identity.

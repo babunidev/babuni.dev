@@ -534,3 +534,8 @@ Amazin displays its supplied WebP through the existing circular mask. Scale, pos
 ## 2026-10-29 — Mighty Morkah portal
 
 Mighty Morkah displays its supplied WebP through the existing circular mask. Scale, positioning and animation timing remain unchanged.
+
+
+## 2026-10-29 — Elixior portal
+
+Elixior displays Elexior.webp through the existing round mask. Scale, positioning and timing remain unchanged.
