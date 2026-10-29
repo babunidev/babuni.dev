@@ -4,9 +4,9 @@
 
 **Babuni.dev acceptance:** Milestones 1–4 are complete for the present design. Babuni.dev reports thorough physical testing on two devices, responsive checks on phone/laptop/wide desktop, satisfying keyboard and reduced-motion alternatives, working hover/tap/ambient topics, fullscreen/viewer use, and many-hour sessions. The current neutral stone tiles and striking portals are the accepted visual direction. These are human observations, not new AI device tests or a guarantee against future regressions. Performance can be reviewed again later.
 
-Milestone 5's content pipeline is substantially implemented. Editorial review is ongoing work, not a blocker requiring every project to be finished. Remaining functional work: owner-controlled project visibility/publishing, optional preview deployments. MDX is optional and deferred; current Markdown, image and video modules are sufficient.
+Milestone 5's content pipeline is substantially implemented. Editorial review is ongoing work, not a blocker requiring every project to be finished. Babuni.dev explicitly authorizes publishing all 42 current catalog projects and their existing public-source documentation (2026-10-29). A future owner visibility toggle and optional preview deployments remain enhancements, not blockers for this approved collection. MDX is optional and deferred; current Markdown, image and video modules are sufficient.
 
-**Release priorities:** (1) design the owner publishing toggle, (2) add crawlable project/document URLs and search/share metadata, (3) inspect the existing VPS setup and configure separate domain/HTTPS hosting without replacing the existing website, (4) measure real production delivery and load timings. Deployment has not been performed.
+**Release priorities:** readable project/module URLs, metadata, sitemap, crawler rules and on-demand project content are now implemented. A separate Nginx gzip/cache configuration is prepared. Next: review and install the new site on the VPS on the agreed weekend, configure DNS/HTTPS without disturbing Arcanite Brothers, then measure real production loading and submit the sitemap. Deployment has not been performed.
 
 The checklist below reflects this acceptance. Dated notes after the checklist are historical; their earlier pending checks and superseded designs are not the current status.
 
@@ -74,13 +74,14 @@ The checklist below reflects this acceptance. Dated notes after the checklist ar
 - [ ] Ongoing human editorial review of AI-assisted text and project histories; attribution is implemented, accuracy review continues without requiring complete content before release.
 - [x] Add CI build checks.
 - [ ] Add preview deployments.
-- [ ] Add an owner-controlled project visibility/publishing toggle, with explicit authorization and no automatic publication of private material.
+- [x] Explicit publication authorization for the current 42-project catalog and existing public-source documentation (Babuni.dev, 2026-10-29).
+- [ ] Future enhancement: owner project visibility/publishing UI. Private material is not imported.
 
 ## Milestone 6 — Release
 - [ ] Configure VPS hosting, deployment, domain and HTTPS.
 - [x] Responsive, keyboard/touch, fullscreen and long-session experience accepted by Babuni.dev.
 - [ ] Verify real production hosting: compression/cache headers, load timings, security configuration and a final deployed smoke check.
-- [ ] Add crawlable static project/document routes, descriptive titles, canonical URLs, sitemap and sharing metadata; test search/AI readability.
+- [x] Add 433 crawlable static home/project/module URLs, descriptive titles, canonical URLs, sitemap, crawler rules, sharing metadata and source-preserving readable documents; verify built links/headings/metadata. Search indexing is not guaranteed.
 - [ ] Publish an initial release and maintain the changelog and journal.
 
 ## Documentation requirement for every milestone
@@ -643,3 +644,14 @@ Babuni.dev removed Fantasy Architecture from scope. Implemented by AI: 43 retain
 ## 2026-10-29 — Warmer and larger typography
 
 **Babuni.dev requested:** larger project titles, with short names larger within the same width, slightly larger bloom text (especially small bloom), and a friendly warm palette like the repository links with readable matching backgrounds. **AI implementation:** length-based tile-title scale (short/medium/long) within the common 89% title width; increase small headings/body including the mobile override, make a smaller increase to big-bloom typography, and raise reader body text from 17 to 18px. Use warm cream/gold headings and body text on charcoal-brown bloom/reader backgrounds. Captions and secondary bloom text grow slightly. Artwork, tile/module dimensions, geometry and animation timing are unchanged; larger content continues to use existing internal scrolling. **Alternatives:** use three deterministic name-length scales rather than measuring text during grid animation; no new font dependency or per-frame layout work. **Verification:** full regression suite, content validation and static build run before publication using cached activity dates. No browser screenshot or visual/device acceptance performed in this pass.
+
+
+## 2026-10-29 — Prepare public discovery and production delivery
+
+**Babuni.dev authorized:** publish every current catalog project and existing public-source content; implement readable pages, search/share information, sitemap, sensible crawler rules and real links, and investigate the bundle with production caching/compression prepared before weekend hosting. **AI implementation:** add static `/projects/` directory, 42 stable project pages and populated module pages from the same current module/source pipeline (433 HTML URLs total); preserve source links, Markdown safety, authorship, WIP content and date presentation. Add `www.babuni.dev` canonical site identity, per-page titles/descriptions/Open Graph/social images, project CreativeWork data, sitemap and robots.txt. Real project-directory link is in Projects menu, with a no-JavaScript home fallback. No private repositories or unconnected account inventory imported.
+
+**Bundle change:** generate 42 per-project JSON collections and fetch only a selected project, cached with deduplicated pending requests and retry after failure. Start fetching alongside the existing shift/centering procedure; a still-loading selected tile retains busy feedback and stale completions cannot reopen a closed/different selection. Keep the original motion, module content volume and source documents. Initial JS reduced from the audited 683 KiB / 195 KiB gzip to approximately 118 KiB / 37 KiB gzip; the 500 kB warning disappears without raising the warning limit. These are artifact/compression estimates, not internet transfer timings.
+
+**Alternatives and boundaries:** use real, equally accessible readable pages rather than hidden keyword text or bot-only rendering; preserve the interactive grid as the main experience. All current projects are public by explicit human direction; a future publishing toggle remains optional work. Prepare a separate Nginx configuration and deployment guide with gzip, correct cache lifetimes and real 404s; do not change VPS/DNS/HTTPS before the agreed weekend or disturb arcanitebrothers.com. Actual HTTPS, gzip/cache headers, renewals, internet timings and search-account submissions remain open. No special AI file is needed for Google AI search; crawlable text and links are the foundation, without guaranteed indexing.
+
+**Verification:** full tests/content checks/build plus sitemap/metadata/internal-link validation run before publication. Production browser preview confirmed LootFeed readable page, 42-project menu, normal shift-wait feedback, fetched eight-module small bloom, eleven-module big bloom and Overview reader with no browser errors. Two genuine browser screenshots archived as WebP in Visual documentation; physical acceptance remains attributed to Babuni.dev, not this browser check. Nginx configuration is prepared only: no local Nginx executable, live syntax test or hosting installation claimed.

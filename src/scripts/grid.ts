@@ -5,7 +5,7 @@ import {installGridProfile} from './grid-profile';
 import aboutText from '../content/about.md?raw';
 import {installSiteNavigation} from './site-navigation';
 import {installInteractionFeedback} from './interaction-feedback';
-import {modulesForProject} from '../lib/project-content';
+import {projectModuleLoader} from '../lib/project-module-loader';
 import {selectModules,MODULE_OFFSETS,moduleRevealPlan} from '../lib/project-modules';
 import {renderModulePreview} from './module-preview';
 import {createModuleDetails} from './module-detail';
@@ -256,7 +256,7 @@ if (viewport && world && resetButton && status) {
     }
     const choice=pendingChoice??selectedChoice;
     const waiting=(!!moving&&(pendingChoice!==null||closeAfterShift!==null||pendingBigBloom!==null))
-      ||centering!==null||bigTransitioning||bloomClosingTimer!==null||surface.classList.contains('is-bloom-opening')||surface.classList.contains('is-bloom-closing');
+      ||surface.classList.contains('is-content-loading')||centering!==null||bigTransitioning||bloomClosingTimer!==null||surface.classList.contains('is-bloom-opening')||surface.classList.contains('is-bloom-closing');
     for(const slot of slots){
       const source=sourceAtCell(slot.column,slot.row);
       const selected=!!choice&&source.column===choice.source.column
@@ -680,7 +680,7 @@ if (viewport && world && resetButton && status) {
     bloomRevealTimers=[];
     for(const panel of bloomModules)panel.remove();
     bloomModules=[];bloomModule=null;bloomAnchor=null;bloomCells=[];
-    surface.classList.remove('is-focusing','is-blooming','is-bloom-opening','is-bloom-closing');
+    surface.classList.remove('is-focusing','is-blooming','is-bloom-opening','is-bloom-closing','is-content-loading');
     for(const slot of slots)slot.element.classList.remove('grid-tile--bloom-returning');
     if(hadBloom&&animateReturn&&!prefersReduced.matches)
       surface.classList.add('is-bloom-closing');
@@ -730,7 +730,21 @@ if (viewport && world && resetButton && status) {
     const project=demoProjects[chosen.projectIndex??-1];
     if(!project){stopSelection();return;}
     const selectedCell={column:chosen.column,row:chosen.row};
-    const modules=selectModules(modulesForProject(project.id,project.shortSummary));
+    const available=projectModuleLoader.get(project.id);
+    if(!available){
+      surface.classList.add('is-content-loading');highlightSelection();
+      activity(`Loading ${project.name} · small bloom`);
+      projectModuleLoader.load(project.id).then(()=>{
+        if(selectedChoice&&sameChoice(selectedChoice,choice)&&!bloomModule)openSmallBloom(choice);
+      }).catch(()=>{
+        if(!selectedChoice||!sameChoice(selectedChoice,choice))return;
+        stopSelection(false);activity('Project content could not load · select it to retry');
+        liveStatus.textContent='Project content could not load. Please select the project to retry.';
+      });
+      return;
+    }
+    surface.classList.remove('is-content-loading');
+    const modules=selectModules(available);
     bloomAnchor=selectedCell;
     bloomCells=moduleVacancies(selectedCell,MODULE_OFFSETS.slice(0,modules.length));
     surface.classList.remove('is-focusing');
@@ -828,7 +842,7 @@ if (viewport && world && resetButton && status) {
       // Keep the bounded horizontal pool thereafter; vertical buffering is unchanged.
       if(columnBufferCells<6){columnBufferCells=6;rebuildPool(true,true);}
       smallBloom={panels:[...bloomModules],cells:[...bloomCells]};
-      bigLayout=bigBloomLayout(modulesForProject(project.id,project.shortSummary),moduleId);
+      bigLayout=bigBloomLayout(projectModuleLoader.get(project.id)??[],moduleId);
       layer.getBoundingClientRect();
       for(const panel of bloomModules)panel.remove();
       bigBloomOpen=true;surface.classList.add('is-big-bloom');surface.classList.remove('is-big-bloom-waiting');
@@ -907,6 +921,8 @@ if (viewport && world && resetButton && status) {
     }
   }
   function beginSelection(choice:ProjectChoice):void {
+    // Fetch alongside the existing shift/centering procedure; never retime it.
+    void projectModuleLoader.load(choice.projectId).catch(()=>{});
     // The original tile backs out one depth; small bloom then closes.
     if(bigTransitioning)return;
     if(bigBloomOpen&&selectedChoice&&sameChoice(selectedChoice,choice)){requestSmallBloom();return;}

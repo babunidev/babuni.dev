@@ -1,5 +1,9 @@
 # Release readiness — 2026-10-29
 
+## Implementation update
+
+Babuni.dev approved publication of all 42 current projects and existing public documentation. The discovery work previously proposed below is now implemented: 433 static home/project/module pages, real links, metadata, canonical URLs, sitemap and crawler rules. Project modules now load from per-project JSON; initial JS is approximately 118 KiB (37 KiB gzip), and the large-chunk warning is gone. See `deploy/README.md` and `deploy/nginx-babuni.dev.conf` for prepared gzip/cache/404 configuration. Deployment, DNS, HTTPS and real network measurements are deferred to the weekend. The following original audit preserves the before-state and its measurements; its unimplemented-status descriptions are historical.
+
 ## Human acceptance
 
 Babuni.dev accepts milestones 1–4 for the current design after thorough physical-device use on two devices, responsive checks on phone/laptop/wide desktop, keyboard and reduced-motion checks, hover/tap/ambient topics, fullscreen/viewers, and many-hour sessions. Earlier Chrome/Firefox feedback remains human evidence; this update does not claim a new AI browser/device run. Neutral tile backgrounds, current titles and striking portal artwork are the accepted visual direction. Optional future performance/presentation reviews do not invalidate this acceptance.

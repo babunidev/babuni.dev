@@ -128,3 +128,14 @@ Two AI browser captures at 1920×1080, converted from actual JPEG to quality-85 
 - `chronological-grid-after-shifts.webp` — fully revealed field after normal autonomous shifts; this later frame is not the pristine initial order.
 
 The initial DOM contained 45 visible identities and the first nine spiral cells exactly matched the generated chronological IDs. Project menu categories remained intact; selecting Babuni Admin opened its eight-preview bloom with the correct public documentation link. A failed first DOM read used an unavailable parseFloat helper; a clean reload/read succeeded. No screenshot was saved from that failed read. These checks are not extended physical-device acceptance.
+
+
+## 2026-10-29 — Search-readable pages and on-demand modules
+
+![AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification.](../public/media/babuni-dev/images/verification/readable-project-release.webp)
+
+AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification.
+
+![AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.](../public/media/babuni-dev/images/verification/on-demand-bloom-release.webp)
+
+AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.

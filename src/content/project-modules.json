@@ -299,6 +299,16 @@
           "src": "/media/babuni-dev/images/verification/chronological-grid-after-shifts.webp",
           "alt": "chronological grid after shifts",
           "caption": "AI browser, 2026-10-29: fully revealed grid after normal autonomous shifts. Initial DOM placement for the first nine projects exactly matched the build-generated chronology; this later frame is movement history, not a second resort."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/readable-project-release.webp",
+          "alt": "AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification.",
+          "caption": "AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/on-demand-bloom-release.webp",
+          "alt": "AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.",
+          "caption": "AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

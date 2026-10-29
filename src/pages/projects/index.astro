@@ -1,0 +1,6 @@
+---
+import ReadingPage from '../../layouts/ReadingPage.astro';
+import {publicProjects} from '../../lib/server/public-projects';
+import {projectPath} from '../../lib/site';
+---
+<ReadingPage title="All projects — Babuni.dev" description="Browse all Babuni.dev projects: games, World of Warcraft add-ons, music, worldbuilding and creative development."><h1>Projects</h1><p>Explore the project histories, documentation and media. You can also discover them through the <a href="/">living grid</a>.</p><ul class="module-list">{publicProjects.map(project=><li><h2><a href={projectPath(project.id)}>{project.name}</a></h2><p>{project.shortSummary}</p></li>)}</ul></ReadingPage>

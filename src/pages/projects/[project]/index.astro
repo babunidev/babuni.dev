@@ -1,0 +1,11 @@
+---
+import ReadingPage from '../../../layouts/ReadingPage.astro';
+import {publicProjects} from '../../../lib/server/public-projects';
+import {markdownHtml} from '../../../lib/server/markdown-html';
+import {SITE_URL,projectPath,modulePath} from '../../../lib/site';
+export function getStaticPaths(){return publicProjects.map(project=>({params:{project:project.id},props:{project}}));}
+const {project}=Astro.props;
+const overview=project.modules.find(m=>m.id==='overview'&&m.type==='text');
+const structured={'@context':'https://schema.org','@type':'CreativeWork',name:project.name,description:project.shortSummary,url:SITE_URL+projectPath(project.id),author:{'@type':'Person',name:'Babuni.dev'},image:SITE_URL+project.portalArtwork};
+---
+<ReadingPage title={`${project.name} — Babuni.dev`} description={project.shortSummary} image={project.portalArtwork} structured={structured}><img class="project-art" src={project.portalArtwork} width="112" height="112" alt={`${project.name} artwork`} /><h1>{project.name}</h1><p>{project.shortSummary}</p>{overview&&<article set:html={markdownHtml(overview.intro??overview.preview,overview.source)} />}<h2>Explore this project</h2><ul class="module-list">{project.modules.map(module=><li><h2><a href={modulePath(project.id,module.id)}>{module.title}</a></h2><p>{module.preview.replace(/[*#`]/g,'')}</p></li>)}</ul></ReadingPage>

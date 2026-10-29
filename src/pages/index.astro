@@ -1,5 +1,7 @@
 ---
-const title='babuni.dev — Living Grid Prototype';
+import SeoHead from '../components/SeoHead.astro';
+import {demoProjects} from '../lib/demo-projects';
+import {projectPath} from '../lib/site';
 ---
 <!doctype html>
 <html lang="en">
@@ -7,9 +9,9 @@ const title='babuni.dev — Living Grid Prototype';
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#141518" />
-  <meta name="description" content="An interactive portfolio toy-box prototype: explore a freely draggable wall of creative project tiles." />
+  <SeoHead />
   <link rel="icon" type="image/webp" sizes="64x64" href="/favicon.webp?v=b-mark-1" />
-  <title>{title}</title>
+
 </head>
 <body>
   <main class="experience" aria-label="Living grid prototype">
@@ -30,6 +32,7 @@ const title='babuni.dev — Living Grid Prototype';
           </div>
         </div>
         <div id="projects-menu" hidden>
+          <p><a href="/projects/">Browse project pages</a></p>
           <label for="project-search">Find a project</label>
           <input id="project-search" type="search" placeholder="Search projects…" autocomplete="off" />
           <p id="project-result-count" role="status" aria-live="polite"></p>
@@ -41,6 +44,7 @@ const title='babuni.dev — Living Grid Prototype';
     <div class="site-footer" aria-hidden="true"></div>
     <div id="grid-status" class="sr-only" role="status" aria-live="polite"></div>
   </main>
+  <noscript><section><h1>Babuni.dev projects</h1><p>Explore games, music, add-ons and creative development. The living grid needs JavaScript; all project pages are readable without it.</p><ul>{demoProjects.map(project=><li><a href={projectPath(project.id)}>{project.name}</a> — {project.shortSummary}</li>)}</ul></section></noscript>
   <script>
     import '../scripts/grid';
   </script>

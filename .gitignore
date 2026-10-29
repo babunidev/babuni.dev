@@ -151,3 +151,5 @@ vite.config.ts.timestamp-*
 # Rebuilt locally from reviewed documentation sources; do not commit copies.
 /src/generated/
 /public/_project-docs/
+
+/public/_project-modules/

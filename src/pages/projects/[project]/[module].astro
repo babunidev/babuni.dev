@@ -1,0 +1,11 @@
+---
+import ReadingPage from '../../../layouts/ReadingPage.astro';
+import {publicProjects,moduleBody} from '../../../lib/server/public-projects';
+import {markdownHtml} from '../../../lib/server/markdown-html';
+import {safeEmbedUrl,videosForModule} from '../../../lib/project-modules';
+import {projectPath} from '../../../lib/site';
+export function getStaticPaths(){return publicProjects.flatMap(project=>project.modules.map(module=>({params:{project:project.id,module:module.id},props:{project,module}})));}
+const {project,module}=Astro.props;
+const description=module.preview.replace(/[*#`]/g,'').slice(0,180)||project.shortSummary;
+---
+<ReadingPage title={`${module.title} — ${project.name} — Babuni.dev`} description={description} image={project.portalArtwork}><p><a href={projectPath(project.id)}>{project.name}</a> / {module.title}</p><h1>{project.name}: {module.title}</h1>{module.type==='text'?<article set:html={markdownHtml(moduleBody(module),module.source)} />:<p>{module.preview}</p>}{module.type==='gallery'&&module.images?.map(item=><figure><a href={item.src}><img loading="lazy" src={item.src} alt={item.alt} /></a><figcaption>{item.caption??item.alt}</figcaption></figure>)}{module.type==='video'&&videosForModule(module).map(video=><figure><figcaption>{video.title}</figcaption><div class="media-frame">{video.src?<video controls preload="none" playsinline src={video.src} poster={video.poster} aria-label={video.title} />:safeEmbedUrl(video.embed??'')&&<iframe loading="lazy" src={safeEmbedUrl(video.embed!)} title={video.title} allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" />}</div></figure>)}{module.type==='resources'&&<ul>{module.links?.map(link=><li><a href={link.href} rel="noopener noreferrer">{link.label}</a></li>)}</ul>}{module.source&&<p><a href={module.source} rel="noopener noreferrer">View source</a></p>}{module.credit&&<p class="credit">{module.credit}</p>}</ReadingPage>

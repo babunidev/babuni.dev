@@ -1,9 +1,9 @@
-import catalog from '../content/project-modules.json';
-import connections from '../content/project-repositories.json';
-import index from '../generated/document-index.json';
-import {type ProjectModule} from './project-modules';
+import catalog from '../content/project-modules.json' with {type:'json'};
+import connections from '../content/project-repositories.json' with {type:'json'};
+import index from '../generated/document-index.json' with {type:'json'};
+import {type ProjectModule} from './project-modules.ts';
 import {indexedRepositoryModules,composeProjectModules,type RepositoryConnection,
-  type IndexedRepository} from './repository-content';
+  type IndexedRepository} from './repository-content.ts';
 const indexes=index as Record<string,IndexedRepository>;
 /** A compact, synchronous list of previews keeps every bloom animation and
  * module selection immediate. Full Markdown is fetched only inside detail.

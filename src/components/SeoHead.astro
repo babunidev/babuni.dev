@@ -1,0 +1,19 @@
+---
+import {SITE_URL,SITE_TITLE,SITE_DESCRIPTION} from '../lib/site';
+const {title=SITE_TITLE,description=SITE_DESCRIPTION,image='/portal-content/PortalContentBabuniDev.webp',path=Astro.url.pathname}=Astro.props;
+const canonical=new URL(path,SITE_URL).href;
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Babuni.dev" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={new URL(image,SITE_URL).href} />
+<meta property="og:image:alt" content="Babuni.dev project artwork" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image,SITE_URL).href} />
