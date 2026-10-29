@@ -1,7 +1,7 @@
 import {renderDocument} from './document-reader.ts';
 import {moduleIntro} from '../lib/big-bloom.ts';
 import {safeEmbedUrl,videosForModule,type ModuleVideo,type ProjectModule} from '../lib/project-modules.ts';
-/** Players are deliberately activated; no autoplay or eager video fetch. */
+/** Embedded players show their preview immediately; playback remains user initiated. */
 export function renderVideo(video:ModuleVideo):HTMLElement {
   const container=document.createElement('figure');container.className='video-item';
   const caption=document.createElement('figcaption');caption.textContent=video.title;container.append(caption);
@@ -13,12 +13,10 @@ export function renderVideo(video:ModuleVideo):HTMLElement {
   }else if(video.embed){
     const safe=safeEmbedUrl(video.embed);
     if(safe){
-      const play=document.createElement('button');play.className='bloom-action';play.textContent='Load video';play.type='button';
-      play.addEventListener('click',()=>{
-        const frame=document.createElement('iframe');frame.className='bloom-media';frame.src=safe;
-        frame.title=video.title;frame.allow='fullscreen; picture-in-picture';frame.allowFullscreen=true;
-        frame.referrerPolicy='strict-origin-when-cross-origin';play.replaceWith(frame);
-      },{once:true});container.append(play);
+      const frame=document.createElement('iframe');frame.className='bloom-media';frame.src=safe;
+      frame.title=video.title;frame.loading='lazy';
+      frame.allow='encrypted-media; fullscreen; picture-in-picture';frame.allowFullscreen=true;
+      frame.referrerPolicy='strict-origin-when-cross-origin';container.append(frame);
     }
   }
   return container;
@@ -48,7 +46,7 @@ export function renderModulePreview(module:ProjectModule,projectName:string,onRe
   }
   if(module.type==='video'){
     const videos=videosForModule(module);
-    if(videos[0])content.append(renderVideo(videos[0]));
+    if(videos[0])content.insertBefore(renderVideo(videos[0]),summary);
     if(depth==='big'){const list=document.createElement('ul');list.className='bloom-collection-list';for(const video of videos){const item=document.createElement('li');item.textContent=video.title;list.append(item);}content.append(list);}
     if(videos.length>1){const count=document.createElement('span');count.className='video-count';count.textContent=videos.length+' videos';content.append(count);}
   }
