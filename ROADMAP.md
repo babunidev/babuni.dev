@@ -1,6 +1,14 @@
 # Development Roadmap
 
-This is a plan, not a claim that features already exist. Move tasks only when supported by code, tests, or observed behavior.
+## Current status — 2026-10-29
+
+**Babuni.dev acceptance:** Milestones 1–4 are complete for the present design. Babuni.dev reports thorough physical testing on two devices, responsive checks on phone/laptop/wide desktop, satisfying keyboard and reduced-motion alternatives, working hover/tap/ambient topics, fullscreen/viewer use, and many-hour sessions. The current neutral stone tiles and striking portals are the accepted visual direction. These are human observations, not new AI device tests or a guarantee against future regressions. Performance can be reviewed again later.
+
+Milestone 5's content pipeline is substantially implemented. Editorial review is ongoing work, not a blocker requiring every project to be finished. Remaining functional work: owner-controlled project visibility/publishing, optional preview deployments. MDX is optional and deferred; current Markdown, image and video modules are sufficient.
+
+**Release priorities:** (1) design the owner publishing toggle, (2) add crawlable project/document URLs and search/share metadata, (3) inspect the existing VPS setup and configure separate domain/HTTPS hosting without replacing the existing website, (4) measure real production delivery and load timings. Deployment has not been performed.
+
+The checklist below reflects this acceptance. Dated notes after the checklist are historical; their earlier pending checks and superseded designs are not the current status.
 
 ## Milestone 0 — Repository and documentation
 - [x] Create public GitHub repository babunidev/babuni.dev.
@@ -17,35 +25,35 @@ This is a plan, not a claim that features already exist. Move tasks only when su
 ## Milestone 1 — Mechanically correct grid
 - [x] Decide initial tile sizing and center-first responsive visible-cell formula (Babuni.dev-approved approximate scale; unit-tested).
 - [x] Implement temporary representative tiles (not final stone assets or real projects).
-- [x] Implement pointer-event mouse/touch dragging, spatial keyboard highlight/activation, and reset (desktop pointer tested, real touch pending).
+- [x] Implement pointer-event mouse/touch dragging, spatial keyboard highlight/activation, and reset (desktop pointer tested, physical touch accepted by Babuni.dev, 2026-10-29).
 - [x] Implement bounded DOM tile recycling, keeping stable logical coordinates (unit tested and browser preview checked).
 - [x] Prototype clockwise spiral-first project assignment with visibility-aware source identity recycling; fill the viewport by repeating the original project library when necessary. Ten pure-placement tests passed in isolation.
 - [x] Babuni.dev visually approved the initial 45-project spiral on desktop, describing the result as looking fantastic (2026-10-26).
-- [ ] Verify project uniqueness and stable identity during extended panning and ongoing autonomous shifts; extended physical-device checks remain outstanding; current production builds pass.
+- [x] Verify project uniqueness and stable identity during extended panning and ongoing shifts: accepted by Babuni.dev after thorough physical testing on two devices (2026-10-29); future regression/performance review remains possible.
 
-**Babuni.dev's first desktop acceptance test (2026-10-26):** Local Astro 7.4.2 server returned the page successfully. On Babuni.dev's desktop, the centered BABUNI.DEV tile appeared correctly, mouse dragging felt smooth and appropriately paced, and the grid could be dragged indefinitely without encountering an edge. This verifies the manual desktop experience by user observation; physical phone/tablet, resizing, automated shift mechanics, and reduced-motion tests remain open.
-- [ ] Prove responsive coverage on phone, laptop, and wide desktop.
-- [x] Prototype slow one-cell row/column shifts with testable seeded dice rounds (timing and initiative mechanics provisional; Babuni.dev review outstanding).
+**Babuni.dev's first desktop acceptance test (2026-10-26):** Local Astro 7.4.2 server returned the page successfully. On Babuni.dev's desktop, the centered BABUNI.DEV tile appeared correctly, mouse dragging felt smooth and appropriately paced, and the grid could be dragged indefinitely without encountering an edge. This was the initial desktop-only evidence. The later physical-device acceptance above supersedes its outstanding checks.
+- [x] Responsive coverage on phone, laptop and wide desktop accepted by Babuni.dev (2026-10-29).
+- [x] Prototype slow one-cell row/column shifts with testable seeded dice rounds (current timing/interaction feel accepted by Babuni.dev).
 - [x] Pause an active autonomous shift while dragging, resume afterward and defer new rounds while dragging. Bloom-specific conflict handling awaits bloom implementation.
-- [ ] Validate keyboard and reduced-motion alternatives. Frame-driven, slower keyboard movement and reduced-motion support are implemented, but await Babuni.dev/device acceptance.
+- [x] Keyboard and reduced-motion alternatives accepted by Babuni.dev (2026-10-29); keyboard navigation described as satisfying.
 
-**Movement refinement (2026-10-26):** Babuni.dev requested smooth, slower arrow-key navigation; brief acceleration and an adjustable speed ceiling for mouse/touch dragging; and no two simultaneously shifting rows moving in the same direction. A matching restriction on columns is an AI-proposed extension, awaiting Babuni.dev review. Initial controller and directional shift cap are implemented and tested in an isolated preview. New Babuni.dev feedback is needed before locking speeds or declaring Milestone 1 complete.
+**Movement refinement (2026-10-26):** Babuni.dev requested smooth, slower arrow-key navigation; brief acceleration and an adjustable speed ceiling for mouse/touch dragging; and no two simultaneously shifting rows moving in the same direction. A matching restriction on columns is an AI-proposed extension, awaiting Babuni.dev review. Initial controller and directional shift cap are implemented and tested in an isolated preview. Historical tuning note; Milestone 1 is now accepted by Babuni.dev for the current behavior.
 
 ## Milestone 2 — The first portal
-- [ ] Reusable, stylized stone tile component.
-- [ ] Engraved, always-legible title and colored portal window.
-- [x] Prototype three point-anchored topic bubbles (top, left, right; browser/device visual approval still pending).
-- [ ] Complete interaction verification for hover, focus, tap and occasional ambient teasers (prototypes implemented, including during small bloom); optional linger-to-reveal remains unimplemented.
-- [ ] Test against clutter on dense grids.
+- [x] Current reusable neutral stone tile component accepted by Babuni.dev; visual polish remains optional.
+- [x] Current titles and portal artwork accepted by Babuni.dev; elaborate background detailing is intentionally avoided.
+- [x] Prototype three point-anchored topic bubbles (top, left, right; physically tested and accepted by Babuni.dev).
+- [x] Hover, focus, tap and ambient teasers verified and accepted by Babuni.dev. Optional linger-to-reveal is outside the accepted scope.
+- [x] Dense-grid visual balance accepted by Babuni.dev: neutral tile backgrounds allow diverse portal artwork to stand out.
 
 ## Milestone 3 — Small bloom
 - [x] Select and focus a tile instance (functional prototype).
 - [x] Reserve adjacent grid cells for up to eight modules; move displaced neighbors.
 - [x] Keep neighboring tiles visible and allow nonconflicting shifts at the approved calm tempo.
 - [x] Support switching selection and graceful collapse.
-- [x] Preserve selected source identity across recycled instances (tests and sampled browser checks; extended acceptance remains).
+- [x] Preserve selected source identity across recycled instances (regressions plus Babuni.dev physical/extended acceptance).
 
-Functional prototype built; prolonged/device acceptance remains separate from implementation.
+**Milestone 3 status:** Complete for the current design; physical and prolonged use accepted by Babuni.dev (2026-10-29).
 
 ## Milestone 4 — Full bloom and viewers
 - [x] Grow big bloom inside the living grid with 2×2 modules and surrounding tiles.
@@ -54,28 +62,32 @@ Functional prototype built; prolonged/device acceptance remains separate from im
 - [x] Expand text into a scrollable reader with safe Markdown/GFM document formatting.
 - [x] Provide a scrollable image collection and browser fullscreen control where supported.
 - [x] Provide deliberate video collection playback and source/resource links.
-- [ ] Complete native-phone, keyboard/reduced-motion, cross-browser/fullscreen and long-session acceptance; refine advanced document/gallery presentation.
+- [x] Native-device, keyboard/reduced-motion, responsive, fullscreen and many-hour-session acceptance reported by Babuni.dev. Earlier Chrome/Firefox observations remain recorded separately. Document/gallery presentation is accepted and can continue to evolve.
 
-Functional prototype built; local video remains until YouTube links are supplied. Common Markdown/GFM rendering is implemented; advanced gallery composition and broader acceptance remain open.
+**Milestone 4 status:** Complete for the present scope, accepted by Babuni.dev (2026-10-29). Markdown/GFM, reader, galleries and embedded video collections work; four BABUNI.DEV recordings remain locally hosted. Further presentation improvements are ongoing, not completion blockers.
 
 ## Milestone 5 — Content and automation
 - [x] Validate the implemented JSON module schema and repository-source mappings.
-- [ ] Add MDX blocks if future authoring requirements justify them.
-- [x] Populate source-backed project modules, including babuni.dev (34 tiles connected to 33 public repositories; release/editorial acceptance is separate).
+- [ ] Optional/deferred: MDX only if a future need arises for interactive components inside authored Markdown; not required for current milestones.
+- [x] Populate source-backed project modules, including babuni.dev (35 current projects connected to 35 public repositories; editorial review remains ongoing).
 - [x] Surface repository development notes as first-class modules.
-- [ ] Validate AI-created entries and require accurate attribution.
+- [ ] Ongoing human editorial review of AI-assisted text and project histories; attribution is implemented, accuracy review continues without requiring complete content before release.
 - [x] Add CI build checks.
 - [ ] Add preview deployments.
-- [ ] Set controlled publishing authorization.
+- [ ] Add an owner-controlled project visibility/publishing toggle, with explicit authorization and no automatic publication of private material.
 
 ## Milestone 6 — Release
 - [ ] Configure VPS hosting, deployment, domain and HTTPS.
-- [ ] Verify performance, responsiveness, keyboard/touch controls, security, and cross-browser behavior.
+- [x] Responsive, keyboard/touch, fullscreen and long-session experience accepted by Babuni.dev.
+- [ ] Verify real production hosting: compression/cache headers, load timings, security configuration and a final deployed smoke check.
+- [ ] Add crawlable static project/document routes, descriptive titles, canonical URLs, sitemap and sharing metadata; test search/AI readability.
 - [ ] Publish an initial release and maintain the changelog and journal.
 
 ## Documentation requirement for every milestone
 
 Update CHANGELOG for implemented changes; DEVLOG for context and experiments; DECISIONS for durable choices; DESIGN/ARCHITECTURE/CONTENT as applicable; and ROADMAP as work changes. Distinguish Babuni.dev requests, agent proposals, completed work, and evidence.
+
+## Historical milestone notes — superseded where the current checklist differs
 
 **Manual-speed iteration (2026-10-26):** Babuni.dev requested twice the current mouse/touch and arrow-key movement speed. Updated control limits are implemented (880 and 260 CSS px/s, with proportionally faster acceleration and deceleration). Actual browser feel and acceptance are pending.
 
