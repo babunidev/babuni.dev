@@ -624,3 +624,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ### Fixed
 - Switch the public documentation connection, resource link and ten-document snapshot to `babunidev/babuni.admin-docs`. Regenerated document assets/source URLs use the new canonical repository.
 - Remove the old active snapshot key; preserve historical document text, stable project ID and private-implementation exclusion.
+
+
+## 2026-10-29 — BuxbrewDing artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `BuxbrewDing.webp` to BuxbrewDing, preserving original WebP bytes.

@@ -572,3 +572,8 @@ Babuni.dev renamed the implementation and requested website correction. AI metad
 ## 2026-10-29 — Canonical public Admin docs source (implemented)
 
 Babuni.dev renamed the separate public docs repository. AI verified public visibility anonymously and adopted babunidev/babuni.admin-docs as the canonical source, rather than relying on GitHub redirects from the previous URL. Preserve document bodies and pinned revision; implementation remains private. This completes the previously pending public repository rename connection.
+
+
+## 2026-10-29 — BuxbrewDing artwork (implemented)
+
+Babuni.dev selected BuxbrewDing.webp. AI mapped the supplied asset directly to BuxbrewDing, retaining original bytes and the established renderer.

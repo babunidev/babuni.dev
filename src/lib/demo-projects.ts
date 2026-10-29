@@ -229,6 +229,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "buxbrewding",
+    "portalArtwork": "/portal-content/BuxbrewDing.webp",
     "name": "BuxbrewDing",
     "shortSummary": "Named WoW addon; purpose not yet confirmed.",
     "evidence": "name-only",

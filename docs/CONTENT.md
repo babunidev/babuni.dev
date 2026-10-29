@@ -391,3 +391,8 @@ Babuni.dev renamed the Arcanitebrothers implementation project to Babuni Admin. 
 ## 2026-10-29 — Renamed Babuni Admin public docs
 
 Babuni.dev supplied the renamed public docs URL: https://github.com/babunidev/babuni.admin-docs. Anonymous verification confirmed public visibility and ten standard documents at the existing revision. Their Markdown bodies are unchanged. Active links now use the new name; old names in historical documents, dated journal entries and screenshots remain truthful history. No private implementation content imported.
+
+
+## 2026-10-29 — BuxbrewDing supplied WebP
+
+BuxbrewDing.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-nine active project artwork assignments now reference twenty-nine unique supplied WebPs. No additional functionality or authorship claims inferred.

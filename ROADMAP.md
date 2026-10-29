@@ -475,3 +475,9 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 - [x] Verify renamed public docs repository and update connection, resource URL and snapshot identity.
 - [x] Regenerate standard document indexes/source links, preserving historical text and public-only imports.
 - [ ] Optional future source-document editorial rename; current source bodies retain earlier names.
+
+
+## 2026-10-29 — BuxbrewDing artwork
+
+- [x] Assign the supplied BuxbrewDing.webp to BuxbrewDing.
+- [ ] Human visual check through the existing round portal mask.

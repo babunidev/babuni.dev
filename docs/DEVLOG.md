@@ -940,3 +940,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 
 **Final verification:** all 30 test files passed under the standard runner, all 12 repository-content tests passed directly and the production build passed with the existing large-chunk warning. The generated index contains only the new Admin docs repository identity, all ten reader asset files exist, and a comparison confirmed all unrelated snapshots and Admin Markdown bodies are unchanged. This pass used source/asset checks rather than a new browser capture.
+
+
+## 2026-10-29 — BuxbrewDing supplied artwork
+
+**Babuni.dev requested:** BuxbrewDing.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrewding`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.

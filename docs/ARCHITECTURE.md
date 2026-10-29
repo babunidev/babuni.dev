@@ -529,3 +529,8 @@ Stable catalog ID `arcanitebrothers` now displays Babuni Admin, so placement/men
 ## 2026-10-29 — Admin public source migration
 
 Stable ID `arcanitebrothers` now maps to public repository `babunidev/babuni.admin-docs`. The snapshot uses the same canonical key/repository field and pinned commit `da8b818e0be9fc14ba8176da25ab99ab774223be`; the old active snapshot key is removed. Standard preparation regenerates document indexes/assets and source URLs from the new mapping. Counts and all other source snapshots remain unchanged; the private implementation is not a source.
+
+
+## 2026-10-29 — BuxbrewDing asset mapping
+
+Catalog ID `buxbrewding` references `/portal-content/BuxbrewDing.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.

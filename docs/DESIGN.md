@@ -519,3 +519,8 @@ Babuni Admin is the live project name formerly shown as Arcanitebrothers. Existi
 ## 2026-10-29 — Admin public documentation resource
 
 The Public documentation module now links to Babuni Admin public documentation under its new canonical repository name. Historical project-name context remains because the unchanged source documents use earlier names. No artwork, timing or geometry changes.
+
+
+## 2026-10-29 — BuxbrewDing portal
+
+BuxbrewDing displays its supplied WebP through the existing circular mask. Scale, positioning and animation timing remain unchanged.
