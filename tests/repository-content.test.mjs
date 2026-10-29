@@ -84,7 +84,7 @@ test('repository coverage report matches the map and never lists private reposit
  const {repositoryReport}=await import('../scripts/repository-report.mjs');
  const report=repositoryReport(demoProjects,connections,snapshots);
  assert.equal(report,readFileSync(new URL('../docs/REPOSITORY_CONNECTIONS.md',import.meta.url),'utf8'));
- assert.ok(report.includes('Local AI Workstation'));
+ assert.ok(report.includes('Local AI'));
  assert.equal(Object.values(connections).filter(c=>c.status==='needs-repository').length,8);
  assert.ok(report.includes('AsnkarGrotzschnapf'));assert.ok(report.includes('| master |'));
  for(const name of ['Ethera','Morkahja','MorkahjaWorld','arcanitebrothers'])assert.doesNotMatch(report,new RegExp('https://github\\.com/babunidev/'+name+'(?:[)/#?\\s]|$)'));

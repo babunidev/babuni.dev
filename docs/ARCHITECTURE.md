@@ -563,3 +563,8 @@ Document snapshots remain independent: a fresh chronological date does not fetch
 ## 2026-10-29 — Active catalog reduction and artwork
 
 Remove `fantasy-rpg-assets` from active catalog, topic maps, AI menu membership and unresolved repository map. Offline preparation regenerates chronological IDs without the retired project; no connected source snapshot or activity record is removed because it had no repository. Catalog now has 44 real projects, 35 public connections, nine undated projects and three optional neutral identities. `gathermap` references `/portal-content/GatherMap.webp`; 33 supplied artwork mappings use existing rendering/import logic.
+
+
+## 2026-10-29 — Display labels independent of IDs
+
+`ethera-the-stonewrought` displays Ethera; `local-ai-workstation` displays Local AI. Existing source connections, menu categories, activity ordering and artwork mappings continue using stable IDs without migration.

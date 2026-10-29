@@ -516,3 +516,8 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 - [x] Remove Fantasy RPG Assets from active projects, preserving history.
 - [x] Assign the supplied GatherMap.webp to GatherMap.
 - [ ] Human visual check: retired entry absent and GatherMap artwork visible through the round portal mask.
+
+
+## 2026-10-29 — Shorter labels
+
+- [x] Rename Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI, preserving stable identities.

@@ -604,3 +604,8 @@ Order is static per loaded bundle; no live rearrangement or timing change. Norma
 ## 2026-10-29 — Withdraw Fantasy RPG Assets; supplied GatherMap art (implemented)
 
 Babuni.dev withdrew Fantasy RPG Assets as a standalone project and chose GatherMap.webp for GatherMap. AI removed only the active catalog entry and related metadata, preserving history, and mapped the supplied WebP without editing. No other project was merged or removed.
+
+
+## 2026-10-29 — Short project labels (implemented)
+
+Babuni.dev chose Ethera and Local AI as the exact visible names. AI applied display-only renames, retaining stable identity, historical source text and artwork filenames; no project merge or repository rename.

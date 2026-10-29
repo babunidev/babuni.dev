@@ -991,3 +991,8 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 
 **Final results:** all 31 test files passed; six artwork tests and eleven activity tests also passed directly. Production build passed with the existing large-chunk warning. Live activity refresh succeeded for 25/35 repositories; ten returned HTTP 403 and retained verified cached dates as designed. Generated chronological IDs contain exactly 44 projects and exclude Fantasy RPG Assets. No source-document snapshots were changed.
+
+
+## 2026-10-29 — Ethera and Local AI labels
+
+**Babuni.dev requested:** shorten Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI. **AI execution:** change the two catalog display names, preserving stable IDs `ethera-the-stonewrought` and `local-ai-workstation`, public repository links, artwork and chronology. Regenerate the source report. Earlier names in historical source documents/screenshots remain unchanged. **Verification:** catalog/navigation/source tests and content/static build run before publication, reusing the last verified activity cache for this display-only change. No timing or positioning changes.

@@ -668,3 +668,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign supplied GatherMap.webp to GatherMap, preserving original bytes. Catalog now has 44 projects and 33 supplied portal artworks.
+
+
+## 2026-10-29 — Shorter project names
+
+### Changed
+- Rename Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI at Babuni.dev’s request. Stable IDs, source connections and artwork retained.

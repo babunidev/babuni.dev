@@ -17,7 +17,7 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 | Anskar Grotzschnapf | [babunidev/AsnkarGrotzschnapf](https://github.com/babunidev/AsnkarGrotzschnapf) | master | 8: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md` |
 | ResistForever | [babunidev/ResistForever](https://github.com/babunidev/ResistForever) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | FavorCraft | [babunidev/favorcraft](https://github.com/babunidev/favorcraft) | main | 7: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `ROADMAP.md` |
-| Ethera: The Stonewrought | [babunidev/Ethera-docs](https://github.com/babunidev/Ethera-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Ethera | [babunidev/Ethera-docs](https://github.com/babunidev/Ethera-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | EnchantVisuals | [babunidev/EnchantVisuals](https://github.com/babunidev/EnchantVisuals) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | TotemTimers | [babunidev/TotemTimers](https://github.com/babunidev/TotemTimers) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | GroupBuffToggle | [babunidev/GroupBuffToggle](https://github.com/babunidev/GroupBuffToggle) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
@@ -46,7 +46,7 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 
 ## No matching repository found
 
-- Local AI Workstation (local-ai-workstation)
+- Local AI (local-ai-workstation)
 - Roar Guild (roar-guild-and-community)
 - Buxbrew — character story (buxbrew-character-story)
 - Fantasy Architecture (fantasy-architecture)

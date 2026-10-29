@@ -551,3 +551,8 @@ This is initial placement per build/page load, not a live resort during browsing
 ## 2026-10-29 — Catalog curation and GatherMap portal
 
 Fantasy RPG Assets no longer appears in the grid or Projects menu. GatherMap now displays its supplied WebP through the existing circular mask. The 44-project catalog continues using the established chronological opening and three unique optional neutral identities; no sizing or timing change.
+
+
+## 2026-10-29 — Ethera and Local AI
+
+The grid, project menu and activity labels now display Ethera and Local AI. Artwork, dimensions and animations remain unchanged.

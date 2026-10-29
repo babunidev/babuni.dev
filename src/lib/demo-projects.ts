@@ -77,7 +77,7 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "local-ai-workstation",
     "portalArtwork": "/portal-content/LocalAAIWorkstation.webp",
-    "name": "Local AI Workstation",
+    "name": "Local AI",
     "shortSummary": "Local language-model and image-generation development environment.",
     "evidence": "conversation",
     "tint": "#c1b56d"
@@ -101,7 +101,7 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "ethera-the-stonewrought",
     "portalArtwork": "/portal-content/Ethera.webp",
-    "name": "Ethera: The Stonewrought",
+    "name": "Ethera",
     "shortSummary": "Godot RPG/simulation chapter set in the Morkahja universe.",
     "evidence": "repo",
     "tint": "hsl(125 58% 62%)"

@@ -423,3 +423,8 @@ Activity cache records only public repository identity, branch, commit SHA, comm
 ## 2026-10-29 — Retired art-study candidate and GatherMap asset
 
 Babuni.dev clarified Fantasy RPG Assets is not a project and withdrew it from the website. Historical inventory rows are retained as history, not active exhibits. GatherMap.webp was supplied by Babuni.dev and copied unchanged from the local portal-content folder. Active counts: 44 projects, 35 public repository connections and 33 supplied portal artworks. No new content or authorship claims inferred from the image.
+
+
+## 2026-10-29 — Shortened current labels
+
+Babuni.dev renamed the active entries to Ethera and Local AI. Historical names in imported documents and dated captures remain source history. No content, repository or artwork was removed.
