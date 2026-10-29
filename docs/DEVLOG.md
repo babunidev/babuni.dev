@@ -981,3 +981,13 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 
 **Publication adjustment:** GitHub rejected the first push because an optional workflow edit adding the CI token environment required OAuth workflow scope. The push was not accepted. AI removed that optional workflow change rather than expanding account permissions. The existing CI retains anonymous public refresh plus verified-cache fallback; optional tokens remain supported when explicitly provided by a build environment. Core chronology, public-only checks and cache behavior are unchanged.
+
+
+## 2026-10-29 — Human curation and GatherMap artwork
+
+**Babuni.dev requested:** remove Fantasy RPG Assets because it is not a project; additionally supplied GatherMap.webp for the existing GatherMap tile. **AI execution:** remove stable ID `fantasy-rpg-assets` from active catalog/topics/menu/repository status, keeping historical documentation intact. No repository was associated or deleted. Copy the supplied GatherMap WebP byte-for-byte and assign it to `gathermap`. Other projects, chronology rules, geometry and timing are unchanged.
+
+**Verification:** catalog/group/topic/source and chronological-placement coverage updated for 44 real projects, including a neutral vacancy in the 45-cell fixture; artwork inventory updated to 33. Full tests/build run before publication. No browser screenshot was taken in this pass; visual acceptance remains for Babuni.dev.
+
+
+**Final results:** all 31 test files passed; six artwork tests and eleven activity tests also passed directly. Production build passed with the existing large-chunk warning. Live activity refresh succeeded for 25/35 repositories; ten returned HTTP 403 and retained verified cached dates as designed. Generated chronological IDs contain exactly 44 projects and exclude Fantasy RPG Assets. No source-document snapshots were changed.

@@ -659,3 +659,12 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Fixed
 - BABUNI.DEV special tile styling follows its semantic ID rather than whichever project happens to rank first. Tile geometry and animation timings are unchanged.
+
+
+## 2026-10-29 — Remove Fantasy RPG Assets; GatherMap artwork
+
+### Removed
+- Fantasy RPG Assets from the active catalog, menu group, topic data and unresolved-repository map at Babuni.dev’s direction. Historical records retained.
+
+### Changed
+- Assign supplied GatherMap.webp to GatherMap, preserving original bytes. Catalog now has 44 projects and 33 supplied portal artworks.

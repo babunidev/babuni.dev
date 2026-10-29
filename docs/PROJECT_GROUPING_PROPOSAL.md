@@ -80,3 +80,8 @@ Babuni.dev added Babuni Gaming as a distinct gaming, streaming and sharing proje
 ## Current naming correction — 2026-10-29
 
 Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
+
+
+## Fantasy RPG Assets withdrawn — 2026-10-29
+
+Babuni.dev removed Fantasy RPG Assets as a non-project. AI group now contains four active entries, and total catalog count is 44. Prior lists above remain historical.

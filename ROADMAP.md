@@ -509,3 +509,10 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 - [x] Add cache/network/public-only/initial-order regression coverage and offline dev/test preparation.
 - [ ] Human acceptance: newest dated project begins in the center after a build; undated projects follow; no reshuffle occurs during browsing.
 - [ ] Monitor date freshness warnings on offline or rate-limited builds; cached ordering is deliberate fallback, not proof of a fresh fetch.
+
+
+## 2026-10-29 — Curation and GatherMap artwork
+
+- [x] Remove Fantasy RPG Assets from active projects, preserving history.
+- [x] Assign the supplied GatherMap.webp to GatherMap.
+- [ ] Human visual check: retired entry absent and GatherMap artwork visible through the round portal mask.

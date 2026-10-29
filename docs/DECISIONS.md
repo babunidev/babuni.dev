@@ -599,3 +599,8 @@ Babuni.dev supplied Elexior.webp. AI assigned it to existing music project `elix
 **Human request/choice:** sort the initial spiral at each build by latest project commit, using public documentation dates for private-code projects. **AI choices:** use the latest commit on each explicitly connected branch; newest at center, following the existing clockwise spiral. Preserve base catalog order for equal timestamps and undated projects, with undated projects after dated ones. Reject import/check/build timestamps as activity proxies and do not read private implementation commits.
 
 Order is static per loaded bundle; no live rearrangement or timing change. Normal builds write refreshed metadata only to ignored generated files, with a checked-in fallback for offline/fresh clones. Explicit baseline saving is a separate reviewed command. Network/API failure warns and reuses only matching verified dates. Optional CI authentication may read commit metadata only after a public visibility check. Menu categories and alphabetical search order remain independent.
+
+
+## 2026-10-29 — Withdraw Fantasy RPG Assets; supplied GatherMap art (implemented)
+
+Babuni.dev withdrew Fantasy RPG Assets as a standalone project and chose GatherMap.webp for GatherMap. AI removed only the active catalog entry and related metadata, preserving history, and mapped the supplied WebP without editing. No other project was merged or removed.

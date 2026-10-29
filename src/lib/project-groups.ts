@@ -50,7 +50,6 @@ export const PROJECT_GROUPS=[
       "babuni-dev",
       "anskar-grotzschnapf",
       "local-ai-workstation",
-      "fantasy-rpg-assets",
       "fantasy-architecture"
     ]
   },

@@ -546,3 +546,8 @@ Elixior displays Elexior.webp through the existing round mask. Scale, positionin
 Babuni.dev requested that newest project work appear first and chose public documentation commit dates for private-code projects. The most recently committed connected public source begins in the center; the remaining dated projects follow newest-first along the existing clockwise spiral. BABUNI.DEV is no longer unconditionally pinned first. Equal-date entries retain catalog order, and projects without verified dates follow in their existing order. Menu categories/alphabetical search do not change.
 
 This is initial placement per build/page load, not a live resort during browsing. Tile dimensions, reveal cadence, shift tempo and interaction positioning rules remain unchanged. BABUNI.DEV's special treatment belongs to its stable ID, independent of chronological rank.
+
+
+## 2026-10-29 — Catalog curation and GatherMap portal
+
+Fantasy RPG Assets no longer appears in the grid or Projects menu. GatherMap now displays its supplied WebP through the existing circular mask. The 44-project catalog continues using the established chronological opening and three unique optional neutral identities; no sizing or timing change.

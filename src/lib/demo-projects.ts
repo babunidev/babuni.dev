@@ -1,6 +1,6 @@
 /**
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
- * (53 initial candidates, 2026-10-26; 45 retained after curation, music and Babuni Gaming additions on 2026-10-28).
+ * (53 initial candidates, 2026-10-26; 44 retained after curation through 2026-10-29).
  * Removed duplicates and non-projects are documented in the source inventory.
  * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
@@ -16,7 +16,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=45;
+export const DEMO_PROJECT_COUNT=44;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -141,7 +141,8 @@ export const demoProjects:readonly DemoProject[]=[
     "name": "GatherMap",
     "shortSummary": "Self-learning resource gathering map overlay.",
     "evidence": "repo",
-    "tint": "hsl(93 58% 62%)"
+    "tint": "hsl(93 58% 62%)",
+    "portalArtwork": "/portal-content/GatherMap.webp"
   },
   {
     "id": "battlereport",
@@ -282,13 +283,6 @@ export const demoProjects:readonly DemoProject[]=[
     "shortSummary": "Roleplaying story of Jasmine 'Buxbrew' Amberbrew.",
     "evidence": "conversation",
     "tint": "hsl(238 58% 62%)"
-  },
-  {
-    "id": "fantasy-rpg-assets",
-    "name": "Fantasy RPG Assets",
-    "shortSummary": "Top-down trees and other environmental art studies.",
-    "evidence": "conversation",
-    "tint": "hsl(15 58% 62%)"
   },
   {
     "id": "fantasy-architecture",

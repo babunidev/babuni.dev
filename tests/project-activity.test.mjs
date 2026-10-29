@@ -74,8 +74,9 @@ test('runtime order fills the initial clockwise spiral without changing project 
  assert.deepEqual(gridProjects.map(p=>p.id).sort(),demoProjects.map(p=>p.id).sort());
  const cells=[];for(let y=-2;y<=2;y++)for(let x=-4;x<=4;x++)cells.push({column:x,row:y});
  const placement=new ProjectPlacement(gridProjects.length,3);placement.sync(cells,cells);
- const ordered=introSequence(cells,c=>c).map(c=>gridProjects[placement.get(c)].id);
- assert.deepEqual(ordered,gridProjects.map(p=>p.id));
+ const ordered=introSequence(cells,c=>c).map(c=>gridProjects[placement.get(c)]?.id);
+ assert.deepEqual(ordered.filter(Boolean),gridProjects.map(p=>p.id));
+ assert.equal(ordered.filter(id=>id===undefined).length,Math.max(0,cells.length-gridProjects.length));
  const source=readFileSync(new URL('../src/scripts/grid.ts',import.meta.url),'utf8');
  assert.ok(source.includes("const isOrigin=project?.id==='babuni-dev'"),'branding follows semantic identity when another project ranks first');
  const pkg=JSON.parse(readFileSync(new URL('../package.json',import.meta.url),'utf8'));

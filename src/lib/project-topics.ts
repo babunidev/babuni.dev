@@ -40,7 +40,6 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "warriorstartattack": "Combat helper",
   "roar-guild-and-community": "Community",
   "buxbrew-character-story": "Character story",
-  "fantasy-rpg-assets": "Fantasy art",
   "fantasy-architecture": "Architecture",
   "grimnir": "Fantasy culture",
   "morkahja-rpg": "Fantasy RPG",
@@ -203,10 +202,6 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
   "buxbrew-character-story": [
     "Jasmine Amberbrew",
     "Roleplay story"
-  ],
-  "fantasy-rpg-assets": [
-    "Top-down art",
-    "Environment studies"
   ],
   "fantasy-architecture": [
     "Building plans",

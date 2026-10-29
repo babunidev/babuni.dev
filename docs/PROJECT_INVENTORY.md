@@ -5,7 +5,7 @@
 
 ## Current curation override — 2026-10-28
 
-The original research table below is historical. Babuni.dev withdrew WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples as standalone website entries. The current active catalog contains 45 real projects after subsequent removals and the additions of Rocket Game 42, Mighty Morkah, Elixior and Babuni Gaming. Three unique renderer-only decorative identities are not projects. See `PROJECT_GROUPING_PROPOSAL.md` for the complete current list; the original table below remains historical. MorkahjaWorld is the retained worldbuilding project; journal/decisions/collaboration remain within BABUNI.DEV. Existing repositories were not deleted. These human decisions supersede the original inventory’s optimistic candidate classifications.
+The original research table below is historical. Babuni.dev withdrew WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples as standalone website entries. The current active catalog contains 44 real projects after subsequent removals and the additions of Rocket Game 42, Mighty Morkah, Elixior and Babuni Gaming. Three unique renderer-only decorative identities are not projects. See `PROJECT_GROUPING_PROPOSAL.md` for the complete current list; the original table below remains historical. MorkahjaWorld is the retained worldbuilding project; journal/decisions/collaboration remain within BABUNI.DEV. Existing repositories were not deleted. These human decisions supersede the original inventory’s optimistic candidate classifications.
 
 ## Purpose and provenance
 
@@ -121,3 +121,8 @@ Babuni.dev additionally withdrew The Amberbrew Family and Practical Templates Cr
 ## Current naming correction — 2026-10-29
 
 Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
+
+
+## Curation correction — 2026-10-29
+
+Babuni.dev withdrew Fantasy RPG Assets because it is not a standalone project. Active catalog now has 44 projects; the original candidate table remains historical.
