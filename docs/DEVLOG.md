@@ -1085,3 +1085,8 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 ## 2026-10-29 — Matching video frames
 
 **Babuni.dev requested:** frame video embeds like their surrounding bloom modules. **AI execution:** wrap supported players in a shared video-frame element with the module’s 2-pixel muted-gold border, 5-pixel dark inner band and shadow. The frame is inside the available content width, with no overlay intercepting player controls; applies to embedded and native videos in small bloom, big bloom and reader. Player aspect ratio and playback behavior remain unchanged. No source or media changes. **Verification:** all 32 test files, content validation and static build passed. Initial DOM test caught use of a property missing from its lightweight DOM fixture; AI used the equivalent children collection and reran successfully. No browser screenshot or visual browser acceptance performed in this pass.
+
+
+## 2026-10-29 — Selected module quarter overlay
+
+**Babuni.dev corrected:** selected big-bloom content should continue behind the portal tile, with only the bottom-left quarter covered and the right side visible. **AI diagnosis/execution:** remove the selected-card-only half-height cap on `.bloom-preview-content`; use the same full-height scrollable content region as other big cards. The actual anchor tile remains one grid cell over the lower-left quarter of the existing 2 × 2 module. No tile or module repositioning, resizing, timing or media changes. **Verification:** full regression suite, content validation and static build run before publication. Existing geometry tests cover the quarter anchor and vacancies; no live browser visual acceptance or screenshot taken in this pass.
