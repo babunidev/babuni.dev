@@ -927,3 +927,16 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 
 **Final results:** direct Node execution passed 163 tests across 30 files; the standard runner passed all files and the production build passed (existing large-chunk warning retained). Browser search found Babuni Admin, opened eight previews and confirmed the public documentation URL plus renamed tile/activity labels. One screenshot was archived as WebP in the gallery and visual manifest. Existing source snapshot file remained unchanged.
+
+
+## 2026-10-29 — Public Admin docs rename completed
+
+**Babuni.dev requested:** follow the public documentation repository rename too and ensure the website is consistent. **AI verification:** authenticated metadata and anonymous content-fetch validation confirm babunidev/babuni.admin-docs is public on main. Retrieved only the ten allowlisted Markdown documents at `da8b818e0be9fc14ba8176da25ab99ab774223be`. Their bodies and revision match the previous snapshot; repository identity, not document text, changed. No private files accessed.
+
+**Execution:** update the active repository mapping and Public documentation resource label/URL, replace the old snapshot key with the new canonical identity and regenerate the source report/static document assets. Stable ID `arcanitebrothers`, Babuni Admin display name and artwork remain unchanged. Historical source names and dated captures remain evidence rather than silently rewritten text. **Verification:** repository/source-link tests and full test runner/build run before publication; public-only safeguards preserved.
+
+
+**Test refinement:** the previous private-source regression used a prefix check that also matched the newly named public `babuni.admin-docs` repository. It initially failed for that reason. The guard now compares the exact repository path segment, still excluding the private implementation and additionally asserting canonical public document links plus removal of the old snapshot key.
+
+
+**Final verification:** all 30 test files passed under the standard runner, all 12 repository-content tests passed directly and the production build passed with the existing large-chunk warning. The generated index contains only the new Admin docs repository identity, all ten reader asset files exist, and a comparison confirmed all unrelated snapshots and Admin Markdown bodies are unchanged. This pass used source/asset checks rather than a new browser capture.

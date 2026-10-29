@@ -46,3 +46,8 @@ The importer fetched all forty documents anonymously. Existing external snapshot
 ## Current naming correction — 2026-10-29
 
 Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
+
+
+## Canonical public Admin destination — 2026-10-29
+
+Babuni.dev renamed the public edition to `babunidev/babuni.admin-docs`. The website mapping and ten-document snapshot now use that canonical name, anonymously verified public. Earlier tables describe the original preparation/history; source bodies and pinned revision remain unchanged.

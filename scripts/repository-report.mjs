@@ -19,7 +19,7 @@ export function repositoryReport(projects,connections,snapshots){
  ...section('private-review','Private repository review'),'', 'Private implementations remain excluded. Ethera, Morkahja RPG, MorkahjaWorld and Babuni Admin (formerly Arcanitebrothers) use separate curated public documentation editions; no implementation repository was made public or imported.',
  ...section('needs-confirmation','Project-family clarification needed'),'', 'Related sources are known, but an independent public repository is not confirmed. Decide whether each is a separate project or a section of its parent before connecting documentation.',
  '', '## Naming and coverage notes','',
- '- Babuni Admin is the current display name of stable ID arcanitebrothers. Its renamed implementation remains private; the website continues reading only the existing public arcanitebrothers-docs edition. Earlier names in source documents are historical.',
+ '- Babuni Admin is the current display name of stable ID arcanitebrothers. Its renamed implementation remains private; the website continues reading only the existing public babuni.admin-docs edition. Earlier names in source documents are historical.',
  '- Anskar Grotzschnapf maps to the verified `AsnkarGrotzschnapf` spelling and its `master` branch.',
  '- Azeroth Moments uses the public `AzerothMoments` documentation shell. Its README states that the active application lives separately; that private implementation was not imported.',
  '- Human curation on 2026-10-28 removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples from the active catalog. Their historical inventory evidence is retained; no GitHub repository was deleted.',

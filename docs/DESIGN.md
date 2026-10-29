@@ -514,3 +514,8 @@ MeleeStartAttack displays its supplied WebP through the existing circular mask. 
 ## 2026-10-29 — Babuni Admin display
 
 Babuni Admin is the live project name formerly shown as Arcanitebrothers. Existing artwork is retained pending a replacement supplied by Babuni.dev. Topics describe administration tools and Morkahja origins. Public documentation resources explain the historical source names; geometry, timing and menu category remain unchanged.
+
+
+## 2026-10-29 — Admin public documentation resource
+
+The Public documentation module now links to Babuni Admin public documentation under its new canonical repository name. Historical project-name context remains because the unchanged source documents use earlier names. No artwork, timing or geometry changes.

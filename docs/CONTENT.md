@@ -386,3 +386,8 @@ MeleeStartAttack.webp was supplied by Babuni.dev and copied byte-for-byte from t
 ## 2026-10-29 — Babuni Admin and historical public documentation
 
 Babuni.dev renamed the Arcanitebrothers implementation project to Babuni Admin. Its supplied repository was confirmed private through metadata, while the existing public documentation edition remains public. The current website label is Babuni Admin; the source connection remains babunidev/arcanitebrothers-docs, with explicit historical-name context. Earlier names inside imported Markdown and prior screenshots are not silently rewritten. No private implementation documents or URLs are added to the website. Existing ArcaniteBrothers.webp remains assigned to the same stable project until replacement artwork is supplied.
+
+
+## 2026-10-29 — Renamed Babuni Admin public docs
+
+Babuni.dev supplied the renamed public docs URL: https://github.com/babunidev/babuni.admin-docs. Anonymous verification confirmed public visibility and ten standard documents at the existing revision. Their Markdown bodies are unchanged. Active links now use the new name; old names in historical documents, dated journal entries and screenshots remain truthful history. No private implementation content imported.

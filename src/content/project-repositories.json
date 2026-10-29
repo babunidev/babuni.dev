@@ -194,9 +194,9 @@
   },
   "arcanitebrothers": {
     "status": "connected",
-    "repository": "babunidev/arcanitebrothers-docs",
+    "repository": "babunidev/babuni.admin-docs",
     "branch": "main",
-    "note": "Project renamed Babuni Admin by Babuni.dev on 2026-10-29. Implementation repository remains private (metadata checked); retain this separate verified public documentation edition, whose earlier names remain historical source text. No private implementation files imported."
+    "note": "Babuni Admin public documentation repository renamed by Babuni.dev and anonymously verified public on 2026-10-29. Ten standard documents imported at the existing pinned revision; earlier project names within historical source text are preserved. Implementation remains private."
   },
   "analubia": {
     "status": "needs-repository",

@@ -92,7 +92,7 @@ test('repository coverage report matches the map and never lists private reposit
 });
 
 test('four documentation-only projects use pinned public editions rather than private implementations',()=>{
- const editions={'ethera-the-stonewrought':'Ethera-docs','morkahja-rpg':'Morkahja-docs','morkahjaworld':'MorkahjaWorld-docs',arcanitebrothers:'arcanitebrothers-docs'};
+ const editions={'ethera-the-stonewrought':'Ethera-docs','morkahja-rpg':'Morkahja-docs','morkahjaworld':'MorkahjaWorld-docs',arcanitebrothers:'babuni.admin-docs'};
  for(const [id,name] of Object.entries(editions)){
   const c=connections[id];assert.equal(c.status,'connected');assert.equal(c.repository,'babunidev/'+name);
   const snapshot=snapshots[c.repository];assert.match(snapshot.commit,/^[a-f0-9]{40}$/);assert.equal(snapshot.documents.length,10);
@@ -119,11 +119,15 @@ test('retired sources are absent while BABUNI journal material remains available
 
 test('Babuni Admin retains its public edition and never links or imports the private implementation',()=>{
  assert.equal(demoProjects.find(p=>p.id==='arcanitebrothers').name,'Babuni Admin');
- const c=connections.arcanitebrothers;assert.equal(c.repository,'babunidev/arcanitebrothers-docs');
+ const c=connections.arcanitebrothers;assert.equal(c.repository,'babunidev/babuni.admin-docs');
  assert.equal(snapshots['babunidev/babuni.admin'],undefined);
  const modules=composeProjectModules(catalog.arcanitebrothers,repositoryModules(c,snapshots[c.repository]),c.repository);
  const source=modules.find(m=>m.id==='source');assert.equal(source.title,'Public documentation');
  assert.match(source.preview,/previously listed as Arcanitebrothers/);
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/arcanitebrothers-docs']);
- for(const m of modules){assert.ok(!m.source?.includes('/babuni.admin'));for(const link of m.links??[])assert.ok(!link.href.includes('/babuni.admin'));}
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/babuni.admin-docs']);
+ assert.equal(snapshots['babunidev/arcanitebrothers-docs'],undefined);
+ for(const m of modules){
+  if(m.source){assert.notEqual(new URL(m.source).pathname.split('/')[2],'babuni.admin');assert.ok(m.source.startsWith('https://github.com/babunidev/babuni.admin-docs/blob/'));}
+  for(const link of m.links??[])assert.notEqual(new URL(link.href).pathname.split('/')[2],'babuni.admin');
+ }
 });

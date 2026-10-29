@@ -524,3 +524,8 @@ Catalog ID `meleestartattack` references `/portal-content/MeleeStartAttack.webp`
 ## 2026-10-29 — Rename independent of source identity
 
 Stable catalog ID `arcanitebrothers` now displays Babuni Admin, so placement/menu identities require no migration. The implementation repository remains private; `project-repositories.json` retains only the separate public arcanitebrothers-docs edition and an updated explanatory note. A curated `source` resources module replaces the default auto-generated source link, labeling it Public documentation and explaining earlier names. Original source snapshots, pinned revisions and standard Markdown bodies are unchanged.
+
+
+## 2026-10-29 — Admin public source migration
+
+Stable ID `arcanitebrothers` now maps to public repository `babunidev/babuni.admin-docs`. The snapshot uses the same canonical key/repository field and pinned commit `da8b818e0be9fc14ba8176da25ab99ab774223be`; the old active snapshot key is removed. Standard preparation regenerates document indexes/assets and source URLs from the new mapping. Counts and all other source snapshots remain unchanged; the private implementation is not a source.

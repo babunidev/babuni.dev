@@ -466,5 +466,12 @@ Built: remove The Amberbrew Family and Practical Templates Creator from active g
 ## 2026-10-29 — Babuni Admin rename
 
 - [x] Update the live project name and source-label explanation while retaining stable identity and public-only documentation.
-- [ ] Optional future public documentation repository/content rename and reviewed refresh; the existing public edition retains earlier names.
+- [x] Public documentation repository rename connected in the follow-up below; source-document editorial renaming remains optional.
 - [ ] Human visual acceptance of the renamed tile/menu and retained artwork.
+
+
+## 2026-10-29 — Babuni Admin public source rename complete
+
+- [x] Verify renamed public docs repository and update connection, resource URL and snapshot identity.
+- [x] Regenerate standard document indexes/source links, preserving historical text and public-only imports.
+- [ ] Optional future source-document editorial rename; current source bodies retain earlier names.

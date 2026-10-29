@@ -41,7 +41,7 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 | WarriorStartAttack | [babunidev/WarriorStartAttack](https://github.com/babunidev/WarriorStartAttack) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Morkahja | [babunidev/Morkahja-docs](https://github.com/babunidev/Morkahja-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Morkahja Worldbuilding | [babunidev/MorkahjaWorld-docs](https://github.com/babunidev/MorkahjaWorld-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| Babuni Admin | [babunidev/arcanitebrothers-docs](https://github.com/babunidev/arcanitebrothers-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Babuni Admin | [babunidev/babuni.admin-docs](https://github.com/babunidev/babuni.admin-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Rocket Game 42 | [babunidev/Rocketgame42](https://github.com/babunidev/Rocketgame42) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 
 ## No matching repository found
@@ -72,7 +72,7 @@ Related sources are known, but an independent public repository is not confirmed
 
 ## Naming and coverage notes
 
-- Babuni Admin is the current display name of stable ID arcanitebrothers. Its renamed implementation remains private; the website continues reading only the existing public arcanitebrothers-docs edition. Earlier names in source documents are historical.
+- Babuni Admin is the current display name of stable ID arcanitebrothers. Its renamed implementation remains private; the website continues reading only the existing public babuni.admin-docs edition. Earlier names in source documents are historical.
 - Anskar Grotzschnapf maps to the verified `AsnkarGrotzschnapf` spelling and its `master` branch.
 - Azeroth Moments uses the public `AzerothMoments` documentation shell. Its README states that the active application lives separately; that private implementation was not imported.
 - Human curation on 2026-10-28 removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples from the active catalog. Their historical inventory evidence is retained; no GitHub repository was deleted.

@@ -526,11 +526,11 @@
       "id": "source",
       "type": "resources",
       "title": "Public documentation",
-      "preview": "Babuni Admin was previously listed as Arcanitebrothers. Its public documentation edition still uses the earlier project names.",
+      "preview": "Babuni Admin was previously listed as Arcanitebrothers. Read its public documentation; historical documents retain their original project names.",
       "links": [
         {
-          "label": "Public documentation — earlier project name",
-          "href": "https://github.com/babunidev/arcanitebrothers-docs"
+          "label": "Babuni Admin public documentation",
+          "href": "https://github.com/babunidev/babuni.admin-docs"
         }
       ],
       "credit": "Project rename directed by Babuni.dev; AI-assisted source-label clarification. Public source documents retain their historical wording."

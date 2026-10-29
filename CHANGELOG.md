@@ -617,3 +617,10 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ### Changed
 - Rename Arcanitebrothers to Babuni Admin in the live catalog, menu and activity labels; retain the stable project ID and existing artwork.
 - Clarify the Public documentation module: the renamed implementation remains private, so the website continues reading only the existing public documentation edition under its historical name. No private files imported.
+
+
+## 2026-10-29 — Babuni Admin public repository rename
+
+### Fixed
+- Switch the public documentation connection, resource link and ten-document snapshot to `babunidev/babuni.admin-docs`. Regenerated document assets/source URLs use the new canonical repository.
+- Remove the old active snapshot key; preserve historical document text, stable project ID and private-implementation exclusion.

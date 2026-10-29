@@ -567,3 +567,8 @@ Babuni.dev selected MeleeStartAttack.webp. AI mapped the supplied asset directly
 ## 2026-10-29 — Babuni Admin naming with public-only sources (implemented)
 
 Babuni.dev renamed the implementation and requested website correction. AI metadata checks found it remains private and the old public docs edition remains public. Rename the visible project to Babuni Admin, keeping its stable ID/artwork. Keep the public edition as the content source and explain its historical naming in Public documentation. Switching the source to a private repository would conflict with the confirmed public-only rule; no private content import, repository visibility change or public-docs repository rename is authorized or performed.
+
+
+## 2026-10-29 — Canonical public Admin docs source (implemented)
+
+Babuni.dev renamed the separate public docs repository. AI verified public visibility anonymously and adopted babunidev/babuni.admin-docs as the canonical source, rather than relying on GitHub redirects from the previous URL. Preserve document bodies and pinned revision; implementation remains private. This completes the previously pending public repository rename connection.
