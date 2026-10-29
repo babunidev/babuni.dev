@@ -202,6 +202,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roaremotetrigger",
+    "portalArtwork": "/portal-content/ROARRemoteTrigger.webp",
     "name": "ROARemoteTrigger",
     "shortSummary": "Battle-emote triggers for the Wrath client.",
     "evidence": "repo-lineage",

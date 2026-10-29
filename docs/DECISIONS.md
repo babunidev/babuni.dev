@@ -639,3 +639,8 @@ Babuni.dev chose Ethera and Local AI as the exact visible names. AI applied disp
 ## 2026-10-29 — ROARRunlimited artwork
 
 **Babuni.dev supplied:** RoarUnlimited.webp. **AI execution:** assign the unchanged WebP to the existing ROARRunlimited project (`roarrunlimited`), replacing its provisional colored portal and retaining the round mask. There are now 38 active artwork assignments. Other ROAR-family mappings, labels, timing and placement remain unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+
+
+## 2026-10-29 — ROARemoteTrigger artwork
+
+**Babuni.dev supplied:** ROARRemoteTrigger.webp. **AI execution:** map the unchanged supplied WebP to the existing `roaremotetrigger` project, replacing its provisional colored portal with the existing round mask. There are now 39 active artwork assignments. Existing labels, other ROAR-family artwork, source mappings, timing and placement are preserved. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser screenshot taken.
