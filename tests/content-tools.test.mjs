@@ -46,7 +46,9 @@ test('Babuni Gaming contains populated context and all three supplied profile li
  const videos=modules.find(m=>m.id==='videos');
  assert.equal(videos.type,'video');
  assert.equal(videos.videos[0].embed,'https://www.youtube-nocookie.com/embed/9fnC1ZI1iSY');
- assert.equal(videos.videos[0].src,undefined);
+ assert.equal(videos.videos.length,2);
+ assert.equal(videos.videos[1].embed,'https://www.youtube-nocookie.com/embed/B2pMsZPQfCc');
+ assert.ok(videos.videos.every(video=>video.src===undefined));
  assert.match(videos.preview,/not the first recording/);
  assert.ok(modules.every(m=>m.credit.includes('Babuni.dev')));
 });
