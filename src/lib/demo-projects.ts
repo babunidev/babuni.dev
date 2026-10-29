@@ -208,6 +208,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roar",
+    "portalArtwork": "/portal-content/ROAR.webp",
     "name": "ROAR",
     "shortSummary": "Early random battle-emote tool.",
     "evidence": "repo-lineage",
@@ -275,7 +276,7 @@ export const demoProjects:readonly DemoProject[]=[
     "shortSummary": "WoW guild community design and shared roleplaying rituals.",
     "evidence": "conversation",
     "tint": "hsl(323 58% 62%)",
-    "portalArtwork": "/portal-content/ROAR.webp"
+    "portalArtwork": "/portal-content/ROARGuild.webp"
   },
   {
     "id": "buxbrew-character-story",
