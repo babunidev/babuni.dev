@@ -131,6 +131,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "lootfeed",
+    "portalArtwork": "/portal-content/LootFeed.webp",
     "name": "LootFeed",
     "shortSummary": "Animated loot and group-roll information display.",
     "evidence": "repo",
