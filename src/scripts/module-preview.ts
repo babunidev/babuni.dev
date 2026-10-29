@@ -5,20 +5,22 @@ import {safeEmbedUrl,videosForModule,type ModuleVideo,type ProjectModule} from '
 export function renderVideo(video:ModuleVideo):HTMLElement {
   const container=document.createElement('figure');container.className='video-item';
   const caption=document.createElement('figcaption');caption.textContent=video.title;container.append(caption);
+  const frameShell=document.createElement('div');frameShell.className='video-frame';
   if(video.src){
     const player=document.createElement('video');player.className='bloom-media';
     player.controls=true;player.preload='none';player.playsInline=true;
     player.src=video.src;if(video.poster)player.poster=video.poster;
-    player.setAttribute('aria-label',video.title);container.append(player);
+    player.setAttribute('aria-label',video.title);frameShell.append(player);
   }else if(video.embed){
     const safe=safeEmbedUrl(video.embed);
     if(safe){
       const frame=document.createElement('iframe');frame.className='bloom-media';frame.src=safe;
       frame.title=video.title;frame.loading='lazy';
       frame.allow='encrypted-media; fullscreen; picture-in-picture';frame.allowFullscreen=true;
-      frame.referrerPolicy='strict-origin-when-cross-origin';container.append(frame);
+      frame.referrerPolicy='strict-origin-when-cross-origin';frameShell.append(frame);
     }
   }
+  if(frameShell.children.length)container.append(frameShell);
   return container;
 }
 export function renderModulePreview(module:ProjectModule,projectName:string,onReadMore?:()=>void,depth:'small'|'big'='small'):HTMLElement {
