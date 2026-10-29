@@ -1,3 +1,4 @@
+import {presentDocument} from './document-presentation.ts';
 import {markdownExcerpt} from './markdown-excerpt.ts';
 import {type ProjectModule} from './project-modules.ts';
 /** Public documentation contract; path overrides must select from this list. */
@@ -41,7 +42,8 @@ export function repositoryModules(connection:RepositoryConnection|undefined,snap
   const documents=local?localDocuments:Object.fromEntries(snapshot!.documents.map(d=>[d.path,d.body]));
   const ref=local?connection.branch:snapshot!.commit;
   return REPOSITORY_DOCUMENTS.filter(doc=>!connection.paths||connection.paths.includes(doc.path)).flatMap(doc=>{
-    const body=documents[doc.path];if(!body?.trim())return [];
+    const original=documents[doc.path];if(!original?.trim())return [];
+    const body=presentDocument(original,doc.path);
     return [{id:doc.id,type:'text' as const,title:doc.title,preview:documentPreview(body)||doc.title,body,
       source:`https://github.com/${connection.repository}/blob/${ref}/${doc.path}`}];
   });

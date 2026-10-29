@@ -1,3 +1,4 @@
+import {presentDocument} from '../src/lib/document-presentation.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -25,7 +26,7 @@ test('all active tiles have explicit status; all public source snapshots match t
   assert.equal(selectModules(merged).length,Math.min(8,merged.filter(moduleHasContent).length));
   for(const module of source){
    const doc=REPOSITORY_DOCUMENTS.find(d=>d.id===module.id);
-   assert.equal(module.body,c.repository==='babunidev/babuni.dev'?local[doc.path]:snapshots[c.repository].documents.find(d=>d.path===doc.path).body);
+   assert.equal(module.body,presentDocument(c.repository==='babunidev/babuni.dev'?local[doc.path]:snapshots[c.repository].documents.find(d=>d.path===doc.path).body,doc.path));
    assert.ok(module.preview.trim());assert.ok(module.source.startsWith(`https://github.com/${c.repository}/blob/`));
   }
  }
@@ -33,7 +34,7 @@ test('all active tiles have explicit status; all public source snapshots match t
 test('source text replaces curated bodies; existing media and meaningful previews survive',()=>{
  const c=connections['babuni-dev'];const sourced=repositoryModules(c,undefined,local);
  const merged=composeProjectModules(catalog['babuni-dev'],sourced,c.repository);
- assert.equal(merged.find(m=>m.id==='overview').body,local['README.md']);
+ assert.equal(merged.find(m=>m.id==='overview').body,presentDocument(local['README.md'],'README.md'));
  assert.equal(merged.find(m=>m.id==='overview').preview,catalog['babuni-dev'].find(m=>m.id==='overview').preview);
  assert.deepEqual(merged.find(m=>m.id==='videos').videos,catalog['babuni-dev'].find(m=>m.id==='videos').videos);
  assert.equal(merged.filter(moduleHasContent).length,13);

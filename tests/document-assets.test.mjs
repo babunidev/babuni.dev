@@ -5,6 +5,7 @@ import {join} from 'node:path';
 import {prepareDocumentAssets,documentAssetName} from '../scripts/build-document-assets.mjs';
 import {REPOSITORY_DOCUMENTS,indexedRepositoryModules,composeProjectModules,loadIndexedBody} from '../src/lib/repository-content.ts';
 import {moduleHasContent,selectModules} from '../src/lib/project-modules.ts';
+import {presentDocument} from '../src/lib/document-presentation.ts';
 import {moduleIntro} from '../src/lib/big-bloom.ts';
 import {demoProjects} from '../src/lib/demo-projects.ts';
 const fromRoot=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
@@ -53,7 +54,7 @@ test('synchronous previews and big bloom intro retain exact source attribution',
       const path=REPOSITORY_DOCUMENTS.find(d=>d.id===module.id).path;
       const body=connection.repository==='babunidev/babuni.dev'
         ?local[path]:snapshots[connection.repository].documents.find(d=>d.path===path).body;
-      assert.equal(moduleIntro(module),moduleIntro({body,preview:module.preview}));
+      assert.equal(moduleIntro(module),moduleIntro({body:presentDocument(body,path),preview:module.preview}));
       assert.equal(module.body,'');
       assert.equal(moduleHasContent(module),true);
       assert.match(module.bodyUrl,/^\/_project-docs\//);

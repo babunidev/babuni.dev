@@ -2,6 +2,7 @@ import {readFileSync,writeFileSync,mkdirSync,rmSync,renameSync} from 'node:fs';
 import {join,resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {REPOSITORY_DOCUMENTS,documentPreview} from '../src/lib/repository-content.ts';
+import {presentDocument} from '../src/lib/document-presentation.ts';
 import {moduleIntro} from '../src/lib/big-bloom.ts';
 import {demoProjects} from '../src/lib/demo-projects.ts';
 import {prepareProjectActivity} from './sync-project-activity.mjs';
@@ -16,7 +17,7 @@ export function documentAssetName(repository,path){
   return repository.replace('/','--')+'/'+path.replaceAll('/','--');
 }
 /** Pure indexing step; keep brief metadata in JS and Markdown outside JS.
- * Never modify, shorten or rewrite the actual document bodies.
+ * Reorder presentation blocks without changing the preserved source snapshots.
  */
 export function prepareDocumentAssets(connections,snapshots,localDocuments){
   const errors=[
@@ -39,12 +40,13 @@ export function prepareDocumentAssets(connections,snapshots,localDocuments){
     for(const {path,body} of source){
       if(!body?.trim())continue;
       const file=documentAssetName(repository,path);
-      assets.set(file,body);
+      const presented=presentDocument(body,path);
+      assets.set(file,presented);
       documents.push({
         path,
         url:'/_project-docs/'+file,
-        preview:documentPreview(body)||REPOSITORY_DOCUMENTS.find(d=>d.path===path).title,
-        intro:moduleIntro({body,preview:''})
+        preview:documentPreview(presented)||REPOSITORY_DOCUMENTS.find(d=>d.path===path).title,
+        intro:moduleIntro({body:presented,preview:''})
       });
     }
     index[repository]={
