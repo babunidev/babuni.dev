@@ -323,6 +323,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "rocket-game-42",
+    "portalArtwork": "/portal-content/Rocketgame42.webp",
     "name": "Rocket Game 42",
     "shortSummary": "Arcade mothership-defence game reconstructed for the browser and packaged with Electron.",
     "evidence": "repo",
