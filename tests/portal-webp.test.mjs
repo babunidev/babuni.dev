@@ -13,7 +13,12 @@ test('all supplied portal artworks are mapped to direct WebP paths',()=>{
   assert.equal(items.length,42);
   for(const project of items){
     assert.match(project.portalArtwork,/^\/portal-content\/[A-Za-z0-9]+\.webp$/);
-    assert.ok(existsSync(new URL('../public'+project.portalArtwork,import.meta.url)),project.id);
+    const asset=new URL('../public'+project.portalArtwork,import.meta.url);
+    assert.ok(existsSync(asset),project.id);
+    const bytes=readFileSync(asset);
+    assert.equal(bytes.toString('ascii',0,4),'RIFF',project.id);
+    assert.equal(bytes.toString('ascii',8,12),'WEBP',project.id);
+    assert.ok(bytes.length<150*1024,project.id+' portal exceeds 150 KiB');
   }
   for(const [id,name] of [['groupbufftoggle','GroupBuff.webp'],['rocket-game-42','Rocketgame42.webp'],['lootfeed','LootFeed.webp'],['roaremotetrigger','ROARRemoteTrigger.webp'],['roarrunlimited','RoarUnlimited.webp'],['morkahjaworld','MorkahjaWorldbuilding.webp'],['roarsounds','ROARsounds.webp'],['grimnir','Grimnir.webp'],['gathermap','GatherMap.webp'],['elixior','Elexior.webp'],['mighty-morkah','MightyMorkah.webp'],['amazin','Amazin.webp'],['buxbrewding','BuxbrewDing.webp'],['meleestartattack','MeleeStartAttack.webp'],['roarguild','RoarGuildAddon.webp'],['buxbrew','BuxbrewAddon.webp'],['buxbrewcharge','BuxbrewCharge.webp'],['enchantvisuals','EnchantVisuals.webp'],['babuni-gaming','BabuniGaming.webp'],['totemtimers','TotemTimers.webp'],['morkahja-rpg','Morkahja.webp'],['buxbrew-character-story','BuxbrewCharacter.webp'],['arcanitebrothers','ArcaniteBrothers.webp'],['battlereport','BattleReport.webp'],['ethera-the-stonewrought','Ethera.webp'],['roar','ROAR.webp'],['roar-guild-and-community','ROARGuild.webp'],['warriorstartattack','WarriorStartAttack.webp'],['roarr','ROARR.webp'],['the-great-iceflow-relay','TheGreatIceflowRelay.webp'],['workthatgodbod','WorkThatGodBod.webp']])
     assert.equal(demoProjects.find(p=>p.id===id).portalArtwork,'/portal-content/'+name);

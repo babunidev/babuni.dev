@@ -327,7 +327,7 @@ if (viewport && world && resetButton && status) {
         const image=document.createElement('img');
         image.className='tile-portal-image';image.alt='';
         image.loading='lazy';image.decoding='async';image.draggable=false;
-        image.width=1254;image.height=1254;
+        image.width=512;image.height=512;
         image.src=project.portalArtwork!;
         portal.appendChild(image);
       }
