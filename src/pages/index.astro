@@ -38,6 +38,7 @@ const title='babuni.dev — Living Grid Prototype';
       </nav>
       <span class="header-note">Living grid prototype</span>
     </header>
+    <div class="site-footer" aria-hidden="true"></div>
     <div id="grid-status" class="sr-only" role="status" aria-live="polite"></div>
   </main>
   <script>
@@ -143,7 +144,8 @@ const title='babuni.dev — Living Grid Prototype';
   .tile-name{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:89%;font-size:clamp(12px,calc(var(--tile-size,240px) * .068),17px);max-width:89%;text-align:center;letter-spacing:.08em;color:#d8cab7;text-shadow:0 1px 1px #000;white-space:normal;overflow-wrap:break-word;text-wrap:balance;line-height:1.18}
   .grid-tile--long-title .tile-name{width:95%;font-size:clamp(9px,calc(var(--tile-size,240px) * .052),14px);letter-spacing:.025em;line-height:1.12;max-width:95%}
   .grid-tile--origin .tile-face{border-color:#ac9a86}
-  :root{--header-height:52px}
+  :root{--header-height:52px;--footer-height:calc(var(--header-height) / 3)}
+  .site-footer{position:fixed;z-index:20;inset:auto 0 0;height:var(--footer-height);background:rgba(14,15,18,.94);border-top:1px solid #5b554e;pointer-events:none}
   .site-header{position:fixed;z-index:20;inset:0 0 auto;height:var(--header-height);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(18px,5vw,72px);background:rgba(14,15,18,.94);border-bottom:1px solid #5b554e;pointer-events:auto}
   .brand{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:bold;letter-spacing:.19em;white-space:nowrap;color:#e8ddc9}
   .brand img{width:32px;height:32px;object-fit:contain;flex:none}
@@ -190,7 +192,7 @@ const title='babuni.dev — Living Grid Prototype';
   .module-detail::backdrop{background:#11121855;animation:detail-backdrop-in 420ms ease-out both}
   .module-detail{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;overflow:hidden;pointer-events:auto}
   .module-detail>.site-header{pointer-events:auto}
-  .module-detail-panel{pointer-events:auto;box-sizing:border-box;position:fixed;inset:var(--header-height) 0 0;margin:auto;width:min(980px,calc(100vw - 32px),calc(100dvh - 88px));height:min(980px,calc(100vw - 32px),calc(100dvh - 88px));max-width:none;max-height:none;padding:0;border:2px solid #ae9875;background:#202027;color:#e9dfd2;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:hidden;user-select:text}
+  .module-detail-panel{pointer-events:auto;box-sizing:border-box;position:fixed;inset:var(--header-height) 0 var(--footer-height);margin:auto;width:70vw;height:calc(100dvh - var(--header-height) - var(--footer-height));max-width:none;max-height:none;padding:0;border:2px solid #ae9875;background:#202027;color:#e9dfd2;box-shadow:inset 0 0 0 5px #49404a,0 12px 64px #0008;overflow:hidden;user-select:text}
   @media(max-width:599px){
     .module-detail-panel{inset:var(--header-height) 0 auto;width:100%;height:calc(100dvh - var(--header-height) - max(64px,env(safe-area-inset-bottom)));margin:0;border:0;box-shadow:none;padding:0}
   }

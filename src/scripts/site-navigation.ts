@@ -9,13 +9,12 @@ export function groupedProjects(query:string){
   const matches=matchingProjects(query);
   return PROJECT_GROUPS.map(group=>({title:group.title,projects:matches.filter(project=>(group.ids as readonly string[]).includes(project.id))})).filter(group=>group.projects.length);
 }
-/** One header is moved into the modal top layer while reading, then restored. */
+/** Keep the existing header and decorative footer above the modal backdrop. */
 export function attachReaderHeader(view:HTMLElement):()=>void {
-  const header=document.querySelector<HTMLElement>('.site-header');
-  if(!header)return ()=>{};
-  const parent=header.parentNode!,next=header.nextSibling;
-  view.append(header);
-  return ()=>{parent.insertBefore(header,next);};
+  const chrome=[...new Set(['.site-header','.site-footer'].map(selector=>document.querySelector<HTMLElement>(selector)).filter((node):node is HTMLElement=>!!node))];
+  const homes=chrome.map(node=>({node,parent:node.parentNode!,next:node.nextSibling}));
+  for(const node of chrome)view.append(node);
+  return ()=>{for(const {node,parent,next} of homes.reverse())parent.insertBefore(node,next);};
 }
 export function installSiteNavigation(select:(id:string)=>void,about:(trigger:HTMLButtonElement)=>void){
   const help=document.querySelector<HTMLElement>('.site-help')!;
