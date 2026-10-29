@@ -910,3 +910,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-29 — RoarGuild Add-on supplied artwork
 
 **Babuni.dev requested:** RoarGuildAddon.webp for the addon portal. **AI execution:** copied the supplied WebP unchanged from the local testing checkout and mapped it to stable ID `roarguild`. Community `roar-guild-and-community` retains ROARGuild.webp; this supersedes the earlier temporary no-logo state for the addon. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+
+
+## 2026-10-29 — MeleeStartAttack supplied artwork
+
+**Babuni.dev requested:** MeleeStartAttack.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `meleestartattack`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.

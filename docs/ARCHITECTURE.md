@@ -514,3 +514,8 @@ Catalog ID `buxbrew` references `/portal-content/BuxbrewAddon.webp`. Existing ca
 ## 2026-10-29 — RoarGuild Add-on asset mapping
 
 Catalog ID `roarguild` references `/portal-content/RoarGuildAddon.webp`; community ID `roar-guild-and-community` retains `/portal-content/ROARGuild.webp`. Existing import and rendering logic handle both assets without new behavior.
+
+
+## 2026-10-29 — MeleeStartAttack asset mapping
+
+Catalog ID `meleestartattack` references `/portal-content/MeleeStartAttack.webp`. Existing catalog-derived artwork import and portal rendering require no new logic.

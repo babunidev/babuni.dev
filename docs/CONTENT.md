@@ -376,3 +376,8 @@ BuxbrewAddon.webp was supplied by Babuni.dev and copied byte-for-byte from the l
 ## 2026-10-29 — RoarGuild Add-on supplied WebP
 
 RoarGuildAddon.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. It belongs to the addon; community Roar Guild retains ROARGuild.webp. Twenty-seven active project artwork assignments now reference twenty-seven unique supplied WebPs.
+
+
+## 2026-10-29 — MeleeStartAttack supplied WebP
+
+MeleeStartAttack.webp was supplied by Babuni.dev and copied byte-for-byte from the local portal-content folder. Twenty-eight active project artwork assignments now reference twenty-eight unique supplied WebPs. No additional functionality or authorship claims inferred.

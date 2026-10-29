@@ -604,3 +604,9 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Assign Babuni.dev’s supplied `RoarGuildAddon.webp` to RoarGuild Add-on, preserving original bytes. Community Roar Guild retains its separate artwork.
+
+
+## 2026-10-29 — MeleeStartAttack artwork
+
+### Changed
+- Assign Babuni.dev’s supplied `MeleeStartAttack.webp` to MeleeStartAttack, preserving original WebP bytes.

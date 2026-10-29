@@ -504,3 +504,8 @@ Buxbrew Addon displays its supplied WebP through the existing circular mask. The
 ## 2026-10-29 — RoarGuild Add-on portal
 
 RoarGuild Add-on now displays RoarGuildAddon.webp through the existing round mask. Community Roar Guild keeps its distinct ROARGuild.webp. Scale, position and timing remain unchanged.
+
+
+## 2026-10-29 — MeleeStartAttack portal
+
+MeleeStartAttack displays its supplied WebP through the existing circular mask. Scale, positioning and timing remain unchanged.

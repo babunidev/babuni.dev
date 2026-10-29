@@ -213,6 +213,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "meleestartattack",
+    "portalArtwork": "/portal-content/MeleeStartAttack.webp",
     "name": "MeleeStartAttack",
     "shortSummary": "Attack-start helper for several melee classes.",
     "evidence": "repo",
