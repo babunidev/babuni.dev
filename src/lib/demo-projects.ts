@@ -178,6 +178,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
   {
     "id": "roarrunlimited",
+    "portalArtwork": "/portal-content/RoarUnlimited.webp",
     "name": "ROARRunlimited",
     "shortSummary": "Multiple action-slot emote triggers with independent options.",
     "evidence": "repo-lineage",

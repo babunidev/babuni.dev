@@ -453,3 +453,8 @@ Babuni.dev confirmed Fantasy Architecture is not a project. AI removed its activ
 ## 2026-10-29 — Correct ROAR artwork assignment
 
 **Babuni.dev corrected:** ROAR.webp belongs to ROAR, not Roar Guild, which already had artwork. **AI error and correction:** the previous assignment inferred the wrong project; assign ROAR.webp to stable ID `roar` and restore ROARGuild.webp to `roar-guild-and-community`. RoarGuild Add-on retains its separate artwork. Earlier entry records the superseded mistake. There are now 37 active artwork assignments. No image bytes or interaction behavior changed. **Verification:** distinct artwork regression assertions, content validation and static production build run before publication with cached activity dates; no browser screenshot taken.
+
+
+## 2026-10-29 — ROARRunlimited artwork
+
+**Babuni.dev supplied:** RoarUnlimited.webp. **AI execution:** assign the unchanged WebP to the existing ROARRunlimited project (`roarrunlimited`), replacing its provisional colored portal and retaining the round mask. There are now 38 active artwork assignments. Other ROAR-family mappings, labels, timing and placement remain unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
