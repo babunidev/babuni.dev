@@ -334,17 +334,9 @@ export const demoProjects:readonly DemoProject[]=[
     "id": "mighty-morkah",
     "portalArtwork": "/portal-content/MightyMorkah.webp",
     "name": "babuni.musik",
-    "shortSummary": "Piano music and videos by Babuni.dev, published on the babuni.musik YouTube channel.",
+    "shortSummary": "Music and videos by Babuni, shared through the babuni.musik YouTube and SoundCloud channels.",
     "evidence": "human-confirmed",
     "tint": "#9b86bc"
-  },
-  {
-    "id": "elixior",
-    "portalArtwork": "/portal-content/Elexior.webp",
-    "name": "Elixior",
-    "shortSummary": "Music and audio art by Babuni.dev, including earlier pieces published on SoundCloud.",
-    "evidence": "human-confirmed",
-    "tint": "#d59057"
   },
   {
     "id": "babuni-gaming",
