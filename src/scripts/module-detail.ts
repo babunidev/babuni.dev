@@ -23,6 +23,7 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
     const view=document.createElement('dialog');view.className='module-detail';view.setAttribute('aria-label',module.title+' detail');detail=view;
     const title=document.createElement('h1');title.textContent=module.title;title.tabIndex=-1;
     const content=document.createElement('article');content.className='module-detail-content';
+    if(module.id==='about')content.classList.add('about-content');
     if(module.type==='text'){
       if(module.bodyUrl){
         const request=new AbortController();
