@@ -27,4 +27,6 @@ I often work with AI as a development and creative tool, while keeping the ideas
 - [YouTube — Mighty Morkah (music)](https://www.youtube.com/@MightyMorkah/videos)
 - [SoundCloud — Elixior](https://soundcloud.com/elexior-ludwig)
 - [Instagram — Anskar Grotzschnapf](https://www.instagram.com/anskargrotzschnapf/)
+- [Arcanite Brothers — Morkahja website](https://arcanitebrothers.com/)
+- [Anskar Grotzschnapf — Etsy shop](https://www.etsy.com/se-en/shop/Anskarartprints)
 - [Arcanite Brothers / Morkahja — public project documentation](https://github.com/babunidev/babuni.admin-docs)
