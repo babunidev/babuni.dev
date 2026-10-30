@@ -23,4 +23,17 @@ Also verify the actual fingerprinted `/_astro/` script has long immutable cachin
 
 Rollback: return `current` to the previous release, validate Nginx and reload only if its configuration changed. Existing Arcanite Brothers remains independent. Server package maintenance and the earlier PXE/Rescue warning are separate from this site release; do not reboot into Rescue as a deployment step.
 
-Publishing scope: all 42 current catalog projects and their existing connected public documentation are authorized for publication. A future visibility control must remove content from routes, sitemap, module JSON and generated documents as well as the grid; robots.txt is not access control. New repositories/private material are not implicitly imported.
+Publishing scope: all 41 current catalog projects and their existing connected public documentation are authorized for publication. A future visibility control must remove content from routes, sitemap, module JSON and generated documents as well as the grid; robots.txt is not access control. New repositories/private material are not implicitly imported.
+
+
+## Access and update workflow — audit 2026-10-30
+
+Current repository checks pass: 37 test files, content validation, static production build and 430 canonical/public-link checks. The registry audit of installed non-development dependencies reported zero known advisories at this time; it does not prove complete application or server security. Initial JS is approximately 120 KiB raw / 38 KiB gzip. These are local artifact checks; live delivery remains unmeasured.
+
+The site is ready for deployment preparation, not already deployed or certified for the live server. Still required: a working SSH identity on this computer, hostname fingerprint verification, separate release-directory ownership, live Nginx syntax test, DNS A/AAAA validation, TLS/renewal, existing-site regression check and actual compressed/cache-header and loading measurements. The current user's `.ssh` directory contains known_hosts but no private key; no SSH login or server access was attempted. Do not paste credentials in chat or commit them.
+
+**AI recommendation, not configured:** use a new SSH key with a dedicated deployment account scoped to Babuni.dev's release directory. An administrator performs the initial Nginx/HTTPS setup; routine file uploads need no general administrator rights and normally no Nginx restart. Unlock an encrypted key locally when needed. With a working authorized SSH connection, the agent can run approved deployment/inspection commands from this workspace subject to available network permissions. No agent needs to be installed on the VPS for this approach.
+
+Routine release: build and validate the reviewed commit locally or in GitHub Actions; upload `dist/` into a new versioned release directory; switch the `current` link; check the live pages; retain a previous release for rollback. The production server serves static files continuously. It does not need repeated `git pull`, `npm install`, `npm run build` or `npm run dev` commands.
+
+Current GitHub Actions only tests/builds. Optional future automation: a manually triggered deployment job, with a restricted deployment credential stored in GitHub's protected secret storage, a verified/pinned server host key and a chosen release commit. A later automatic-on-main deployment requires a separate decision; it is not silently enabled by this audit. Do not give a deployment job unrelated site/database permissions.
