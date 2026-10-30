@@ -1,18 +1,30 @@
-I'm **Babuni.dev**. I make games, tools, imagined worlds and visual experiments. This website is my living workshop: a place for finished work, small discoveries and ideas that are still taking shape.
+I'm **Babuni**. I make games, tools, music, artwork, stories and imagined worlds. I enjoy seeing what happens when a curious idea meets a little experimentation—and then trying to make it real.
 
-## The things I make
+## The person behind the projects
 
-My projects range from World of Warcraft addons—including RoarForever, SocialForever, FlourishForever and FavorCraft—to the Button Game, Morkahja worldbuilding and Ethera. Alongside game design and programming, I explore images, poetry and AI-assisted creative work through projects such as Anskar Grotzschnapf and Local Prompt Lab.
+I'm an artist and maker who enjoys both the imaginative and the practical sides of creating. I like building worlds and characters, telling stories, making music, playing games and developing small tools that make those experiences more interesting. Sometimes an idea becomes a game; sometimes it's a World of Warcraft addon, a piece of art, or an experiment that teaches me something unexpected.
 
-## How I work
+I care about the process, not only the finished result. That includes mistakes, changes of direction, new discoveries and the people and tools that help bring an idea to life.
 
-I like trying an idea, seeing how it feels, and refining it through use. Human–AI collaboration is part of that process. I direct the creative choices; the project records keep the experiments, decisions and AI contributions visible.
+## Babuni and babuni.dev
 
-This introduction is a **work in progress**. There is more of the personal story to tell as the workshop grows.
+**Babuni** is my wider creative identity. Babuni Gaming, Babuni Dev and my music and worldbuilding projects are different expressions of it—not separate people.
+
+**babuni.dev** is my development portfolio and a project of its own: a living workshop for games, software, art experiments and their development histories. Its shifting grid is meant to be explored rather than followed along a fixed route.
+
+## What I make and how I work
+
+My work includes World of Warcraft addons such as RoarForever, SocialForever and FlourishForever; games such as the Button Game; worldbuilding around Morkahja and Ethera; and creative experiments such as Anskar Grotzschnapf.
+
+I often work with AI as a development and creative tool, while keeping the ideas, direction and final decisions my own. Where possible, I document what I intended, what was proposed, what changed and what actually worked.
 
 ## Elsewhere
 
-- [GitHub — babunidev](https://github.com/babunidev)
-- [CurseForge — Babunigaming](https://www.curseforge.com/members/babunigaming)
-- [Instagram — babunigaming](https://www.instagram.com/babunigaming/)
-- [YouTube — BABUNI GAMING](https://www.youtube.com/@babunigaming)
+- [GitHub — Babuni Dev](https://github.com/babunidev)
+- [CurseForge — Babuni Gaming](https://www.curseforge.com/members/babunigaming/projects)
+- [Instagram — Babuni Gaming](https://www.instagram.com/babunigaming/)
+- [YouTube — Babuni Gaming](https://www.youtube.com/@babunigamingg)
+- [YouTube — Mighty Morkah (music)](https://www.youtube.com/@MightyMorkah/videos)
+- [SoundCloud — Elixior](https://soundcloud.com/elexior-ludwig)
+- [Instagram — Anskar Grotzschnapf](https://www.instagram.com/anskargrotzschnapf/)
+- [Arcanite Brothers / Morkahja — public project documentation](https://github.com/babunidev/babuni.admin-docs)
