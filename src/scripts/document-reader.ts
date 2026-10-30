@@ -89,8 +89,20 @@ export function renderDocument(source:string,sourceUrl?:string,interactive=true)
           table.append(head,body);wrapper.append(table);parent.append(wrapper);break;
         }
         case 'link':link(parent,token);break;
-        // Preserve the explicit-media policy: image references are links, not automatic downloads.
-        case 'image':link(parent,token,true);break;
+        // Embed the explicitly supplied About portrait from our own public assets.
+        // Other document images remain links under the explicit-media policy.
+        case 'image':{
+          if(token.href==='/babuni-about-portrait.webp'){
+            const img=document.createElement('img');
+            img.src='/babuni-about-portrait.webp';
+            img.alt=decodeText(token.text||'Illustrated portrait of Babuni');
+            img.loading='lazy';img.decoding='async';
+            img.width=1254;img.height=1254;
+            img.className='about-portrait';
+            parent.append(img);
+          }else link(parent,token,true);
+          break;
+        }
         case 'hr':parent.append(document.createElement('hr'));break;
         case 'br':parent.append(document.createElement('br'));break;
         default:if(token.raw)text(parent,token.raw);
