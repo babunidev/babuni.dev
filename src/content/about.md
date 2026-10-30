@@ -39,7 +39,7 @@ Gaming screenshots, moments and other posts.
 
 Videos and recordings from games.
 
-**[YouTube — Mighty Morkah](https://www.youtube.com/@MightyMorkah/videos)**
+**[YouTube — babuni.musik](https://www.youtube.com/@babunimusik)**
 
 Piano performances and music videos.
 
