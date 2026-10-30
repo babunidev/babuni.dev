@@ -459,8 +459,8 @@
       "id": "overview",
       "type": "text",
       "title": "Overview",
-      "preview": "Piano music and videos by Babuni.dev, published on the babuni.musik YouTube channel.",
-      "body": "Piano music and videos by Babuni.dev. The channel is dedicated to music.",
+      "preview": "Music and videos by Babuni, shared on YouTube and SoundCloud.",
+      "body": "Music, recordings and videos by Babuni. The babuni.musik channels bring these works together.",
       "credit": "Project authorship and description: Babuni.dev. AI-assisted editorial summary of the supplied direction.",
       "source": "https://www.youtube.com/@babunimusik"
     },
@@ -468,11 +468,15 @@
       "id": "listen",
       "type": "resources",
       "title": "Listen on YouTube",
-      "preview": "Explore babuni.musik on YouTube.",
+      "preview": "Find babuni.musik on YouTube and SoundCloud.",
       "links": [
         {
           "label": "babuni.musik on YouTube",
           "href": "https://www.youtube.com/@babunimusik"
+        },
+        {
+          "label": "babuni.musik on SoundCloud",
+          "href": "https://soundcloud.com/babunimusik"
         }
       ],
       "credit": "Public profile link supplied by Babuni.dev."
@@ -526,30 +530,6 @@
       ],
       "source": "https://www.youtube.com/@babunimusik",
       "credit": "Music and videos by Babuni.dev. AI imported the ten public video titles and links visible on the supplied babuni.musik channel on 2026-10-29; historical titles and WIP labels preserved."
-    }
-  ],
-  "elixior": [
-    {
-      "id": "overview",
-      "type": "text",
-      "title": "Overview",
-      "preview": "Music and audio art by Babuni.dev, including earlier pieces published on SoundCloud.",
-      "body": "Music and audio art by Babuni.dev, including pieces published over earlier years. Elixior is the music project represented by this SoundCloud profile.",
-      "credit": "Project authorship and description: Babuni.dev. AI-assisted editorial summary of the supplied direction.",
-      "source": "https://soundcloud.com/elexior-ludwig"
-    },
-    {
-      "id": "listen",
-      "type": "resources",
-      "title": "Listen on SoundCloud",
-      "preview": "Explore Elixior on SoundCloud.",
-      "links": [
-        {
-          "label": "Elixior on SoundCloud",
-          "href": "https://soundcloud.com/elexior-ludwig"
-        }
-      ],
-      "credit": "Public profile link supplied by Babuni.dev."
     }
   ],
   "babuni-gaming": [
