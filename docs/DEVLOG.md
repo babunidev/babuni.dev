@@ -6,6 +6,15 @@ This is an edited account of the development process, not a verbatim transcript 
 
 
 
+
+## 2026-10-30 — Making the About portrait actually appear
+
+**Creator correction.** After uploading an illustrated portrait to `public/`, Babuni clarified that the image should be visibly embedded within the About reader, not merely linked.
+
+**Technical finding and AI implementation.** The existing client Markdown document renderer intentionally turned all Markdown image tokens into clickable text links. This meant that the valid portrait reference in `src/content/about.md` did not display. The assistant introduced a narrow exception in `src/scripts/document-reader.ts` for the known local `/babuni-about-portrait.webp` resource, retaining the existing policy for all other images. Responsive dimensions and centered layout were added in `src/pages/index.astro`.
+
+**Verification.** GitHub confirmed source commits `aecae2a` and `7ebc51f`. No build, live browser test or deployment verification was performed.
+
 ## 2026-10-30 — Plain language and a less crowded Elsewhere section
 
 **Creator direction.** Babuni rejected inflated biography language and unnecessary comparisons, and clarified that the Babuni/Babuni Dev identity explanation had been background direction for the assistant rather than text intended for publication. The public website description should be brief and straightforward. The creator also requested space and useful context for each Elsewhere link and a direct link to the source Markdown.
