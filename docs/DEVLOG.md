@@ -7,6 +7,14 @@ This is an edited account of the development process, not a verbatim transcript 
 
 
 
+## 2026-10-30 — Music channel renamed to babuni.musik
+
+**Creator direction:** Replace the public Mighty Morkah identity and YouTube destination with babuni.musik at `https://www.youtube.com/@babunimusik`.
+
+**Implementation:** AI edited `src/content/about.md`, `src/lib/demo-projects.ts`, and `src/content/project-modules.json` to update public labels and destinations. The existing `mighty-morkah` internal identifier and portal artwork remain unchanged to preserve references; historical records remain distinguishable from current names.
+
+**Verification:** GitHub accepted the source changes. Build and browser verification were not performed.
+
 ## 2026-10-30 — Making the About portrait actually appear
 
 **Creator correction.** After uploading an illustrated portrait to `public/`, Babuni clarified that the image should be visibly embedded within the About reader, not merely linked.
