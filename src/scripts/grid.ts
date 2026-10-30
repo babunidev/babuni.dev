@@ -17,7 +17,7 @@ import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEve
 import {settledResidents} from '../lib/shift-settlement';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
-import {gridProjects as demoProjects} from '../lib/grid-projects';
+import {gridProjects as demoProjects,recentlyUpdatedIds} from '../lib/grid-projects';
 import { topicLabelsForProject, TOPIC_POINTS, chooseAmbientPoint, topicRevealPlan, type TopicPoint } from '../lib/project-topics';
 import { introSequence, INTRO_SPAWN_STAGGER_MS, INTRO_SPAWN_DURATION_MS } from '../lib/grid-intro';
 import { centeredPan, interpolateCenter,
@@ -277,7 +277,7 @@ if (viewport && world && status) {
     const element=document.createElement('div');
     element.className='grid-tile';
     element.setAttribute('aria-hidden','true');
-    element.innerHTML='<div class="tile-face"><button type="button" class="tile-select" tabindex="-1" aria-label="Explore project"></button><div class="tile-portal-cluster"><div class="tile-mark tile-mark--top" aria-hidden="true"></div><div class="tile-mark tile-mark--left" aria-hidden="true"></div><div class="tile-mark tile-mark--right" aria-hidden="true"></div><div class="tile-portal" aria-hidden="true"></div><div class="tile-topic tile-topic--top" data-topic-point="top" aria-hidden="true"></div><div class="tile-topic tile-topic--left" data-topic-point="left" aria-hidden="true"></div><div class="tile-topic tile-topic--right" data-topic-point="right" aria-hidden="true"></div></div><div class="tile-name"></div></div>';
+    element.innerHTML='<div class="tile-face"><button type="button" class="tile-select" tabindex="-1" aria-label="Explore project"></button><span class="tile-recent-label" aria-hidden="true">Recently updated</span><div class="tile-portal-cluster"><div class="tile-mark tile-mark--top" aria-hidden="true"></div><div class="tile-mark tile-mark--left" aria-hidden="true"></div><div class="tile-mark tile-mark--right" aria-hidden="true"></div><div class="tile-portal" aria-hidden="true"></div><div class="tile-topic tile-topic--top" data-topic-point="top" aria-hidden="true"></div><div class="tile-topic tile-topic--left" data-topic-point="left" aria-hidden="true"></div><div class="tile-topic tile-topic--right" data-topic-point="right" aria-hidden="true"></div></div><div class="tile-name"></div></div>';
     return element;
   }
   function populate(slot:TileSlot,column:number,row:number,force=false):void {
@@ -296,7 +296,9 @@ if (viewport && world && status) {
     slot.projectIndex=projectIndex;
     const project=demoProjects[projectIndex];
     const isOrigin=project?.id==='babuni-dev';
+    const isRecent=Boolean(project&&recentlyUpdatedIds.has(project.id));
     slot.element.classList.toggle('grid-tile--placeholder',!project);
+    slot.element.classList.toggle('grid-tile--recent',isRecent);
     const control=slot.element.querySelector<HTMLButtonElement>('.tile-select');
     if(control)control.disabled=!project;
     if(!project){
@@ -340,7 +342,7 @@ if (viewport && world && status) {
       }
     }
     const select=slot.element.querySelector<HTMLButtonElement>('.tile-select');
-    if(select){select.dataset.exploreLabel='Explore '+project.name+': '+TOPIC_POINTS.map(point=>topics[point]).join(', ');select.setAttribute('aria-label',select.dataset.exploreLabel);}
+    if(select){select.dataset.exploreLabel='Explore '+project.name+(isRecent?' (recently updated)':'')+': '+TOPIC_POINTS.map(point=>topics[point]).join(', ');select.setAttribute('aria-label',select.dataset.exploreLabel);}
   }
   /** The introduction only affects the first visible tiles, once on page load. */
   function cancelIntro():void {

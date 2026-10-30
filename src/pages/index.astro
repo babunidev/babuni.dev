@@ -96,6 +96,10 @@ import {projectPath} from '../lib/site';
   @media(max-width:520px){.grid-bloom-module{padding:9px;gap:6px}.bloom-kicker{font-size:8px}.bloom-title{font-size:15px}.bloom-summary{font-size:13px}.bloom-close{font-size:10px;padding:3px 7px}}
 
   .tile-face{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7%;position:relative;border:1px solid #686461;background:radial-gradient(ellipse at 42% 40%,#55514e 0%,#423f3e 50%,#292929 100%);box-shadow:inset 0 0 0 4px #393837,inset 0 0 0 5px #6a6258}
+  /* Activity is a marker on the project, not a positioning rule. */
+  .tile-recent-label{display:none;position:absolute;top:10px;right:10px;z-index:3;max-width:44%;color:#f1d18a;text-align:right;text-shadow:0 1px 3px #14100b;font:700 clamp(9px,calc(var(--tile-size,240px) * .045),11px)/1.2 system-ui,sans-serif;letter-spacing:.02em;pointer-events:none}
+  .grid-tile--recent .tile-recent-label{display:block}
+  .grid-tile--recent .tile-portal{box-shadow:0 0 0 2px #2b2826,0 0 0 5px #dfb95f,0 0 0 7px #63481e,0 0 16px 4px #dfb95f55,inset 0 0 0 3px #18191e,inset 0 0 24px #08070d}
   /* The child face grows into place; the parent remains free for line movement. */
   .grid-tile--spawning .tile-face{animation:tile-spawn 373ms cubic-bezier(.18,.78,.22,1) var(--tile-spawn-delay,0ms) both;transform-origin:center}
   @keyframes tile-spawn{

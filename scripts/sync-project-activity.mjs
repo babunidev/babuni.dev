@@ -1,8 +1,7 @@
 import {readFileSync,writeFileSync,renameSync,mkdirSync} from 'node:fs';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {validActivity,projectsByActivity} from '../src/lib/project-activity.ts';
-import {demoProjects} from '../src/lib/demo-projects.ts';
+import {validActivity} from '../src/lib/project-activity.ts';
 const root=fileURLToPath(new URL('..',import.meta.url));
 const repositoryPattern=/^babunidev\/[\w.-]+$/;
 /** Anonymous successful commit reads establish public access. With an optional CI
@@ -72,9 +71,6 @@ function writeCache(target,cache){
   mkdirSync(dirname(target),{recursive:true});
   const temporary=target+'.tmp';writeFileSync(temporary,body);renameSync(temporary,target);
 }
-function writeRuntimeOrder(base,connections,cache){
-  writeCache(resolve(base,'src/generated/grid-order.json'),projectsByActivity(demoProjects,connections,cache).map(project=>project.id));
-}
 /** Offline dev/test preparation keeps the newest matching last-good cache.
  * Normal builds modify only ignored generated files, never tracked sources.
  */
@@ -82,17 +78,18 @@ export function prepareProjectActivity({base=root}={}){
   const connections=JSON.parse(readFileSync(resolve(base,'src/content/project-repositories.json'),'utf8'));
   const cache=cachedActivity(base,connections);
   writeCache(resolve(base,'src/generated/project-activity.json'),cache);
-  writeRuntimeOrder(base,connections,cache);
   return cache;
 }
 export async function writeProjectActivity({base=root,token=process.env.GITHUB_TOKEN??process.env.GH_TOKEN??'',saveBaseline=false,fetchOne}={}){
   const connections=JSON.parse(readFileSync(resolve(base,'src/content/project-repositories.json'),'utf8'));
   const result=await refreshProjectActivity(connections,cachedActivity(base,connections),{fetchOne:fetchOne??((repository,branch)=>latestPublicActivity(repository,branch,{token}))});
   writeCache(resolve(base,'src/generated/project-activity.json'),result.cache);
-  writeRuntimeOrder(base,connections,result.cache);
   if(saveBaseline)writeCache(resolve(base,'src/content/project-activity.json'),result.cache);
   console.log(`Project activity: ${result.refreshed}/${Object.values(connections).filter(c=>c.status==='connected').length} public repository dates refreshed.`);
   for(const failure of result.failures)console.warn(`Activity warning: ${failure.repository}: ${failure.reason}; ${failure.cached?'using last verified date':'no verified date; retaining undated catalog order'}.`);
   return result;
 }
-if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url))writeProjectActivity({saveBaseline:process.argv.includes('--save-baseline')}).catch(error=>{console.error(error.message);process.exitCode=1;});
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+  if(process.argv.includes('--offline'))prepareProjectActivity();
+  else writeProjectActivity({saveBaseline:process.argv.includes('--save-baseline')}).catch(error=>{console.error(error.message);process.exitCode=1;});
+}

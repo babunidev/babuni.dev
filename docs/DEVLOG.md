@@ -2,6 +2,14 @@
 
 This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
 
+## 2026-10-30 — A different toy box on every visit
+
+**Creator direction.** Babuni requested a changing assortment: BABUNI.DEV should remain the initial tile while all others be randomized on every page load. Updated projects should no longer receive positional priority. Instead, a small gold "Recently updated" label on the upper-right of the tile and an extra gold ring around its portal should distinguish them.
+
+**AI design and implementation.** The AI used a per-load Fisher–Yates shuffle so the assortment changes at reload without changing project identity mid-shift. Existing validated public-repository activity dates now drive the markers rather than placement. As provisional AI-selected defaults, only the five newest projects with verified commits in the previous fourteen days receive gold treatment. The exact time window and cap were not separately approved by the creator. The code changes are in `src/lib/grid-projects.ts`, `src/lib/project-activity.ts`, `src/scripts/grid.ts`, `src/pages/index.astro`, the activity preparation script and test file. The tile's starting anchor is not a permanent world center.
+
+**Verification.** Changes were prepared from live GitHub source and checked for targeted wiring. Build, automated execution and live visual review are not yet verified.
+
 ## 2026-10-30 — Secure Hetzner access and Ubuntu maintenance (joint session)
 
 **Creator direction.** Babuni wanted to administer an existing Hetzner VPS from their Nobara Linux desktop, make future AI-assisted access possible, and check for operating-system updates without disrupting existing hosted work. Babuni performed the commands and protected their own passwords and SSH passphrase.

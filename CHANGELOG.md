@@ -6,6 +6,12 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — Randomized toy box and recent-update markers (2026-10-30)
+- Pinned BABUNI.DEV as the first project on load and shuffled remaining projects once per page load. Grid shifts preserve semantic identity.
+- Replaced update-priority placement with a gold corner label and additional gold portal ring on projects with verified recent public commits (provisional rule: five newest within fourteen days).
+- Generated public activity metadata remains build-refreshed; offline local startup prepares cache without network. Tests added for shuffling and activity eligibility. GitHub changes are not proof of browser or build verification.
+
+
 ### Changed — Merge SoundCloud into babuni.musik (2026-10-30)
 - Updated the About SoundCloud link to `https://soundcloud.com/babunimusik` and merged YouTube and SoundCloud resources under the existing babuni.musik music project.
 - Removed Elixior as a separate public catalog tile and removed its active project modules, grouping, topics, and repository mapping. Historical documentation and past media references are retained.

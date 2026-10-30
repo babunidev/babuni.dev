@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import {readFileSync,mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {projectsByActivity} from '../src/lib/project-activity.ts';
+import {projectsByActivity,recentlyUpdatedProjectIds} from '../src/lib/project-activity.ts';
 import {latestPublicActivity,refreshProjectActivity,prepareProjectActivity,writeProjectActivity} from '../scripts/sync-project-activity.mjs';
 import {demoProjects} from '../src/lib/demo-projects.ts';
-import {gridProjects} from '../src/lib/grid-projects.ts';
+import {gridProjects,shuffleProjects} from '../src/lib/grid-projects.ts';
 import {ProjectPlacement} from '../src/lib/project-placement.ts';
 import {introSequence} from '../src/lib/grid-intro.ts';
 const sha='a'.repeat(40),checkedAt='2026-10-29T10:00:00Z';
@@ -70,7 +70,8 @@ test('mixed refresh preserves failures while updating successful repositories',a
  assert.equal(result.refreshed,2);assert.equal(result.cache['babunidev/old'].committedAt,'2020-01-01T00:00:00Z');
  await assert.rejects(()=>refreshProjectActivity({a:connected('babunidev/a'),b:connected('babunidev/a','other')},{}),/Conflicting/);
 });
-test('runtime order fills the initial clockwise spiral without changing project IDs or intro timing',()=>{
+test('shuffled runtime assortment fills the initial spiral without changing IDs or intro timing',()=>{
+ assert.equal(gridProjects[0].id,'babuni-dev');
  assert.deepEqual(gridProjects.map(p=>p.id).sort(),demoProjects.map(p=>p.id).sort());
  const cells=[];for(let y=-2;y<=2;y++)for(let x=-4;x<=4;x++)cells.push({column:x,row:y});
  const placement=new ProjectPlacement(gridProjects.length,3);placement.sync(cells,cells);
@@ -78,7 +79,7 @@ test('runtime order fills the initial clockwise spiral without changing project 
  assert.deepEqual(ordered.filter(Boolean).slice(0,gridProjects.length),gridProjects.map(p=>p.id));
  assert.equal(ordered.filter(id=>id===undefined).length,Math.min(3,Math.max(0,cells.length-gridProjects.length)));
  const source=readFileSync(new URL('../src/scripts/grid.ts',import.meta.url),'utf8');
- assert.ok(source.includes("const isOrigin=project?.id==='babuni-dev'"),'branding follows semantic identity when another project ranks first');
+ assert.ok(source.includes("const isOrigin=project?.id==='babuni-dev'"),'branding follows semantic identity');
  const pkg=JSON.parse(readFileSync(new URL('../package.json',import.meta.url),'utf8'));
  assert.ok(pkg.scripts.prebuild.startsWith('npm run activity:sync'));
  assert.ok(!pkg.scripts.predev.includes('activity:sync'),'dev/test preparation stays offline');
@@ -98,4 +99,25 @@ test('normal refresh and offline preparation never dirty the checked-in fallback
   await writeProjectActivity({base,saveBaseline:true,fetchOne:async()=>fresh});
   assert.deepEqual(JSON.parse(readFileSync(join(base,'src/content/project-activity.json'),'utf8'))['babunidev/a'],fresh);
  }finally{rmSync(base,{recursive:true,force:true});}
+});
+test('BABUNI.DEV stays first, other projects reshuffle without mutating catalog',()=>{
+ const input=[{id:'a'},{id:'babuni-dev'},{id:'b'},{id:'c'}],before=input.map(x=>x.id);
+ const one=shuffleProjects(input,()=>0).map(x=>x.id);
+ const two=shuffleProjects(input,()=>.999).map(x=>x.id);
+ assert.equal(one[0],'babuni-dev');assert.equal(two[0],'babuni-dev');
+ assert.notDeepEqual(one,two);
+ assert.deepEqual(one.slice(1).sort(),['a','b','c']);
+ assert.deepEqual(two.slice(1).sort(),['a','b','c']);
+ assert.deepEqual(input.map(x=>x.id),before);
+});
+test('recent markers use validated commit dates, not ordering, stale/private or future records',()=>{
+ const p=['first','new','other','old','unlinked','future'].map(id=>({id}));
+ const c={first:connected('babunidev/first'),new:connected('babunidev/new'),other:connected('babunidev/other'),old:connected('babunidev/old'),unlinked:{status:'needs-repository'},future:connected('babunidev/future')};
+ const cache={'babunidev/first':value('2026-10-29T00:00:00Z'),'babunidev/new':value('2026-10-30T00:00:00Z'),'babunidev/other':value('2026-10-27T00:00:00Z'),'babunidev/old':value('2026-09-01T00:00:00Z'),'babunidev/future':value('2026-11-10T00:00:00Z')};
+ const now=Date.parse('2026-10-30T23:00:00Z');
+ assert.deepEqual([...recentlyUpdatedProjectIds(p,c,cache,now,2)],['new','first']);
+ assert.deepEqual([...recentlyUpdatedProjectIds(p,c,cache,now,5)],['new','first','other']);
+ cache['babunidev/new'].branch='wrong';
+ assert.deepEqual([...recentlyUpdatedProjectIds(p,c,cache,now,5)],['first','other']);
+ assert.deepEqual([...recentlyUpdatedProjectIds(p,c,cache,now+40*86400000)],[]);
 });

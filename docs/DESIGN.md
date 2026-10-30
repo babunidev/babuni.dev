@@ -2,6 +2,12 @@
 
 This document describes intended behavior; implementation must be separately verified.
 
+## Per-visit assortment and updated-project indicators (2026-10-30)
+- BABUNI.DEV remains the first tile at startup; all other project identities are independently shuffled once per page load. Grid shifts move existing project identities, without re-shuffling them.
+- Recently updated projects have a gold "Recently updated" label in the tile's upper-right corner and a second gold ring outside the portal rim; styling follows the semantic project identity when DOM slots are recycled.
+- Activity is independent of position. Provisional AI policy: the five newest verified, public branch-head commits within fourteen days. Undated, old, private and invalid records have no marker. Build refreshes the public activity cache, while local development reads the latest available verified cache.
+- The rule and visual design require hands-on acceptance.
+
 ## Overall frame
 - Persistent top bar: BABUNI.DEV / Projects dropdown / Gallery / About.
 - Grid fills the screen beneath the bar; never reveal scenic backgrounds or blank edges.
