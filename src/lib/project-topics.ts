@@ -45,8 +45,7 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "morkahjaworld": "Worldbuilding",
   "arcanitebrothers": "Administration tools",
   "babuni-gaming": "Gaming and streaming",
-  "mighty-morkah": "Piano music",
-  "elixior": "Music and audio art"
+  "mighty-morkah": "Music and audio art"
 });
 export function topicForProject(projectId:string):string {
   return projectTopics[projectId]??'Creative work';
@@ -218,8 +217,7 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Morkahja origins"
   ],
   "babuni-gaming": ["World of Warcraft", "Add-ons and moments"],
-  "mighty-morkah": ["Piano videos", "YouTube channel"],
-  "elixior": ["SoundCloud", "Earlier audio work"]
+  "mighty-morkah": ["YouTube channel", "SoundCloud"]
 });
 export function topicLabelsForProject(projectId:string):Readonly<Record<TopicPoint,string>> {
   const [left,right]=supplementalTopics[projectId]??['Creative work','More to explore'];
