@@ -6,6 +6,13 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — About tone and Elsewhere descriptions (2026-10-30)
+- Simplified the biography and website description, removing unnecessary grand claims and comparisons.
+- Removed the identity hierarchy explanation from public About prose while retaining the correct Babuni author identity.
+- Reformatted Elsewhere into ten separate links with short contextual descriptions, using previously confirmed URLs.
+- GitHub edit committed; no build or tests requested.
+
+
 ### Changed — About voice and project hierarchy (2026-10-30)
 - Restored first-person biography without beginning sentences with “I” or “My”. Clarified that Babuni directs and designs while AI assists with code and implementation.
 - Identified Morkahja as a playable online game, Ethera as an early-stage project, and WoW addons as numerous smaller works rather than the portfolio's principal undertakings.
