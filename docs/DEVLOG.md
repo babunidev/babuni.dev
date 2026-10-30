@@ -3,6 +3,15 @@
 This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
 
 
+
+## 2026-10-30 — The person beyond the portfolio
+
+**Creator direction.** Babuni requested a fuller public biography identifying the person behind the online name as Alex, and objected to an About profile that reduced their life to being an artist and maker. Baking, working and gardening were specifically raised as important parts of the wider portrait. A stylistic rule was also established: no sentences beginning with “I” or “My”.
+
+**AI contribution.** The assistant retrieved relevant earlier discussion about working life, life between Germany and Sweden, food service, gardening and tree/hedge maintenance, music, gaming and worldbuilding. It drafted a restrained third-person biography, avoiding precise birthplace, birth year and personal contact details while reflecting those lived experiences. The wider identity distinction between Babuni and babuni.dev was retained.
+
+**Implementation and verification.** Updated `src/content/about.md` on the GitHub `main` branch (commit `5ec166a`), retaining all Elsewhere links. The edit was acknowledged by the GitHub connector. No local build or browser check was performed. Final approval of the personal phrasing has not been recorded.
+
 ## 2026-10-30 — Naming the person behind the shifting grid
 
 **Creator direction.** The creator clarified that **Babuni** names the person and overarching online identity, while **babuni.dev** is the development portfolio and one branch of the wider creative practice. Gaming, music and worldbuilding belong under that same identity. The About introduction needed more of the human maker and less explanation of the interface, without disclosing private details. The creator requested additional external profiles, correction of the double-g Babuni Gaming channel URL, more readable question-mark guidance, and removal of the Return to center concept because the shifting endless grid has no permanent center.
