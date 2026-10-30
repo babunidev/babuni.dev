@@ -2,6 +2,13 @@
 
 **Status vocabulary:** Accepted, Proposed, Experimental, Superseded, Open. Entries reconstructed from conversation are marked retrospective. New decisions should include date, Babuni.dev input, AI proposal, rationale, and evidence.
 
+## D-2026-10-30 — Babuni identity and centerless help language
+**Status:** Accepted (creator direction); editorial implementation pending creator review.
+**Creator direction:** Babuni is the overarching person/creative identity; babuni.dev is the development portfolio, not the person's name. The endless shifting grid has no fixed conceptual center, and the help interface should not promise a return to one.
+**Decision:** Use Babuni as the public-facing first-person name in About, retain babuni.dev for the site/project, structure help by task, and remove its Return to center control. Internal viewport-relative coordinates do not imply a permanent world center.
+**AI contribution:** Drafted personal text based on known public creative work and changed source content and help wiring. Unverified external destinations must not be invented.
+**Evidence:** `src/content/about.md`, `src/pages/index.astro`, `src/scripts/grid.ts`; connector commits dated 2026-10-30. Build and browser behavior not retested.
+
 ## D-001 — Projects over chronological blog
 **Status:** Accepted · **Source:** retrospective conversation, October 2026  
 **Babuni.dev direction:** A playful portfolio of works, including WIP, rather than a linear blog.  
