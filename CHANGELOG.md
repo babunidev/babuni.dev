@@ -6,6 +6,12 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — Merge SoundCloud into babuni.musik (2026-10-30)
+- Updated the About SoundCloud link to `https://soundcloud.com/babunimusik` and merged YouTube and SoundCloud resources under the existing babuni.musik music project.
+- Removed Elixior as a separate public catalog tile and removed its active project modules, grouping, topics, and repository mapping. Historical documentation and past media references are retained.
+- Source commits accepted; build and browser behavior not verified.
+
+
 ### Changed — babuni.musik (2026-10-30)
 - Renamed the public Mighty Morkah music listing to babuni.musik and changed profile links to https://www.youtube.com/@babunimusik. Existing internal project ID and media references remain unchanged.
 
