@@ -5,6 +5,15 @@ This is an edited account of the development process, not a verbatim transcript 
 
 
 
+
+## 2026-10-30 — Plain language and a less crowded Elsewhere section
+
+**Creator direction.** Babuni rejected inflated biography language and unnecessary comparisons, and clarified that the Babuni/Babuni Dev identity explanation had been background direction for the assistant rather than text intended for publication. The public website description should be brief and straightforward. The creator also requested space and useful context for each Elsewhere link and a direct link to the source Markdown.
+
+**AI implementation.** Simplified `src/content/about.md` and retitled the short website paragraph “About babuni.dev”. Replaced the compact list of links with ten individually separated Markdown links and one short explanation each. The earlier confirmed destinations were retained. GitHub source commit: `9923cc7`.
+
+**Verification.** GitHub accepted the update. No build or visual inspection was performed, so rendered spacing remains unverified.
+
 ## 2026-10-30 — Correcting voice, authorship and project scale
 
 **Creator correction.** The creator objected to the third-person biography: the preference was to avoid *starting* sentences with “I” or “My”, not to exclude first-person speech. They also clarified that they do not personally write code; satisfaction comes from imagining, designing, creating and directing AI-assisted implementation. The prominence of numerous small World of Warcraft addons should not overshadow the larger Morkahja online game, which people can play, or Ethera, an ambitious but very early project.
