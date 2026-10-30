@@ -2,6 +2,17 @@
 
 This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
 
+
+## 2026-10-30 — Naming the person behind the shifting grid
+
+**Creator direction.** The creator clarified that **Babuni** names the person and overarching online identity, while **babuni.dev** is the development portfolio and one branch of the wider creative practice. Gaming, music and worldbuilding belong under that same identity. The About introduction needed more of the human maker and less explanation of the interface, without disclosing private details. The creator requested additional external profiles, correction of the double-g Babuni Gaming channel URL, more readable question-mark guidance, and removal of the Return to center concept because the shifting endless grid has no permanent center.
+
+**AI contribution and editorial choice.** The assistant rewrote the About introduction in the first person based on the creator's described interests and existing project catalogue. It sourced the Gaming, Mighty Morkah, Elixior and Anskar Instagram destinations from repository records and project documentation. The Arcanite Brothers public documentation was linked as such; no independent website URL or Etsy shop URL was invented. Help instructions were organized into exploration, project opening, finding one's way and keyboard controls.
+
+**Implementation.** Edited `src/content/about.md`, `src/pages/index.astro`, and `src/scripts/grid.ts` directly through GitHub. Removed the help reset button and its corresponding event listener while retaining internal viewport-centering calculations needed for selection and layout. These are GitHub commits, not a claim of a successfully deployed build.
+
+**Verification and open details.** The connector confirmed each content commit. No build or automated test was run at the creator's request. Exact public URLs for the Anskar Etsy shop and external Arcanite Brothers game website remain unverified. Final editorial approval of the new first-person profile is not yet recorded.
+
 ## 2026-10-24 — Retrospective: From portfolio to toy box
 
 **Type:** Concept conversation reconstructed from the Babuni.dev project discussion.  
