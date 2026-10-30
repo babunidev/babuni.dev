@@ -6,6 +6,12 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — About voice and project hierarchy (2026-10-30)
+- Restored first-person biography without beginning sentences with “I” or “My”. Clarified that Babuni directs and designs while AI assists with code and implementation.
+- Identified Morkahja as a playable online game, Ethera as an early-stage project, and WoW addons as numerous smaller works rather than the portfolio's principal undertakings.
+- Source update committed to GitHub; no build/test run.
+
+
 ### Changed — Personal About biography (2026-10-30)
 - Expanded the public profile from an artist/maker introduction into a broader account of Alex's practical working life and creative interests.
 - Included Germany-to-Sweden background, baking, food service, warehouse work, gardening, music, games, stories and creative technology without adding private contact or precise birth details.
