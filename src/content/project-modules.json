@@ -459,20 +459,20 @@
       "id": "overview",
       "type": "text",
       "title": "Overview",
-      "preview": "Piano music and videos by Babuni.dev, published on the Mighty Morkah YouTube channel.",
-      "body": "Piano music and videos by Babuni.dev. Mighty Morkah is being focused on music. Babuni.dev plans to move World of Warcraft videos to Babuni Gaming; that migration is not recorded as completed here.",
+      "preview": "Piano music and videos by Babuni.dev, published on the babuni.musik YouTube channel.",
+      "body": "Piano music and videos by Babuni.dev. The channel is dedicated to music.",
       "credit": "Project authorship and description: Babuni.dev. AI-assisted editorial summary of the supplied direction.",
-      "source": "https://www.youtube.com/@MightyMorkah/videos"
+      "source": "https://www.youtube.com/@babunimusik"
     },
     {
       "id": "listen",
       "type": "resources",
       "title": "Listen on YouTube",
-      "preview": "Explore Mighty Morkah on YouTube.",
+      "preview": "Explore babuni.musik on YouTube.",
       "links": [
         {
-          "label": "Mighty Morkah on YouTube",
-          "href": "https://www.youtube.com/@MightyMorkah/videos"
+          "label": "babuni.musik on YouTube",
+          "href": "https://www.youtube.com/@babunimusik"
         }
       ],
       "credit": "Public profile link supplied by Babuni.dev."
@@ -481,7 +481,7 @@
       "id": "videos",
       "type": "video",
       "title": "Videos",
-      "preview": "Piano music and videos from Mighty Morkah. Explore the collection, including earlier works in progress.",
+      "preview": "Piano music and videos from babuni.musik. Explore the collection, including earlier works in progress.",
       "videos": [
         {
           "embed": "https://www.youtube-nocookie.com/embed/PKLnccyciLk",
@@ -524,8 +524,8 @@
           "title": "Thinking of you...WIP"
         }
       ],
-      "source": "https://www.youtube.com/@MightyMorkah/videos",
-      "credit": "Music and videos by Babuni.dev. AI imported the ten public video titles and links visible on the supplied Mighty Morkah channel on 2026-10-29; historical titles and WIP labels preserved."
+      "source": "https://www.youtube.com/@babunimusik",
+      "credit": "Music and videos by Babuni.dev. AI imported the ten public video titles and links visible on the supplied babuni.musik channel on 2026-10-29; historical titles and WIP labels preserved."
     }
   ],
   "elixior": [
