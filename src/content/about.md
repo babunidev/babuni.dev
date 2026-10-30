@@ -2,6 +2,8 @@ Online, I'm known as **Babuni**. Behind that name is **Alex**, with interests in
 
 ## The person behind the projects
 
+![Illustrated portrait of Babuni](/babuni-about-portrait.webp)
+
 Originally from Germany and now living in Sweden, I've worked in baking, food service, warehouses, gardening and outdoor maintenance. 
 Alongside that practical side, I've always been drawn to stories, games, drawing, music and creating things from scratch. Over the years, I've written and performed songs, developed characters, imagined worlds and enjoyed the people and stories that grow around games.
 
