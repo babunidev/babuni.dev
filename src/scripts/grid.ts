@@ -29,11 +29,11 @@ import { centeredPan, interpolateCenter,
 interface TileSlot { element: HTMLDivElement; column: number; row: number; projectIndex?: number; }
 const viewport = document.querySelector<HTMLElement>('#grid-viewport');
 const world = document.querySelector<HTMLElement>('#grid-world');
-const resetButton = document.querySelector<HTMLButtonElement>('#reset-view');
+
 const status = document.querySelector<HTMLElement>('#grid-status');
 
-if (viewport && world && resetButton && status) {
-  const surface=viewport, layer=world, reset=resetButton, liveStatus=status;
+if (viewport && world && status) {
+  const surface=viewport, layer=world, liveStatus=status;
   installInteractionFeedback();
   const bufferCells=2;
   let columnBufferCells=2;
@@ -1174,17 +1174,6 @@ if (viewport && world && resetButton && status) {
     resumeMovement();
   });
   window.addEventListener('focus',refreshMobileTopics);
-  reset.addEventListener('click',()=>{
-    details.close();
-    document.querySelector('.site-help')?.classList.remove('is-open');
-    document.querySelector('#help-toggle')?.setAttribute('aria-expanded','false');
-    stopSelection(false);
-    hideTopic();
-    cancelIntro();
-    resetManualInput();
-    panX=0;panY=0;updateField();
-    liveStatus.textContent='Returned to the starting tile.';
-  });
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden){hideTopic();pauseMovement();}
     else{resumeMovement();refreshMobileTopics();}
