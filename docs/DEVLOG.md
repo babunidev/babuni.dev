@@ -7,6 +7,15 @@ This is an edited account of the development process, not a verbatim transcript 
 
 
 
+
+## 2026-10-30 — One music project across platforms
+
+**Creator direction.** Babuni supplied `https://soundcloud.com/babunimusik` and requested that SoundCloud join the existing babuni.musik project rather than appear as a separate music project.
+
+**AI implementation.** Replaced the About link, added SoundCloud to the babuni.musik resource module, updated its summary and topic hints, and retired the separate Elixior tile and current module/catalog mapping. Existing internal ID `mighty-morkah` remains stable; historic descriptions and artifacts were not rewritten as if the former names had never existed.
+
+**Verification.** GitHub source updates succeeded. No build or browser test was performed; historic individual video embed availability remains unverified.
+
 ## 2026-10-30 — Music channel renamed to babuni.musik
 
 **Creator direction:** Replace the public Mighty Morkah identity and YouTube destination with babuni.musik at `https://www.youtube.com/@babunimusik`.
