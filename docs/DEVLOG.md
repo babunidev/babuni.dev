@@ -2,10 +2,15 @@
 
 This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
 
+## 2026-10-30 — Secure Hetzner access and Ubuntu maintenance (joint session)
 
+**Creator direction.** Babuni wanted to administer an existing Hetzner VPS from their Nobara Linux desktop, make future AI-assisted access possible, and check for operating-system updates without disrupting existing hosted work. Babuni performed the commands and protected their own passwords and SSH passphrase.
 
+**AI contribution and troubleshooting.** The assistant supplied SSH commands and fingerprint-verification guidance. Several attempts failed because the Hetzner browser console translated pasted punctuation through a mismatched keyboard layout; Babuni traced this to the console mapping and switched to Swedish. After SSH rejected root passwords, inspection showed `permitrootlogin prohibit-password`. The assistant recommended a separate sudo-capable account rather than weakening root authentication, then guided passphrase-protected SSH key installation.
 
+**Implementation and verification.** Babuni created the administrator account, generated an ED25519 key locally, installed only its public half on the VPS and successfully connected using the private key; `sudo whoami` returned `root`. On Ubuntu 26.04 LTS, `apt upgrade` completed 55 package upgrades and four installations, with no removals and two packages deferred by phased updates. The new 7.0.0-42 kernel was installed, but not yet activated. Nginx, PostgreSQL and SSH were reported active; the existing Node.js API appeared online under PM2. A saved PM2 process list existed, but no system-level PM2 startup unit was found. `pm2 startup` displayed a suggested setup command; its execution was not recorded.
 
+**Still open.** Confirm backups, configure and verify PM2 boot recovery (and check database/SSH boot behavior), reboot to activate the kernel, and test services afterward. The babuni.dev site was **not** deployed in this session. No AI agent directly accessed the server, and no private key, passphrase or credential was committed to the repository.
 
 
 ## 2026-10-30 — One music project across platforms
