@@ -6,6 +6,13 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — About, Elsewhere and help copy (2026-10-30)
+- Rewrote the About source to describe **Babuni** as the creator and umbrella identity, distinct from the **babuni.dev** portfolio.
+- Expanded Elsewhere with confirmed Gaming, music and Anskar links; corrected Babuni Gaming's YouTube handle to `@babunigamingg`. Included Arcanite Brothers' public documentation while its external website URL remains unverified; the Anskar Etsy URL is also pending confirmation.
+- Split the question-mark help text into navigable sections and removed the outdated Return to center control and click handler.
+- Verification: GitHub content updates committed; no build, tests or live-site acceptance run (content-edit-only request).
+
+
 ### Changed — WebP portal paths and BuxbrewResist artwork (2026-10-27)
 - Replaced eleven existing `portalArtwork` URL extensions from PNG to **WebP** and assigned `/portal-content/BuxbrewResist.webp` to the previously unillustrated BuxbrewResist project.
 - Added an opt-in local helper `npm run artwork:import -- "/path/to/folder"` to normalize source WebP filenames (including spaces and casing), check container signatures, and copy or rename the **already-converted original files** into `public/portal-content/` without recompression.
