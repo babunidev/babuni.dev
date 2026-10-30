@@ -333,8 +333,8 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "mighty-morkah",
     "portalArtwork": "/portal-content/MightyMorkah.webp",
-    "name": "Mighty Morkah",
-    "shortSummary": "Piano music and videos by Babuni.dev, published on the Mighty Morkah YouTube channel.",
+    "name": "babuni.musik",
+    "shortSummary": "Piano music and videos by Babuni.dev, published on the babuni.musik YouTube channel.",
     "evidence": "human-confirmed",
     "tint": "#9b86bc"
   },
