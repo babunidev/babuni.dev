@@ -6,6 +6,12 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Fixed — About portrait embedded in reader (2026-10-30)
+- Special-cased the creator-supplied `/babuni-about-portrait.webp` in the client Markdown reader as an inline image; other Markdown image references continue to follow the explicit-media link policy.
+- Added responsive reader styling (centered, maximum width 440px). The portrait was already uploaded to `public/` and referenced from `src/content/about.md`.
+- Source edits committed on `main`; no build or browser verification run.
+
+
 ### Changed — About tone and Elsewhere descriptions (2026-10-30)
 - Simplified the biography and website description, removing unnecessary grand claims and comparisons.
 - Removed the identity hierarchy explanation from public About prose while retaining the correct Babuni author identity.
