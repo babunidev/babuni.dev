@@ -2,9 +2,8 @@ Online, I'm known as **Babuni**. Behind that name is **Alex**, with interests in
 
 ## The person behind the projects
 
-Originally from Germany and now living in Sweden, I've worked in baking, food service, warehouses, gardening and outdoor maintenance. Working with trees and hedges, using tools and looking after gardens are familiar parts of my life.
-
-Alongside that practical side, I've always been drawn to stories, games, drawing, music and creating things from scratch. Over the years, I've written and performed songs, developed characters, imagined worlds and enjoyed the people and stories that grow around games. The World of Warcraft guild ROAR is one part of that experience.
+Originally from Germany and now living in Sweden, I've worked in baking, food service, warehouses, gardening and outdoor maintenance. 
+Alongside that practical side, I've always been drawn to stories, games, drawing, music and creating things from scratch. Over the years, I've written and performed songs, developed characters, imagined worlds and enjoyed the people and stories that grow around games.
 
 Curiosity tends to carry me between these interests. A game can inspire a useful tool; a character can grow into a story; a musical idea can become a recording; a technical problem can become a creative experiment. Learning by doing, changing direction and finding solutions are all part of my work.
 
