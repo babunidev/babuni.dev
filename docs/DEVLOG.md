@@ -4,6 +4,13 @@ This is an edited account of the development process, not a verbatim transcript 
 
 
 
+
+## 2026-10-30 — Correcting voice, authorship and project scale
+
+**Creator correction.** The creator objected to the third-person biography: the preference was to avoid *starting* sentences with “I” or “My”, not to exclude first-person speech. They also clarified that they do not personally write code; satisfaction comes from imagining, designing, creating and directing AI-assisted implementation. The prominence of numerous small World of Warcraft addons should not overshadow the larger Morkahja online game, which people can play, or Ethera, an ambitious but very early project.
+
+**AI response and implementation.** Rewrote `src/content/about.md` in first person while retaining varied sentence openings, accurately describing the creator's role in directing AI programming. Reordered the project overview to foreground Morkahja and Ethera with distinct maturity levels. Retained the broader personal biography and all existing Elsewhere links. GitHub commit `9185a8b` confirms the source edit; no build or browser verification was run.
+
 ## 2026-10-30 — The person beyond the portfolio
 
 **Creator direction.** Babuni requested a fuller public biography identifying the person behind the online name as Alex, and objected to an About profile that reduced their life to being an artist and maker. Baking, working and gardening were specifically raised as important parts of the wider portrait. A stylistic rule was also established: no sentences beginning with “I” or “My”.
