@@ -63,8 +63,7 @@ export const PROJECT_GROUPS=[
   {
     "title": "Music",
     "ids": [
-      "mighty-morkah",
-      "elixior"
+      "mighty-morkah"
     ]
   }
 ] as const;
