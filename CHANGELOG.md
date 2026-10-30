@@ -6,6 +6,10 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — babuni.musik (2026-10-30)
+- Renamed the public Mighty Morkah music listing to babuni.musik and changed profile links to https://www.youtube.com/@babunimusik. Existing internal project ID and media references remain unchanged.
+
+
 ### Fixed — About portrait embedded in reader (2026-10-30)
 - Special-cased the creator-supplied `/babuni-about-portrait.webp` in the client Markdown reader as an inline image; other Markdown image references continue to follow the explicit-media link policy.
 - Added responsive reader styling (centered, maximum width 440px). The portrait was already uploaded to `public/` and referenced from `src/content/about.md`.
