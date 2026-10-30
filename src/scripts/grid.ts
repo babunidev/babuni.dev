@@ -1,3 +1,4 @@
+import {headerActivity} from '../lib/header-activity';
 import {installSpatialKeyboard,type KeyboardItem} from './spatial-keyboard';
 import {stepShiftPlayback,type ShiftPlayback} from '../lib/shift-playback';
 import {createSourceLookup,compileVacancies} from '../lib/grid-render-cache';
@@ -100,7 +101,11 @@ if (viewport && world && status) {
   function projectName(){return demoProjects.find(project=>project.id===selectedChoice?.projectId)?.name??'project';}
   function explorationStatus(){return selectedChoice?`Exploring ${projectName()} · ${bigBloomOpen?'big':'small'} bloom`:'Living grid';}
   let readerActivity:string|null=null;
-  function activity(message:string){if(heading)heading.textContent=readerActivity??message;}
+  function activity(message:string){
+    if(!heading)return;
+    const status=headerActivity(readerActivity??message);
+    heading.textContent=status.text;heading.classList.toggle('header-note--shift',status.shift);
+  }
   const details=createModuleDetails((open,title)=>{
     detailOpen=open;
     readerActivity=open?(title==='About BABUNI.DEV'?'About BABUNI.DEV':`Reading ${projectName()} · ${title}`):null;
@@ -957,7 +962,7 @@ if (viewport && world && status) {
       // Selection never retimes an active shift. Mark gold now, then
       // begin the opening procedure once this round has finished.
       pendingChoice=choice;highlightSelection();
-      if(heading)heading.textContent='Waiting for shift to finish · '+demoProjects[chosen.projectIndex??0].name;
+      activity('Waiting for shift to finish · '+demoProjects[chosen.projectIndex??0].name);
       liveStatus.textContent='Project selected. Waiting for the current shift to finish at its normal pace.';
       resumeMovement();
       return;
@@ -969,7 +974,7 @@ if (viewport && world && status) {
     centering={fromX:panX,fromY:panY,toX:target.x,toY:target.y,started:null};
     surface.classList.add('is-focusing');
     highlightSelection();
-    if(heading)heading.textContent='Centering '+demoProjects[chosen.projectIndex??0].name;
+    activity('Centering '+demoProjects[chosen.projectIndex??0].name);
     liveStatus.textContent='Centering selected project.';
     centerFrame=requestAnimationFrame(frameCenter);
   }
