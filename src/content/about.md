@@ -57,7 +57,3 @@ The shop for Anskar's digital artwork.
 **[Arcanite Brothers — Morkahja](https://arcanitebrothers.com/)**
 
 The website for the playable online game Morkahja.
-
-**[GitHub — Morkahja Admin documentation](https://github.com/babunidev/babuni.admin-docs)**
-
-Public documentation for the game's administration tools.
