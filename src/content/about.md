@@ -1,22 +1,24 @@
-I'm **Babuni**. I make games, tools, music, artwork, stories and imagined worlds. I enjoy seeing what happens when a curious idea meets a little experimentation—and then trying to make it real.
+Online, the name is **Babuni**. Behind it is **Alex**: a person whose interests wander between practical work, art, music, games, technology and imagined worlds. No single title quite covers the whole picture.
 
 ## The person behind the projects
 
-I'm an artist and maker who enjoys both the imaginative and the practical sides of creating. I like building worlds and characters, telling stories, making music, playing games and developing small tools that make those experiences more interesting. Sometimes an idea becomes a game; sometimes it's a World of Warcraft addon, a piece of art, or an experiment that teaches me something unexpected.
+Originally from Germany and now living in Sweden, Alex has spent years doing work that happens far beyond a computer screen. Baking, food service, warehouse work, gardening and outdoor maintenance have all been part of that life. Working with trees and hedges, handling tools, tending a place and making something tangible offer a different kind of satisfaction from writing code or inventing a world.
 
-I care about the process, not only the finished result. That includes mistakes, changes of direction, new discoveries and the people and tools that help bring an idea to life.
+Alongside that practical side runs a lasting fascination with stories, games, drawing, music and the freedom to create things from scratch. Songs have been written and performed, characters developed, worlds imagined and games played not just for their challenges, but for the people and stories that grow around them. The World of Warcraft guild ROAR is one expression of that social and imaginative side.
+
+Curiosity tends to cross the boundaries between these interests. A game can inspire a little tool; a character can grow into a story; a musical idea can become a recording; a technical problem can become its own creative experiment. Learning by doing, changing course and finding unexpected solutions are recurring parts of the process.
 
 ## Babuni and babuni.dev
 
-**Babuni** is my wider creative identity. Babuni Gaming, Babuni Dev and my music and worldbuilding projects are different expressions of it—not separate people.
+**Babuni** is the wider creative identity. **Babuni Gaming**, **Babuni Dev**, music, art and worldbuilding are different branches of the same life and imagination.
 
-**babuni.dev** is my development portfolio and a project of its own: a living workshop for games, software, art experiments and their development histories. Its shifting grid is meant to be explored rather than followed along a fixed route.
+**babuni.dev** is the development portfolio and also a project in its own right. Its shifting, centerless grid gathers finished pieces, unfinished experiments and the stories of how they came to be. Exploration matters here more than any prescribed route.
 
-## What I make and how I work
+## What takes shape here
 
-My work includes World of Warcraft addons such as RoarForever, SocialForever and FlourishForever; games such as the Button Game; worldbuilding around Morkahja and Ethera; and creative experiments such as Anskar Grotzschnapf.
+Projects include World of Warcraft addons such as RoarForever, SocialForever and FlourishForever; games such as the Button Game; fictional settings such as Morkahja and Ethera; and visual experiments such as Anskar Grotzschnapf. Music, gaming, creative writing and experiments with local software and AI belong to that same workshop.
 
-I often work with AI as a development and creative tool, while keeping the ideas, direction and final decisions my own. Where possible, I document what I intended, what was proposed, what changed and what actually worked.
+Human–AI collaboration is one of the tools used in development, not a replacement for personal authorship. Creative direction and final decisions remain with Babuni; the documentation aims to show the experiments, contributions, revisions and results along the way.
 
 ## Elsewhere
 
