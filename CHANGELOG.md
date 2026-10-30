@@ -6,6 +6,13 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 ## [Unreleased]
 
+### Changed — Personal About biography (2026-10-30)
+- Expanded the public profile from an artist/maker introduction into a broader account of Alex's practical working life and creative interests.
+- Included Germany-to-Sweden background, baking, food service, warehouse work, gardening, music, games, stories and creative technology without adding private contact or precise birth details.
+- Revised prose to avoid sentences beginning with first-person “I” or “My”; preserved all Elsewhere destinations.
+- GitHub source edit committed; no build or live acceptance requested.
+
+
 ### Changed — About, Elsewhere and help copy (2026-10-30)
 - Rewrote the About source to describe **Babuni** as the creator and umbrella identity, distinct from the **babuni.dev** portfolio.
 - Expanded Elsewhere with confirmed Gaming, music and Anskar links; corrected Babuni Gaming's YouTube handle to `@babunigamingg`. Included Arcanite Brothers' public documentation while its external website URL remains unverified; the Anskar Etsy URL is also pending confirmation.
