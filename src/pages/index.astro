@@ -15,7 +15,7 @@ import {projectPath} from '../lib/site';
 </head>
 <body>
   <main class="experience" aria-label="Living grid prototype">
-    <div id="grid-viewport" class="grid-viewport" tabindex="0" aria-label="Endless project grid. Drag with a mouse or finger to move. Tab highlights the center tile. Arrow keys choose a tile or module; Space opens it; Escape returns one stage.">
+    <div id="grid-viewport" class="grid-viewport" tabindex="0" aria-label="Endless project grid. Drag with a mouse or finger to move. Use Tab to focus the grid. Arrow keys choose a tile or module; Space opens it; Escape returns one stage.">
       <div id="grid-world" class="grid-world"></div>
     </div>
     <header class="site-header">
@@ -26,9 +26,14 @@ import {projectPath} from '../lib/site';
         <div class="site-help">
           <button id="help-toggle" type="button" aria-label="How to use the site" aria-expanded="false" aria-controls="site-help-content">?</button>
           <div id="site-help-content" role="region" aria-label="Site controls">
-            <p>Drag or swipe to explore. Tab highlights the center tile. Arrow keys choose a tile or module; Space or Enter opens it. Escape returns one stage. Choose a project to open its small bloom, then a module for its big bloom. Read more opens the reader.</p>
-            <p>The project tile returns one step. Tap or click outside the reader, or press Escape, to close it. Projects lets you find a project directly.</p>
-            <button id="reset-view" type="button">Return to center</button>
+            <h3>Explore the grid</h3>
+            <p>Drag or swipe to travel across the shifting, endless grid. There is no fixed center or required path.</p>
+            <h3>Open a project</h3>
+            <p>Select a tile to reveal its small bloom, then choose a module for the big bloom. Select <strong>Read more</strong> to open the full reader.</p>
+            <h3>Find your way</h3>
+            <p>Use <strong>Projects</strong> to search for a project directly. Select the project tile to go back one stage. Click or tap outside the reader, or press <strong>Escape</strong>, to close it.</p>
+            <h3>Keyboard controls</h3>
+            <p><strong>Tab</strong> focuses the grid. <strong>Arrow keys</strong> choose a tile or module; <strong>Space</strong> or <strong>Enter</strong> opens it. <strong>Escape</strong> returns one stage.</p>
           </div>
         </div>
         <div id="projects-menu" hidden>
