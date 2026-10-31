@@ -2,6 +2,16 @@
 
 This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
 
+## 2026-10-31 — Preparing isolated babuni.dev hosting
+
+**Creator direction.** After updating and renaming the existing Hetzner VPS, Babuni continued preparing space for the babuni.dev website while explicitly preserving the operational Arcanite Brothers site and Morkahja API. The creator performed all commands in the remote SSH terminal.
+
+**Inspection and decisions.** A request to `https://arcanitebrothers.com/` returned HTTP 200. The only enabled Nginx site was a symbolic link named `morkahja`. The creator displayed its configuration, which serves files from `/var/www/morkahja`, proxies selected API paths to `127.0.0.1:3000`, and uses an existing dedicated Let's Encrypt certificate. The AI recommended a separate versioned-release tree and an unprivileged deployment account. The repository already had a prepared, **not installed**, Nginx configuration for `www.babuni.dev`.
+
+**Creator-executed preparation.** Babuni created `/var/www/babuni.dev/releases` (the path previously did not exist). Babuni ran `sudo adduser --disabled-password --gecos "" babunideploy` and checked the account with `id` and `getent passwd`: UID/GID 1002 and memberships `babunideploy` and `users`, with home `/home/babunideploy` and shell `/bin/bash`; no sudo group was shown. Babuni then ran `sudo chown babunideploy:babunideploy /var/www/babuni.dev /var/www/babuni.dev/releases` with no reported errors. The account's purpose and scope were proposed by AI and implemented by the creator; the directory ownership has not yet been independently displayed by `ls -ld`.
+
+**Verification and limits.** The original Nginx configuration was read, not edited; the existing website returned HTTP 200 before deployment preparation. No deployment SSH key, `dist/` upload, `current` release symlink, new Nginx activation, DNS change or TLS setup is reported yet. Next verification: confirm the new directories' ownership, then configure scoped deployment SSH access.
+
 ## 2026-10-31 — Giving the shared VPS the babunidev hostname
 
 **Creator direction.** After recovering the existing hosting services following the OS reboot, Babuni requested changing the Ubuntu server hostname from `morkahja-alpha` to `babunidev`. This was a naming change for the shared server, not a request to rename the existing application, Linux users or website.
