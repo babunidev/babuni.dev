@@ -1,8 +1,8 @@
-# Production hosting — first release staged, DNS/HTTPS pending
+# Production hosting — first release live, further checks pending
 
 Target: `https://www.babuni.dev`. Keep `arcanitebrothers.com`, its `/var/www/morkahja` directory, Node service and existing Nginx site unchanged. Babuni.dev is a static build; do not run the Astro development server publicly.
 
-**Status update, 2026-10-31:** The first static release, built from GitHub commit `8e47ce5`, has been uploaded to the VPS. The release symlink and separate HTTP Nginx virtual host are active. `nginx -t` passed, and local host-header HTTP probing returned 200. Public DNS, HTTPS/TLS and production-browser verification are still pending. The template uses standard Nginx gzip and cache directives; live compression/header verification remains required. Brotli is not assumed installed.
+**Status update, 2026-10-31:** Release `8e47ce5` is on the VPS via a separate Nginx site. Public `www` DNS points to the VPS; local and public HTTP returned 200. Certbot installed HTTPS and configured redirection; the observed HTTPS status is 200, HTTP redirects with 301, and simulated certificate renewals succeeded for both websites. Browser/media testing, header inspection and the post-deployment regression check for Arcanite Brothers are pending. Brotli is not assumed installed.
 
 1. Create a new release directory under `/var/www/babuni.dev/releases/` and upload the complete contents of the reviewed `dist/` build. Never upload private keys, `.env`, source checkouts or node_modules.
 2. Point `/var/www/babuni.dev/current` at that release. Keep the previous target for rollback; remove obsolete generated files by deploying a complete new directory rather than merging uploads.
@@ -76,4 +76,4 @@ Babuni configured a `www` DNS A record for the existing Hetzner server at Porkbu
 
 Babuni ran Certbot for `www.babuni.dev` using the Nginx integration and requested HTTPS redirection. Certbot reported successful issuance and deployment of a Let's Encrypt certificate expiring 2027-01-29, and configured automatic renewal. Independent HTTPS/redirect validation, a renewal dry run, browser/content checks and regression checks for the existing hosted website remain outstanding. The current public release is `8e47ce5`; the creator's local editorial changes remain excluded.
 
-**HTTPS/redirect verification:** After Certbot deployment, the creator tested the public host from the VPS. `curl` returned `HTTPS: 200` and `HTTP: 301 -> https://www.babuni.dev/`. Renewal dry run, external-browser/media checks, cache/header verification, and regression checks of the existing website are still outstanding.
+**HTTPS, redirect and renewal verification:** From the VPS, `curl` returned `HTTPS: 200` and `HTTP: 301 -> https://www.babuni.dev/`. The creator ran `sudo certbot renew --dry-run`; Certbot reported simulated renewal **success for both** `www.babuni.dev` and the existing Arcanite Brothers certificate. External-browser/media checks, cache/header verification and the existing site's post-deployment regression check remain outstanding. This verifies renewal simulation, not a future unattended renewal.
