@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; public documentation editions verified on 2026-10-28. Morkahja, MorkahjaWorld and Babuni Admin actual repositories anonymously verified public and connected on 2026-10-31. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-35 of 41 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+36 of 42 tiles are connected to 36 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -43,6 +43,7 @@ Account inventory checked on 2026-10-27; public documentation editions verified 
 | Morkahja Worldbuilding | [babunidev/MorkahjaWorld](https://github.com/babunidev/MorkahjaWorld) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Babuni Admin | [babunidev/babuni.admin](https://github.com/babunidev/babuni.admin) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Rocket Game 42 | [babunidev/Rocketgame42](https://github.com/babunidev/Rocketgame42) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| GuildChatBridge | [babunidev/GuildChatBridge](https://github.com/babunidev/GuildChatBridge) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 
 ## No matching repository found
 

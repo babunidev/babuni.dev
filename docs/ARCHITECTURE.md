@@ -725,3 +725,7 @@ AI removed the Fantasy Architecture stable identity from active catalog, group, 
 `projectKeywordPools` is the single nine-keyword catalog keyed by stable project ID. `WOW_ADDON_IDS` explicitly identifies add-ons independently of the broader WoW menu group. `topicLabelsForProject(id, random)` samples without replacement, guarantees the add-on cue when applicable and shuffles marker assignments. The grid chooses labels when a topic exploration starts; it does not sample on render frames or shifts. Existing reveal timers and same-exploration guards remain.
 
 Morkahja, MorkahjaWorld and Babuni Admin now map to anonymously verified actual public repositories. Only their allowlisted standard Markdown snapshots were replaced. Ethera still maps to its public documentation edition. No private implementation content, AGENTS files, assets or code are imported; the rest of the snapshot cache remains unchanged.
+
+## 2026-11-01 — Restored semantic source
+
+The stable `guildchatai` ID now displays GuildChatBridge and maps explicitly to public `babunidev/GuildChatBridge` main. Only this new snapshot was fetched; the removed old repository is not re-imported or duplicated. The ten standard document modules are derived through existing shared composition. The catalog count is 42; supplied image mappings remain 41, with the existing optional-artwork fallback for the restored project.

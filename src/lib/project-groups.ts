@@ -4,6 +4,7 @@ export const PROJECT_GROUPS=[
     "title": "World of Warcraft",
     "ids": [
       "socialforever",
+      "guildchatai",
       "roarforever",
       "flourishforever",
       "azeroth-moments",

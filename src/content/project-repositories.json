@@ -204,5 +204,11 @@
   "babuni-gaming": {
     "status": "needs-repository",
     "note": "Gaming/streaming project confirmed by Babuni.dev on 2026-10-28, represented by supplied YouTube, CurseForge and Instagram profiles. No dedicated repository supplied; linked content works without one."
+  },
+  "guildchatai": {
+    "status": "connected",
+    "repository": "babunidev/GuildChatBridge",
+    "branch": "main",
+    "note": "Restored at Babuni.dev’s request on 2026-11-01 under the renamed public repository. Previously withdrawn as GuildChatAI; stable ID retained. Paused experiment, not a working AI bridge."
   }
 }

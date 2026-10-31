@@ -15,8 +15,8 @@ const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
 test('all active tiles have explicit status; all public source snapshots match their mapping',()=>{
  assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
  assert.deepEqual(validateSnapshots(connections,snapshots),[]);
- assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,35);
- assert.equal(Object.keys(snapshots).length,34);
+ assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,36);
+ assert.equal(Object.keys(snapshots).length,35);
  for(const [id,c] of Object.entries(connections)){
   const source=repositoryModules(c,snapshots[c.repository],local);
   if(c.status!=='connected'){assert.deepEqual(source,[]);continue;}
@@ -110,7 +110,7 @@ test('public edition previews describe the project rather than edition metadata'
 });
 
 test('retired sources are absent while BABUNI journal material remains available',()=>{
- for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model','guildchatai','dual-pc-streaming-setup','mech-arena','local-prompt-lab','morkahja-admin-console','fantasy-rpg-assets','fantasy-architecture','analubia'])assert.equal(connections[id],undefined);
+ for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model','dual-pc-streaming-setup','mech-arena','local-prompt-lab','morkahja-admin-console','fantasy-rpg-assets','fantasy-architecture','analubia'])assert.equal(connections[id],undefined);
  for(const repo of ['babunidev/wowforeverstuff','babunidev/Redridge-Recipe-Planner','babunidev/GuildChatAI'])assert.equal(snapshots[repo],undefined);
  const c=connections['babuni-dev'];const modules=composeProjectModules(catalog['babuni-dev'],repositoryModules(c,undefined,local),c.repository);
  for(const id of ['journal','decisions','collaboration'])assert.ok(modules.some(m=>m.id===id&&moduleHasContent(m)));
@@ -154,4 +154,17 @@ test('Action Emotes final documentation baseline preserves the unresolved instal
  const source=catalog.buxbrewcharge.find(m=>m.id==='source');
  assert.ok(source.links.some(l=>l.href==='https://github.com/babunidev/ActionEmotes-1/pull/1'));
  assert.match(source.preview,/requires an installation check/);
+});
+
+
+test('GuildChatBridge restoration preserves identity and its documented paused status',()=>{
+ const project=demoProjects.find(p=>p.id==='guildchatai');
+ assert.equal(project.name,'GuildChatBridge');assert.match(project.shortSummary,/Paused/);
+ const c=connections.guildchatai;assert.equal(c.repository,'babunidev/GuildChatBridge');
+ assert.equal(snapshots['babunidev/GuildChatAI'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const overview=snapshot.documents.find(d=>d.path==='README.md');
+ assert.match(overview.body,/Paused experiment/);assert.match(overview.body,/No autonomous response loop is implemented/);
+ assert.ok(snapshot.documents.some(d=>d.path==='docs/DEVLOG.md'));
+ assert.ok(snapshot.documents.some(d=>d.path==='docs/DECISIONS.md'));
 });

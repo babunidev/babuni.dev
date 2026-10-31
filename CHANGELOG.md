@@ -939,3 +939,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Every project has nine curated keywords; each bubble exploration samples three distinct labels and randomizes their positions. WoW add-ons always include exactly one “World of Warcraft add-on” cue alongside two sampled keywords.
 - Newly public Morkahja, MorkahjaWorld and Babuni Admin now supply their actual standard documentation, replacing documentation-only editions. Their Decisions and Development journals record Babuni.dev’s open-development decision. Ethera retains its public documentation edition while its implementation remains private.
 - Bubble reveal timing, motion, placement and unrelated-shift persistence remain as previously implemented.
+
+## 2026-11-01
+
+### Added
+- Restored GuildChatBridge (formerly withdrawn GuildChatAI) with its actual public source, ten revised documentation modules, WoW menu entry and nine-keyword bubble pool. Its paused status and missing autonomous AI bridge are explicit; original stable identity is retained.

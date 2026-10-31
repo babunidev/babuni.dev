@@ -314,6 +314,11 @@
           "src": "/media/babuni-dev/images/verification/random-keyword-bubbles.webp",
           "alt": "SocialForever with three sampled keywords, including World of Warcraft add-on.",
           "caption": "AI browser verification, 31 October 2026: three distinct labels from the nine-keyword pool; the add-on cue is present. Historical desktop preview, not phone acceptance."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/guildchatbridge-restored.webp",
+          "alt": "GuildChatBridge restored with paused-experiment documentation in its small bloom.",
+          "caption": "AI desktop browser verification, 1 November 2026: menu selection centers the restored project and opens its imported documents; no addon runtime test."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
@@ -631,5 +636,6 @@
       ],
       "credit": "Project authorship: Babuni.dev. Baseline and unresolved installation concern supplied by Babuni.dev; AI verified the public merged review and imported its documentation. No addon code or filename was changed."
     }
-  ]
+  ],
+  "guildchatai": []
 }

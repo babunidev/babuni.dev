@@ -717,3 +717,7 @@ Babuni.dev requested removing Fantasy Architecture. AI removed its grid/menu pre
 ## 2026-10-31 — Topic bubble variety
 
 Babuni.dev requested nine short project-specific keywords, with three selected randomly per discovery. The same three wing-like bubbles and staggered reveal remain. Their texts and positions vary on re-entry, while a current reveal survives overlapping input and unrelated shifts. Each WoW add-on always shows one “World of Warcraft add-on” bubble and two distinct other keywords. Other WoW-related media/community/story/client-mod projects retain their own accurate categories.
+
+## 2026-11-01 — GuildChatBridge discovery
+
+Babuni.dev requested the renamed repository changes appear in the portfolio. GuildChatBridge returns under its original stable identity, with nine concise keywords and the shared add-on cue; the World of Warcraft menu contains one entry. No artwork was supplied, so it uses the existing colored portal. Interaction geometry and timing are unchanged.

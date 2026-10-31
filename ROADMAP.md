@@ -689,3 +689,10 @@ Babuni.dev removed Fantasy Architecture from scope. Implemented by AI: 43 retain
 - [ ] Replace Ethera’s documentation-only source after its actual repository becomes public and anonymous access is verified; licensing/media-rights decisions remain separate from public visibility.
 
 Automated content checks, 37 test files, production build and 430 public-page checks passed. This entry does not claim new physical-device acceptance or completed media-license review.
+
+## 2026-11-01 — GuildChatBridge source continuity
+
+- [x] Restore the author-requested GuildChatBridge project and import its ten revised public documents; retain its paused experimental status.
+- [ ] Add author-supplied portal art when available.
+
+Source inspection and portfolio verification do not verify addon installation, live 1.12 compatibility or an AI bridge.

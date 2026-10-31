@@ -3,8 +3,9 @@ export type TopicPoint='top'|'left'|'right';
 export const TOPIC_POINTS:readonly TopicPoint[]=['top','left','right'];
 
 /** Nine curated, provisional keywords per project; no release-status claims. */
-export const WOW_ADDON_IDS:readonly string[]=["amazin", "battlereport", "buxbrew", "buxbrewcharge", "buxbrewding", "buxbrewresist", "favorcraft", "flourishforever", "gathermap", "groupbufftoggle", "lootfeed", "meleestartattack", "resistforever", "roar", "roaremotetrigger", "roarforever", "roarguild", "roarr", "roarrunlimited", "roarsounds", "socialforever", "totemtimers", "warriorstartattack", "workthatgodbod"];
+export const WOW_ADDON_IDS:readonly string[]=["guildchatai", "amazin", "battlereport", "buxbrew", "buxbrewcharge", "buxbrewding", "buxbrewresist", "favorcraft", "flourishforever", "gathermap", "groupbufftoggle", "lootfeed", "meleestartattack", "resistforever", "roar", "roaremotetrigger", "roarforever", "roarguild", "roarr", "roarrunlimited", "roarsounds", "socialforever", "totemtimers", "warriorstartattack", "workthatgodbod"];
 export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Object.freeze({
+  "guildchatai": ["World of Warcraft add-on", "Guild chat", "Roleplay experiment", "Paused prototype", "Character voice", "Manual chat command", "Lua", "Guild roster", "Local AI concept"],
   "babuni-dev": [
     "Interactive portfolio",
     "Living grid",

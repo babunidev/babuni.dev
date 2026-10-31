@@ -126,3 +126,11 @@ Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni A
 ## Curation correction — 2026-10-29
 
 Babuni.dev withdrew Fantasy RPG Assets because it is not a standalone project. Active catalog now has 44 projects; the original candidate table remains historical.
+
+## 2026-11-01 — GuildChatBridge restored from revised public source
+
+**Babuni.dev requested:** Check the renamed/revised GuildChatBridge repository and implement its changes in the portfolio. **AI interpretation:** Restore the previously withdrawn GuildChatAI project under its new public name, retaining stable ID `guildchatai` rather than introducing a duplicate. This supersedes its 2026-10-28 withdrawal for the active catalog only; the withdrawal remains historical evidence.
+
+**Implemented:** Connect `babunidev/GuildChatBridge` main at `483951aea324dec948452f66ac06c9117b5f8bea`, anonymously verified, importing its ten standard Markdown documents only. Restore its searchable World of Warcraft menu entry, source links and nine-keyword pool, with one guaranteed World of Warcraft add-on bubble. Its summary explicitly calls it a paused roleplaying experiment: guild-chat capture and manual sending exist in source, but an autonomous AI conversation bridge is absent and unverified. Existing runtime identifiers GuildChatAI, GuildChatAIDB and /gcai remain upstream historical/current implementation details, not an additional portfolio project. No game-code change, resumption decision or client compatibility test is implied.
+
+**Alternatives/limits:** A rename-only edit could not work because the old project was no longer active. Use its previous semantic identity and source-backed paused status instead of claiming a new completed AI feature. No supplied GuildChatBridge portal artwork was found; the standard colored portal remains until Babuni.dev supplies an image. The active catalog now has 42 projects, 36 connected sources, 35 external snapshots and 41 supplied portal artworks. Preserve all unrelated source snapshots, interaction timing and geometry.
