@@ -2,6 +2,10 @@
 
 This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
 
+## 2026-10-31 — Connecting the public domain and securing HTTPS
+
+With the first static release already staged and locally checked, I added the `www` DNS record in Porkbun, keeping the root-domain parking record unchanged. The public resolver then pointed `www.babuni.dev` to our Hetzner VPS, and an HTTP request returned 200. Following the assistant's instructions, I used Certbot with the separate Nginx site to issue and install its Let's Encrypt certificate; Certbot confirmed success, an expiry of 2027-01-29, automatic renewal scheduling and HTTP-to-HTTPS redirect configuration. The remaining work is to independently test HTTPS, redirection, renewal, live browser behavior and the original Arcanite Brothers service. No agent connected to the server directly.
+
 ## 2026-10-31 — First babuni.dev release staged on the shared VPS
 
 **Creative direction.** For the first public hosting preparation, the priority was to preserve the existing Arcanite Brothers site and Morkahja API while keeping my unfinished local documentation revisions out of the production build. After an unnecessary second clone was made and deleted, I pointed the assistant to my established project workspace. A separate clean Git worktree, rather than my working directory, became the release source.
