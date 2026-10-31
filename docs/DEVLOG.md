@@ -2,6 +2,16 @@
 
 This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
 
+## 2026-10-31 — Giving the shared VPS the babunidev hostname
+
+**Creator direction.** After recovering the existing hosting services following the OS reboot, Babuni requested changing the Ubuntu server hostname from `morkahja-alpha` to `babunidev`. This was a naming change for the shared server, not a request to rename the existing application, Linux users or website.
+
+**AI contribution and checks.** The assistant requested read-only inspection before editing. The existing Arcanite Brothers website returned HTTP 200 via `curl`. Nginx's `sites-enabled` directory contained one existing `morkahja` symlink, which was left untouched. Inspection of `/etc/hosts` showed that cloud-init managed it, and the main and Hetzner cloud-init configuration files both specified `preserve_hostname: false`. The assistant guided a standalone late cloud-init override rather than editing Hetzner's original configuration.
+
+**Creator-executed implementation.** Babuni created `/etc/cloud/cloud.cfg.d/99-preserve-hostname.cfg` with `preserve_hostname: true` and `manage_etc_hosts: false`; replaced the old hostname with `babunidev` in `/etc/hosts`; and ran `sudo hostnamectl set-hostname babunidev`. The creator performed these commands directly over SSH. No AI agent ran commands on the VPS.
+
+**Verification and pending work.** `hostnamectl --static` returned `babunidev`. The terminal prompt still showed its original shell-session name, so the assistant recommended `exec bash` to refresh it; its result and persistence after a future reboot have not been reported. No server website, Linux account, IP or Nginx configuration was renamed, and `babuni.dev` has not yet been deployed.
+
 ## 2026-10-30 — A different toy box on every visit
 
 **Creator direction.** Babuni requested a changing assortment: BABUNI.DEV should remain the initial tile while all others be randomized on every page load. Updated projects should no longer receive positional priority. Instead, a small gold "Recently updated" label on the upper-right of the tile and an extra gold ring around its portal should distinguish them.
