@@ -309,6 +309,11 @@
           "src": "/media/babuni-dev/images/verification/on-demand-bloom-release.webp",
           "alt": "AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.",
           "caption": "AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/random-keyword-bubbles.webp",
+          "alt": "SocialForever with three sampled keywords, including World of Warcraft add-on.",
+          "caption": "AI browser verification, 31 October 2026: three distinct labels from the nine-keyword pool; the add-on cue is present. Historical desktop preview, not phone acceptance."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
@@ -593,12 +598,12 @@
     {
       "id": "source",
       "type": "resources",
-      "title": "Public documentation",
-      "preview": "Babuni Admin was previously listed as Arcanitebrothers. Read its public documentation; historical documents retain their original project names.",
+      "title": "Project source",
+      "preview": "Babuni Admin was previously listed as Arcanitebrothers. Its actual project repository and development documentation are now public; historical names remain in earlier records.",
       "links": [
         {
-          "label": "Babuni Admin public documentation",
-          "href": "https://github.com/babunidev/babuni.admin-docs"
+          "label": "Babuni Admin repository",
+          "href": "https://github.com/babunidev/babuni.admin"
         }
       ],
       "credit": "Project rename directed by Babuni.dev; AI-assisted source-label clarification. Public source documents retain their historical wording."

@@ -1,227 +1,482 @@
-/**
- * One small, provisional *topic* per candidate project, for the first portal
- * bubble. Curated from docs/PROJECT_INVENTORY.md one-line descriptions.
- * These are mood/subject hints, not verified tags or sales copy.
- * Later: review descriptions/devlogs and curate richer multi-point metadata.
- */
-export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
-  "babuni-dev": "Interactive portfolio",
-  "rocket-game-42": "Arcade defence",
-  "button-game": "Reaction game",
-  "socialforever": "Social addon",
-  "roarforever": "Game audio",
-  "flourishforever": "Roleplay",
-  "azeroth-moments": "Media automation",
-  "anskar-grotzschnapf": "Generative art",
-  "local-ai-workstation": "Local AI",
-  "resistforever": "Combat mechanics",
-  "favorcraft": "Crafting tools",
-  "ethera-the-stonewrought": "Fantasy RPG",
-  "enchantvisuals": "Visual effects",
-  "totemtimers": "Shaman addon",
-  "groupbufftoggle": "Interface addon",
-  "lootfeed": "Loot interface",
-  "gathermap": "Exploration tools",
-  "battlereport": "Combat analytics",
-  "roarguild": "Guild tools",
-  "workthatgodbod": "Wellness addon",
-  "the-great-iceflow-relay": "Player minigame",
-  "roarrunlimited": "Roleplay emotes",
-  "roarr": "Roleplay emotes",
-  "roarsounds": "Game audio",
-  "roaremotetrigger": "Roleplay emotes",
-  "roar": "Roleplay emotes",
-  "meleestartattack": "Combat helper",
-  "buxbrewresist": "Combat mechanics",
-  "buxbrewding": "WoW addon",
-  "buxbrewcharge": "Action emotes",
-  "buxbrew": "Character work",
-  "amazin": "Stealth addon",
-  "warriorstartattack": "Combat helper",
-  "roar-guild-and-community": "Community",
-  "buxbrew-character-story": "Character story",
-  "grimnir": "Fantasy culture",
-  "morkahja-rpg": "Fantasy RPG",
-  "morkahjaworld": "Worldbuilding",
-  "arcanitebrothers": "Administration tools",
-  "babuni-gaming": "Gaming and streaming",
-  "mighty-morkah": "Music and audio art"
-});
-export function topicForProject(projectId:string):string {
-  return projectTopics[projectId]??'Creative work';
-}
-
-/**
- * Two additional *draft* flavor snippets for the left and right marker.
- * Grounded conservatively in docs/PROJECT_INVENTORY.md's short summaries.
- * These are provisional editorial hints, not verified portfolio claims.
- * The existing top topic is preserved verbatim.
- */
+/** Curated topic keywords; short editorial hints rather than release claims. */
 export type TopicPoint='top'|'left'|'right';
 export const TOPIC_POINTS:readonly TopicPoint[]=['top','left','right'];
-export const supplementalTopics:Readonly<Record<string,readonly [string,string]>>=Object.freeze({
+
+/** Nine curated, provisional keywords per project; no release-status claims. */
+export const WOW_ADDON_IDS:readonly string[]=["amazin", "battlereport", "buxbrew", "buxbrewcharge", "buxbrewding", "buxbrewresist", "favorcraft", "flourishforever", "gathermap", "groupbufftoggle", "lootfeed", "meleestartattack", "resistforever", "roar", "roaremotetrigger", "roarforever", "roarguild", "roarr", "roarrunlimited", "roarsounds", "socialforever", "totemtimers", "warriorstartattack", "workthatgodbod"];
+export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Object.freeze({
   "babuni-dev": [
+    "Interactive portfolio",
     "Living grid",
-    "Creative process"
+    "Creative process",
+    "Project discovery",
+    "Small bloom",
+    "Big bloom",
+    "Markdown reader",
+    "Human and AI",
+    "Development journal"
   ],
   "rocket-game-42": [
+    "Arcade defence",
     "Mothership defence",
-    "Browser and Electron"
+    "Browser game",
+    "Electron",
+    "Rocket Game 42",
+    "Game development",
+    "Space combat",
+    "Project journal",
+    "Game experiments"
   ],
   "button-game": [
+    "Reaction game",
     "Android game",
-    "Local multiplayer"
+    "Local multiplayer",
+    "Button Game",
+    "Game development",
+    "Player reactions",
+    "Game experiments",
+    "Project journal",
+    "Play and improve"
   ],
   "socialforever": [
+    "World of Warcraft add-on",
     "Player memory",
-    "WoW encounters"
+    "WoW encounters",
+    "Social tools",
+    "Player interactions",
+    "Character names",
+    "Lua",
+    "User interface",
+    "Game community"
   ],
   "roarforever": [
+    "World of Warcraft add-on",
+    "Game audio",
     "WoW Forever",
-    "Emote voices"
+    "Emote voices",
+    "Character sounds",
+    "Roleplay",
+    "Lua",
+    "Audio tools",
+    "Game interface"
   ],
   "flourishforever": [
+    "World of Warcraft add-on",
+    "Roleplay",
     "Ability triggers",
-    "Character emotes"
+    "Character emotes",
+    "Player actions",
+    "Emote tools",
+    "Lua",
+    "Character expression",
+    "Game interface"
   ],
   "azeroth-moments": [
+    "Media automation",
     "Screenshots",
-    "Automatic sharing"
+    "Automatic sharing",
+    "World of Warcraft",
+    "Gaming moments",
+    "Visual memories",
+    "Game captures",
+    "Media workflow",
+    "Azeroth"
   ],
   "anskar-grotzschnapf": [
+    "Generative art",
     "Poetry",
-    "Digital prints"
+    "Digital prints",
+    "AI images",
+    "Visual experiments",
+    "Creative writing",
+    "Art and words",
+    "Image composition",
+    "Artist project"
   ],
   "local-ai-workstation": [
+    "Local AI",
     "Language models",
-    "Image generation"
+    "Image generation",
+    "AI experiments",
+    "Local tools",
+    "Creative workflow",
+    "Workstation",
+    "Model exploration",
+    "Human and AI"
   ],
   "resistforever": [
+    "World of Warcraft add-on",
+    "Combat mechanics",
     "Tooltips",
-    "Spell resistance"
+    "Spell resistance",
+    "Combat information",
+    "Lua",
+    "User interface",
+    "Spell details",
+    "Combat tools"
   ],
   "favorcraft": [
+    "World of Warcraft add-on",
+    "Crafting tools",
     "Professions",
-    "Materials"
+    "Materials",
+    "Crafting information",
+    "Lua",
+    "Game interface",
+    "Crafting workflow",
+    "Profession tools"
   ],
   "ethera-the-stonewrought": [
+    "Fantasy RPG",
     "Godot",
-    "Morkahja universe"
+    "Morkahja universe",
+    "Experimental prototype",
+    "AI models",
+    "Tripo",
+    "World design",
+    "Game concepts",
+    "Creative experiments"
   ],
   "enchantvisuals": [
+    "Visual effects",
     "Weapon effects",
-    "Client mod"
+    "Client mod",
+    "World of Warcraft",
+    "Weapon visuals",
+    "Game presentation",
+    "Enchantment art",
+    "Visual experiments",
+    "Character equipment"
   ],
   "totemtimers": [
-    "Totems & shields",
-    "Shaman tools"
+    "World of Warcraft add-on",
+    "Shaman tools",
+    "Totems and shields",
+    "Totem timers",
+    "Shaman interface",
+    "Lua",
+    "Spell information",
+    "Class tools",
+    "Combat interface"
   ],
   "groupbufftoggle": [
+    "World of Warcraft add-on",
     "Party frames",
-    "Buff controls"
+    "Buff controls",
+    "Group interface",
+    "Spell display",
+    "Lua",
+    "Interface controls",
+    "Buff information",
+    "Party tools"
   ],
   "lootfeed": [
+    "World of Warcraft add-on",
+    "Loot interface",
     "Group rolls",
-    "Animated display"
+    "Animated display",
+    "Loot information",
+    "Lua",
+    "Group loot",
+    "Interface feedback",
+    "Game interface"
   ],
   "gathermap": [
+    "World of Warcraft add-on",
+    "Exploration tools",
     "Resource mapping",
-    "Self-learning"
+    "Self-learning",
+    "Gathering",
+    "Map information",
+    "Lua",
+    "World exploration",
+    "Gathering tools"
   ],
   "battlereport": [
+    "World of Warcraft add-on",
+    "Combat analytics",
     "Encounters",
-    "Combat statistics"
+    "Combat statistics",
+    "Combat information",
+    "Lua",
+    "Battle reports",
+    "Encounter history",
+    "Combat tools"
   ],
   "roarguild": [
+    "World of Warcraft add-on",
+    "Guild tools",
     "Guild invitations",
-    "Character behavior"
+    "Character behavior",
+    "Guild interface",
+    "Lua",
+    "Community tools",
+    "Guild workflow",
+    "Player interactions"
   ],
   "workthatgodbod": [
+    "World of Warcraft add-on",
+    "Wellness prompts",
     "Movement cues",
-    "Hydration"
+    "Hydration",
+    "Everyday movement",
+    "Roleplay prompts",
+    "Lua",
+    "Player wellbeing",
+    "Friendly reminders"
   ],
   "the-great-iceflow-relay": [
+    "Player minigame",
     "Checkpoint relay",
-    "Player organized"
+    "Player organized",
+    "World of Warcraft",
+    "Community play",
+    "Relay race",
+    "Azeroth",
+    "Game event",
+    "Shared adventure"
   ],
   "roarrunlimited": [
+    "World of Warcraft add-on",
+    "Roleplay emotes",
     "Action slots",
-    "Emote options"
+    "Emote options",
+    "Character expression",
+    "Lua",
+    "Player actions",
+    "Roleplay tools",
+    "Game interface"
   ],
   "roarr": [
+    "World of Warcraft add-on",
+    "Roleplay emotes",
     "Battle emotes",
-    "Earlier addon"
+    "Earlier work",
+    "Character expression",
+    "Lua",
+    "Player actions",
+    "Roleplay tools",
+    "Game interface"
   ],
   "roarsounds": [
+    "World of Warcraft add-on",
+    "Game audio",
     "Roar effects",
-    "Earlier audio work"
+    "Earlier audio work",
+    "Character sounds",
+    "Lua",
+    "Roleplay",
+    "Sound effects",
+    "Character expression"
   ],
   "roaremotetrigger": [
+    "World of Warcraft add-on",
+    "Roleplay emotes",
     "Wrath client",
-    "Battle triggers"
+    "Battle triggers",
+    "Character expression",
+    "Lua",
+    "Player actions",
+    "Roleplay tools",
+    "Game interface"
   ],
   "roar": [
+    "World of Warcraft add-on",
+    "Roleplay emotes",
     "Random emotes",
-    "Early addon"
+    "Early work",
+    "Character expression",
+    "Lua",
+    "Player actions",
+    "Roleplay tools",
+    "Game interface"
   ],
   "meleestartattack": [
+    "World of Warcraft add-on",
+    "Combat helper",
     "Melee classes",
-    "Start attacks"
+    "Start attacks",
+    "Combat controls",
+    "Lua",
+    "Player abilities",
+    "Melee tools",
+    "Game interface"
   ],
   "buxbrewresist": [
+    "World of Warcraft add-on",
+    "Combat mechanics",
     "Spell resistance",
-    "Earlier addon"
+    "Earlier work",
+    "Spell information",
+    "Lua",
+    "Combat tools",
+    "Tooltips",
+    "Game interface"
   ],
   "buxbrewding": [
-    "Named addon",
-    "Details to explore"
+    "World of Warcraft add-on",
+    "BuxbrewDing",
+    "Lua",
+    "Game interface",
+    "Code project",
+    "Project source",
+    "Development journal",
+    "Project history",
+    "Work in progress"
   ],
   "buxbrewcharge": [
+    "World of Warcraft add-on",
+    "Action emotes",
     "Action-bar slot",
-    "Built-in emotes"
+    "Built-in emotes",
+    "ActionEmotes #1",
+    "Lua",
+    "Character expression",
+    "Player actions",
+    "Roleplay tools"
   ],
   "buxbrew": [
-    "Named repository",
-    "Details to explore"
+    "World of Warcraft add-on",
+    "Buxbrew",
+    "Lua",
+    "Game interface",
+    "Code project",
+    "Project source",
+    "Development journal",
+    "Project history",
+    "Work in progress"
   ],
   "amazin": [
+    "World of Warcraft add-on",
     "Stealth emotes",
-    "Rested XP"
+    "Rested XP",
+    "Character expression",
+    "Player actions",
+    "Lua",
+    "Roleplay tools",
+    "Stealth",
+    "Game interface"
   ],
   "warriorstartattack": [
+    "World of Warcraft add-on",
+    "Combat helper",
     "Warrior abilities",
-    "Auto-attack"
+    "Auto-attack",
+    "Combat controls",
+    "Lua",
+    "Melee tools",
+    "Warrior tools",
+    "Game interface"
   ],
   "roar-guild-and-community": [
+    "Community",
     "WoW community",
-    "Shared rituals"
+    "Shared rituals",
+    "Guild life",
+    "Roleplay",
+    "Player stories",
+    "Shared adventures",
+    "Azeroth",
+    "Community design"
   ],
   "buxbrew-character-story": [
+    "Character story",
     "Jasmine Amberbrew",
-    "Roleplay story"
+    "Roleplay story",
+    "World of Warcraft",
+    "Character writing",
+    "Azeroth",
+    "Storytelling",
+    "Fantasy character",
+    "Creative writing"
   ],
   "grimnir": [
+    "Fantasy culture",
     "Morkahja world",
-    "Cultural stories"
+    "Cultural stories",
+    "Worldbuilding",
+    "Fantasy peoples",
+    "Lore",
+    "Storytelling",
+    "Creative writing",
+    "World design"
   ],
   "morkahja-rpg": [
+    "Fantasy RPG",
     "Multiplayer",
-    "Adventure design"
+    "Adventure design",
+    "Browser game",
+    "AI artwork",
+    "Human-made music",
+    "Handcrafted UI",
+    "World of Morkahja",
+    "Game development"
   ],
   "morkahjaworld": [
-    "Elemental peoples",
-    "Fantasy places"
+    "Worldbuilding",
+    "Morkahja world",
+    "Project documentation",
+    "Reserved project",
+    "Creative direction",
+    "World design",
+    "Project history",
+    "Future possibilities",
+    "Work in progress"
   ],
   "arcanitebrothers": [
+    "Administration tools",
     "Admin console",
-    "Morkahja origins"
+    "Morkahja origins",
+    "Babuni Admin",
+    "Content editing",
+    "Player management",
+    "Local tools",
+    "Project documentation",
+    "Development workflow"
   ],
-  "babuni-gaming": ["World of Warcraft", "Add-ons and moments"],
-  "mighty-morkah": ["YouTube channel", "SoundCloud"]
+  "babuni-gaming": [
+    "Gaming and streaming",
+    "World of Warcraft",
+    "YouTube",
+    "Instagram",
+    "CurseForge",
+    "Gaming moments",
+    "Shared experiences",
+    "Game streams",
+    "Community"
+  ],
+  "mighty-morkah": [
+    "Music and audio art",
+    "YouTube channel",
+    "SoundCloud",
+    "Piano music",
+    "Audio experiments",
+    "Music videos",
+    "Original music",
+    "Creative process",
+    "Musical exploration"
+  ]
 });
-export function topicLabelsForProject(projectId:string):Readonly<Record<TopicPoint,string>> {
-  const [left,right]=supplementalTopics[projectId]??['Creative work','More to explore'];
-  return {top:topicForProject(projectId),left,right};
+
+function shuffled<T>(values:readonly T[],random:()=>number):T[]{
+  const result=[...values];
+  for(let i=result.length-1;i>0;i--){
+    const value=random();
+    const fraction=Number.isFinite(value)?Math.max(0,Math.min(.999999,value)):0;
+    const j=Math.floor(fraction*(i+1));
+    [result[i],result[j]]=[result[j],result[i]];
+  }
+  return result;
+}
+
+/** Fresh labels for one reveal. Add-ons always keep their shared type cue,
+ * with two other distinct keywords; all three positions remain random. */
+export function topicLabelsForProject(projectId:string,random:()=>number=Math.random):Readonly<Record<TopicPoint,string>> {
+  const pool=projectKeywordPools[projectId]??['Creative work','Project notes','More to explore'];
+  const addon=WOW_ADDON_IDS.includes(projectId);
+  const candidates=shuffled(pool.filter(label=>!addon||label!=='World of Warcraft add-on'),random);
+  const labels=shuffled(addon?['World of Warcraft add-on',...candidates.slice(0,2)]:candidates.slice(0,3),random);
+  return {top:labels[0],left:labels[1],right:labels[2]};
 }
 
 /** Rotate spontaneous hints across the three markers instead of repeatedly

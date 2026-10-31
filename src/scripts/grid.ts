@@ -206,6 +206,22 @@ if (viewport && world && status) {
     // Preserve an existing sequence rather than restarting its random order.
     if(activeTopic===tile&&point==='all'&&tile.dataset.topicSequence==='true')return;
     hideTopic();
+    // Pick once per exploration, never during animation frames or unrelated shifts.
+    if(slot){
+      const project=demoProjects[slot.projectIndex];
+      if(project){
+        const topics=topicLabelsForProject(project.id);
+        for(const marker of TOPIC_POINTS){
+          const bubble=tile.querySelector<HTMLElement>('.tile-topic--'+marker);
+          if(bubble)bubble.textContent=topics[marker];
+        }
+        const select=tile.querySelector<HTMLButtonElement>('.tile-select');
+        if(select){
+          select.dataset.exploreLabel='Explore '+project.name+(recentlyUpdatedIds.has(project.id)?' (recently updated)':'')+': '+TOPIC_POINTS.map(marker=>topics[marker]).join(', ');
+          select.setAttribute('aria-label',select.dataset.exploreLabel);
+        }
+      }
+    }
     activeTopic=tile;
     tile.classList.add('grid-tile--topic-open');
     if(point!=='all'){

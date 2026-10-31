@@ -1,54 +1,51 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {demoProjects} from '../src/lib/demo-projects.ts';
-import {projectTopics,topicForProject,TOPIC_POINTS,supplementalTopics,topicLabelsForProject,chooseAmbientPoint} from '../src/lib/project-topics.ts';
+import {projectKeywordPools,WOW_ADDON_IDS,TOPIC_POINTS,topicLabelsForProject,chooseAmbientPoint} from '../src/lib/project-topics.ts';
 
-test('each provisional project has exactly one concise first-bubble topic',()=>{
-  assert.equal(demoProjects.length,41);
-  assert.equal(Object.keys(projectTopics).length,41);
-  assert.equal(new Set(Object.keys(projectTopics)).size,41);
+function seeded(seed){seed=Math.imul(seed,2654435761)>>>0;return ()=>{seed=(seed*1664525+1013904223)>>>0;return seed/2**32;};}
+test('every project has nine distinct concise keywords',()=>{
+  assert.deepEqual(Object.keys(projectKeywordPools).sort(),demoProjects.map(p=>p.id).sort());
   for(const project of demoProjects){
-    const topic=topicForProject(project.id);
-    assert.equal(projectTopics[project.id],topic,project.name);
-    assert.match(topic,/^[\p{L}\p{N} -]+$/u);
-    assert.ok(topic.length<=24,project.name+': '+topic);
-    assert.notEqual(topic,project.shortSummary);
+    const pool=projectKeywordPools[project.id];
+    assert.equal(pool.length,9,project.name);
+    assert.equal(new Set(pool).size,9,project.name);
+    for(const label of pool)assert.ok(label.length>0&&label.length<=26,project.name+': '+label);
   }
 });
-test('a bubble offers just a subject, not a description or release claim',()=>{
-  assert.equal(topicForProject('babuni-dev'),'Interactive portfolio');
-  assert.equal(topicForProject('button-game'),'Reaction game');
-  assert.equal(topicForProject('morkahjaworld'),'Worldbuilding');
-  assert.equal(topicForProject('buxbrewding'),'WoW addon');
-  assert.equal(topicForProject('not-in-inventory'),'Creative work');
-});
-
-test('each of the 41 retained tiles has three short, distinct, evidence-grounded flavor snippets',()=>{
-  assert.deepEqual(TOPIC_POINTS,['top','left','right']);
-  assert.equal(Object.keys(supplementalTopics).length,demoProjects.length);
+test('reveals sample three distinct pool members and can reach all nine',()=>{
   for(const project of demoProjects){
-    const topics=topicLabelsForProject(project.id);
-    assert.deepEqual(Object.keys(topics),TOPIC_POINTS,project.name);
-    assert.equal(topics.top,topicForProject(project.id),project.name);
-    assert.equal(new Set(Object.values(topics)).size,3,project.name);
-    for(const point of TOPIC_POINTS){
-      assert.ok(topics[point].length>0&&topics[point].length<=24,
-        project.name+' '+point+': '+topics[point]);
-      assert.notEqual(topics[point],project.shortSummary);
+    const seen=new Set(),combinations=new Set();
+    for(let seed=1;seed<=200;seed++){
+      const labels=topicLabelsForProject(project.id,seeded(seed));
+      assert.deepEqual(Object.keys(labels),TOPIC_POINTS);
+      const values=Object.values(labels);
+      assert.equal(new Set(values).size,3,project.name);
+      for(const value of values){assert.ok(projectKeywordPools[project.id].includes(value));seen.add(value);}
+      combinations.add(values.join('|'));
     }
+    assert.equal(seen.size,9,project.name);
+    assert.ok(combinations.size>10,project.name);
   }
 });
-test('three markers carry different kinds of tiny project information',()=>{
-  assert.deepEqual(topicLabelsForProject('button-game'),{
-    top:'Reaction game',left:'Android game',right:'Local multiplayer'
-  });
-  assert.deepEqual(topicLabelsForProject('anskar-grotzschnapf'),{
-    top:'Generative art',left:'Poetry',right:'Digital prints'
-  });
-  assert.deepEqual(topicLabelsForProject('morkahjaworld'),{
-    top:'Worldbuilding',left:'Elemental peoples',right:'Fantasy places'
-  });
+test('every add-on reveal includes exactly one explicit type cue in varying positions',()=>{
+  for(const id of WOW_ADDON_IDS){
+    assert.ok(demoProjects.some(p=>p.id===id),id);
+    const positions=new Set();
+    for(let seed=1;seed<=100;seed++){
+      const labels=topicLabelsForProject(id,seeded(seed));
+      assert.equal(Object.values(labels).filter(v=>v==='World of Warcraft add-on').length,1,id);
+      positions.add(TOPIC_POINTS.find(p=>labels[p]==='World of Warcraft add-on'));
+      assert.equal(Object.values(labels).filter(v=>/add.?on/i.test(v)).length,1,id);
+    }
+    assert.equal(positions.size,3,id);
+  }
+  for(const id of ['azeroth-moments','roar-guild-and-community','buxbrew-character-story','the-great-iceflow-relay','enchantvisuals','babuni-gaming'])assert.ok(!WOW_ADDON_IDS.includes(id));
 });
+test('unknown projects retain a safe distinct fallback',()=>{
+  assert.equal(new Set(Object.values(topicLabelsForProject('unknown',seeded(1)))).size,3);
+});
+
 test('ambient marker choice cycles without repeating the previous point',()=>{
   for(const previous of TOPIC_POINTS){
     for(const fraction of [0,.25,.5,.75,1]){

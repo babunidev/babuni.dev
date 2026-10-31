@@ -1,6 +1,6 @@
 # Project repository connections
 
-Account inventory checked on 2026-10-27; four additional public documentation editions anonymously verified on 2026-10-28. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
+Account inventory checked on 2026-10-27; public documentation editions verified on 2026-10-28. Morkahja, MorkahjaWorld and Babuni Admin actual repositories anonymously verified public and connected on 2026-10-31. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
 35 of 41 tiles are connected to 35 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
@@ -39,9 +39,9 @@ Account inventory checked on 2026-10-27; four additional public documentation ed
 | Buxbrew Addon | [babunidev/Buxbrew](https://github.com/babunidev/Buxbrew) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Amazin | [babunidev/amazin](https://github.com/babunidev/amazin) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | WarriorStartAttack | [babunidev/WarriorStartAttack](https://github.com/babunidev/WarriorStartAttack) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| Morkahja | [babunidev/Morkahja-docs](https://github.com/babunidev/Morkahja-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| Morkahja Worldbuilding | [babunidev/MorkahjaWorld-docs](https://github.com/babunidev/MorkahjaWorld-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
-| Babuni Admin | [babunidev/babuni.admin-docs](https://github.com/babunidev/babuni.admin-docs) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Morkahja | [babunidev/Morkahja](https://github.com/babunidev/Morkahja) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Morkahja Worldbuilding | [babunidev/MorkahjaWorld](https://github.com/babunidev/MorkahjaWorld) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Babuni Admin | [babunidev/babuni.admin](https://github.com/babunidev/babuni.admin) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Rocket Game 42 | [babunidev/Rocketgame42](https://github.com/babunidev/Rocketgame42) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 
 ## No matching repository found
@@ -58,7 +58,7 @@ These are inventory results, not proof that a repository cannot exist under anot
 
 - None currently.
 
-Private implementations remain excluded. Ethera, Morkahja RPG, MorkahjaWorld and Babuni Admin (formerly Arcanitebrothers) use separate curated public documentation editions; no implementation repository was made public or imported.
+Private sources remain excluded. Ethera continues using its public documentation edition. Morkahja, MorkahjaWorld and Babuni Admin now use their actual public repositories; only standard Markdown documents are imported, not implementation files.
 
 ## Project-family clarification needed
 
@@ -68,11 +68,11 @@ Related sources are known, but an independent public repository is not confirmed
 
 ## Naming and coverage notes
 
-- Babuni Admin is the current display name of stable ID arcanitebrothers. Its renamed implementation remains private; the website continues reading only the existing public babuni.admin-docs edition. Earlier names in source documents are historical.
+- Babuni Admin is the current display name of stable ID arcanitebrothers. Its actual public babuni.admin repository replaces the earlier babuni.admin-docs edition. Earlier names in source documents are historical.
 - Anskar Grotzschnapf maps to the verified `AsnkarGrotzschnapf` spelling and its `master` branch.
 - Azeroth Moments uses the public `AzerothMoments` documentation shell. Its README states that the active application lives separately; that private implementation was not imported.
 - Human curation on 2026-10-28 removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples from the active catalog. Their historical inventory evidence is retained; no GitHub repository was deleted.
-- MorkahjaWorld is the retained worldbuilding tile, as clarified by Babuni.dev. Its public edition predates this correction; a later reviewed public-source refresh can expand it.
+- MorkahjaWorld is the retained worldbuilding tile, as clarified by Babuni.dev. Its actual public repository currently contains placeholder documentation; no lore corpus is inferred or transferred.
 - Babuni.dev explicitly added Rocket Game 42 on 2026-10-28; it maps to the anonymously verified public Rocketgame42 repository. Historical discovery alone was not treated as approval.
 
 ## Shared documentation contract

@@ -680,3 +680,12 @@ Babuni.dev removed Fantasy Architecture from scope. Implemented by AI: 43 retain
 ## 2026-10-31 — Import Action Emotes #1 final documentation baseline
 
 **Babuni.dev supplied:** merged ActionEmotes-1 PR #1 and final commit `e475a45108753c9eda8de1e774e2ba95058d65c0`, requesting their revised documentation and outstanding `BuxbreCharge.toc` installation concern appear on the website. **AI verification/execution:** verify PR #1 is merged at that exact commit and publicly fetch all ten standard documents, replacing only this project’s snapshot. Its first-person history and documentation baseline now feed blooms/readable pages/readers; the prior proposed-rename wording is resolved by the new upstream README. Update verified activity metadata and add repository/review/commit links to the existing Project source module, explicitly stating that the historical filename remains unmodified and needs an installation check. Preserve stable project identity/artwork and all other repository snapshots. **Verification:** regression coverage, content validation, static build and all public page/link checks run before publication. No addon installation, in-game or filename change, browser screenshot, VPS or DNS action claimed.
+
+## 2026-10-31 — Discovery and source continuity
+
+- [x] Nine keywords per retained project, three sampled without repetition per bubble exploration; all 24 WoW add-ons retain one explicit type cue.
+- [x] Preserve approved bubble timing/placement and unrelated-shift persistence.
+- [x] Record the author’s open-development decisions in actual project journals/decisions and import the three verified public source replacements.
+- [ ] Replace Ethera’s documentation-only source after its actual repository becomes public and anonymous access is verified; licensing/media-rights decisions remain separate from public visibility.
+
+Automated content checks, 37 test files, production build and 430 public-page checks passed. This entry does not claim new physical-device acceptance or completed media-license review.

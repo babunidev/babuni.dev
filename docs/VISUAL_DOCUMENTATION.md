@@ -139,3 +139,9 @@ AI desktop production preview: LootFeed readable project page with server-render
 ![AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.](../public/media/babuni-dev/images/verification/on-demand-bloom-release.webp)
 
 AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.
+
+## 2026-10-31 — Random keyword discovery
+
+![SocialForever keyword bubbles](../public/media/babuni-dev/images/verification/random-keyword-bubbles.webp)
+
+AI browser capture at 127.0.0.1:4327, desktop viewport. SocialForever displays three distinct sampled keywords including the guaranteed “World of Warcraft add-on” cue. Keyboard focus re-entry visibly changed its pair of keywords; the current reveal remained visible during autonomous motion. This is an agent browser observation, not a new physical-phone acceptance. The browser API returned JPEG; the archived website image is verified WebP.

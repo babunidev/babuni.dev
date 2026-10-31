@@ -88,18 +88,18 @@ test('repository coverage report matches the map and never lists private reposit
  assert.ok(report.includes('Local AI'));
  assert.equal(Object.values(connections).filter(c=>c.status==='needs-repository').length,5);
  assert.ok(report.includes('AsnkarGrotzschnapf'));assert.ok(report.includes('| master |'));
- for(const name of ['Ethera','Morkahja','MorkahjaWorld','arcanitebrothers'])assert.doesNotMatch(report,new RegExp('https://github\\.com/babunidev/'+name+'(?:[)/#?\\s]|$)'));
+ for(const name of ['Ethera','arcanitebrothers'])assert.doesNotMatch(report,new RegExp('https://github\\.com/babunidev/'+name+'(?:[)/#?\\s]|$)'));
  assert.ok(report.includes('https://github.com/babunidev/Ethera-docs'));
 });
 
-test('four documentation-only projects use pinned public editions rather than private implementations',()=>{
- const editions={'ethera-the-stonewrought':'Ethera-docs','morkahja-rpg':'Morkahja-docs','morkahjaworld':'MorkahjaWorld-docs',arcanitebrothers:'babuni.admin-docs'};
+test('newly public projects use actual sources while Ethera retains its public edition',()=>{
+ const editions={'ethera-the-stonewrought':'Ethera-docs','morkahja-rpg':'Morkahja','morkahjaworld':'MorkahjaWorld',arcanitebrothers:'babuni.admin'};
  for(const [id,name] of Object.entries(editions)){
   const c=connections[id];assert.equal(c.status,'connected');assert.equal(c.repository,'babunidev/'+name);
   const snapshot=snapshots[c.repository];assert.match(snapshot.commit,/^[a-f0-9]{40}$/);assert.equal(snapshot.documents.length,10);
   assert.equal(repositoryModules(c,snapshot).length,10);
  }
- for(const name of ['Ethera','Morkahja','MorkahjaWorld','arcanitebrothers'])assert.equal(snapshots['babunidev/'+name],undefined);
+ for(const name of ['Ethera','Morkahja-docs','MorkahjaWorld-docs','babuni.admin-docs','arcanitebrothers'])assert.equal(snapshots['babunidev/'+name],undefined);
 });
 
 test('public edition previews describe the project rather than edition metadata',()=>{
@@ -118,21 +118,21 @@ test('retired sources are absent while BABUNI journal material remains available
  assert.ok(world.some(m=>m.id==='scope-clarification'&&m.body.includes('worldbuilding project')));
 });
 
-test('Babuni Admin retains its public edition and never links or imports the private implementation',()=>{
+test('Babuni Admin links its actual public repository and publication decisions are imported',()=>{
  assert.equal(demoProjects.find(p=>p.id==='arcanitebrothers').name,'Babuni Admin');
- const c=connections.arcanitebrothers;assert.equal(c.repository,'babunidev/babuni.admin-docs');
- assert.equal(snapshots['babunidev/babuni.admin'],undefined);
+ const c=connections.arcanitebrothers;assert.equal(c.repository,'babunidev/babuni.admin');
  const modules=composeProjectModules(catalog.arcanitebrothers,repositoryModules(c,snapshots[c.repository]),c.repository);
- const source=modules.find(m=>m.id==='source');assert.equal(source.title,'Public documentation');
+ const source=modules.find(m=>m.id==='source');assert.equal(source.title,'Project source');
  assert.match(source.preview,/previously listed as Arcanitebrothers/);
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/babuni.admin-docs']);
- assert.equal(snapshots['babunidev/arcanitebrothers-docs'],undefined);
- for(const m of modules){
-  if(m.source){assert.notEqual(new URL(m.source).pathname.split('/')[2],'babuni.admin');assert.ok(m.source.startsWith('https://github.com/babunidev/babuni.admin-docs/blob/'));}
-  for(const link of m.links??[])assert.notEqual(new URL(link.href).pathname.split('/')[2],'babuni.admin');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/babuni.admin']);
+ for(const name of ['Morkahja','MorkahjaWorld','babuni.admin']){
+  for(const path of ['docs/DECISIONS.md','docs/DEVLOG.md']){
+   const document=snapshots['babunidev/'+name].documents.find(d=>d.path===path);
+   assert.match(document.body,/Babuni.dev decided to make the actual project repository publicly accessible/);
+  }
  }
+ assert.equal(snapshots['babunidev/babuni.admin-docs'],undefined);
 });
-
 
 test('ActionEmotes #1 uses its renamed public source while preserving semantic identity and artwork',()=>{
  const project=demoProjects.find(p=>p.id==='buxbrewcharge');

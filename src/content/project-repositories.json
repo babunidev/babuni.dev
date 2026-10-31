@@ -175,21 +175,21 @@
   },
   "morkahja-rpg": {
     "status": "connected",
-    "repository": "babunidev/Morkahja-docs",
+    "repository": "babunidev/Morkahja",
     "branch": "main",
-    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
+    "note": "Actual project repository made public by Babuni.dev; anonymously verified before importing standard documentation on 2026-10-31. Replaces the earlier documentation-only edition. Public visibility does not settle licensing or deployment readiness."
   },
   "morkahjaworld": {
     "status": "connected",
-    "repository": "babunidev/MorkahjaWorld-docs",
+    "repository": "babunidev/MorkahjaWorld",
     "branch": "main",
-    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28. Babuni.dev identifies this tile as the worldbuilding project; duplicate World and Peoples tile removed 2026-10-28. Existing public edition is an earlier limited snapshot."
+    "note": "Actual project repository made public by Babuni.dev; anonymously verified before importing standard documentation on 2026-10-31. Replaces the earlier documentation-only edition. Public visibility does not settle licensing or deployment readiness."
   },
   "arcanitebrothers": {
     "status": "connected",
-    "repository": "babunidev/babuni.admin-docs",
+    "repository": "babunidev/babuni.admin",
     "branch": "main",
-    "note": "Babuni Admin public documentation repository renamed by Babuni.dev and anonymously verified public on 2026-10-29. Ten standard documents imported at the existing pinned revision; earlier project names within historical source text are preserved. Implementation remains private."
+    "note": "Actual project repository made public by Babuni.dev; anonymously verified before importing standard documentation on 2026-10-31. Replaces the earlier documentation-only edition. Public visibility does not settle licensing or deployment readiness."
   },
   "rocket-game-42": {
     "status": "connected",
