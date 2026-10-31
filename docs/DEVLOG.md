@@ -2,6 +2,17 @@
 
 This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
 
+## 2026-10-31 — First babuni.dev release staged on the shared VPS
+
+**Creative direction.** For the first public hosting preparation, the priority was to preserve the existing Arcanite Brothers site and Morkahja API while keeping my unfinished local documentation revisions out of the production build. After an unnecessary second clone was made and deleted, I pointed the assistant to my established project workspace. A separate clean Git worktree, rather than my working directory, became the release source.
+
+**AI guidance and creator execution.** The assistant supplied inspection, Git, build, SSH, upload and Nginx commands; I executed them on Nobara and the Hetzner server. Before building, my main checkout fetched and fast-forwarded eight documentation-only commits without touching the locally modified JSON or two untracked artwork/documentation folders. The isolated worktree checked out commit `8e47ce5`. On the local machine, `npm ci` succeeded, the static Astro build generated 430 pages and verified 430 public URLs, and all 191 automated tests passed. The build prepared 336 imported source documents and 41 public module collections.
+
+**Deployment and verification.** Using the dedicated `babunideploy` SSH identity, I created `/var/www/babuni.dev/releases/8e47ce5/`, copied the production `dist/` files with rsync (about 21.1 MB), verified its `index.html` was nonempty and linked `/var/www/babuni.dev/current` to that release. Through the separate administrator account, I installed the repository's prepared Nginx site under `/etc/nginx/sites-available/babuni.dev`, enabled it without changing the existing `morkahja` site, ran `nginx -t` successfully and reloaded Nginx. A local request to `http://127.0.0.1/` with the `Host: www.babuni.dev` header returned HTTP 200.
+
+**Remaining work.** This verifies the uploaded release and local HTTP virtual-host response, not a public website launch. External DNS A/AAAA/CNAME records, HTTPS certification and renewal, external browser behavior and post-deployment checks for the existing site remain to be verified. The local editorial revisions are not part of the staged release. No AI tool directly connected to the VPS during this work.
+
+
 ## 2026-10-31 — Preparing isolated babuni.dev hosting
 
 **Creator direction.** After updating and renaming the existing Hetzner VPS, Babuni continued preparing space for the babuni.dev website while explicitly preserving the operational Arcanite Brothers site and Morkahja API. The creator performed all commands in the remote SSH terminal.
