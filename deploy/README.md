@@ -75,3 +75,5 @@ As the separate `babuni` administrator, the creator transferred and installed th
 Babuni configured a `www` DNS A record for the existing Hetzner server at Porkbun. Public DNS returned the intended address, no AAAA result, and the site's HTTP response was 200. The root domain parking record was left unchanged.
 
 Babuni ran Certbot for `www.babuni.dev` using the Nginx integration and requested HTTPS redirection. Certbot reported successful issuance and deployment of a Let's Encrypt certificate expiring 2027-01-29, and configured automatic renewal. Independent HTTPS/redirect validation, a renewal dry run, browser/content checks and regression checks for the existing hosted website remain outstanding. The current public release is `8e47ce5`; the creator's local editorial changes remain excluded.
+
+**HTTPS/redirect verification:** After Certbot deployment, the creator tested the public host from the VPS. `curl` returned `HTTPS: 200` and `HTTP: 301 -> https://www.babuni.dev/`. Renewal dry run, external-browser/media checks, cache/header verification, and regression checks of the existing website are still outstanding.
