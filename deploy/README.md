@@ -1,8 +1,8 @@
-# Prepared production hosting — not deployed
+# Production hosting — first release staged, DNS/HTTPS pending
 
 Target: `https://www.babuni.dev`. Keep `arcanitebrothers.com`, its `/var/www/morkahja` directory, Node service and existing Nginx site unchanged. Babuni.dev is a static build; do not run the Astro development server publicly.
 
-Babuni.dev deferred DNS/hosting work to the weekend. No configuration in this folder has been installed on the VPS. The template uses standard Nginx gzip and cache directives; live `nginx -t`, TLS and header verification remain required. Brotli is not assumed installed.
+**Status update, 2026-10-31:** The first static release, built from GitHub commit `8e47ce5`, has been uploaded to the VPS. The release symlink and separate HTTP Nginx virtual host are active. `nginx -t` passed, and local host-header HTTP probing returned 200. Public DNS, HTTPS/TLS and production-browser verification are still pending. The template uses standard Nginx gzip and cache directives; live compression/header verification remains required. Brotli is not assumed installed.
 
 1. Create a new release directory under `/var/www/babuni.dev/releases/` and upload the complete contents of the reviewed `dist/` build. Never upload private keys, `.env`, source checkouts or node_modules.
 2. Point `/var/www/babuni.dev/current` at that release. Keep the previous target for rollback; remove obsolete generated files by deploying a complete new directory rather than merging uploads.
@@ -59,3 +59,13 @@ After the existing `arcanitebrothers.com` site returned HTTP 200, Babuni examine
 Babuni created `/var/www/babuni.dev/releases` and created/verified a separate `babunideploy` account (UID/GID 1002, groups `babunideploy` and `users`, no sudo group reported, home `/home/babunideploy`). A `sudo chown babunideploy:babunideploy` command was run on the new site directory and releases directory without errors. **Ownership now verified:** `ls -ld /var/www/babuni.dev /var/www/babuni.dev/releases` returned `drwxr-xr-x` (755) and `babunideploy babunideploy` on both paths. SSH keys for this new account, static upload, release link, Nginx enablement, DNS and TLS are still pending. The existing web and API service must remain unaffected.
 
 **Dedicated SSH access verified (later in session):** Babuni created a new passphrase-protected ED25519 deployment key locally, transferred only its public key by administrator SCP, created `/home/babunideploy/.ssh` (700) and installed `/home/babunideploy/.ssh/authorized_keys` (600), both owned by `babunideploy`. Logging in over SSH as `babunideploy` using the dedicated private key and `IdentitiesOnly=yes` succeeded. This is separate from the `babuni` administrator key. **Creator-verified write access:** From the `babunideploy` SSH shell, `whoami && test -w /var/www/babuni.dev/releases && echo "Deployment directory writable"` returned `babunideploy` and `Deployment directory writable`. The dedicated account can write the planned release directory without sudo. No source files, site build, `current` symlink or Nginx configuration have been deployed yet.
+
+## First release on the VPS — 2026-10-31
+
+The creator's main Nobara checkout contained uncommitted editorial changes, so the assistant proposed an isolated Git worktree for the release. The creator fetched GitHub, fast-forwarded eight documentation commits, then checked out the committed `origin/main` state as a detached release worktree at `8e47ce5`, leaving local content edits untouched. Node.js 24.18.0 and npm 11.16.0 were present. `npm ci` installed 186 packages with no reported vulnerabilities; `npm run build` completed, generated 430 pages, validated 430 canonical public URLs and prepared 336 documents/41 module collections. `npm run test:grid` passed 191/191 tests.
+
+As `babunideploy`, the creator uploaded the checked release's `dist/` with rsync to `/var/www/babuni.dev/releases/8e47ce5/` (total source size 21,105,375 bytes). A remote `test -s .../index.html` returned confirmation. The symlink `/var/www/babuni.dev/current -> releases/8e47ce5` was created successfully.
+
+As the separate `babuni` administrator, the creator transferred and installed the checked-in `deploy/nginx-babuni.dev.conf` at `/etc/nginx/sites-available/babuni.dev`, linked it into `sites-enabled`, received a successful `nginx -t`, and ran `sudo systemctl reload nginx` without error. A request to local Nginx using `Host: www.babuni.dev` returned **HTTP 200**. The pre-existing `morkahja` configuration was not edited.
+
+**Not yet verified:** the public A, AAAA and CNAME records for `www.babuni.dev`, external reachability, HTTPS certificate installation and renewal, live page/media/browser behavior, caching headers and a fresh regression check of Arcanite Brothers after the Nginx reload. Local HTTP 200 does not establish a complete public launch. Keep release `8e47ce5` for rollback until a subsequent deployment is independently verified.
