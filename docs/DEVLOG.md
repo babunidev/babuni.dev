@@ -12,6 +12,9 @@ This is an edited account of the development process, not a verbatim transcript 
 
 **Verification and limits.** The original Nginx configuration was read, not edited; the existing website returned HTTP 200 before deployment preparation. No deployment SSH key, `dist/` upload, `current` release symlink, new Nginx activation, DNS change or TLS setup is reported yet. Directory ownership and accessibility were verified. The next proposed stage is separate, scoped SSH key access for `babunideploy` from the creator's Nobara computer.
 
+**SSH deployment access (later in session).** Babuni generated a separate passphrase-protected ED25519 keypair on the Nobara computer for `babuni.dev deployment`. Only its `.pub` file was copied to the Hetzner VPS, using the existing administrator SSH connection. As administrator, Babuni created `/home/babunideploy/.ssh` with mode 700 and owner `babunideploy`, then installed the public key as `.ssh/authorized_keys` with mode 600 and matching ownership. A new local SSH connection with `ssh -i ~/.ssh/id_ed25519_babuni_deploy -o IdentitiesOnly=yes babunideploy@89.167.120.88` succeeded and showed `babunideploy@babunidev`. The private key and its passphrase stayed on the local computer. The account's ability to write `/var/www/babuni.dev/releases` has been requested for verification but no result has been received yet; no website files were uploaded.
+
+
 ## 2026-10-31 — Giving the shared VPS the babunidev hostname
 
 **Creator direction.** After recovering the existing hosting services following the OS reboot, Babuni requested changing the Ubuntu server hostname from `morkahja-alpha` to `babunidev`. This was a naming change for the shared server, not a request to rename the existing application, Linux users or website.
