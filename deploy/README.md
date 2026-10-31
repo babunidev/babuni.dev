@@ -69,3 +69,9 @@ As `babunideploy`, the creator uploaded the checked release's `dist/` with rsync
 As the separate `babuni` administrator, the creator transferred and installed the checked-in `deploy/nginx-babuni.dev.conf` at `/etc/nginx/sites-available/babuni.dev`, linked it into `sites-enabled`, received a successful `nginx -t`, and ran `sudo systemctl reload nginx` without error. A request to local Nginx using `Host: www.babuni.dev` returned **HTTP 200**. The pre-existing `morkahja` configuration was not edited.
 
 **Not yet verified:** the public A, AAAA and CNAME records for `www.babuni.dev`, external reachability, HTTPS certificate installation and renewal, live page/media/browser behavior, caching headers and a fresh regression check of Arcanite Brothers after the Nginx reload. Local HTTP 200 does not establish a complete public launch. Keep release `8e47ce5` for rollback until a subsequent deployment is independently verified.
+
+## DNS and HTTPS activation — 2026-10-31
+
+Babuni configured a `www` DNS A record for the existing Hetzner server at Porkbun. Public DNS returned the intended address, no AAAA result, and the site's HTTP response was 200. The root domain parking record was left unchanged.
+
+Babuni ran Certbot for `www.babuni.dev` using the Nginx integration and requested HTTPS redirection. Certbot reported successful issuance and deployment of a Let's Encrypt certificate expiring 2027-01-29, and configured automatic renewal. Independent HTTPS/redirect validation, a renewal dry run, browser/content checks and regression checks for the existing hosted website remain outstanding. The current public release is `8e47ce5`; the creator's local editorial changes remain excluded.
