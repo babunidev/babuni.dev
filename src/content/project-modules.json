@@ -603,5 +603,28 @@
       ],
       "credit": "Project rename directed by Babuni.dev; AI-assisted source-label clarification. Public source documents retain their historical wording."
     }
+  ],
+  "buxbrewcharge": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "The original Action Emotes #1 source and its revised documentation. The historical BuxbreCharge.toc filename still requires an installation check.",
+      "links": [
+        {
+          "label": "Repository",
+          "href": "https://github.com/babunidev/ActionEmotes-1"
+        },
+        {
+          "label": "Merged documentation review — #1",
+          "href": "https://github.com/babunidev/ActionEmotes-1/pull/1"
+        },
+        {
+          "label": "Documentation baseline — e475a45",
+          "href": "https://github.com/babunidev/ActionEmotes-1/commit/e475a45108753c9eda8de1e774e2ba95058d65c0"
+        }
+      ],
+      "credit": "Project authorship: Babuni.dev. Baseline and unresolved installation concern supplied by Babuni.dev; AI verified the public merged review and imported its documentation. No addon code or filename was changed."
+    }
   ]
 }

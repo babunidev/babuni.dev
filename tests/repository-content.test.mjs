@@ -144,3 +144,14 @@ test('ActionEmotes #1 uses its renamed public source while preserving semantic i
  const modules=repositoryModules(connections.buxbrewcharge,snapshot);
  assert.ok(modules.every(m=>m.source.startsWith('https://github.com/babunidev/ActionEmotes-1/blob/')));
 });
+
+
+test('Action Emotes final documentation baseline preserves the unresolved installation concern',()=>{
+ const snapshot=snapshots['babunidev/ActionEmotes-1'];
+ assert.equal(snapshot.commit,'e475a45108753c9eda8de1e774e2ba95058d65c0');
+ assert.match(snapshot.documents.find(d=>d.path==='README.md').body,/BuxbreCharge\.toc/);
+ assert.match(snapshot.documents.find(d=>d.path==='docs/DEVLOG.md').body,/BuxbreCharge\.toc/);
+ const source=catalog.buxbrewcharge.find(m=>m.id==='source');
+ assert.ok(source.links.some(l=>l.href==='https://github.com/babunidev/ActionEmotes-1/pull/1'));
+ assert.match(source.preview,/requires an installation check/);
+});
