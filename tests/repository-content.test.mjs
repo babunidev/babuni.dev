@@ -132,3 +132,15 @@ test('Babuni Admin retains its public edition and never links or imports the pri
   for(const link of m.links??[])assert.notEqual(new URL(link.href).pathname.split('/')[2],'babuni.admin');
  }
 });
+
+
+test('ActionEmotes #1 uses its renamed public source while preserving semantic identity and artwork',()=>{
+ const project=demoProjects.find(p=>p.id==='buxbrewcharge');
+ assert.equal(project.name,'ActionEmotes #1');assert.equal(project.portalArtwork,'/portal-content/BuxbrewCharge.webp');
+ assert.equal(connections.buxbrewcharge.repository,'babunidev/ActionEmotes-1');
+ assert.equal(snapshots['babunidev/BuxbrewCharge'],undefined);
+ const snapshot=snapshots['babunidev/ActionEmotes-1'];assert.equal(snapshot.documents.length,10);
+ assert.match(snapshot.documents.find(d=>d.path==='README.md').body,/first World of Warcraft addon/);
+ const modules=repositoryModules(connections.buxbrewcharge,snapshot);
+ assert.ok(modules.every(m=>m.source.startsWith('https://github.com/babunidev/ActionEmotes-1/blob/')));
+});

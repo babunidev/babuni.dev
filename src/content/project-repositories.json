@@ -142,8 +142,9 @@
   },
   "buxbrewcharge": {
     "status": "connected",
-    "repository": "babunidev/BuxbrewCharge",
-    "branch": "main"
+    "repository": "babunidev/ActionEmotes-1",
+    "branch": "main",
+    "note": "Repository renamed by Babuni.dev; portfolio display name ActionEmotes #1 confirmed 2026-10-31. Stable project ID and existing artwork retained. Historical source/addon names remain in original documentation."
   },
   "buxbrew": {
     "status": "connected",

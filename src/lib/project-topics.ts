@@ -34,7 +34,7 @@ export const projectTopics:Readonly<Record<string,string>>=Object.freeze({
   "meleestartattack": "Combat helper",
   "buxbrewresist": "Combat mechanics",
   "buxbrewding": "WoW addon",
-  "buxbrewcharge": "Combat helper",
+  "buxbrewcharge": "Action emotes",
   "buxbrew": "Character work",
   "amazin": "Stealth addon",
   "warriorstartattack": "Combat helper",
@@ -177,8 +177,8 @@ export const supplementalTopics:Readonly<Record<string,readonly [string,string]>
     "Details to explore"
   ],
   "buxbrewcharge": [
-    "Charge ability",
-    "WoW addon"
+    "Action-bar slot",
+    "Built-in emotes"
   ],
   "buxbrew": [
     "Named repository",

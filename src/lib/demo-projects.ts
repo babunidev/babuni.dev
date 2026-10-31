@@ -245,8 +245,8 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "buxbrewcharge",
     "portalArtwork": "/portal-content/BuxbrewCharge.webp",
-    "name": "BuxbrewCharge",
-    "shortSummary": "Charge-related WoW addon.",
+    "name": "ActionEmotes #1",
+    "shortSummary": "Babuni.dev’s first WoW add-on: action-bar-triggered character emotes, originally BuxbrewCharge.",
     "evidence": "repo",
     "tint": "hsl(80 58% 62%)"
   },
