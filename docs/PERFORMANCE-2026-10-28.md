@@ -1,5 +1,7 @@
 # Production loading and resize verification — 28 October 2026
 
+> **Historical production-build measurement (28 October 2026).** The samples below were taken on locally hosted static builds, not the public VPS. Recorded transfer sizes, paint timings and viewport observations apply only to that comparison. Later content splitting, build optimization and deployment may have changed those numbers. This audit did not establish current field performance; see [release readiness](RELEASE_READINESS-2026-10-29.md) and [deployment](../deploy/README.md).
+
 ## Scope and method
 
 Babuni.dev requested production size/download/loading measurements, investigation of the existing large client chunk, resize continuity and new portal artwork. This is a local static-production assessment, not the Astro dev server and not an internet/mobile benchmark.
