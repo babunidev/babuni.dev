@@ -16,7 +16,9 @@ const index=json('src/generated/document-index.json');
 
 test('Buxbrew folder modules cover all imported Markdown and preserve the 42-project catalog',()=>{
   const connection=connections['buxbrew-character-story'];
+  assert.equal(CHARACTER_STORY_REPOSITORY,'babunidev/AmberbrewStory');
   assert.equal(connection.repository,CHARACTER_STORY_REPOSITORY);
+  assert.equal(snapshots['babunidev/BuxbrewCharacterStory'],undefined);
   const snapshot=snapshots[CHARACTER_STORY_REPOSITORY];
   assert.match(snapshot.commit,/^[a-f0-9]{40}$/);
   assert.ok(snapshot.documents.length>=40);
@@ -61,8 +63,9 @@ test('every folder file opens through a pinned, same-origin reader URL',async()=
   assert.ok(paths.has('journal/TEMPLATE.md'));
   for(const path of [
     '/_project-docs/babunidev--AnotherRepo/character--backstory.md',
-    '/_project-docs/babunidev--BuxbrewCharacterStory/..--secret.md',
-    '/_project-docs/babunidev--BuxbrewCharacterStory/assets--photo.webp',
-    'https://github.com/babunidev/BuxbrewCharacterStory'
+    '/_project-docs/babunidev--AmberbrewStory/..--secret.md',
+    '/_project-docs/babunidev--BuxbrewCharacterStory/character--backstory.md',
+    '/_project-docs/babunidev--AmberbrewStory/assets--photo.webp',
+    'https://github.com/babunidev/AmberbrewStory'
   ])await assert.rejects(()=>loadIndexedBody(path),/Invalid project document URL/);
 });
