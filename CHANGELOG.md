@@ -1033,3 +1033,11 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Corrected entrance staging when all 42 project identities and three neutral filler identities are already visible. An incoming tile now inherits a uniquely departing identity instead of introducing a persistent duplicate of another visible project.
 - Preserve the departing and incoming tiles' labels, portals and tint during the 4.4-second movement; no shift timing, geometry, bloom or project catalog changes.
 - Added exact-capacity regression cases for both axes, both directions, and opposite-moving lines. Automated CI and live-browser confirmation are reported separately.
+
+## 2026-11-01 — Buxbrew character-story document collections
+
+### Added
+- Connected the existing Buxbrew character-story tile to public `babunidev/BuxbrewCharacterStory` without changing its stable ID, grid placement or portal artwork.
+- Added nine folder-index modules: Assets, Character, Docs, Family, Journal, Lore, Places, Relationships and Stories. Each lists the public files it contains; Markdown opens within the existing reader and returns to the same folder list.
+- Imported 40 Markdown documents from a verified public commit, including four root writing/canon references under Docs. The Assets module shows the three currently empty media subdirectories without inventing files.
+- Extended exact-revision source syncing, local-only document assets, safe URL checks, source coverage and regression tests. Existing small-bloom limits and big-bloom layout are unchanged.
