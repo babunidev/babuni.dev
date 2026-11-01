@@ -652,5 +652,20 @@
       ],
       "credit": "Repository replacement directed by Babuni.dev; AI-assisted clarification of current repository versus historical runtime names."
     }
+  ],
+  "buxbrewding": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "LevelUpAnnouncer replaces BuxbrewDing as the portfolio/repository name. Upstream documents and installed BuxbrewDing files still retain their historical names.",
+      "links": [
+        {
+          "label": "LevelUpAnnouncer repository",
+          "href": "https://github.com/babunidev/LevelUpAnnouncer"
+        }
+      ],
+      "credit": "Name and repository replacement directed by Babuni.dev; AI-assisted source clarification."
+    }
   ]
 }

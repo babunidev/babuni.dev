@@ -182,3 +182,17 @@ test('StealthEmotes replaces Amazin without duplicating the project or its artwo
  const source=composeProjectModules(catalog.amazin,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
  assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/StealthEmotes']);
 });
+
+
+test('LevelUpAnnouncer replaces BuxbrewDing while retaining identity and supplied artwork',()=>{
+ const project=demoProjects.find(p=>p.id==='buxbrewding');
+ assert.equal(project.name,'LevelUpAnnouncer');assert.equal(project.portalArtwork,'/portal-content/BuxbrewDing.webp');
+ assert.equal(project.evidence,'repo');assert.match(project.shortSummary,/60 roleplay messages/);
+ assert.ok(!demoProjects.some(p=>p.name==='BuxbrewDing'));
+ const c=connections.buxbrewding;assert.equal(c.repository,'babunidev/LevelUpAnnouncer');
+ assert.equal(snapshots['babunidev/BuxbrewDing'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ assert.match(snapshot.documents.find(d=>d.path==='README.md').body,/Private previews/);
+ const source=composeProjectModules(catalog.buxbrewding,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/LevelUpAnnouncer']);
+});

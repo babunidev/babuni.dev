@@ -733,3 +733,7 @@ Babuni.dev clarified that stale dates can misidentify Recently updated tiles. Pr
 ## 2026-11-01 — StealthEmotes title update
 
 The author-requested StealthEmotes name replaces Amazin in the tile and project finder. Existing Amazin.webp art, circular mask, WoW menu group, add-on cue and nine-keyword sampling remain. No tile timing, layout, bloom or interaction behavior changes accompany this repository rename.
+
+## 2026-11-01 — LevelUpAnnouncer naming
+
+The author-requested LevelUpAnnouncer title replaces BuxbrewDing on the tile and in project search. Existing BuxbrewDing.webp and stable identity remain. Nine concise keywords now describe its documented announcements and previews; the add-on cue remains guaranteed. No motion, bubble placement, timing or bloom geometry changes accompany the rename.

@@ -714,3 +714,9 @@ Automatic server deployment remains separate; this update changes build validati
 - [x] Replace Amazin with StealthEmotes in the active portfolio and repository source, retaining stable identity and artwork.
 
 Addon runtime filenames, version discrepancies and live-client verification remain upstream concerns, not resolved by a portfolio rename.
+
+## 2026-11-01 — LevelUpAnnouncer source continuity
+
+- [x] Replace BuxbrewDing with author-supplied LevelUpAnnouncer; preserve identity and artwork.
+
+Live client compatibility, historical runtime naming and Lua limitations remain upstream concerns.

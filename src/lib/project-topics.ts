@@ -316,15 +316,15 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
   ],
   "buxbrewding": [
     "World of Warcraft add-on",
-    "BuxbrewDing",
+    "Level-up announcements",
+    "Guild chat",
+    "60 roleplay messages",
+    "Local previews",
+    "Manual announcements",
     "Lua",
-    "Game interface",
-    "Code project",
-    "Project source",
-    "Development journal",
-    "Project history",
-    "Work in progress"
-  ],
+    "Character milestones",
+    "Roleplay"
+],
   "buxbrewcharge": [
     "World of Warcraft add-on",
     "Action emotes",

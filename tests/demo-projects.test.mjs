@@ -20,7 +20,7 @@ test('exactly 42 retained project entries have unique provisional IDs and summar
 test('candidate descriptions and evidence are snapshots of the provisional inventory',()=>{
   assert.match(demoProjects[1].shortSummary,/Android reaction game/);
   assert.equal(demoProjects[1].evidence,'repo');
-  assert.equal(demoProjects.find(p=>p.id==='buxbrewding').evidence,'name-only');
+  assert.equal(demoProjects.find(p=>p.id==='buxbrewding').evidence,'repo');
   assert.equal(demoProjects.find(p=>p.id==='morkahjaworld').evidence,'human-confirmed');
 });
 test('initial desktop fills 45 visible cells with the retained library in spiral order',()=>{

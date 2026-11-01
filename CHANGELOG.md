@@ -961,3 +961,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Replaced Amazin’s displayed name and public source with StealthEmotes, preserving its existing tile ID and artwork. Imported the renamed repository’s standard documents and clarified unchanged historical addon identifiers.
+
+## 2026-11-01
+
+### Changed
+- Replaced BuxbrewDing’s display name and source with LevelUpAnnouncer, preserving the stable tile ID and existing art. Imported its standard documents and replaced the unknown-purpose summary/keywords with repository-backed level-up announcement information.

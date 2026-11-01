@@ -741,3 +741,7 @@ The activity CLI resolves GITHUB_TOKEN, then GH_TOKEN, then the local github.com
 ## 2026-11-01 — StealthEmotes semantic continuity
 
 Stable ID `amazin` displays StealthEmotes and connects to `babunidev/StealthEmotes` main. The prior amazin snapshot is removed and only the newly verified public standard-document snapshot replaces it. Project count stays 42 and supplied portal artwork stays Amazin.webp. Menu, module composition and artwork binding remain keyed by stable ID.
+
+## 2026-11-01 — LevelUpAnnouncer mapping
+
+Semantic ID `buxbrewding` now displays LevelUpAnnouncer and maps to public `babunidev/LevelUpAnnouncer` main. Only its snapshot replaces the former BuxbrewDing cache entry. Existing module composition, menu grouping, artwork path and project count remain; no new tile identity or runtime alias is needed.

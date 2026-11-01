@@ -237,9 +237,9 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "buxbrewding",
     "portalArtwork": "/portal-content/BuxbrewDing.webp",
-    "name": "BuxbrewDing",
-    "shortSummary": "Named WoW addon; purpose not yet confirmed.",
-    "evidence": "name-only",
+    "name": "LevelUpAnnouncer",
+    "shortSummary": "Guild level-up announcer with 60 roleplay messages, local previews and manual sends; live-client compatibility remains unverified.",
+    "evidence": "repo",
     "tint": "hsl(303 58% 62%)"
   },
   {

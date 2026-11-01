@@ -601,3 +601,7 @@ Recently updated markers depend on actual public branch-head committer dates. Pr
 ## 2026-11-01 — StealthEmotes naming evidence
 
 Babuni.dev requested that StealthEmotes replace Amazin. The source module links the renamed repository and explains that installed filenames/commands remain Amazin. Earlier proposed-rename wording in upstream documents is preserved as source text rather than silently rewritten. The summary and keywords describe action-slot emotes and rested-XP reporting without claiming successful Stealth detection or a tested release.
+
+## 2026-11-01 — LevelUpAnnouncer evidence
+
+Babuni.dev supplied the renamed source. Its README now provides evidence for the previously name-only entry: 60 prewritten roleplay announcements, local previews and manual guild sends. Summary/keywords reflect those subjects without claiming live-client compatibility. Historical upstream document titles and installed BuxbrewDing identifiers remain verbatim; the Project source note distinguishes the author-approved current portfolio/repository name.

@@ -137,8 +137,9 @@
   },
   "buxbrewding": {
     "status": "connected",
-    "repository": "babunidev/BuxbrewDing",
-    "branch": "main"
+    "repository": "babunidev/LevelUpAnnouncer",
+    "branch": "main",
+    "note": "Renamed source supplied by Babuni.dev on 2026-11-01. Preserve stable ID and BuxbrewDing.webp artwork; installed addon filenames and /buxbrew commands remain historical names."
   },
   "buxbrewcharge": {
     "status": "connected",
