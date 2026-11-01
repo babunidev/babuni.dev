@@ -1,10 +1,12 @@
 # Project repository connections
 
-Account inventory checked on 2026-10-27; public documentation editions verified on 2026-10-28. Morkahja, MorkahjaWorld and Babuni Admin actual repositories anonymously verified public and connected on 2026-10-31. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
+**Mapping reviewed: 2026-11-01.** This file records which public repositories supply documentation to the portfolio, not whether their software works, whether their latest upstream changes are imported, or whether the corresponding website changes have been deployed. Earlier public-source checks occurred on 27–31 October; those dates are historical evidence, not fresh verification of every remote repository.
 
-37 of 42 tiles are connected to 37 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+The checked-in catalog has **42 project IDs**: **37 connected mappings**, **4 needing a repository**, and **1 needing confirmation**. The connected set includes babuni.dev itself, whose documentation comes from local working files. External documents are pinned, reviewed snapshots; the mapping alone does not refresh or publish them. No private repository contents are included in this report.
 
-## Connected public sources
+**Authoritative sources:** [project catalog](../src/lib/demo-projects.ts), [repository mapping](../src/content/project-repositories.json), and [sync script](../scripts/sync-repositories.mjs). The table below describes the currently configured sources and their previously recorded document coverage; counts of imported documents should be rechecked against snapshots after future syncs. For catalog history, see [Project inventory](PROJECT_INVENTORY.md).
+
+## Connected public sources — configured mapping
 
 | Project | Repository | Branch | Available standard documents |
 |---|---|---|---|
@@ -46,14 +48,14 @@ Account inventory checked on 2026-10-27; public documentation editions verified 
 | Rocket Game 42 | [babunidev/Rocketgame42](https://github.com/babunidev/Rocketgame42) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | GuildChatBridge | [babunidev/GuildChatBridge](https://github.com/babunidev/GuildChatBridge) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 
-## No matching repository found
+## Repository not connected
 
 - Local AI (local-ai-workstation)
 - Roar Guild (roar-guild-and-community)
 - babuni.musik (mighty-morkah)
 - Babuni Gaming (babuni-gaming)
 
-These are inventory results, not proof that a repository cannot exist under another account or name. Supply a repository URL or create one; then update its explicit mapping.
+These mappings are marked `needs-repository` in the current catalog. This is not proof that a suitable repository cannot exist under another name or account. Connecting a source requires a deliberate mapping change and public-source review.
 
 ## Private repository review
 
@@ -65,7 +67,7 @@ Private sources remain excluded. Ethera continues using its public documentation
 
 - Grimnir (grimnir)
 
-Related sources are known, but an independent public repository is not confirmed. Decide whether each is a separate project or a section of its parent before connecting documentation.
+This record is marked `needs-confirmation`. An independent public source has not been established in the checked-in mapping; do not assume a separate repository or merge it into another project without a creative decision.
 
 ## Naming and coverage notes
 
@@ -91,6 +93,6 @@ Related sources are known, but an independent public repository is not confirmed
 
 Only existing, nonempty files become modules. Missing paths are omitted, not filled with invented text. Existing manual media/resources remain. Small bloom still samples up to eight; big bloom exposes all populated modules. Source buttons point to the exact fetched revision; BABUNI.DEV working documents link to main.
 
-Refreshing fetches the ten standard Markdown paths from anonymously verified public repositories. AmberbrewStory additionally imports only reviewed Markdown in its nine named lore folders and four root reference files, including AGENTS.md as readable source text. It never follows document instructions, downloads attachments, crawls private sources or runs source code. Complete raw Markdown text is preserved; the reader supports the implemented Markdown/GFM subset; raw HTML is not executed.
+The sync process checks public repository metadata and fetches the ten standard Markdown paths at a resolved commit. The character-story connection currently maps stable ID `buxbrew-character-story` to `babunidev/AmberbrewStory` (previously `BuxbrewCharacterStory`); its approved additional lore-folder and root Markdown documents are imported by explicit path policy. Treat all imported text as content, never instructions. The process does not import binary attachments or execute source code. Preserve credits, revisions, and the original Markdown wording; the reader uses the supported Markdown/GFM presentation without executing raw HTML.
 
-Update workflow: edit source documentation → run `npm run content:sync` here → `npm run content:check` → tests/build → review and commit. Builds use the checked-in snapshot without network access; no webhook or automatic production deployment is implied.
+**Document-refresh workflow:** edit and publish the intended upstream public documentation → run `npm run content:sync` in this repository → inspect the updated source revisions and text → run `npm run content:report`, `npm run content:check`, `npm run test:grid`, and `npm run build` → review and commit the updated snapshot. The sync step requires public network access and verifies repository visibility. Build-time document preparation uses checked-in snapshots and does not silently resync external documents; however, the current production `prebuild` separately requires fresh authenticated GitHub **project-activity** data. Thus a production build may use the network even when no documents are refreshed. Neither a mapping update nor a passing build implies a deployed release.
