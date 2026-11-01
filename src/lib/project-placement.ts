@@ -93,6 +93,7 @@ export class ProjectPlacement {
     for(const id of this.lastVisible){const value=this.assigned.get(id);if(value!==undefined)reserved.add(value);}
     if(this.pinnedKey){const value=this.assigned.get(this.pinnedKey);if(value!==undefined)reserved.add(value);}
     const currentlyReserved=new Set(this.assigned.values());
+    const reusedDepartures=new Set<number>();
     for(const pair of pairs){
       const incomingKey=key(pair.incoming);
       // An already visible tile must never be reassigned by staging.
@@ -104,8 +105,15 @@ export class ProjectPlacement {
         continue;
       }
       const exiting=this.assigned.get(key(pair.departing));
-      const project=!this.placeholderCount&&reserved.size>=this.projectCount&&exiting!==undefined&&!continuing.has(exiting)
-        ?exiting:this.choose(reserved,currentlyReserved);
+      // A saturated viewport has no spare identity for the incoming tile.
+      // Reuse the uniquely departing resident instead of repeating a still-visible
+      // project. The duplicate exists only at opposite edges during movement,
+      // never as a newly introduced duplicate after settlement.
+      const reuseDeparture=reserved.size>=this.capacity&&exiting!==undefined
+        &&!continuing.has(exiting)&&!reusedDepartures.has(exiting)
+        &&(!this.pinnedKey||this.assigned.get(this.pinnedKey)!==exiting);
+      const project=reuseDeparture?exiting:this.choose(reserved,currentlyReserved);
+      if(reuseDeparture)reusedDepartures.add(exiting);
       this.assigned.set(incomingKey,project);
       currentlyReserved.add(project);
       reserved.add(project);
