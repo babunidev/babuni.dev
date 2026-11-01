@@ -991,3 +991,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Renamed ROARRunlimited to MultiActionEmotes and connected its renamed repository and ten standard documents. Existing identity and RoarUnlimited.webp remain; the nine keywords describe its independent multi-slot emote configurations.
+
+## 2026-11-01
+
+### Changed
+- Connected RoarGuild Add-on to the renamed RoarGuildAddon repository and refreshed its ten standard documents. Existing title, tile identity and artwork remain; the guild community stays separate. Summary/keywords now reflect the current documented addon scope.

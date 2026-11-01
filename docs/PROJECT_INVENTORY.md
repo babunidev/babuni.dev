@@ -170,3 +170,7 @@ At Babuni.dev’s request, stable ID `roarr` now displays Battle Emotes and uses
 ## 2026-11-01 — ROARRunlimited renamed
 
 At Babuni.dev’s request, stable ID `roarrunlimited` now displays MultiActionEmotes and uses the renamed public repository. RoarUnlimited.webp is retained. Battle Emotes and Battle Emotes Legacy remain separate records; historical names in source documents do not introduce duplicate tiles.
+
+## 2026-11-01 — RoarGuildAddon repository supplied
+
+At Babuni.dev’s request, the RoarGuild Add-on entry now connects to RoarGuildAddon instead of RoarGuild. Stable ID `roarguild`, its existing title and RoarGuildAddon.webp remain. Roar Guild community stays a separate project with its own image. Historical inventory/source names are retained as evidence rather than duplicate entries.

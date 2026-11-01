@@ -839,3 +839,7 @@ For stable ID `roarr`, the new name I supplied is **Battle Emotes**. AI connecte
 ## 2026-11-01 — Keep the multi-slot project distinct
 
 The MultiActionEmotes repository is the replacement I requested for ROARRunlimited. AI used its existing `roarrunlimited` identity and RoarUnlimited.webp instead of adding another project or merging it with Battle Emotes. The source link and documents now use the new repository, while historical installed names remain. This is a portfolio/source rename, not a new feature or a decision about addon distribution.
+
+## 2026-11-01 — Preserve the addon/community distinction
+
+The supplied RoarGuildAddon repository is the source I want for the existing **RoarGuild Add-on** entry. AI replaced its old connection while retaining stable ID `roarguild` and RoarGuildAddon.webp. The separate Roar Guild community keeps its own identity and art. Source history and installed identifiers remain verbatim; this decision updates portfolio content selection, not addon behavior or community ownership.

@@ -625,3 +625,7 @@ Babuni.dev supplied the renamed BattleEmotes repository for ROARR. Its source ex
 ## 2026-11-01 — MultiActionEmotes source
 
 Babuni.dev supplied MultiActionEmotes as the renamed ROARRunlimited repository. Its standard documents describe numbered action-slot configurations with independent chances and cooldowns, reflected in the summary and nine keywords. Historical installation identifiers and packaging caveats remain verbatim. Public source text is not proof of live-client compatibility, and no unrelated project snapshot is refreshed.
+
+## 2026-11-01 — RoarGuild Add-on scope
+
+Babuni.dev supplied the renamed public source. Its documents describe configurable action emotes, recruitment messages and Roarboard; the summary and nine keywords reflect those subjects. Imported text retains its historical installation names and the source’s explicit message-board trust/privacy limitations. Public documentation and source descriptions are not new live-client verification. The Roar Guild community is not replaced or merged.

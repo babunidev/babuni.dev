@@ -765,3 +765,7 @@ Stable ID `roarr` displays Battle Emotes and connects to `babunidev/BattleEmotes
 ## 2026-11-01 — MultiActionEmotes mapping
 
 Stable ID `roarrunlimited` displays MultiActionEmotes and maps to `babunidev/MultiActionEmotes` main. Only its previous ROARRunlimited snapshot is replaced. The separate BattleEmotes and BattleEmotesLegacy mappings remain. Artwork, project count and common module composition are unchanged; strict production activity is rerun against the replacement public source.
+
+## 2026-11-01 — RoarGuildAddon source mapping
+
+Stable ID `roarguild` connects to `babunidev/RoarGuildAddon` main. Its former RoarGuild snapshot is removed and replaced only with this repository’s standard public documents. The display name, artwork, WoW group and project count stay unchanged; `roar-guild-and-community` is unaffected.

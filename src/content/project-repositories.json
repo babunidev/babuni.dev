@@ -87,8 +87,9 @@
   },
   "roarguild": {
     "status": "connected",
-    "repository": "babunidev/RoarGuild",
-    "branch": "main"
+    "repository": "babunidev/RoarGuildAddon",
+    "branch": "main",
+    "note": "Renamed repository supplied by Babuni.dev on 2026-11-01. Keep RoarGuild Add-on display name, stable ID and artwork; separate from the Roar Guild community. Historical installed roarguild filenames and /rogu remain in source documents."
   },
   "workthatgodbod": {
     "status": "connected",

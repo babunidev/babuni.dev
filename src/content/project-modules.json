@@ -742,5 +742,20 @@
       ],
       "credit": "Name and source replacement requested by Babuni.dev; AI-assisted clarification based on public repository documentation."
     }
+  ],
+  "roarguild": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "RoarGuild Add-on uses the RoarGuildAddon repository. Installed roarguild files and /rogu commands retain historical names; the Roar Guild community remains a separate project.",
+      "links": [
+        {
+          "label": "RoarGuild Add-on repository",
+          "href": "https://github.com/babunidev/RoarGuildAddon"
+        }
+      ],
+      "credit": "Repository replacement requested by Babuni.dev; AI-assisted source clarification from the current public documents."
+    }
   ]
 }

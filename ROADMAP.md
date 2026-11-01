@@ -750,3 +750,9 @@ Battle Emotes and Battle Emotes Legacy remain separate entries. Installation nam
 - [x] Replace ROARRunlimited with MultiActionEmotes alongside the Battle Emotes rename.
 
 Historical installed filenames and client packaging checks remain source concerns, not resolved by portfolio naming changes.
+
+## 2026-11-01 — RoarGuild Add-on source rename
+
+- [x] Connect the supplied RoarGuildAddon repository and refresh its standard documents.
+
+The addon and Roar Guild community remain separate projects. This update does not verify game-client behavior or change the installed addon.

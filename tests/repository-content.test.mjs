@@ -269,3 +269,16 @@ test('MultiActionEmotes replaces ROARRunlimited while retaining its multi-slot i
  const source=composeProjectModules(catalog.roarrunlimited,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
  assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/MultiActionEmotes']);
 });
+
+
+test('RoarGuild addon connects its renamed repository without replacing the guild community',()=>{
+ const project=demoProjects.find(p=>p.id==='roarguild');
+ assert.equal(project.name,'RoarGuild Add-on');assert.equal(project.portalArtwork,'/portal-content/RoarGuildAddon.webp');
+ const community=demoProjects.find(p=>p.id==='roar-guild-and-community');
+ assert.equal(community.name,'Roar Guild');assert.equal(community.portalArtwork,'/portal-content/ROARGuild.webp');
+ const c=connections.roarguild;assert.equal(c.repository,'babunidev/RoarGuildAddon');
+ assert.equal(snapshots['babunidev/RoarGuild'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const source=composeProjectModules(catalog.roarguild,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/RoarGuildAddon']);
+});

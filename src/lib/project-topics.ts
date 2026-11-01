@@ -206,15 +206,15 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
   ],
   "roarguild": [
     "World of Warcraft add-on",
-    "Guild tools",
+    "Action emotes",
     "Guild invitations",
-    "Character behavior",
-    "Guild interface",
-    "Lua",
+    "Roarboard",
+    "Character profiles",
+    "Custom emote pools",
+    "Shared message board",
     "Community tools",
-    "Guild workflow",
-    "Player interactions"
-  ],
+    "Lua"
+],
   "workthatgodbod": [
     "World of Warcraft add-on",
     "Wellness prompts",
