@@ -1,5 +1,7 @@
 # Release readiness — 2026-10-29
 
+> **Historical release-readiness review (29 October 2026).** The tasks, code sizes and open questions below describe a predeployment checkpoint. Later work added readable pages, search metadata and the initial HTTPS release on 31 October; do not read original pending items as present-day blockers. The creative's device acceptance and local test evidence retain their original dates and limits. Current release procedures are documented in [deployment](../deploy/README.md); later milestones in [roadmap](../ROADMAP.md).
+
 ## Implementation update
 
 Babuni.dev approved publication of all 42 current projects and existing public documentation. The discovery work previously proposed below is now implemented: 433 static home/project/module pages, real links, metadata, canonical URLs, sitemap and crawler rules. Project modules now load from per-project JSON; initial JS is approximately 118 KiB (37 KiB gzip), and the large-chunk warning is gone. See `deploy/README.md` and `deploy/nginx-babuni.dev.conf` for prepared gzip/cache/404 configuration. Deployment, DNS, HTTPS and real network measurements are deferred to the weekend. The following original audit preserves the before-state and its measurements; its unimplemented-status descriptions are historical.
