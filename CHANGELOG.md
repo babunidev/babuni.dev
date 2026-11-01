@@ -1,8 +1,8 @@
 # Changelog
 
-All notable **verified repository changes** are recorded here. Human–AI reasoning and proposals belong in docs/DEVLOG.md, not here.
+This changelog records changes committed to the babuni.dev repository. It describes **what changed**, not the full story of how a decision developed. For the creative's first-person account, AI contributions, alternatives and experiments, read the [development journal](docs/DEVLOG.md) and [decision register](docs/DECISIONS.md).
 
-Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security. Do not claim work is finished because it was discussed, illustrated, or started locally.
+Entries use concise, neutral technical language, grouped by **Added**, **Changed**, **Fixed**, **Removed**, or **Security** where appropriate. A committed change, passing tests, a browser observation and a deployed release are distinct levels of evidence; verification limits are stated rather than assumed. Older entries retain their original dates and context and may describe superseded states. The dated entries below form a development history, **not a single current-release checklist**.
 
 ## [Unreleased]
 
@@ -23,7 +23,7 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 
 ### Fixed — About portrait embedded in reader (2026-10-30)
-- Special-cased the creator-supplied `/babuni-about-portrait.webp` in the client Markdown reader as an inline image; other Markdown image references continue to follow the explicit-media link policy.
+- Special-cased the creative-supplied `/babuni-about-portrait.webp` in the client Markdown reader as an inline image; other Markdown image references continue to follow the explicit-media link policy.
 - Added responsive reader styling (centered, maximum width 440px). The portrait was already uploaded to `public/` and referenced from `src/content/about.md`.
 - Source edits committed on `main`; no build or browser verification run.
 
@@ -49,7 +49,7 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 
 
 ### Changed — About, Elsewhere and help copy (2026-10-30)
-- Rewrote the About source to describe **Babuni** as the creator and umbrella identity, distinct from the **babuni.dev** portfolio.
+- Rewrote the About source to describe **Babuni** as the creative identity, distinct from the **babuni.dev** portfolio.
 - Expanded Elsewhere with confirmed Gaming, music and Anskar links; corrected Babuni Gaming's YouTube handle to `@babunigamingg`. Included Arcanite Brothers' public documentation while its external website URL remains unverified; the Anskar Etsy URL is also pending confirmation.
 - Split the question-mark help text into navigable sections and removed the outdated Return to center control and click handler.
 - Verification: GitHub content updates committed; no build, tests or live-site acceptance run (content-edit-only request).
@@ -111,7 +111,7 @@ Follow the spirit of Keep a Changelog: Added, Changed, Fixed, Removed, Security.
 - Passive viewport focus and stale pointer/touch focus no longer suppress hints indefinitely; active keyboard-visible project focus still has priority.
 - Avoid repeating the immediately previous project when other candidates exist.
 - Added tests for cadence, short retry behavior, onscreen eligibility and phone-size geometry.
-- The creator visually approved the center-first small-bloom transition. New ambient behavior awaits their testing.
+- The creative visually approved the center-first small-bloom transition. New ambient behavior awaits their testing.
 
 ### Changed — project-wide author attribution (2026-10-26)
 - Standardized the **Babuni.dev** author identity across accessible GitHub repositories: public README credits, World of Warcraft add-on manifests, applicable package metadata and current project documentation.
@@ -1016,3 +1016,12 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Fixed
 - Removed the unconditional “Opening waits until the shift finishes” addition from ordinary row/column shift messages. Genuine queued open/close/depth-change waits keep their existing message and emphasis.
+
+## 2026-11-01 — Documentation editorial review
+
+### Changed
+- Reworked `README.md` as a concise project introduction, with dated release status, development commands, and a navigable documentation index.
+- Refocused `CONCEPT.md` on the creative vision, preserving the toy-box and grid-native bloom design while identifying superseded layout decisions.
+- Reconciled `ROADMAP.md` release checkboxes with the 31 October deployment evidence recorded in the development journal. Live-browser performance and external indexing checks remain open.
+- Clarified creative-first narrative, human–AI attribution, and evidence standards in `AGENTS.md`, `.chatgpt/PROJECT_INSTRUCTIONS.md`, `docs/AI_COLLABORATION.md`, and the development journal introduction.
+- Refined this changelog's editorial guidance and terminology without changing application code, website content, or historical implementation claims. No build or runtime test was performed as part of this documentation review.
