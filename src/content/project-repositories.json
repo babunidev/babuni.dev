@@ -176,8 +176,10 @@
     "note": "No matching repository found in the accessible account inventory on 2026-10-27."
   },
   "buxbrew-character-story": {
-    "status": "needs-repository",
-    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+    "status": "connected",
+    "repository": "babunidev/BuxbrewCharacterStory",
+    "branch": "main",
+    "note": "Original Buxbrew character-story archive. Standard project documents plus the nine reviewed lore folders are published from a pinned public revision."
   },
   "grimnir": {
     "status": "needs-confirmation",
