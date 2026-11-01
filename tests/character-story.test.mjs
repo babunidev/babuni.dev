@@ -19,7 +19,7 @@ test('Buxbrew folder modules cover all imported Markdown and preserve the 42-pro
   assert.equal(connection.repository,CHARACTER_STORY_REPOSITORY);
   const snapshot=snapshots[CHARACTER_STORY_REPOSITORY];
   assert.match(snapshot.commit,/^[a-f0-9]{40}$/);
-  assert.equal(snapshot.documents.length,40);
+  assert.ok(snapshot.documents.length>=40);
   const folders=indexedCharacterStoryFolders(connection,index[CHARACTER_STORY_REPOSITORY]);
   assert.deepEqual(folders.map(x=>x.id),CHARACTER_STORY_FOLDERS.map(x=>'folder-'+x));
   assert.ok(folders.every(moduleHasContent));
@@ -30,17 +30,19 @@ test('Buxbrew folder modules cover all imported Markdown and preserve the 42-pro
       'missing indexed source: '+file.path);
     assert.ok(existsSync(new URL('../public/_project-docs/'+documentAssetName(CHARACTER_STORY_REPOSITORY,file.path),import.meta.url)));
   }
-  assert.equal(folders.find(x=>x.id==='folder-character').documents.length,9);
-  assert.equal(folders.find(x=>x.id==='folder-family').documents.length,6);
-  assert.equal(folders.find(x=>x.id==='folder-docs').documents.length,8);
+  assert.ok(folders.find(x=>x.id==='folder-character').documents.length>=9);
+  assert.ok(folders.find(x=>x.id==='folder-family').documents.length>=6);
+  assert.ok(folders.find(x=>x.id==='folder-docs').documents.length>=8);
   for(const file of CHARACTER_STORY_ROOT_FILES)
     assert.ok(folders.find(x=>x.id==='folder-docs').documents.some(d=>d.path===file),file);
   const assets=folders.find(x=>x.id==='folder-assets');
-  assert.equal(assets.documents.length,0);
+  assert.ok(Array.isArray(assets.documents)); // Empty today; may contain public Markdown after a later source sync.
   assert.deepEqual(assets.links.map(x=>x.label),['Illustrations','References','Screenshots']);
   const modules=modulesForProject('buxbrew-character-story','Buxbrew roleplaying story');
-  assert.equal(modules.length,18); // Eight existing standard docs, nine folder indexes, source.
+  assert.ok(modules.length>=18); // Standard docs can grow without changing the folder index count.
   assert.equal(new Set(modules.map(x=>x.id)).size,modules.length);
+  assert.equal(modules.filter(x=>x.type==='document-list').length,9);
+  assert.ok(modules.some(x=>x.id==='source'));
   assert.equal(selectModules(modules,()=>.5).length,8);
 });
 
