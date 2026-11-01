@@ -1,6 +1,6 @@
 # babuni.dev
 
-**Author:** Babuni.dev
+**Creative:** Babuni.dev
 
 **An interactive creative portfolio and digital workshop.**
 
@@ -10,7 +10,7 @@ The website itself is intended to become one of its exhibits: a record of its co
 
 ## Project status
 
-**Living-grid portfolio prototype with multiple depths of exploration.** Astro 7 and the mechanical grid are on `main`: screen-centered dragging, autonomous shifting and 42 retained project tiles and three unique neutral decorative identities. Visitors can explore three-point topic bubbles, open a small bloom of up to eight neighboring modules, expand into a larger grid-native bloom, and read full documentation or open galleries, videos and source links. All forty-two active projects have supplied 512 × 512 WebP portal artwork files, while other candidate tiles remain provisional. The repository-backed content pipeline currently maps 35 retained tiles to 35 public repositories, including BABUNI.DEV itself; other tiles remain explicitly unresolved or provisional. **Remaining candidate labels are not all verified or approved published exhibits.** Full public project documents are built as separate static assets and loaded only when opened in the reader, keeping the initial grid bundle lighter. The Projects menu groups the 42 projects under World of Warcraft, Morkahja, AI, Games and Music; categories do not rearrange the grid. Three neutral identities never repeat in view, while real projects may repeat when necessary. The work remains an active prototype, with milestones 1–4 physically tested and accepted by Babuni.dev on 2026-10-29. Production hosting, discoverability and owner publishing controls remain next.
+**Living-grid portfolio prototype with multiple depths of exploration.** Astro 7 and the mechanical grid are on `main`: screen-centered dragging, autonomous shifting and 42 retained project tiles and three unique neutral decorative identities. Visitors can explore three-point topic bubbles, open a small bloom of up to eight neighboring modules, expand into a larger grid-native bloom, and read full documentation or open galleries, videos and source links. All forty-two active projects have supplied 512 × 512 WebP portal artwork files, while other candidate tiles remain provisional. At the recorded release checkpoint, the repository-backed content pipeline mapped 35 retained tiles to 35 public repositories, including BABUNI.DEV itself; other tiles remained unresolved or provisional. **Remaining candidate labels are not all verified or approved published exhibits.** Full public project documents are built as separate static assets and loaded only when opened in the reader, keeping the initial grid bundle lighter. The Projects menu groups the 42 projects under World of Warcraft, Morkahja, AI, Games and Music; categories do not rearrange the grid. Three neutral identities never repeat in view, while real projects may repeat when necessary. The work remains an active prototype, with milestones 1–4 physically tested and accepted by Babuni.dev on 2026-10-29. Production hosting, discoverability and owner publishing controls remain next.
 
 The first spiral is sorted newest-first by the latest commit on each connected public repository branch. Private-code projects use their public documentation edition dates. Each build refreshes public activity; ties and undated projects keep catalog order, and an active page never re-sorts. Offline/rate-limited builds warn and retain last-verified dates.
 
@@ -60,10 +60,10 @@ Explore before explaining. Delight without obscuring usability. Record not just 
 
 No software license has been selected. Public visibility does not imply permission to reuse the source code.
 
-## Documentation audit #28 — 27 October 2026
+## Historical documentation audit — 27 October 2026
 
 The 11 core portfolio documents already contain a detailed, evidence-backed record. This audit preserves the original **toy-box metaphor**, endlessly recycled engraved-stone grid, contextual portal bubbles, **grid-native small and big blooms**, and a separate reader. It does not redesign those interactions or promote unapproved ideas into features.
 
 **Current release checkpoint (2026-10-29):** 42 retained projects, 42 assigned 512px WebP portal images, three optional unique neutral tile identities, and 35 connected public repository sources. Milestones 1–4 are physically tested and accepted by Babuni.dev, including responsive use, keyboard/reduced motion and long sessions. Content review continues as living work. All current projects are authorized public; readable project/module pages, sitemap, metadata and on-demand module loading are built. A future publishing UI and production VPS/domain/HTTPS deployment remain separate work. See [release-readiness audit](docs/RELEASE_READINESS-2026-10-29.md) for measured artifact sizes and verification limits.
 
-**Documentation publication dependency:** The portfolio's imported project documents are **revision-pinned static snapshots**, not automatically live GitHub content. Changes just committed to other Babuni.dev repositories will not appear in project blooms until a deliberate `npm run content:sync`, `npm run content:check`, `npm run test:grid` and `npm run build` cycle is reviewed and the resulting content snapshot is committed. This audit edits Markdown **only**; it does not sync generated snapshots or deploy the site.
+**Publication dependency:** The portfolio's imported project documents are **revision-pinned static snapshots**, not automatically live GitHub content. Changes just committed to other Babuni.dev repositories will not appear in project blooms until a deliberate `npm run content:sync`, `npm run content:check`, `npm run test:grid` and `npm run build` cycle is reviewed and the resulting content snapshot is committed. This audit edits Markdown **only**; it does not sync generated snapshots or deploy the site.
