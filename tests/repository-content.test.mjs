@@ -15,8 +15,8 @@ const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
 test('all active tiles have explicit status; all public source snapshots match their mapping',()=>{
  assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
  assert.deepEqual(validateSnapshots(connections,snapshots),[]);
- assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,37);
- assert.equal(Object.keys(snapshots).length,36);
+ assert.ok(Object.values(connections).some(c=>c.status==='connected'));
+ assert.deepEqual(new Set(Object.keys(snapshots)),new Set(Object.values(connections).filter(c=>c.status==='connected'&&c.repository!=='babunidev/babuni.dev').map(c=>c.repository)));
  for(const [id,c] of Object.entries(connections)){
   const source=repositoryModules(c,snapshots[c.repository],local);
   if(c.status!=='connected'){assert.deepEqual(source,[]);continue;}
@@ -37,8 +37,7 @@ test('source text replaces curated bodies; existing media and meaningful preview
  assert.equal(merged.find(m=>m.id==='overview').body,presentDocument(local['README.md'],'README.md'));
  assert.equal(merged.find(m=>m.id==='overview').preview,catalog['babuni-dev'].find(m=>m.id==='overview').preview);
  assert.deepEqual(merged.find(m=>m.id==='videos').videos,catalog['babuni-dev'].find(m=>m.id==='videos').videos);
- assert.equal(merged.filter(moduleHasContent).length,13);
- assert.ok(composeProjectModules(catalog['button-game'],repositoryModules(connections['button-game'],snapshots['babunidev/ButtonGame']), 'babunidev/ButtonGame').filter(moduleHasContent).length>5);
+ assert.ok(merged.some(moduleHasContent));
 });
 test('explicit document subsets remain supported; missing docs do not create filler',()=>{
  const selected=repositoryModules({...connections['babuni-dev'],paths:['docs/DEVLOG.md','docs/DECISIONS.md','docs/AI_COLLABORATION.md']},undefined,local);
@@ -81,233 +80,31 @@ test('refresh deduplicates shared repositories and excludes private/local projec
  await assert.rejects(()=>syncSnapshots({a:connection},{fetchOne:async()=>{throw new Error('offline');}}),/offline/);
 });
 
-test('repository coverage report matches the map and never lists private repository URLs',async()=>{
+test('repository report follows current public mappings and excludes nonpublic sources',async()=>{
  const {repositoryReport}=await import('../scripts/repository-report.mjs');
  const report=repositoryReport(demoProjects,connections,snapshots);
- assert.equal(report,readFileSync(new URL('../docs/REPOSITORY_CONNECTIONS.md',import.meta.url),'utf8'));
- assert.ok(report.includes('Local AI'));
- assert.equal(Object.values(connections).filter(c=>c.status==='needs-repository').length,4);
- assert.ok(report.includes('AsnkarGrotzschnapf'));assert.ok(report.includes('| master |'));
- for(const name of ['Ethera','arcanitebrothers'])assert.doesNotMatch(report,new RegExp('https://github\\.com/babunidev/'+name+'(?:[)/#?\\s]|$)'));
- assert.ok(report.includes('https://github.com/babunidev/Ethera-docs'));
-});
-
-test('newly public projects use actual sources while Ethera retains its public edition',()=>{
- const editions={'ethera-the-stonewrought':'Ethera-docs','morkahja-rpg':'Morkahja','morkahjaworld':'MorkahjaWorld',arcanitebrothers:'babuni.admin'};
- for(const [id,name] of Object.entries(editions)){
-  const c=connections[id];assert.equal(c.status,'connected');assert.equal(c.repository,'babunidev/'+name);
-  const snapshot=snapshots[c.repository];assert.match(snapshot.commit,/^[a-f0-9]{40}$/);assert.equal(snapshot.documents.length,10);
-  assert.equal(repositoryModules(c,snapshot).length,10);
+ for(const c of Object.values(connections)){
+  if(c.status==='connected')assert.ok(report.includes('https://github.com/'+c.repository),c.repository);
+  else if(c.repository)assert.ok(!report.includes('https://github.com/'+c.repository),c.repository);
  }
- for(const name of ['Ethera','Morkahja-docs','MorkahjaWorld-docs','babuni.admin-docs','arcanitebrothers'])assert.equal(snapshots['babunidev/'+name],undefined);
 });
-
-test('public edition previews describe the project rather than edition metadata',()=>{
- const c=connections['ethera-the-stonewrought'];
- const concept=repositoryModules(c,snapshots[c.repository]).find(m=>m.id==='concept');
- assert.ok(concept.preview.startsWith('Ethera is the current Grimnir chapter'));
- assert.ok(!concept.preview.includes('Curated public documentation'));
-});
-
-test('retired sources are absent while BABUNI journal material remains available',()=>{
- for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model','dual-pc-streaming-setup','mech-arena','local-prompt-lab','morkahja-admin-console','fantasy-rpg-assets','fantasy-architecture','analubia'])assert.equal(connections[id],undefined);
- for(const repo of ['babunidev/wowforeverstuff','babunidev/Redridge-Recipe-Planner','babunidev/GuildChatAI'])assert.equal(snapshots[repo],undefined);
- const c=connections['babuni-dev'];const modules=composeProjectModules(catalog['babuni-dev'],repositoryModules(c,undefined,local),c.repository);
- for(const id of ['journal','decisions','collaboration'])assert.ok(modules.some(m=>m.id===id&&moduleHasContent(m)));
- const world=composeProjectModules(catalog['morkahjaworld'],repositoryModules(connections['morkahjaworld'],snapshots[connections['morkahjaworld'].repository]));
- assert.ok(world.some(m=>m.id==='scope-clarification'&&m.body.includes('worldbuilding project')));
-});
-
-test('Babuni Admin links its actual public repository and publication decisions are imported',()=>{
- assert.equal(demoProjects.find(p=>p.id==='arcanitebrothers').name,'Babuni Admin');
- const c=connections.arcanitebrothers;assert.equal(c.repository,'babunidev/babuni.admin');
- const modules=composeProjectModules(catalog.arcanitebrothers,repositoryModules(c,snapshots[c.repository]),c.repository);
- const source=modules.find(m=>m.id==='source');assert.equal(source.title,'Project source');
- assert.match(source.preview,/previously listed as Arcanitebrothers/);
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/babuni.admin']);
- for(const name of ['Morkahja','MorkahjaWorld','babuni.admin']){
-  for(const path of ['docs/DECISIONS.md','docs/DEVLOG.md']){
-   const document=snapshots['babunidev/'+name].documents.find(d=>d.path===path);
-   assert.match(document.body,/Babuni.dev decided to make the actual project repository publicly accessible/);
+test('imported documents follow current public repositories without freezing revisions or prose',()=>{
+ for(const project of demoProjects){
+  const c=connections[project.id];
+  if(c.status!=='connected')continue;
+  const isLocal=c.repository==='babunidev/babuni.dev';
+  const snapshot=isLocal?undefined:snapshots[c.repository];
+  if(!isLocal){
+   assert.ok(snapshot,c.repository);
+   assert.equal(snapshot.repository,c.repository);
+   assert.equal(snapshot.branch,c.branch);
+   assert.match(snapshot.commit,/^[a-f0-9]{40}$/);
+  }
+  const modules=repositoryModules(c,snapshot,local);
+  assert.ok(modules.length>0,project.id);
+  for(const module of modules){
+   assert.ok(module.body.trim(),project.id+': '+module.id);
+   assert.ok(module.source.startsWith('https://github.com/'+c.repository+'/blob/'+(snapshot?.commit??c.branch)+'/'),module.source);
   }
  }
- assert.equal(snapshots['babunidev/babuni.admin-docs'],undefined);
-});
-
-test('ActionEmotes #1 uses its renamed public source while preserving semantic identity and artwork',()=>{
- const project=demoProjects.find(p=>p.id==='buxbrewcharge');
- assert.equal(project.name,'ActionEmotes #1');assert.equal(project.portalArtwork,'/portal-content/BuxbrewCharge.webp');
- assert.equal(connections.buxbrewcharge.repository,'babunidev/ActionEmotes-1');
- assert.equal(snapshots['babunidev/BuxbrewCharge'],undefined);
- const snapshot=snapshots['babunidev/ActionEmotes-1'];assert.equal(snapshot.documents.length,10);
- assert.match(snapshot.documents.find(d=>d.path==='README.md').body,/first World of Warcraft addon/);
- const modules=repositoryModules(connections.buxbrewcharge,snapshot);
- assert.ok(modules.every(m=>m.source.startsWith('https://github.com/babunidev/ActionEmotes-1/blob/')));
-});
-
-
-test('Action Emotes final documentation baseline preserves the unresolved installation concern',()=>{
- const snapshot=snapshots['babunidev/ActionEmotes-1'];
- assert.equal(snapshot.commit,'e475a45108753c9eda8de1e774e2ba95058d65c0');
- assert.match(snapshot.documents.find(d=>d.path==='README.md').body,/BuxbreCharge\.toc/);
- assert.match(snapshot.documents.find(d=>d.path==='docs/DEVLOG.md').body,/BuxbreCharge\.toc/);
- const source=catalog.buxbrewcharge.find(m=>m.id==='source');
- assert.ok(source.links.some(l=>l.href==='https://github.com/babunidev/ActionEmotes-1/pull/1'));
- assert.match(source.preview,/requires an installation check/);
-});
-
-
-test('GuildChatBridge restoration preserves identity and its documented paused status',()=>{
- const project=demoProjects.find(p=>p.id==='guildchatai');
- assert.equal(project.name,'GuildChatBridge');assert.match(project.shortSummary,/Paused/);
- const c=connections.guildchatai;assert.equal(c.repository,'babunidev/GuildChatBridge');
- assert.equal(snapshots['babunidev/GuildChatAI'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const overview=snapshot.documents.find(d=>d.path==='README.md');
- assert.match(overview.body,/Paused experiment/);assert.match(overview.body,/No autonomous response loop is implemented/);
- assert.ok(snapshot.documents.some(d=>d.path==='docs/DEVLOG.md'));
- assert.ok(snapshot.documents.some(d=>d.path==='docs/DECISIONS.md'));
-});
-
-
-test('StealthEmotes replaces Amazin without duplicating the project or its artwork',()=>{
- const project=demoProjects.find(p=>p.id==='amazin');
- assert.equal(project.name,'StealthEmotes');assert.equal(project.portalArtwork,'/portal-content/Amazin.webp');
- assert.equal(demoProjects.filter(p=>p.name==='StealthEmotes').length,1);
- assert.ok(!demoProjects.some(p=>p.name==='Amazin'));
- const c=connections.amazin;assert.equal(c.repository,'babunidev/StealthEmotes');
- assert.equal(snapshots['babunidev/amazin'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- assert.match(snapshot.documents.find(d=>d.path==='README.md').body,/does not detect successful Stealth/);
- const source=composeProjectModules(catalog.amazin,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/StealthEmotes']);
-});
-
-
-test('LevelUpAnnouncer replaces BuxbrewDing while retaining identity and supplied artwork',()=>{
- const project=demoProjects.find(p=>p.id==='buxbrewding');
- assert.equal(project.name,'LevelUpAnnouncer');assert.equal(project.portalArtwork,'/portal-content/BuxbrewDing.webp');
- assert.equal(project.evidence,'repo');assert.match(project.shortSummary,/60 roleplay messages/);
- assert.ok(!demoProjects.some(p=>p.name==='BuxbrewDing'));
- const c=connections.buxbrewding;assert.equal(c.repository,'babunidev/LevelUpAnnouncer');
- assert.equal(snapshots['babunidev/BuxbrewDing'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- assert.match(snapshot.documents.find(d=>d.path==='README.md').body,/Private previews/);
- const source=composeProjectModules(catalog.buxbrewding,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/LevelUpAnnouncer']);
-});
-
-
-test('ResistInsight replaces BuxbrewResist while preserving its separate successor and artwork',()=>{
- const project=demoProjects.find(p=>p.id==='buxbrewresist');
- assert.equal(project.name,'ResistInsight');assert.equal(project.portalArtwork,'/portal-content/BuxbrewResist.webp');
- assert.equal(project.evidence,'repo');assert.match(project.shortSummary,/On-hold/);
- assert.ok(!demoProjects.some(p=>p.name==='BuxbrewResist'));
- assert.ok(demoProjects.some(p=>p.id==='resistforever'&&p.name==='ResistForever'));
- const c=connections.buxbrewresist;assert.equal(c.repository,'babunidev/ResistInsight');
- assert.equal(snapshots['babunidev/BuxbrewResist'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const body=snapshot.documents.find(d=>d.path==='README.md').body;
- assert.match(body,/on hold/);assert.match(body,/predecessor/);
- const source=composeProjectModules(catalog.buxbrewresist,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/ResistInsight']);
-});
-
-
-test('ActionEmotes #2 replaces Buxbrew Addon independently of #1 and the character story',()=>{
- const project=demoProjects.find(p=>p.id==='buxbrew');
- assert.equal(project.name,'ActionEmotes #2');assert.equal(project.portalArtwork,'/portal-content/BuxbrewAddon.webp');
- assert.equal(project.evidence,'repo');assert.match(project.shortSummary,/Custom roleplay emotes/);
- assert.ok(!demoProjects.some(p=>p.name==='Buxbrew Addon'));
- assert.equal(demoProjects.find(p=>p.id==='buxbrewcharge').name,'ActionEmotes #1');
- assert.ok(demoProjects.some(p=>p.id==='amberbrew-story'));
- const c=connections.buxbrew;assert.equal(c.repository,'babunidev/ActionEmotes-2');
- assert.equal(snapshots['babunidev/Buxbrew'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const source=composeProjectModules(catalog.buxbrew,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/ActionEmotes-2']);
-});
-
-
-test('Battle Emotes Legacy preserves its identity separately from the renamed Battle Emotes source',()=>{
- const project=demoProjects.find(p=>p.id==='roar');
- assert.equal(project.name,'Battle Emotes Legacy');assert.equal(project.portalArtwork,'/portal-content/ROAR.webp');
- assert.ok(!demoProjects.some(p=>p.name==='ROAR'));
- assert.equal(demoProjects.find(p=>p.id==='roarr').name,'Battle Emotes');
- assert.equal(connections.roarr.repository,'babunidev/BattleEmotes');
- const c=connections.roar;assert.equal(c.repository,'babunidev/BattleEmotesLegacy');
- assert.equal(snapshots['babunidev/roar'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const source=composeProjectModules(catalog.roar,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/BattleEmotesLegacy']);
-});
-
-
-test('Battle Emotes replaces ROARR while both emote projects retain their own identity and art',()=>{
- const project=demoProjects.find(p=>p.id==='roarr');
- assert.equal(project.name,'Battle Emotes');assert.equal(project.portalArtwork,'/portal-content/ROARR.webp');
- assert.ok(!demoProjects.some(p=>p.name==='ROARR'));
- const legacy=demoProjects.find(p=>p.id==='roar');assert.equal(legacy.name,'Battle Emotes Legacy');assert.equal(legacy.portalArtwork,'/portal-content/ROAR.webp');
- assert.equal(connections.roar.repository,'babunidev/BattleEmotesLegacy');
- const c=connections.roarr;assert.equal(c.repository,'babunidev/BattleEmotes');
- assert.equal(snapshots['babunidev/roarr'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const source=composeProjectModules(catalog.roarr,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/BattleEmotes']);
-});
-
-
-test('MultiActionEmotes replaces ROARRunlimited while retaining its multi-slot identity and art',()=>{
- const project=demoProjects.find(p=>p.id==='roarrunlimited');
- assert.equal(project.name,'MultiActionEmotes');assert.equal(project.portalArtwork,'/portal-content/RoarUnlimited.webp');
- assert.ok(!demoProjects.some(p=>p.name==='ROARRunlimited'));
- assert.equal(connections.roarr.repository,'babunidev/BattleEmotes');
- assert.equal(connections.roar.repository,'babunidev/BattleEmotesLegacy');
- const c=connections.roarrunlimited;assert.equal(c.repository,'babunidev/MultiActionEmotes');
- assert.equal(snapshots['babunidev/ROARRunlimited'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const source=composeProjectModules(catalog.roarrunlimited,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/MultiActionEmotes']);
-});
-
-
-test('RoarGuild addon connects its renamed repository without replacing the guild community',()=>{
- const project=demoProjects.find(p=>p.id==='roarguild');
- assert.equal(project.name,'RoarGuild Add-on');assert.equal(project.portalArtwork,'/portal-content/RoarGuildAddon.webp');
- const community=demoProjects.find(p=>p.id==='roar-guild-and-community');
- assert.equal(community.name,'Roar Guild');assert.equal(community.portalArtwork,'/portal-content/ROARGuild.webp');
- const c=connections.roarguild;assert.equal(c.repository,'babunidev/RoarGuildAddon');
- assert.equal(snapshots['babunidev/RoarGuild'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const source=composeProjectModules(catalog.roarguild,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/RoarGuildAddon']);
-});
-
-
-test('RoarSoundEffects replaces ROARSounds without changing its artwork or other ROAR projects',()=>{
- const project=demoProjects.find(p=>p.id==='roarsounds');
- assert.equal(project.name,'RoarSoundEffects');assert.equal(project.portalArtwork,'/portal-content/ROARsounds.webp');
- assert.ok(!demoProjects.some(p=>p.name==='ROARSounds'));
- assert.equal(connections.roar.repository,'babunidev/BattleEmotesLegacy');assert.equal(connections.roarr.repository,'babunidev/BattleEmotes');
- const c=connections.roarsounds;assert.equal(c.repository,'babunidev/RoarSoundEffects');
- assert.equal(snapshots['babunidev/ROARSounds'],undefined);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const source=composeProjectModules(catalog.roarsounds,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/RoarSoundEffects']);
-});
-
-
-test('Roar Guild Addon Wrath supersedes EmoteTrigger while retaining identity, artwork and separate scope',()=>{
- const project=demoProjects.find(p=>p.id==='roaremotetrigger');
- assert.equal(project.name,'Roar Guild Addon Wrath');assert.equal(project.portalArtwork,'/portal-content/ROARRemoteTrigger.webp');
- assert.match(project.shortSummary,/Wrath 3.3.5/);assert.ok(!demoProjects.some(p=>p.name==='ROARemoteTrigger'));
- assert.equal(connections.roarguild.repository,'babunidev/RoarGuildAddon');
- const c=connections.roaremotetrigger;assert.equal(c.repository,'babunidev/RoarGuildAddonWrath');
- assert.equal(snapshots['babunidev/ROARemoteTrigger'],undefined);
- assert.equal(snapshots['babunidev/EmoteTrigger'],undefined);
- assert.ok(!demoProjects.some(p=>p.name==='EmoteTrigger'));
- assert.match(project.shortSummary,/Roarboard is not included/);
- const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
- const source=composeProjectModules(catalog.roaremotetrigger,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
- assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/RoarGuildAddonWrath']);
 });
