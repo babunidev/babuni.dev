@@ -177,9 +177,9 @@
   },
   "buxbrew-character-story": {
     "status": "connected",
-    "repository": "babunidev/BuxbrewCharacterStory",
+    "repository": "babunidev/AmberbrewStory",
     "branch": "main",
-    "note": "Original Buxbrew character-story archive. Standard project documents plus the nine reviewed lore folders are published from a pinned public revision."
+    "note": "The Amberbrew family and Buxbrew character archive; renamed from BuxbrewCharacterStory. Standard documents and nine pinned lore folders remain available."
   },
   "grimnir": {
     "status": "needs-confirmation",
