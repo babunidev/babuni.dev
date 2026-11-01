@@ -874,3 +874,11 @@ The header correction I requested is conditional feedback: an ordinary shift sho
 **AI diagnosis and implementation:** when every real and neutral identity is already visible, prefer the uniquely departing project's identity for the incoming stone instead of introducing a persistent duplicate of a continuing visible project. A departing identity is eligible only if it is not still represented by another continuing visible tile, is not pinned, and is not already reused for another simultaneous entrance.
 
 **Boundary:** the existing 42-project catalog, three neutral identities, shift duration, movement, and bloom layout remain unchanged. When the viewport has more visible stones than identity capacity, some real-project repetition remains unavoidable; this correction does not claim otherwise. Automated regression and live-browser verification are distinct.
+
+## 2026-11-01 — One Buxbrew module per archive folder
+
+**Babuni.dev direction:** use the newly created `BuxbrewCharacterStory` public repository for the existing Buxbrew character-story project; expose Assets, Character, Docs, Family, Journal, Lore, Places, Relationships and Stories as nine folder modules. Each should list its Markdown files and open them in the website's own reader rather than consuming a separate module per document.
+
+**AI implementation:** created a `document-list` module type with a reversible in-reader file selection. The character archive is imported as a pinned, strictly allowlisted public source. Root-level `AGENTS.md`, `CANON.md`, `TIMELINE.md` and `WRITING-GUIDE.md` appear under Docs. Assets currently contains no Markdown or public images, so the module links its actual three subfolders rather than fabricating entries.
+
+**Boundaries:** retain `buxbrew-character-story` as the stable project ID, existing artwork, eight actual standard-document imports, the source link and nine folder modules. Missing standard documentation is not synthesized. No live production deployment or physical-device acceptance is implied.
