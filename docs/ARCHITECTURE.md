@@ -785,3 +785,10 @@ Stable ID `roaremotetrigger` now displays Roar Guild Addon Wrath and maps to `ba
 ## 2026-11-01 — Preserve activity text without inventing state
 
 `headerActivity` returns the supplied status text unchanged, using anchored shift/wait detection only for emphasis. The grid’s existing queued-transition paths remain responsible for emitting “Waiting for shift to finish”. Removing the formatter’s unconditional sentence requires no new state or queue/movement changes.
+
+
+## 2026-11-01 — Saturated entrance reservation rule
+
+The renderer uses 42 semantic project IDs plus three renderer-only neutral IDs. ProjectPlacement.stageEntrances reserves the current visible identities and preassigns the incoming offscreen source before movement. When all capacity identities are reserved, it may reuse the departing source's identity if no continuing visible tile or pinned selection owns that identity, and if no other entrance in the same round has reused it. This preserves uniqueness in an exactly saturated viewport after settlement without renaming a tile as it lands.
+
+finishEntrances still follows DOM-resident settlement, history append and the final sync. Existing source-coordinate history, portal-node transfer and the 4.4-second shift are unchanged. Viewports displaying more stones than unique identities can still contain necessary real-project repeats.
