@@ -729,3 +729,7 @@ Babuni.dev clarified that stale dates can misidentify Recently updated tiles. Pr
 ## 2026-11-01 — GuildChatBridge portal image
 
 **Babuni.dev supplied:** GuildChatBridge.webp in the local public portal-content folder, requesting its use for the restored project. **AI implementation:** Map the image to stable ID `guildchatai`; resize the 1254×1254 WebP to the existing 512×512 portal standard and encode at quality 88. Preserve the supplied composition and the source file, existing circular mask, title, bubble behavior and project status. No replacement artwork, layout or interaction change was proposed. All 42 active projects now have portal artwork. **Verification:** WebP container/size and existing artwork-mapping regression checks, content validation and production build; no new physical-device acceptance or addon-runtime test is claimed.
+
+## 2026-11-01 — StealthEmotes title update
+
+The author-requested StealthEmotes name replaces Amazin in the tile and project finder. Existing Amazin.webp art, circular mask, WoW menu group, add-on cue and nine-keyword sampling remain. No tile timing, layout, bloom or interaction behavior changes accompany this repository rename.

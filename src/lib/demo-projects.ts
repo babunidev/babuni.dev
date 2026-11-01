@@ -261,8 +261,8 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "amazin",
     "portalArtwork": "/portal-content/Amazin.webp",
-    "name": "Amazin",
-    "shortSummary": "Stealth-emote addon with rested experience reporting.",
+    "name": "StealthEmotes",
+    "shortSummary": "Action-slot emote addon with rested experience reporting; successful Stealth casts are not detected.",
     "evidence": "repo",
     "tint": "hsl(355 58% 62%)"
   },

@@ -637,5 +637,20 @@
       "credit": "Project authorship: Babuni.dev. Baseline and unresolved installation concern supplied by Babuni.dev; AI verified the public merged review and imported its documentation. No addon code or filename was changed."
     }
   ],
-  "guildchatai": []
+  "guildchatai": [],
+  "amazin": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "StealthEmotes replaces the former Amazin project name. The installed addon still uses Amazin filenames and /amazin commands; the current source README retains earlier proposed-rename wording.",
+      "links": [
+        {
+          "label": "StealthEmotes repository",
+          "href": "https://github.com/babunidev/StealthEmotes"
+        }
+      ],
+      "credit": "Repository replacement directed by Babuni.dev; AI-assisted clarification of current repository versus historical runtime names."
+    }
+  ]
 }

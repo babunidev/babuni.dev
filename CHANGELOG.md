@@ -956,3 +956,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Added
 - Connected Babuni.dev’s supplied GuildChatBridge.webp to the existing GuildChatBridge project, replacing its colored portal fallback. Optimized the 1254×1254 source to the established 512×512 WebP delivery size.
+
+## 2026-11-01
+
+### Changed
+- Replaced Amazin’s displayed name and public source with StealthEmotes, preserving its existing tile ID and artwork. Imported the renamed repository’s standard documents and clarified unchanged historical addon identifiers.

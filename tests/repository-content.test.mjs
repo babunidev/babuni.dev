@@ -168,3 +168,17 @@ test('GuildChatBridge restoration preserves identity and its documented paused s
  assert.ok(snapshot.documents.some(d=>d.path==='docs/DEVLOG.md'));
  assert.ok(snapshot.documents.some(d=>d.path==='docs/DECISIONS.md'));
 });
+
+
+test('StealthEmotes replaces Amazin without duplicating the project or its artwork',()=>{
+ const project=demoProjects.find(p=>p.id==='amazin');
+ assert.equal(project.name,'StealthEmotes');assert.equal(project.portalArtwork,'/portal-content/Amazin.webp');
+ assert.equal(demoProjects.filter(p=>p.name==='StealthEmotes').length,1);
+ assert.ok(!demoProjects.some(p=>p.name==='Amazin'));
+ const c=connections.amazin;assert.equal(c.repository,'babunidev/StealthEmotes');
+ assert.equal(snapshots['babunidev/amazin'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ assert.match(snapshot.documents.find(d=>d.path==='README.md').body,/does not detect successful Stealth/);
+ const source=composeProjectModules(catalog.amazin,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/StealthEmotes']);
+});

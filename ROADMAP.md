@@ -708,3 +708,9 @@ Automatic server deployment remains separate; this update changes build validati
 ## 2026-11-01 — GuildChatBridge artwork supplied
 
 - [x] Connect the author-supplied GuildChatBridge portal image. All 42 active projects now have mapped artwork; the earlier missing-art item is resolved.
+
+## 2026-11-01 — StealthEmotes source rename
+
+- [x] Replace Amazin with StealthEmotes in the active portfolio and repository source, retaining stable identity and artwork.
+
+Addon runtime filenames, version discrepancies and live-client verification remain upstream concerns, not resolved by a portfolio rename.

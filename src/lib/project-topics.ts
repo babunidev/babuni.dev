@@ -355,7 +355,7 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
     "Player actions",
     "Lua",
     "Roleplay tools",
-    "Stealth",
+    "Action-bar slot",
     "Game interface"
   ],
   "warriorstartattack": [

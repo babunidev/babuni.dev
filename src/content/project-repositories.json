@@ -153,8 +153,9 @@
   },
   "amazin": {
     "status": "connected",
-    "repository": "babunidev/amazin",
-    "branch": "main"
+    "repository": "babunidev/StealthEmotes",
+    "branch": "main",
+    "note": "Renamed repository supplied by Babuni.dev on 2026-11-01; stable ID and supplied Amazin.webp artwork retained. Installed addon filenames, commands and saved variables remain Amazin upstream."
   },
   "warriorstartattack": {
     "status": "connected",

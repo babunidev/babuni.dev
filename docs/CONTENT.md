@@ -597,3 +597,7 @@ Recently updated markers depend on actual public branch-head committer dates. Pr
 ## 2026-11-01 — GuildChatBridge portal image
 
 **Babuni.dev supplied:** GuildChatBridge.webp in the local public portal-content folder, requesting its use for the restored project. **AI implementation:** Map the image to stable ID `guildchatai`; resize the 1254×1254 WebP to the existing 512×512 portal standard and encode at quality 88. Preserve the supplied composition and the source file, existing circular mask, title, bubble behavior and project status. No replacement artwork, layout or interaction change was proposed. All 42 active projects now have portal artwork. **Verification:** WebP container/size and existing artwork-mapping regression checks, content validation and production build; no new physical-device acceptance or addon-runtime test is claimed.
+
+## 2026-11-01 — StealthEmotes naming evidence
+
+Babuni.dev requested that StealthEmotes replace Amazin. The source module links the renamed repository and explains that installed filenames/commands remain Amazin. Earlier proposed-rename wording in upstream documents is preserved as source text rather than silently rewritten. The summary and keywords describe action-slot emotes and rested-XP reporting without claiming successful Stealth detection or a tested release.
