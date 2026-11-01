@@ -1,69 +1,101 @@
 # babuni.dev
 
-**Creative:** Babuni.dev
+**Creative:** Babuni  
+**Project:** An interactive portfolio and digital workshop
 
-**An interactive creative portfolio and digital workshop.**
+babuni.dev is a place to explore creative work rather than browse a conventional list of projects. Its starting point is a living field of engraved stone tiles, each with a colored portal into a different work. The field can be dragged, its rows and columns shift gently, and individual projects open into increasingly detailed views.
 
-Projects appear as engraved stone tiles with colored portal windows. An endlessly recyclable grid slowly shifts around the visitor. Projects unfold from small previews into fully explorable galleries, documents, videos, and development histories.
+The website is also one of the projects it documents. Its concept, experiments, decisions, implementation, and human–AI collaboration are part of the work.
 
-The website itself is intended to become one of its exhibits: a record of its concepts, design experiments, code, decisions, and human–AI collaboration.
+## The experience
+
+Visitors can explore the site at four depths:
+
+1. **Living grid:** Engraved project tiles and their portals share an endlessly recycled surface. Small information bubbles offer glimpses of each project.
+2. **Small bloom:** Selecting a tile opens neighboring preview modules by making room in the grid.
+3. **Big bloom:** A chosen module expands into a larger, grid-native arrangement with more substantial previews.
+4. **Full detail:** Documents, galleries, videos, and other material open in dedicated readable views.
+
+The persistent navigation provides direct access to projects, galleries, and the About page. The site preserves the playful, exploratory character of the original toy-box concept while making longer material readable.
 
 ## Project status
 
-**Living-grid portfolio prototype with multiple depths of exploration.** Astro 7 and the mechanical grid are on `main`: screen-centered dragging, autonomous shifting and 42 retained project tiles and three unique neutral decorative identities. Visitors can explore three-point topic bubbles, open a small bloom of up to eight neighboring modules, expand into a larger grid-native bloom, and read full documentation or open galleries, videos and source links. All forty-two active projects have supplied 512 × 512 WebP portal artwork files, while other candidate tiles remain provisional. At the recorded release checkpoint, the repository-backed content pipeline mapped 35 retained tiles to 35 public repositories, including BABUNI.DEV itself; other tiles remained unresolved or provisional. **Remaining candidate labels are not all verified or approved published exhibits.** Full public project documents are built as separate static assets and loaded only when opened in the reader, keeping the initial grid bundle lighter. The Projects menu groups the 42 projects under World of Warcraft, Morkahja, AI, Games and Music; categories do not rearrange the grid. Three neutral identities never repeat in view, while real projects may repeat when necessary. The work remains an active prototype, with milestones 1–4 physically tested and accepted by Babuni.dev on 2026-10-29. Production hosting, discoverability and owner publishing controls remain next.
+The interactive prototype and its core exploration stages have been implemented. On **29 October 2026**, the creative accepted milestones 1–4 after physical-device and long-session testing. At that checkpoint, the catalog contained **42 retained projects**, with WebP portal artwork assigned to each, and **35 connected public repository sources**. The broader candidate inventory is not the same as the approved public catalog.
 
-The first spiral is sorted newest-first by the latest commit on each connected public repository branch. Private-code projects use their public documentation edition dates. Each build refreshes public activity; ties and undated projects keep catalog order, and an active page never re-sorts. Offline/rate-limited builds warn and retain last-verified dates.
+A subsequent change on **30 October 2026** retained BABUNI.DEV as the initial tile and shuffled the other projects once per visit. Recently updated projects receive a gold label and portal-ring indicator, based on a provisional activity rule. These changes are recorded in the source and changelog; their browser behavior was not separately verified in that change record.
+
+The first release was staged on the VPS on **31 October 2026**. The [development journal](docs/DEVLOG.md) records subsequent public HTTPS and redirect checks, a successful Certbot renewal dry run, working static asset responses, and successful checks of the existing Arcanite Brothers website and API. These observations verify specific deployment functions, **not** every interaction or performance characteristic of the live site. Later local commits and edits are not necessarily part of the deployed release.
+
+Publishing controls, continuing content review, production performance measurements, and further browser/device checks remain separate work. For dated milestones and limitations, see the [roadmap](ROADMAP.md) and [development journal](docs/DEVLOG.md).
 
 ## Local development
 
-Requires Node.js `>=22.23.4` (the version range declared by the project and locked Astro package) and npm. Run these commands from the repository root:
+Requires Node.js **22.23.4 or later** and npm. From the repository root:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open the local address printed by Astro (normally http://localhost:4321). For agents, use `npm run dev -- --background`; manage it with `npm run astro -- dev status`, `npm run astro -- dev logs`, and `npm run astro -- dev stop`.
+Open the local URL printed by Astro, normally `http://localhost:4321`.
 
-`npm run activity:sync` refreshes public commit metadata for local preview; add `-- --save-baseline` only when deliberately updating the checked-in fallback for review. Normal builds update only ignored generated metadata, so they do not dirty the checkout. Dev/test startup uses the last verified cache without network access.
+### Useful commands
 
-`npm run test:grid` runs the regression suite. `npm run build` validates content, prepares the public document assets and creates the static site in `dist/`. `npm run preview` serves that build locally. `npm run content:prepare` rebuilds local preview metadata/static Markdown from reviewed sources without network access; it is invoked automatically before dev, tests and builds.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run test:grid` | Run the automated regression tests |
+| `npm run build` | Validate and build the static site into `dist/` |
+| `npm run preview` | Preview a completed build locally |
+| `npm run content:prepare` | Prepare local document and module assets from reviewed sources |
+| `npm run content:sync` | Refresh imported repository documentation |
+| `npm run content:check` | Check prepared content and WebP assets |
+| `npm run activity:sync` | Refresh public repository activity metadata |
 
-Babuni.dev's 2026-10-27 local terminal output verified **92 passing tests** and a successful build on the preceding version, with a >500 kB JavaScript chunk warning. An earlier optimized version passed **97 tests** and a clean GitHub Actions build (2026-10-27); the subsequent development journal reports **126 passing Node tests** and a production build for the persistent-navigation update, with browser observations recorded separately. The client JavaScript measures **584.7 KiB raw / 174.0 KiB gzip**, and Vite's >500 KiB raw-chunk warning remains; actual browser load-time acceptance is still open. [GitHub Actions](.github/workflows/ci.yml) now runs tests and the production build on main pushes and pull requests; check the workflow result before relying on a change. A separate full type-check command is not yet configured; see [foundation review](docs/REVIEW-2026-10-26.md).
+Development and test startup use the latest locally verified activity cache without requiring a network refresh. A normal production build requests fresh activity data and runs content preparation and validation through its configured scripts.
+
+For agent-managed Astro development, `npm run dev -- --background` starts a background server; `npm run astro -- dev status`, `npm run astro -- dev logs`, and `npm run astro -- dev stop` manage it.
+
+### Imported documentation
+
+Project documents imported from other repositories are **revision-pinned static snapshots**, not live copies. Updating an external project repository does not automatically update what visitors read here. Publication requires a deliberate content-sync, validation, test, build, and review cycle. Details are in [module authoring](docs/MODULE_AUTHORING.md) and [repository connections](docs/REPOSITORY_CONNECTIONS.md).
+
+## Technology and verification
+
+The site uses **Astro 7**, TypeScript and native browser DOM modules, with **Marked** for Markdown rendering. Svelte and MDX were explored as possible options but are not current dependencies.
+
+GitHub Actions runs automated tests and production builds for main-branch pushes and pull requests. Past test counts and bundle measurements belong to the versions and dates on which they were recorded; they should not be read as fresh test results. See the [release-readiness report](docs/RELEASE_READINESS-2026-10-29.md), [performance notes](docs/PERFORMANCE-2026-10-28.md), and [CI workflow](.github/workflows/ci.yml).
 
 ## Documentation
 
-- [Concept](CONCEPT.md) — the vision and agreed design direction
-- [Roadmap](ROADMAP.md) — milestones, priorities, and status
-- [Changelog](CHANGELOG.md) — verified repository changes
-- [Agent rules](AGENTS.md) — requirements for all coding agents
-- [Development journal](docs/DEVLOG.md) — the creative process and experiments
-- [Decision register](docs/DECISIONS.md) — decisions and alternatives
-- [Design reference](docs/DESIGN.md) — interaction and visual behavior
-- [Architecture](docs/ARCHITECTURE.md) — technical approach and constraints
-- [Content model](docs/CONTENT.md) — project data and media modules
-- [Module authoring](docs/MODULE_AUTHORING.md) — previews, full source documents and media authoring
-- [Repository connections](docs/REPOSITORY_CONNECTIONS.md) — public sources and unresolved candidates
-- [Candidate project inventory](docs/PROJECT_INVENTORY.md) — provisional creative-work memory for prototype content; not approved publication data
-- [Human–AI collaboration](docs/AI_COLLABORATION.md) — attribution and evidence rules
-- [ChatGPT project instructions](.chatgpt/PROJECT_INSTRUCTIONS.md) — instructions to paste into the ChatGPT project's settings
+### Creative direction and development history
 
-## Intended technology
+- [Concept](CONCEPT.md) — the creative vision and interaction principles
+- [Development journal](docs/DEVLOG.md) — the human perspective, collaboration, experiments, and results
+- [Decision register](docs/DECISIONS.md) — accepted choices, alternatives, and open questions
+- [Roadmap](ROADMAP.md) — milestones and ongoing work
+- [Changelog](CHANGELOG.md) — recorded changes to the repository
+- [Human–AI collaboration](docs/AI_COLLABORATION.md) — attribution, evidence, and narrative standards
 
-The implemented prototype uses Astro 7, TypeScript/native browser DOM modules and Marked for safely rendered Markdown; Svelte is only a potential future option, **not a current dependency**. GitHub-backed content and eventual deployment to the owner's VPS at babuni.dev remain part of the plan.
+### Design, engineering, and publishing
 
-## Working principles
+- [Design reference](docs/DESIGN.md) — visual and interaction behavior
+- [Architecture](docs/ARCHITECTURE.md) — implementation structure and technical constraints
+- [Content model](docs/CONTENT.md) — project and module organization
+- [Module authoring](docs/MODULE_AUTHORING.md) — source documents, previews, and media
+- [Visual documentation](docs/VISUAL_DOCUMENTATION.md) — screenshots and visual evidence
+- [Repository connections](docs/REPOSITORY_CONNECTIONS.md) — linked public sources and unresolved candidates
+- [Project inventory](docs/PROJECT_INVENTORY.md) — candidate project records and their review status
+- [Deployment guide](deploy/README.md) — hosting configuration and release procedures
+- [Agent rules](AGENTS.md) — development and documentation requirements
+- [ChatGPT project instructions](.chatgpt/PROJECT_INSTRUCTIONS.md) — portable project instruction reference
 
-Explore before explaining. Delight without obscuring usability. Record not just what was made, but who directed it, what choices were examined, and how the result was verified. Never treat generated mockups as implemented features.
+## Authorship and working principles
+
+The human creative establishes the ideas, direction, constraints, and decisions. AI assists with research, discussion, writing, design, code, and testing when asked. The documentation records those contributions distinctly, including corrections, rejected approaches, implementation, and verification.
+
+Explore before explaining. Keep the playful interactions intact without sacrificing accessibility, performance, or readable content. A proposed design, a committed implementation, and a tested result are different things.
 
 ## License
 
-No software license has been selected. Public visibility does not imply permission to reuse the source code.
-
-## Historical documentation audit — 27 October 2026
-
-The 11 core portfolio documents already contain a detailed, evidence-backed record. This audit preserves the original **toy-box metaphor**, endlessly recycled engraved-stone grid, contextual portal bubbles, **grid-native small and big blooms**, and a separate reader. It does not redesign those interactions or promote unapproved ideas into features.
-
-**Current release checkpoint (2026-10-29):** 42 retained projects, 42 assigned 512px WebP portal images, three optional unique neutral tile identities, and 35 connected public repository sources. Milestones 1–4 are physically tested and accepted by Babuni.dev, including responsive use, keyboard/reduced motion and long sessions. Content review continues as living work. All current projects are authorized public; readable project/module pages, sitemap, metadata and on-demand module loading are built. A future publishing UI and production VPS/domain/HTTPS deployment remain separate work. See [release-readiness audit](docs/RELEASE_READINESS-2026-10-29.md) for measured artifact sizes and verification limits.
-
-**Publication dependency:** The portfolio's imported project documents are **revision-pinned static snapshots**, not automatically live GitHub content. Changes just committed to other Babuni.dev repositories will not appear in project blooms until a deliberate `npm run content:sync`, `npm run content:check`, `npm run test:grid` and `npm run build` cycle is reviewed and the resulting content snapshot is committed. This audit edits Markdown **only**; it does not sync generated snapshots or deploy the site.
+No software license has been selected. Public access to the repository does not, by itself, grant permission to reuse its source code.
