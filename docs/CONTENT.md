@@ -657,3 +657,7 @@ Babuni.dev supplied the second rename. The current README identifies Roar Guild 
 ## 2026-11-01 — Accurate waiting copy
 
 The ordinary shift status no longer appends “Opening waits until the shift finishes”. Explicit queued-transition messages retain their existing text. Motion can be reported without implying the visitor requested an opening or closing action; the clarification comes directly from Babuni.dev’s feedback.
+
+## 2026-11-01 — Buxbrew character-story archive
+
+The existing `buxbrew-character-story` tile now connects to the public `babunidev/BuxbrewCharacterStory` source. Its source snapshot has 40 Markdown files: eight currently available standard project documents and 32 additional documents. Nine collection modules index Assets, Character, Docs, Family, Journal, Lore, Places, Relationships and Stories. The Docs collection includes the root-level AGENTS, CANON, TIMELINE and WRITING-GUIDE references alongside the docs directory. The empty Assets directories are identified rather than populated with invented images. One source-resources module remains; the large bloom therefore has 18 populated modules. The smaller bloom continues selecting at most eight.
