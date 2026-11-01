@@ -1,14 +1,20 @@
-# Production hosting — first release live, further checks pending
+# Production Hosting — Deployed Release and Update Procedure
+
+**Current snapshot (2026-11-01):** The first public HTTPS release was verified on 31 October. This guide contains both current update procedure and dated historical setup logs. The deployed revision must be checked before claiming that later changes on `main` are live. Browser performance, full media checks and external indexing remain separate work.
 
 Target: `https://www.babuni.dev`. Keep `arcanitebrothers.com`, its `/var/www/morkahja` directory, Node service and existing Nginx site unchanged. Babuni.dev is a static build; do not run the Astro development server publicly.
 
 **Status update, 2026-10-31:** Release `8e47ce5` is on the VPS via a separate Nginx site. Public `www` DNS points to the VPS; local and public HTTP returned 200. Certbot installed HTTPS and configured redirection; the observed HTTPS status is 200, HTTP redirects with 301, and simulated certificate renewals succeeded for both websites. The post-deployment regression check of the Arcanite Brothers HTTPS homepage returned 200. The existing API health endpoint also returned HTTP 200 via `https://arcanitebrothers.com/health`. The public homepage header check from Nobara returned HTTP 200 with `Content-Encoding: gzip`, `Vary: Accept-Encoding`, `Cache-Control: no-cache`, `X-Content-Type-Options: nosniff` and `Referrer-Policy: strict-origin-when-cross-origin`. Fingerprinted CSS/JS, project JSON and HTML caching checks have since passed; the sitemap is publicly retrievable. Visual browser/media behavior remains to be verified. Brotli is not assumed installed.
 
+## Routine release procedure
+
+The initial setup, DNS and certificate steps have already been performed; repeat them only when there is an explicitly authorized infrastructure change. For a normal website update, build and validate the chosen revision, upload it as an isolated release, switch the symlink, run external smoke checks, and retain rollback capability.
+
 1. Create a new release directory under `/var/www/babuni.dev/releases/` and upload the complete contents of the reviewed `dist/` build. Never upload private keys, `.env`, source checkouts or node_modules.
 2. Point `/var/www/babuni.dev/current` at that release. Keep the previous target for rollback; remove obsolete generated files by deploying a complete new directory rather than merging uploads.
 3. Prepare a separate `babuni.dev` Nginx site from `nginx-babuni.dev.conf`. Confirm the IPv6 listen setting matches the server. Check `nginx -t` before a reload; a reload, not a reboot, applies the site. Do not replace the default or existing arcanitebrothers site.
-4. On the agreed weekend, update ONLY the reviewed `www.babuni.dev` DNS records. Remove conflicting parking/CNAME records for that hostname. Inspect A and AAAA results: IPv6 must either reach this same site or be absent. Preserve email and unrelated DNS records. Apex `babuni.dev` is not silently redirected or reconfigured by this template.
-5. Once DNS reaches the new site, obtain and install a certificate for `www.babuni.dev` using the already installed Certbot/Nginx setup, selecting only this hostname/site. Configure HTTP-to-HTTPS redirection and test renewal. Do not reuse the Arcanite Brothers certificate.
+4. **Historical first-setup step (already completed on 2026-10-31):** update ONLY the reviewed `www.babuni.dev` DNS records. Remove conflicting parking/CNAME records for that hostname. Inspect A and AAAA results: IPv6 must either reach this same site or be absent. Preserve email and unrelated DNS records. Apex `babuni.dev` is not silently redirected or reconfigured by this template.
+5. **Historical first-setup step (already completed on 2026-10-31):** once DNS reaches the new site, obtain and install a certificate for `www.babuni.dev` using the already installed Certbot/Nginx setup, selecting only this hostname/site. Configure HTTP-to-HTTPS redirection and test renewal. Do not reuse the Arcanite Brothers certificate.
 6. Check HTTPS, real 404 responses, all routes, media and existing Arcanite Brothers behavior. Verify gzip and cache headers, using a GET request (HEAD responses may not demonstrate compression):
 
 ```bash
@@ -23,10 +29,12 @@ Also verify the actual fingerprinted `/_astro/` script has long immutable cachin
 
 Rollback: return `current` to the previous release, validate Nginx and reload only if its configuration changed. Existing Arcanite Brothers remains independent. Server package maintenance and the earlier PXE/Rescue warning are separate from this site release; do not reboot into Rescue as a deployment step.
 
-Publishing scope: all 41 current catalog projects and their existing connected public documentation are authorized for publication. A future visibility control must remove content from routes, sitemap, module JSON and generated documents as well as the grid; robots.txt is not access control. New repositories/private material are not implicitly imported.
+Publishing scope: the checked-in catalog contains **42 project identities** (2026-11-01); the creative approved publication of the then-current collection on 2026-10-29. Later additions or changed external source material still require their own source and publication checks. A future visibility control must remove content from routes, sitemap, module JSON and generated documents as well as the grid; robots.txt is not access control. New repositories/private material are not implicitly imported.
 
 
-## Access and update workflow — audit 2026-10-30
+## Access and update workflow — historical audit 2026-10-30
+
+The following predeployment assessment predates the 31 October VPS installation. Its claims that deployment, SSH access, DNS and TLS were still pending are preserved as history and are **superseded** by later dated sections.
 
 Current repository checks pass: 37 test files, content validation, static production build and 430 canonical/public-link checks. The registry audit of installed non-development dependencies reported zero known advisories at this time; it does not prove complete application or server security. Initial JS is approximately 120 KiB raw / 38 KiB gzip. These are local artifact checks; live delivery remains unmeasured.
 
