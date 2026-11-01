@@ -2,7 +2,7 @@
 
 ## Purpose
 
-babuni.dev documents not only outputs, but **how the human Babuni.dev used AI to make them**. What Babuni.dev asks for, notices, challenges, accepts, rejects, or improves is part of the project authorship.
+babuni.dev documents not only finished work, but the creative decisions and human–AI collaboration behind it. Public development narratives speak from the human creative's perspective; AI actions remain explicitly attributed to AI.
 
 A development diary that only says "AI implemented a grid" misses the decisive contribution: Babuni.dev's toy-box metaphor, shifting-plate behavior, point-origin information bubbles, cell-based bloom correction, and endless recycled layout.
 
@@ -27,7 +27,13 @@ Show chronology, not just conclusions. Prefer a readable narrative that expresse
 - Never publish complete raw conversations by default. Exclude non-project personal details, private accounts, credentials and other sensitive material.
 - Store public-safe collaboration summaries in docs/DEVLOG.md; complete private source transcripts, if ever retained, require a separately authorized private storage policy.
 
-## Required log entry pattern
+## Writing perspective
+
+Write public-facing journal entries in the creative's first-person voice. Use "I" and "my" naturally within sentences, **never at the beginning of a sentence**. Refer to a person making the work as a **creative**, not a **creator**. Avoid repetitive attribution labels in the final narrative when clear prose can carry the same information. Neutral technical references and evidence registers may use a neutral voice.
+
+An entry should explain what prompted the work, what the creative decided, what AI proposed or executed, and what was actually verified. Keep it brief enough to enjoy reading. Preserve consequential failures, disagreements, and revisions; do not turn the journal into a transcript or test-output dump. Never imply the creative wrote code or ran tests performed by AI.
+
+## Suggested evidence checklist (not a mandatory published template)
 
 ### [Date] — [Feature or discussion]
 
@@ -65,4 +71,4 @@ Babuni.dev sets direction. Agents should be useful collaborators, not ghost auth
 
 **Iteration already documented elsewhere:** The user corrected AI's suggestion of floating bloom cards, rejected scroll-as-navigation, insisted that tiles retain a coherent stone-and-portal identity through motion, supplied WebP artwork and required visible attribution in the reader. More recent requested adjustments include safe Markdown rendering and persistent header/search navigation; a browser-tested buffered-identity issue was then corrected. Do not invent private dialogue or attribute AI-origin alternatives to human acceptance.
 
-**Verification and nonchanges:** The checked-in journal reports prior 126 Node tests and browser/build findings, but the assistant **did not run new tests, content sync, a production build, real-device trials, or deployment** during this document audit. No site source, media, tests, content snapshot, CI, package manifests or artwork was modified. Any future automation, release-license choice or performance change requires its own creator direction and evidence.
+**Verification and nonchanges:** The checked-in journal reports prior 126 Node tests and browser/build findings, but the assistant **did not run new tests, content sync, a production build, real-device trials, or deployment** during this document audit. No site source, media, tests, content snapshot, CI, package manifests or artwork was modified. Any future automation, release-license choice or performance change requires its own creative direction and evidence.
