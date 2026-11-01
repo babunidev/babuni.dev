@@ -11,7 +11,7 @@ export function createProjectModuleLoader(fetcher:typeof fetch=fetch){
    const response=await fetcher('/_project-modules/'+id+'.json');
    if(!response.ok)throw new Error('Project content unavailable');
    const modules=await response.json();
-   if(!Array.isArray(modules)||!modules.every(m=>m&&typeof m.id==='string'&&['text','gallery','video','resources'].includes(m.type)))throw new Error('Invalid project content');
+   if(!Array.isArray(modules)||!modules.every(m=>m&&typeof m.id==='string'&&['text','gallery','video','resources','document-list'].includes(m.type)))throw new Error('Invalid project content');
    cache.set(id,modules);return modules;
   })().finally(()=>pending.delete(id));
   pending.set(id,request);return request;
