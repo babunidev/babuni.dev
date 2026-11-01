@@ -882,3 +882,7 @@ The header correction I requested is conditional feedback: an ordinary shift sho
 **AI implementation:** created a `document-list` module type with a reversible in-reader file selection. The character archive is imported as a pinned, strictly allowlisted public source. Root-level `AGENTS.md`, `CANON.md`, `TIMELINE.md` and `WRITING-GUIDE.md` appear under Docs. Assets currently contains no Markdown or public images, so the module links its actual three subfolders rather than fabricating entries.
 
 **Boundaries:** retain `buxbrew-character-story` as the stable project ID, existing artwork, eight actual standard-document imports, the source link and nine folder modules. Missing standard documentation is not synthesized. No live production deployment or physical-device acceptance is implied.
+
+## 2026-11-01 — Name the story repository AmberbrewStory
+
+The existing public `BuxbrewCharacterStory` repository has been renamed to `AmberbrewStory`. This was my choice of repository name; it does not rename Buxbrew herself or turn the character into another website project. AI updated the connected source, pinned snapshot identity, generated reader URL contract, and reporting/tests. The existing tile's stable ID `buxbrew-character-story` and all nine collection modules remain unchanged. Earlier documentation naming the original repository remains as development history; current technical references use `babunidev/AmberbrewStory`.
