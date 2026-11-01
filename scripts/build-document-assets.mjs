@@ -1,7 +1,7 @@
 import {readFileSync,writeFileSync,mkdirSync,rmSync,renameSync} from 'node:fs';
 import {join,resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {REPOSITORY_DOCUMENTS,documentPreview} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,documentPreview,characterStoryDocumentPath,CHARACTER_STORY_REPOSITORY} from '../src/lib/repository-content.ts';
 import {presentDocument} from '../src/lib/document-presentation.ts';
 import {moduleIntro} from '../src/lib/big-bloom.ts';
 import {demoProjects} from '../src/lib/demo-projects.ts';
@@ -12,7 +12,7 @@ const root=fileURLToPath(new URL('..',import.meta.url));
 const LOCAL='babunidev/babuni.dev';
 /** Deterministic, allowlisted URL names; no path from repository Markdown is used. */
 export function documentAssetName(repository,path){
-  if(!/^babunidev\/[\w.-]+$/.test(repository) || !REPOSITORY_DOCUMENTS.some(d=>d.path===path))
+  if(!/^babunidev\/[\w.-]+$/.test(repository) || !(REPOSITORY_DOCUMENTS.some(d=>d.path===path)||repository===CHARACTER_STORY_REPOSITORY&&characterStoryDocumentPath(path)))
     throw new Error('Invalid public document asset mapping');
   return repository.replace('/','--')+'/'+path.replaceAll('/','--');
 }
@@ -45,7 +45,7 @@ export function prepareDocumentAssets(connections,snapshots,localDocuments){
       documents.push({
         path,
         url:'/_project-docs/'+file,
-        preview:documentPreview(presented)||REPOSITORY_DOCUMENTS.find(d=>d.path===path).title,
+        preview:documentPreview(presented)||REPOSITORY_DOCUMENTS.find(d=>d.path===path)?.title||path,
         intro:moduleIntro({body:presented,preview:''})
       });
     }
