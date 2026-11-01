@@ -1427,3 +1427,9 @@ AI reviewed the current placement, staging and settlement code. The previous res
 With the BuxbrewCharacterStory repository established, the character had a place for family, places, relationships and stories beyond a single project description. What mattered to me was making that material readable on the website without turning every Markdown file into another stone in the bloom. Nine folders felt like a better way to explore the archive.
 
 AI connected the existing Buxbrew project to the new public repository, imported 40 Markdown files from a single revision, and implemented grouped folder cards that open a document list inside the usual reader. A selected file opens in that same frame, with a way back to its folder. The general Docs card also includes my root-level canon and writing references; Assets shows the real, currently empty illustration, reference and screenshot folders. The existing project modules and shift behavior were preserved. Automated tests and build results belong to their individual CI runs; the live website has not been redeployed or visually accepted as part of this change.
+
+## 2026-11-01 — A new name for the family archive
+
+With the character archive established, the repository became `AmberbrewStory`, the name I chose for this part of the website's source collection. The character and her stories have not been replaced; this is a repository rename.
+
+AI verified that GitHub retained the same repository identity, then updated the website's public source mapping and the forty pinned Markdown documents without changing their text. The nine folder modules, Buxbrew's existing tile, and the reader's structure remain in place. Automated checks belong to the linked GitHub Actions run; this repository change does not itself publish a new VPS release.
