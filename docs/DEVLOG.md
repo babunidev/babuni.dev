@@ -166,7 +166,7 @@ The upstream README identifies StealthEmotes as formerly Amazin, but still conta
 
 ## 2026-10-31 — Varied bubble keywords and publication decisions
 
-**My request:** Replace the fixed three bubble texts with nine relevant keywords per project, choose labels randomly and make the WoW add-on type obvious. At that point, I also corrected missing emphasis on the decision to develop actual projects openly in their own Decisions and Development journals.
+**My request:** Replace the fixed three bubble texts with nine relevant keywords per project, choose labels randomly and make the WoW add-on type obvious. At that point, I also corrected missing emphasis on the decision to develop actual projects openly in their respective Decisions and Development journals.
 
 **AI interpretation/proposal:** Keep three physical bubbles, sample three distinct labels per exploration and shuffle their positions. For the 24 identified add-ons, reserve one sampled position for “World of Warcraft add-on” and sample two of the remaining eight. The other WoW-related projects (community, stories, relay, media automation and client mod) are not automatically labeled add-ons. Nine keywords are curated editorial hints, not release or feature-completion claims. Unknown-purpose add-ons retain conservative code/history keywords.
 
@@ -256,7 +256,7 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-30 — The person beyond the portfolio
 
-**My direction.** I asked for a fuller public biography identifying the person behind the online name as Alex, and objected to an About profile that reduced their life to being an artist and maker. Baking, working and gardening were specifically raised as important parts of the wider portrait. A stylistic rule was also established: no sentences beginning with “I” or “My”.
+**My direction.** I asked for a fuller public biography identifying the person behind the online name as Alex, and objected to an About profile that reduced my life to being an artist and maker. Baking, working and gardening were specifically raised as important parts of the wider portrait. A stylistic rule was also established: no sentences beginning with “I” or “My”.
 
 **AI contribution.** The assistant retrieved relevant earlier discussion about working life, life between Germany and Sweden, food service, gardening and tree/hedge maintenance, music, gaming and worldbuilding. It drafted a restrained third-person biography, avoiding precise birthplace, birth year and personal contact details while reflecting those lived experiences. The wider identity distinction between Babuni and I was retained.
 
@@ -264,7 +264,7 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-30 — Correcting voice, authorship and project scale
 
-**My correction.** I objected to the third-person biography: the preference was to avoid *starting* sentences with “I” or “My”, not to exclude first-person speech. They also clarified that they do not personally write code; satisfaction comes from imagining, designing, creating and directing AI-assisted implementation. The prominence of numerous small World of Warcraft addons should not overshadow the larger Morkahja online game, which people can play, or Ethera, an ambitious but very early project.
+**My correction.** I objected to the third-person biography: the preference was to avoid *starting* sentences with “I” or “My”, not to exclude first-person speech. The distinction mattered: I do not personally write code; satisfaction comes from imagining, designing, creating and directing AI-assisted implementation. The prominence of numerous small World of Warcraft addons should not overshadow the larger Morkahja online game, which people can play, or Ethera, an ambitious but very early project.
 
 **AI response and implementation.** Rewrote `src/content/about.md` in first person while retaining varied sentence openings, accurately describing my role in directing AI programming. Reordered the project overview to foreground Morkahja and Ethera with distinct maturity levels. Retained the broader personal biography and all existing Elsewhere links. GitHub commit `9185a8b` confirms the source edit; no build or browser verification was run.
 
@@ -302,7 +302,7 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-30 — Secure Hetzner access and Ubuntu maintenance (joint session)
 
-**My direction.** I wanted to administer an existing Hetzner VPS from my Nobara Linux desktop, make future AI-assisted access possible, and check for operating-system updates without disrupting existing hosted work. At that point, I performed the commands and protected their own passwords and SSH passphrase.
+**My direction.** I wanted to administer an existing Hetzner VPS from my Nobara Linux desktop, make future AI-assisted access possible, and check for operating-system updates without disrupting existing hosted work. At that point, I performed the commands and protected my passwords and SSH passphrase.
 
 **AI contribution and troubleshooting.** The assistant supplied SSH commands and fingerprint-verification guidance. Several attempts failed because the Hetzner browser console translated pasted punctuation through a mismatched keyboard layout; Babuni traced this to the console mapping and switched to Swedish. After SSH rejected root passwords, inspection showed `permitrootlogin prohibit-password`. The assistant recommended a separate sudo-capable account rather than weakening root authentication, then guided passphrase-protected SSH key installation.
 
@@ -775,7 +775,7 @@ At that point, I additionally asked for the B to the left of BABUNI.DEV in the p
 
 ## 2026-10-27 — Original WebP portal artwork and the GitHub handoff
 
-**My direction.** I supplied a screenshot showing twelve completed WebP portal logos and asked the development assistant to change all project image paths to WebP, add any new project artwork, and explain how to commit the image assets to GitHub. At that point, I clarified that they had **already converted and replaced the PNG files locally**, following an earlier optimization recommendation. The assistant initially misinterpreted this as a request to create/convert artwork and proposed a PNG-fallback staging scheme; Babuni objected. The assistant acknowledged the mistake and abandoned that scheme. The actual request is a GitHub source-reference update plus a clear handoff for uploading the original already-converted files.
+**My direction.** I supplied a screenshot showing twelve completed WebP portal logos and asked the development assistant to change all project image paths to WebP, add any new project artwork, and explain how to commit the image assets to GitHub. At that point, I clarified that I had **already converted and replaced the PNG files locally**, following an earlier optimization recommendation. The assistant initially misinterpreted this as a request to create/convert artwork and proposed a PNG-fallback staging scheme; Babuni objected. The assistant acknowledged the mistake and abandoned that scheme. The actual request is a GitHub source-reference update plus a clear handoff for uploading the original already-converted files.
 
 **AI source audit.** At the start of this change, the **remote** repository still contained eleven `public/portal-content/*.png` binaries and eleven `portalArtwork` entries ending in `.png`. The screenshot additionally contained `BuxbrewResist.webp`, a project with no prior `portalArtwork` mapping. The screenshot displays thumbnails and names only; it does not give this cloud session access to the high-quality original WebP bytes on my computer. It would be misleading to pretend those local files were already on GitHub or to manufacture replacements from thumbnail pixels.
 
@@ -795,7 +795,7 @@ At that point, I additionally asked for the B to the left of BABUNI.DEV in the p
 
 ## 2026-10-27 — Make the expanding portfolio lighter without changing how it moves
 
-**My direction and evidence.** After a repository review, the AI recommended two infrastructural improvements: stop loading every repository's full documentation when the grid first appears, and set up automatic GitHub checks for collaboration across developer sessions. Babuni explicitly authorized the recommendations (“OK DO WHAT YOU RECOPMMENDED”). Earlier in the conversation I supplied a fresh local terminal log showing **92 passing tests**, **zero npm-audit vulnerabilities**, a successful static build, and Vite's warning about a JavaScript chunk exceeding 500 kB. This evidence belongs to the prior revision, not the present change.
+**My direction and evidence.** After a repository review, the AI recommended two infrastructural improvements: stop loading every repository's full documentation when the grid first appears, and set up automatic GitHub checks for collaboration across developer sessions. I explicitly authorized the recommendations (“OK DO WHAT YOU RECOPMMENDED”). Earlier in the conversation I supplied a fresh local terminal log showing **92 passing tests**, **zero npm-audit vulnerabilities**, a successful static build, and Vite's warning about a JavaScript chunk exceeding 500 kB. This evidence belongs to the prior revision, not the present change.
 
 **AI investigation.** The browser's entry graph imported all of `src/content/repository-documents.json` (about 1.34 MB) and ten local Markdown files through `src/lib/project-content.ts`, even for visitors who only looked at the living grid. The same synchronous content function feeds both the small and big bloom. Making bloom selection itself await a network request would compromise my accepted center-first motion and calm reveal timing. The AI therefore chose to preserve synchronous content *metadata* and postpone the full original Markdown until the visitor asks to read it.
 
@@ -1016,7 +1016,7 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 ## 2026-10-26 — A single portal size and three equally spaced diamonds
 
-**My direction.** I noticed that project portals were inconsistent in diameter and occasionally touched or covered the glowing information-point squares. They specifically requested that all portals become one shared size, approximately halfway between the existing large and small examples, and that the three little indicators be moved farther toward the inner frame. The left and right markers should have **the same distance from the portal's middle as the top marker**, preserving the symmetry of a truly square stone tile. At that point, I also corrected an earlier AI schematic which accidentally depicted the tile as a rectangle. They explicitly asked this developer in the current cloud chat to make the GitHub change and commit it, even while another development session worked on separate bloom and shifting tasks.
+**My direction.** I noticed that project portals were inconsistent in diameter and occasionally touched or covered the glowing information-point squares. The shared portal size was my request, approximately halfway between the existing large and small examples, and that the three little indicators be moved farther toward the inner frame. The left and right markers should have **the same distance from the portal's middle as the top marker**, preserving the symmetry of a truly square stone tile. At that point, I also corrected an earlier AI schematic which accidentally depicted the tile as a rectangle. They explicitly asked this developer in the current cloud chat to make the GitHub change and commit it, even while another development session worked on separate bloom and shifting tasks.
 
 **AI diagnosis.** The live CSS assigned 59% width to ordinary portals and 53% to long-title portals. Markers were positioned relative to the tile face with unrelated vertical and horizontal offsets, while title text remained in the flex layout. Consequently, marker spacing could vary with title length as well as portal size. An earlier rectangular illustration was not a reliable representation of the actual square tile.
 
@@ -1050,7 +1050,7 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 ## 2026-10-26 — Three small lights, and life around a bloom
 
-**My direction.** After seeing the more reliable ambient hints and the small bloom, I approved the experience but noticed that hints stopped once any project bloomed. The same subtle information should sparks to keep appearing on the surrounding grid, even while studying an open small bloom. They also proposed placing another tiny glowing square to the *left* of the circular portal and another to its *right*, joining the original square above: **three little bubbles on each tile**. This revises the original four-point sketch. The intent remains experiential flavor rather than selling or packing paragraphs into the grid. At that point, I also asked to see the next roadmap entries after the change.
+**My direction.** After seeing the more reliable ambient hints and the small bloom, I approved the experience but noticed that hints stopped once any project bloomed. The same subtle information should sparks to keep appearing on the surrounding grid, even while studying an open small bloom. Another idea I raised was placing a tiny glowing square to the *left* of the circular portal and another to its *right*, joining the original square above: **three little bubbles on each tile**. This revises the original four-point sketch. The intent remains experiential flavor rather than selling or packing paragraphs into the grid. At that point, I also asked to see the next roadmap entries after the change.
 
 **AI implementation choices.** The assistant retained the existing top topic/category and hand-curated two additional, very short, provisional snippets for each of the 53 inventoried candidate projects, using their repository inventory's one-line descriptions as the available evidence. For example, Button Game has the draft labels “Reaction game”, “Android game” and “Local multiplayer”. Unknown historical or name-only projects get explicitly exploratory labels rather than invented achievements. These new labels are proposed editorial copy, **not independently verified project metadata or approved final descriptions**.
 
@@ -1062,7 +1062,7 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 ## 2026-10-26 — A selected project does not stop the living world
 
-**My direction.** After accepting the center-first bloom and the improved spontaneous topic hints, I noticed that selecting any project froze all autonomous motion. This broke the intended independence of the living grid. They also described how a selection made during a shift should behave: the click should immediately mark the tile golden, even if it must wait for its *own* moving row or column to finish. A tile unaffected by a different shifting line should instead proceed with centering immediately while that irrelevant shift pauses, just like map dragging. When switching from one open project to another, the old bloom must close and return its neighbors before the camera moves to the new project. Their central principle was visitor control without sacrificing safe movement in the rest of the grid.
+**My direction.** After accepting the center-first bloom and the improved spontaneous topic hints, I noticed that selecting any project froze all autonomous motion. This broke the intended independence of the living grid. For selections during a shift, I established how the interaction should behave: the click should immediately mark the tile golden, even if it must wait for its *own* moving row or column to finish. A tile unaffected by a different shifting line should instead proceed with centering immediately while that irrelevant shift pauses, just like map dragging. When switching from one open project to another, the old bloom must close and return its neighbors before the camera moves to the new project. Their central principle was visitor control without sacrificing safe movement in the rest of the grid.
 
 **AI inspection.** The prototype's shift scheduler returned without rescheduling when a selection was active. Every click during a `moving` state was also queued indiscriminately, regardless of which line the selected tile occupied. The pending choice had no golden highlight until it became an active selection. Bloom CSS transitions were attached broadly to every tile, which could make independent shifts lag.
 
@@ -1078,7 +1078,7 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 ## 2026-10-26 — Ambient hints that can actually be noticed
 
-**My feedback.** I found the center-first project selection and neighboring-cell bloom smooth, pretty and deliberate. They did not reliably see the spontaneous little topic hints: sometimes nothing appeared for a long time, occasionally one was near a corner, and tapping away/back seemed to change whether hints resumed. They suggested a hint around every five seconds, on a genuinely onscreen tile.
+**My feedback.** I found the center-first project selection and neighboring-cell bloom smooth, pretty and deliberate. The spontaneous little topic hints were difficult for me to notice: sometimes nothing appeared for a long time, occasionally one was near a corner, and tapping away/back seemed to change whether hints resumed. The possibility of a hint around every five seconds, on a genuinely onscreen tile.
 
 **AI diagnosis.** The prior 6.5–10.5-second attempt was silently skipped during a 4.4-second row/column shift, followed by another full random delay. Repeated shifts could therefore create large gaps. Eligible tiles included partly visible fragments at screen edges. Passive focus on the viewport, or stale browser focus on a portal button following mouse/touch input, could also block hints without ongoing user activity.
 
@@ -1088,7 +1088,7 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 ## 2026-10-26 — Center first, then let the grid make room
 
-**My direction.** I corrected the proposed selection interaction: selecting a tile **anywhere** must first move the *whole grid* until that exact project is centered. **Only then** should a neighbor move to make room for a partial bloom. They also revived an earlier idea of spontaneous, subtle topic bubbles appearing occasionally at existing glowing portal markers.
+**My direction.** I corrected the proposed selection interaction: selecting a tile **anywhere** must first move the *whole grid* until that exact project is centered. **Only then** should a neighbor move to make room for a partial bloom. Another idea I revived was spontaneous, subtle topic bubbles appearing occasionally at existing glowing portal markers.
 
 **AI implementation.** A first-stage eased camera move (provisional 720 ms) targets the source cell's exact viewport center. The choice holds both original logical coordinates and project identity, not a DOM slot, and the allocator gives it priority while panning/recycling. Next, the contiguous half-row to its right is translated one cell (provisional 520 ms), creating an actually empty neighboring square rather than drawing a popover over an occupied tile. The first module displays the existing one-line project summary. The portal keeps its small topic-only interaction, separate from stone selection. Escape, a Close button, or clicking the selected stone collapses the bloom.
 
@@ -1122,7 +1122,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 ## 2026-10-26 — A spiral that reveals itself, rather than appearing at once
 
-**My direction.** After approving the visual layout of 45 unique demo projects and while checking the movement mechanics, I noticed that the entire website appears almost instantaneously. They proposed a deliberately theatrical entrance instead of an actual loading screen: BABUNI.DEV should materialize first, then numbered projects in clockwise spiral order, each growing into its allotted cell. They suggested **373 milliseconds** as the animation duration for each individual tile.
+**My direction.** After approving the visual layout of 45 unique demo projects and while checking the movement mechanics, I noticed that the entire website appears almost instantaneously. The entrance I wanted was deliberately theatrical instead of an actual loading screen: BABUNI.DEV should materialize first, then numbered projects in clockwise spiral order, each growing into its allotted cell. They suggested **373 milliseconds** as the animation duration for each individual tile.
 
 **AI design choice.** Implement this as a purely visual entrance. No artificial network delay, loader progress, deferred content creation or additional libraries are needed. The assistant selected a provisional **68 ms interval** between tile starts; at 45 projects the last one finishes around 3.37 seconds after the first. The first frame begins scaled down and invisible, grows slightly beyond final size, then settles. The visual treatment uses the existing temporary tile art and can later be re-tuned as the engraved stone design evolves. The duration comes from Babuni; the stagger, growth curve and slight overshoot are assistant choices still subject to their visual review.
 
@@ -1144,7 +1144,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 ## 2026-10-26 — Catching a project changing its identity mid-shift
 
-**My observation.** With the 45-project arrangement visually approved, I spotted an intermittent problem during slow autonomous movement. A tile arriving from the left could enter as one numbered/color-coded project and then abruptly become a different project at the end of the movement. They also suspected a related bottom-to-top edge case and noted that right-to-left entry had looked stable so far. This is Babuni.dev-supplied visual evidence, not yet independently reproduced by a browser recording.
+**My observation.** With the 45-project arrangement visually approved, I spotted an intermittent problem during slow autonomous movement. A tile arriving from the left could enter as one numbered/color-coded project and then abruptly become a different project at the end of the movement. A related bottom-to-top edge case also seemed possible to me and noted that right-to-left entry had looked stable so far. This is Babuni.dev-supplied visual evidence, not yet independently reproduced by a browser recording.
 
 **AI investigation.** The renderer shifts a row or column using CSS transforms while project assignments stay at their pre-shift source coordinates. At the end, it commits a history entry, recomputes source positions and invokes the visibility-aware allocator. Because the offscreen entering tile may already have a placeholder or recycled project identity that conflicts with the resting visible collection, that final allocation can change the arriving tile's name and portal color in a single frame. The asymmetry is credible because the identities reserved along each viewport edge need not be identical.
 
@@ -1172,7 +1172,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 ## 2026-10-26 — From tiled wallpaper to a spiral of recognizable projects
 
-**My observation.** While exploring the prototype, I noticed that the visual grid behaved as an endless surface but project identity did not behave as they had imagined. The BABUNI.DEV project started in the center yet did not turn up again after roaming. Multiple other project labels recurred side by side. This did not feel like exploring a collection of objects; it felt like a random repeated wallpaper.
+**My observation.** While exploring the prototype, I noticed that the visual grid behaved as an endless surface but project identity did not behave as I had imagined. The BABUNI.DEV project started in the center yet did not turn up again after roaming. Multiple other project labels recurred side by side. This did not feel like exploring a collection of objects; it felt like a random repeated wallpaper.
 
 **My spatial design.** I specified a precise clockwise progression: BABUNI.DEV in the center, PROJECT 02 above, PROJECT 03 upper-right, PROJECT 04 right, PROJECT 05 lower-right, PROJECT 06 below, PROJECT 07 lower-left, PROJECT 08 left, PROJECT 09 upper-left. PROJECT 10 starts the outer spiral above the center. Projects should not be recycled while still on-screen, and a two-tile offscreen grace band was proposed before moving an instance to the entering edge. At that point, I wanted all projects treated as genuine reusable content, not duplicated arbitrarily by coordinate.
 
@@ -1220,7 +1220,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 ## 2026-10-26 — Restraint in movement: individual stone lines rather than marching blocks
 
-**My observation and correction.** In the first hands-on experiments with autonomous shifting, I noticed that when several rows slid together in the same direction they visually fused into one large block. That felt wrong for the individually animated stone grid. They introduced a new constraint: no two rows should move the same direction at the same time. In a separate motion refinement, they asked for arrow keys to become dramatically slower and smooth, and suggested that dragging should briefly accelerate into a controllable cruising speed rather than following unlimited mouse speed.
+**My observation and correction.** In the first hands-on experiments with autonomous shifting, I noticed that when several rows slid together in the same direction they visually fused into one large block. That felt wrong for the individually animated stone grid. The constraint I introduced was: no two rows should move the same direction at the same time. In a separate motion refinement, they asked for arrow keys to become dramatically slower and smooth, and suggested that dragging should briefly accelerate into a controllable cruising speed rather than following unlimited mouse speed.
 
 **AI interpretation and experiments.** The assistant preserved the existing d20/initiative eligibility system but proposed letting the earliest successful line claim the direction for that round. It extended the rule to columns so upward/downward block formation could be avoided as well; that extrapolation was not explicitly confirmed by Babuni.dev. A separate controller was designed to replace abrupt arrow-key steps with frame-based velocity, easing toward configurable limits. Pointer-follow uses a small buffered lead, acceleration, a maximum speed and an immediate stop when the button or finger is released. Prototype values were selected for testing, not presented as locked aesthetic decisions.
 
@@ -1232,7 +1232,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 ## 2026-10-26 — The first independently shifting stone lines
 
-**My direction.** Following successful hands-on desktop tests of the endless draggable grid, I approved moving to the next part of Milestone 1. The next requirement was for the grid to begin moving autonomously by rows and columns, but did not want to lose the map-like dragging experience they had already praised. At that point, I also asked whether the development website could be reached from their phone on the same Wi-Fi, suggesting practical mobile checks while continuing desktop-first development.
+**My direction.** Following successful hands-on desktop tests of the endless draggable grid, I approved moving to the next part of Milestone 1. The next requirement was for the grid to begin moving autonomously by rows and columns, but did not want to lose the map-like dragging experience I already liked. At that point, I also asked whether the development website could be reached from their phone on the same Wi-Fi, suggesting practical mobile checks while continuing desktop-first development.
 
 **AI contribution.** The assistant explained that the Astro dev server can bind to the PC's LAN interface, allowing a phone on the same Wi-Fi to visit the PC's local IP at port 4321. This is an available test workflow, not a claim that I have already performed it. The assistant then separated the mechanical movement rules from the visual renderer: rounds randomly select an axis; visible lines roll d20 in randomized initiative order; winning lines travel one grid cell in an independently selected direction. Timings and dice bonuses remain tunable experiments.
 
@@ -1256,7 +1256,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 ## 2026-10-26 — A centered anchor that can drift away
 
-**My direction and correction.** I rejected a proposal that prioritized fitting rows and columns into the screen: the crucial visual requirement is one full tile exactly at the center, even on desktop and tablet. They approved the approximate density of a straight-down mosaic of stone tiles with no perspective. In the subsequent discussion, I asked for familiar map-like interaction: hold the mouse and pull, or move the grid with a thumb on mobile. When tiles leave the viewport, reuse those same loaded visual instances beyond the opposite edge to keep the field filled continuously.
+**My direction and correction.** I rejected a proposal that prioritized fitting rows and columns into the screen: the crucial visual requirement is one full tile exactly at the center, even on desktop and tablet. The approximate density received my approval of a straight-down mosaic of stone tiles with no perspective. In the subsequent discussion, I asked for familiar map-like interaction: hold the mouse and pull, or move the grid with a thumb on mobile. When tiles leave the viewport, reuse those same loaded visual instances beyond the opposite edge to keep the field filled continuously.
 
 **AI interpretation.** The assistant separated the initial screen-centered tile from a permanent fixed center. It proposed calculating neighboring cells from an integer coordinate system and translating the entire field with the pointer. A finite ring buffer reuses offscreen DOM tile elements; source project identities remain conceptually separate from those visual slots. The assistant supplied provisional 240/200/phone-relative CSS-pixel tile sizes and proposed two offscreen buffer bands.
 
@@ -1282,7 +1282,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 ## 2026-10-26 — Integrating local development and the public project record
 
-**My direction.** After creating a repository and initializing Astro locally, I established a simple Git workflow: all active development belongs on `main`. They also insisted that the project documentation and Astro implementation coexist without discarding either set of agent rules.
+**My direction.** After creating a repository and initializing Astro locally, I established a simple Git workflow: all active development belongs on `main`. Another requirement I established was that the project documentation and Astro implementation coexist without discarding either set of agent rules.
 
 **AI contribution.** The assistant originally prepared documentation in a separate branch and then moved it directly onto `main` at my request. When I fetched remote changes and merged locally, Git reported an add/add conflict in `AGENTS.md`. The assistant proposed retaining the custom project rules from the remote version, appending the Astro starter's local development guidance, and revising the workflow rule to use `main`.
 
@@ -1294,7 +1294,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 ## 2026-10-25 — Documentation as the work, not paperwork
 
-**My direction.** I asked for high-quality concept, journal, changelog, decisions, design, architecture, and content documentation. Crucially, I wanted the journal to record *my involvement*: what I was trying to communicate to AI, what AI did with it, which decisions they made, and how that shaped the feature. Project-related conversations should inform the narrative, without requiring a verbatim transcript.
+**My direction.** I asked for high-quality concept, journal, changelog, decisions, design, architecture, and content documentation. Crucially, I wanted the journal to record *my involvement*: what I was trying to communicate to AI, what AI did with it, which decisions I made, and how that shaped the feature. Project-related conversations should inform the narrative, without requiring a verbatim transcript.
 
 **AI contribution.** The assistant proposed separate documents and an attribution model: Babuni direction, agent proposal, decision, implementation, and verification.
 
