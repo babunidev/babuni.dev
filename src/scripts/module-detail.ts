@@ -87,7 +87,7 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
         title.textContent=item.title;
         const back=document.createElement('button');back.type='button';
         back.className='bloom-action';back.textContent='Back to '+module.title;
-        back.addEventListener('click',()=>{showIndex();back.focus({preventScroll:true});});
+        back.addEventListener('click',()=>{showIndex();(content.querySelector('button')??title).focus({preventScroll:true});});
         const body=createDocumentBody(item.bodyUrl,{
           signal:controller.signal,isCurrent:()=>detail===view&&documentRequest===controller,
           sourceUrl:item.source
