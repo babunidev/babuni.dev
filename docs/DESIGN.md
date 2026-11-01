@@ -745,3 +745,7 @@ The author-requested ResistInsight name replaces BuxbrewResist on the tile and i
 ## 2026-11-01 — ActionEmotes #2 title
 
 The author-requested ActionEmotes #2 title replaces Buxbrew Addon in the tile and project search. Existing art, tile identity and WoW grouping remain. Its nine-keyword pool now reflects roleplay writing and action-slot emotes, retaining the shared add-on cue. Timing, placement, bloom geometry and interaction behavior are unchanged.
+
+## 2026-11-01 — Battle Emotes Legacy title
+
+Battle Emotes Legacy replaces ROAR in the tile and project finder. The ROAR.webp image, stable identity, WoW grouping and guaranteed add-on cue remain. Nine keywords reflect its documented battle-emote controls. No layout, motion, positioning or timing changes accompany the rename.

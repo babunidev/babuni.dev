@@ -213,9 +213,9 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "roar",
     "portalArtwork": "/portal-content/ROAR.webp",
-    "name": "ROAR",
-    "shortSummary": "Early random battle-emote tool.",
-    "evidence": "repo-lineage",
+    "name": "Battle Emotes Legacy",
+    "shortSummary": "Historical action-slot emote addon with configurable chance and cooldown; installed as ROARR.",
+    "evidence": "repo",
     "tint": "hsl(250 58% 62%)"
   },
   {

@@ -976,3 +976,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Renamed Buxbrew Addon to ActionEmotes #2 and connected the new repository and ten source documents. Stable identity/artwork remain; its summary and nine keywords now describe the source-backed action-slot roleplay emotes.
+
+## 2026-11-01
+
+### Changed
+- Renamed the ROAR tile to Battle Emotes Legacy and connected its new public repository and ten standard documents. Stable identity and ROAR.webp remain; the separate ROARR project is unaffected.

@@ -283,15 +283,15 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
   ],
   "roar": [
     "World of Warcraft add-on",
-    "Roleplay emotes",
-    "Random emotes",
-    "Early work",
-    "Character expression",
+    "Battle emotes",
+    "Action-bar slot",
+    "Built-in emotes",
+    "Chance controls",
+    "Cooldown controls",
+    "Character flavor",
     "Lua",
-    "Player actions",
-    "Roleplay tools",
-    "Game interface"
-  ],
+    "Legacy project"
+],
   "meleestartattack": [
     "World of Warcraft add-on",
     "Combat helper",

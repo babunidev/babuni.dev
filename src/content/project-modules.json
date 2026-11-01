@@ -697,5 +697,20 @@
       ],
       "credit": "Name and repository replacement requested by Babuni.dev; AI-assisted source clarification."
     }
+  ],
+  "roar": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "Battle Emotes Legacy replaces the former ROAR repository name. This project installs as ROARR with /roarr commands; it remains separate from the other ROARR project and RoarForever.",
+      "links": [
+        {
+          "label": "Battle Emotes Legacy repository",
+          "href": "https://github.com/babunidev/BattleEmotesLegacy"
+        }
+      ],
+      "credit": "Repository rename requested by Babuni.dev; AI-assisted clarification of historical and installed names."
+    }
   ]
 }

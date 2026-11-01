@@ -1358,3 +1358,11 @@ For the Buxbrew addon entry, I supplied the renamed ActionEmotes-2 repository an
 At my request, AI replaced the display name, repository connection and ten-document snapshot while keeping the tile’s identity and existing artwork. The nine keywords now describe that documented roleplay purpose. ActionEmotes #1 and the Buxbrew character story remain separate. Historical Buxbrew/MadAxeBuxbrew filenames and `/mae` commands stay in the imported documents; the source note distinguishes them from the new portfolio name. No addon runtime or installation change was requested.
 
 AI verified ten imported documents at public ActionEmotes-2 revision `6b9675eb7833906db9b73e137fe39b27ab52329a`. Content validation, all 201 tests, fresh authenticated activity for 36/36 sources and the production build passed, including 442 public URL checks. These are portfolio checks, not a new in-game or physical-device test. No unrelated repository snapshot or artwork was changed.
+
+## 2026-11-01 — ROAR becomes Battle Emotes Legacy
+
+For the ROAR entry, I supplied BattleEmotesLegacy as its new repository. Its README makes an important naming distinction: this historical project installs as ROARR, but it is not the separate `roarr` repository already present in the portfolio.
+
+At my request, AI applied **Battle Emotes Legacy** to the existing ROAR tile, retained its artwork, refreshed its ten standard documents and updated its nine keywords. The source note explains the installed name so that a repository rename does not merge two different projects. The documented action-slot trigger, built-in emotes, chance and cooldown describe source behavior, not a new in-game verification. Adding a second tile or changing installation files was unnecessary.
+
+AI verified the ten imported documents at public BattleEmotesLegacy revision `3b7de5e5ad105cfe9e4a2766d69bc861fe8f4496`. Content validation, all 202 tests, authenticated refresh of 36/36 activity dates and production build passed, including 442 public URL checks. These are portfolio checks; no new browser screenshot, game-client test or physical-device acceptance is claimed. Unrelated source snapshots and artwork were preserved.

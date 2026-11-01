@@ -613,3 +613,7 @@ The renamed public repository supplies the existing project’s documents. Its R
 ## 2026-11-01 — ActionEmotes #2 writing context
 
 Babuni.dev supplied the renamed repository for Buxbrew Addon. Its documents describe custom roleplay emotes from watched action-slot presses, cooldowns and per-character settings; these subjects replace unknown-purpose summary/keyword text. Imported Buxbrew/MadAxeBuxbrew installation names and /mae commands remain historical/current source identifiers, with a clarifying source note. No animation assets, combat automation, runtime compatibility or new release is inferred.
+
+## 2026-11-01 — Battle Emotes Legacy names
+
+Babuni.dev supplied the renamed public source. Its documents distinguish the historical roar repository from its installed ROARR package, and from the separate roarr repository and later RoarForever. The portfolio title and source note make that relationship explicit. Nine topic keywords describe source-backed built-in emotes and chance/cooldown controls without claiming current live-client verification. Historical names, author credits and license text remain verbatim.

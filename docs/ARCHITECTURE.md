@@ -753,3 +753,7 @@ Stable ID `buxbrewresist` now displays ResistInsight and maps to `babunidev/Resi
 ## 2026-11-01 — ActionEmotes #2 source mapping
 
 Stable ID `buxbrew` now displays ActionEmotes #2 and maps to `babunidev/ActionEmotes-2` main. Its former Buxbrew snapshot is removed. Existing BuxbrewAddon.webp, WoW menu grouping, module composition and project count remain. ActionEmotes #1 uses its separate existing ID `buxbrewcharge`; the character-story ID is unaffected.
+
+## 2026-11-01 — Battle Emotes Legacy mapping
+
+Stable ID `roar` now displays Battle Emotes Legacy and maps to `babunidev/BattleEmotesLegacy` main. Only its former roar source snapshot is replaced. Stable ID `roarr` still maps to `babunidev/roarr`; installed names inside source documents do not determine portfolio identity. Artwork and project count remain unchanged.

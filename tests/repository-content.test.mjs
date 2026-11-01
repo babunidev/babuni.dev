@@ -227,3 +227,17 @@ test('ActionEmotes #2 replaces Buxbrew Addon independently of #1 and the charact
  const source=composeProjectModules(catalog.buxbrew,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
  assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/ActionEmotes-2']);
 });
+
+
+test('Battle Emotes Legacy replaces ROAR without altering the separate ROARR source or artwork',()=>{
+ const project=demoProjects.find(p=>p.id==='roar');
+ assert.equal(project.name,'Battle Emotes Legacy');assert.equal(project.portalArtwork,'/portal-content/ROAR.webp');
+ assert.ok(!demoProjects.some(p=>p.name==='ROAR'));
+ assert.equal(demoProjects.find(p=>p.id==='roarr').name,'ROARR');
+ assert.equal(connections.roarr.repository,'babunidev/roarr');
+ const c=connections.roar;assert.equal(c.repository,'babunidev/BattleEmotesLegacy');
+ assert.equal(snapshots['babunidev/roar'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const source=composeProjectModules(catalog.roar,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/BattleEmotesLegacy']);
+});

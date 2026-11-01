@@ -827,3 +827,7 @@ The supplied ResistInsight repository is the name I want shown in place of Buxbr
 ## 2026-11-01 — Preserve identity through the ActionEmotes #2 rename
 
 The new ActionEmotes #2 name is the replacement I requested for Buxbrew Addon. AI applied it to stable ID `buxbrew` rather than creating another project or merging it with ActionEmotes #1. The existing BuxbrewAddon.webp artwork remains. Only this source snapshot changes; historical installed identifiers remain verbatim. The repository-backed summary replaces the old unknown-purpose placeholder without claiming a tested game release.
+
+## 2026-11-01 — Preserve the distinct Battle Emotes Legacy project
+
+The name supplied for ROAR is now the title I want in the portfolio: **Battle Emotes Legacy**. AI changed stable ID `roar` rather than creating a duplicate or changing `roarr`. Its ROAR.webp image remains. Imported historical/runtime names are preserved and explained in the source module. This decision updates portfolio naming and source selection, not addon code or release readiness.

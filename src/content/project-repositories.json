@@ -122,8 +122,9 @@
   },
   "roar": {
     "status": "connected",
-    "repository": "babunidev/roar",
-    "branch": "main"
+    "repository": "babunidev/BattleEmotesLegacy",
+    "branch": "main",
+    "note": "Renamed Battle Emotes Legacy at Babuni.dev’s request on 2026-11-01. Stable ID roar and ROAR.webp retained. Installed ROARR names are distinct from the separate roarr repository/project."
   },
   "meleestartattack": {
     "status": "connected",

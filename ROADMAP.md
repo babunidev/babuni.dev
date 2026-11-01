@@ -732,3 +732,9 @@ This portfolio rename does not resume the on-hold addon or verify game-client be
 - [x] Replace Buxbrew Addon with ActionEmotes #2 in the active portfolio and source connection.
 
 ActionEmotes #1 and the Buxbrew character story remain separate projects. This does not rename addon installation files or verify live-client operation.
+
+## 2026-11-01 — Battle Emotes Legacy rename
+
+- [x] Replace ROAR with Battle Emotes Legacy using the author-supplied repository.
+
+Keep the separate ROARR project and historical installed ROARR identifiers distinct. This portfolio update does not verify client compatibility.

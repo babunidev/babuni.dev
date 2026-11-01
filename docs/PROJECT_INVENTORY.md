@@ -158,3 +158,7 @@ At Babuni.dev’s request, the existing BuxbrewResist entry now displays ResistI
 ## 2026-11-01 — Buxbrew Addon renamed
 
 At Babuni.dev’s request, stable ID `buxbrew` now displays ActionEmotes #2 and uses the ActionEmotes-2 public repository. It retains BuxbrewAddon.webp and remains separate from ActionEmotes #1 and Buxbrew — character story. The current source documents support a concrete emote-addon summary, replacing the earlier name-only classification. Historical inventory names remain evidence, not duplicate projects.
+
+## 2026-11-01 — ROAR renamed
+
+At Babuni.dev’s request, stable ID `roar` now displays Battle Emotes Legacy and uses the BattleEmotesLegacy public repository. ROAR.webp remains its artwork. The installed package’s ROARR name must not be confused with stable ID `roarr`, which remains a separate project/repository. Historical inventory names remain evidence rather than duplicate catalog entries.
