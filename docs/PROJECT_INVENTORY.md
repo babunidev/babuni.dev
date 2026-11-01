@@ -1,11 +1,17 @@
-# Candidate Project Inventory — Research Memory
+# Project Inventory — Catalog and Historical Research
 
-**Recorded:** 2026-10-26  
-**Status:** Preliminary, for prototype planning and further verification; **not published portfolio data**.
+**Original research recorded:** 2026-10-26  
+**Catalog snapshot checked:** 2026-11-01, against `src/lib/demo-projects.ts` and `src/content/project-repositories.json` on `main`.
 
-## Current curation override — 2026-10-28
+This file preserves the original candidate research and its later curation decisions. **The original 53-row table is a historical research artifact, not the list of currently published portfolio entries.** For current display names and stable IDs, consult `src/lib/demo-projects.ts`; for repository links and source status, consult `src/content/project-repositories.json`. The [repository connections reference](REPOSITORY_CONNECTIONS.md) explains how those source links are managed. The [content model](CONTENT.md) documents publication principles.
 
-The original research table below is historical. Babuni.dev withdrew WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples as standalone website entries. The current active catalog contains 44 real projects after subsequent removals and the additions of Rocket Game 42, Mighty Morkah, Elixior and Babuni Gaming. Three unique renderer-only decorative identities are not projects. See `PROJECT_GROUPING_PROPOSAL.md` for the complete current list; the original table below remains historical. MorkahjaWorld is the retained worldbuilding project; journal/decisions/collaboration remain within BABUNI.DEV. Existing repositories were not deleted. These human decisions supersede the original inventory’s optimistic candidate classifications.
+## Current catalog checkpoint — 2026-11-01
+
+The repository's current catalog defines **42 project identities**; three additional neutral renderer identities are decorative and **not** projects. The repository mapping has **37 connected**, **4 needs-repository**, and **1 needs-confirmation** records. These counts describe the checked-in mapping, not independently verified availability of every external repository or deployment of the latest branch.
+
+Several original inventory names have since been withdrawn, merged into another exhibit, or renamed while retaining a stable project ID. Examples include Amazin → StealthEmotes, BuxbrewDing → LevelUpAnnouncer, BuxbrewResist → ResistInsight, Buxbrew Addon → ActionEmotes #2, ROAR → Battle Emotes Legacy, ROARR → Battle Emotes, ROARRunlimited → MultiActionEmotes, ROARSounds → RoarSoundEffects, and ROARemoteTrigger → EmoteTrigger → Roar Guild Addon Wrath. GuildChatAI later returned as GuildChatBridge, with its existing semantic identity preserved. These are documented source/display transitions, not new independent projects.
+
+Earlier 44-, 47-, 49-, and 53-entry counts appear below because the catalog changed over time. The dated checkpoints and the original candidate order remain evidence of that evolution; none supersedes the verified catalog snapshot above.
 
 ## Purpose and provenance
 
@@ -15,7 +21,7 @@ Babuni.dev asked to collect work discussed across chats, projects and repositori
 
 **Evidence key:** `repo` = README found in the accessible GitHub account; `repo-lineage` = documented repository likely part of a family; `repo-context` = supported by related repository documentation; `document` = recovered creative document; `conversation` = prior discussion only; `repository-doc` = this portfolio's own documented methodology; `name-only` = named repository without substantive verified contents. Statuses and timeline require a fresh check.
 
-## Approximate recent-to-old candidate ordering
+## Original candidate ordering — historical (2026-10-26)
 
 | # | Candidate | One-line description | Evidence |
 |---:|---|---|---|
@@ -73,7 +79,7 @@ Babuni.dev asked to collect work discussed across chats, projects and repositori
 | 52 | Mech-Arena | Historical science-fiction RPG project; release claims await archival evidence. | conversation |
 | 53 | Analubia | Historical fantasy RPG project associated with Sundust Studios. | conversation |
 
-## Relationships worth preserving
+## Project relationships recorded in the original research
 
 - **Morkahja** is a fictional world as well as a game-development family; **Ethera: The Stonewrought** identifies itself as a Grimnir chapter in Morkahja and contains a Godot implementation and design specifications. Worldbuilding and game builds need separate attribution and modules.
 - **Arcanitebrothers** currently exposes a Morkahja admin-console README. Do not assume the repository identity alone represents an additional game.
@@ -83,7 +89,7 @@ Babuni.dev asked to collect work discussed across chats, projects and repositori
 - Both **AzerothMoments** and **azeroth-moments** repositories were visible; do not count them as independent projects without comparison.
 - Character lore and guild culture are separate creative work even when related to Warcraft mods; observe third-party IP boundaries.
 
-## Prototype use and verification process
+## Research and verification boundaries
 
 1. This list may supply **placeholder identities** in mechanical experiments, with an explicit provisional source label.
 2. Before publishing an exhibit, confirm current title, authorship, creative attribution, assets/rights, description, last-activity date, project family, and evidence.
@@ -91,7 +97,7 @@ Babuni.dev asked to collect work discussed across chats, projects and repositori
 4. Preserve rejected ideas and development evolution in [DEVLOG.md](DEVLOG.md) or the eventual individual project journal; do not mislabel them as shipped work.
 5. Do not let this inventory override the approved tile/portal/interaction designs or silently replace existing placeholder layouts.
 
-**Unresolved:** Older chats and local files may contain more projects. The precise relationship and status of several historical repositories and early RPGs remain unverified; this list is deliberately expandable.
+**Historical research limitation:** The initial survey could not recover every older chat or local file. Its descriptions and evidence categories reflect what was available in October 2026, not a fresh audit of every current repository. Avoid reactivating a withdrawn candidate or reusing a legacy name without checking the later curation history and current catalog.
 
 ## Additional curation override — 2026-10-28
 
