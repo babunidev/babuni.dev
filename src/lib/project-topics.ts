@@ -381,7 +381,7 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
     "Community design"
   ],
   "buxbrew-character-story": [
-    "Character story",
+    "Amberbrew Story",
     "Jasmine Amberbrew",
     "Roleplay story",
     "World of Warcraft",
