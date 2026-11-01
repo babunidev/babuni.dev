@@ -831,3 +831,11 @@ The new ActionEmotes #2 name is the replacement I requested for Buxbrew Addon. A
 ## 2026-11-01 — Preserve the distinct Battle Emotes Legacy project
 
 The name supplied for ROAR is now the title I want in the portfolio: **Battle Emotes Legacy**. AI changed stable ID `roar` rather than creating a duplicate or changing `roarr`. Its ROAR.webp image remains. Imported historical/runtime names are preserved and explained in the source module. This decision updates portfolio naming and source selection, not addon code or release readiness.
+
+## 2026-11-01 — Give the separate ROARR project its new name
+
+For stable ID `roarr`, the new name I supplied is **Battle Emotes**. AI connected the renamed repository and retained ROARR.webp; stable ID `roar` remains **Battle Emotes Legacy** with ROAR.webp. Both installed packages may use historical ROARR identifiers, but those do not merge the portfolio entries. The prior decision to leave ROARR untouched applied before this new request and is now superseded for its display/source naming only.
+
+## 2026-11-01 — Keep the multi-slot project distinct
+
+The MultiActionEmotes repository is the replacement I requested for ROARRunlimited. AI used its existing `roarrunlimited` identity and RoarUnlimited.webp instead of adding another project or merging it with Battle Emotes. The source link and documents now use the new repository, while historical installed names remain. This is a portfolio/source rename, not a new feature or a decision about addon distribution.

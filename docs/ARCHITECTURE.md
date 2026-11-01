@@ -757,3 +757,11 @@ Stable ID `buxbrew` now displays ActionEmotes #2 and maps to `babunidev/ActionEm
 ## 2026-11-01 — Battle Emotes Legacy mapping
 
 Stable ID `roar` now displays Battle Emotes Legacy and maps to `babunidev/BattleEmotesLegacy` main. Only its former roar source snapshot is replaced. Stable ID `roarr` still maps to `babunidev/roarr`; installed names inside source documents do not determine portfolio identity. Artwork and project count remain unchanged.
+
+## 2026-11-01 — Battle Emotes mapping
+
+Stable ID `roarr` displays Battle Emotes and connects to `babunidev/BattleEmotes` main; its old roarr snapshot is replaced. Stable ID `roar` continues to connect to BattleEmotesLegacy. Artwork paths, module composition, project count and menu grouping stay unchanged. Current manual source notes distinguish both display names from installed ROARR identifiers.
+
+## 2026-11-01 — MultiActionEmotes mapping
+
+Stable ID `roarrunlimited` displays MultiActionEmotes and maps to `babunidev/MultiActionEmotes` main. Only its previous ROARRunlimited snapshot is replaced. The separate BattleEmotes and BattleEmotesLegacy mappings remain. Artwork, project count and common module composition are unchanged; strict production activity is rerun against the replacement public source.

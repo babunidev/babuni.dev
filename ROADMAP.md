@@ -738,3 +738,15 @@ ActionEmotes #1 and the Buxbrew character story remain separate projects. This d
 - [x] Replace ROAR with Battle Emotes Legacy using the author-supplied repository.
 
 Keep the separate ROARR project and historical installed ROARR identifiers distinct. This portfolio update does not verify client compatibility.
+
+## 2026-11-01 — Battle Emotes rename
+
+- [x] Replace ROARR with Battle Emotes using the supplied public repository.
+
+Battle Emotes and Battle Emotes Legacy remain separate entries. Installation names and in-game verification are unchanged by the portfolio rename.
+
+## 2026-11-01 — MultiActionEmotes rename
+
+- [x] Replace ROARRunlimited with MultiActionEmotes alongside the Battle Emotes rename.
+
+Historical installed filenames and client packaging checks remain source concerns, not resolved by portfolio naming changes.

@@ -749,3 +749,11 @@ The author-requested ActionEmotes #2 title replaces Buxbrew Addon in the tile an
 ## 2026-11-01 — Battle Emotes Legacy title
 
 Battle Emotes Legacy replaces ROAR in the tile and project finder. The ROAR.webp image, stable identity, WoW grouping and guaranteed add-on cue remain. Nine keywords reflect its documented battle-emote controls. No layout, motion, positioning or timing changes accompany the rename.
+
+## 2026-11-01 — Battle Emotes title
+
+Battle Emotes replaces ROARR in the project tile and finder. Its existing ROARR.webp, stable identity and WoW grouping remain. Battle Emotes Legacy retains its own image and entry. The nine-keyword pool includes the same mandatory add-on cue; motion, layout and timing are unchanged.
+
+## 2026-11-01 — MultiActionEmotes title
+
+MultiActionEmotes replaces ROARRunlimited in the grid and finder. The existing RoarUnlimited.webp and stable identity remain. Its nine-keyword pool describes the documented multi-slot controls and retains the guaranteed add-on cue. No timing, placement, bloom geometry or interaction changes accompany the rename.

@@ -1366,3 +1366,17 @@ For the ROAR entry, I supplied BattleEmotesLegacy as its new repository. Its REA
 At my request, AI applied **Battle Emotes Legacy** to the existing ROAR tile, retained its artwork, refreshed its ten standard documents and updated its nine keywords. The source note explains the installed name so that a repository rename does not merge two different projects. The documented action-slot trigger, built-in emotes, chance and cooldown describe source behavior, not a new in-game verification. Adding a second tile or changing installation files was unnecessary.
 
 AI verified the ten imported documents at public BattleEmotesLegacy revision `3b7de5e5ad105cfe9e4a2766d69bc861fe8f4496`. Content validation, all 202 tests, authenticated refresh of 36/36 activity dates and production build passed, including 442 public URL checks. These are portfolio checks; no new browser screenshot, game-client test or physical-device acceptance is claimed. Unrelated source snapshots and artwork were preserved.
+
+## 2026-11-01 — ROARR becomes Battle Emotes
+
+Following the Legacy rename, I supplied **BattleEmotes** for the separate ROARR project. The current README explicitly distinguishes these two repositories, even though both retain ROARR as an installed addon name.
+
+At my request, AI renamed the ROARR tile to **Battle Emotes**, refreshed its ten standard documents and source link, and retained its existing artwork and identity. The nine topic keywords describe its action-slot emotes and setup controls. The Legacy source note now uses the current Battle Emotes name too. Keeping the repositories separate avoids turning a naming update into a merge or an unsupported decision about the authoritative addon distribution. No gameplay or installation files were changed.
+
+## 2026-11-01 — The multi-slot project becomes MultiActionEmotes
+
+During the Battle Emotes update, I also supplied **MultiActionEmotes** as the new name for ROARRunlimited. Its independent action-slot configurations distinguish it from the two single-slot Battle Emotes records.
+
+Before publication, AI’s first production check stopped because the old ROARRunlimited activity source could not be fetched. The fresh-data requirement prevented a stale build. After my new repository instruction, AI updated that mapping and imported its ten standard documents, preserving the existing tile identity and image. Its nine keywords now explain multiple configurations and independent chance/cooldown settings. Both pending renames are verified together; historical ROARRunlimited files, `/roed` and `ROEDDB` stay in the source record. No game code or packaging correction is claimed.
+
+AI verified the two ten-document snapshots at BattleEmotes `a9550efe0694199c253d02ef181bbddd7f5dbb40` and MultiActionEmotes `512438858c7579ad4f0dfd080b8592164112ca27`. The combined update passed content validation, all 204 tests, authenticated refresh of 36/36 public activity dates and the production build, including 442 public URL checks. The first stopped build is superseded by this successful fresh build; no stale activity was published. No unrelated snapshot, artwork or addon runtime was changed, and no new browser screenshot or physical-device acceptance is claimed.

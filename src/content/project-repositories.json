@@ -102,13 +102,15 @@
   },
   "roarrunlimited": {
     "status": "connected",
-    "repository": "babunidev/ROARRunlimited",
-    "branch": "main"
+    "repository": "babunidev/MultiActionEmotes",
+    "branch": "main",
+    "note": "Renamed MultiActionEmotes at Babuni.dev’s request on 2026-11-01. Stable ID roarrunlimited and RoarUnlimited.webp retained. Historical installed ROARRunlimited filenames, /roed and ROEDDB remain in source documents."
   },
   "roarr": {
     "status": "connected",
-    "repository": "babunidev/roarr",
-    "branch": "main"
+    "repository": "babunidev/BattleEmotes",
+    "branch": "main",
+    "note": "Renamed Battle Emotes at Babuni.dev’s request on 2026-11-01. Stable ID roarr and ROARR.webp retained. Separate from Battle Emotes Legacy; installed ROARR filenames, /roarr and ROARRDB remain historical names."
   },
   "roarsounds": {
     "status": "connected",
@@ -124,7 +126,7 @@
     "status": "connected",
     "repository": "babunidev/BattleEmotesLegacy",
     "branch": "main",
-    "note": "Renamed Battle Emotes Legacy at Babuni.dev’s request on 2026-11-01. Stable ID roar and ROAR.webp retained. Installed ROARR names are distinct from the separate roarr repository/project."
+    "note": "Renamed Battle Emotes Legacy at Babuni.dev’s request on 2026-11-01. Stable ID roar and ROAR.webp retained. Installed ROARR names are distinct from the separate Battle Emotes project (stable ID roarr)."
   },
   "meleestartattack": {
     "status": "connected",

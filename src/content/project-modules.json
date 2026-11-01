@@ -703,7 +703,7 @@
       "id": "source",
       "type": "resources",
       "title": "Project source",
-      "preview": "Battle Emotes Legacy replaces the former ROAR repository name. This project installs as ROARR with /roarr commands; it remains separate from the other ROARR project and RoarForever.",
+      "preview": "Battle Emotes Legacy replaces the former ROAR repository name. This project installs as ROARR with /roarr commands; it remains separate from the separate Battle Emotes project and RoarForever.",
       "links": [
         {
           "label": "Battle Emotes Legacy repository",
@@ -711,6 +711,36 @@
         }
       ],
       "credit": "Repository rename requested by Babuni.dev; AI-assisted clarification of historical and installed names."
+    }
+  ],
+  "roarr": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "Battle Emotes, formerly the roarr repository. The installed addon retains ROARR filenames and /roarr commands. Battle Emotes Legacy remains a separate historical project.",
+      "links": [
+        {
+          "label": "Battle Emotes repository",
+          "href": "https://github.com/babunidev/BattleEmotes"
+        }
+      ],
+      "credit": "Name and repository replacement requested by Babuni.dev; AI-assisted clarification from the current public README."
+    }
+  ],
+  "roarrunlimited": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "MultiActionEmotes replaces ROARRunlimited as the project/repository name. Historical installation identifiers and /roed commands remain in the imported source documents.",
+      "links": [
+        {
+          "label": "MultiActionEmotes repository",
+          "href": "https://github.com/babunidev/MultiActionEmotes"
+        }
+      ],
+      "credit": "Name and source replacement requested by Babuni.dev; AI-assisted clarification based on public repository documentation."
     }
   ]
 }

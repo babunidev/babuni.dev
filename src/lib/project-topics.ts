@@ -239,26 +239,26 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
   ],
   "roarrunlimited": [
     "World of Warcraft add-on",
-    "Roleplay emotes",
-    "Action slots",
-    "Emote options",
+    "Multiple action slots",
+    "Independent cooldowns",
+    "Chance controls",
+    "Built-in emotes",
+    "Numbered configurations",
     "Character expression",
-    "Lua",
-    "Player actions",
     "Roleplay tools",
-    "Game interface"
-  ],
+    "Lua"
+],
   "roarr": [
     "World of Warcraft add-on",
-    "Roleplay emotes",
     "Battle emotes",
-    "Earlier work",
+    "Action-bar slot",
+    "Built-in emotes",
+    "Chance controls",
+    "Cooldown controls",
+    "Setup tutorial",
     "Character expression",
-    "Lua",
-    "Player actions",
-    "Roleplay tools",
-    "Game interface"
-  ],
+    "Lua"
+],
   "roarsounds": [
     "World of Warcraft add-on",
     "Game audio",

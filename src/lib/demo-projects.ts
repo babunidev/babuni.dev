@@ -181,17 +181,17 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "roarrunlimited",
     "portalArtwork": "/portal-content/RoarUnlimited.webp",
-    "name": "ROARRunlimited",
-    "shortSummary": "Multiple action-slot emote triggers with independent options.",
-    "evidence": "repo-lineage",
+    "name": "MultiActionEmotes",
+    "shortSummary": "Multiple action-slot emote configurations with independent chances and cooldowns.",
+    "evidence": "repo",
     "tint": "hsl(60 58% 62%)"
   },
   {
     "id": "roarr",
     "portalArtwork": "/portal-content/ROARR.webp",
-    "name": "ROARR",
-    "shortSummary": "Earlier action-slot battle-emote addon.",
-    "evidence": "repo-lineage",
+    "name": "Battle Emotes",
+    "shortSummary": "Action-slot roleplay emotes with chance, cooldown and tutorial controls; distinct from Battle Emotes Legacy.",
+    "evidence": "repo",
     "tint": "hsl(198 58% 62%)"
   },
   {

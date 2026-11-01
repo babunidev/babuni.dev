@@ -981,3 +981,13 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Renamed the ROAR tile to Battle Emotes Legacy and connected its new public repository and ten standard documents. Stable identity and ROAR.webp remain; the separate ROARR project is unaffected.
+
+## 2026-11-01
+
+### Changed
+- Renamed ROARR to Battle Emotes and connected its renamed public repository and ten standard documents. Existing identity/ROARR.webp remain; Battle Emotes Legacy keeps its separate source and art. Updated the source notes and nine topic keywords.
+
+## 2026-11-01
+
+### Changed
+- Renamed ROARRunlimited to MultiActionEmotes and connected its renamed repository and ten standard documents. Existing identity and RoarUnlimited.webp remain; the nine keywords describe its independent multi-slot emote configurations.

@@ -229,15 +229,43 @@ test('ActionEmotes #2 replaces Buxbrew Addon independently of #1 and the charact
 });
 
 
-test('Battle Emotes Legacy replaces ROAR without altering the separate ROARR source or artwork',()=>{
+test('Battle Emotes Legacy preserves its identity separately from the renamed Battle Emotes source',()=>{
  const project=demoProjects.find(p=>p.id==='roar');
  assert.equal(project.name,'Battle Emotes Legacy');assert.equal(project.portalArtwork,'/portal-content/ROAR.webp');
  assert.ok(!demoProjects.some(p=>p.name==='ROAR'));
- assert.equal(demoProjects.find(p=>p.id==='roarr').name,'ROARR');
- assert.equal(connections.roarr.repository,'babunidev/roarr');
+ assert.equal(demoProjects.find(p=>p.id==='roarr').name,'Battle Emotes');
+ assert.equal(connections.roarr.repository,'babunidev/BattleEmotes');
  const c=connections.roar;assert.equal(c.repository,'babunidev/BattleEmotesLegacy');
  assert.equal(snapshots['babunidev/roar'],undefined);
  const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
  const source=composeProjectModules(catalog.roar,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
  assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/BattleEmotesLegacy']);
+});
+
+
+test('Battle Emotes replaces ROARR while both emote projects retain their own identity and art',()=>{
+ const project=demoProjects.find(p=>p.id==='roarr');
+ assert.equal(project.name,'Battle Emotes');assert.equal(project.portalArtwork,'/portal-content/ROARR.webp');
+ assert.ok(!demoProjects.some(p=>p.name==='ROARR'));
+ const legacy=demoProjects.find(p=>p.id==='roar');assert.equal(legacy.name,'Battle Emotes Legacy');assert.equal(legacy.portalArtwork,'/portal-content/ROAR.webp');
+ assert.equal(connections.roar.repository,'babunidev/BattleEmotesLegacy');
+ const c=connections.roarr;assert.equal(c.repository,'babunidev/BattleEmotes');
+ assert.equal(snapshots['babunidev/roarr'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const source=composeProjectModules(catalog.roarr,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/BattleEmotes']);
+});
+
+
+test('MultiActionEmotes replaces ROARRunlimited while retaining its multi-slot identity and art',()=>{
+ const project=demoProjects.find(p=>p.id==='roarrunlimited');
+ assert.equal(project.name,'MultiActionEmotes');assert.equal(project.portalArtwork,'/portal-content/RoarUnlimited.webp');
+ assert.ok(!demoProjects.some(p=>p.name==='ROARRunlimited'));
+ assert.equal(connections.roarr.repository,'babunidev/BattleEmotes');
+ assert.equal(connections.roar.repository,'babunidev/BattleEmotesLegacy');
+ const c=connections.roarrunlimited;assert.equal(c.repository,'babunidev/MultiActionEmotes');
+ assert.equal(snapshots['babunidev/ROARRunlimited'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const source=composeProjectModules(catalog.roarrunlimited,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/MultiActionEmotes']);
 });

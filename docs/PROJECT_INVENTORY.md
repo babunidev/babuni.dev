@@ -162,3 +162,11 @@ At Babuni.dev’s request, stable ID `buxbrew` now displays ActionEmotes #2 and 
 ## 2026-11-01 — ROAR renamed
 
 At Babuni.dev’s request, stable ID `roar` now displays Battle Emotes Legacy and uses the BattleEmotesLegacy public repository. ROAR.webp remains its artwork. The installed package’s ROARR name must not be confused with stable ID `roarr`, which remains a separate project/repository. Historical inventory names remain evidence rather than duplicate catalog entries.
+
+## 2026-11-01 — ROARR renamed
+
+At Babuni.dev’s request, stable ID `roarr` now displays Battle Emotes and uses the BattleEmotes public repository. ROARR.webp remains its image. The previously renamed `roar` entry remains Battle Emotes Legacy with its separate source and ROAR.webp. Installed names in either source are not used to merge their identities.
+
+## 2026-11-01 — ROARRunlimited renamed
+
+At Babuni.dev’s request, stable ID `roarrunlimited` now displays MultiActionEmotes and uses the renamed public repository. RoarUnlimited.webp is retained. Battle Emotes and Battle Emotes Legacy remain separate records; historical names in source documents do not introduce duplicate tiles.

@@ -617,3 +617,11 @@ Babuni.dev supplied the renamed repository for Buxbrew Addon. Its documents desc
 ## 2026-11-01 — Battle Emotes Legacy names
 
 Babuni.dev supplied the renamed public source. Its documents distinguish the historical roar repository from its installed ROARR package, and from the separate roarr repository and later RoarForever. The portfolio title and source note make that relationship explicit. Nine topic keywords describe source-backed built-in emotes and chance/cooldown controls without claiming current live-client verification. Historical names, author credits and license text remain verbatim.
+
+## 2026-11-01 — Battle Emotes and Legacy
+
+Babuni.dev supplied the renamed BattleEmotes repository for ROARR. Its source explicitly relates the two historical repositories without establishing why both were maintained or which should be the authoritative distribution. The portfolio keeps both records distinct. Imported documentation preserves historical roarr.lua/roarr.toc, /roarr and ROARRDB identifiers and separates source observations from live-client verification. Nine keywords reflect the documented action-slot, emote and tutorial controls.
+
+## 2026-11-01 — MultiActionEmotes source
+
+Babuni.dev supplied MultiActionEmotes as the renamed ROARRunlimited repository. Its standard documents describe numbered action-slot configurations with independent chances and cooldowns, reflected in the summary and nine keywords. Historical installation identifiers and packaging caveats remain verbatim. Public source text is not proof of live-client compatibility, and no unrelated project snapshot is refreshed.
