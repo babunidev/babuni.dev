@@ -17,7 +17,9 @@ For each substantial change, preserve this causal sequence:
 4. **Execution:** concrete files or behaviors changed, with code/commit/PR references.
 5. **Verification and outcome:** commands run, observations, failures, limitations, and what remains unresolved.
 
-See docs/AI_COLLABORATION.md for entry templates, attribution, provenance, and privacy rules.
+See docs/AI_COLLABORATION.md for attribution, provenance, privacy rules, and publication style.
+
+**Public narrative style:** Write development stories from the human creative's first-person perspective. Never start a sentence with “I” or “My”; integrate those pronouns naturally into varied sentences. Use “creative” instead of “creator” for the maker of a work. Explain AI proposals and actions as AI work, not as code or testing personally performed by the creative. Keep journal entries brief and readable, separate proposals from implemented and verified work, and preserve the significance of corrections and abandoned approaches. Use neutral technical prose in specifications where it reads better.
 
 ## Every meaningful change must update documentation
 
