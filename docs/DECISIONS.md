@@ -886,3 +886,10 @@ The header correction I requested is conditional feedback: an ordinary shift sho
 ## 2026-11-01 — Name the story repository AmberbrewStory
 
 The existing public `BuxbrewCharacterStory` repository has been renamed to `AmberbrewStory`. This was my choice of repository name; it does not rename Buxbrew herself or turn the character into another website project. AI updated the connected source, pinned snapshot identity, generated reader URL contract, and reporting/tests. The existing tile's stable ID `buxbrew-character-story` and all nine collection modules remain unchanged. Earlier documentation naming the original repository remains as development history; current technical references use `babunidev/AmberbrewStory`.
+
+## 2026-11-01 — Amberbrew Story is the public project title
+
+**Creative decision:** The portfolio project itself is named **Amberbrew Story**, matching its `babunidev/AmberbrewStory` source repository. **Buxbrew — character story** is the previous display title, not a second project. Buxbrew remains the character's name within the family archive and source documents.
+
+**Implementation:** AI changed the display name carried by the stable `buxbrew-character-story` catalog entry and updated its portal topic label, repository report and name regression test. The semantic ID and `BuxbrewCharacter.webp` artwork remain unchanged so grid placement, bookmarks, module lookups and existing content associations continue to refer to the same project.
+
