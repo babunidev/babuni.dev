@@ -3,7 +3,7 @@
 **Status vocabulary:** Accepted, Proposed, Experimental, Superseded, Open. Entries reconstructed from conversation are marked retrospective. New decisions should include date, Babuni.dev input, AI proposal, rationale, and evidence.
 
 ## D-2026-10-30 — Per-visit assortment and recent activity
-**Status:** Accepted creator direction; highlight window and count provisional.
+**Status:** Accepted creative direction; highlight window and count provisional.
 **Creator direction:** Always start with BABUNI.DEV first, freshly shuffle the other projects for each visit, and mark recently updated tiles with a gold top-right label and an extra gold portal ring instead of placing them first.
 **AI implementation:** One shuffle per page load; stable semantic identity throughout grid shifts. Validated public commit dates determine activity markers. AI chose at most five projects committed within fourteen days; this exact definition of "recent" remains open to refinement.
 **Evidence:** `src/lib/grid-projects.ts`, `src/lib/project-activity.ts`, `src/scripts/grid.ts`, `src/pages/index.astro`; browser outcome unverified.
