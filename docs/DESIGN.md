@@ -1,18 +1,20 @@
 # Interaction and Visual Design Reference
 
-This document describes intended behavior; implementation must be separately verified.
+This reference describes the intended visual and interaction behavior of babuni.dev. **The opening sections describe the current design direction; the dated sections that follow preserve earlier prototypes and their original verification limits.** An older entry is not a current specification when a later decision supersedes it.
 
-## Per-visit assortment and updated-project indicators (2026-10-30)
+The creative direction is recorded in [Concept](../CONCEPT.md); accepted and superseded choices in [Decisions](DECISIONS.md); implementation in [Architecture](ARCHITECTURE.md); and actual changes, tests, and observations in [Changelog](../CHANGELOG.md) and [Development journal](DEVLOG.md). Design acceptance and source implementation must not be conflated.
+
+## Current design direction — project assortment and activity (2026-10-30)
 - BABUNI.DEV remains the first tile at startup; all other project identities are independently shuffled once per page load. Grid shifts move existing project identities, without re-shuffling them.
 - Recently updated projects have a gold "Recently updated" label in the tile's upper-right corner and a second gold ring outside the portal rim; styling follows the semantic project identity when DOM slots are recycled.
 - Activity is independent of position. Provisional AI policy: the five newest verified, public branch-head commits within fourteen days. Undated, old, private and invalid records have no marker. Build refreshes the public activity cache, while local development reads the latest available verified cache.
-- The rule and visual design require hands-on acceptance.
+- The 30 October code changes were recorded, but the specific randomized-order and activity-indicator browser outcome remained unverified in that change record. Preserve the distinction between the approved direction and measured behavior.
 
 ## Overall frame
 - Persistent top bar: BABUNI.DEV / Projects dropdown / Gallery / About.
 - Grid fills the screen beneath the bar; never reveal scenic backgrounds or blank edges.
 - The first tile starts perfectly centered in the full viewport on desktop, tablet, and phone. This is the starting anchor only: dragging can move it out of view.
-- Approximate approved sizes: desktop 240 CSS px (>=1024 px viewport width), tablet 200 px (600–1023 px), phone clamp(144 px, 40vw, 172 px). These prototype values require hands-on device verification.
+- Recorded responsive design values: desktop 240 CSS px (viewport at least 1024 px), tablet 200 px (600–1023 px), and phone `clamp(144px, 40vw, 172px)`. These are dated prototype parameters, not a substitute for checking current CSS. The creative accepted responsive behavior on physical devices on 29 October 2026.
 - No fixed number of complete rows or columns. Tiles fill outward in a seamless top-down wall; partial tiles at edges are intentional, and the navigation overlays the grid.
 
 ## Tile visual
@@ -26,10 +28,10 @@ This document describes intended behavior; implementation must be separately ver
 ## Movement
 - Whole row or column translates exactly one cell per successful shift.
 - Slow easing, uninterrupted readability, deterministic coordinate identity.
-- Randomly choose axis; determine order and roll d20 per eligible line; >10 succeeds after the applicable initiative modifier. Detailed rules remain a test parameter.
+- Preserve slow, one-cell, dice-inspired row/column shifts. The originally proposed d20 and initiative modifiers remain historical design parameters; exact active probabilities and scheduling must be checked in code before changing them.
 - Multiple nonconflicting lines may move in the same round.
 - Allow 2D drag/pan. Recycle outgoing visual tile instances to buffers on opposite edges as needed. Do not move the underlying project data or silently duplicate content files.
-- On bloom, grid movement slows. Movement must not cross reserved cells or displace an active focused tile unexpectedly; suspension near blooms is acceptable pending prototype.
+- While a bloom is open, nonconflicting shifts may continue, but reserved cells and the selected tile must remain stable. A conflicting shift must be handled without moving or changing the selected project unexpectedly.
 - Honor reduced-motion preferences; test fade-based relocation as an alternative.
 
 ## Interaction state machine
@@ -47,11 +49,11 @@ Click/tap behaviors should be discoverable; provide visible back controls and ke
 - Selection chooses an admissible neighboring cell to reserve; the prior tile slides away in the same quiet plate-motion language.
 - Module candidates: description, keywords, metadata, media thumbnails, dev-log or file availability.
 - Content arrives gradually. Small random variation in direction or order is welcome if geometry remains safe and interpretable.
-- Adjacent modules may expand further only in full bloom; preserve instant selection switching.
+- Adjacent modules lead into big bloom; switching projects should close the previous bloom coherently rather than overlapping two reservations. Existing shifts may require queued selection without accelerating the approved motion.
 
 ## Full bloom composition
-- Fade unrelated grid tiles completely away.
-- Retain the original central portal tile as spatial anchor and collapse control.
+- In big bloom, unrelated project tiles recede so that the selected project's modules take visual priority, while the grid-native arrangement and its spatial relationships remain clear.
+- Retain the originating project tile as a recognizable return control within the selected module's lower-left quarter; this is not a permanent world center.
 - Surrounding modules are understated, readable frames, connected conceptually to the center.
 - Modules may preview text by gentle movement and media through bounded thumbnails; do not continuously scroll text that is being read.
 - Full bloom is still an overview; expanded modules contain complete content.
@@ -77,7 +79,11 @@ Click/tap behaviors should be discoverable; provide visible back controls and ke
 5. Full bloom removes other projects.
 6. Module detail reads/browses normally.
 
-## Free manual pan — milestone 1 prototype (2026-10-26)
+## Historical design experiments and verification (from 2026-10-26)
+
+The sections below document successive prototypes, revisions, and observations. They are retained as design history, **not as a second set of active requirements**. In particular, early fixed spiral ordering, old movement speeds, temporary topic interactions, and pending checks may have been superseded or accepted in later work.
+
+### Free manual pan — milestone 1 prototype (2026-10-26)
 
 Babuni.dev described interaction as Google Maps-style dragging: hold the primary mouse button or touch with a finger and pull the entire grid in any direction. Drag follows the pointer with no snapping or mandatory return to the starting center. Releasing currently stops movement; kinetic inertia has not been requested or implemented. A keyboard-accessible alternative uses arrow keys and Home or the reset button.
 
