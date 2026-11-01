@@ -1,12 +1,14 @@
 # Development Roadmap
 
-## Current status — 2026-10-29
+## Current status — 2026-11-01
 
 **Babuni.dev acceptance:** Milestones 1–4 are complete for the present design. Babuni.dev reports thorough physical testing on two devices, responsive checks on phone/laptop/wide desktop, satisfying keyboard and reduced-motion alternatives, working hover/tap/ambient topics, fullscreen/viewer use, and many-hour sessions. The current neutral stone tiles and striking portals are the accepted visual direction. These are human observations, not new AI device tests or a guarantee against future regressions. Performance can be reviewed again later.
 
 Milestone 5's content pipeline is substantially implemented. Editorial review is ongoing work, not a blocker requiring every project to be finished. Babuni.dev explicitly authorizes publishing all 42 current catalog projects and their existing public-source documentation (2026-10-29). A future owner visibility toggle and optional preview deployments remain enhancements, not blockers for this approved collection. MDX is optional and deferred; current Markdown, image and video modules are sufficient.
 
-**Release priorities:** readable project/module URLs, metadata, sitemap, crawler rules and on-demand project content are now implemented. A separate Nginx gzip/cache configuration is prepared. Next: review and install the new site on the VPS on the agreed weekend, configure DNS/HTTPS without disturbing Arcanite Brothers, then measure real production loading and submit the sitemap. Deployment has not been performed.
+**Release update (2026-10-31):** The first static release was built from a separate clean Git worktree and staged on the shared VPS. The journal records successful public HTTPS (200), HTTP-to-HTTPS redirect (301), Certbot renewal dry-run, homepage and asset header checks, sitemap response, 404 behavior, and continued HTTP 200 responses from the existing Arcanite Brothers website and API health route. These are specific verified observations, not proof of full live-browser acceptance or measured production loading. More recent local changes are not automatically deployed.
+
+**Next release priorities:** audit the deployed sitemap and asset behavior, perform public browser and real-network performance checks, determine how the current local version should be promoted safely, and continue source-backed editorial review. Owner publishing controls and optional preview deployments remain future enhancements.
 
 The checklist below reflects this acceptance. Dated notes after the checklist are historical; their earlier pending checks and superseded designs are not the current status.
 
@@ -78,11 +80,24 @@ The checklist below reflects this acceptance. Dated notes after the checklist ar
 - [ ] Future enhancement: owner project visibility/publishing UI. Private material is not imported.
 
 ## Milestone 6 — Release
-- [ ] Configure VPS hosting, deployment, domain and HTTPS.
+- [x] Prepare and install an isolated static VPS release with dedicated deployment account and separate Nginx site (2026-10-31; commands performed by the creative with AI guidance).
+- [x] Configure public `www.babuni.dev` DNS and HTTPS with HTTP redirect; verify Certbot dry-run renewal (2026-10-31).
+- [x] Check public homepage, static assets, caching headers, sitemap response, 404 behavior, and existing Arcanite Brothers website/API availability (specific HTTP checks recorded 2026-10-31).
 - [x] Responsive, keyboard/touch, fullscreen and long-session experience accepted by Babuni.dev.
-- [ ] Verify real production hosting: compression/cache headers, load timings, security configuration and a final deployed smoke check.
+- [x] Verify sampled production compression, cache and security headers plus HTTP-level smoke checks (2026-10-31; see journal).
+- [ ] Measure real production loading and interaction performance, and perform live-browser/device regression checks for the deployed release.
+- [ ] Audit sitemap contents and confirm external indexing/discoverability; an HTTP 200 response alone does not establish indexing.
 - [x] Add 433 crawlable static home/project/module URLs, descriptive titles, canonical URLs, sitemap, crawler rules, sharing metadata and source-preserving readable documents; verify built links/headings/metadata. Search indexing is not guaranteed.
-- [ ] Publish an initial release and maintain the changelog and journal.
+- [x] Publish the first static release over public HTTPS and record deployment checks in the journal (2026-10-31; deployment is a dated snapshot, not necessarily current `main`).
+- [ ] Establish and verify the next reviewed release/update procedure; keep the changelog and journal current.
+
+## Documentation review — 2026-11-01
+
+- [x] Refresh the README as a readable project introduction, with dated deployment information and a practical command reference.
+- [x] Revise the concept to distinguish the lasting creative vision from superseded design experiments and technical specifications.
+- [x] Establish first-person creative narrative and explicit AI attribution in project documentation instructions.
+- [x] Reconcile this roadmap's release checkboxes with evidence already recorded in the development journal.
+- [ ] Continue the file-by-file editorial review of the remaining documentation; historical appendices are retained until independently reconciled.
 
 ## Documentation requirement for every milestone
 
