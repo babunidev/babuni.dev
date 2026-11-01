@@ -1,7 +1,8 @@
 /** Shared content identity and preview data, independent of grid coordinates. */
-export type ModuleType='text'|'gallery'|'video'|'resources';
+export type ModuleType='text'|'gallery'|'video'|'resources'|'document-list';
 export interface ModuleImage {src:string;alt:string;caption?:string}
 export interface ModuleLink {label:string;href:string}
+export interface ModuleDocument {title:string;path:string;bodyUrl:string;source:string}
 export interface ModuleVideo {src?:string;embed?:string;poster?:string;title:string}
 export interface ProjectModule {
   id:string;type:ModuleType;title:string;preview:string;
@@ -9,6 +10,7 @@ export interface ProjectModule {
   video?:ModuleVideo;
   videos?:ModuleVideo[];
   links?:ModuleLink[];
+  documents?:ModuleDocument[];
   source?:string;credit?:string;
 }
 export function videosForModule(module:ProjectModule):ModuleVideo[]{
@@ -30,6 +32,8 @@ export function moduleHasContent(module:ProjectModule):boolean {
     case 'gallery':return !!module.images?.some(image=>image.src.trim()&&image.alt.trim());
     case 'video':return videosForModule(module).some(video=>!!video.src?.trim()||!!(video.embed&&safeEmbedUrl(video.embed)));
     case 'resources':return !!module.links?.some(link=>link.label.trim()&&link.href.trim());
+    case 'document-list':return !!module.documents?.some(doc=>doc.title.trim()&&doc.bodyUrl.trim())
+      ||!!module.links?.some(link=>link.label.trim()&&link.href.trim());
   }
 }
 export function shuffled<T>(items:readonly T[],random:()=>number=Math.random):T[]{
