@@ -1,72 +1,79 @@
 # babuni.dev — Creative Concept
 
-**Creative and creative director:** Babuni.dev  
-**State:** Agreed concept, not a finished specification  
-**Origin:** Retrospective reconstruction from project conversations, October 2026
+**Creative and creative director:** Babuni  
+**Project:** babuni.dev  
+**Origin:** Retrospective account of conversations and decisions from October 2026  
+**Purpose:** Creative vision and guiding principles; detailed behavior and verification belong in the linked documents.
 
-## The toy box
+## A toy box of creative work
 
-babuni.dev is a personal, explorable workshop. Visiting it should feel like opening a childhood toy box: an assortment of works that invite discovery and play. A toy may be finished, unfinished, experimental, artistic, technical, fictional, or something in between.
+The idea behind babuni.dev is a personal workshop that feels more like opening a childhood toy box than entering a conventional portfolio. Finished work belongs beside experiments, stories, games, technical projects, and things still taking shape. A visitor should encounter intriguing objects first, then discover what they mean by exploring them.
 
-Visitors are not marched through a linear portfolio or blog. They encounter shapes, names, colors, and glimpses of worlds first; greater understanding becomes available through engagement.
+Rather than arranging my work into a chronological blog or a fixed set of cards, the site turns the collection into something visitors can move through. The website itself is one of those works: its design, development history, revisions, and collaboration with AI deserve the same attention as the projects it presents.
 
-The website itself belongs in the collection. Babuni.dev has confirmed BABUNI.DEV as the initial center tile, with its own concept, sketches, dev log, architecture, and changelog. Other projects begin in a clockwise spiral around it. The exact rendered result remains subject to hands-on testing.
+## An endless field of stone and portals
 
-## The surface
+The main surface is an edge-to-edge field of square stone tiles, seen from directly above. Each has an engraved title and a recessed, colored portal showing something of the project behind it. Historical masonry informed early experiments, but the intended visual language is original and restrained, not a reproduction of a particular culture or a heavily ornamented fantasy interface.
 
-The viewport is filled edge to edge by a tight field of square **tiles**, viewed straight from above with no perspective. One complete tile starts at the exact screen center; the entire field is free to move afterward. The original 6 × 4 desktop layout was an early density illustration, not a target count. Partial tiles can be visible at any edge. There is no decorative landscape behind the grid.
+One BABUNI.DEV tile starts at the center of the viewport. That position is **an opening arrangement, not a permanent center of the world**. The field can be dragged freely, with partial tiles extending past the screen edges and recycled tiles keeping the visible surface filled. There is no scenic background behind it.
 
-The tiles are stylized, deliberately restrained stone objects. Historical Mesoamerican masonry was an early inspiration, but the desired result is an original design language, not an imitation. Each tile carries a legible **engraved project title**, project-specific engravings, and a recessed, colored **portal**. The portal displays the project's visual identity or a view into its world.
+A persistent header provides access to Projects, Gallery, and About. Direct project search is a practical companion to wandering: choosing a project brings it into view and opens its introductory bloom.
 
-A slim persistent top bar contains BABUNI.DEV, Projects (dropdown), Gallery, and About. Babuni.dev confirmed searchable direct project finding in October 2026: choosing a project moves the grid to it and opens its small bloom. The header remains available across all four stages.
+## A living, shifting grid
 
-## Living motion
+Tiles belong to grid cells rather than floating independently. From time to time, a whole row or column moves smoothly by one cell, like a slow-moving plate. The motion should make the surface feel alive without fighting the visitor for attention.
 
-Individual projects remain anchored to grid cells; they do not drift as independent floating objects. At intervals, whole horizontal or vertical lines move smoothly, one cell at a time, like shifting plates. Motion is calm, eased, and unobtrusive.
+Randomized, dice-inspired movement was part of the early design. The proposed d20 rolls and initiative modifiers are historical design material, **not a promise that those exact values govern the current implementation**. Engineering details and their verification belong in [Design](docs/DESIGN.md) and [Architecture](docs/ARCHITECTURE.md).
 
-A round first selects horizontal or vertical motion by chance. Eligible lines roll d20; results above 10 move. Lines roll in an initiative order, with proposed bonuses +4, +3, +2, +1 for the first four in that order. This is a *proposed* rule and needs generalization and testing for six columns or more.
+The assortment also evolved. An earlier clockwise, newest-first spiral helped establish the opening layout. On 30 October 2026, the chosen direction became **BABUNI.DEV first, with the other projects shuffled once per visit**; their identities remain stable during subsequent movement. Recently updated projects can stand out through a gold label and an extra portal ring rather than being moved to the front. The exact activity window and count remain provisional.
 
-Visitors can drag the entire field in any direction. Visual tiles are recycled offstage so that no edge or empty background becomes visible. Project identities are assigned in Babuni.dev's clockwise spiral, stay stable while visible, and are reused after leaving view. The screen stays fully filled: when there are fewer distinct projects than visible cells, project identities repeat rather than producing empty or filler tiles. When enough projects exist, visible duplicates should be avoided.
+The surface should never need blank filler tiles. When there are too few distinct projects to fill the visible field, identities may repeat; when enough exist, visible duplicates should be avoided. Decorative neutral tiles have their own limited identities and should not become a substitute for real projects.
 
-## Discovery and the four depths
+## Four depths of exploration
 
-1. **Grid:** colored portals and engraved titles. Three small glowing points (above, left, right of the portal) can reveal very brief topic/flavor snippets. The previous four-point idea was later revised by Babuni.dev.
-2. **Small bloom:** first click or tap. The selected tile remains the anchor. Neighboring tiles physically glide aside; the space of one or more adjacent *tile cells* becomes introductory project modules. The rest of the grid stays present and slows down. The open bloom travels with the grid during panning; selecting another project closes the old one before opening the next.
-3. **Full bloom / big bloom:** activate a small-bloom module or its Read more control. Stay in the same living grid: tiles make physical space for modules spanning 2×2 tile cells. The chosen module grows into the middle. The original-size project tile occupies its lower-left quarter as a one-step back control; Read more stays opposite at bottom right. Other modules reveal from the top in the site’s clockwise spiral, with additional modules extending downward in three columns. Neighboring project tiles remain available and can shift outside the reserved footprint. Large previews reveal more source content before a further click opens full detail. There is no big-bloom header strip; optional instructions live behind a small help tooltip.
-4. **Expanded module:** selecting a text, image, video, or file module opens an appropriate detailed view. Text scrolls normally; image galleries are freely browsable, with a prominent center image. A separate fullscreen image control displays the art without captions or UI.
+The interface unfolds gradually, keeping its physical relationship to the grid.
 
-Navigation returns one level at a time: expanded module → big bloom → small bloom → grid. The small-bloom center tile closes that bloom; entering big bloom requires activating a module. The big-bloom field is navigated by dragging, while long text scrolls normally in detail. Each project has one Videos collection module rather than a module per recording.
+1. **Grid:** Every tile carries a title and portal. Three small lights above and beside the portal reveal brief, contextual clues.
+2. **Small bloom:** Selecting a tile opens introductory modules in neighboring grid cells. The original tiles make room rather than having cards simply drawn on top of them. The selected project remains the anchor.
+3. **Big bloom:** Opening an introductory module expands the project into a larger arrangement of grid-native previews. Content occupies reserved space, while unrelated projects recede. The originating tile remains recognizable and provides the way back.
+4. **Full detail:** A module opens a readable document, image gallery, video, or other appropriate presentation. Longer text scrolls normally; images can be viewed without surrounding interface elements.
 
-## Information points
+Navigation moves back through those depths rather than relying on scroll-wheel gestures to change modes. Dragging remains a way to explore the grid; scrolling remains a way to read.
 
-Three small lights surrounding the portal—**top, left, and right**—are *not links*. Their tiny bubbles give a category, form, theme, or other interesting flavor instead of a sales pitch. This supersedes the earlier four-point sketch. On desktop, hovering or focusing anywhere on a tile reveals all three in succession; on mobile, the tile occupying the screen center reveals them automatically while browsing; the whole tile is one button for selecting the project, including its portal; one randomly chosen point may briefly reveal its clue without interaction, including on other tiles while a small bloom is open. Babuni.dev revised their presentation on 2026-10-26: holographic callouts may extend over neighboring tiles like wings. The left bubble anchors by its bottom-right corner, the right by its bottom-left, and the top grows upward. They can be ignored. Their exact wording will be curated from reliable project material and development history.
+This structure grew through correction as well as invention. An early AI interpretation depicted bloom content as floating dashboard panels. The intended interaction was different: **the grid itself must move aside to make real space**. That distinction is fundamental to the experience.
 
-## Content and presentation
+## Clues, not shortcuts
 
-A project is a container for independently expandable modules: short and long descriptions, keywords, screenshots, artwork, moving previews, videos, documents, files, releases, and development history. The small and full blooms adapt to the available content instead of forcing every project into the same filled-out card. Babuni.dev specified up to eight populated small-bloom preview modules around the central project tile (a 3×3 total footprint), sampled randomly when more content exists and revealed one after another; empty definitions do not appear.
+Three small information points sit above, to the left, and to the right of each portal. The original four-point proposal was revised to three. Their bubbles are not links or sales messages; they offer a short fact, theme, or curious detail about the work.
 
-Long-form material must remain readable in conventional scrolling views. Animation should communicate relationship and discovery, not interrupt reading.
+On desktop, tile hover or focus can reveal these clues in sequence. On mobile, the tile near the screen center can reveal them while browsing. Occasional ambient reveals make the grid feel active even without deliberate interaction. Holographic bubbles may extend over neighboring tiles, but unlike bloom modules they do not reserve cells.
 
-## Performance as a visible principle
+## Content that fits the work
 
-The initial screen begins with a central tile. Nearby tiles progressively appear until the visible grid fills. A small offscreen buffer is readied for incoming shifts and dragging. Heavy images, videos, and documents load on demand. The site does not need a compulsory loading screen.
+A project may contain text, screenshots, artwork, galleries, video, source links, releases, files, or development history. The presentation should adapt to what exists rather than forcing every project into an identical template.
 
-Lower-power / reduced-motion modes may substitute fade-reposition-fade for extensive travel animations. This is a proposed fallback to verify, not a tested optimization claim.
+Small blooms can offer up to eight neighboring introductory modules, revealing them gradually when enough content is available. Bigger previews lead to full material without replacing the original source documents with thin summaries. A single Videos collection can gather recordings rather than scattering them across many separate modules.
 
-## Creation as a recorded collaboration
+Long-form reading must remain calm and conventional even inside an unconventional site. Project documents imported from other repositories are reviewed, revision-pinned snapshots, not automatic live mirrors.
 
-Babuni.dev directs the vision, sketches behavior in conversation, accepts or rejects alternatives, and tests results. AI agents may translate those directions into structured specifications, code, media, or documents. Both parts must be visible in the project's record without presenting AI-generated decisions as Babuni.dev's own words.
+## Usability and performance belong to the design
 
-See [Human–AI collaboration](docs/AI_COLLABORATION.md) and [Development journal](docs/DEVLOG.md).
+The grid should begin with a central tile and progressively fill the screen, preparing a modest offscreen buffer for movement. Heavy media and full documents should load only when needed. A compulsory loading screen is not part of the intended experience.
 
-## Open design questions
+Movement must remain understandable on small screens and with keyboard or reduced-motion preferences. Alternative motion treatments may be tested when necessary, but a proposed fallback should not be described as a verified optimization. The goal is an inviting, usable toy box, not animation for its own sake.
 
-Exact tile aspect ratio and visual assets; repeat spacing and stable keys in infinite wrap; precise bloom cell-reservation algorithm; mobile gestures and accessibility; shift collision / interruption rules; image-gallery and video-preview behavior; performance thresholds; full-bloom arrangement constraints; how the site's self-exhibit should be positioned. Resolve by prototyping and recording decisions rather than guessing.
+## The development process is part of the work
 
-## 27 October 2026 — Audit of vision versus current implementation
+The original ideas, questions, corrections, and choices come from my creative direction. AI helps translate those intentions into proposals, experiments, code, documents, and tests. Recording that distinction matters: a suggestion is not a decision, a commit is not a test, and AI execution is not work the human creative should be said to have personally performed.
 
-Babuni.dev's **toy-box, moving engraved-stone tiles, colored project portals, point-origin information bubbles and layered grid-native exploration** remain the creative contract. Those elements were proposed, corrected, selected and built over several iterations, not invented by a later documentation assistant. The current prototype now includes all four interaction depths, a shared header, searchable direct project discovery, Markdown in preview and detail, and a living project-history exhibit. It should still feel like exploring physical objects rather than choosing ordinary portfolio cards.
+The journal should explain how something came to be, including useful disagreements and abandoned directions, without turning every tool action into a story. This website is both a place to show finished work and an ongoing record of making it.
 
-At the 27 October audit, the 53 named tiles were **candidate content**, not 53 approved exhibitions, and only fifteen portal artworks had been recorded. This is a historical snapshot, not the current project inventory; consult the [README](README.md) and [project inventory](docs/PROJECT_INVENTORY.md) for more recent status. Imported repository documents are currently compiled into a static revision-pinned snapshot; keeping the external development history fresh requires a deliberate sync/review/build, not casual claims of automatic synchronization. The existence of code and earlier reported regression/browser tests is separate from future real-phone, long-session, accessibility and hosting acceptance.
+## Scope of this document
 
-The site is also itself an exhibit. Keep Babuni.dev's decisions visible, including the correction from floating dashboard panels to truly reserved bloom cells, rejection of scroll-wheel navigation, preservation of calm shift timing, and the more recent user-requested reader backdrop dismissal and persistent menu.
+This concept describes **what the experience is meant to feel like and why it takes this form**. It does not certify that every detail is implemented or tested. Dates, release status, exact tile geometry, shift rules, accessibility behavior, performance measurements, and unresolved engineering constraints are tracked separately:
+
+- [Design reference](docs/DESIGN.md) — precise intended interaction and visual behavior
+- [Decision register](docs/DECISIONS.md) — accepted, revised, and provisional choices
+- [Development journal](docs/DEVLOG.md) — human-directed development and verification history
+- [Architecture](docs/ARCHITECTURE.md) — implementation and technical constraints
+- [Roadmap](ROADMAP.md) — milestone status and work still open
