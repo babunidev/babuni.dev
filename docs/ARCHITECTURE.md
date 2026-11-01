@@ -1,28 +1,34 @@
 # Technical Architecture
 
-**Current status (2026-10-27):** Astro 7 with a TypeScript living grid, physical bloom reservations, preview/detail navigation and repository-backed documentation is implemented. Device, performance and release acceptance remain open. Historical proposals and implementation entries below preserve the development record.
+**Reference status: 1 November 2026.** The repository uses Astro 7, TypeScript/native browser DOM modules, a recycled living grid, grid-native blooms, dedicated readers and repository-backed content snapshots. Milestones 1–4 received creative acceptance on 29 October. The development journal records an initial VPS release, public HTTPS checks and certificate-renewal tests on 31 October; these do not prove that later `main` changes are deployed or that live-browser performance has been measured.
+
+**How to read this document:** The architecture overview and responsibilities describe current design boundaries. Much of the dated material below records the state of **earlier prototypes**, including work since superseded. Statements such as “not implemented” or “still pending” inside those historical sections apply to their original checkpoints, not automatically to today's repository. Check the present code and [changelog](../CHANGELOG.md) before treating an old note as current. The [concept](../CONCEPT.md) explains creative purpose; [design](DESIGN.md) defines interaction; [decisions](DECISIONS.md) tracks choices; the [journal](DEVLOG.md) preserves implementation and verification history.
 
 ## Responsibilities
 
 - **Astro:** routing, layout shell, static content generation, HTML metadata, deployable build.
 - **TypeScript interactive engine:** grid coordinates, viewport sizing, drag, shifting, wrap/recycling, selection, cell reservation, and preload scheduling.
 - **UI rendering:** Native DOM controllers render the grid and blooms; Svelte was an early candidate and is not used.
-- **Content:** JSON module/repository definitions and raw Markdown documents. MDX is not implemented.
-- **GitHub:** source of truth on `main`; automated CI and deployments are future work.
-- **VPS:** eventual static deployment with HTTPS; deployment not configured.
+- **Content:** Reviewed JSON definitions and imported Markdown snapshots; build scripts produce per-project module assets and public readable pages. Full documents load on demand in the interactive reader. MDX is not installed.
+- **GitHub:** Primary source repository on `main`; GitHub Actions runs automated test and build checks. Imported public repositories require deliberate source synchronization and review.
+- **VPS:** A static release was installed on a separate Nginx site on the shared VPS in October 2026, with public HTTPS, redirect and limited delivery checks recorded. Hosting status and the deployed revision must be verified separately from repository state.
 
 ## Data identity vs render identity
 
 A project has one immutable content ID. A rendered tile is one *instance* pointing at that ID. Instance position, wrapping and entrance animation must not modify project data. This avoids duplicate projects, broken selection or content fetches when copies appear.
 
-Suggested abstractions (not implemented):
+**Historical conceptual model (not a literal assertion about the current code's type names):**
 - ProjectRecord { id, title, portalAsset, tags, infoPoints, modules }
 - TileInstance { instanceId, projectId, gridX, gridY, renderX, renderY }
 - GridState { cameraOffset, shiftPhase, activeInstanceId, interactionMode }
 - BloomReservation { anchorInstanceId, occupiedCells, displacedInstances }
 - AssetScheduler { visibleCells, nearBufferCells, queuedAssets, inFlightAssets }
 
-## Center-first geometry and reusable tile pool — initial implementation
+## Historical implementation and design experiments
+
+The sections below retain the technical reasoning and verification context of successive iterations. They are **historical snapshots**, not an exhaustive specification of the current code. Earlier tests, timing values, identity-allocation rules and installation status may have been superseded. Do not silently erase them or use them as the basis for an unverified current-state claim.
+
+### Center-first geometry and reusable tile pool — initial implementation
 
 The mechanical grid is now represented in `src/lib/grid-math.ts`, `src/scripts/grid.ts`, and `src/pages/index.astro`. Initial isolated Chromium previews and geometry tests have been run; autonomous row/column movement, blooms, and real content have not been implemented.
 
