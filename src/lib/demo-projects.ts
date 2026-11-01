@@ -229,9 +229,9 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "buxbrewresist",
     "portalArtwork": "/portal-content/BuxbrewResist.webp",
-    "name": "BuxbrewResist",
-    "shortSummary": "Earlier spell-resistance tooltip addon.",
-    "evidence": "repo-lineage",
+    "name": "ResistInsight",
+    "shortSummary": "On-hold resistance-tooltip addon for WoW 1.12 and predecessor of ResistForever; explains estimated spell resistance and damage reduction.",
+    "evidence": "repo",
     "tint": "hsl(165 58% 62%)"
   },
   {

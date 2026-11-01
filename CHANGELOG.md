@@ -966,3 +966,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Replaced BuxbrewDing’s display name and source with LevelUpAnnouncer, preserving the stable tile ID and existing art. Imported its standard documents and replaced the unknown-purpose summary/keywords with repository-backed level-up announcement information.
+
+## 2026-11-01
+
+### Changed
+- Renamed the BuxbrewResist portfolio entry to ResistInsight and connected its new public source and ten standard documents. Existing identity/artwork remain. Summary and nine keywords now reflect its on-hold status and relationship to ResistForever.

@@ -1342,3 +1342,11 @@ The upstream README identifies StealthEmotes as formerly Amazin, but still conta
 **Verification:** Regression checks cover the new display/source, historical artwork identity, absence of the old source snapshot and imported documentation. Content validation, full tests, authenticated activity and production build precede publication; no browser screenshot or physical-device/gameplay test is claimed for this metadata/source update.
 
 **Verification outcome:** The pinned public revision 2fcfade62a42462f45225c914e1392263ccbef6b contains ten standard documents and a README that explicitly confirms LevelUpAnnouncer. The first fetched preview reflected older README wording; the immutable snapshot contained the author’s newer first-person revision, so the regression expectation was corrected to that reviewed source. All 199 tests, content validation, authenticated 36/36 activity refresh and production build passed; 442 public URLs verified. No unrelated snapshot, artwork or addon runtime was changed.
+
+## 2026-11-01 — A new name for the earlier resistance addon
+
+For this portfolio update, I asked AI to replace BuxbrewResist with **ResistInsight** and supplied the renamed repository. Its current README explains that the original addon is on hold and has already been ported to ResistForever. Keeping both projects distinct preserves that development history.
+
+At my request, AI updated the tile name, repository connection, summary and nine topic keywords, then imported the ten standard documents. The old tile identity and artwork remain; adding a second tile or renaming game installation files was unnecessary. The source note explains that BuxbrewResist filenames and `/buxres` still apply to the installed addon. No runtime or gameplay change is implied.
+
+AI verified the imported ten-document source at public revision `49445f01dae4b1feaba6426cb41c7dc983fb2999`. Content validation, all 200 tests and the production build passed, including 442 public URL checks and a fresh authenticated refresh of 36/36 project dates. These are portfolio checks, not a new game-client test. No browser screenshot or physical-device acceptance is claimed for this naming update.

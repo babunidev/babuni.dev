@@ -132,8 +132,9 @@
   },
   "buxbrewresist": {
     "status": "connected",
-    "repository": "babunidev/BuxbrewResist",
-    "branch": "main"
+    "repository": "babunidev/ResistInsight",
+    "branch": "main",
+    "note": "Renamed source supplied by Babuni.dev on 2026-11-01. Stable identity and BuxbrewResist.webp retained; original version is on hold and is distinct from its ResistForever successor. Installed filenames and /buxres remain historical names."
   },
   "buxbrewding": {
     "status": "connected",

@@ -196,3 +196,19 @@ test('LevelUpAnnouncer replaces BuxbrewDing while retaining identity and supplie
  const source=composeProjectModules(catalog.buxbrewding,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
  assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/LevelUpAnnouncer']);
 });
+
+
+test('ResistInsight replaces BuxbrewResist while preserving its separate successor and artwork',()=>{
+ const project=demoProjects.find(p=>p.id==='buxbrewresist');
+ assert.equal(project.name,'ResistInsight');assert.equal(project.portalArtwork,'/portal-content/BuxbrewResist.webp');
+ assert.equal(project.evidence,'repo');assert.match(project.shortSummary,/On-hold/);
+ assert.ok(!demoProjects.some(p=>p.name==='BuxbrewResist'));
+ assert.ok(demoProjects.some(p=>p.id==='resistforever'&&p.name==='ResistForever'));
+ const c=connections.buxbrewresist;assert.equal(c.repository,'babunidev/ResistInsight');
+ assert.equal(snapshots['babunidev/BuxbrewResist'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const body=snapshot.documents.find(d=>d.path==='README.md').body;
+ assert.match(body,/on hold/);assert.match(body,/predecessor/);
+ const source=composeProjectModules(catalog.buxbrewresist,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/ResistInsight']);
+});

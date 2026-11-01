@@ -305,15 +305,15 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
   ],
   "buxbrewresist": [
     "World of Warcraft add-on",
-    "Combat mechanics",
     "Spell resistance",
-    "Earlier work",
-    "Spell information",
+    "Damage estimates",
+    "Character tooltips",
+    "On hold",
+    "ResistForever origins",
     "Lua",
-    "Combat tools",
-    "Tooltips",
-    "Game interface"
-  ],
+    "Combat explanations",
+    "Resistance stats"
+],
   "buxbrewding": [
     "World of Warcraft add-on",
     "Level-up announcements",

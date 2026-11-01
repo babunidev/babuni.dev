@@ -720,3 +720,9 @@ Addon runtime filenames, version discrepancies and live-client verification rema
 - [x] Replace BuxbrewDing with author-supplied LevelUpAnnouncer; preserve identity and artwork.
 
 Live client compatibility, historical runtime naming and Lua limitations remain upstream concerns.
+
+## 2026-11-01 — ResistInsight rename
+
+- [x] Connect ResistInsight in place of BuxbrewResist, preserving existing artwork and tile identity.
+
+This portfolio rename does not resume the on-hold addon or verify game-client behavior.

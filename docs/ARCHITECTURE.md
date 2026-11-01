@@ -745,3 +745,7 @@ Stable ID `amazin` displays StealthEmotes and connects to `babunidev/StealthEmot
 ## 2026-11-01 — LevelUpAnnouncer mapping
 
 Semantic ID `buxbrewding` now displays LevelUpAnnouncer and maps to public `babunidev/LevelUpAnnouncer` main. Only its snapshot replaces the former BuxbrewDing cache entry. Existing module composition, menu grouping, artwork path and project count remain; no new tile identity or runtime alias is needed.
+
+## 2026-11-01 — ResistInsight mapping
+
+Stable ID `buxbrewresist` now displays ResistInsight and maps to `babunidev/ResistInsight` main. Only its public standard-document snapshot replaces the former BuxbrewResist entry. The existing artwork path, WoW group, project count and ResistForever mapping remain. Source links use the newly pinned revision.

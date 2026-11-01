@@ -667,5 +667,20 @@
       ],
       "credit": "Name and repository replacement directed by Babuni.dev; AI-assisted source clarification."
     }
+  ],
+  "buxbrewresist": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "ResistInsight, formerly BuxbrewResist, is on hold. It is the original project behind ResistForever; installed addon files and /buxres still use their historical names.",
+      "links": [
+        {
+          "label": "ResistInsight repository",
+          "href": "https://github.com/babunidev/ResistInsight"
+        }
+      ],
+      "credit": "Repository rename requested by Babuni.dev; AI-assisted source clarification based on the public README."
+    }
   ]
 }

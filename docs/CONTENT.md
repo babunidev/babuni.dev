@@ -605,3 +605,7 @@ Babuni.dev requested that StealthEmotes replace Amazin. The source module links 
 ## 2026-11-01 — LevelUpAnnouncer evidence
 
 Babuni.dev supplied the renamed source. Its README now provides evidence for the previously name-only entry: 60 prewritten roleplay announcements, local previews and manual guild sends. Summary/keywords reflect those subjects without claiming live-client compatibility. Historical upstream document titles and installed BuxbrewDing identifiers remain verbatim; the Project source note distinguishes the author-approved current portfolio/repository name.
+
+## 2026-11-01 — ResistInsight source context
+
+The renamed public repository supplies the existing project’s documents. Its README identifies ResistInsight as formerly BuxbrewResist, on hold, and the predecessor already ported to ResistForever. The summary/keywords preserve those boundaries and describe resistance estimates rather than verified server probabilities. Historical BuxbrewResist files and /buxres commands remain in source text; the source module explains the naming distinction.

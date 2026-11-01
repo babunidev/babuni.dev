@@ -737,3 +737,7 @@ The author-requested StealthEmotes name replaces Amazin in the tile and project 
 ## 2026-11-01 — LevelUpAnnouncer naming
 
 The author-requested LevelUpAnnouncer title replaces BuxbrewDing on the tile and in project search. Existing BuxbrewDing.webp and stable identity remain. Nine concise keywords now describe its documented announcements and previews; the add-on cue remains guaranteed. No motion, bubble placement, timing or bloom geometry changes accompany the rename.
+
+## 2026-11-01 — ResistInsight title
+
+The author-requested ResistInsight name replaces BuxbrewResist on the tile and in project search. Its existing image, stable identity, WoW grouping and guaranteed add-on bubble remain. The nine-keyword pool now reflects resistance tooltips, estimates and on-hold status. No geometry, motion or timing changes accompany this rename.
