@@ -6,6 +6,13 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Content-independent regression tests (2026-11-01)
+- Replaced brittle historical prose, pinned commit, fixed catalog-count and media-inventory assertions with current-data checks and synthetic test fixtures.
+- Preserved source validation, public/private repository boundaries, URL/asset safety and grid behavior testing.
+- Documented the distinction between evolving portfolio content and stable testable behavior in `AGENTS.md`.
+- Changes are proposed on a review branch; full suite results and deployment are not yet verified.
+
+
 ### Changed — Randomized toy box and recent-update markers (2026-10-30)
 - Pinned BABUNI.DEV as the first project on load and shuffled remaining projects once per page load. Grid shifts preserve semantic identity.
 - Replaced update-priority placement with a gold corner label and additional gold portal ring on projects with verified recent public commits (provisional rule: five newest within fourteen days).
