@@ -4,16 +4,16 @@ These rules apply to cloud and local coding agents working on this repository.
 
 ## Primary responsibility
 
-Develop Babuni.dev's interactive, exploratory portfolio without replacing stated decisions with conventional portfolio patterns. Read CONCEPT.md, docs/DESIGN.md, and relevant existing code before modifying features. An image mockup or conversation is not proof that a feature is implemented.
+Develop Babuni's interactive, exploratory babuni.dev portfolio without replacing stated decisions with conventional portfolio patterns. Read CONCEPT.md, docs/DESIGN.md, and relevant existing code before modifying features. An image mockup or conversation is not proof that a feature is implemented.
 
 ## Human–AI authorship is mandatory
 
-Babuni.dev's instructions, questions, corrections, experiments, and accept/reject decisions are part of development history, not disposable chat context.
+The creative's instructions, questions, corrections, experiments, and accept/reject decisions are part of development history, not disposable chat context.
 
 For each substantial change, preserve this causal sequence:
-1. **Babuni.dev direction:** a faithful paraphrase of what the human requested and why; quote only when explicitly useful and appropriate for publication.
+1. **Creative direction:** a faithful paraphrase of what the human requested and why; quote only when explicitly useful and appropriate for publication.
 2. **Agent interpretation/proposal:** what the AI inferred, recommended, or offered; mark it as AI-originated.
-3. **Alternatives and decisions:** what was considered and which choice Babuni.dev confirmed. Do not convert unapproved suggestions into agreed requirements.
+3. **Alternatives and decisions:** what was considered and which choice the creative confirmed. Do not convert unapproved suggestions into agreed requirements.
 4. **Execution:** concrete files or behaviors changed, with code/commit/PR references.
 5. **Verification and outcome:** commands run, observations, failures, limitations, and what remains unresolved.
 
@@ -43,7 +43,7 @@ Use labels **Babuni.dev requested**, **AI proposed**, **Babuni.dev decided**, **
 ## Development safeguards
 
 - Preserve existing Git history and uncommitted local changes.
-- Work directly on `main` unless Babuni.dev explicitly requests otherwise. Do not assume permission to deploy to production.
+- Follow the creative's requested Git workflow. The established default is direct, reviewable changes on `main`; never overwrite concurrent or uncommitted work. Do not assume permission to deploy to production.
 - Build and run appropriate tests where possible; report what was actually run.
 - Keep semantic, stable project identifiers independent from recycled visual tile instances.
 - Consider mobile, keyboard, reduced motion, performance, and readability.
@@ -57,19 +57,19 @@ This file governs babuni.dev. The human–AI documentation method may be copied 
 
 ---
 
-## Astro Development Instructions
+## Astro development
 
-## Development
+### Development server
 
 When starting the dev server, use background mode:
 
-```
-astro dev --background
+```sh
+npm run dev -- --background
 ```
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+Manage the background server with `npm run astro -- dev stop`, `npm run astro -- dev status`, and `npm run astro -- dev logs`.
 
-## Documentation
+### Astro reference
 
 Full documentation: https://docs.astro.build
 
@@ -82,9 +82,9 @@ Consult these guides before working on related tasks:
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
 
-## Babuni.dev's local testing handoff
+## Local testing handoff
 
-When providing a GitHub update for local testing, include the full terminal sequence to pull the commit, stop any running Astro server, and start a new Astro server (with LAN access for phone testing):
+When a change requires local browser or phone testing, provide the appropriate pull/restart commands and note any local uncommitted changes that must be protected. LAN access is optional and should be enabled only when needed for testing:
 
 ```bash
 git pull --ff-only
@@ -92,29 +92,30 @@ npx astro dev stop
 npm run dev -- --host 0.0.0.0
 ```
 
-Give Babuni.dev this restart sequence with each future published change, even if the running server could hot-reload.
+Do not append a restart ritual to documentation-only updates or claim the developer's machine was restarted. For LAN testing, bind to `0.0.0.0` only on a trusted network.
 
 ## Author attribution
 
-Identify the project's human author by the artist name **Babuni.dev**. Avoid using “creator” as a title or generic name for Babuni.dev. Attribute AI implementation and documentation work distinctly; preserve historical evidence and third-party credits.
+Identify the human creative as **Babuni** and the website/repository as **babuni.dev**. Avoid using “creator” as a title or generic name for Babuni.dev. Attribute AI implementation and documentation work distinctly; preserve historical evidence and third-party credits.
 
 ## Preserve approved interaction feel
 
 Babuni.dev explicitly requested on 2026-10-26: do not independently change established timing, positioning, or other approved feature behavior while solving another issue. Preserve the existing feel. If a proposed solution needs such a change that Babuni.dev has not already authorized, explain the idea and ask before implementing it. Record AI proposals separately from human decisions. In particular, clicking/selecting a project must never accelerate autonomous shifts: let the current shift finish at its normal tempo before opening.
 
-## Current development priority and test attribution
+## Historical development priorities and test attribution
 
-Babuni.dev directed on 2026-10-26: prioritize architecture and underlying structures before visual/readability polish. Discuss and refine module kinds/structure before implementing full bloom; do not treat AI module proposals as approved requirements. Babuni.dev clarified that their mobile feedback is based on actual phone testing. Record that as human device evidence, separately from agent browser mocks or automated tests.
+On 2026-10-26, the creative prioritized architecture and underlying structures before visual polish and required discussion of module kinds before full-bloom implementation. These are historical sequencing decisions, **not unfinished tasks or overriding current instructions**. The creative's physical phone feedback must be recorded as human device evidence, separately from agent browser simulations or automated tests.
 
 ## Browser screenshot archive
 
 Babuni.dev requested on 2026-10-27 that browser test screenshots be added to the project's visual documentation. Publish all website images as WebP. Capture temporary PNGs outside `public/` if needed, convert genuine PNG screenshots to lossless WebP where practical, and inspect actual encoded format rather than relying on filenames. Save verification screenshots under `public/media/babuni-dev/images/verification/`, add them to BABUNI.DEV's Visual documentation gallery and `docs/VISUAL_DOCUMENTATION.md`, and caption the test context and historical status. Distinguish AI browser captures from human-supplied art and actual phone acceptance. Preserve earlier captures even when their design is superseded. Do not claim unavailable or unsaved screenshots were recovered.
 
-## Audit #28 — 27 October 2026: source, history and synchronization safeguards
+## Current-state and evidence safeguards
 
-- Treat the **current tree** as the implementation authority and dated journals as evidence of how it evolved. The four exploration depths, persistent header and Markdown reader are implemented; 53 candidates are not 53 approved projects. The Git tree holds **15** original WebP portals. Keep unrelated tile motion, bloom geometry and author-provided artwork unchanged during a docs-only audit.
-- The **site's repository-backed documents are static imported snapshots**, not live GitHub documents. A change to another repository's README/DEVLOG/DECISIONS requires a deliberate public-source `npm run content:sync` plus `content:check`, test and production-build validation before its text appears here. Never silently refresh `src/content/repository-documents.json` or claim automatic publishing.
-- Use provenance labels: Babuni.dev's instruction/correction, AI interpretation/proposal, explicit human decision, concrete commit, automated/browser/physical test and remaining open checks. A preview/screenshot is not an approved visual redesign; historical captures include superseded states.
-- Current Markdown rendering uses **Marked to construct safe DOM**, not raw HTML execution. Maintain source-relative link handling and original copyright/credit data. Svelte is not an installed runtime; don't describe it as the current framework.
-- The previous journal reports 126 Node tests and build for the latest navigation update. **Do not claim reruns** unless commands execute and outputs are recorded in the actual work environment.
-- The owner's requirement is architecture/interaction integrity first, not redesign-by-agent. Never accelerate the 4.4-second line shift or revise already accepted art, timing, or reader dismissal while “just fixing docs.”
+- **Verify before claiming:** Read current source and relevant documentation before stating that a feature, test, deployment, or publication is complete. Dated audits and test counts describe their original checkpoints, not the current branch. Record the exact commands and results actually observed.
+- **Preserve project identity:** The current creative identity is Babuni; babuni.dev is the portfolio. Keep stable project IDs separate from display names and recycled tile instances. Project ordering and recent-update indicators changed on 2026-10-30; do not restore older newest-first behavior without direction.
+- **Preserve the experience:** The toy-box metaphor, engraved stone portals, living grid, contextual bubbles, small/big grid-native blooms, and readable detail views are central. Do not change approved movement timing, input behavior, or animation feel as an incidental fix.
+- **Treat imported documents as snapshots:** External repositories are not live mirrors. Sync only when explicitly in scope, review changed source documents, then validate with `npm run content:check`, `npm run test:grid`, and `npm run build`. Do not imply that a new upstream commit is already published here.
+- **Keep documentation work bounded:** A documentation-only review must not modify website content, application code, generated snapshots, or media unless separately requested. Record actual documentation changes in the changelog and the context in the journal where meaningful.
+- **Separate code, CI, and live-site evidence:** A commit is not a successful test, a test is not physical-device acceptance, and source changes are not proof of deployment. The 2026-10-31 hosting and HTTPS checks describe the deployed release at that time, not necessarily the latest `main` state.
+- **Safe rendering and rights:** Keep Markdown rendering protections, source-relative links, credits, and rights intact. Do not silently make imported Markdown executable or alter original art.
