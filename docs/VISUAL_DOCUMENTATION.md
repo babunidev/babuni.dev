@@ -1,6 +1,14 @@
 # Visual documentation
 
-Babuni.dev requested that all saved AI browser test screenshots be included in the project’s Visual documentation gallery. The following 19 available captures were archived without altering their image bytes. They are development history, including superseded designs, not proof of current behavior or physical-phone testing. Capture names describe their original test context; exact capture times were not reconstructed.
+This document is the **visual evidence index** for babuni.dev: dated browser captures, creative-supplied screenshots, visual experiments, and recorded regressions. It complements the [development journal](DEVLOG.md), [design reference](DESIGN.md), and [dated performance reports](PERFORMANCE-2026-10-27.md). It is not a gallery of the current site alone, nor proof that a design was accepted or deployed.
+
+**Evidence rules:** Identify who supplied or captured an image, what environment or viewport it shows when known, what the image demonstrates, and what it cannot establish. A simulated mobile viewport is not a physical phone test; a still image does not establish animation smoothness or performance. Retain superseded and failed captures with accurate captions. Do not reconstruct missing timestamps or claim that an inaccessible capture was recovered.
+
+**Publishing rules:** Keep original source files and authorship distinct from published derivatives. Website-ready images belong under `public/media/babuni-dev/images/verification/` (or the appropriate project media folder); the gallery must reference the intended published asset. Verify WebP content rather than trusting a filename extension. Preserve credits, relevant rights, and accessibility descriptions. Where a screenshot documents a change, link its dated evidence to the corresponding journal or design decision.
+
+## Initial screenshot archive — historical starting set
+
+The first archival pass collected the **19 available AI browser captures** listed below. This is a historical starting count, **not a total of all currently archived screenshots**. Their original test times were not reconstructed and some layouts are now superseded.
 
 - `big-bloom-grid-preview.webp` — big bloom grid preview.
 - `big-bloom-preview.webp` — big bloom preview.
@@ -22,7 +30,7 @@ Babuni.dev requested that all saved AI browser test screenshots be included in t
 - `topic-wings-preview.webp` — topic wings preview.
 - `unified-tile-preview.webp` — unified tile preview.
 
-New browser verification screenshots should be archived here and in the gallery with context in the same change. No claim is made about screenshots from inaccessible chats or unsaved tool captures.
+Subsequent dated sections add captures to this original set. Counts quoted at individual checkpoints describe that moment, not the latest inventory. Do not include unsaved tool captures or images from inaccessible chats as if they were archived.
 
 ## Persistent-navigation verification, 2026-10-27
 
@@ -120,14 +128,14 @@ These are short browser observations, not real-phone or prolonged-session accept
 `babuni-admin-renamed-preview.webp` — AI browser capture at the default viewport: renamed tile, retained supplied artwork and Public documentation resource explaining the earlier project name. Menu search and bloom activation succeeded; its visible resource links only to the existing public documentation edition. Actual capture was JPEG, published as quality-85 WebP with original archived outside public assets. No private application or physical-device test was performed.
 
 
-## Chronological first spiral — 2026-10-29
+## Chronological first spiral — 2026-10-29 (superseded ordering)
 
 Two AI browser captures at 1920×1080, converted from actual JPEG to quality-85 WebP; originals retained outside public assets:
 
 - `chronological-first-spiral.webp` — early intro cascade with BABUNI.DEV, Ethera and Morkahja leading. Scaled/incomplete tiles are the existing reveal animation.
 - `chronological-grid-after-shifts.webp` — fully revealed field after normal autonomous shifts; this later frame is not the pristine initial order.
 
-The initial DOM contained 45 visible identities and the first nine spiral cells exactly matched the generated chronological IDs. Project menu categories remained intact; selecting Babuni Admin opened its eight-preview bloom with the correct public documentation link. A failed first DOM read used an unavailable parseFloat helper; a clean reload/read succeeded. No screenshot was saved from that failed read. These checks are not extended physical-device acceptance.
+This was a verification of the **earlier chronological ordering**, superseded on 2026-10-30 by the creative's decision to shuffle other projects once per visit while keeping BABUNI.DEV first. The initial DOM in this historical capture contained 45 visible identities and the first nine spiral cells exactly matched the then-generated chronological IDs. Project menu categories remained intact; selecting Babuni Admin opened its eight-preview bloom with the correct public documentation link. A failed first DOM read used an unavailable parseFloat helper; a clean reload/read succeeded. No screenshot was saved from that failed read. These checks are not extended physical-device acceptance.
 
 
 ## 2026-10-29 — Search-readable pages and on-demand modules
