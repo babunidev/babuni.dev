@@ -1048,3 +1048,10 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Updated the existing Buxbrew character-story tile's repository mapping from `babunidev/BuxbrewCharacterStory` to `babunidev/AmberbrewStory`.
 - Retained the same pinned 40 Markdown documents, original project ID, nine folder-index modules and portal artwork; generated document URLs and source links now use the canonical repository name.
 - Updated the repository coverage report, source validators and rename regression tests. No character canon, grid shifting or bloom behavior changed.
+
+## 2026-11-01 — Website project renamed to Amberbrew Story
+
+- Renamed the existing `buxbrew-character-story` project display name from **Buxbrew — character story** to **Amberbrew Story**, matching the public `babunidev/AmberbrewStory` repository.
+- Updated the portal topic label and generated repository coverage report. The project retains its stable ID, portal artwork, folder modules, Markdown source snapshots and grid behavior; no second project was introduced.
+- Added a catalog regression test for the public display name and retained identity.
+
