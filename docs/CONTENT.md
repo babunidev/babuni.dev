@@ -641,3 +641,7 @@ Babuni.dev supplied the renamed public source. The summary and nine keywords ref
 ## 2026-11-01 — Wrath port context
 
 Babuni.dev supplied the second rename. The current README identifies Roar Guild Addon Wrath as the Wrath-era port of the guild addon rather than a sequel, and explains that Roarboard was developed separately after returning to the 1.12 client. Summary and source note reflect that account. Imported documents preserve ROARTrigger, /rogu and ROGUDB identifiers and the intermediate EmoteTrigger name where historical. No live compatibility or runtime change is inferred.
+
+## 2026-11-01 — Accurate waiting copy
+
+The ordinary shift status no longer appends “Opening waits until the shift finishes”. Explicit queued-transition messages retain their existing text. Motion can be reported without implying the visitor requested an opening or closing action; the clarification comes directly from Babuni.dev’s feedback.

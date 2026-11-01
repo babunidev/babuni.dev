@@ -855,3 +855,7 @@ The supplied EmoteTrigger repository is the replacement I requested for ROARemot
 ## 2026-11-01 — Supersede the intermediate EmoteTrigger name
 
 The new repository supplied for this same project is **RoarGuildAddonWrath**. The title I want represented is the current source’s **Roar Guild Addon Wrath**. AI replaced the intermediate EmoteTrigger mapping on stable ID `roaremotetrigger`, preserving ROARRemoteTrigger.webp rather than adding another entry. The non-Wrath RoarGuild Add-on remains separate. Existing installed names stay historical/current source identifiers; the earlier EmoteTrigger decision is superseded for naming, not deleted from the record.
+
+## 2026-11-01 — Do not announce a hypothetical wait
+
+The header correction I requested is conditional feedback: an ordinary shift should describe the shift, while an actual queued transition should say it is waiting. AI removed the unconditional appended explanation instead of changing when shifts finish or how transitions queue. Existing waiting messages and shift/wait emphasis remain. The earlier always-explain interpretation is superseded by this clarification.

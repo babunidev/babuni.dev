@@ -151,3 +151,9 @@ AI browser capture at 127.0.0.1:4327, desktop viewport. SocialForever displays t
 ![Restored GuildChatBridge small bloom](../public/media/babuni-dev/images/verification/guildchatbridge-restored.webp)
 
 AI desktop browser capture: selected GuildChatBridge from the World of Warcraft menu, observed centering and eight source-backed small-bloom previews, including the paused concept and decisions. JPEG capture converted to verified WebP. No supplied project artwork, live-addon test or physical-phone acceptance is claimed.
+
+## 2026-11-01 — Waiting copy only for queued actions
+
+![Ordinary shift header](../public/media/babuni-dev/images/verification/header-ordinary-shift.webp)
+
+AI desktop browser capture from the temporary 127.0.0.1:4327 preview. The header shows only “Columns are shifting” during an unqueued shift. After the capture, activating BABUNI.DEV during that shift visibly changed the header to “Waiting for shift to finish · BABUNI.DEV”; its small bloom subsequently opened. The screenshot was captured as JPEG and archived as WebP. A later attempted queued-close observation did not encounter a shift within the browser wait window, so no closing screenshot or fresh physical-device acceptance is claimed.

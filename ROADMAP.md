@@ -774,3 +774,7 @@ Historical installed names and live-client compatibility are not changed by this
 - [x] Replace the intermediate EmoteTrigger name and connection with Roar Guild Addon Wrath.
 
 The source identifies a Wrath-era port, not a numbered sequel; Roarboard remains in the separate non-Wrath addon. Runtime installation names are unchanged.
+
+## 2026-11-01 — Accurate header waiting feedback
+
+- [x] Show waiting text only for an actual queued transition; ordinary shifts report motion without an invented opening wait.

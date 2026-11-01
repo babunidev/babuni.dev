@@ -781,3 +781,7 @@ Stable ID `roaremotetrigger` displays EmoteTrigger and connects to `babunidev/Em
 ## 2026-11-01 — RoarGuildAddonWrath connection
 
 Stable ID `roaremotetrigger` now displays Roar Guild Addon Wrath and maps to `babunidev/RoarGuildAddonWrath` main. Its intermediate EmoteTrigger snapshot is removed and replaced only with this repository’s ten standard documents. Artwork, project count, keyword sampling and RoarGuildAddon connection remain. The second rename reuses the same semantic identity.
+
+## 2026-11-01 — Preserve activity text without inventing state
+
+`headerActivity` returns the supplied status text unchanged, using anchored shift/wait detection only for emphasis. The grid’s existing queued-transition paths remain responsible for emitting “Waiting for shift to finish”. Removing the formatter’s unconditional sentence requires no new state or queue/movement changes.

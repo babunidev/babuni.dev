@@ -773,3 +773,7 @@ EmoteTrigger replaces ROARemoteTrigger in the tile and finder, retaining ROARRem
 ## 2026-11-01 — Roar Guild Addon Wrath title
 
 Roar Guild Addon Wrath replaces the intermediate EmoteTrigger display name. Existing ROARRemoteTrigger.webp, stable tile identity, relevant nine-keyword pool and WoW grouping remain. The established title sizing handles the new name; no new positioning, timing, bloom or interaction rule is introduced.
+
+## 2026-11-01 — Header status matches the current action
+
+Ordinary row/column shifts show their motion label, optionally alongside the exploration context. They do not say opening is waiting. “Waiting for shift to finish” is reserved for actual queued opening, closing or bloom-depth transitions. Existing gold shift/wait emphasis and motion timing are unchanged.

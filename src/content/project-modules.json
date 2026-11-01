@@ -319,6 +319,11 @@
           "src": "/media/babuni-dev/images/verification/guildchatbridge-restored.webp",
           "alt": "GuildChatBridge restored with paused-experiment documentation in its small bloom.",
           "caption": "AI desktop browser verification, 1 November 2026: menu selection centers the restored project and opens its imported documents; no addon runtime test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/header-ordinary-shift.webp",
+          "alt": "Ordinary column shift header without an opening-wait explanation.",
+          "caption": "AI desktop browser check, 1 November 2026: ordinary shift shows Columns are shifting; clicking during it separately showed Waiting for shift to finish."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

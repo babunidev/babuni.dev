@@ -1011,3 +1011,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Replaced the intermediate EmoteTrigger name/source with Roar Guild Addon Wrath and RoarGuildAddonWrath. Refreshed its ten standard documents while preserving stable identity, artwork and the separate non-Wrath guild addon.
+
+## 2026-11-01
+
+### Fixed
+- Removed the unconditional “Opening waits until the shift finishes” addition from ordinary row/column shift messages. Genuine queued open/close/depth-change waits keep their existing message and emphasis.
