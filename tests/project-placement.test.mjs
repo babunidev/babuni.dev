@@ -270,3 +270,45 @@ test('menu-selected offscreen source keeps its identity when another copy is sti
  assert.equal(manager.get(target),selected,'pinned menu destination must not be repaired into another project');
  assert.equal(manager.get(p(0,0)),selected,'continuing resident retains its identity too');
 });
+
+
+test('exact-capacity shifts recycle departing identities without changing arriving tiles',()=>{
+ for(const [projectCount,fillerCount] of [[42,3],[43,2],[45,0]]){
+  for(const axis of ['row','column']){
+   for(const directions of [[1],[-1],[1,-1]]){
+    const manager=new ProjectPlacement(projectCount,fillerCount);
+    const visible=box(0,0,4,2),buffer=box(0,0,6,4),history=[];
+    const source=cell=>sourceCell(cell.column,cell.row,history);
+    manager.sync(visible.map(source),buffer.map(source));
+    assert.equal(new Set(visible.map(cell=>manager.get(source(cell)))).size,45);
+    const moves=directions.map((direction,i)=>({axis,line:i,direction}));
+    const pairs=moves.map(enteringAndDeparting);
+    const before=new Map(visible.map(cell=>{
+      const s=source(cell);return [s.column+','+s.row,manager.get(s)];
+    }));
+    const leaving=pairs.map(pair=>manager.get(source(pair.departing)));
+    manager.stageEntrances(pairs.map(pair=>({
+      incoming:source(pair.incoming),departing:source(pair.departing)
+    })));
+    const arriving=pairs.map(pair=>manager.get(source(pair.incoming)));
+    assert.deepEqual(arriving,leaving,'saturated entrants must inherit departing identities');
+    for(const [sourceKey,index] of before){
+     const [column,row]=sourceKey.split(',').map(Number);
+     assert.equal(manager.get({column,row}),index,'visible resident changed when shift began');
+    }
+    history.push(...moves);
+    const landed=visible.map(source);
+    manager.sync(landed,buffer.map(source));
+    manager.finishEntrances();
+    assert.equal(new Set(landed.map(cell=>manager.get(cell))).size,45,
+      'every visible identity must remain unique after settlement');
+    pairs.forEach((pair,i)=>{
+     // Arrival has now landed at the on-screen edge, without being relabeled.
+     const arrivingSource=source({column:pair.incoming.column+(axis==='row'?moves[i].direction:0),
+       row:pair.incoming.row+(axis==='column'?moves[i].direction:0)});
+     assert.equal(manager.get(arrivingSource),arriving[i]);
+    });
+   }
+  }
+ }
+});
