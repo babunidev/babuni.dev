@@ -14,6 +14,14 @@ export const REPOSITORY_DOCUMENTS=[
   {path:'ROADMAP.md',id:'roadmap',title:'Roadmap'},
   {path:'docs/CONTENT.md',id:'content',title:'Content'},
 ] as const;
+/** The Buxbrew story's public lore folders are indexed, not individual bloom cards. */
+export const CHARACTER_STORY_REPOSITORY='babunidev/BuxbrewCharacterStory';
+export const CHARACTER_STORY_FOLDERS=['assets','character','docs','family','journal','lore','places','relationships','stories'] as const;
+export const CHARACTER_STORY_ROOT_FILES=['AGENTS.md','CANON.md','TIMELINE.md','WRITING-GUIDE.md'] as const;
+export function characterStoryDocumentPath(path:string):boolean {
+  return (CHARACTER_STORY_ROOT_FILES as readonly string[]).includes(path)
+    ||/^(?:assets|character|docs|family|journal|lore|places|relationships|stories)\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\.md$/.test(path);
+}
 export interface RepositoryConnection {
   status:'connected'|'needs-repository'|'private-review'|'needs-confirmation';
   repository?:string;branch?:string;paths?:string[];note?:string;
@@ -87,11 +95,49 @@ export function indexedRepositoryModules(
       }];
     });
 }
+/** The folder modules refer exclusively to already snapshotted Markdown assets.
+ * Root-level writing guides and canon live in Docs so no separate bloom tiles
+ * are needed. Assets currently exposes its three empty image directories.
+ */
+export function indexedCharacterStoryFolders(
+  connection:RepositoryConnection|undefined,index:IndexedRepository|undefined
+):ProjectModule[]{
+  if(connection?.status!=='connected'||connection.repository!==CHARACTER_STORY_REPOSITORY
+     ||!index||index.repository!==connection.repository||index.branch!==connection.branch
+     ||!/^[a-f0-9]{40}$/.test(index.commit??''))return [];
+  return CHARACTER_STORY_FOLDERS.map(folder=>{
+    const documents=index.documents.filter(doc=>
+      doc.path.startsWith(folder+'/')||
+      folder==='docs'&&(CHARACTER_STORY_ROOT_FILES as readonly string[]).includes(doc.path)
+    ).sort((a,b)=>a.path.localeCompare(b.path));
+    const source='https://github.com/'+CHARACTER_STORY_REPOSITORY+'/tree/'+index.commit+'/'+folder;
+    const entries=documents.map(doc=>({
+      title:doc.path.startsWith(folder+'/')?doc.path.slice(folder.length+1):doc.path,
+      path:doc.path,bodyUrl:doc.url,
+      source:'https://github.com/'+CHARACTER_STORY_REPOSITORY+'/blob/'+index.commit+'/'+doc.path
+    }));
+    const links=folder==='assets'?['illustrations','references','screenshots'].map(name=>({
+      label:name[0].toUpperCase()+name.slice(1),
+      href:source+'/'+name
+    })):[];
+    const title=folder[0].toUpperCase()+folder.slice(1);
+    const preview=entries.length
+      ?entries.length+' Markdown '+(entries.length===1?'document':'documents')+' in '+title+'. Select a file to read its complete text.'
+      :'Illustrations, references and screenshots. No Markdown files or published artwork in these folders yet.';
+    return {
+      id:'folder-'+folder,type:'document-list' as const,title,
+      preview,intro:entries.length?'## '+title+' documents\n\n'+entries.map(e=>'- '+e.title).join('\n'):preview,
+      documents:entries,links,source
+    };
+  });
+}
 /** The allowed source is local, generated and same-origin. Never fetch a
  * remote repository or follow Markdown-provided URLs to display its body.
  */
 export async function loadIndexedBody(url:string,fetcher:typeof fetch=fetch,signal?:AbortSignal):Promise<string>{
-  if(!/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/.test(url))
+  const standard=/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/;
+  const story=/^\/_project-docs\/babunidev--BuxbrewCharacterStory\/(?:AGENTS|CANON|TIMELINE|WRITING-GUIDE|(?:assets|character|docs|family|journal|lore|places|relationships|stories)--[A-Za-z0-9_-]+(?:--[A-Za-z0-9_-]+)*)\.md$/;
+  if(!standard.test(url)&&!story.test(url))
     throw new Error('Invalid project document URL');
   const response=await fetcher(url,{signal});
   if(!response.ok)throw new Error('Document unavailable (HTTP '+response.status+')');
