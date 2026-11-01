@@ -1,9 +1,38 @@
 import {readFileSync,writeFileSync,renameSync,mkdirSync} from 'node:fs';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
 import {validActivity} from '../src/lib/project-activity.ts';
 const root=fileURLToPath(new URL('..',import.meta.url));
 const repositoryPattern=/^babunidev\/[\w.-]+$/;
+const run=promisify(execFile);
+/** Resolve credentials in memory only. CI must explicitly supply its token;
+ * local builds may reuse the existing github.com CLI login. */
+export async function resolveActivityToken({env=process.env,readCliToken=async()=>{
+  const {stdout}=await run('gh',['auth','token','--hostname','github.com'],{timeout:10000,maxBuffer:16384});
+  return stdout;
+}}={}){
+  const explicit=env.GITHUB_TOKEN?.trim()||env.GH_TOKEN?.trim();
+  if(explicit)return explicit;
+  if(env.CI||env.GITHUB_ACTIONS)return '';
+  try{return (await readCliToken()).trim();}catch{return '';}
+}
+function activityHttpError(response,context){
+  const hints=[];
+  if(response.headers.get('x-ratelimit-remaining')==='0')hints.push('GitHub API rate limit exhausted');
+  else if(response.status===401)hints.push('GitHub authentication rejected; renew the configured token or gh login');
+  else if(response.status===403)hints.push('GitHub denied access or applied a secondary rate limit');
+  const reset=response.headers.get('x-ratelimit-reset');
+  if(reset&&/^\d+$/.test(reset)){
+    const date=new Date(Number(reset)*1000);
+    if(Number.isFinite(date.getTime()))hints.push('rate-limit reset '+date.toISOString());
+  }
+  const retry=response.headers.get('retry-after');
+  if(retry&&/^\d+$/.test(retry))hints.push('retry after '+retry+' seconds');
+  // Never copy response bodies, request headers or tokens into public logs.
+  return new Error(context+' ('+response.status+')'+(hints.length?': '+hints.join('; '):''));
+}
 /** Anonymous successful commit reads establish public access. With an optional CI
  * token, explicitly verify public visibility before requesting commit data.
  * Never save messages, author identity, credentials or implementation files.
@@ -14,12 +43,12 @@ export async function latestPublicActivity(repository,branch,{fetcher=fetch,toke
     redirect:'error',signal:AbortSignal.timeout(10000),headers:{Accept:'application/vnd.github+json','User-Agent':'babuni-dev-activity',...(token?{Authorization:'Bearer '+token}:{})}
   });
   if(token){
-    const response=await request('');if(!response.ok)throw new Error('Public visibility check failed ('+response.status+')');
+    const response=await request('');if(!response.ok)throw activityHttpError(response,'Public visibility check failed');
     const info=await response.json();
     if(info.private!==false||info.visibility!=='public'||info.full_name?.toLowerCase()!==repository.toLowerCase())throw new Error('Public visibility/identity not verified');
   }
   const response=await request('/commits?sha='+encodeURIComponent(branch)+'&per_page=1');
-  if(!response.ok)throw new Error('Public commit date unavailable ('+response.status+')');
+  if(!response.ok)throw activityHttpError(response,'Public commit date unavailable');
   const commits=await response.json(),commit=Array.isArray(commits)?commits[0]:null;
   const sha=commit?.sha;
   if(typeof commit?.html_url!=='string'||commit.html_url.toLowerCase()!==`https://github.com/${repository}/commit/${sha}`.toLowerCase())throw new Error('Commit repository identity not verified');
@@ -80,16 +109,18 @@ export function prepareProjectActivity({base=root}={}){
   writeCache(resolve(base,'src/generated/project-activity.json'),cache);
   return cache;
 }
-export async function writeProjectActivity({base=root,token=process.env.GITHUB_TOKEN??process.env.GH_TOKEN??'',saveBaseline=false,fetchOne}={}){
+export async function writeProjectActivity({base=root,token=process.env.GITHUB_TOKEN??process.env.GH_TOKEN??'',saveBaseline=false,requireFresh=false,fetchOne}={}){
+  if(requireFresh&&!token&&!fetchOne)throw new Error('Production build requires GitHub authentication. Run gh auth login --hostname github.com locally, or supply GITHUB_TOKEN/GH_TOKEN in the build environment. Never put tokens in source files.');
   const connections=JSON.parse(readFileSync(resolve(base,'src/content/project-repositories.json'),'utf8'));
   const result=await refreshProjectActivity(connections,cachedActivity(base,connections),{fetchOne:fetchOne??((repository,branch)=>latestPublicActivity(repository,branch,{token}))});
+  console.log(`Project activity: ${result.refreshed}/${Object.values(connections).filter(c=>c.status==='connected').length} public repository dates refreshed.`);
+  for(const failure of result.failures)console.warn(`Activity warning: ${failure.repository}: ${failure.reason}; ${requireFresh?'production build stopped':failure.cached?'using last verified date':'no verified date; retaining undated catalog order'}.`);
+  if(requireFresh&&result.failures.length)throw new Error('Fresh activity required: '+result.failures.length+' public source(s) could not be refreshed. Existing activity files were left unchanged; production build stopped.');
   writeCache(resolve(base,'src/generated/project-activity.json'),result.cache);
   if(saveBaseline)writeCache(resolve(base,'src/content/project-activity.json'),result.cache);
-  console.log(`Project activity: ${result.refreshed}/${Object.values(connections).filter(c=>c.status==='connected').length} public repository dates refreshed.`);
-  for(const failure of result.failures)console.warn(`Activity warning: ${failure.repository}: ${failure.reason}; ${failure.cached?'using last verified date':'no verified date; retaining undated catalog order'}.`);
   return result;
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   if(process.argv.includes('--offline'))prepareProjectActivity();
-  else writeProjectActivity({saveBaseline:process.argv.includes('--save-baseline')}).catch(error=>{console.error(error.message);process.exitCode=1;});
+  else resolveActivityToken().then(token=>writeProjectActivity({token,requireFresh:process.argv.includes('--require-fresh'),saveBaseline:process.argv.includes('--save-baseline')})).catch(error=>{console.error(error.message);process.exitCode=1;});
 }

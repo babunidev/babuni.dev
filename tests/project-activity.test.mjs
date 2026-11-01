@@ -121,3 +121,47 @@ test('recent markers use validated commit dates, not ordering, stale/private or 
  assert.deepEqual([...recentlyUpdatedProjectIds(p,c,cache,now,5)],['first','other']);
  assert.deepEqual([...recentlyUpdatedProjectIds(p,c,cache,now+40*86400000)],[]);
 });
+
+test('credentials prefer explicit tokens, reuse local gh login and never probe gh in CI',async()=>{
+ const {resolveActivityToken}=await import('../scripts/sync-project-activity.mjs');
+ let reads=0;const readCliToken=async()=>{reads++;return 'cli-test-token\n';};
+ assert.equal(await resolveActivityToken({env:{GITHUB_TOKEN:' first ',GH_TOKEN:'second'},readCliToken}),'first');
+ assert.equal(await resolveActivityToken({env:{GITHUB_TOKEN:'',GH_TOKEN:'second'},readCliToken}),'second');
+ assert.equal(reads,0);
+ assert.equal(await resolveActivityToken({env:{},readCliToken}),'cli-test-token');assert.equal(reads,1);
+ assert.equal(await resolveActivityToken({env:{CI:'true'},readCliToken}),'');assert.equal(reads,1);
+ assert.equal(await resolveActivityToken({env:{GITHUB_ACTIONS:'true'},readCliToken}),'');assert.equal(reads,1);
+ assert.equal(await resolveActivityToken({env:{},readCliToken:async()=>{throw Error('private CLI error must not be logged');}}),'');
+});
+test('authenticated activity sends credentials only in headers and stores only public commit metadata',async()=>{
+ const calls=[];const token='fake-test-secret';
+ const result=await latestPublicActivity('babunidev/example','main',{token,fetcher:async(url,options)=>{
+  calls.push({url,options});return json(url.includes('/commits?')?[commit()]:{private:false,visibility:'public',full_name:'babunidev/example'});
+ }});
+ assert.equal(calls.length,2);
+ for(const call of calls){assert.equal(call.options.headers.Authorization,'Bearer '+token);assert.ok(!call.url.includes(token));assert.equal(call.options.redirect,'error');}
+ assert.ok(!JSON.stringify(result).includes(token));
+});
+test('rate-limit diagnostics include safe reset/retry hints without copying response bodies',async()=>{
+ const reset='1793577600';
+ await assert.rejects(()=>latestPublicActivity('babunidev/example','main',{fetcher:async()=>new Response('{"message":"private-response-text"}',{
+  status:403,headers:{'x-ratelimit-remaining':'0','x-ratelimit-reset':reset,'retry-after':'60'}
+ })}),error=>error.message.includes('rate limit exhausted')&&error.message.includes(new Date(Number(reset)*1000).toISOString())&&error.message.includes('retry after 60 seconds')&&!error.message.includes('private-response-text'));
+});
+test('production refresh stops on missing credentials or partial failure without replacing either cache',async()=>{
+ const base=mkdtempSync(join(tmpdir(),'babuni-fresh-'));
+ try{
+  mkdirSync(join(base,'src/content'),{recursive:true});mkdirSync(join(base,'src/generated'),{recursive:true});
+  writeFileSync(join(base,'src/content/project-repositories.json'),JSON.stringify({a:connected('babunidev/a'),b:connected('babunidev/b')}));
+  const previous=JSON.stringify({'babunidev/a':value('2020-01-01T00:00:00Z')});
+  for(const path of ['src/content/project-activity.json','src/generated/project-activity.json'])writeFileSync(join(base,path),previous);
+  await assert.rejects(()=>writeProjectActivity({base,token:'',requireFresh:true}),/requires GitHub authentication/);
+  await assert.rejects(()=>writeProjectActivity({base,requireFresh:true,saveBaseline:true,fetchOne:async repo=>{
+   if(repo==='babunidev/b')throw Error('403');return value('2026-11-01T00:00:00Z');
+  }}),/Fresh activity required/);
+  for(const path of ['src/content/project-activity.json','src/generated/project-activity.json'])assert.equal(readFileSync(join(base,path),'utf8'),previous);
+  const result=await writeProjectActivity({base,requireFresh:true,fetchOne:async()=>value('2026-11-01T00:00:00Z')});
+  assert.equal(result.refreshed,2);assert.equal(result.failures.length,0);
+  assert.equal(readFileSync(join(base,'src/content/project-activity.json'),'utf8'),previous);
+ }finally{rmSync(base,{recursive:true,force:true});}
+});

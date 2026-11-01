@@ -729,3 +729,7 @@ Morkahja, MorkahjaWorld and Babuni Admin now map to anonymously verified actual 
 ## 2026-11-01 — Restored semantic source
 
 The stable `guildchatai` ID now displays GuildChatBridge and maps explicitly to public `babunidev/GuildChatBridge` main. Only this new snapshot was fetched; the removed old repository is not re-imported or duplicated. The ten standard document modules are derived through existing shared composition. The catalog count is 42; supplied image mappings remain 41, with the existing optional-artwork fallback for the restored project.
+
+## 2026-11-01 — Activity credential and failure boundary
+
+The activity CLI resolves GITHUB_TOKEN, then GH_TOKEN, then the local github.com GitHub CLI login. CI never tries a local CLI credential fallback. Resolution stays in process memory; neither credentials nor response bodies enter generated JSON. Authenticated calls validate public repository identity/visibility before reading commit metadata. --require-fresh is mandatory in prebuild: missing auth or any failed source throws before cache writes and before Astro build. Explicit non-strict sync and offline preparation keep existing last-good fallback semantics. The existing build job passes its read-only GITHUB_TOKEN only on the build step.

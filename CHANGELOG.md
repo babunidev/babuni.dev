@@ -944,3 +944,10 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Added
 - Restored GuildChatBridge (formerly withdrawn GuildChatAI) with its actual public source, ten revised documentation modules, WoW menu entry and nine-keyword bubble pool. Its paused status and missing autonomous AI bridge are explicit; original stable identity is retained.
+
+## 2026-11-01 — Activity authentication and production freshness
+
+### Fixed
+- Local activity refresh can reuse the existing GitHub CLI login; CI explicitly passes its GitHub token to the build. Tokens stay out of saved activity data.
+- Production builds require authenticated, fully fresh commit dates and stop on any failed source without replacing activity caches. Offline development remains available.
+- Activity errors distinguish primary rate-limit exhaustion and report reset/retry hints when GitHub supplies them.

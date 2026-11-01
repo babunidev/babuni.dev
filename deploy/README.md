@@ -81,3 +81,19 @@ Babuni ran Certbot for `www.babuni.dev` using the Nginx integration and requeste
 ## Production asset and sitemap response checks — 2026-10-31
 
 After reconnecting over SSH, the creator tested individual resources through the public HTTPS domain. A fingerprinted CSS file and the homepage JavaScript file both returned HTTP 200, correct CSS/JavaScript content types, and `Cache-Control: public, max-age=31536000, immutable`, as intended for versioned assets. The `/_project-modules/lootfeed.json` resource returned HTTP 200 with `application/json`, 19,676 bytes and `Cache-Control: no-cache`. The `/projects/lootfeed/` page returned HTTP 200 with `text/html`, 8,063 bytes and `Cache-Control: no-cache`. The `/sitemap.xml` file returned HTTP 200, `text/xml` and 32,721 bytes. These tests do not establish sitemap correctness, browser rendering or the behavior of every page/media element. The live release remains `8e47ce5`, regardless of subsequent source-repository commits.
+
+## Authenticated activity refresh — 2026-11-01
+
+Production `npm run build` now requires fresh activity from every connected public repository. It stops before Astro builds if authentication is absent or any date cannot be fetched. A failed refresh leaves both activity caches unchanged. Do not upload an old dist directory after a build failure; keep the previously deployed release active.
+
+On Nobara, the build automatically reuses your existing github.com GitHub CLI login. If you are not logged in, run this once interactively (do not paste tokens into chat or source):
+
+```bash
+gh auth login --hostname github.com
+```
+
+Then use the existing reviewed release procedure: fetch the published main revision, build/test it in an isolated worktree, upload its completed dist and switch current only after success. No manual token export is needed when local gh login works. A preconfigured GITHUB_TOKEN or GH_TOKEN takes precedence; invalid credentials stop the production build rather than silently falling back to anonymous requests.
+
+GitHub Actions now explicitly passes its built-in `secrets.GITHUB_TOKEN` to the build step, with the existing read-only contents permission. This authenticates activity requests but **does not add server deployment**. Local dev/test commands remain offline. Standalone non-strict activity sync can retain cached values for diagnosis; the production prebuild always selects --require-fresh.
+
+HTTP error diagnostics include rate-limit exhaustion, reset time and numeric retry delay when provided. No automatic repeated requests are made after a failure. The old 403 output did not preserve sufficient headers to prove the historical cause. Real local verification refreshed 36/36 sources using existing authentication; this is not proof of a new hosted release.

@@ -721,3 +721,7 @@ Babuni.dev requested nine short project-specific keywords, with three selected r
 ## 2026-11-01 — GuildChatBridge discovery
 
 Babuni.dev requested the renamed repository changes appear in the portfolio. GuildChatBridge returns under its original stable identity, with nine concise keywords and the shared add-on cue; the World of Warcraft menu contains one entry. No artwork was supplied, so it uses the existing colored portal. Interaction geometry and timing are unchanged.
+
+## 2026-11-01 — Recently updated release accuracy
+
+Babuni.dev clarified that stale dates can misidentify Recently updated tiles. Production builds therefore stop rather than publish incomplete activity refreshes. The five-project/fourteen-day marker policy, gold visuals, per-visit shuffle and interaction timing are unchanged. Offline local previews may use existing cached dates and are not proof of fresh production metadata.

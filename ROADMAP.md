@@ -696,3 +696,11 @@ Automated content checks, 37 test files, production build and 430 public-page ch
 - [ ] Add author-supplied portal art when available.
 
 Source inspection and portfolio verification do not verify addon installation, live 1.12 compatibility or an AI bridge.
+
+## 2026-11-01 — Reliable Recently updated metadata
+
+- [x] Reuse authenticated local GitHub CLI access and pass CI’s build token explicitly.
+- [x] Block production builds on incomplete activity refresh instead of silently deploying stale markers.
+- [x] Cover credential handling, safe rate-limit diagnostics and all-or-nothing cache writes with regression tests.
+
+Automatic server deployment remains separate; this update changes build validation, not live server files or deployment authorization.

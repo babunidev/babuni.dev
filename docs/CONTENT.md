@@ -589,3 +589,7 @@ Morkahja, MorkahjaWorld and Babuni Admin now read their actual public repositori
 ## 2026-11-01 — GuildChatBridge author history
 
 The revised public repository records Babuni.dev’s independent-character roleplaying idea, why the experiment paused, and the name change from GuildChatAI. Its standard documents now feed the portfolio. The overview/keyword copy distinguishes attempted capture/manual sending from the absent real-time AI dialogue loop; speculative future directions are not delivered features. AI assisted source inspection and portfolio integration, not the original idea. No new portrait/logo was supplied.
+
+## 2026-11-01 — Activity freshness is release data
+
+Recently updated markers depend on actual public branch-head committer dates. Production builds must refresh every connected source successfully; cached dates are not an acceptable silent replacement in a release. Local dev/tests may still use offline verified metadata. Activity refresh does not refresh repository text snapshots. Credentials are never content and are not serialized to activity JSON or public site assets.
