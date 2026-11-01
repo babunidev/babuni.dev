@@ -1,16 +1,24 @@
 # Design and Engineering Decision Register
 
-**Status vocabulary:** Accepted, Proposed, Experimental, Superseded, Open. Entries reconstructed from conversation are marked retrospective. New decisions should include date, Babuni.dev input, AI proposal, rationale, and evidence.
+This register records **why decisions were made**, what alternatives were considered, who directed the choice, and which questions remain open. It is not a running change log or a replacement for the development journal. Technical entries use a neutral reference voice; first-person passages preserve the human creative's perspective and distinguish AI proposals or execution.
+
+**Decision statuses:** **Accepted** (explicit creative approval), **Proposed** (not approved), **Experimental** (being evaluated), **Superseded** (replaced by a later decision), and **Open** (unresolved). Implementation and verification are separate: an accepted decision may be unbuilt, and a committed implementation may still need browser or device testing. Retrospective entries identify reconstructed context rather than inventing missing conversations.
+
+**Reading the history:** Numbered early decisions and later date-based entries coexist; section order is not a reliable current-priority list. Superseded designs remain as evidence of the process. Consult [Concept](../CONCEPT.md) for the lasting vision, [Design](DESIGN.md) for intended behavior, [Changelog](../CHANGELOG.md) for committed changes, and [Development journal](DEVLOG.md) for the fuller human–AI narrative.
+
+## Adding or revising a decision
+
+Give the decision a date or stable identifier, status, human direction, alternatives (mark AI-originated suggestions), rationale, and relevant evidence. Keep entries focused on choices rather than reproducing test logs or entire conversations. When a choice changes, identify the successor and mark the old decision **Superseded**; never silently erase its original rationale.
 
 ## D-2026-10-30 — Per-visit assortment and recent activity
 **Status:** Accepted creative direction; highlight window and count provisional.
-**Creator direction:** Always start with BABUNI.DEV first, freshly shuffle the other projects for each visit, and mark recently updated tiles with a gold top-right label and an extra gold portal ring instead of placing them first.
+**Creative direction:** Always start with BABUNI.DEV first, freshly shuffle the other projects for each visit, and mark recently updated tiles with a gold top-right label and an extra gold portal ring instead of placing them first.
 **AI implementation:** One shuffle per page load; stable semantic identity throughout grid shifts. Validated public commit dates determine activity markers. AI chose at most five projects committed within fourteen days; this exact definition of "recent" remains open to refinement.
 **Evidence:** `src/lib/grid-projects.ts`, `src/lib/project-activity.ts`, `src/scripts/grid.ts`, `src/pages/index.astro`; browser outcome unverified.
 
 ## D-2026-10-30 — Babuni identity and centerless help language
-**Status:** Accepted (creator direction); editorial implementation pending creator review.
-**Creator direction:** Babuni is the overarching person/creative identity; babuni.dev is the development portfolio, not the person's name. The endless shifting grid has no fixed conceptual center, and the help interface should not promise a return to one.
+**Status:** Accepted creative direction; later source changes are recorded, but browser acceptance of that particular update was not verified.
+**Creative direction:** Babuni is the overarching person/creative identity; babuni.dev is the development portfolio, not the person's name. The endless shifting grid has no fixed conceptual center, and the help interface should not promise a return to one.
 **Decision:** Use Babuni as the public-facing first-person name in About, retain babuni.dev for the site/project, structure help by task, and remove its Return to center control. Internal viewport-relative coordinates do not imply a permanent world center.
 **AI contribution:** Drafted personal text based on known public creative work and changed source content and help wiring. Unverified external destinations must not be invented.
 **Evidence:** `src/content/about.md`, `src/pages/index.astro`, `src/scripts/grid.ts`; connector commits dated 2026-10-30. Build and browser behavior not retested.
@@ -87,10 +95,6 @@
 **Babuni.dev direction:** The creative record must show what the human asked or corrected, and what AI did in response.  
 **Decision:** Distinguish Babuni.dev requests, AI proposals, Babuni.dev decisions, executed changes, and verification; see docs/AI_COLLABORATION.md.  
 **Constraint:** Never fabricate missing conversations or publish sensitive raw transcripts.
-
-## Adding decisions
-
-For each entry add date, status, motivating Babuni.dev request, alternatives (including AI-originated ones), rationale, impact, and verification links. When changing a decision, mark the original **Superseded** rather than silently rewriting history.
 
 ## D-014 — Main-only development workflow
 **Status:** Accepted · **Date:** 2026-10-26
@@ -849,6 +853,8 @@ The supplied RoarGuildAddon repository is the source I want for the existing **R
 The supplied RoarSoundEffects repository is the replacement I requested for ROARSounds. AI used stable ID `roarsounds` and kept ROARsounds.webp rather than adding a duplicate or merging it with the other ROAR-family projects. Imported historical names stay intact. This decision updates portfolio naming and source selection, not runtime behavior or ownership of game sound assets.
 
 ## 2026-11-01 — Preserve EmoteTrigger’s project boundary
+
+**Status:** Superseded for display name and source by the subsequent RoarGuildAddonWrath decision below. The historical reasoning and stable identity remain relevant.
 
 The supplied EmoteTrigger repository is the replacement I requested for ROARemoteTrigger. AI applied the name/source update to stable ID `roaremotetrigger`, preserving ROARRemoteTrigger.webp instead of creating a duplicate. Historical ROARTrigger files, /rogu and ROGUDB remain in imported source text. The separate RoarGuild Add-on keeps its own record and features; this is a portfolio rename, not a runtime migration.
 
