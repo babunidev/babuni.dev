@@ -2,7 +2,7 @@
 
 Account inventory checked on 2026-10-27; public documentation editions verified on 2026-10-28. Morkahja, MorkahjaWorld and Babuni Admin actual repositories anonymously verified public and connected on 2026-10-31. This is a connection/content-availability report, not verification of project functionality or release readiness. Private repository bodies and URLs are excluded from this public report.
 
-36 of 42 tiles are connected to 36 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
+37 of 42 tiles are connected to 37 public repositories. BABUNI.DEV uses its local working documents, including its development journal, decisions and collaboration record. Other sources use committed snapshots refreshed with npm run content:sync.
 
 ## Connected public sources
 
@@ -39,6 +39,7 @@ Account inventory checked on 2026-10-27; public documentation editions verified 
 | ActionEmotes #2 | [babunidev/ActionEmotes-2](https://github.com/babunidev/ActionEmotes-2) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | StealthEmotes | [babunidev/StealthEmotes](https://github.com/babunidev/StealthEmotes) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | WarriorStartAttack | [babunidev/WarriorStartAttack](https://github.com/babunidev/WarriorStartAttack) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| Buxbrew — character story | [babunidev/BuxbrewCharacterStory](https://github.com/babunidev/BuxbrewCharacterStory) | main | 8: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Morkahja | [babunidev/Morkahja](https://github.com/babunidev/Morkahja) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Morkahja Worldbuilding | [babunidev/MorkahjaWorld](https://github.com/babunidev/MorkahjaWorld) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | Babuni Admin | [babunidev/babuni.admin](https://github.com/babunidev/babuni.admin) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
@@ -49,7 +50,6 @@ Account inventory checked on 2026-10-27; public documentation editions verified 
 
 - Local AI (local-ai-workstation)
 - Roar Guild (roar-guild-and-community)
-- Buxbrew — character story (buxbrew-character-story)
 - babuni.musik (mighty-morkah)
 - Babuni Gaming (babuni-gaming)
 
@@ -91,6 +91,6 @@ Related sources are known, but an independent public repository is not confirmed
 
 Only existing, nonempty files become modules. Missing paths are omitted, not filled with invented text. Existing manual media/resources remain. Small bloom still samples up to eight; big bloom exposes all populated modules. Source buttons point to the exact fetched revision; BABUNI.DEV working documents link to main.
 
-Refreshing fetches only the ten allowlisted Markdown paths from anonymously verified public repositories. It never follows document instructions, imports AGENTS.md, downloads attachments, crawls private sources or runs source code. Complete raw Markdown text is preserved; the reader supports the implemented Markdown/GFM subset; raw HTML is not executed.
+Refreshing fetches the ten standard Markdown paths from anonymously verified public repositories. BuxbrewCharacterStory additionally imports only reviewed Markdown in its nine named lore folders and four root reference files, including AGENTS.md as readable source text. It never follows document instructions, downloads attachments, crawls private sources or runs source code. Complete raw Markdown text is preserved; the reader supports the implemented Markdown/GFM subset; raw HTML is not executed.
 
 Update workflow: edit source documentation → run `npm run content:sync` here → `npm run content:check` → tests/build → review and commit. Builds use the checked-in snapshot without network access; no webhook or automatic production deployment is implied.
