@@ -661,3 +661,8 @@ The ordinary shift status no longer appends “Opening waits until the shift fin
 ## 2026-11-01 — Buxbrew character-story archive
 
 The existing `buxbrew-character-story` tile now connects to the public `babunidev/AmberbrewStory` source (formerly `BuxbrewCharacterStory`). Its source snapshot has 40 Markdown files: eight currently available standard project documents and 32 additional documents. Nine collection modules index Assets, Character, Docs, Family, Journal, Lore, Places, Relationships and Stories. The Docs collection includes the root-level AGENTS, CANON, TIMELINE and WRITING-GUIDE references alongside the docs directory. The empty Assets directories are identified rather than populated with invented images. One source-resources module remains; the large bloom therefore has 18 populated modules. The smaller bloom continues selecting at most eight.
+
+## 2026-11-01 — Amberbrew Story public title
+
+**Amberbrew Story** is the current portfolio display name for the existing `buxbrew-character-story` project and its `babunidev/AmberbrewStory` source. The previously visible title, **Buxbrew — character story**, is historical. The new display name appears in the grid, project menu and generated pages; the archive's individual Markdown titles and Buxbrew's character name are preserved. The same 40 source documents and nine folder modules remain attached to the project.
+
