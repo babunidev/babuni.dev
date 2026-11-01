@@ -1,6 +1,10 @@
 # Development Journal — babuni.dev
 
-This is an edited, publishable account of the development process, not a transcript or automatic proof of completed software. Entries are told from the human creative's perspective, using first-person language naturally but never beginning a sentence with “I” or “My.” Each entry should briefly connect the creative's motivation and decisions with AI proposals or execution, meaningful iteration, and the actual result. Technical facts and verification limits remain explicit; routine steps need not become separate diary entries.
+This journal tells the story of developing babuni.dev from the human creative's perspective. It is not a chat transcript, test log, or complete record of every tool action. The narrative uses first person naturally, without beginning sentences with “I” or “My,” and makes AI contributions explicit without attributing AI-executed work to the creative.
+
+Entries explain what prompted an idea, how decisions or corrections shaped it, what changed, and what was actually verified. Significant failures and discarded directions belong here; repetitive command output and implementation minutiae belong in technical references or commits. Historical entries below vary in style and detail because they were recorded at different stages; their dated observations should not be mistaken for current implementation status.
+
+**Reading guide:** The journal preserves retrospective entries and later additions, so it is not strictly chronological throughout. Use [Decisions](DECISIONS.md) for settled choices, [Changelog](../CHANGELOG.md) for implemented changes, [Architecture](ARCHITECTURE.md) for engineering details, and [Visual documentation](VISUAL_DOCUMENTATION.md) for archived screenshots. Later editorial revisions should favor concise prose over adding another layer of status reports.
 
 ## 2026-10-31 — Connecting the public domain and securing HTTPS
 
@@ -14,7 +18,7 @@ With the first static release already staged and locally checked, I added the `w
 
 **Creative direction.** For the first public hosting preparation, the priority was to preserve the existing Arcanite Brothers site and Morkahja API while keeping my unfinished local documentation revisions out of the production build. After an unnecessary second clone was made and deleted, I pointed the assistant to my established project workspace. A separate clean Git worktree, rather than my working directory, became the release source.
 
-**AI guidance and creator execution.** The assistant supplied inspection, Git, build, SSH, upload and Nginx commands; I executed them on Nobara and the Hetzner server. Before building, my main checkout fetched and fast-forwarded eight documentation-only commits without touching the locally modified JSON or two untracked artwork/documentation folders. The isolated worktree checked out commit `8e47ce5`. On the local machine, `npm ci` succeeded, the static Astro build generated 430 pages and verified 430 public URLs, and all 191 automated tests passed. The build prepared 336 imported source documents and 41 public module collections.
+**AI guidance and my execution.** The assistant supplied inspection, Git, build, SSH, upload and Nginx commands; I executed them on Nobara and the Hetzner server. Before building, my main checkout fetched and fast-forwarded eight documentation-only commits without touching the locally modified JSON or two untracked artwork/documentation folders. The isolated worktree checked out commit `8e47ce5`. On the local machine, `npm ci` succeeded, the static Astro build generated 430 pages and verified 430 public URLs, and all 191 automated tests passed. The build prepared 336 imported source documents and 41 public module collections.
 
 **Deployment and verification.** Using the dedicated `babunideploy` SSH identity, I created `/var/www/babuni.dev/releases/8e47ce5/`, copied the production `dist/` files with rsync (about 21.1 MB), verified its `index.html` was nonempty and linked `/var/www/babuni.dev/current` to that release. Through the separate administrator account, I installed the repository's prepared Nginx site under `/etc/nginx/sites-available/babuni.dev`, enabled it without changing the existing `morkahja` site, ran `nginx -t` successfully and reloaded Nginx. A local request to `http://127.0.0.1/` with the `Host: www.babuni.dev` header returned HTTP 200.
 
@@ -23,11 +27,11 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-31 — Preparing isolated babuni.dev hosting
 
-**Creator direction.** After updating and renaming the existing Hetzner VPS, Babuni continued preparing space for the babuni.dev website while explicitly preserving the operational Arcanite Brothers site and Morkahja API. The creator performed all commands in the remote SSH terminal.
+**Creative direction.** After updating and renaming the existing Hetzner VPS, I continued preparing space for babuni.dev while keeping the Arcanite Brothers site and Morkahja API operational. All remote commands in this session were executed by me through SSH, with AI guidance.
 
 **Inspection and decisions.** A request to `https://arcanitebrothers.com/` returned HTTP 200. The only enabled Nginx site was a symbolic link named `morkahja`. The creator displayed its configuration, which serves files from `/var/www/morkahja`, proxies selected API paths to `127.0.0.1:3000`, and uses an existing dedicated Let's Encrypt certificate. The AI recommended a separate versioned-release tree and an unprivileged deployment account. The repository already had a prepared, **not installed**, Nginx configuration for `www.babuni.dev`.
 
-**Creator-executed preparation.** Babuni created `/var/www/babuni.dev/releases` (the path previously did not exist). Babuni ran `sudo adduser --disabled-password --gecos "" babunideploy` and checked the account with `id` and `getent passwd`: UID/GID 1002 and memberships `babunideploy` and `users`, with home `/home/babunideploy` and shell `/bin/bash`; no sudo group was shown. Babuni then ran `sudo chown babunideploy:babunideploy /var/www/babuni.dev /var/www/babuni.dev/releases` with no reported errors. The account's purpose and scope were proposed by AI and implemented by the creator; the directory ownership was subsequently verified with `ls -ld /var/www/babuni.dev /var/www/babuni.dev/releases`: both directories showed `drwxr-xr-x`, owner and group `babunideploy`, and mode 755.
+**Preparation I carried out.** Following the assistant's instructions, I created `/var/www/babuni.dev/releases` (the path previously did not exist). Babuni ran `sudo adduser --disabled-password --gecos "" babunideploy` and checked the account with `id` and `getent passwd`: UID/GID 1002 and memberships `babunideploy` and `users`, with home `/home/babunideploy` and shell `/bin/bash`; no sudo group was shown. Babuni then ran `sudo chown babunideploy:babunideploy /var/www/babuni.dev /var/www/babuni.dev/releases` with no reported errors. The account's purpose and scope were proposed by AI and implemented by the creator; the directory ownership was subsequently verified with `ls -ld /var/www/babuni.dev /var/www/babuni.dev/releases`: both directories showed `drwxr-xr-x`, owner and group `babunideploy`, and mode 755.
 
 **Verification and limits.** The original Nginx configuration was read, not edited; the existing website returned HTTP 200 before deployment preparation. No deployment SSH key, `dist/` upload, `current` release symlink, new Nginx activation, DNS change or TLS setup is reported yet. Directory ownership and accessibility were verified. The next proposed stage is separate, scoped SSH key access for `babunideploy` from the creator's Nobara computer.
 
@@ -216,19 +220,9 @@ With the first static release already staged and locally checked, I added the `w
 
 ---
 
-## Future journal entry template
+## Editorial note — earlier entry template
 
-### YYYY-MM-DD — Descriptive heading
-
-- **Scope / source:** Session, issue, conversation, PR or file reference; retrospective if reconstructed.
-- **Babuni.dev direction:** What the human asked, the motivation, constraints, corrections.
-- **AI proposal:** Options or interpretation introduced by an agent, clearly labeled.
-- **Decision:** What Babuni.dev accepted, rejected, postponed; unresolved points.
-- **Development activity:** Changed files, experiment details, obstacles.
-- **Verification:** Test commands and observed results, or state **not tested**.
-- **Outcome / next hypothesis:** What exists now and what remains.
-
-Write in readable narrative prose, with evidence links where available. Do not invent exchanges, quotes, tests, or conclusions.
+Earlier journal work used a structured checklist for the source, human direction, AI proposal, decision, implementation, verification, and outcome. That checklist helped establish attribution, but **it is not the format required for published entries**. New entries should weave those facts into short, natural first-person prose and never begin a sentence with “I” or “My.” Use dated headings, preserve meaningful corrections, and state unverified outcomes plainly. See [Human–AI collaboration](AI_COLLABORATION.md) for the underlying evidence standard.
 
 ## 2026-10-26 — A centered anchor that can drift away
 
