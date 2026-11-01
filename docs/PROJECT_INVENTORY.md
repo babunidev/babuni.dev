@@ -182,3 +182,7 @@ At Babuni.dev’s request, stable ID `roarsounds` displays RoarSoundEffects and 
 ## 2026-11-01 — ROARemoteTrigger renamed
 
 At Babuni.dev’s request, stable ID `roaremotetrigger` now displays EmoteTrigger and connects to the renamed public repository. ROARRemoteTrigger.webp remains its artwork. Historical installed ROARTrigger identifiers are distinct from both the repository name and the separate RoarGuild Add-on project.
+
+## 2026-11-01 — EmoteTrigger renamed again
+
+At Babuni.dev’s request, stable ID `roaremotetrigger` now displays Roar Guild Addon Wrath and uses RoarGuildAddonWrath. The intermediate EmoteTrigger name and original ROARemoteTrigger name remain historical. ROARRemoteTrigger.webp is retained; the separate non-Wrath addon and guild community are unaffected.

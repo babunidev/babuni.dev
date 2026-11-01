@@ -637,3 +637,7 @@ Babuni.dev supplied the renamed public repository. Its documents describe emote 
 ## 2026-11-01 — EmoteTrigger source scope
 
 Babuni.dev supplied the renamed public source. The summary and nine keywords reflect its Wrath 3.3.5-targeted action-slot emotes, chance/cooldown controls and character profiles. Imported documents retain historical ROARTrigger package names and state that this implementation does not contain Roarboard. Current compatibility remains source-declared rather than newly tested in-game.
+
+## 2026-11-01 — Wrath port context
+
+Babuni.dev supplied the second rename. The current README identifies Roar Guild Addon Wrath as the Wrath-era port of the guild addon rather than a sequel, and explains that Roarboard was developed separately after returning to the 1.12 client. Summary and source note reflect that account. Imported documents preserve ROARTrigger, /rogu and ROGUDB identifiers and the intermediate EmoteTrigger name where historical. No live compatibility or runtime change is inferred.

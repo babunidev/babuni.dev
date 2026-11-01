@@ -205,8 +205,8 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "roaremotetrigger",
     "portalArtwork": "/portal-content/ROARRemoteTrigger.webp",
-    "name": "EmoteTrigger",
-    "shortSummary": "Action-slot roleplay emotes and per-character profiles, targeting Wrath 3.3.5.",
+    "name": "Roar Guild Addon Wrath",
+    "shortSummary": "Wrath 3.3.5 port of the Roar Guild addon, with action-slot emotes and character profiles; Roarboard is not included.",
     "evidence": "repo",
     "tint": "hsl(113 58% 62%)"
   },

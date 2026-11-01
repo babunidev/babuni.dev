@@ -1006,3 +1006,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Renamed ROARemoteTrigger to EmoteTrigger and connected its renamed public repository and ten standard documents. Existing artwork and identity remain; summary and nine keywords reflect its Wrath-targeted emote/profile scope.
+
+## 2026-11-01
+
+### Changed
+- Replaced the intermediate EmoteTrigger name/source with Roar Guild Addon Wrath and RoarGuildAddonWrath. Refreshed its ten standard documents while preserving stable identity, artwork and the separate non-Wrath guild addon.

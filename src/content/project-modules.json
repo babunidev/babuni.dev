@@ -778,11 +778,11 @@
       "id": "source",
       "type": "resources",
       "title": "Project source",
-      "preview": "EmoteTrigger replaces ROARemoteTrigger as the project/repository name. The installed addon retains ROARTrigger files and /rogu commands. Its Wrath-targeted source is separate from RoarGuild Add-on.",
+      "preview": "Roar Guild Addon Wrath, previously EmoteTrigger and ROARemoteTrigger. This Wrath-era port keeps installed ROARTrigger files and /rogu commands; Roarboard remains in the separate Roar Guild addon.",
       "links": [
         {
-          "label": "EmoteTrigger repository",
-          "href": "https://github.com/babunidev/EmoteTrigger"
+          "label": "Roar Guild Addon Wrath repository",
+          "href": "https://github.com/babunidev/RoarGuildAddonWrath"
         }
       ],
       "credit": "Name and repository replacement requested by Babuni.dev; AI-assisted clarification from current public documents."

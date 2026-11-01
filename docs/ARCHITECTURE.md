@@ -777,3 +777,7 @@ Stable ID `roarsounds` now displays RoarSoundEffects and maps to `babunidev/Roar
 ## 2026-11-01 — EmoteTrigger source mapping
 
 Stable ID `roaremotetrigger` displays EmoteTrigger and connects to `babunidev/EmoteTrigger` main. Its old ROARemoteTrigger snapshot is replaced only with this source’s standard documents. Artwork, project count, WoW grouping and RoarGuildAddon mapping are unchanged. Runtime filenames in documents are not used as project identity.
+
+## 2026-11-01 — RoarGuildAddonWrath connection
+
+Stable ID `roaremotetrigger` now displays Roar Guild Addon Wrath and maps to `babunidev/RoarGuildAddonWrath` main. Its intermediate EmoteTrigger snapshot is removed and replaced only with this repository’s ten standard documents. Artwork, project count, keyword sampling and RoarGuildAddon connection remain. The second rename reuses the same semantic identity.

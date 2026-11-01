@@ -121,9 +121,9 @@
   },
   "roaremotetrigger": {
     "status": "connected",
-    "repository": "babunidev/EmoteTrigger",
+    "repository": "babunidev/RoarGuildAddonWrath",
     "branch": "main",
-    "note": "Renamed EmoteTrigger at Babuni.dev’s request on 2026-11-01. Stable ID and ROARRemoteTrigger.webp retained. Installed ROARTrigger files, /rogu and ROGUDB remain historical identifiers; separate from RoarGuild Add-on."
+    "note": "Renamed again at Babuni.dev’s request on 2026-11-01: Roar Guild Addon Wrath replaces EmoteTrigger (formerly ROARemoteTrigger). Stable ID and ROARRemoteTrigger.webp retained. The Wrath port keeps ROARTrigger installation names and excludes Roarboard; separate from RoarGuildAddon."
   },
   "roar": {
     "status": "connected",

@@ -1404,3 +1404,11 @@ For the Wrath-targeted addon, I supplied **EmoteTrigger** as the new repository 
 At my request, AI replaced the portfolio title and source connection, refreshed the ten standard documents, and retained the tile’s identity and artwork. The summary and nine keywords now describe its action-slot emotes and character profiles. RoarGuild Add-on remains separate; shared historical names do not import its Roarboard feature into this project. No installation files, gameplay behavior or compatibility claim was changed.
 
 AI verified ten imported documents at public EmoteTrigger revision `8baacd102fab406910e39f72ff8e8d99ecbac141`. Content validation, all 207 tests, authenticated refresh of 36/36 activity dates and the production build passed, including 442 public URL checks. These are portfolio checks, not a new game-client test. No unrelated snapshot, artwork or addon runtime was changed; no new browser screenshot or physical-device acceptance is claimed.
+
+## 2026-11-01 — A clearer name for the Wrath port
+
+After the EmoteTrigger rename, I supplied **RoarGuildAddonWrath** as the project’s new repository. The revised README calls it **Roar Guild Addon Wrath** and clarifies its place in the history: a Wrath-era port, not a numbered sequel. Roarboard belongs to the separate addon developed after returning to the 1.12 client.
+
+At my request, AI updated the same tile and its source documents again, retaining its identity and artwork. The source note and summary now explain the port relationship and absent Roarboard feature. Existing relevant keywords remain, as do historical ROARTrigger files and `/rogu` commands in imported text. The brief EmoteTrigger stage remains in the journal rather than being erased from the history. No new project, installation change or gameplay behavior was introduced.
+
+AI verified ten imported documents at public RoarGuildAddonWrath revision `930586a4817de5500118614b6cc94528e995e071`. Content validation, all 207 tests, authenticated refresh of 36/36 activity dates and the production build passed, including 442 public URL checks. The naming regression now checks the current title and absence of the intermediate snapshot. No unrelated snapshot, artwork or addon runtime was changed; no new browser screenshot, game-client test or physical-device acceptance is claimed.

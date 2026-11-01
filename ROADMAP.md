@@ -768,3 +768,9 @@ The portfolio update does not verify in-game playback or change audio redistribu
 - [x] Replace ROARemoteTrigger with the supplied EmoteTrigger source, preserving identity and art.
 
 Historical installed names and live-client compatibility are not changed by this portfolio update.
+
+## 2026-11-01 — Roar Guild Addon Wrath name confirmed
+
+- [x] Replace the intermediate EmoteTrigger name and connection with Roar Guild Addon Wrath.
+
+The source identifies a Wrath-era port, not a numbered sequel; Roarboard remains in the separate non-Wrath addon. Runtime installation names are unchanged.

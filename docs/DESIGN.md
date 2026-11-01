@@ -769,3 +769,7 @@ RoarSoundEffects replaces ROARSounds in the grid and finder. Existing ROARsounds
 ## 2026-11-01 — EmoteTrigger title
 
 EmoteTrigger replaces ROARemoteTrigger in the tile and finder, retaining ROARRemoteTrigger.webp and stable identity. Nine keywords retain the mandatory add-on cue and describe the documented Wrath-targeted scope. No positioning, timing, motion or bloom changes accompany the rename.
+
+## 2026-11-01 — Roar Guild Addon Wrath title
+
+Roar Guild Addon Wrath replaces the intermediate EmoteTrigger display name. Existing ROARRemoteTrigger.webp, stable tile identity, relevant nine-keyword pool and WoW grouping remain. The established title sizing handles the new name; no new positioning, timing, bloom or interaction rule is introduced.

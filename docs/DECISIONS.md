@@ -851,3 +851,7 @@ The supplied RoarSoundEffects repository is the replacement I requested for ROAR
 ## 2026-11-01 — Preserve EmoteTrigger’s project boundary
 
 The supplied EmoteTrigger repository is the replacement I requested for ROARemoteTrigger. AI applied the name/source update to stable ID `roaremotetrigger`, preserving ROARRemoteTrigger.webp instead of creating a duplicate. Historical ROARTrigger files, /rogu and ROGUDB remain in imported source text. The separate RoarGuild Add-on keeps its own record and features; this is a portfolio rename, not a runtime migration.
+
+## 2026-11-01 — Supersede the intermediate EmoteTrigger name
+
+The new repository supplied for this same project is **RoarGuildAddonWrath**. The title I want represented is the current source’s **Roar Guild Addon Wrath**. AI replaced the intermediate EmoteTrigger mapping on stable ID `roaremotetrigger`, preserving ROARRemoteTrigger.webp rather than adding another entry. The non-Wrath RoarGuild Add-on remains separate. Existing installed names stay historical/current source identifiers; the earlier EmoteTrigger decision is superseded for naming, not deleted from the record.
