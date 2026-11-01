@@ -783,3 +783,7 @@ Roar Guild Addon Wrath replaces the intermediate EmoteTrigger display name. Exis
 ## 2026-11-01 — Header status matches the current action
 
 Ordinary row/column shifts show their motion label, optionally alongside the exploration context. They do not say opening is waiting. “Waiting for shift to finish” is reserved for actual queued opening, closing or bloom-depth transitions. Existing gold shift/wait emphasis and motion timing are unchanged.
+
+## 2026-11-01 — One folder per character-story bloom card
+
+Buxbrew's character archive is deliberately navigable as nine folder cards rather than a separate stone for every Markdown file. The big bloom retains its grid-native layout and reveals each folder's document filenames. In the framed reader, selecting a filename replaces the folder list with the complete Markdown; Back to the folder restores that list and keyboard focus without collapsing the bloom. The Assets card names the existing Illustrations, References and Screenshots subdirectories while awaiting actual media. No animation timings, artwork, stone placement or bloom footprint rules changed.
