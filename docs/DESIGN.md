@@ -741,3 +741,7 @@ The author-requested LevelUpAnnouncer title replaces BuxbrewDing on the tile and
 ## 2026-11-01 — ResistInsight title
 
 The author-requested ResistInsight name replaces BuxbrewResist on the tile and in project search. Its existing image, stable identity, WoW grouping and guaranteed add-on bubble remain. The nine-keyword pool now reflects resistance tooltips, estimates and on-hold status. No geometry, motion or timing changes accompany this rename.
+
+## 2026-11-01 — ActionEmotes #2 title
+
+The author-requested ActionEmotes #2 title replaces Buxbrew Addon in the tile and project search. Existing art, tile identity and WoW grouping remain. Its nine-keyword pool now reflects roleplay writing and action-slot emotes, retaining the shared add-on cue. Timing, placement, bloom geometry and interaction behavior are unchanged.

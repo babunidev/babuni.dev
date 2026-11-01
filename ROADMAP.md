@@ -726,3 +726,9 @@ Live client compatibility, historical runtime naming and Lua limitations remain 
 - [x] Connect ResistInsight in place of BuxbrewResist, preserving existing artwork and tile identity.
 
 This portfolio rename does not resume the on-hold addon or verify game-client behavior.
+
+## 2026-11-01 — ActionEmotes #2 rename
+
+- [x] Replace Buxbrew Addon with ActionEmotes #2 in the active portfolio and source connection.
+
+ActionEmotes #1 and the Buxbrew character story remain separate projects. This does not rename addon installation files or verify live-client operation.

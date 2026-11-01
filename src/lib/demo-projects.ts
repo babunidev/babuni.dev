@@ -253,9 +253,9 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "buxbrew",
     "portalArtwork": "/portal-content/BuxbrewAddon.webp",
-    "name": "Buxbrew Addon",
-    "shortSummary": "Named character-related repository; purpose not yet confirmed.",
-    "evidence": "name-only",
+    "name": "ActionEmotes #2",
+    "shortSummary": "Custom roleplay emotes triggered by a watched action-bar slot, with a cooldown and per-character settings.",
+    "evidence": "repo",
     "tint": "hsl(218 58% 62%)"
   },
   {

@@ -212,3 +212,18 @@ test('ResistInsight replaces BuxbrewResist while preserving its separate success
  const source=composeProjectModules(catalog.buxbrewresist,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
  assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/ResistInsight']);
 });
+
+
+test('ActionEmotes #2 replaces Buxbrew Addon independently of #1 and the character story',()=>{
+ const project=demoProjects.find(p=>p.id==='buxbrew');
+ assert.equal(project.name,'ActionEmotes #2');assert.equal(project.portalArtwork,'/portal-content/BuxbrewAddon.webp');
+ assert.equal(project.evidence,'repo');assert.match(project.shortSummary,/Custom roleplay emotes/);
+ assert.ok(!demoProjects.some(p=>p.name==='Buxbrew Addon'));
+ assert.equal(demoProjects.find(p=>p.id==='buxbrewcharge').name,'ActionEmotes #1');
+ assert.ok(demoProjects.some(p=>p.id==='buxbrew-character-story'));
+ const c=connections.buxbrew;assert.equal(c.repository,'babunidev/ActionEmotes-2');
+ assert.equal(snapshots['babunidev/Buxbrew'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const source=composeProjectModules(catalog.buxbrew,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/ActionEmotes-2']);
+});

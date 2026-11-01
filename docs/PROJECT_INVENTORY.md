@@ -154,3 +154,7 @@ The upstream README identifies StealthEmotes as formerly Amazin, but still conta
 ## 2026-11-01 — BuxbrewResist renamed
 
 At Babuni.dev’s request, the existing BuxbrewResist entry now displays ResistInsight and connects to the renamed public repository. Stable ID `buxbrewresist` and supplied BuxbrewResist.webp remain. The current README identifies it as on hold and the predecessor of the separate ResistForever project. Historical inventory names are retained as evidence; no new tile is added.
+
+## 2026-11-01 — Buxbrew Addon renamed
+
+At Babuni.dev’s request, stable ID `buxbrew` now displays ActionEmotes #2 and uses the ActionEmotes-2 public repository. It retains BuxbrewAddon.webp and remains separate from ActionEmotes #1 and Buxbrew — character story. The current source documents support a concrete emote-addon summary, replacing the earlier name-only classification. Historical inventory names remain evidence, not duplicate projects.

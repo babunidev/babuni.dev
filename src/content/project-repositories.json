@@ -150,8 +150,9 @@
   },
   "buxbrew": {
     "status": "connected",
-    "repository": "babunidev/Buxbrew",
-    "branch": "main"
+    "repository": "babunidev/ActionEmotes-2",
+    "branch": "main",
+    "note": "Renamed ActionEmotes #2 at Babuni.dev’s request on 2026-11-01. Stable ID and BuxbrewAddon.webp retained; source installation names remain Buxbrew/MadAxeBuxbrew. Separate from ActionEmotes #1 and the character-story project."
   },
   "amazin": {
     "status": "connected",

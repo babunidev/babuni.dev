@@ -609,3 +609,7 @@ Babuni.dev supplied the renamed source. Its README now provides evidence for the
 ## 2026-11-01 — ResistInsight source context
 
 The renamed public repository supplies the existing project’s documents. Its README identifies ResistInsight as formerly BuxbrewResist, on hold, and the predecessor already ported to ResistForever. The summary/keywords preserve those boundaries and describe resistance estimates rather than verified server probabilities. Historical BuxbrewResist files and /buxres commands remain in source text; the source module explains the naming distinction.
+
+## 2026-11-01 — ActionEmotes #2 writing context
+
+Babuni.dev supplied the renamed repository for Buxbrew Addon. Its documents describe custom roleplay emotes from watched action-slot presses, cooldowns and per-character settings; these subjects replace unknown-purpose summary/keyword text. Imported Buxbrew/MadAxeBuxbrew installation names and /mae commands remain historical/current source identifiers, with a clarifying source note. No animation assets, combat automation, runtime compatibility or new release is inferred.

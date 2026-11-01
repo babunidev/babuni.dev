@@ -823,3 +823,7 @@ The upstream README identifies StealthEmotes as formerly Amazin, but still conta
 ## 2026-11-01 — Keep ResistInsight’s identity and history
 
 The supplied ResistInsight repository is the name I want shown in place of BuxbrewResist. AI applied that replacement to the existing tile rather than adding a duplicate, preserving its artwork and source history. The README’s on-hold status is reflected in the portfolio; ResistForever remains its separate successor. Historical installation names stay in the imported source text. This decision changes portfolio naming and source selection, not the addon’s runtime or development status.
+
+## 2026-11-01 — Preserve identity through the ActionEmotes #2 rename
+
+The new ActionEmotes #2 name is the replacement I requested for Buxbrew Addon. AI applied it to stable ID `buxbrew` rather than creating another project or merging it with ActionEmotes #1. The existing BuxbrewAddon.webp artwork remains. Only this source snapshot changes; historical installed identifiers remain verbatim. The repository-backed summary replaces the old unknown-purpose placeholder without claiming a tested game release.

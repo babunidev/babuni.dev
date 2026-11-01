@@ -749,3 +749,7 @@ Semantic ID `buxbrewding` now displays LevelUpAnnouncer and maps to public `babu
 ## 2026-11-01 — ResistInsight mapping
 
 Stable ID `buxbrewresist` now displays ResistInsight and maps to `babunidev/ResistInsight` main. Only its public standard-document snapshot replaces the former BuxbrewResist entry. The existing artwork path, WoW group, project count and ResistForever mapping remain. Source links use the newly pinned revision.
+
+## 2026-11-01 — ActionEmotes #2 source mapping
+
+Stable ID `buxbrew` now displays ActionEmotes #2 and maps to `babunidev/ActionEmotes-2` main. Its former Buxbrew snapshot is removed. Existing BuxbrewAddon.webp, WoW menu grouping, module composition and project count remain. ActionEmotes #1 uses its separate existing ID `buxbrewcharge`; the character-story ID is unaffected.

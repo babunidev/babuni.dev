@@ -971,3 +971,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Renamed the BuxbrewResist portfolio entry to ResistInsight and connected its new public source and ten standard documents. Existing identity/artwork remain. Summary and nine keywords now reflect its on-hold status and relationship to ResistForever.
+
+## 2026-11-01
+
+### Changed
+- Renamed Buxbrew Addon to ActionEmotes #2 and connected the new repository and ten source documents. Stable identity/artwork remain; its summary and nine keywords now describe the source-backed action-slot roleplay emotes.

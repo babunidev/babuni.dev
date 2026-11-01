@@ -682,5 +682,20 @@
       ],
       "credit": "Repository rename requested by Babuni.dev; AI-assisted source clarification based on the public README."
     }
+  ],
+  "buxbrew": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "ActionEmotes #2, formerly Buxbrew Addon. Historical Buxbrew/MadAxeBuxbrew file names and /mae commands remain in the source documentation.",
+      "links": [
+        {
+          "label": "ActionEmotes #2 repository",
+          "href": "https://github.com/babunidev/ActionEmotes-2"
+        }
+      ],
+      "credit": "Name and repository replacement requested by Babuni.dev; AI-assisted source clarification."
+    }
   ]
 }

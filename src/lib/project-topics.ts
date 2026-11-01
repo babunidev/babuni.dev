@@ -338,15 +338,15 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
   ],
   "buxbrew": [
     "World of Warcraft add-on",
-    "Buxbrew",
-    "Lua",
-    "Game interface",
-    "Code project",
-    "Project source",
-    "Development journal",
-    "Project history",
-    "Work in progress"
-  ],
+    "ActionEmotes #2",
+    "Custom emotes",
+    "Action-bar slot",
+    "Character voice",
+    "Per-character settings",
+    "Roleplay writing",
+    "EMOTE chat",
+    "Lua"
+],
   "amazin": [
     "World of Warcraft add-on",
     "Stealth emotes",

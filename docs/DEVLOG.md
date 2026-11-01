@@ -1350,3 +1350,11 @@ For this portfolio update, I asked AI to replace BuxbrewResist with **ResistInsi
 At my request, AI updated the tile name, repository connection, summary and nine topic keywords, then imported the ten standard documents. The old tile identity and artwork remain; adding a second tile or renaming game installation files was unnecessary. The source note explains that BuxbrewResist filenames and `/buxres` still apply to the installed addon. No runtime or gameplay change is implied.
 
 AI verified the imported ten-document source at public revision `49445f01dae4b1feaba6426cb41c7dc983fb2999`. Content validation, all 200 tests and the production build passed, including 442 public URL checks and a fresh authenticated refresh of 36/36 project dates. These are portfolio checks, not a new game-client test. No browser screenshot or physical-device acceptance is claimed for this naming update.
+
+## 2026-11-01 — Buxbrew becomes ActionEmotes #2
+
+For the Buxbrew addon entry, I supplied the renamed ActionEmotes-2 repository and asked AI to show **ActionEmotes #2**. The more specific source record also resolves the portfolio’s old unknown-purpose description: this is custom character-emote writing triggered by a watched action-bar slot, with a cooldown and per-character settings.
+
+At my request, AI replaced the display name, repository connection and ten-document snapshot while keeping the tile’s identity and existing artwork. The nine keywords now describe that documented roleplay purpose. ActionEmotes #1 and the Buxbrew character story remain separate. Historical Buxbrew/MadAxeBuxbrew filenames and `/mae` commands stay in the imported documents; the source note distinguishes them from the new portfolio name. No addon runtime or installation change was requested.
+
+AI verified ten imported documents at public ActionEmotes-2 revision `6b9675eb7833906db9b73e137fe39b27ab52329a`. Content validation, all 201 tests, fresh authenticated activity for 36/36 sources and the production build passed, including 442 public URL checks. These are portfolio checks, not a new in-game or physical-device test. No unrelated repository snapshot or artwork was changed.
