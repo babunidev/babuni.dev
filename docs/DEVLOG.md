@@ -8,7 +8,7 @@ For specific decisions, implementation changes and technical measurements, see [
 
 ## 2026-11-01 — GuildChatBridge restored from revised public source
 
-**I asked for:** Check the renamed/revised GuildChatBridge repository and implement its changes in the portfolio. **AI interpretation:** Restore the previously withdrawn GuildChatAI project under its new public name, retaining stable ID `guildchatai` rather than introducing a duplicate. This supersedes its 2026-10-28 withdrawal for the active catalog only; the withdrawal remains historical evidence.
+**My request:** Check the renamed/revised GuildChatBridge repository and implement its changes in the portfolio. **AI interpretation:** Restore the previously withdrawn GuildChatAI project under its new public name, retaining stable ID `guildchatai` rather than introducing a duplicate. This supersedes its 2026-10-28 withdrawal for the active catalog only; the withdrawal remains historical evidence.
 
 **Implemented:** Connect `babunidev/GuildChatBridge` main at `483951aea324dec948452f66ac06c9117b5f8bea`, anonymously verified, importing its ten standard Markdown documents only. Restore its searchable World of Warcraft menu entry, source links and nine-keyword pool, with one guaranteed World of Warcraft add-on bubble. Its summary explicitly calls it a paused roleplaying experiment: guild-chat capture and manual sending exist in source, but an autonomous AI conversation bridge is absent and unverified. Existing runtime identifiers GuildChatAI, GuildChatAIDB and /gcai remain upstream historical/current implementation details, not an additional portfolio project. No game-code change, resumption decision or client compatibility test is implied.
 
@@ -36,12 +36,12 @@ For specific decisions, implementation changes and technical measurements, see [
 
 ## 2026-11-01 — GuildChatBridge portal image
 
-**I supplied:** GuildChatBridge.webp in the local public portal-content folder, requesting its use for the restored project. **AI implementation:** Map the image to stable ID `guildchatai`; resize the 1254×1254 WebP to the existing 512×512 portal standard and encode at quality 88. Preserve the supplied composition and the source file, existing circular mask, title, bubble behavior and project status. No replacement artwork, layout or interaction change was proposed. All 42 active projects now have portal artwork. **Verification:** WebP container/size and existing artwork-mapping regression checks, content validation and production build; no new physical-device acceptance or addon-runtime test is claimed.
+**What I supplied:** GuildChatBridge.webp in the local public portal-content folder, requesting its use for the restored project. **AI implementation:** Map the image to stable ID `guildchatai`; resize the 1254×1254 WebP to the existing 512×512 portal standard and encode at quality 88. Preserve the supplied composition and the source file, existing circular mask, title, bubble behavior and project status. No replacement artwork, layout or interaction change was proposed. All 42 active projects now have portal artwork. **Verification:** WebP container/size and existing artwork-mapping regression checks, content validation and production build; no new physical-device acceptance or addon-runtime test is claimed.
 
 
 ## 2026-11-01 — Amazin renamed to StealthEmotes
 
-**I asked for:** Replace Amazin with the supplied StealthEmotes repository. **AI interpretation/implementation:** Update the display name and public connection while preserving semantic ID `amazin`, the existing Amazin.webp artwork, WoW menu grouping and nine-keyword/add-on classification. Replace only this repository snapshot after anonymous verification; no duplicate project is introduced and other snapshots are retained.
+**My request:** Replace Amazin with the supplied StealthEmotes repository. **AI interpretation/implementation:** Update the display name and public connection while preserving semantic ID `amazin`, the existing Amazin.webp artwork, WoW menu grouping and nine-keyword/add-on classification. Replace only this repository snapshot after anonymous verification; no duplicate project is introduced and other snapshots are retained.
 
 The upstream README identifies StealthEmotes as formerly Amazin, but still contains stale wording that the rename is proposed and the repository remains amazin. The author’s explicit instruction and verified new repository establish the portfolio name; raw upstream history is not silently rewritten. A Project source note distinguishes current repository naming from unchanged Amazin.lua/Amazin.toc, saved variables and /amazin commands. Source behavior is watched-slot emotes and rested-XP reporting, not confirmed successful Stealth detection. No addon-code change, new artwork or runtime test is claimed.
 
@@ -52,7 +52,7 @@ The upstream README identifies StealthEmotes as formerly Amazin, but still conta
 
 ## 2026-11-01 — LevelUpAnnouncer replaces BuxbrewDing
 
-**I asked for:** Replace BuxbrewDing with the supplied LevelUpAnnouncer repository. **AI implementation:** Rename the active tile and update its explicit public mapping, source link and ten standard document snapshot, keeping stable ID `buxbrewding`, BuxbrewDing.webp, WoW grouping and one guaranteed add-on cue. No duplicate project is added. Only this repository snapshot is replaced.
+**My request:** Replace BuxbrewDing with the supplied LevelUpAnnouncer repository. **AI implementation:** Rename the active tile and update its explicit public mapping, source link and ten standard document snapshot, keeping stable ID `buxbrewding`, BuxbrewDing.webp, WoW grouping and one guaranteed add-on cue. No duplicate project is added. Only this repository snapshot is replaced.
 
 **Source evidence and alternatives:** The reviewed README describes 60 roleplay level-up announcements, local previews and explicit manual guild sends, superseding the portfolio’s prior unknown-purpose summary. The evidence classification changes from name-only to repository-backed; the nine keywords now reflect those documented subjects. The pinned README confirms the repository rename; installed BuxbrewDing.lua/BuxbrewDing.toc and /buxbrew commands retain historical names. The portfolio resource note explains that distinction rather than silently rewriting imported history or renaming game files. Lua/client compatibility and announcement behavior remain unverified; no addon code, release/version decision or installed runtime change is claimed.
 
@@ -240,12 +240,12 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-31 — Import Action Emotes #1 final documentation baseline
 
-**I supplied:** merged ActionEmotes-1 PR #1 and final commit `e475a45108753c9eda8de1e774e2ba95058d65c0`, requesting their revised documentation and outstanding `BuxbreCharge.toc` installation concern appear on the website. **AI verification/execution:** verify PR #1 is merged at that exact commit and publicly fetch all ten standard documents, replacing only this project’s snapshot. Its first-person history and documentation baseline now feed blooms/readable pages/readers; the prior proposed-rename wording is resolved by the new upstream README. Update verified activity metadata and add repository/review/commit links to the existing Project source module, explicitly stating that the historical filename remains unmodified and needs an installation check. Preserve stable project identity/artwork and all other repository snapshots. **Verification:** regression coverage, content validation, static build and all public page/link checks run before publication. No addon installation, in-game or filename change, browser screenshot, VPS or DNS action claimed.
+**What I supplied:** merged ActionEmotes-1 PR #1 and final commit `e475a45108753c9eda8de1e774e2ba95058d65c0`, requesting their revised documentation and outstanding `BuxbreCharge.toc` installation concern appear on the website. **AI verification/execution:** verify PR #1 is merged at that exact commit and publicly fetch all ten standard documents, replacing only this project’s snapshot. Its first-person history and documentation baseline now feed blooms/readable pages/readers; the prior proposed-rename wording is resolved by the new upstream README. Update verified activity metadata and add repository/review/commit links to the existing Project source module, explicitly stating that the historical filename remains unmodified and needs an installation check. Preserve stable project identity/artwork and all other repository snapshots. **Verification:** regression coverage, content validation, static build and all public page/link checks run before publication. No addon installation, in-game or filename change, browser screenshot, VPS or DNS action claimed.
 
 
 ## 2026-10-31 — Varied bubble keywords and publication decisions
 
-**I asked for:** Replace the fixed three bubble texts with nine relevant keywords per project, choose labels randomly and make the WoW add-on type obvious. At that point, I also corrected missing emphasis on the decision to develop actual projects openly in their own Decisions and Development journals.
+**My request:** Replace the fixed three bubble texts with nine relevant keywords per project, choose labels randomly and make the WoW add-on type obvious. At that point, I also corrected missing emphasis on the decision to develop actual projects openly in their own Decisions and Development journals.
 
 **AI interpretation/proposal:** Keep three physical bubbles, sample three distinct labels per exploration and shuffle their positions. For the 24 identified add-ons, reserve one sampled position for “World of Warcraft add-on” and sample two of the remaining eight. The other WoW-related projects (community, stories, relay, media automation and client mod) are not automatically labeled add-ons. Nine keywords are curated editorial hints, not release or feature-completion claims. Unknown-purpose add-ons retain conservative code/history keywords.
 
@@ -352,7 +352,7 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-30 — Golden shift status in the header
 
-**I asked for:** emphasize Rows/Columns are shifting and Waiting for shift to finish with a warm golden glow like the selected waiting tile, and clarify that opening waits for the shift. **AI execution:** centralize header presentation, add a static gold text glow for those two status families, and append the wait explanation to autonomous-shift messages. All direct selection waiting/centering updates use the same presenter so the glow clears for ordinary exploration, reading and centering. Existing tile feedback, 4.4-second shift tempo and opening sequence are unchanged; no extra animation is introduced, including for reduced motion. **Verification:** targeted status tests, full regression suite, content validation, static build and public-link checks run before publication with cached activity dates. No browser screenshot taken in this pass; visual acceptance remains with Babuni.dev.
+**My request:** emphasize Rows/Columns are shifting and Waiting for shift to finish with a warm golden glow like the selected waiting tile, and clarify that opening waits for the shift. **AI execution:** centralize header presentation, add a static gold text glow for those two status families, and append the wait explanation to autonomous-shift messages. All direct selection waiting/centering updates use the same presenter so the glow clears for ordinary exploration, reading and centering. Existing tile feedback, 4.4-second shift tempo and opening sequence are unchanged; no extra animation is introduced, including for reduced motion. **Verification:** targeted status tests, full regression suite, content validation, static build and public-link checks run before publication with cached activity dates. No browser screenshot taken in this pass; visual acceptance remains with Babuni.dev.
 
 **Integration:** online About and babuni.musik/SoundCloud consolidation commits arrived during publication. AI rebased without conflicts and preserved them. The imported music merge retired Elixior but left the catalog constant, count expectations and source report stale; update those to 41 projects/41 active artworks/five needs-repository records. Adjust the 45-cell chronology fixture to permit the already-approved real-project repetition once 41 projects plus three unique fillers are exhausted. No visual/motion policy changes. Initial merged tests failed on these stale expectations; rerun follows corrections.
 
@@ -368,19 +368,19 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-29 — RoarGuild Add-on supplied artwork
 
-**I asked for:** RoarGuildAddon.webp for the addon portal. **AI execution:** copied the supplied WebP unchanged from the local testing checkout and mapped it to stable ID `roarguild`. Community `roar-guild-and-community` retains ROARGuild.webp; this supersedes the earlier temporary no-logo state for the addon. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** RoarGuildAddon.webp for the addon portal. **AI execution:** copied the supplied WebP unchanged from the local testing checkout and mapped it to stable ID `roarguild`. Community `roar-guild-and-community` retains ROARGuild.webp; this supersedes the earlier temporary no-logo state for the addon. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-29 — MeleeStartAttack supplied artwork
 
-**I asked for:** MeleeStartAttack.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `meleestartattack`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** MeleeStartAttack.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `meleestartattack`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-29 — Renamed admin implementation and public documentation
 
-**I asked for:** update the website after renaming the Arcanitebrothers implementation repository to Babuni Admin. **AI verification:** connected GitHub metadata identifies the supplied renamed implementation as private; the separate arcanitebrothers-docs edition remains public on main. Only metadata was read, not private implementation files.
+**My request:** update the website after renaming the Arcanitebrothers implementation repository to Babuni Admin. **AI verification:** connected GitHub metadata identifies the supplied renamed implementation as private; the separate arcanitebrothers-docs edition remains public on main. Only metadata was read, not private implementation files.
 
 **Decision/execution:** honor the existing public-only publishing direction without asking the human to repeat it. Display Babuni Admin, retaining stable ID `arcanitebrothers`, category and supplied artwork. Replace the generic repository resource with an explicit Public documentation resource explaining the earlier name. Keep the existing public edition connection and historical snapshots unchanged; do not substitute the private implementation as a website content source or expose its URL. No public repository rename or source-document rewrite was performed. The public edition can be renamed/refreshed later as a separate source update.
 
@@ -393,7 +393,7 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-29 — Public Admin docs rename completed
 
-**I asked for:** follow the public documentation repository rename too and ensure the website is consistent. **AI verification:** authenticated metadata and anonymous content-fetch validation confirm babunidev/babuni.admin-docs is public on main. Retrieved only the ten allowlisted Markdown documents at `da8b818e0be9fc14ba8176da25ab99ab774223be`. Their bodies and revision match the previous snapshot; repository identity, not document text, changed. No private files accessed.
+**My request:** follow the public documentation repository rename too and ensure the website is consistent. **AI verification:** authenticated metadata and anonymous content-fetch validation confirm babunidev/babuni.admin-docs is public on main. Retrieved only the ten allowlisted Markdown documents at `da8b818e0be9fc14ba8176da25ab99ab774223be`. Their bodies and revision match the previous snapshot; repository identity, not document text, changed. No private files accessed.
 
 **Execution:** update the active repository mapping and Public documentation resource label/URL, replace the old snapshot key with the new canonical identity and regenerate the source report/static document assets. Stable ID `arcanitebrothers`, Babuni Admin display name and artwork remain unchanged. Historical source names and dated captures remain evidence rather than silently rewritten text. **Verification:** repository/source-link tests and full test runner/build run before publication; public-only safeguards preserved.
 
@@ -407,31 +407,31 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-29 — BuxbrewDing supplied artwork
 
-**I asked for:** BuxbrewDing.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrewding`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** BuxbrewDing.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrewding`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-29 — Amazin supplied artwork
 
-**I asked for:** Amazin.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `amazin`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** Amazin.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `amazin`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-29 — Mighty Morkah supplied artwork
 
-**I asked for:** MightyMorkah.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `mighty-morkah`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** MightyMorkah.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `mighty-morkah`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-29 — Elixior supplied artwork
 
-**I asked for:** Elexior.webp for the music project portal. **AI interpretation/execution:** map the supplied filename to existing stable ID `elixior`; retain the existing Elixior display name and SoundCloud connection. Copied the WebP from the local testing checkout unchanged. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** Elexior.webp for the music project portal. **AI interpretation/execution:** map the supplied filename to existing stable ID `elixior`; retain the existing Elixior display name and SoundCloud connection. Copied the WebP from the local testing checkout unchanged. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-29 — Chronological initial spiral
 
-**I asked for:** initial spiral should use each project's latest commit date and re-sort with every build; asked whether it already did. **AI finding:** it did not: catalog order was manually maintained, with BABUNI.DEV first and later additions appended. Builds prepared document snapshots offline and did not collect commit dates.
+**My request:** initial spiral should use each project's latest commit date and re-sort with every build; asked whether it already did. **AI finding:** it did not: catalog order was manually maintained, with BABUNI.DEV first and later additions appended. Builds prepared document snapshots offline and did not collect commit dates.
 
 **Clarification/decision:** AI asked whether private-code projects should use private implementation dates or their public documentation dates. At that point, I explicitly chose **public documentation dates**. All 35 connected public sources participate, including BABUNI.DEV; ten projects without a connected source remain undated, preserving their catalog order after dated projects. Use the configured source branch (main/master), latest branch-head commit's committer date, newest first. Ties retain catalog order; no fabricated dates from snapshot import time, checkedAt, build time or local artwork edits.
 
@@ -453,7 +453,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-29 — Human curation and GatherMap artwork
 
-**I asked for:** remove Fantasy RPG Assets because it is not a project; additionally supplied GatherMap.webp for the existing GatherMap tile. **AI execution:** remove stable ID `fantasy-rpg-assets` from active catalog/topics/menu/repository status, keeping historical documentation intact. No repository was associated or deleted. Copy the supplied GatherMap WebP byte-for-byte and assign it to `gathermap`. Other projects, chronology rules, geometry and timing are unchanged.
+**My request:** remove Fantasy RPG Assets because it is not a project; additionally supplied GatherMap.webp for the existing GatherMap tile. **AI execution:** remove stable ID `fantasy-rpg-assets` from active catalog/topics/menu/repository status, keeping historical documentation intact. No repository was associated or deleted. Copy the supplied GatherMap WebP byte-for-byte and assign it to `gathermap`. Other projects, chronology rules, geometry and timing are unchanged.
 
 **Verification:** catalog/group/topic/source and chronological-placement coverage updated for 44 real projects, including a neutral vacancy in the 45-cell fixture; artwork inventory updated to 33. Full tests/build run before publication. No browser screenshot was taken in this pass; visual acceptance remains for Babuni.dev.
 
@@ -464,13 +464,13 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-29 — Ethera and Local AI labels
 
-**I asked for:** shorten Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI. **AI execution:** change the two catalog display names, preserving stable IDs `ethera-the-stonewrought` and `local-ai-workstation`, public repository links, artwork and chronology. Regenerate the source report. Earlier names in historical source documents/screenshots remain unchanged. **Verification:** catalog/navigation/source tests and content/static build run before publication, reusing the last verified activity cache for this display-only change. No timing or positioning changes.
+**My request:** shorten Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI. **AI execution:** change the two catalog display names, preserving stable IDs `ethera-the-stonewrought` and `local-ai-workstation`, public repository links, artwork and chronology. Regenerate the source report. Earlier names in historical source documents/screenshots remain unchanged. **Verification:** catalog/navigation/source tests and content/static build run before publication, reusing the last verified activity cache for this display-only change. No timing or positioning changes.
 
 
 
 ## 2026-10-29 — Remove Fantasy Architecture
 
-**I asked for:** remove Fantasy Architecture because it is not a project. **AI interpretation/execution:** remove active catalog, menu grouping, topics and unresolved source mapping; update counts and regression coverage, preserving historical records. **Verification:** full tests, content validation and static production build are run before publication using verified cached activity dates; no browser screenshot or fresh source synchronization in this pass.
+**My request:** remove Fantasy Architecture because it is not a project. **AI interpretation/execution:** remove active catalog, menu grouping, topics and unresolved source mapping; update counts and regression coverage, preserving historical records. **Verification:** full tests, content validation and static production build are run before publication using verified cached activity dates; no browser screenshot or fresh source synchronization in this pass.
 
 **Results:** initial test run caught the catalog count constant still at 44; AI corrected it to 43. Rerun passed all 31 test files, content validation and static production build.
 
@@ -478,19 +478,19 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-29 — Grimnir portal artwork
 
-**I asked for:** use the supplied Grimnir.webp for Grimnir. **AI execution:** map the existing stable project ID to `/portal-content/Grimnir.webp`, preserving the supplied WebP bytes and existing round portal mask. This replaces its provisional colored portal; 34 active projects now have supplied artwork. No project identity, source, timing or placement changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass. Original artwork is retained without re-encoding.
+**My request:** use the supplied Grimnir.webp for Grimnir. **AI execution:** map the existing stable project ID to `/portal-content/Grimnir.webp`, preserving the supplied WebP bytes and existing round portal mask. This replaces its provisional colored portal; 34 active projects now have supplied artwork. No project identity, source, timing or placement changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass. Original artwork is retained without re-encoding.
 
 
 
 ## 2026-10-29 — ROARSounds portal artwork
 
-**I asked for:** use the supplied ROARsounds.webp for ROARSounds. **AI execution:** assign it to the existing `roarsounds` identity, replacing its provisional colored portal. Preserve supplied WebP bytes and the round mask; 35 active projects now have supplied artwork. No timing, positioning, source or identity changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates. No browser screenshot taken.
+**My request:** use the supplied ROARsounds.webp for ROARSounds. **AI execution:** assign it to the existing `roarsounds` identity, replacing its provisional colored portal. Preserve supplied WebP bytes and the round mask; 35 active projects now have supplied artwork. No timing, positioning, source or identity changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates. No browser screenshot taken.
 
 
 
 ## 2026-10-29 — Worldbuilding and Roar Guild artwork
 
-**I supplied:** MorkahjaWorldbuilding.webp and ROAR.webp. **AI interpretation/execution:** assign the first to Morkahja Worldbuilding and replace Roar Guild’s ROARGuild.webp mapping with ROAR.webp. Preserve the former file as historical artwork and keep RoarGuild Add-on’s separate image. Both new WebPs are copied unchanged; 36 active projects now have supplied artwork. No identity, source, timing or positioning changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass.
+**What I supplied:** MorkahjaWorldbuilding.webp and ROAR.webp. **AI interpretation/execution:** assign the first to Morkahja Worldbuilding and replace Roar Guild’s ROARGuild.webp mapping with ROAR.webp. Preserve the former file as historical artwork and keep RoarGuild Add-on’s separate image. Both new WebPs are copied unchanged; 36 active projects now have supplied artwork. No identity, source, timing or positioning changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass.
 
 
 
@@ -502,49 +502,49 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-29 — ROARRunlimited artwork
 
-**I supplied:** RoarUnlimited.webp. **AI execution:** assign the unchanged WebP to the existing ROARRunlimited project (`roarrunlimited`), replacing its provisional colored portal and retaining the round mask. There are now 38 active artwork assignments. Other ROAR-family mappings, labels, timing and placement remain unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+**What I supplied:** RoarUnlimited.webp. **AI execution:** assign the unchanged WebP to the existing ROARRunlimited project (`roarrunlimited`), replacing its provisional colored portal and retaining the round mask. There are now 38 active artwork assignments. Other ROAR-family mappings, labels, timing and placement remain unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
 
 
 
 ## 2026-10-29 — ROARemoteTrigger artwork
 
-**I supplied:** ROARRemoteTrigger.webp. **AI execution:** map the unchanged supplied WebP to the existing `roaremotetrigger` project, replacing its provisional colored portal with the existing round mask. There are now 39 active artwork assignments. Existing labels, other ROAR-family artwork, source mappings, timing and placement are preserved. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser screenshot taken.
+**What I supplied:** ROARRemoteTrigger.webp. **AI execution:** map the unchanged supplied WebP to the existing `roaremotetrigger` project, replacing its provisional colored portal with the existing round mask. There are now 39 active artwork assignments. Existing labels, other ROAR-family artwork, source mappings, timing and placement are preserved. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser screenshot taken.
 
 
 
 ## 2026-10-29 — Remove Analubia
 
-**I decided:** remove Analubia to focus this portfolio on their own current projects; they described it as a past corporate collaboration and expressed uncertainty about present ownership. This is the human’s scope decision, not an independently verified ownership claim. **AI execution:** remove its active catalog, menu, topics and unresolved source mapping; preserve historical records and external projects. There are now 42 projects, 35 connected public sources and six needing repositories. No motion or layout changes. **Verification:** full tests, content validation and static production build run before publication using cached activity dates; no browser capture or source refresh.
+**My decision:** remove Analubia to focus this portfolio on my own current projects; the older project was as a past corporate collaboration and expressed uncertainty about present ownership. This is my scope decision, not an independently verified ownership claim. **AI execution:** remove its active catalog, menu, topics and unresolved source mapping; preserve historical records and external projects. There are now 42 projects, 35 connected public sources and six needing repositories. No motion or layout changes. **Verification:** full tests, content validation and static production build run before publication using cached activity dates; no browser capture or source refresh.
 
 
 
 ## 2026-10-29 — LootFeed artwork
 
-**I supplied:** LootFeed.webp. **AI execution:** assign the unchanged supplied WebP to stable project ID `lootfeed`, replacing its provisional colored portal within the existing round mask. There are now 40 active artwork assignments. No project labels, source connections, timing or placement changed. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+**What I supplied:** LootFeed.webp. **AI execution:** assign the unchanged supplied WebP to stable project ID `lootfeed`, replacing its provisional colored portal within the existing round mask. There are now 40 active artwork assignments. No project labels, source connections, timing or placement changed. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
 
 
 
 ## 2026-10-29 — Rocket Game 42 artwork
 
-**I supplied:** Rocketgame42.webp. **AI execution:** assign the unchanged supplied WebP to stable project ID `rocket-game-42`, replacing its provisional colored portal within the existing round mask. There are now 41 active artwork assignments. Project identity, source, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+**What I supplied:** Rocketgame42.webp. **AI execution:** assign the unchanged supplied WebP to stable project ID `rocket-game-42`, replacing its provisional colored portal within the existing round mask. There are now 41 active artwork assignments. Project identity, source, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
 
 
 
 ## 2026-10-29 — GroupBuffToggle artwork
 
-**I supplied:** GroupBuff.webp. **AI execution:** assign the unchanged supplied WebP to the existing GroupBuffToggle project (`groupbufftoggle`), replacing its provisional colored portal within the existing round mask. All 42 current projects now have supplied portal artwork. Project names, source mappings, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+**What I supplied:** GroupBuff.webp. **AI execution:** assign the unchanged supplied WebP to the existing GroupBuffToggle project (`groupbufftoggle`), replacing its provisional colored portal within the existing round mask. All 42 current projects now have supplied portal artwork. Project names, source mappings, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
 
 
 
 ## 2026-10-29 — 512-pixel portal publishing assets
 
-**I asked for:** make all portal images smaller, suggesting 512 × 512. **AI implementation:** resize all 42 active portal WebPs to 512 × 512 with Lanczos resampling and WebP quality 85, preserving composition and transparency; update renderer intrinsic dimensions. This supersedes earlier byte-preservation rules for these published versions. Originals remain in Git history and in the local non-public `image-originals/portal-artwork-before-512-2026-10-29/` archive with a SHA-256 manifest. No artwork redesign, crop, portal size or animation changes. **Alternatives:** 384-pixel trial was smaller, but 512 follows the human’s chosen resolution and retains more detail. Total active portal bytes: 20,404,098 → 2,843,518 (86.1% reduction); largest 113,292 bytes. Gallery/verification images and favicon are outside this portal-only change. Import tooling still copies supplied files unchanged; intentional publishing optimization is separate. **Verification:** decoded all 42 WebPs and confirmed exact 512 × 512 dimensions; visually inspected a temporary contact sheet (not a browser capture); added a 150 KiB per-portal regression budget. Full tests, content validation and static production build run before publication with cached activity dates. No browser performance measurement claimed.
+**My request:** make all portal images smaller, suggesting 512 × 512. **AI implementation:** resize all 42 active portal WebPs to 512 × 512 with Lanczos resampling and WebP quality 85, preserving composition and transparency; update renderer intrinsic dimensions. This supersedes earlier byte-preservation rules for these published versions. Originals remain in Git history and in the local non-public `image-originals/portal-artwork-before-512-2026-10-29/` archive with a SHA-256 manifest. No artwork redesign, crop, portal size or animation changes. **Alternatives:** 384-pixel trial was smaller, but 512 follows the human’s chosen resolution and retains more detail. Total active portal bytes: 20,404,098 → 2,843,518 (86.1% reduction); largest 113,292 bytes. Gallery/verification images and favicon are outside this portal-only change. Import tooling still copies supplied files unchanged; intentional publishing optimization is separate. **Verification:** decoded all 42 WebPs and confirmed exact 512 × 512 dimensions; visually inspected a temporary contact sheet (not a browser capture); added a 150 KiB per-portal regression budget. Full tests, content validation and static production build run before publication with cached activity dates. No browser performance measurement claimed.
 
 
 
 ## 2026-10-29 — First Babuni Gaming video embed
 
-**I supplied:** YouTube video `9fnC1ZI1iSY`, described as the first published stream test/showcase (not the first recording), with quiet microphone audio. **AI execution:** add a fourth Babuni Gaming module, Videos, using the existing click-to-load `youtube-nocookie.com` embed renderer and a descriptive label, not an invented official title. Other videos can join this collection later. Playback is served by YouTube; no recording is copied into the site and existing BABUNI.DEV local clips remain unchanged. Existing renderer requires Load video before creating the external player. **Verification:** content regression coverage, full tests, content validation and static production build run before publication with cached activity dates. YouTube page retrieval failed; official title, playback and embedding permission are not verified and require a live playback check. No browser screenshot taken.
+**What I supplied:** YouTube video `9fnC1ZI1iSY`, described as the first published stream test/showcase (not the first recording), with quiet microphone audio. **AI execution:** add a fourth Babuni Gaming module, Videos, using the existing click-to-load `youtube-nocookie.com` embed renderer and a descriptive label, not an invented official title. Other videos can join this collection later. Playback is served by YouTube; no recording is copied into the site and existing BABUNI.DEV local clips remain unchanged. Existing renderer requires Load video before creating the external player. **Verification:** content regression coverage, full tests, content validation and static production build run before publication with cached activity dates. YouTube page retrieval failed; official title, playback and embedding permission are not verified and require a live playback check. No browser screenshot taken.
 
 **Validation correction:** initial checks rejected intro/body fields on a video module. AI used the existing supported preview and credit fields instead, preserving the module schema.
 
@@ -552,25 +552,25 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-29 — Second Babuni Gaming video
 
-**I supplied:** YouTube video `B2pMsZPQfCc` as the second published video, with microphone audio still very quiet but acceptable to publish. **AI execution:** append it after the first recording in the existing Videos collection; update collection context to describe both videos. Labels are descriptive, not verified official titles. Existing click-to-load YouTube embeds handle playback; no local video copy or timing/layout changes. **Verification:** ordered collection regression assertions, content validation and static production build run before publication using cached activity dates. YouTube playback and embedding permission remain unverified; no browser capture taken.
+**What I supplied:** YouTube video `B2pMsZPQfCc` as the second published video, with microphone audio still very quiet but acceptable to publish. **AI execution:** append it after the first recording in the existing Videos collection; update collection context to describe both videos. Labels are descriptive, not verified official titles. Existing click-to-load YouTube embeds handle playback; no local video copy or timing/layout changes. **Verification:** ordered collection regression assertions, content validation and static production build run before publication using cached activity dates. YouTube playback and embedding permission remain unverified; no browser capture taken.
 
 
 
 ## 2026-10-29 — Visible embedded video previews
 
-**I asked for:** visible large video previews in modules, the big bloom and reader instead of empty Load video buttons, with the ability to play directly. **AI implementation:** replace the extra load button with a lazy embedded player using the existing approved-host validation, privacy-enhanced YouTube URL and referrer policy. Put the first player above preview text in small/big modules and remove the big-card iframe height cap; the reader shows all collection players at full content width and 16:9. Native hosted clips retain their existing behavior. **Trade-off:** embedded previews may contact the video provider when visible, before playback; this supersedes the prior click-before-player approach. AI keeps playback user initiated to avoid simultaneous audio from multiple modules; no autoplay loop is introduced. Playback controls work inside the embed without opening another bloom. **Verification:** all 32 test files, content validation and static production build passed, including lazy iframe creation and rejection of unsafe hosts. No live browser playback or YouTube availability verified, and no browser screenshot taken.
+**My request:** visible large video previews in modules, the big bloom and reader instead of empty Load video buttons, with the ability to play directly. **AI implementation:** replace the extra load button with a lazy embedded player using the existing approved-host validation, privacy-enhanced YouTube URL and referrer policy. Put the first player above preview text in small/big modules and remove the big-card iframe height cap; the reader shows all collection players at full content width and 16:9. Native hosted clips retain their existing behavior. **Trade-off:** embedded previews may contact the video provider when visible, before playback; this supersedes the prior click-before-player approach. AI keeps playback user initiated to avoid simultaneous audio from multiple modules; no autoplay loop is introduced. Playback controls work inside the embed without opening another bloom. **Verification:** all 32 test files, content validation and static production build passed, including lazy iframe creation and rejection of unsafe hosts. No live browser playback or YouTube availability verified, and no browser screenshot taken.
 
 
 
 ## 2026-10-29 — Mighty Morkah video collection
 
-**I asked for:** embed the Mighty Morkah channel’s videos using the same visible player previews. **AI execution:** add one Videos module with all ten video titles and watch IDs visible on the channel’s Videos page, in its displayed latest-first order. Preserve historical wording and WIP labels. Existing renderer shows the first player in small/big bloom and all ten lazy player embeds in the reader; playback remains user initiated. YouTube serves the media, with no copied video files. Existing overview and profile links remain. **Verification:** direct browser inspection of `https://www.youtube.com/@MightyMorkah/videos` found ten video entries (channel currently displays Morkah); search/page-fetch tools failed before browser fallback succeeded. No individual playback or embedding permission verified. Collection tests, full regression suite, content validation and static build run before publication with cached activity dates. No browser screenshot taken.
+**My request:** embed the Mighty Morkah channel’s videos using the same visible player previews. **AI execution:** add one Videos module with all ten video titles and watch IDs visible on the channel’s Videos page, in its displayed latest-first order. Preserve historical wording and WIP labels. Existing renderer shows the first player in small/big bloom and all ten lazy player embeds in the reader; playback remains user initiated. YouTube serves the media, with no copied video files. Existing overview and profile links remain. **Verification:** direct browser inspection of `https://www.youtube.com/@MightyMorkah/videos` found ten video entries (channel currently displays Morkah); search/page-fetch tools failed before browser fallback succeeded. No individual playback or embedding permission verified. Collection tests, full regression suite, content validation and static build run before publication with cached activity dates. No browser screenshot taken.
 
 
 
 ## 2026-10-29 — Matching video frames
 
-**I asked for:** frame video embeds like their surrounding bloom modules. **AI execution:** wrap supported players in a shared video-frame element with the module’s 2-pixel muted-gold border, 5-pixel dark inner band and shadow. The frame is inside the available content width, with no overlay intercepting player controls; applies to embedded and native videos in small bloom, big bloom and reader. Player aspect ratio and playback behavior remain unchanged. No source or media changes. **Verification:** all 32 test files, content validation and static build passed. Initial DOM test caught use of a property missing from its lightweight DOM fixture; AI used the equivalent children collection and reran successfully. No browser screenshot or visual browser acceptance performed in this pass.
+**My request:** frame video embeds like the surrounding bloom modules. **AI execution:** wrap supported players in a shared video-frame element with the module’s 2-pixel muted-gold border, 5-pixel dark inner band and shadow. The frame is inside the available content width, with no overlay intercepting player controls; applies to embedded and native videos in small bloom, big bloom and reader. Player aspect ratio and playback behavior remain unchanged. No source or media changes. **Verification:** all 32 test files, content validation and static build passed. Initial DOM test caught use of a property missing from its lightweight DOM fixture; AI used the equivalent children collection and reran successfully. No browser screenshot or visual browser acceptance performed in this pass.
 
 
 
@@ -588,19 +588,19 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-29 — Body-first documentation and newest-first logs
 
-**I asked for:** move opening authorship, source, version, target, primary-file and verification facts to the end, and show newest changelog/development-journal entries first so modules lead with meaningful content. **AI interpretation/implementation:** add a deterministic Markdown presentation transform at document preparation, shared by repository modules and generated reader assets. Preserve original imported snapshots and upstream repositories; publish a reordered reading copy. Recognized leading labelled facts/lists/tables move intact into a final Document information section. Narrative text, safety notices inside the body, links and nested Markdown remain intact. Only log paths are date-sorted: complete sibling sections move with their subsections, dated entries sort newest first, same-day ties keep source order, undated sections keep their slots. ISO and English month dates are supported; omitted years are inferred only from an unambiguous sibling year. Unreleased entries sort first. No dates or chronology are invented for version-only or undated headings. **Alternatives:** avoid editing dozens of upstream repositories or deleting metadata; use one presentation layer for small previews, big intros and reader text. **Verification:** added metadata/preview, nested log/fence, month-date and ambiguous-year tests; all imported source documents pass a non-whitespace character preservation comparison. Existing exact-body tests now compare the presentation copy. Full regression suite, content validation and static build run before publication with cached activity dates; no source sync, browser capture or manual document-by-document editorial acceptance claimed. Limitations: unrecognized narrative-shaped facts and ambiguous dates retain their original position.
+**My request:** move opening authorship, source, version, target, primary-file and verification facts to the end, and show newest changelog/development-journal entries first so modules lead with meaningful content. **AI interpretation/implementation:** add a deterministic Markdown presentation transform at document preparation, shared by repository modules and generated reader assets. Preserve original imported snapshots and upstream repositories; publish a reordered reading copy. Recognized leading labelled facts/lists/tables move intact into a final Document information section. Narrative text, safety notices inside the body, links and nested Markdown remain intact. Only log paths are date-sorted: complete sibling sections move with their subsections, dated entries sort newest first, same-day ties keep source order, undated sections keep their slots. ISO and English month dates are supported; omitted years are inferred only from an unambiguous sibling year. Unreleased entries sort first. No dates or chronology are invented for version-only or undated headings. **Alternatives:** avoid editing dozens of upstream repositories or deleting metadata; use one presentation layer for small previews, big intros and reader text. **Verification:** added metadata/preview, nested log/fence, month-date and ambiguous-year tests; all imported source documents pass a non-whitespace character preservation comparison. Existing exact-body tests now compare the presentation copy. Full regression suite, content validation and static build run before publication with cached activity dates; no source sync, browser capture or manual document-by-document editorial acceptance claimed. Limitations: unrecognized narrative-shaped facts and ambiguous dates retain their original position.
 
 
 
 ## 2026-10-29 — Larger reader and footer stripe
 
-**I asked for:** enlarge the reader to around 70% of available space and vertically from the header to a new thin footer, styled like the header at one-third its height. **AI interpretation/execution:** use 70vw reader width on desktop and full height between the persistent header and decorative footer. Preserve the existing edge-to-edge mobile reader and its bottom dismissal gap. Add an empty, noninteractive footer stripe with matching header background/border, height derived from one third of the current header. Move and restore both header and stripe with the modal so they remain visible at all four depths. Keep desktop outside-click margins, reader scrolling and opening/closing animations. Text retains its readable line-length limit. **Verification:** full regression suite, content validation and static production build run before publication using cached activity dates. No browser screenshot or visual acceptance performed in this pass.
+**My request:** enlarge the reader to around 70% of available space and vertically from the header to a new thin footer, styled like the header at one-third its height. **AI interpretation/execution:** use 70vw reader width on desktop and full height between the persistent header and decorative footer. Preserve the existing edge-to-edge mobile reader and its bottom dismissal gap. Add an empty, noninteractive footer stripe with matching header background/border, height derived from one third of the current header. Move and restore both header and stripe with the modal so they remain visible at all four depths. Keep desktop outside-click margins, reader scrolling and opening/closing animations. Text retains its readable line-length limit. **Verification:** full regression suite, content validation and static production build run before publication using cached activity dates. No browser screenshot or visual acceptance performed in this pass.
 
 
 
 ## 2026-10-29 — Warmer and larger typography
 
-**I asked for:** larger project titles, with short names larger within the same width, slightly larger bloom text (especially small bloom), and a friendly warm palette like the repository links with readable matching backgrounds. **AI implementation:** length-based tile-title scale (short/medium/long) within the common 89% title width; increase small headings/body including the mobile override, make a smaller increase to big-bloom typography, and raise reader body text from 17 to 18px. Use warm cream/gold headings and body text on charcoal-brown bloom/reader backgrounds. Captions and secondary bloom text grow slightly. Artwork, tile/module dimensions, geometry and animation timing are unchanged; larger content continues to use existing internal scrolling. **Alternatives:** use three deterministic name-length scales rather than measuring text during grid animation; no new font dependency or per-frame layout work. **Verification:** full regression suite, content validation and static build run before publication using cached activity dates. No browser screenshot or visual/device acceptance performed in this pass.
+**My request:** larger project titles, with short names larger within the same width, slightly larger bloom text (especially small bloom), and a friendly warm palette like the repository links with readable matching backgrounds. **AI implementation:** length-based tile-title scale (short/medium/long) within the common 89% title width; increase small headings/body including the mobile override, make a smaller increase to big-bloom typography, and raise reader body text from 17 to 18px. Use warm cream/gold headings and body text on charcoal-brown bloom/reader backgrounds. Captions and secondary bloom text grow slightly. Artwork, tile/module dimensions, geometry and animation timing are unchanged; larger content continues to use existing internal scrolling. **Alternatives:** use three deterministic name-length scales rather than measuring text during grid animation; no new font dependency or per-frame layout work. **Verification:** full regression suite, content validation and static build run before publication using cached activity dates. No browser screenshot or visual/device acceptance performed in this pass.
 
 
 
@@ -626,7 +626,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-28 — Four separate public documentation editions
 
-**I decided:** publish documentation only for the four private projects discussed, rather than exposing their implementations. **AI interpretation:** fresh Markdown-only editions for Ethera, Morkahja RPG, MorkahjaWorld and Morkahja Admin, using the ten-document portfolio contract; source-informed summaries rather than copying raw private history. **Source findings:** the current original README/CONCEPT distinguish MorkahjaWorld as reserved and arcanitebrothers as the Morkahja Admin tool. **Execution:** prepared four independent local documentation repositories outside this website checkout, with human/AI attribution and no implementation history. **Verification:** 40 intended Markdown files, valid internal links, no URLs/local user paths/recognized credential signatures in their text, publishing script syntax checked. No runtime behavior tested or changed. **Blocker:** automatic review rejected public creation/push for the first edition, so none was published and website mappings remain private-review. See PUBLIC_DOCUMENTATION_PLAN.md for exact scope, proposed destinations, limitations and integration steps.
+**My decision:** publish documentation only for the four private projects discussed, rather than exposing their implementations. **AI interpretation:** fresh Markdown-only editions for Ethera, Morkahja RPG, MorkahjaWorld and Morkahja Admin, using the ten-document portfolio contract; source-informed summaries rather than copying raw private history. **Source findings:** the current original README/CONCEPT distinguish MorkahjaWorld as reserved and arcanitebrothers as the Morkahja Admin tool. **Execution:** prepared four independent local documentation repositories outside this website checkout, with human/AI attribution and no implementation history. **Verification:** 40 intended Markdown files, valid internal links, no URLs/local user paths/recognized credential signatures in their text, publishing script syntax checked. No runtime behavior tested or changed. **Blocker:** automatic review rejected public creation/push for the first edition, so none was published and website mappings remain private-review. See PUBLIC_DOCUMENTATION_PLAN.md for exact scope, proposed destinations, limitations and integration steps.
 
 
 ## 2026-10-28 — Human publishes four editions; public-only website integration
@@ -672,35 +672,35 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-28 — Remove family/template candidates
 
-**I asked for:** also remove The Amberbrew Family and Practical Templates creative. **AI execution:** removed their semantic IDs from the shared grid/search catalog, both topic dictionaries and unresolved repository mappings. Neither had a connected repository snapshot or curated module content. Retained all other projects, sources, artwork and interactions. Active totals: 47 entries, 35 connected public sources, 10 missing-repository entries and two family-clarification entries. Extended existing withdrawal regressions and refreshed active reports. This is owner-directed curation; no speculative reason for withdrawal is invented. Verification is recorded below.
+**My request:** also remove The Amberbrew Family and Practical Templates creative. **AI execution:** removed those candidates' semantic IDs from the shared grid/search catalog, both topic dictionaries and unresolved repository mappings. Neither had a connected repository snapshot or curated module content. Retained all other projects, sources, artwork and interactions. Active totals: 47 entries, 35 connected public sources, 10 missing-repository entries and two family-clarification entries. Extended existing withdrawal regressions and refreshed active reports. This is owner-directed curation; no speculative reason for withdrawal is invented. Verification is recorded below.
 
 **Verification:** full test command passed 30 test-file entries, direct catalog suite 4/4 and repository suite 11/11 passed, production build/content guards and whitespace check passed. No new browser/phone capture or physical-device acceptance is claimed for this data-only follow-up.
 
 
 ## 2026-10-28 — Warehouse Performance Model withdrawn
 
-**I asked for:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.
+**My request:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.
 
 **Verified:** full command passed 30 test-file entries; direct repository suite passed 11/11; content checks, production build and whitespace check passed. No new browser or physical-device test claimed for this catalog-only follow-up.
 
 
 ## 2026-10-28 — GuildChatAI withdrawn
 
-**I asked for:** remove GuildChatAI too. **AI implementation:** removed its active catalog/topic/mapping records and the orphaned public GuildChatAI snapshot (ten documents). All other retained snapshots, projects, artwork and interaction behavior remain unchanged. No repository deletion was requested or performed. Active totals: 45 entries, 34 connected public sources, 33 external snapshots and 316 external documents. Historical research mentions remain historical. Verification is recorded in DEVLOG.
+**My request:** remove GuildChatAI too. **AI implementation:** removed its active catalog/topic/mapping records and the orphaned public GuildChatAI snapshot (ten documents). All other retained snapshots, projects, artwork and interaction behavior remain unchanged. No repository deletion was requested or performed. Active totals: 45 entries, 34 connected public sources, 33 external snapshots and 316 external documents. Historical research mentions remain historical. Verification is recorded in DEVLOG.
 
 **Verified:** 30 passing test-file entries, direct repository suite 11/11, production build/content guards and whitespace checks passed. Compared snapshots to confirm only GuildChatAI was removed and all retained source objects are unchanged. No new browser or physical-device check claimed for this data-only follow-up.
 
 
 ## 2026-10-28 — Dual-PC Streaming Setup withdrawn
 
-**I asked for:** remove Dual-PC Streaming Setup too. **AI implementation:** removed its active semantic ID, topics and unresolved repository mapping. It had no connected source snapshot or curated module content. All other sources, projects, artwork and interactions remain unchanged; historical mentions remain historical. Current totals: 44 entries, 34 connected public sources, eight missing-repository entries and two family-clarification entries. No repository deletion or new timing/layout change. Verification is recorded in DEVLOG.
+**My request:** remove Dual-PC Streaming Setup too. **AI implementation:** removed its active semantic ID, topics and unresolved repository mapping. It had no connected source snapshot or curated module content. All other sources, projects, artwork and interactions remain unchanged; historical mentions remain historical. Current totals: 44 entries, 34 connected public sources, eight missing-repository entries and two family-clarification entries. No repository deletion or new timing/layout change. Verification is recorded in DEVLOG.
 
 **Verification:** 30 test-file entries passed; direct repository suite 11/11, catalog suite 4/4 and intro suite 3/3 passed; production build/content guards and whitespace check passed. Smaller inventory exposed stale tests expecting 45 distinct projects on a 45-cell desktop: expectations now cover the existing modulo-repeat behavior with 44 entries while preserving 45 filled cells and spiral order. No runtime placement behavior changed. No new browser/physical-device test claimed for this catalog-only follow-up.
 
 
 ## 2026-10-28 — Mech-Arena withdrawn
 
-**I asked for:** remove Mech-Arena too. **AI implementation:** removed its active semantic ID, topic records and unresolved repository mapping. It had no connected source snapshot or curated module content. Other projects, documents, artwork, layout and timing remain unchanged; historical research mentions remain historical. Totals: 43 entries, 34 connected public sources, seven missing-repository entries and two family-clarification entries. No repository deletion. Verification is recorded in DEVLOG.
+**My request:** remove Mech-Arena too. **AI implementation:** removed its active semantic ID, topic records and unresolved repository mapping. It had no connected source snapshot or curated module content. Other projects, documents, artwork, layout and timing remain unchanged; historical research mentions remain historical. Totals: 43 entries, 34 connected public sources, seven missing-repository entries and two family-clarification entries. No repository deletion. Verification is recorded in DEVLOG.
 
 **Verified:** full test command passed 30 test-file entries; direct repository suite passed 11/11; production build/content guards and whitespace checks passed. No new browser or physical-device test claimed for this catalog-only change.
 
@@ -715,11 +715,11 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-28 — Catalog changes expose placement identity faults
 
-**I asked for:** investigate duplicate projects and projects changing after shifts; support adding/removing projects; add Rocket Game 42; rename Morkahja/Worldbuilding/Roar Guild and check its logo. Provide a complete menu grouping suggestion before implementing it.
+**My request:** investigate duplicate projects and projects changing after shifts; support adding/removing projects; add Rocket Game 42; rename Morkahja/Worldbuilding/Roar Guild and check its logo. Provide a complete menu grouping suggestion before implementing it.
 
 **AI findings/proposal:** the old placement policy repeated projects when capacity ran out and repaired collisions by renaming visible residents at settlement. A seeded reproduction with 42 projects and 45 cells recorded 63 continuing-source changes over 30 shifts. Staging also reused departing identities before their animation had left the screen. The AI suggested conditional tile enlargement; Babuni declined it, noting the difference between full/partly visible cells and browser usable area.
 
-**I decided:** preserve size and feel; add five gray, non-project placeholders without portals, with a subtle central detail. Repetition is acceptable when unavoidable, but should be avoided. AI implemented an incised diamond in CSS. Five filler identities sit outside the project catalog; decorative fillers may repeat if more than five vacancies are required, rather than repeat real projects. Existing filler residents persist to avoid sudden identity changes; they are not immediately replaced merely because a real project becomes free.
+**My decision:** preserve size and feel; add five gray, non-project placeholders without portals, with a subtle central detail. Repetition is acceptable when unavoidable, but should be avoided. AI implemented an incised diamond in CSS. Five filler identities sit outside the project catalog; decorative fillers may repeat if more than five vacancies are required, rather than repeat real projects. Existing filler residents persist to avoid sudden identity changes; they are not immediately replaced merely because a real project becomes free.
 
 **Implemented:** placement reserves every still-visible departure and offscreen pinned selection, stages entrants before movement and preserves continuing assignments. Runtime renders neutral disabled tiles and excludes them from topics, keyboard and direct navigation. Rocket Game 42 imports ten public Markdown documents at source commit `29028bcd2ed476de92bbed96d6f464e0c2968383`; no gameplay verification is claimed. Requested display renames preserve IDs. Roar Guild community and RoarGuild addon share one supplied artwork file. No unrelated snapshots were refreshed. The menu remains ungrouped; `PROJECT_GROUPING_PROPOSAL.md` lists all 43 projects exactly once and flags possible duplicates for review.
 
@@ -746,19 +746,19 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-28 — Character-story portal correction
 
-**I asked for:** use `BuxbrewCharacter.webp` for the Buxbrew — character story tile. **AI execution:** copied the existing supplied WebP from the local testing checkout unchanged and assigned it to stable ID `buxbrew-character-story`; the separate Buxbrew repository tile is unchanged. **Verification:** validated WebP signature and updated artwork mapping/import assertions; content checks and production build run for this change. No image editing or timing/geometry changes.
+**My request:** use `BuxbrewCharacter.webp` for the Buxbrew — character story tile. **AI execution:** copied the existing supplied WebP from the local testing checkout unchanged and assigned it to stable ID `buxbrew-character-story`; the separate Buxbrew repository tile is unchanged. **Verification:** validated WebP signature and updated artwork mapping/import assertions; content checks and production build run for this change. No image editing or timing/geometry changes.
 
 
 
 ## 2026-10-28 — Supplied Morkahja artwork
 
-**I asked for:** use the newly supplied Morkahja.webp. **AI interpretation/execution:** assign it to Morkahja (`morkahja-rpg`), keeping the separate Worldbuilding entry as it is. Copied the existing WebP from the local testing checkout without editing or re-encoding. **Verification:** WebP signature checked, artwork mapping/import assertions updated, targeted artwork tests and production build run before publication. No timing, sizing or positioning changes.
+**My request:** use the newly supplied Morkahja.webp. **AI interpretation/execution:** assign it to Morkahja (`morkahja-rpg`), keeping the separate Worldbuilding entry as it is. Copied the existing WebP from the local testing checkout without editing or re-encoding. **Verification:** WebP signature checked, artwork mapping/import assertions updated, targeted artwork tests and production build run before publication. No timing, sizing or positioning changes.
 
 
 
 ## 2026-10-28 — TotemTimers supplied artwork
 
-**I asked for:** TotemTimers.webp for the project portal. **AI execution:** copied the supplied local WebP unchanged and mapped it to stable ID `totemtimers`; no image generation, re-encoding, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** TotemTimers.webp for the project portal. **AI execution:** copied the supplied local WebP unchanged and mapped it to stable ID `totemtimers`; no image generation, re-encoding, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
@@ -781,31 +781,31 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-28 — EnchantVisuals supplied artwork
 
-**I asked for:** EnchantVisuals.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and assigned it to stable ID `enchantvisuals`. No image editing, geometry or timing changes. **Verification:** checked WebP signature; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** EnchantVisuals.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and assigned it to stable ID `enchantvisuals`. No image editing, geometry or timing changes. **Verification:** checked WebP signature; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-28 — Buxbrew Addon naming
 
-**I asked for:** rename Buxbrew to Buxbrew Addon. **AI execution:** changed the catalog display name only, preserving stable ID `buxbrew`, repository mapping and the separate Buxbrew — character story entry. Regenerated the repository report to match. **Verification:** existing catalog/navigation checks and production build run before publication; no interaction, timing or positioning changes.
+**My request:** rename Buxbrew to Buxbrew Addon. **AI execution:** changed the catalog display name only, preserving stable ID `buxbrew`, repository mapping and the separate Buxbrew — character story entry. Regenerated the repository report to match. **Verification:** existing catalog/navigation checks and production build run before publication; no interaction, timing or positioning changes.
 
 
 
 ## 2026-10-28 — BuxbrewCharge supplied artwork
 
-**I asked for:** BuxbrewCharge.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrewcharge`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** BuxbrewCharge.webp for the project portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrewcharge`. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-28 — Buxbrew Addon supplied artwork
 
-**I asked for:** BuxbrewAddon.webp for the addon portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrew`. The character-story and BuxbrewCharge artwork mappings remain separate. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
+**My request:** BuxbrewAddon.webp for the addon portal. **AI execution:** copied the supplied WebP from the local testing checkout unchanged and mapped it to stable ID `buxbrew`. The character-story and BuxbrewCharge artwork mappings remain separate. No image editing, geometry or timing changes. **Verification:** WebP signature checked; targeted artwork tests and production build run before publication. Human visual acceptance remains open.
 
 
 
 ## 2026-10-27 — Content validation and authoring
 
-**I asked for:** Proceed with Content Validation and Authoring after positive hands-on feedback. This is not blanket acceptance of every outstanding device/accessibility check.
+**My request:** Proceed with Content Validation and Authoring after positive hands-on feedback. This is not blanket acceptance of every outstanding device/accessibility check.
 
 **AI interpretation and execution:** Add dependency-free local validation and non-writing blank templates around the existing JSON contract. Keep intentional empty definitions, existing content and navigation intact. A CMS, MDX migration, another project and CI were left for separate work. Validation catches malformed records, duplicate IDs, missing assets/documents, unsupported fields and unsafe destinations.
 
@@ -817,7 +817,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Five more project portals
 
-**I supplied:** A folder screenshot showing five additional portal images, continuing the established logo-assignment workflow. **AI interpretation and implementation:** Match filenames to stable project IDs and copy the PNG files unchanged. Preserve the supplied `LocalAAIWorkstation.png` spelling. No motion, content or layout changes. **Verification:** Recorded below after checks; no new human device acceptance is claimed.
+**What I supplied:** A folder screenshot showing five additional portal images, continuing the established logo-assignment workflow. **AI interpretation and implementation:** Match filenames to stable project IDs and copy the PNG files unchanged. Preserve the supplied `LocalAAIWorkstation.png` spelling. No motion, content or layout changes. **Verification:** Recorded below after checks; no new human device acceptance is claimed.
 
 **Tested:** All 13 test files, production build (including content validation) and whitespace checks passed. Renderer code was unchanged; no browser or physical-phone visual check was repeated. Final circular crops remain available for Babuni’s visual review.
 
@@ -825,7 +825,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Framed detail reader
 
-**I asked for:** Replace the abrupt full-screen detail overlay with a framed square, visible grid on all sides and scrolling inside; introduce a fade/grow entrance. **AI implementation choice:** Size the square to the smaller viewport dimension, capped at 980 CSS pixels, leaving at least 16px side and 24px vertical margins. Use a 420ms fade from 96% scale and a translucent backdrop. Retain native modal focus/Escape/back behavior and existing playback cleanup. Reduced-motion preference removes the animation via the existing global rule. Only detail presentation changed; grid and bloom clocks are untouched.
+**My request:** Replace the abrupt full-screen detail overlay with a framed square, visible grid on all sides and scrolling inside; introduce a fade/grow entrance. **AI implementation choice:** Size the square to the smaller viewport dimension, capped at 980 CSS pixels, leaving at least 16px side and 24px vertical margins. Use a 420ms fade from 96% scale and a translucent backdrop. Retain native modal focus/Escape/back behavior and existing playback cleanup. Reduced-motion preference removes the animation via the existing global rule. Only detail presentation changed; grid and bloom clocks are untouched.
 
 **Tested:** All 13 test files passed; production build and whitespace checks passed. At 1280×720 in the browser, the settled panel measured 672×672 with visible surround, computed entrance duration 0.42s, and overflowing text. PageDown advanced dialog scrollTop to 584 while window scroll stayed zero. Back and Escape removed detail and retained big bloom. Screenshot: framed-detail-reader.png (workspace artifact, not repository content). Phone and reduced-motion device checks were not performed; CSS retains the existing global reduced-motion override. The initial sandbox preview could not start; the approved local preview succeeded.
 
@@ -833,13 +833,13 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Hidden scrollbars
 
-**I asked for:** Remove all visible scrollbars. **AI interpretation and implementation:** Hide scrollbar chrome globally using standard and WebKit CSS, retain native overflow/reading gestures, and remove the reader’s reserved scrollbar gutter. No animation or navigation behavior changed. **Tested:** Production build including content validation and whitespace checks passed. No new browser/phone check was performed for this CSS-only change; actual scroll gestures were verified in the immediately preceding reader change.
+**My request:** Remove all visible scrollbars. **AI interpretation and implementation:** Hide scrollbar chrome globally using standard and WebKit CSS, retain native overflow/reading gestures, and remove the reader’s reserved scrollbar gutter. No animation or navigation behavior changed. **Tested:** Production build including content validation and whitespace checks passed. No new browser/phone check was performed for this CSS-only change; actual scroll gestures were verified in the immediately preceding reader change.
 
 
 
 ## 2026-10-27 — Repository-backed project documentation
 
-**I asked for:** Connect all portfolio projects to their repositories and use the common documentation structure; list projects without a repository so sources can be created or identified. At that point, I reported preparing at least 26 repositories. **I decided:** Use public repositories only and list private ones for review.
+**My request:** Connect all portfolio projects to their repositories and use the common documentation structure; list projects without a repository so sources can be created or identified. At that point, I reported preparing at least 26 repositories. **My decision:** Use public repositories only and list private ones for review.
 
 **AI research:** Enumerated all 39 repositories returned for the accessible babunidev account (second pagination page empty): 34 public and five private. Inspected public trees and standard document files. Verified aliases AsnkarGrotzschnapf/master and wowforeverstuff; AzerothMoments is a public reserved documentation shell whose README points to a separate private application. The public Rocketgame42 repository has no existing tile and was reported rather than inserted into the grid.
 
@@ -905,7 +905,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Complete supplied WebP artwork and retain reader attribution
 
-**I asked for:** Include the additional supplied WebP images as well as the earlier set, and fix problems identified during review. **AI investigation:** The actual local folder contains fifteen square, decodable WebP images, including ROARR, The Great Iceflow Relay and a newly supplied WorkThatGodBod image beyond the twelve metadata entries on main. The twelve existing WebP references had been published without their binary assets, causing validation and CI failures. Local PNG deletions represent the user’s conversion and are retained in the published migration. No supplied WebP pixels are altered.
+**My request:** Include the additional supplied WebP images as well as the earlier set, and fix problems identified during review. **AI investigation:** The actual local folder contains fifteen square, decodable WebP images, including ROARR, The Great Iceflow Relay and a newly supplied WorkThatGodBod image beyond the twelve metadata entries on main. The twelve existing WebP references had been published without their binary assets, causing validation and CI failures. Local PNG deletions represent the user’s conversion and are retained in the published migration. No supplied WebP pixels are altered.
 
 **AI implementation:** Copy all fifteen supplied WebPs unchanged, explicitly map the three additional projects and remove the superseded tracked PNGs. Keep existing tile dimensions, circular clipping, shifts and bloom behavior. Isolate asynchronous reader text/loading/retry UI in document-body.ts; source links and credits remain sibling elements in the reader article.
 
@@ -933,7 +933,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Dismiss the reader from its surround
 
-**I asked for:** Close the reader by clicking outside its framed panel and remove the Back to big bloom button. **AI implementation:** Add intentional backdrop-click dismissal and route it through the existing close/return function, preserving media cleanup, request cancellation, big-bloom camera and trigger focus restoration. Focus the title on opening now that the button is gone. Escape uses the same return path.
+**My request:** Close the reader by clicking outside its framed panel and remove the Back to big bloom button. **AI implementation:** Add intentional backdrop-click dismissal and route it through the existing close/return function, preserving media cleanup, request cancellation, big-bloom camera and trigger focus restoration. Focus the title on opening now that the button is gone. Escape uses the same return path.
 
 **Interaction guard:** Both the primary pointer press and click must land outside the current panel rectangle. Inside content/padding clicks, secondary pointers, cancelled gestures and text-selection drags crossing the frame do not dismiss. Consume the dismissal click so it cannot select underlying grid content. No layout, bloom or shift timing changes.
 
@@ -945,7 +945,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Markdown throughout the bloom depths
 
-**I asked for:** Format Markdown in small and big modules as in the reader; content completion is secondary in this living, growing project. **AI interpretation and implementation:** Reuse the existing safe renderer, retain Markdown in bounded generated excerpts, and use compact typography within existing cards. Preview link labels do not navigate away; the reader retains active source links. **Alternatives:** Plain-text summaries were rejected by this request; fetching complete documents into previews was avoided to retain on-demand delivery. No timing or spatial changes. **Verification:** Regression tests cover both preview depths and excerpt formatting; final test/build and browser results are recorded below. **Open:** Content can remain WIP; physical-phone acceptance remains separate.
+**My request:** Format Markdown in small and big modules as in the reader; content completion is secondary in this living, growing project. **AI interpretation and implementation:** Reuse the existing safe renderer, retain Markdown in bounded generated excerpts, and use compact typography within existing cards. Preview link labels do not navigate away; the reader retains active source links. **Alternatives:** Plain-text summaries were rejected by this request; fetching complete documents into previews was avoided to retain on-demand delivery. No timing or spatial changes. **Verification:** Regression tests cover both preview depths and excerpt formatting; final test/build and browser results are recorded below. **Open:** Content can remain WIP; physical-phone acceptance remains separate.
 
 **Verified outcome:** All 121 Node regression tests pass; production build and whitespace checks pass. Browser verification observed formatted emphasis in a small Decisions preview and 13 big-bloom cards with headings, emphasis, code and lists. Saved browser evidence: `markdown-bloom-preview.png` in the local task workspace. No new physical-phone verification was performed. The existing large-bundle warning remains.
 
@@ -953,7 +953,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Navigation across all four stages and saved visual evidence
 
-**I asked for:** Keep the header in every stage, restore the planned About and Projects menu, search projects in the dropdown and move to/open the chosen project. Add all saved AI browser screenshots to visual documentation. **AI interpretation:** One shared header, including inside the reader’s modal top layer; native search/list buttons; reuse existing calm shift and close/open procedures. About is a brief project introduction using available concept/authorship information, not a new personal biography. **Alternatives:** A separate full-screen project directory and resetting the grid were avoided. Missing resident projects reserve an offscreen recycled cell before normal centering. Reader frame animation belongs to its inner panel so it never transforms the header. **Implemented:** Search by project name/summary, alphabetical list, empty state, keyboard search/selection, About, header restoration after reader dismissal, gallery archive and manifest. **Provenance:** 19 available saved captures, including superseded prototypes; no claim of recovering unsaved images or inaccessible chat artifacts. Verification results follow below.
+**My request:** Keep the header in every stage, restore the planned About and Projects menu, search projects in the dropdown and move to/open the chosen project. Add all saved AI browser screenshots to visual documentation. **AI interpretation:** One shared header, including inside the reader’s modal top layer; native search/list buttons; reuse existing calm shift and close/open procedures. About is a brief project introduction using available concept/authorship information, not a new personal biography. **Alternatives:** A separate full-screen project directory and resetting the grid were avoided. Missing resident projects reserve an offscreen recycled cell before normal centering. Reader frame animation belongs to its inner panel so it never transforms the header. **Implemented:** Search by project name/summary, alphabetical list, empty state, keyboard search/selection, About, header restoration after reader dismissal, gallery archive and manifest. **Provenance:** 19 available saved captures, including superseded prototypes; no claim of recovering unsaved images or inaccessible chat artifacts. Verification results follow below.
 
 **Verification and correction:** 126 Node tests pass; production build and whitespace checks pass. Browser verified grid/small/big/reader header visibility, searchable and empty results, About, direct selection from the reader, outside-reader dismissal and a big-bloom-to-another-project switch. That last check initially exposed a stale buffered identity during centering; direct navigation now explicitly reserves the requested source identity before camera recycling, and the repeated switch completed with eight modules for the correct destination. All 19 prior available captures plus two new captures are archived (21 AI screenshots, 23 gallery images including the two supplied originals). No physical-phone verification or full type-check is claimed. The existing large-client-bundle warning remains.
 
@@ -989,7 +989,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Complete WebP publication
 
-**I asked for:** Make all images WebP after discussing publishing size. **AI discovery/correction:** The earlier PNG claim was based on screenshot filenames; decoder inspection found JPEG bytes inside the 23 `.png` files. Trial lossless WebP increased the converted set from 2,725,971 to 6,459,666 bytes, so it was rejected. Quality-85 WebP instead totals 1,865,968 bytes for the same 30 converted assets (31.5% smaller), with original dimensions retained. This is lossy conversion of existing JPEG data; no claim of pixel-identical screenshot output. SVG favicon used lossless raster conversion; unused legacy ICO was archived outside publication. **Implementation:** Updated media URLs and authoring/agent rules; build guard rejects non-WebP image extensions and false WebP signatures. Originals copied to the local task’s image-originals directory, outside public. **Alternatives:** Renaming extensions alone is invalid; shipping larger lossless derivatives undermined the requested size goal. Existing portal WebPs were not recompressed. Final verification follows below.
+**My request:** Make all images WebP after discussing publishing size. **AI discovery/correction:** The earlier PNG claim was based on screenshot filenames; decoder inspection found JPEG bytes inside the 23 `.png` files. Trial lossless WebP increased the converted set from 2,725,971 to 6,459,666 bytes, so it was rejected. Quality-85 WebP instead totals 1,865,968 bytes for the same 30 converted assets (31.5% smaller), with original dimensions retained. This is lossy conversion of existing JPEG data; no claim of pixel-identical screenshot output. SVG favicon used lossless raster conversion; unused legacy ICO was archived outside publication. **Implementation:** Updated media URLs and authoring/agent rules; build guard rejects non-WebP image extensions and false WebP signatures. Originals copied to the local task’s image-originals directory, outside public. **Alternatives:** Renaming extensions alone is invalid; shipping larger lossless derivatives undermined the requested size goal. Existing portal WebPs were not recompressed. Final verification follows below.
 
 **Verified outcome:** 131 Node tests, production build and whitespace checks pass. Pillow decoded all converted assets and checked unchanged dimensions; a representative converted reader screenshot was visually inspected for readable text. Browser confirmed visible portal WebPs loaded, a WebP gallery image loaded, Next image loaded its WebP successor and the player referenced a WebP poster. New browser capture converted to WebP and archived. Build guard also caught an overlooked legacy favicon ICO, now archived and removed from publication. No new physical-phone test was performed.
 
@@ -1018,7 +1018,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 ## 2026-10-27 — Browser branding
 
-**I asked for:** remove the Astro menu and use only the supplied stone B graphic, without its wordmark, as a resized WebP browser icon. **AI interpretation and execution:** disabled the toolbar through Astro configuration rather than hiding it with CSS; used the built-in image editor for transparent B extraction, then resized to 64×64. The supplied original remains untouched; AI extraction is not asserted to be pixel-identical. Exact prompt and provenance: [FAVICON_ASSET.md](FAVICON_ASSET.md). No interaction timing or portal artwork changed. **Tested:** 140 Node tests passed, production build passed, browser DOM contained zero Astro toolbar elements and the expected favicon URL/type/size. **Open:** actual browser-tab chrome appearance and cached-icon refresh need human confirmation; the screenshot records page content only.
+**My request:** remove the Astro menu and use only the supplied stone B graphic, without its wordmark, as a resized WebP browser icon. **AI interpretation and execution:** disabled the toolbar through Astro configuration rather than hiding it with CSS; used the built-in image editor for transparent B extraction, then resized to 64×64. The supplied original remains untouched; AI extraction is not asserted to be pixel-identical. Exact prompt and provenance: [FAVICON_ASSET.md](FAVICON_ASSET.md). No interaction timing or portal artwork changed. **Tested:** 140 Node tests passed, production build passed, browser DOM contained zero Astro toolbar elements and the expected favicon URL/type/size. **Open:** actual browser-tab chrome appearance and cached-icon refresh need human confirmation; the screenshot records page content only.
 
 
 ### Header B mark — 2026-10-27
@@ -1030,7 +1030,7 @@ At that point, I additionally asked for the B to the left of BABUNI.DEV in the p
 
 ## 2026-10-27 — A visible position without scrollbar chrome
 
-**I asked for:** a little frameless grab-and-pull reader indicator, because long text and image collections need quicker navigation. The existing B WebP and branding screenshots are already published in 6806d1c; no logo replacement was needed. **AI interpretation:** retain native content scrolling and add only a floating gold thumb inside the reader; a conventional visible track or page-wide scrollbar would conflict with the request. An initial proportional thumb was visually too long for the requested little handle, so AI capped it at 96px (minimum 36px, limited by available height). This is an implementation choice, not additional human acceptance. **Execution:** separated the panel’s fixed shell from its native scroll content; the handle uses pointer capture, proportional travel and accessible scrollbar values, with ResizeObserver updates for fetched Markdown and image size changes. Disposal disconnects observers on reader replacement/close. Existing reader opening/closing animation and outside dismissal remain. **Browser evidence:** About reader thumb dragged from position 0 to 345; Home returned to 0. Archived both the superseded first preview and dragged compact handle. **Open:** physical-phone drag, full gallery/load edge cases and human visual acceptance remain unverified. Automated check totals are recorded below after the final run.
+**My request:** a little frameless grab-and-pull reader indicator, because long text and image collections need quicker navigation. The existing B WebP and branding screenshots are already published in 6806d1c; no logo replacement was needed. **AI interpretation:** retain native content scrolling and add only a floating gold thumb inside the reader; a conventional visible track or page-wide scrollbar would conflict with the request. An initial proportional thumb was visually too long for the requested little handle, so AI capped it at 96px (minimum 36px, limited by available height). This is an implementation choice, not additional human acceptance. **Execution:** separated the panel’s fixed shell from its native scroll content; the handle uses pointer capture, proportional travel and accessible scrollbar values, with ResizeObserver updates for fetched Markdown and image size changes. Disposal disconnects observers on reader replacement/close. Existing reader opening/closing animation and outside dismissal remain. **Browser evidence:** About reader thumb dragged from position 0 to 345; Home returned to 0. Archived both the superseded first preview and dragged compact handle. **Open:** physical-phone drag, full gallery/load edge cases and human visual acceptance remain unverified. Automated check totals are recorded below after the final run.
 
 **Final automated verification:** `npm run test:grid` reported 29 passing test-file entries, zero failures; production build and WebP/content validation passed. No frame-rate or physical-phone result is claimed.
 
@@ -1139,12 +1139,12 @@ At that point, I additionally asked for the B to the left of BABUNI.DEV in the p
 
 **Implementation.** No application behavior changed in this verification session. The assistant recorded the observed result on `main` as part of the project history.
 
-**Still open.** Automated test success does not establish whether Babuni likes the revised mouse acceleration, arrow-key navigation, or line-shifting appearance. Those behaviors still require visual/hands-on review; mobile touch remains separately unverified.
+**Still open.** Automated test success does not establish whether I like the revised mouse acceleration, arrow-key navigation, or line-shifting appearance. Those behaviors still require visual/hands-on review; mobile touch remains separately unverified.
 
 
 ## 2026-10-26 — A faster tempo for manual exploration
 
-**My direction.** After exploring the configurable values in the GitHub control file, I asked for double the current movement speed. They also established a practical handoff preference: after repository updates, always provide the commands to pull GitHub changes, stop the existing Astro server, and start a new one.
+**My direction.** After exploring the configurable values in the GitHub control file, I asked for double the current movement speed. Another practical handoff requirement was: after repository updates, always provide the commands to pull GitHub changes, stop the existing Astro server, and start a new one.
 
 **AI contribution and implementation.** The assistant doubled mouse/touch speed from 440 to 880 CSS px/s and arrow-key speed from 130 to 260 CSS px/s. It also doubled pointer acceleration (1800 to 3600 CSS px/s²), keyboard acceleration (520 to 1040 CSS px/s²), and keyboard deceleration (700 to 1400 CSS px/s²) to maintain the previous acceleration and slowing durations. The 180 CSS px cursor-lead limit and autonomous row/column shifting were left unchanged. A regression test checks the exact new configuration.
 
@@ -1153,7 +1153,7 @@ At that point, I additionally asked for the B to the left of BABUNI.DEV in the p
 
 ## 2026-10-26 — Doubling the tempo of manual exploration
 
-**My direction.** After reviewing the movement configuration, I asked for double the current speed. They also requested a repeatable testing handoff: after pulling a change from GitHub, stop the existing Astro development server and start a new one.
+**My direction.** After reviewing the movement configuration, I asked for double the current speed. Another requirement was a repeatable testing handoff: after pulling a change from GitHub, stop the existing Astro development server and start a new one.
 
 **AI contribution and implementation.** The assistant changed the maximum mouse/touch speed from 440 to 880 CSS px/s and the held-arrow speed from 130 to 260 CSS px/s. To preserve approximately the same ramp duration, pointer acceleration increased from 1800 to 3600 CSS px/s², keyboard acceleration from 520 to 1040 CSS px/s², and keyboard deceleration from 700 to 1400 CSS px/s². The 180 CSS px pointer-lag limit and autonomous line-shift settings were deliberately unchanged. A new test asserts those exact tuning values.
 
@@ -1316,7 +1316,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 **Context and source:** Current explicit implementation request and bounded retrieved babunidev1 conversation; repository main, CONCEPT, DESIGN, ARCHITECTURE, CONTENT, ROADMAP and collaboration policy. No claim to the complete private project history.
 
-**I asked for:** Fix observed diagonal zigzag/overlaps when right-side columns crossed a displaced bloom row. Keep calm straight plate motion based on actual occupancy; finish expansion conflicts first; allow immediate dragging while gently closing; preserve hover topics through unrelated shifts; align each bubble bottom-left with its square top; add a physically reserved module below the project and preserve future 3×3 possibilities.
+**My request:** Fix observed diagonal zigzag/overlaps when right-side columns crossed a displaced bloom row. Keep calm straight plate motion based on actual occupancy; finish expansion conflicts first; allow immediate dragging while gently closing; preserve hover topics through unrelated shifts; align each bubble bottom-left with its square top; add a physically reserved module below the project and preserve future 3×3 possibilities.
 
 **AI contribution:** Found the explicit `bloomShiftFraction` sideways interpolation. Replaced it with shared reversible vacancy geometry and visual-space shift history; expanded conflicts to both entire displaced runs. Added below metadata module using existing topics/evidence after checking concept candidates. Removed global topic dismissal on shift starts and pool-window changes (actual reassignment still clears stale topics). Enabled pointer-threshold drag and arrow close/navigation. Updated source, tests, and seven development documents.
 
@@ -1374,7 +1374,7 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 
 **Context/source:** Current conversation and Babuni’s explicitly supplied local asset. **I noticed:** Right-side shifting in both directions now looked smooth. Dragging closed the bloom, reopening and surrounding motion felt natural, and selecting moving tiles or closing waited correctly. This is the human’s desktop acceptance feedback, not a claim of exhaustive testing.
 
-**I asked for:** Signal queued actions with a pulse while the shift finishes. Replace the BABUNI.DEV colored portal with their own supplied PNG, showing the square artwork through a circular opening. At that point, I supplied the exact file location after the new folder was not initially visible in this checkout.
+**My request:** Signal queued actions with a pulse while the shift finishes. Replace the BABUNI.DEV colored portal with my supplied PNG, showing the square artwork through a circular opening. At that point, I supplied the exact file location after the new folder was not initially visible in this checkout.
 
 **AI contribution:** Added `.grid-tile--waiting` and per-control busy state from existing selection/close queues. The gold outline’s opacity pulses over an AI-chosen 1600 ms cycle; the tile’s position, scale, shift clock and existing movement behavior are untouched. Reduced-motion CSS leaves a steady outline. Inspected and copied `PortalContentBabuniDev.png` unchanged into public portal assets, rendered only for semantic ID `babuni-dev`, with circular overflow clipping and a rim above the image. Reassignment clears previous portal children to prevent artwork leaking to another project.
 
@@ -1446,7 +1446,7 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 ## 2026-10-26 — Button Game portal artwork
 
-**I asked for:** Supplied the Button Game logo in the advised portal-content folder and showed its location. **AI implemented:** Copied the PNG unchanged and connected it through an optional project catalog artwork URL, also migrating the existing BABUNI.DEV URL to that field. **Alternatives:** Kept explicit assignment rather than automatic filename discovery, to avoid accidentally publishing unassigned assets. **Verification:** See checks below; existing portal mask, dimensions and interaction timing are retained. Logo supply is attributed to Babuni; no claim about its original production method is made.
+**My request:** Supplied the Button Game logo in the advised portal-content folder and showed its location. **AI implemented:** Copied the PNG unchanged and connected it through an optional project catalog artwork URL, also migrating the existing BABUNI.DEV URL to that field. **Alternatives:** Kept explicit assignment rather than automatic filename discovery, to avoid accidentally publishing unassigned assets. **Verification:** See checks below; existing portal mask, dimensions and interaction timing are retained. Logo supply is attributed to Babuni; no claim about its original production method is made.
 
 **Tested:** All 11 test files pass (`npm run test:grid`); `npm run build` and `git diff --check` pass. Supplied PNG inspected directly and copied byte-for-byte. **Open:** Browser preview connection failed with transport closed before response; the rendered circular crop has not been visually verified in this change. No new phone test claimed.
 
@@ -1484,7 +1484,7 @@ Phone-sized browser evidence (mouse input, not a native phone): 390×844 module 
 
 ## 2026-10-26 — Big bloom grows inside the living grid
 
-**Context/source:** Babuni’s current screenshot and spoken design revision. **I asked for:** Remove the big-bloom bar and persistent instructions. Big bloom should stay within the living grid, with surrounding tiles making physical space and continuing to shift outside it. Each module should occupy four tile areas. The chosen preview should transition to a central module; the original project tile should remain at original size in that module’s bottom-left quarter, opposite Read more, and back out one step. Reveal from the top in the website’s clockwise spiral; modules beyond nine extend down. Show more source information in big previews.
+**Context/source:** Babuni’s current screenshot and spoken design revision. **My request:** Remove the big-bloom bar and persistent instructions. Big bloom should stay within the living grid, with surrounding tiles making physical space and continuing to shift outside it. Each module should occupy four tile areas. The chosen preview should transition to a central module; the original project tile should remain at original size in that module’s bottom-left quarter, opposite Read more, and back out one step. Reveal from the top in the website’s clockwise spiral; modules beyond nine extend down. Show more source information in big previews.
 
 **Iteration/decision:** Babuni first considered an original-size top-corner tile, then revised its location to the central module’s lower-left corner during the same request. AI followed the final placement. The earlier project-only modal canvas, top-left shrunken portal and independent pan camera are superseded. Random content assignment is retained, but spatial reveal is now ordered clockwise as explicitly requested. A small question-mark help tooltip is optional guidance, not a header.
 
@@ -1506,7 +1506,7 @@ Phone-sized browser (mouse input, not native-device acceptance): at 390×844, me
 
 ## 2026-10-26 — Four additional portal images
 
-**I asked for:** Connect four newly supplied portal images, identified in their folder screenshot. **AI implemented:** Copied FavorCraft.png, FlourishForever.png, ResistForever.png and SocialForever.png unchanged from the local portal-content folder and assigned them to their stable project IDs. **Alternatives/decision:** Reused explicit catalog assignment and the existing circular mask; no automatic filename discovery or asset editing was needed. Supply is credited to Babuni, without asserting the images’ original production method. **Verification:** Results below. Interaction timing, portal size and bloom geometry remain unchanged.
+**My request:** Connect four newly supplied portal images, identified in my folder screenshot. **AI implemented:** Copied FavorCraft.png, FlourishForever.png, ResistForever.png and SocialForever.png unchanged from the local portal-content folder and assigned them to their stable project IDs. **Alternatives/decision:** Reused explicit catalog assignment and the existing circular mask; no automatic filename discovery or asset editing was needed. Supply is credited to Babuni, without asserting the images’ original production method. **Verification:** Results below. Interaction timing, portal size and bloom geometry remain unchanged.
 
 **Tested:** All 12 test files, production build and whitespace checks pass. Each new asset is a 1254×1254 PNG; SHA-256 comparison confirms the copied file matches the supplied source exactly. Browser rendering is checked in the local testing handoff; no new native-phone acceptance is claimed.
 
@@ -1514,7 +1514,7 @@ Phone-sized browser (mouse input, not native-device acceptance): at 390×844, me
 
 ## 2026-10-26 — Stronger action and waiting feedback
 
-**I reported:** The current design looks and feels good. **I asked for:** Stronger immediate tile/button acknowledgement, a more conspicuous waiting/preparation glow and a slightly faster pulse, especially when switching blooms feels unresponsive. Also asked for a focused testing checklist and the next milestone.
+**I reported:** The current design looks and feels good. **My request:** Stronger immediate tile/button acknowledgement, a more conspicuous waiting/preparation glow and a slightly faster pulse, especially when switching blooms feels unresponsive. Also asked for a focused testing checklist and the next milestone.
 
 **AI implemented:** Stronger gold outline/halo, 1400 ms opacity pulses (previously 1600 ms), steady reduced-motion feedback, a 240 ms press highlight for pointer/Enter/Space, and persistent busy feedback on the Read more button that queued a depth change. The pending button clears when the action begins, is replaced or cancelled. The original tile now indicates centering and preparation, not only a running-shift wait. CSS affects colors/opacity/shadows, not tile scale or layout.
 
@@ -1546,7 +1546,7 @@ Phone-sized browser (mouse input, not native-device acceptance): at 390×844, me
 
 ## 2026-10-25 — Retrospective: Development environment and source of truth
 
-**My direction.** Development should be possible through cloud agents connected to GitHub, then pulled to Nobara Linux for local testing; local Ollama agents may be used later. Babuni wants project history itself to become portfolio content.
+**My direction.** Development should be possible through cloud agents connected to GitHub, then pulled to Nobara Linux for local testing; local Ollama agents may be used later. Project history itself should to become portfolio content.
 
 **Actions reported by Babuni.dev.** Public GitHub repository babunidev/I was created and cloned. Node.js 24 and npm were installed; Astro 7.4.2 was initialized locally and served successfully at localhost:4321. New Astro files were staged, but the first local commit was initially blocked by missing Git author identity.
 
@@ -1557,7 +1557,7 @@ Phone-sized browser (mouse input, not native-device acceptance): at 390×844, me
 
 ## 2026-10-25 — Documentation as the work, not paperwork
 
-**My direction.** I asked for high-quality concept, journal, changelog, decisions, design, architecture, and content documentation. Crucially, they required the journal to record *their involvement*: what they were trying to communicate to AI, what AI did with it, which decisions they made, and how that shaped the feature. Project-related conversations should inform the narrative, without requiring a verbatim transcript.
+**My direction.** I asked for high-quality concept, journal, changelog, decisions, design, architecture, and content documentation. Crucially, I wanted the journal to record *my involvement*: what I was trying to communicate to AI, what AI did with it, which decisions they made, and how that shaped the feature. Project-related conversations should inform the narrative, without requiring a verbatim transcript.
 
 **AI contribution.** The assistant proposed separate documents and an attribution model: Babuni direction, agent proposal, decision, implementation, and verification.
 
@@ -1593,7 +1593,7 @@ Phone-sized browser (mouse input, not native-device acceptance): at 390×844, me
 
 ## 2026-10-24–25 — Retrospective: Stone portal identity and bloom geometry
 
-**My direction.** Each project should occupy a stylized stone tile with an engraved title and a recessed, colorful portal at its center. Babuni moved away from detailed Aztec-inspired textures toward original, cleaner project-specific engravings. The four lights on the portal frame should spawn *informational* holographic bubbles, not buttons or shortcuts. Bubbles occasionally pop up independently, show individually on point hover, and collectively after lingering on the tile.
+**My direction.** Each project should occupy a stylized stone tile with an engraved title and a recessed, colorful portal at its center. I moved away from detailed Aztec-inspired textures toward original, cleaner project-specific engravings. The four lights on the portal frame should spawn *informational* holographic bubbles, not buttons or shortcuts. Bubbles occasionally pop up independently, show individually on point hover, and collectively after lingering on the tile.
 
 **AI contribution.** A sequence of visual concepts explored portal treatments, callouts, dense grids, and expanded projects. Some generated images mistakenly used bubbles as navigation or let the bloom float above tiles.
 
