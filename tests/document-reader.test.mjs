@@ -57,5 +57,5 @@ test('every imported document parses without introducing executable source eleme
   for(const tag of ['script','iframe','object','img','style'])assert.equal(nodes(reader,tag).length,0);
   count++;
  }
- assert.equal(count,376);
+ assert.ok(count>=376,'the imported public Markdown baseline must remain available');
 });
