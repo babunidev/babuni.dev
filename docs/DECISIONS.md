@@ -859,3 +859,12 @@ The new repository supplied for this same project is **RoarGuildAddonWrath**. Th
 ## 2026-11-01 — Do not announce a hypothetical wait
 
 The header correction I requested is conditional feedback: an ordinary shift should describe the shift, while an actual queued transition should say it is waiting. AI removed the unconditional appended explanation instead of changing when shifts finish or how transitions queue. Existing waiting messages and shift/wait emphasis remain. The earlier always-explain interpretation is superseded by this clarification.
+
+
+## 2026-11-01 — Reuse a departing identity when the grid is full
+
+**Babuni.dev observation:** a possible project-identity change immediately after a shift, following catalog additions/removals. The report remains a visual observation, not a confirmed reproduction of the exact event.
+
+**AI diagnosis and implementation:** when every real and neutral identity is already visible, prefer the uniquely departing project's identity for the incoming stone instead of introducing a persistent duplicate of a continuing visible project. A departing identity is eligible only if it is not still represented by another continuing visible tile, is not pinned, and is not already reused for another simultaneous entrance.
+
+**Boundary:** the existing 42-project catalog, three neutral identities, shift duration, movement, and bloom layout remain unchanged. When the viewport has more visible stones than identity capacity, some real-project repetition remains unavoidable; this correction does not claim otherwise. Automated regression and live-browser verification are distinct.
