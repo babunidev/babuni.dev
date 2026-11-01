@@ -119,3 +119,11 @@ Babuni.dev requested on 2026-10-27 that browser test screenshots be added to the
 - **Keep documentation work bounded:** A documentation-only review must not modify website content, application code, generated snapshots, or media unless separately requested. Record actual documentation changes in the changelog and the context in the journal where meaningful.
 - **Separate code, CI, and live-site evidence:** A commit is not a successful test, a test is not physical-device acceptance, and source changes are not proof of deployment. The 2026-10-31 hosting and HTTPS checks describe the deployed release at that time, not necessarily the latest `main` state.
 - **Safe rendering and rights:** Keep Markdown rendering protections, source-relative links, credits, and rights intact. Do not silently make imported Markdown executable or alter original art.
+
+## Testing a changing portfolio
+
+The site is statically generated, but its content is intentionally evolving. Imported Markdown, repository commits, project titles, descriptions, statuses, media, the number of projects, and the number of documents are **not permanent contracts**. Do not hardcode exact wording, expected revisions, historical names, or inventory totals in routine tests. Use small, explicitly fictional fixtures when testing text processing, migration behavior, or a particular format.
+
+Tests should verify stable behavior and safety: unique and valid identities, current mapping-to-snapshot consistency, accurate source attribution, public-only imports, safe Markdown and links, accessible assets, content loading, search, and the grid's interaction rules. Use the current catalog as data, not as an approval list frozen at one date. A creative's editorial choices must not be rejected by a test expecting yesterday's content.
+
+Keep intentional interface and animation decisions under test until the creative revises them. Editorial inconsistencies between a curated summary and an upstream README belong to a content review, not to a blocking assertion against a fixed phrase. Run content validation, tests, and the build against the current imported snapshots before publication.

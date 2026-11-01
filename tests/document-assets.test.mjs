@@ -21,7 +21,7 @@ test('on-demand bundle manifest includes only connected public source documents'
   for(const c of Object.values(connections)){
     if(c.status!=='connected')assert.equal(index[c.repository],undefined);
   }
-  assert.ok(assets.size>200,'expect the checked-in public documentation set');
+  assert.ok(assets.size>0,'connected sources must produce at least one document');
   for(const [name,body] of assets){
     assert.equal(fromRoot('public/_project-docs/'+name),body);
     assert.ok(body.trim());

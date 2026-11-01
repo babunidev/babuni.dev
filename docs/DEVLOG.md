@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-01 — Letting the content change
+
+After a routine repository sync failed tests because project documentation had evolved, I questioned why a living portfolio required yesterday’s prose and commit IDs to remain unchanged. The problem was in the tests, not in the creative decisions behind those updates. At my request, AI replaced content-specific assertions with checks for structure, source integrity and behavior, using artificial examples where exact text matters. A review branch now contains those changes; its full test results and integration are still pending.
+
 ## 2026-11-01 — The internal name catches up
 
 Although the portfolio title and repository had become **Amberbrew Story**, the catalog still used the old internal identifier. The local test checkout also remained on an older commit because three changed files prevented Git's fast-forward pull, so its browser showed the earlier title and no folder collection.

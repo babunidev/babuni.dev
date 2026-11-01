@@ -7,28 +7,29 @@ import {sourceCell,seededRandom} from '../src/lib/grid-shifts.ts';
 import {shiftAvoidsBloom} from '../src/lib/grid-focus.ts';
 const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url)));
 const resolve=m=>({...m,body:m.document?readFileSync(new URL('../'+m.document,import.meta.url),'utf8'):m.body});
-const own=catalog['babuni-dev'].map(resolve),button=catalog['button-game'].map(resolve);
-test('real content has more than eight own modules, exactly five Button Game modules, no broken assets',()=>{
- assert.ok(own.filter(moduleHasContent).length>8);
- assert.equal(button.filter(moduleHasContent).length,5);
- assert.ok(button.some(m=>!moduleHasContent(m)));
- for(const modules of [own,button]){
-  assert.equal(new Set(modules.map(m=>m.id)).size,modules.length);
+const fixture=Array.from({length:12},(_,i)=>({id:'example-'+i,type:'text',title:'Example '+i,preview:'Preview '+i,body:'Body '+i}));
+const shortFixture=fixture.slice(0,5);
+test('current catalog maintains unique module IDs and existing local media assets',()=>{
+ for(const [projectId,raw] of Object.entries(catalog)){
+  const modules=raw.map(resolve);
+  assert.equal(new Set(modules.map(m=>m.id)).size,modules.length,projectId);
   for(const m of modules){
-   for(const image of m.images??[])assert.ok(existsSync(new URL('../public'+image.src,import.meta.url)));
-   for(const src of videosForModule(m).flatMap(video=>[video.src,video.poster]).filter(Boolean))assert.ok(existsSync(new URL('../public'+src,import.meta.url)));
+   for(const image of m.images??[])assert.ok(existsSync(new URL('../public'+image.src,import.meta.url)),projectId);
+   for(const src of videosForModule(m).flatMap(video=>[video.src,video.poster]).filter(Boolean))assert.ok(existsSync(new URL('../public'+src,import.meta.url)),projectId);
   }
  }
 });
-test('sample populated modules without replacement; omit empty types and randomize subsets',()=>{
+test('sample populated modules without replacement across varying content sizes',()=>{
  const selections=new Set();
  for(let seed=0;seed<40;seed++){
-  const picked=selectModules(own,seededRandom(seed*99991+83));
+  const picked=selectModules(fixture,seededRandom(seed*99991+83));
   assert.equal(picked.length,8);assert.equal(new Set(picked.map(m=>m.id)).size,8);
   assert.ok(picked.every(moduleHasContent));selections.add(picked.map(m=>m.id).sort().join(','));
-  const five=selectModules(button,seededRandom(seed*99991+83));assert.equal(five.length,5);assert.ok(five.every(moduleHasContent));
+  const short=selectModules(shortFixture,seededRandom(seed*99991+83));
+  assert.equal(short.length,shortFixture.length);assert.ok(short.every(moduleHasContent));
  }
  assert.ok(selections.size>5);
+ assert.equal(selectModules([],seededRandom(1)).length,0);
  const plan=moduleRevealPlan([1,2,3,4,5,6,7,8],seededRandom(4));
  assert.equal(plan[0].delay,0);assert.equal(new Set(plan.map(r=>r.item)).size,8);
  for(let i=1;i<plan.length;i++)assert.ok(plan[i].delay-plan[i-1].delay>=260&&plan[i].delay-plan[i-1].delay<=420);
@@ -68,9 +69,7 @@ test('external embeds must be explicit HTTPS player URLs',()=>{
  assert.equal(moduleHasContent({type:'video',video:{embed:'javascript:bad'}}),false);
 });
 
-test('one Videos module houses the four supplied recordings',()=>{
- const modules=own.filter(m=>m.type==='video');assert.equal(modules.length,1);
- assert.equal(videosForModule(modules[0]).length,4);
+test('video modules accept safe embeds and reject empty collections',()=>{
  assert.ok(moduleHasContent({type:'video',videos:[{title:'Embedded',embed:'https://www.youtube-nocookie.com/embed/abc'}]}));
  assert.equal(moduleHasContent({type:'video',videos:[]}),false);
 });

@@ -4,32 +4,21 @@ import {demoProjects,DEMO_PROJECT_COUNT} from '../src/lib/demo-projects.ts';
 import {gridWindow} from '../src/lib/grid-math.ts';
 import {ProjectPlacement,visibleCellBounds,spiralIndex} from '../src/lib/project-placement.ts';
 
-test('exactly 42 retained project entries have unique provisional IDs and summaries',()=>{
-  assert.equal(DEMO_PROJECT_COUNT,42);
-  assert.equal(demoProjects.length,42);
-  assert.equal(demoProjects[0].name,'BABUNI.DEV');
-  assert.deepEqual(demoProjects.slice(1,5).map(x=>x.name),[
-    'Button Game','SocialForever','RoarForever','FlourishForever'
-  ]);
-  assert.equal(demoProjects.at(-1).name,'GuildChatBridge');
-  const story=demoProjects.find(project=>project.id==='amberbrew-story');
-  assert.equal(story?.name,'Amberbrew Story');
-  assert.equal(story?.id,'amberbrew-story');
-  assert.equal(story?.portalArtwork,'/portal-content/BuxbrewCharacter.webp');
-  assert.equal(demoProjects.filter(project=>project.name==='Amberbrew Story').length,1);
-  assert.ok(!demoProjects.some(project=>project.name==='Buxbrew — character story'));
-  assert.equal(new Set(demoProjects.map(x=>x.id)).size,42);
-  assert.equal(new Set(demoProjects.map(x=>x.name)).size,42);
-  assert.ok(demoProjects.every(x=>x.id&&x.shortSummary&&x.evidence&&x.tint));
-  assert.ok(demoProjects.every(x=>!/^PROJECT \d+$/.test(x.name)));
+test('project inventory has valid unique identities without freezing its size or prose',()=>{
+ assert.equal(DEMO_PROJECT_COUNT,demoProjects.length);
+ assert.ok(demoProjects.length>0);
+ assert.equal(demoProjects[0].id,'babuni-dev');
+ assert.equal(new Set(demoProjects.map(p=>p.id)).size,demoProjects.length);
+ assert.equal(new Set(demoProjects.map(p=>p.name)).size,demoProjects.length);
+ for(const p of demoProjects){
+  assert.match(p.id,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+  assert.ok(typeof p.name==='string'&&p.name.trim());
+  assert.ok(typeof p.shortSummary==='string'&&p.shortSummary.trim());
+  assert.ok(p.evidence&&p.tint);
+ }
 });
-test('candidate descriptions and evidence are snapshots of the provisional inventory',()=>{
-  assert.match(demoProjects[1].shortSummary,/Android reaction game/);
-  assert.equal(demoProjects[1].evidence,'repo');
-  assert.equal(demoProjects.find(p=>p.id==='buxbrewding').evidence,'repo');
-  assert.equal(demoProjects.find(p=>p.id==='morkahjaworld').evidence,'human-confirmed');
-});
-test('initial desktop fills 45 visible cells with the retained library in spiral order',()=>{
+
+test('desktop spiral places the current catalog without fixed editorial positions',()=>{
  const width=1920,height=1080,tileSize=240;
  const window=gridWindow({width,height,tileSize,panX:0,panY:0,bufferCells:2});
  const b=visibleCellBounds(width,height,tileSize,window.originX,window.originY);
@@ -39,22 +28,12 @@ test('initial desktop fills 45 visible cells with the retained library in spiral
    const cell={column,row};retained.push(cell);
    if(column>=b.firstColumn&&column<=b.lastColumn&&row>=b.firstRow&&row<=b.lastRow)visible.push(cell);
   }
- assert.equal(visible.length,45);
+ assert.equal(visible.length,45); // Geometry of this viewport, not a project count.
  const planner=new ProjectPlacement(demoProjects.length,3);
  planner.sync(visible,retained);
- const names=visible.map(cell=>demoProjects[planner.get(cell)]?.name);
- assert.equal(new Set(names.filter(Boolean)).size,Math.min(visible.length,demoProjects.length));
- assert.equal(demoProjects[planner.get({column:0,row:0})].name,'BABUNI.DEV');
- assert.equal(demoProjects[planner.get({column:0,row:-1})].name,'Button Game');
- assert.equal(demoProjects[planner.get({column:1,row:-1})].name,'SocialForever');
- assert.equal(demoProjects[planner.get({column:0,row:-2})].name,'FavorCraft');
- assert.deepEqual(visible
-   .slice().sort((a,b)=>spiralIndex(a.column,a.row)-spiralIndex(b.column,b.row))
-   .map(cell=>planner.get(cell)),Array.from({length:45},(_,i)=>i<(DEMO_PROJECT_COUNT+3)?i:i-(DEMO_PROJECT_COUNT+3)));
-});
-
-test('human-withdrawn entries are absent and BABUNI keeps the collaboration documents',()=>{
- for(const id of ['wow-forever-talent-design-atlas','redridge-recipe-planner','human-ai-development-journal','morkahja-world-and-peoples','the-amberbrew-family','practical-templates-creator','warehouse-performance-model','dual-pc-streaming-setup','mech-arena','local-prompt-lab','morkahja-admin-console','fantasy-rpg-assets','fantasy-architecture','analubia'])assert.equal(demoProjects.some(p=>p.id===id),false);
- assert.equal(demoProjects.filter(p=>p.id==='morkahjaworld').length,1);
- assert.match(demoProjects.find(p=>p.id==='morkahjaworld').shortSummary,/Worldbuilding/);
+ const ids=visible.map(cell=>planner.get(cell)).filter(x=>x!==undefined&&x<demoProjects.length);
+ assert.equal(new Set(ids).size,Math.min(visible.length,demoProjects.length));
+ assert.equal(planner.get({column:0,row:0}),0);
+ assert.deepEqual(visible.slice().sort((a,b)=>spiralIndex(a.column,a.row)-spiralIndex(b.column,b.row)).map(cell=>planner.get(cell)),
+  Array.from({length:visible.length},(_,i)=>i<(DEMO_PROJECT_COUNT+3)?i:i-(DEMO_PROJECT_COUNT+3)));
 });
