@@ -847,3 +847,7 @@ The supplied RoarGuildAddon repository is the source I want for the existing **R
 ## 2026-11-01 — Keep RoarSoundEffects as the same sound project
 
 The supplied RoarSoundEffects repository is the replacement I requested for ROARSounds. AI used stable ID `roarsounds` and kept ROARsounds.webp rather than adding a duplicate or merging it with the other ROAR-family projects. Imported historical names stay intact. This decision updates portfolio naming and source selection, not runtime behavior or ownership of game sound assets.
+
+## 2026-11-01 — Preserve EmoteTrigger’s project boundary
+
+The supplied EmoteTrigger repository is the replacement I requested for ROARemoteTrigger. AI applied the name/source update to stable ID `roaremotetrigger`, preserving ROARRemoteTrigger.webp instead of creating a duplicate. Historical ROARTrigger files, /rogu and ROGUDB remain in imported source text. The separate RoarGuild Add-on keeps its own record and features; this is a portfolio rename, not a runtime migration.

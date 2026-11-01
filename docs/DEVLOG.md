@@ -1396,3 +1396,11 @@ For the sound project, I supplied the new **RoarSoundEffects** repository. After
 At my request, AI changed the existing project’s title and connection, imported ten source documents and retained its image and identity. Its summary and nine keywords describe recognized emote events and playback of existing game sounds. The source note distinguishes the new repository name from the historical installed ROAR package. No game audio was downloaded or bundled, and no client playback test is implied. The new source is included in the next full activity/build verification.
 
 AI verified ten imported documents at public RoarSoundEffects revision `4cbbbffb8c29147d486cbe5940fed0120557a31f`. Content validation, all 206 tests, authenticated refresh of 36/36 activity dates and the production build passed, including 442 public URL checks. The successful full refresh supersedes the earlier local failure on the old ROARSounds URL. No unrelated source snapshot, artwork or addon runtime was changed; no new browser screenshot or physical-device acceptance is claimed.
+
+## 2026-11-01 — ROARemoteTrigger becomes EmoteTrigger
+
+For the Wrath-targeted addon, I supplied **EmoteTrigger** as the new repository for ROARemoteTrigger. Its source distinguishes the repository name from the installed ROARTrigger package and `/rogu` commands.
+
+At my request, AI replaced the portfolio title and source connection, refreshed the ten standard documents, and retained the tile’s identity and artwork. The summary and nine keywords now describe its action-slot emotes and character profiles. RoarGuild Add-on remains separate; shared historical names do not import its Roarboard feature into this project. No installation files, gameplay behavior or compatibility claim was changed.
+
+AI verified ten imported documents at public EmoteTrigger revision `8baacd102fab406910e39f72ff8e8d99ecbac141`. Content validation, all 207 tests, authenticated refresh of 36/36 activity dates and the production build passed, including 442 public URL checks. These are portfolio checks, not a new game-client test. No unrelated snapshot, artwork or addon runtime was changed; no new browser screenshot or physical-device acceptance is claimed.

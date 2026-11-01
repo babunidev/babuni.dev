@@ -295,3 +295,16 @@ test('RoarSoundEffects replaces ROARSounds without changing its artwork or other
  const source=composeProjectModules(catalog.roarsounds,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
  assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/RoarSoundEffects']);
 });
+
+
+test('EmoteTrigger replaces ROARemoteTrigger while retaining artwork and its separate Wrath scope',()=>{
+ const project=demoProjects.find(p=>p.id==='roaremotetrigger');
+ assert.equal(project.name,'EmoteTrigger');assert.equal(project.portalArtwork,'/portal-content/ROARRemoteTrigger.webp');
+ assert.match(project.shortSummary,/Wrath 3.3.5/);assert.ok(!demoProjects.some(p=>p.name==='ROARemoteTrigger'));
+ assert.equal(connections.roarguild.repository,'babunidev/RoarGuildAddon');
+ const c=connections.roaremotetrigger;assert.equal(c.repository,'babunidev/EmoteTrigger');
+ assert.equal(snapshots['babunidev/ROARemoteTrigger'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const source=composeProjectModules(catalog.roaremotetrigger,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/EmoteTrigger']);
+});

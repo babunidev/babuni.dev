@@ -272,15 +272,15 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
 ],
   "roaremotetrigger": [
     "World of Warcraft add-on",
-    "Roleplay emotes",
-    "Wrath client",
-    "Battle triggers",
-    "Character expression",
-    "Lua",
-    "Player actions",
-    "Roleplay tools",
-    "Game interface"
-  ],
+    "Wrath 3.3.5",
+    "Action-bar slots",
+    "Native emotes",
+    "Chance controls",
+    "Cooldown controls",
+    "Character profiles",
+    "Guild messages",
+    "Lua"
+],
   "roar": [
     "World of Warcraft add-on",
     "Battle emotes",

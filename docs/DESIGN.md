@@ -765,3 +765,7 @@ Keep the existing RoarGuild Add-on title and image while connecting the new repo
 ## 2026-11-01 — RoarSoundEffects title
 
 RoarSoundEffects replaces ROARSounds in the grid and finder. Existing ROARsounds.webp, stable identity and WoW grouping remain. Its nine-keyword pool describes the sound project and retains the guaranteed add-on cue. No layout, motion, timing or bloom changes accompany this source rename.
+
+## 2026-11-01 — EmoteTrigger title
+
+EmoteTrigger replaces ROARemoteTrigger in the tile and finder, retaining ROARRemoteTrigger.webp and stable identity. Nine keywords retain the mandatory add-on cue and describe the documented Wrath-targeted scope. No positioning, timing, motion or bloom changes accompany the rename.

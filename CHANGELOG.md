@@ -1001,3 +1001,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Renamed ROARSounds to RoarSoundEffects and connected its renamed public repository and ten standard documents. Existing tile identity and ROARsounds.webp remain; summary and nine keywords describe the documented game-sound playback scope.
+
+## 2026-11-01
+
+### Changed
+- Renamed ROARemoteTrigger to EmoteTrigger and connected its renamed public repository and ten standard documents. Existing artwork and identity remain; summary and nine keywords reflect its Wrath-targeted emote/profile scope.

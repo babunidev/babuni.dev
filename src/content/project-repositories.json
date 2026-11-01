@@ -121,8 +121,9 @@
   },
   "roaremotetrigger": {
     "status": "connected",
-    "repository": "babunidev/ROARemoteTrigger",
-    "branch": "main"
+    "repository": "babunidev/EmoteTrigger",
+    "branch": "main",
+    "note": "Renamed EmoteTrigger at Babuni.dev’s request on 2026-11-01. Stable ID and ROARRemoteTrigger.webp retained. Installed ROARTrigger files, /rogu and ROGUDB remain historical identifiers; separate from RoarGuild Add-on."
   },
   "roar": {
     "status": "connected",

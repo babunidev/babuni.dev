@@ -762,3 +762,9 @@ The addon and Roar Guild community remain separate projects. This update does no
 - [x] Connect RoarSoundEffects in place of ROARSounds, preserving artwork and identity.
 
 The portfolio update does not verify in-game playback or change audio redistribution rights.
+
+## 2026-11-01 — EmoteTrigger rename
+
+- [x] Replace ROARemoteTrigger with the supplied EmoteTrigger source, preserving identity and art.
+
+Historical installed names and live-client compatibility are not changed by this portfolio update.

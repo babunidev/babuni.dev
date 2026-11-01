@@ -178,3 +178,7 @@ At Babuni.dev’s request, the RoarGuild Add-on entry now connects to RoarGuildA
 ## 2026-11-01 — ROARSounds renamed
 
 At Babuni.dev’s request, stable ID `roarsounds` displays RoarSoundEffects and uses the renamed public repository. ROARsounds.webp remains its artwork. Its historical installed ROAR package name does not merge it with Battle Emotes Legacy, Battle Emotes or the other ROAR-family projects.
+
+## 2026-11-01 — ROARemoteTrigger renamed
+
+At Babuni.dev’s request, stable ID `roaremotetrigger` now displays EmoteTrigger and connects to the renamed public repository. ROARRemoteTrigger.webp remains its artwork. Historical installed ROARTrigger identifiers are distinct from both the repository name and the separate RoarGuild Add-on project.

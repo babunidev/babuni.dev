@@ -633,3 +633,7 @@ Babuni.dev supplied the renamed public source. Its documents describe configurab
 ## 2026-11-01 — RoarSoundEffects source context
 
 Babuni.dev supplied the renamed public repository. Its documents describe emote recognition, race/sex-based sound selection and game-provided sound paths, rather than authored or bundled audio. These subjects inform the summary and nine keywords. Historical installed ROAR names, interface declarations and playback limitations remain in the source record; no live-client compatibility is inferred.
+
+## 2026-11-01 — EmoteTrigger source scope
+
+Babuni.dev supplied the renamed public source. The summary and nine keywords reflect its Wrath 3.3.5-targeted action-slot emotes, chance/cooldown controls and character profiles. Imported documents retain historical ROARTrigger package names and state that this implementation does not contain Roarboard. Current compatibility remains source-declared rather than newly tested in-game.
