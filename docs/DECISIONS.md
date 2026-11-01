@@ -898,3 +898,11 @@ The existing public `BuxbrewCharacterStory` repository has been renamed to `Ambe
 **Creative decision:** both the public title and the internal portfolio ID must be **Amberbrew Story** / `amberbrew-story`, matching the renamed `babunidev/AmberbrewStory` repository. The earlier decision to retain `buxbrew-character-story` is superseded by this explicit clarification, not silently rewritten.
 
 **AI implementation:** migrated the catalog's existing entry, source-connection key, menu membership, topic pool key and tests without creating a second project. The portal artwork, position, original 40 Markdown documents, and nine document-list modules are preserved. Canonical generated module and project URLs now use the new ID. Local and VPS checkouts require an actual Git update before visitors can see this change.
+
+## 2026-11-01 — Tests should not freeze editorial content
+
+**Status: Accepted.** The creative rejected tests that prevented routine repository documentation updates by expecting fixed words, commit hashes, project counts, titles or other mutable content. The accepted boundary is to test parsing, safety, source integrity, grid behavior and accessibility without deciding editorial choices.
+
+**Alternative considered:** update test expectations after every documentation sync. Rejected because it makes changing prose require code edits and obscures real regressions.
+
+**AI implementation:** refactored content-sensitive tests toward current-data validation and synthetic fixtures, keeping checks for public-only sources, links, safe document rendering and intentional interaction behavior. **Verification:** changes are committed on a separate review branch; complete local tests and deployment remain unverified until the branch is integrated and tested.
