@@ -1433,3 +1433,10 @@ AI connected the existing Buxbrew project to the new public repository, imported
 With the character archive established, the repository became `AmberbrewStory`, the name I chose for this part of the website's source collection. The character and her stories have not been replaced; this is a repository rename.
 
 AI verified that GitHub retained the same repository identity, then updated the website's public source mapping and the forty pinned Markdown documents without changing their text. The nine folder modules, Buxbrew's existing tile, and the reader's structure remain in place. Automated checks belong to the linked GitHub Actions run; this repository change does not itself publish a new VPS release.
+
+## 2026-11-01 — Amberbrew Story becomes the website name
+
+After changing the family archive's GitHub repository to `AmberbrewStory`, the website still showed the older Buxbrew character-story title. The intention was to rename the project visitors actually see, not merely its source connection.
+
+AI corrected the existing project's display name to **Amberbrew Story** in the catalog, which supplies the grid tile, project menu and public pages. The portal topic text and repository report followed the new name. The internal project ID, original artwork and nine document folders remain unchanged, preserving their relationships and existing navigation rather than creating another tile.
+
