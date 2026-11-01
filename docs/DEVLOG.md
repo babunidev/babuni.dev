@@ -122,7 +122,7 @@ AI verified the imported ten-document source at public revision `49445f01dae4b1f
 
 **Verification:** Regression checks cover the new display/source, historical artwork identity, absence of the old source snapshot and imported documentation. Content validation, full tests, authenticated activity and production build precede publication; no browser screenshot or physical-device/gameplay test is claimed for this metadata/source update.
 
-**Verification outcome:** The pinned public revision 2fcfade62a42462f45225c914e1392263ccbef6b contains ten standard documents and a README that explicitly confirms LevelUpAnnouncer. The first fetched preview reflected older README wording; the immutable snapshot contained the author’s newer first-person revision, so the regression expectation was corrected to that reviewed source. All 199 tests, content validation, authenticated 36/36 activity refresh and production build passed; 442 public URLs verified. No unrelated snapshot, artwork or addon runtime was changed.
+**Verification outcome:** The pinned public revision 2fcfade62a42462f45225c914e1392263ccbef6b contains ten standard documents and a README that explicitly confirms LevelUpAnnouncer. The first fetched preview reflected older README wording; the immutable snapshot contained my newer first-person revision, so the regression expectation was corrected to that reviewed source. All 199 tests, content validation, authenticated 36/36 activity refresh and production build passed; 442 public URLs verified. No unrelated snapshot, artwork or addon runtime was changed.
 
 ## 2026-11-01 — Amazin renamed to StealthEmotes
 
@@ -230,7 +230,7 @@ With the first static release already staged and locally checked, I added the `w
 
 ## 2026-10-30 — Launch-readiness and server-access audit
 
-**I asked:** check remaining launch gaps and explain direct agent/server access versus repeated manual server pulls/builds. **AI audit:** current source is clean; 37 test files, content validation, static production build and all 430 public URL/link checks passed. Current initial JS is about 120 KiB raw / 38 KiB gzip. Production dependency registry audit reported zero known advisories, not a complete security guarantee. No new browser/device or live VPS/load measurement performed. **Result:** code is ready for deployment preparation; SSH access, server-specific Nginx validation, DNS, HTTPS/renewal and live smoke/header/loading checks remain. Current CI tests/builds but does not deploy. **AI recommendation:** dedicated SSH deployment account and key, versioned static release upload and rollback, followed optionally by a manually triggered GitHub deployment workflow. These access/automation proposals are not configured or authorized as completed work. Existing Arcanite Brothers remains untouched. The local `.ssh` directory has no private key; no SSH session, key creation, new permissions or server change attempted. Update `deploy/README.md` with these distinctions and the current 41-project catalog count. Content curation and future visibility UI are not launch blockers for the already approved public catalog.
+**My request:** check remaining launch gaps and explain direct agent/server access versus repeated manual server pulls/builds. **AI audit:** current source is clean; 37 test files, content validation, static production build and all 430 public URL/link checks passed. Current initial JS is about 120 KiB raw / 38 KiB gzip. Production dependency registry audit reported zero known advisories, not a complete security guarantee. No new browser/device or live VPS/load measurement performed. **Result:** code is ready for deployment preparation; SSH access, server-specific Nginx validation, DNS, HTTPS/renewal and live smoke/header/loading checks remain. Current CI tests/builds but does not deploy. **AI recommendation:** dedicated SSH deployment account and key, versioned static release upload and rollback, followed optionally by a manually triggered GitHub deployment workflow. These access/automation proposals are not configured or authorized as completed work. Existing Arcanite Brothers remains untouched. The local `.ssh` directory has no private key; no SSH session, key creation, new permissions or server change attempted. Update `deploy/README.md` with these distinctions and the current 41-project catalog count. Content curation and future visibility UI are not launch blockers for the already approved public catalog.
 
 ## 2026-10-30 — Golden shift status in the header
 
@@ -528,7 +528,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 **My direction:** add Babuni Gaming as its own gaming/streaming and experience-sharing project, open to all games but currently focused on World of Warcraft. Include the supplied YouTube, CurseForge and Instagram profiles. Explain the relationship to some add-on work and Azeroth Moments without replacing those projects. Use the original cat from `Morningex1.jpg` exactly as supplied and convert it to WebP.
 
-**AI interpretation/proposal:** place it under Games because its remit extends beyond WoW; the existing WoW project group and individual projects stay intact. Provide three populated modules: Overview, Gaming and add-ons, Watch and follow. Summaries are AI editorial paraphrases of the human's description, with attribution, not scraped channel descriptions. No streaming platform, schedule, individual video embed or repository was invented. The previous Mighty Morkah gaming-video migration remains a human plan, not a completion claim.
+**AI interpretation/proposal:** place it under Games because its remit extends beyond WoW; the existing WoW project group and individual projects stay intact. Provide three populated modules: Overview, Gaming and add-ons, Watch and follow. Summaries are AI editorial paraphrases of my description, with attribution, not scraped channel descriptions. No streaming platform, schedule, individual video embed or repository was invented. The previous Mighty Morkah gaming-video migration remains a human plan, not a completion claim.
 
 **Execution:** stable ID `babuni-gaming`, public links copied exactly from the user, three concise topic labels, Games membership and explicit no-dedicated-repository note. Original JPEG retained outside public assets; lossless WebP conversion keeps all 1000×1000 decoded RGB pixels unchanged, verified by byte comparison of decoded image pixels. The source artwork is not cropped, retouched, regenerated or resized; the established round portal mask is the only display clipping. This is supplied human artwork, not AI art.
 
@@ -614,7 +614,7 @@ Browser at 1920×1080 confirmed 45 initial identities and an exact first-nine ce
 
 **Verification:** full test command passed 30 test-file entries, direct catalog suite 4/4 and repository suite 11/11 passed, production build/content guards and whitespace check passed. No new browser/phone capture or physical-device acceptance is claimed for this data-only follow-up.
 
-## 2026-10-28 — Babuni removes duplicates and non-projects
+## 2026-10-28 — Removing duplicates and non-projects
 
 **My direction:** remove the Talent Design Atlas because it was a playful gimmick rather than a substantive project; remove Redridge Recipe Planner as a duplicate/earlier representation of FavorCraft; remove the standalone Human–AI Development Journal only after verifying its material is already inside BABUNI.DEV; retain MorkahjaWorld as the worldbuilding project and remove duplicate World and Peoples; check for the supplied Arcanitebrothers banner. This is four independent tile removals, not five; the AI's initial commentary count was corrected.
 
@@ -972,7 +972,7 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 **Open:** Physical touch gestures, orientation handling, real-device media detection and full mobile readability still need my acceptance. No production deployment.
 
-## 2026-10-26 — Babuni unifies the tile hit target
+## 2026-10-26 — One interaction target for the whole tile
 
 **My direction and source:** Current direction: the entire tile should reveal bubbles and select the project; the portal should not be a separate button. The goal is easier, consistent interaction. **AI contribution:** Retained the full-face selection button, raised it above the decorative portal cluster and converted the portal button to an aria-hidden div. Moved topic hover/focus delegation to the shared tile control, guarded internal pointer changes, combined project/topics in its accessible label and removed portal-only touch-toggle bookkeeping. Border hits resolve through the enclosing tile.
 
@@ -996,11 +996,11 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 **Open:** No physical phone/tablet run, reduced-motion browser override, sustained recycling stress run or asset bandwidth benchmark. Existing reduced-motion CSS disables animations, but its visual acceptance remains unverified. No additional unit tests for these reversible presentation changes; existing suite plus direct browser state checks provide verification. No production deployment.
 
-## 2026-10-26 — Babuni rejects accelerated shift completion
+## 2026-10-26 — Why I rejected accelerated shift completion
 
 **Context/source:** Current explicit feedback, following `0e6b5fa` and later topic refinements. **I asked for/decided:** Shift speed is part of the accepted calm feel. Clicking/selecting must wait for normal shift completion before opening. AI should ask before changing established timing, positioning or other approved behavior. At that point, I also reported a right-side downward shift with an upward-looking glitch and authorized fading tiles/content as an alternative if displacement remained unreliable.
 
-**AI acknowledgement and contribution:** The agent had introduced ~520 ms remaining-shift completion without asking. It removed that override and made all selections wait through the original 4400 ms shift clock. Gold highlighting remains immediate. AGENTS.md now records the human's standing ask-before-changing instruction.
+**AI acknowledgement and contribution:** The agent had introduced ~520 ms remaining-shift completion without asking. It removed that override and made all selections wait through the original 4400 ms shift clock. Gold highlighting remains immediate. AGENTS.md now records my standing ask-before-changing instruction.
 
 **Investigation:** The visual occupancy mapping commits source identities into resting slots, but CSS still enabled a bloom transform transition whenever the bloom was open and not actively marked autoshifting. At commit, re-enabling that transition could animate a slot's reset transform back upward. AI scoped transitions to a dedicated opening phase and the existing closing phase; steady bloom and shift commits have no transform transition. Also corrected project visibility checks to use displaced visual cells.
 
@@ -1030,7 +1030,7 @@ For mobile-path verification, copied the built site to a temporary directory out
 
 **My direction and source:** Current feedback: choose a random first bubble, then reveal the remaining two in succession. **AI contribution:** Added `topicRevealPlan`, cumulative token-based visibility and cancellable reveal timers in `grid.ts`; replaced simultaneous CSS selectors. Duplicate events preserve the current sequence. AI chose 260–420 ms gaps and cumulative retention; these are interpretations awaiting feel/acceptance, not quoted human requirements. **Alternatives:** Simultaneous and fixed-order reveals fail the revised request; replacing previous bubbles was considered but cumulative wings were chosen. **Changed:** `project-topics.ts`, `grid.ts`, `index.astro`, topic tests and development docs. **Tested:** `npm run test:grid` passes nine files; `npm run build` passes. New deterministic coverage exercises all six permutations, each point once, immediate first reveal and bounded increasing delays. **Open:** Browser timing and cancellation checks, touch and final pacing approval; no deployment.
 
-## 2026-10-26 — Babuni releases bubbles from tile bounds
+## 2026-10-26 — Letting bubbles escape tile bounds
 
 **Context/source:** Current feedback following commit `0e6b5fa`. **I asked for/decided:** It is fine for bubbles to extend across the grid; let the right bubble overlap the next tile, anchor the left by its bottom-right corner to spread left, and let the top spread upward. This explicitly revises previous containment guidance. **AI contribution:** Updated CSS in `src/pages/index.astro`: content-sized bubbles with matching typography, left/right corner origins, centered upward top bubble, and raised topic-tile stacking. Updated CONCEPT and development documentation. **Alternatives:** Tile containment and narrower right text were discarded in response to the human correction; top centering and the 230 px / 70vw reading-width limit are AI aesthetic choices awaiting acceptance. **Tested:** `npm run build` and `npm run test:grid` pass (nine test files). Existing local preview on port 4322 at 1280×720 showed three open BABUNI.DEV topics; left/right extended across neighboring tiles and remained visible above their faces. Screenshot saved outside the repo as `topic-wings-preview.png`. No new automated tests for this CSS-only refinement. **Open:** Real phone checks, screen-edge clipping and final aesthetic approval. No deployment.
 
