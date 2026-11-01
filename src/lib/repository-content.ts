@@ -15,7 +15,7 @@ export const REPOSITORY_DOCUMENTS=[
   {path:'docs/CONTENT.md',id:'content',title:'Content'},
 ] as const;
 /** The Buxbrew story's public lore folders are indexed, not individual bloom cards. */
-export const CHARACTER_STORY_REPOSITORY='babunidev/BuxbrewCharacterStory';
+export const CHARACTER_STORY_REPOSITORY='babunidev/AmberbrewStory';
 export const CHARACTER_STORY_FOLDERS=['assets','character','docs','family','journal','lore','places','relationships','stories'] as const;
 export const CHARACTER_STORY_ROOT_FILES=['AGENTS.md','CANON.md','TIMELINE.md','WRITING-GUIDE.md'] as const;
 export function characterStoryDocumentPath(path:string):boolean {
@@ -136,7 +136,7 @@ export function indexedCharacterStoryFolders(
  */
 export async function loadIndexedBody(url:string,fetcher:typeof fetch=fetch,signal?:AbortSignal):Promise<string>{
   const standard=/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/;
-  const story=/^\/_project-docs\/babunidev--BuxbrewCharacterStory\/(?:AGENTS|CANON|TIMELINE|WRITING-GUIDE|(?:assets|character|docs|family|journal|lore|places|relationships|stories)--[A-Za-z0-9_-]+(?:--[A-Za-z0-9_-]+)*)\.md$/;
+  const story=/^\/_project-docs\/babunidev--AmberbrewStory\/(?:AGENTS|CANON|TIMELINE|WRITING-GUIDE|(?:assets|character|docs|family|journal|lore|places|relationships|stories)--[A-Za-z0-9_-]+(?:--[A-Za-z0-9_-]+)*)\.md$/;
   if(!standard.test(url)&&!story.test(url))
     throw new Error('Invalid project document URL');
   const response=await fetcher(url,{signal});
