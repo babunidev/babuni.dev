@@ -1420,3 +1420,10 @@ During ordinary shifts, the header kept saying that opening would wait even when
 At my request, AI removed the explanatory sentence automatically appended to every row/column shift status. Existing queued-action messages already express the real wait and remain intact. The ordinary shift label and its gold emphasis stay; no motion, timing or transition logic changes were needed. Regression checks distinguish unqueued shifts from explicit waiting messages, including an already-open bloom context.
 
 AI browser verification showed “Columns are shifting” without an opening-wait sentence, then “Waiting for shift to finish · BABUNI.DEV” after an actual click during that shift. The small bloom subsequently opened. The ordinary-shift capture is archived as WebP in the visual gallery. A later attempt to observe queued closing did not encounter a shift within the browser wait window; that path is preserved in code but is not claimed as freshly browser-tested. All 208 automated tests and the production build passed before the gallery update; final content/build verification follows it.
+
+
+## 2026-11-01 — Another identity question after a shift
+
+After several changes to the project catalog, a tile appeared to change identity just as a shift ended. This reminded me of an earlier issue, though the new sighting was too brief to establish whether the same bug had returned. Keeping a project attached to its moving stone matters more than quietly accepting an occasional visual switch.
+
+AI reviewed the current placement, staging and settlement code. The previous reservation fix was still present, but an exact-capacity viewport exposed another risk: with 42 projects and three neutral fillers already on screen, an entering tile could inherit an identity belonging to a project that remained visible. AI changed the saturation fallback to reuse a uniquely departing identity and added regression cases for row and column shifts, including two opposing lines. This is a code-level correction; the particular browser sighting remains unconfirmed until visual acceptance.
