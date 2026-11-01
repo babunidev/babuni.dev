@@ -1,6 +1,6 @@
 # Development Journal — babuni.dev
 
-This is an edited account of the development process, not a verbatim transcript or a record of completed software unless explicitly stated. Each entry should show **Babuni.dev intention → AI proposal → Babuni.dev response/decision → implementation and evidence**.
+This is an edited, publishable account of the development process, not a transcript or automatic proof of completed software. Entries are told from the human creative's perspective, using first-person language naturally but never beginning a sentence with “I” or “My.” Each entry should briefly connect the creative's motivation and decisions with AI proposals or execution, meaningful iteration, and the actual result. Technical facts and verification limits remain explicit; routine steps need not become separate diary entries.
 
 ## 2026-10-31 — Connecting the public domain and securing HTTPS
 
