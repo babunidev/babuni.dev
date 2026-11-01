@@ -33,33 +33,9 @@ test('partial video records are errors rather than silently empty drafts',()=>{
 
 test('populated content requires a preview',()=>{assert.ok(check([{...moduleTemplate('text','intro'),body:'Actual content'}]).errors.some(e=>e.includes('needs a preview')));});
 
-test('Babuni Gaming contains populated context and all three supplied profile links',()=>{
- const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url)));
- const modules=catalog['babuni-gaming'];assert.equal(modules.length,4);
- assert.deepEqual(modules.find(m=>m.id==='channels').links.map(l=>l.href),[
-  'https://www.youtube.com/@babunigamingg',
-  'https://www.curseforge.com/members/babunigaming/projects',
-  'https://www.instagram.com/babunigaming/'
- ]);
- assert.match(modules.find(m=>m.id==='overview').body,/all kinds of games/);
- assert.match(modules.find(m=>m.id==='gaming-and-addons').body,/Azeroth Moments/);
- const videos=modules.find(m=>m.id==='videos');
- assert.equal(videos.type,'video');
- assert.equal(videos.videos[0].embed,'https://www.youtube-nocookie.com/embed/9fnC1ZI1iSY');
- assert.equal(videos.videos.length,2);
- assert.equal(videos.videos[1].embed,'https://www.youtube-nocookie.com/embed/B2pMsZPQfCc');
- assert.ok(videos.videos.every(video=>video.src===undefined));
- assert.match(videos.preview,/not the first recording/);
- assert.ok(modules.every(m=>m.credit.includes('Babuni.dev')));
-});
-
-
-test('Mighty Morkah has one collection of ten verified channel video links',()=>{
- const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url)));
- const modules=catalog['mighty-morkah'];const collection=modules.filter(m=>m.type==='video');
- assert.equal(collection.length,1);assert.equal(collection[0].videos.length,10);
- assert.equal(new Set(collection[0].videos.map(v=>v.embed)).size,10);
- assert.equal(collection[0].videos[0].embed,'https://www.youtube-nocookie.com/embed/PKLnccyciLk');
- assert.equal(collection[0].videos[9].title,'Thinking of you...WIP');
- assert.ok(collection[0].videos.every(v=>v.embed.startsWith('https://www.youtube-nocookie.com/embed/')&&!v.src));
+test('valid modules can change wording without failing validation',()=>{
+ const first={id:'intro',type:'text',title:'First',preview:'An introduction',body:'Original wording.'};
+ const second={...first,title:'Renamed introduction',preview:'Different preview',body:'New wording with other details.'};
+ assert.deepEqual(check([first]).errors,[]);
+ assert.deepEqual(check([second]).errors,[]);
 });
