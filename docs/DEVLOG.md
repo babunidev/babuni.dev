@@ -1388,3 +1388,11 @@ For RoarGuild Add-on, I supplied the renamed **RoarGuildAddon** repository. Its 
 At my request, AI updated the source connection, imported its ten standard documents and retained the existing title, tile identity and image. The summary and nine keywords now reflect the documented emote configurations, recruitment messages and Roarboard. The source note explains that installed roarguild files and `/rogu` commands keep their historical names. No extra tile, community merge or addon-runtime change was needed.
 
 AI verified ten imported documents at public RoarGuildAddon revision `1f37107294a379336b58169531cf997723dd94ca`. Content validation, all 205 tests, authenticated refresh of 36/36 activity dates and the production build passed, including 442 public URL checks. These are portfolio checks, not a new game-client or physical-device test. No unrelated source snapshot or artwork was changed; no new browser screenshot is claimed.
+
+## 2026-11-01 — ROARSounds becomes RoarSoundEffects
+
+For the sound project, I supplied the new **RoarSoundEffects** repository. After the RoarGuild update, a local activity refresh had stopped on the old ROARSounds source; the fresh-data check correctly avoided replacing its cache. Local development could still use the documented offline preview.
+
+At my request, AI changed the existing project’s title and connection, imported ten source documents and retained its image and identity. Its summary and nine keywords describe recognized emote events and playback of existing game sounds. The source note distinguishes the new repository name from the historical installed ROAR package. No game audio was downloaded or bundled, and no client playback test is implied. The new source is included in the next full activity/build verification.
+
+AI verified ten imported documents at public RoarSoundEffects revision `4cbbbffb8c29147d486cbe5940fed0120557a31f`. Content validation, all 206 tests, authenticated refresh of 36/36 activity dates and the production build passed, including 442 public URL checks. The successful full refresh supersedes the earlier local failure on the old ROARSounds URL. No unrelated source snapshot, artwork or addon runtime was changed; no new browser screenshot or physical-device acceptance is claimed.

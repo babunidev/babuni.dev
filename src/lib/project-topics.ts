@@ -261,15 +261,15 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
 ],
   "roarsounds": [
     "World of Warcraft add-on",
-    "Game audio",
-    "Roar effects",
-    "Earlier audio work",
+    "Roar sound effects",
     "Character sounds",
+    "Emote events",
+    "Race and sex",
+    "Unit identity",
     "Lua",
-    "Roleplay",
-    "Sound effects",
-    "Character expression"
-  ],
+    "Audio restoration",
+    "Roleplay audio"
+],
   "roaremotetrigger": [
     "World of Warcraft add-on",
     "Roleplay emotes",

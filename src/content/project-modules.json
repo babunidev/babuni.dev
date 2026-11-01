@@ -757,5 +757,20 @@
       ],
       "credit": "Repository replacement requested by Babuni.dev; AI-assisted source clarification from the current public documents."
     }
+  ],
+  "roarsounds": [
+    {
+      "id": "source",
+      "type": "resources",
+      "title": "Project source",
+      "preview": "RoarSoundEffects replaces ROARSounds as the project/repository name. The installed addon retains its historical ROAR folder and files; sound playback uses game-provided assets.",
+      "links": [
+        {
+          "label": "RoarSoundEffects repository",
+          "href": "https://github.com/babunidev/RoarSoundEffects"
+        }
+      ],
+      "credit": "Repository/name replacement requested by Babuni.dev; AI-assisted clarification from current public source documentation."
+    }
   ]
 }

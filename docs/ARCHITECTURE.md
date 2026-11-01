@@ -769,3 +769,7 @@ Stable ID `roarrunlimited` displays MultiActionEmotes and maps to `babunidev/Mul
 ## 2026-11-01 — RoarGuildAddon source mapping
 
 Stable ID `roarguild` connects to `babunidev/RoarGuildAddon` main. Its former RoarGuild snapshot is removed and replaced only with this repository’s standard public documents. The display name, artwork, WoW group and project count stay unchanged; `roar-guild-and-community` is unaffected.
+
+## 2026-11-01 — RoarSoundEffects connection
+
+Stable ID `roarsounds` now displays RoarSoundEffects and maps to `babunidev/RoarSoundEffects` main. Its former ROARSounds snapshot is replaced only with this source’s standard documents. Artwork, project count, WoW grouping and related-project mappings are unchanged. Strict activity refresh now addresses the new canonical source.

@@ -282,3 +282,16 @@ test('RoarGuild addon connects its renamed repository without replacing the guil
  const source=composeProjectModules(catalog.roarguild,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
  assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/RoarGuildAddon']);
 });
+
+
+test('RoarSoundEffects replaces ROARSounds without changing its artwork or other ROAR projects',()=>{
+ const project=demoProjects.find(p=>p.id==='roarsounds');
+ assert.equal(project.name,'RoarSoundEffects');assert.equal(project.portalArtwork,'/portal-content/ROARsounds.webp');
+ assert.ok(!demoProjects.some(p=>p.name==='ROARSounds'));
+ assert.equal(connections.roar.repository,'babunidev/BattleEmotesLegacy');assert.equal(connections.roarr.repository,'babunidev/BattleEmotes');
+ const c=connections.roarsounds;assert.equal(c.repository,'babunidev/RoarSoundEffects');
+ assert.equal(snapshots['babunidev/ROARSounds'],undefined);
+ const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);
+ const source=composeProjectModules(catalog.roarsounds,repositoryModules(c,snapshot),c.repository).find(m=>m.id==='source');
+ assert.deepEqual(source.links.map(l=>l.href),['https://github.com/babunidev/RoarSoundEffects']);
+});

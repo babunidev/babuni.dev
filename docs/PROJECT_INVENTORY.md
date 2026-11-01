@@ -174,3 +174,7 @@ At Babuni.dev’s request, stable ID `roarrunlimited` now displays MultiActionEm
 ## 2026-11-01 — RoarGuildAddon repository supplied
 
 At Babuni.dev’s request, the RoarGuild Add-on entry now connects to RoarGuildAddon instead of RoarGuild. Stable ID `roarguild`, its existing title and RoarGuildAddon.webp remain. Roar Guild community stays a separate project with its own image. Historical inventory/source names are retained as evidence rather than duplicate entries.
+
+## 2026-11-01 — ROARSounds renamed
+
+At Babuni.dev’s request, stable ID `roarsounds` displays RoarSoundEffects and uses the renamed public repository. ROARsounds.webp remains its artwork. Its historical installed ROAR package name does not merge it with Battle Emotes Legacy, Battle Emotes or the other ROAR-family projects.

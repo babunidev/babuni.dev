@@ -1251,11 +1251,11 @@
       }
     ]
   },
-  "babunidev/ROARSounds": {
-    "repository": "babunidev/ROARSounds",
+  "babunidev/RoarSoundEffects": {
+    "repository": "babunidev/RoarSoundEffects",
     "branch": "main",
     "commit": "4cbbbffb8c29147d486cbe5940fed0120557a31f",
-    "syncedAt": "2026-10-27T03:05:59.343Z",
+    "syncedAt": "2026-11-01T02:29:30.002Z",
     "documents": [
       {
         "path": "README.md",

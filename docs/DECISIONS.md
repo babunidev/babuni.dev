@@ -843,3 +843,7 @@ The MultiActionEmotes repository is the replacement I requested for ROARRunlimit
 ## 2026-11-01 — Preserve the addon/community distinction
 
 The supplied RoarGuildAddon repository is the source I want for the existing **RoarGuild Add-on** entry. AI replaced its old connection while retaining stable ID `roarguild` and RoarGuildAddon.webp. The separate Roar Guild community keeps its own identity and art. Source history and installed identifiers remain verbatim; this decision updates portfolio content selection, not addon behavior or community ownership.
+
+## 2026-11-01 — Keep RoarSoundEffects as the same sound project
+
+The supplied RoarSoundEffects repository is the replacement I requested for ROARSounds. AI used stable ID `roarsounds` and kept ROARsounds.webp rather than adding a duplicate or merging it with the other ROAR-family projects. Imported historical names stay intact. This decision updates portfolio naming and source selection, not runtime behavior or ownership of game sound assets.

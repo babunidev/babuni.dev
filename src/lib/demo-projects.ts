@@ -197,9 +197,9 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "roarsounds",
     "portalArtwork": "/portal-content/ROARsounds.webp",
-    "name": "ROARSounds",
-    "shortSummary": "Earlier restoration of roar audio effects.",
-    "evidence": "repo-lineage",
+    "name": "RoarSoundEffects",
+    "shortSummary": "Addon for restoring built-in character roar sounds from recognized emote events; no game audio is bundled.",
+    "evidence": "repo",
     "tint": "hsl(335 58% 62%)"
   },
   {

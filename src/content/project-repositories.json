@@ -115,8 +115,9 @@
   },
   "roarsounds": {
     "status": "connected",
-    "repository": "babunidev/ROARSounds",
-    "branch": "main"
+    "repository": "babunidev/RoarSoundEffects",
+    "branch": "main",
+    "note": "Renamed source supplied by Babuni.dev on 2026-11-01. Stable ID roarsounds and ROARsounds.webp remain. Historical installed ROAR identifiers are distinct from the other ROAR-family projects."
   },
   "roaremotetrigger": {
     "status": "connected",

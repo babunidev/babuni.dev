@@ -629,3 +629,7 @@ Babuni.dev supplied MultiActionEmotes as the renamed ROARRunlimited repository. 
 ## 2026-11-01 — RoarGuild Add-on scope
 
 Babuni.dev supplied the renamed public source. Its documents describe configurable action emotes, recruitment messages and Roarboard; the summary and nine keywords reflect those subjects. Imported text retains its historical installation names and the source’s explicit message-board trust/privacy limitations. Public documentation and source descriptions are not new live-client verification. The Roar Guild community is not replaced or merged.
+
+## 2026-11-01 — RoarSoundEffects source context
+
+Babuni.dev supplied the renamed public repository. Its documents describe emote recognition, race/sex-based sound selection and game-provided sound paths, rather than authored or bundled audio. These subjects inform the summary and nine keywords. Historical installed ROAR names, interface declarations and playback limitations remain in the source record; no live-client compatibility is inferred.

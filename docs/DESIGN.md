@@ -761,3 +761,7 @@ MultiActionEmotes replaces ROARRunlimited in the grid and finder. The existing R
 ## 2026-11-01 — RoarGuild Add-on source continuity
 
 Keep the existing RoarGuild Add-on title and image while connecting the new repository. Its nine short topic keywords now include Roarboard and configurable emote subjects, with the mandatory add-on cue retained. The community tile, layout, motion, timing and bloom behavior are unchanged.
+
+## 2026-11-01 — RoarSoundEffects title
+
+RoarSoundEffects replaces ROARSounds in the grid and finder. Existing ROARsounds.webp, stable identity and WoW grouping remain. Its nine-keyword pool describes the sound project and retains the guaranteed add-on cue. No layout, motion, timing or bloom changes accompany this source rename.

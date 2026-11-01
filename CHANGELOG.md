@@ -996,3 +996,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Changed
 - Connected RoarGuild Add-on to the renamed RoarGuildAddon repository and refreshed its ten standard documents. Existing title, tile identity and artwork remain; the guild community stays separate. Summary/keywords now reflect the current documented addon scope.
+
+## 2026-11-01
+
+### Changed
+- Renamed ROARSounds to RoarSoundEffects and connected its renamed public repository and ten standard documents. Existing tile identity and ROARsounds.webp remain; summary and nine keywords describe the documented game-sound playback scope.

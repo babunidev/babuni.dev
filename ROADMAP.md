@@ -756,3 +756,9 @@ Historical installed filenames and client packaging checks remain source concern
 - [x] Connect the supplied RoarGuildAddon repository and refresh its standard documents.
 
 The addon and Roar Guild community remain separate projects. This update does not verify game-client behavior or change the installed addon.
+
+## 2026-11-01 — RoarSoundEffects rename
+
+- [x] Connect RoarSoundEffects in place of ROARSounds, preserving artwork and identity.
+
+The portfolio update does not verify in-game playback or change audio redistribution rights.
