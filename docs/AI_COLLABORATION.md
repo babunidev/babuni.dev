@@ -1,74 +1,70 @@
-# Human–AI Collaboration and Provenance Policy
+# Human–AI Collaboration and Provenance
 
 ## Purpose
 
-babuni.dev documents not only finished work, but the creative decisions and human–AI collaboration behind it. Public development narratives speak from the human creative's perspective; AI actions remain explicitly attributed to AI.
+babuni.dev is both a creative portfolio and a record of how the work came into being. The human creative, **Babuni**, originates and directs the vision, makes decisions, corrects interpretations, and assesses results. AI may research, propose, write, design, implement, and test under that direction. Neither contribution should be hidden or misattributed.
 
-A development diary that only says "AI implemented a grid" misses the decisive contribution: Babuni.dev's toy-box metaphor, shifting-plate behavior, point-origin information bubbles, cell-based bloom correction, and endless recycled layout.
+The living stone grid is an example. Its toy-box premise, shifting plates, portal information points, endless field, and physically reserved bloom cells emerged through the creative's direction and corrections. Describing it simply as “AI built a portfolio” would obscure the work that shaped it.
 
-## Five distinct kinds of evidence
+This document sets the publication and evidence rules. [AGENTS.md](../AGENTS.md) governs development practice, while [DEVLOG.md](DEVLOG.md) tells the story.
 
-1. **Babuni.dev direction** — a faithful paraphrase of the intention, creative constraint, observation, question or correction expressed by Babuni.dev.
-2. **AI response / proposal** — what an assistant suggested, interpreted, drafted or generated. Clearly labeled as agent-originated.
-3. **Babuni.dev decision** — what was explicitly confirmed, changed, or left undecided. Never promote a suggestion to accepted without evidence.
-4. **Implementation action** — what was actually changed in source files, designs or deployed systems; include PR/commit references.
-5. **Verification** — what was tested and what the observed result was. "Not verified" is a valid answer.
+## Authorship and narrative voice
 
-Show chronology, not just conclusions. Prefer a readable narrative that expresses why a particular design happened.
+Public-facing development history is written **from the human creative's first-person perspective**, in natural, varied prose. Use “I” and “my” within sentences, but **never begin a sentence with “I” or “My.”** Refer to a person who conceives or makes work as a **creative**, not a **creator**.
 
-## Conversation handling
+Write about the motivation, the choice, the collaboration, and the result. Avoid promotional language, repetitive labels, and exhaustive accounts of routine commands. Technical specifications, changelogs, and evidence registers can use a neutral reference voice where that is clearer.
 
-- Treat relevant conversation content as valuable source material when it is actually available to the current agent.
-- Capture *meaningful project input* from all project sessions: requests, brainstorms, feedback, changes of mind, tests, corrections, failures, and approvals.
-- For long exchanges, paraphrase Babuni.dev's directive and why it mattered rather than copying every turn.
-- Record relevant exact words only if they are essential and explicitly appropriate to publish.
-- Mark material reconstructed from past sessions as **retrospective**, citing or linking the original source if possible.
-- Do not falsely claim that an agent can see or automatically archive every ChatGPT project chat. Existing access may be limited to the current context and connected sources; request missing material when needed.
-- Never publish complete raw conversations by default. Exclude non-project personal details, private accounts, credentials and other sensitive material.
-- Store public-safe collaboration summaries in docs/DEVLOG.md; complete private source transcripts, if ever retained, require a separately authorized private storage policy.
+First-person narration does **not** mean claiming personal execution of AI work. Write plainly when AI drafted a document, changed code, generated a visualization, or ran a test. Likewise, an AI suggestion cannot become the creative's idea or approved decision without evidence.
 
-## Writing perspective
+## Five kinds of evidence
 
-Write public-facing journal entries in the creative's first-person voice. Use "I" and "my" naturally within sentences, **never at the beginning of a sentence**. Refer to a person making the work as a **creative**, not a **creator**. Avoid repetitive attribution labels in the final narrative when clear prose can carry the same information. Neutral technical references and evidence registers may use a neutral voice.
+1. **Creative direction:** The creative's original idea, goal, constraint, question, observation, or correction.
+2. **AI contribution:** A suggestion, interpretation, research finding, draft, design, code change, or action performed by AI.
+3. **Decision and iteration:** What the creative accepted, rejected, refined, or deferred, including consequential alternatives and misunderstandings.
+4. **Implementation:** What actually changed, with file, issue, PR, or commit references where available.
+5. **Verification:** What was tested or observed, by whom and how, and what remains uncertain.
 
-An entry should explain what prompted the work, what the creative decided, what AI proposed or executed, and what was actually verified. Keep it brief enough to enjoy reading. Preserve consequential failures, disagreements, and revisions; do not turn the journal into a transcript or test-output dump. Never imply the creative wrote code or ran tests performed by AI.
+These are evidence categories, **not five mandatory subheadings for every journal entry**. A two-sentence adjustment can be sufficient. Larger work may need a fuller account. Preserve cause and effect without turning the journal into a transcript.
 
-## Suggested evidence checklist (not a mandatory published template)
+## Status and source integrity
 
-### [Date] — [Feature or discussion]
+Keep **proposed**, **accepted**, **implemented**, **verified**, and **deployed** distinct. A design mockup is not a shipped feature; a commit is not a passing test; a passing automated test is not a real-device observation; a local build is not proof of production deployment.
 
-**Context and source:** Current session / issue / PR / retrospective / notes.  
-**Babuni.dev's intent:** The direction and motivation in neutral, faithful words.  
-**AI's contribution:** Proposal or implementation, explicitly attributed.  
-**Iteration:** Alternatives considered, corrections, feedback, failure.  
-**Decision:** Accepted / rejected / open, with attribution.  
-**Changed artifacts:** Files, images, diagrams, code, commits, PRs.  
-**Verification:** What was run or observed; uncertainty recorded plainly.  
-**Result:** New capability, refined concept, or unresolved question.
+Use material actually available: the current conversation, accessible previous discussions, supplied files, repository contents, commits, and recorded test evidence. An agent does not necessarily have access to every archived conversation, local file, or tool session. Mark incomplete historical reconstructions as **retrospective**, and never invent missing motives, dialogue, approvals, results, or dates.
 
-## Example: The bloom geometry
+Attribute human device checks to the creative and AI-driven browser or automated tests to the agent that performed them. Record verification limits when material.
 
-**Babuni.dev's intent:** Clicking a tile should physically make room for project content in neighboring cells; the other tiles move away.  
-**AI's earlier interpretation:** A central tile surrounded by floating dashboard panels.  
-**Babuni.dev correction:** That interpretation didn't reserve actual tile positions.  
-**Decision:** Small bloom occupies adjacent cells and displaces their original tiles.  
-**Implementation:** Not yet implemented when this example was written.  
-**Value to the journal:** It shows Babuni.dev clarifying geometry and the AI correcting a misleading visualization.
+## Publication and privacy
 
-## Cross-project reuse
+The repository is public, but project conversations are not automatically public documents. Publish concise, relevant summaries rather than raw transcripts. Exclude credentials, keys, private account details, unrelated personal information, sensitive infrastructure data, and third-party material without appropriate rights or authorization.
 
-This is a reusable policy for Babuni.dev's other repositories, but each project must deliberately adopt it in its own agent rules and ChatGPT project instructions. A babuni.dev file does not automatically govern other projects.
+Preserve original credits and licenses for source documents and media. A public repository link is not evidence that its content was authored by AI or that it was tested in a running application.
 
-## Accountability
+## Where information belongs
 
-Babuni.dev sets direction. Agents should be useful collaborators, not ghost authors of design decisions. Do not infer human approval from silence. If a chat changes a requirement without resulting in code, log the decision but do not present it in CHANGELOG as a shipped feature.
+| Document | Primary responsibility |
+| --- | --- |
+| [Development journal](DEVLOG.md) | Brief, publishable first-person story of the creative process |
+| [Decision register](DECISIONS.md) | Accepted, proposed, superseded, and open decisions with rationale |
+| [Changelog](../CHANGELOG.md) | Actual repository changes and stated verification limits |
+| [Concept](../CONCEPT.md) | Lasting creative vision, not a running implementation report |
+| [Design](DESIGN.md), [Architecture](ARCHITECTURE.md), [Content](CONTENT.md) | Current specifications and clearly marked historical context |
+| [Roadmap](../ROADMAP.md) | Milestones and current outstanding work |
 
-## 2026-10-27 — Documentation audit #28: scope and provenance
+For substantial implementation work, update the relevant documents together when practical. For discussion-only work, prepare a documentation-ready account without pretending a repository change occurred.
 
-**User direction:** Continue the documented GitHub portfolio-audit sequence, now reaching `babunidev/babuni.dev` immediately after ButtonGame. Preserve the origin as a **human-directed toy-box interaction** and the site as a living record of how Babuni.dev conceived, corrected, accepted, rejected and tested work with AI. Do not flatten those detailed records into a one-line “AI built the portfolio” credit.
+## Example: making physical space for a bloom
 
-**AI contribution in this audit:** Examine the current Git tree, Astro/TypeScript dependencies, latest navigation/Markdown commits and the substantial existing journals; reconcile README **11 artworks → 15** and older **97-test** reports with the later **126-test** journal. Record the distinction between 53 candidate tiles, 34 mapped tiles/33 public sources, existing original WebP binaries and 21 archived AI captures. Identify that external project-doc commits require an **explicit source refresh** before they appear in this portfolio's static snapshot.
+The early bloom visualization showed floating panels around the selected project. That AI interpretation missed the spatial relationship I wanted: selecting a tile should physically move its neighbors aside and reserve actual grid cells for content. After the correction, the design became a grid-native bloom rather than an overlay dashboard.
 
-**Iteration already documented elsewhere:** The user corrected AI's suggestion of floating bloom cards, rejected scroll-as-navigation, insisted that tiles retain a coherent stone-and-portal identity through motion, supplied WebP artwork and required visible attribution in the reader. More recent requested adjustments include safe Markdown rendering and persistent header/search navigation; a browser-tested buffered-identity issue was then corrected. Do not invent private dialogue or attribute AI-origin alternatives to human acceptance.
+This is the kind of history worth retaining. The creative correction explains **why** the design changed; implementation and test evidence belong alongside the appropriate dated development record. At the time of the early example, the behavior had not yet been implemented; later work must not be retroactively attributed to that original experiment.
 
-**Verification and nonchanges:** The checked-in journal reports prior 126 Node tests and browser/build findings, but the assistant **did not run new tests, content sync, a production build, real-device trials, or deployment** during this document audit. No site source, media, tests, content snapshot, CI, package manifests or artwork was modified. Any future automation, release-license choice or performance change requires its own creative direction and evidence.
+## Historical provenance checkpoint — 27 October 2026
+
+An earlier documentation audit recorded the distinction between **53 candidate tiles**, **34 mapped tiles / 33 public sources**, **15 original WebP portal artworks**, and **21 archived AI captures** at that particular checkpoint. It also compared earlier 97-test reports with a later journal report of 126 tests. These counts are historical, **not current inventory or verification claims**.
+
+That audit examined the repository and its existing documentation, but did **not** run new tests, a content sync, production build, physical-device trials, or deployment. Its core editorial conclusion remains: external project documents are revision-pinned snapshots, and updates require deliberate synchronization and review. Current status belongs in the repository, [roadmap](../ROADMAP.md), and newer dated records.
+
+## Reuse in other projects
+
+This method can be adapted for other Babuni repositories, but only when deliberately adopted in their own project rules. Neither this file nor a ChatGPT conversation automatically changes another project's instructions.
