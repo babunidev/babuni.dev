@@ -1,5 +1,7 @@
 # Desktop motion investigation — 2026-10-27
 
+> **Historical performance investigation (27 October 2026).** All numbers below are local samples or synthetic benchmarks from that date. They are not production FPS, a controlled speedup measurement, or a diagnosis of any current browser issue. The report's open checks and bundle warning describe the original investigation. For later optimization and release work see [28 October performance report](PERFORMANCE-2026-10-28.md), [release-readiness audit](RELEASE_READINESS-2026-10-29.md), and [deployment notes](../deploy/README.md).
+
 **Human evidence:** Babuni.dev reports desktop motion sometimes hangs/looks less fluent. A click momentarily stops an existing shift. User requested gradual drag braking.
 
 ## Confirmed mechanisms and changes
