@@ -285,7 +285,7 @@ export const demoProjects:readonly DemoProject[]=[
   {
     "id": "buxbrew-character-story",
     "portalArtwork": "/portal-content/BuxbrewCharacter.webp",
-    "name": "Buxbrew — character story",
+    "name": "Amberbrew Story",
     "shortSummary": "Roleplaying story of Jasmine 'Buxbrew' Amberbrew.",
     "evidence": "conversation",
     "tint": "hsl(238 58% 62%)"
