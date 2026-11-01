@@ -1055,3 +1055,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Updated the portal topic label and generated repository coverage report. The project retains its stable ID, portal artwork, folder modules, Markdown source snapshots and grid behavior; no second project was introduced.
 - Added a catalog regression test for the public display name and retained identity.
 
+## 2026-11-01 — Complete Amberbrew Story website identity rename
+
+- Replaced the internal project ID `buxbrew-character-story` with `amberbrew-story` in the existing project entry, source connection, menu group and keyword pool, alongside the already updated **Amberbrew Story** display name.
+- Preserved its catalog order, original portal artwork, pinned 40 Markdown documents, nine folder-index modules and existing bloom/shift logic.
+- Updated repository report generation and strengthened rename tests. The generated public project route and on-demand module asset now use the new ID.

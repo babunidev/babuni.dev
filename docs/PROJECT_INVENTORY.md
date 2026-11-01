@@ -192,3 +192,7 @@ At Babuni.dev’s request, stable ID `roaremotetrigger` now displays EmoteTrigge
 ## 2026-11-01 — EmoteTrigger renamed again
 
 At Babuni.dev’s request, stable ID `roaremotetrigger` now displays Roar Guild Addon Wrath and uses RoarGuildAddonWrath. The intermediate EmoteTrigger name and original ROARemoteTrigger name remain historical. ROARRemoteTrigger.webp is retained; the separate non-Wrath addon and guild community are unaffected.
+
+## 2026-11-01 — Amberbrew Story identity clarification
+
+The current portfolio display title and semantic ID are **Amberbrew Story** (`amberbrew-story`), connected to `babunidev/AmberbrewStory`. The original inventory entry for Buxbrew's character story above is retained as a historical record. This change renames the same project rather than adding another of the 42 catalog identities; its original artwork and source documents remain assigned to it.

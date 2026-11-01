@@ -283,10 +283,10 @@ export const demoProjects:readonly DemoProject[]=[
     "portalArtwork": "/portal-content/ROARGuild.webp"
   },
   {
-    "id": "buxbrew-character-story",
+    "id": "amberbrew-story",
     "portalArtwork": "/portal-content/BuxbrewCharacter.webp",
     "name": "Amberbrew Story",
-    "shortSummary": "Roleplaying story of Jasmine 'Buxbrew' Amberbrew.",
+    "shortSummary": "Living stories and lore of the Amberbrew family, centered on Jasmine 'Buxbrew' Amberbrew.",
     "evidence": "conversation",
     "tint": "hsl(238 58% 62%)"
   },

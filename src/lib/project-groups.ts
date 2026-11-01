@@ -32,7 +32,7 @@ export const PROJECT_GROUPS=[
       "amazin",
       "warriorstartattack",
       "roar-guild-and-community",
-      "buxbrew-character-story"
+      "amberbrew-story"
     ]
   },
   {

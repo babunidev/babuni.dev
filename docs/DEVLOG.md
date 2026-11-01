@@ -1440,3 +1440,8 @@ After changing the family archive's GitHub repository to `AmberbrewStory`, the w
 
 AI corrected the existing project's display name to **Amberbrew Story** in the catalog, which supplies the grid tile, project menu and public pages. The portal topic text and repository report followed the new name. The internal project ID, original artwork and nine document folders remain unchanged, preserving their relationships and existing navigation rather than creating another tile.
 
+## 2026-11-01 — The internal name catches up
+
+Although the portfolio title and repository had become **Amberbrew Story**, the catalog still used the old internal identifier. The local test checkout also remained on an older commit because three changed files prevented Git's fast-forward pull, so its browser showed the earlier title and no folder collection.
+
+After I clarified that the entire project should carry the new name, AI changed the identifier to `amberbrew-story` across the live catalog configuration, menu membership, source mapping, and regression tests. The original artwork, archive text, and grid position were retained. The prior local changes remain for me to preserve with a stash before updating; the GitHub commit cannot itself update my local checkout.

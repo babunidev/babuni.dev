@@ -12,8 +12,9 @@ test('exactly 42 retained project entries have unique provisional IDs and summar
     'Button Game','SocialForever','RoarForever','FlourishForever'
   ]);
   assert.equal(demoProjects.at(-1).name,'GuildChatBridge');
-  const story=demoProjects.find(project=>project.id==='buxbrew-character-story');
+  const story=demoProjects.find(project=>project.id==='amberbrew-story');
   assert.equal(story?.name,'Amberbrew Story');
+  assert.equal(story?.id,'amberbrew-story');
   assert.equal(story?.portalArtwork,'/portal-content/BuxbrewCharacter.webp');
   assert.equal(demoProjects.filter(project=>project.name==='Amberbrew Story').length,1);
   assert.ok(!demoProjects.some(project=>project.name==='Buxbrew — character story'));

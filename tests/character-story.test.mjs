@@ -15,9 +15,10 @@ const snapshots=json('src/content/repository-documents.json');
 const index=json('src/generated/document-index.json');
 
 test('Buxbrew folder modules cover all imported Markdown and preserve the 42-project catalog',()=>{
-  const connection=connections['buxbrew-character-story'];
+  const connection=connections['amberbrew-story'];
   assert.equal(CHARACTER_STORY_REPOSITORY,'babunidev/AmberbrewStory');
   assert.equal(connection.repository,CHARACTER_STORY_REPOSITORY);
+  assert.equal(connections['buxbrew-character-story'],undefined);
   assert.equal(snapshots['babunidev/BuxbrewCharacterStory'],undefined);
   const snapshot=snapshots[CHARACTER_STORY_REPOSITORY];
   assert.match(snapshot.commit,/^[a-f0-9]{40}$/);
@@ -40,7 +41,7 @@ test('Buxbrew folder modules cover all imported Markdown and preserve the 42-pro
   const assets=folders.find(x=>x.id==='folder-assets');
   assert.ok(Array.isArray(assets.documents)); // Empty today; may contain public Markdown after a later source sync.
   assert.deepEqual(assets.links.map(x=>x.label),['Illustrations','References','Screenshots']);
-  const modules=modulesForProject('buxbrew-character-story','Buxbrew roleplaying story');
+  const modules=modulesForProject('amberbrew-story','Buxbrew roleplaying story');
   assert.ok(modules.length>=18); // Standard docs can grow without changing the folder index count.
   assert.equal(new Set(modules.map(x=>x.id)).size,modules.length);
   assert.equal(modules.filter(x=>x.type==='document-list').length,9);
@@ -49,7 +50,7 @@ test('Buxbrew folder modules cover all imported Markdown and preserve the 42-pro
 });
 
 test('every folder file opens through a pinned, same-origin reader URL',async()=>{
-  const folders=indexedCharacterStoryFolders(connections['buxbrew-character-story'],index[CHARACTER_STORY_REPOSITORY]);
+  const folders=indexedCharacterStoryFolders(connections['amberbrew-story'],index[CHARACTER_STORY_REPOSITORY]);
   const paths=new Set();
   for(const folder of folders)for(const item of folder.documents){
     assert.ok(characterStoryDocumentPath(item.path));

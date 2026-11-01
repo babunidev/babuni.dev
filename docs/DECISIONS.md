@@ -893,3 +893,8 @@ The existing public `BuxbrewCharacterStory` repository has been renamed to `Ambe
 
 **Implementation:** AI changed the display name carried by the stable `buxbrew-character-story` catalog entry and updated its portal topic label, repository report and name regression test. The semantic ID and `BuxbrewCharacter.webp` artwork remain unchanged so grid placement, bookmarks, module lookups and existing content associations continue to refer to the same project.
 
+## 2026-11-01 — Complete the Amberbrew Story identity rename
+
+**Creative decision:** both the public title and the internal portfolio ID must be **Amberbrew Story** / `amberbrew-story`, matching the renamed `babunidev/AmberbrewStory` repository. The earlier decision to retain `buxbrew-character-story` is superseded by this explicit clarification, not silently rewritten.
+
+**AI implementation:** migrated the catalog's existing entry, source-connection key, menu membership, topic pool key and tests without creating a second project. The portal artwork, position, original 40 Markdown documents, and nine document-list modules are preserved. Canonical generated module and project URLs now use the new ID. Local and VPS checkouts require an actual Git update before visitors can see this change.

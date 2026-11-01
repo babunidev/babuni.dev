@@ -666,3 +666,6 @@ The existing `buxbrew-character-story` tile now connects to the public `babunide
 
 **Amberbrew Story** is the current portfolio display name for the existing `buxbrew-character-story` project and its `babunidev/AmberbrewStory` source. The previously visible title, **Buxbrew — character story**, is historical. The new display name appears in the grid, project menu and generated pages; the archive's individual Markdown titles and Buxbrew's character name are preserved. The same 40 source documents and nine folder modules remain attached to the project.
 
+## 2026-11-01 — Final project identity: amberbrew-story
+
+The active project entry is **Amberbrew Story** with internal ID `amberbrew-story`. The earlier `buxbrew-character-story` key is no longer used by the current code or repository mapping; previous paragraphs above preserve the earlier state historically. The 40 original Markdown documents remain sourced from `babunidev/AmberbrewStory`. The small bloom continues to sample up to eight populated modules, while the big bloom provides all eight standard-document modules, nine folders, and the project-source module. Individual folder documents open inside the existing reader.

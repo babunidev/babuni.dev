@@ -220,7 +220,7 @@ test('ActionEmotes #2 replaces Buxbrew Addon independently of #1 and the charact
  assert.equal(project.evidence,'repo');assert.match(project.shortSummary,/Custom roleplay emotes/);
  assert.ok(!demoProjects.some(p=>p.name==='Buxbrew Addon'));
  assert.equal(demoProjects.find(p=>p.id==='buxbrewcharge').name,'ActionEmotes #1');
- assert.ok(demoProjects.some(p=>p.id==='buxbrew-character-story'));
+ assert.ok(demoProjects.some(p=>p.id==='amberbrew-story'));
  const c=connections.buxbrew;assert.equal(c.repository,'babunidev/ActionEmotes-2');
  assert.equal(snapshots['babunidev/Buxbrew'],undefined);
  const snapshot=snapshots[c.repository];assert.equal(snapshot.documents.length,10);

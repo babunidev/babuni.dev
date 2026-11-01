@@ -40,7 +40,7 @@ test('every add-on reveal includes exactly one explicit type cue in varying posi
     }
     assert.equal(positions.size,3,id);
   }
-  for(const id of ['azeroth-moments','roar-guild-and-community','buxbrew-character-story','the-great-iceflow-relay','enchantvisuals','babuni-gaming'])assert.ok(!WOW_ADDON_IDS.includes(id));
+  for(const id of ['azeroth-moments','roar-guild-and-community','amberbrew-story','the-great-iceflow-relay','enchantvisuals','babuni-gaming'])assert.ok(!WOW_ADDON_IDS.includes(id));
 });
 test('unknown projects retain a safe distinct fallback',()=>{
   assert.equal(new Set(Object.values(topicLabelsForProject('unknown',seeded(1)))).size,3);

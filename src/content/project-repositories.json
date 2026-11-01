@@ -175,11 +175,11 @@
     "status": "needs-repository",
     "note": "No matching repository found in the accessible account inventory on 2026-10-27."
   },
-  "buxbrew-character-story": {
+  "amberbrew-story": {
     "status": "connected",
     "repository": "babunidev/AmberbrewStory",
     "branch": "main",
-    "note": "The Amberbrew family and Buxbrew character archive; renamed from BuxbrewCharacterStory. Standard documents and nine pinned lore folders remain available."
+    "note": "The Amberbrew family and Jasmine 'Buxbrew' Amberbrew character archive; renamed from BuxbrewCharacterStory. Eight standard documents and nine pinned lore folders remain available."
   },
   "grimnir": {
     "status": "needs-confirmation",
