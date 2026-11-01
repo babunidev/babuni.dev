@@ -1041,3 +1041,10 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Added nine folder-index modules: Assets, Character, Docs, Family, Journal, Lore, Places, Relationships and Stories. Each lists the public files it contains; Markdown opens within the existing reader and returns to the same folder list.
 - Imported 40 Markdown documents from a verified public commit, including four root writing/canon references under Docs. The Assets module shows the three currently empty media subdirectories without inventing files.
 - Extended exact-revision source syncing, local-only document assets, safe URL checks, source coverage and regression tests. Existing small-bloom limits and big-bloom layout are unchanged.
+
+## 2026-11-01 — AmberbrewStory repository rename
+
+### Changed
+- Updated the existing Buxbrew character-story tile's repository mapping from `babunidev/BuxbrewCharacterStory` to `babunidev/AmberbrewStory`.
+- Retained the same pinned 40 Markdown documents, original project ID, nine folder-index modules and portal artwork; generated document URLs and source links now use the canonical repository name.
+- Updated the repository coverage report, source validators and rename regression tests. No character canon, grid shifting or bloom behavior changed.
