@@ -3,7 +3,7 @@ import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
-import {REPOSITORY_DOCUMENTS} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,CHARACTER_STORY_REPOSITORY,characterStoryDocumentPath} from '../src/lib/repository-content.ts';
 const run=promisify(execFile);
 const root=fileURLToPath(new URL('..',import.meta.url));
 export function validateConnections(connections,projectIds){
@@ -37,7 +37,7 @@ export function validateSnapshots(connections,snapshots){
     if(!Array.isArray(s.documents)||!s.documents.length){errors.push(`${repository}: no source documents`);continue;}
     const seen=new Set();
     for(const d of s.documents){
-      if(!d||!REPOSITORY_DOCUMENTS.some(doc=>doc.path===d.path)||seen.has(d.path)||typeof d.body!=='string'||!d.body.trim())errors.push(`${repository}: invalid, empty or duplicate document`);
+      if(!d||!(REPOSITORY_DOCUMENTS.some(doc=>doc.path===d.path)||repository===CHARACTER_STORY_REPOSITORY&&characterStoryDocumentPath(d.path))||seen.has(d.path)||typeof d.body!=='string'||!d.body.trim())errors.push(`${repository}: invalid, empty or duplicate document`);
       seen.add(d?.path);
     }
   }
@@ -71,6 +71,25 @@ export async function fetchSnapshot(connection,{fetcher=fetch,resolveCommit=publ
     if(response.status===404)continue;
     if(!response.ok)throw new Error(`${repository}/${path}: fetch failed (${response.status})`);
     const body=await responseText(response);if(body.trim())documents.push({path,body});
+  }
+  if(repository===CHARACTER_STORY_REPOSITORY){
+    // Read GitHub's tree at the same pinned revision as the standard docs.
+    // Only approved Markdown folders and root-level writing references enter
+    // the public cache. Never follow document links or import binary assets.
+    const listing=await request(`https://api.github.com/repos/${repository}/git/trees/${commit}?recursive=1`);
+    if(!listing.ok)throw new Error(`${repository}: public file inventory unavailable (${listing.status})`);
+    const inventory=await listing.json();
+    if(inventory.truncated||!Array.isArray(inventory.tree))throw new Error(`${repository}: incomplete file inventory`);
+    const known=new Set(documents.map(doc=>doc.path));
+    const extra=inventory.tree.filter(file=>file.type==='blob'&&characterStoryDocumentPath(file.path)
+      &&!known.has(file.path)).map(file=>file.path).sort();
+    if(extra.length>200)throw new Error(`${repository}: too many Markdown documents for reviewed import`);
+    for(const path of extra){
+      const response=await request(`https://raw.githubusercontent.com/${repository}/${commit}/${path}`);
+      if(!response.ok)throw new Error(`${repository}/${path}: inventory document unavailable (${response.status})`);
+      const body=await responseText(response);
+      if(body.trim())documents.push({path,body});
+    }
   }
   if(!documents.length)throw new Error(`${repository}: no nonempty standard documents found`);
   return {repository,branch,commit,syncedAt:now(),documents};
