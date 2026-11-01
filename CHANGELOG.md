@@ -1025,3 +1025,11 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Reconciled `ROADMAP.md` release checkboxes with the 31 October deployment evidence recorded in the development journal. Live-browser performance and external indexing checks remain open.
 - Clarified creative-first narrative, human–AI attribution, and evidence standards in `AGENTS.md`, `.chatgpt/PROJECT_INSTRUCTIONS.md`, `docs/AI_COLLABORATION.md`, and the development journal introduction.
 - Refined this changelog's editorial guidance and terminology without changing application code, website content, or historical implementation claims. No build or runtime test was performed as part of this documentation review.
+
+
+## 2026-11-01 — Saturated grid entrance identity continuity
+
+### Fixed
+- Corrected entrance staging when all 42 project identities and three neutral filler identities are already visible. An incoming tile now inherits a uniquely departing identity instead of introducing a persistent duplicate of another visible project.
+- Preserve the departing and incoming tiles' labels, portals and tint during the 4.4-second movement; no shift timing, geometry, bloom or project catalog changes.
+- Added exact-capacity regression cases for both axes, both directions, and opposite-moving lines. Automated CI and live-browser confirmation are reported separately.
