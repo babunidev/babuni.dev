@@ -8,7 +8,7 @@ const source='https://github.com/babunidev/WorkThatGodBod/blob/abcdef/docs/CONTE
 
 test('markdown reader renders a fixed synthetic rich-text fixture',t=>{
  documentDOM(t);
- const body='# Sample\n\n**Author:** Sample  \n\n> An *invitation* to explore\n\nUse `EXERCISES` and **highlight**.';
+ const body='# Sample\n\n**Author:** Sample  \nSecond line of the paragraph.\n\n> An *invitation* to explore\n\nUse `EXERCISES` and **highlight**.';
  const reader=renderDocument(body,source);
  assert.ok(nodes(reader,'strong').some(n=>n.textContent==='Author:'));
  assert.ok(nodes(reader,'strong').some(n=>n.textContent==='highlight'));
