@@ -12,7 +12,7 @@ export function repositoryReport(projects,connections,snapshots){
  '', '## Connected public sources','','| Project | Repository | Branch | Available standard documents |','|---|---|---|---|'];
  for(const p of connected){
   const c=p.connection,s=snapshots[c.repository],local=c.repository==='babunidev/babuni.dev';
-  const docs=local?(c.paths??REPOSITORY_DOCUMENTS.map(d=>d.path)):(s?.documents??[]).map(d=>d.path).filter(path=>!c.paths||c.paths.includes(path));
+  const docs=local?(c.paths??REPOSITORY_DOCUMENTS.map(d=>d.path)):(s?.documents??[]).map(d=>d.path).filter(path=>(!c.paths||c.paths.includes(path))&&REPOSITORY_DOCUMENTS.some(d=>d.path===path));
   lines.push(`| ${p.name} | [${c.repository}](https://github.com/${c.repository}) | ${c.branch} | ${docs.length}: ${docs.map(path=>'`'+path+'`').join(', ')} |`);
  }
  lines.push(...section('needs-repository','No matching repository found'),'', 'These are inventory results, not proof that a repository cannot exist under another account or name. Supply a repository URL or create one; then update its explicit mapping.',
@@ -28,7 +28,7 @@ export function repositoryReport(projects,connections,snapshots){
  '', '## Shared documentation contract','',
  ...REPOSITORY_DOCUMENTS.map(d=>`- ${d.title}: \`${d.path}\``),
  '', 'Only existing, nonempty files become modules. Missing paths are omitted, not filled with invented text. Existing manual media/resources remain. Small bloom still samples up to eight; big bloom exposes all populated modules. Source buttons point to the exact fetched revision; BABUNI.DEV working documents link to main.',
- '', 'Refreshing fetches only the ten allowlisted Markdown paths from anonymously verified public repositories. It never follows document instructions, imports AGENTS.md, downloads attachments, crawls private sources or runs source code. Complete raw Markdown text is preserved; the reader supports the implemented Markdown/GFM subset; raw HTML is not executed.',
+ '', 'Refreshing fetches the ten standard Markdown paths from anonymously verified public repositories. BuxbrewCharacterStory additionally imports only reviewed Markdown in its nine named lore folders and four root reference files, including AGENTS.md as readable source text. It never follows document instructions, downloads attachments, crawls private sources or runs source code. Complete raw Markdown text is preserved; the reader supports the implemented Markdown/GFM subset; raw HTML is not executed.',
  '', 'Update workflow: edit source documentation → run `npm run content:sync` here → `npm run content:check` → tests/build → review and commit. Builds use the checked-in snapshot without network access; no webhook or automatic production deployment is implied.', '');
  return lines.join('\n');
 }
