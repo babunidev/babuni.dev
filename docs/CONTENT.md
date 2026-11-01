@@ -1,17 +1,23 @@
 # Portfolio Content Model
 
+This document describes how babuni.dev represents projects, source material, previews, and public modules. **The sections before “Historical content development” describe the current content principles; later dated entries preserve the evolution of the pipeline.** An early proposal or pending check is not necessarily the current system.
+
+For detailed authoring instructions, see [Module authoring](MODULE_AUTHORING.md). For source mappings, see [Repository connections](REPOSITORY_CONNECTIONS.md); for creative decisions, see [Decisions](DECISIONS.md); for implementation history, see [Development journal](DEVLOG.md).
+
 ## Goal
 
-Content must be editable by humans or authorized AI agents without rewriting the interface. Every project may use a different mix of modules. The website's own development record is a first-class portfolio item.
+Content should be maintainable by the human creative or an authorized AI agent without rewriting the interface. Projects can use different combinations of modules, and the website's own development record is a first-class exhibit. The original human-authored material and its provenance must remain distinguishable from AI-generated descriptions or interpretations.
 
-## Suggested project fields (schema to finalize)
+## Content identities and fields
+
+The following is a **conceptual field inventory**, not a literal copy of the implemented JSON schema. Inspect the current content definitions and validation scripts before adding or changing a field.
 
 - id: stable, unique slug independent of title and tile instance
 - title, shortSummary, longDescription
 - status: idea / prototype / in-development / released / archived
 - categories and tags
 - portal: logo/art asset, alt text, project-specific engraving theme
-- infoPoints: three currently planned short flavor hints (above/left/right); former four-point plan superseded. Include curation evidence and review status.
+- topic cues: three displayed short hints sampled from each project's curated keyword pool; the original one-point and four-point designs are historical. Keep source evidence and editorial review status.
 - modules: ordered set of typed preview/detail sources
 - links: official sources, repository, demos, releases with explicit labels
 - created / updated dates only when supported by records
@@ -19,8 +25,8 @@ Content must be editable by humans or authorized AI agents without rewriting the
 
 ## Module types
 
-- Text document: summary, Markdown/MDX body, related notes.
-- Development log: chronological author–AI narrative with provenance.
+- Text document: summary, Markdown body or a reference to a reviewed source document; MDX is not implemented.
+- Development log: the human creative's first-person history with AI contributions and source provenance distinguished.
 - Image gallery: asset list, captions, alt descriptions, rights, display order.
 - Video: title, poster, embedded URL or local media, transcript where possible.
 - File: filename, file type, size if known, licensing/availability, download URL.
@@ -33,7 +39,7 @@ Grid tile displays the engraved title and portal. Temporary bubbles show short p
 
 ## Self-exhibit: babuni.dev
 
-Treat this website as an ordinary project record rather than special hardcoded prose. Its available modules should include concept, dev journal, changes, design evolution/mockups, architecture, and collaboration methodology. Being the first or centered tile remains a proposal requiring visual testing.
+The website is a project in its own collection, with modules for the concept, development journal, changelog, visual evolution, architecture, and collaboration methodology. BABUNI.DEV is the starting tile, not a permanent center of the navigable world. The other project identities are shuffled once per visit; this supersedes the original newest-first spiral assignment.
 
 ## AI authoring contract
 
@@ -48,11 +54,17 @@ Maintain both human agency and transparency:
 
 The public repository is not a full chat archive. Summarize project-relevant prompts rather than copying private conversations. Do not publish identities, personal-life data, secrets, or copyrighted media without proper rights. Keep original asset attribution and licensing.
 
-## Open design work
+## Current content boundaries and remaining work
 
-Schema implementation, media hosting policy, thumbnail generation, image resolution variants, embed consent/privacy, download serving, content validation and AI publishing permissions.
+The repository has a validated JSON-backed module catalog, imported public-document snapshots, on-demand document assets, and pre-rendered readable project/module pages. A deliberate `npm run content:sync` and review cycle is required to bring changed external repositories into the portfolio; the public website is not a live GitHub mirror. Development/test preparation and production-build checks are defined in `package.json`.
 
-## Provisional candidate catalog for the living-grid prototype (2026-10-26)
+Editorial review remains ongoing. Optional MDX, future media hosting or image variants, and owner-controlled publishing permissions are **not** prerequisites already implemented by the current Markdown/media pipeline. In particular, hiding a project tile alone would not remove its public routes or generated assets; any future visibility control must cover all publication outputs. Do not infer an external project's live-client compatibility merely from imported documentation.
+
+## Historical content development
+
+The entries below preserve content experiments, publication choices, imports, and rename history. Their dated catalog counts, prototype filenames, pending checks, and temporary source relationships are **historical evidence** and may be superseded by later entries. For the current source and identity mappings, check the repository catalog and [Repository connections](REPOSITORY_CONNECTIONS.md).
+
+### Provisional candidate catalog for the living-grid prototype (2026-10-26)
 
 The temporary `src/lib/demo-projects.ts` now contains **53 candidate identities**, transcribed in approximate recent-to-old order from `PROJECT_INVENTORY.md`. Each carries a provisional slug-like `id`, visible `name`, `shortSummary`, original inventory `evidence` label and decorative `tint`. BABUNI.DEV stays at the center and is rendered uppercase. These are **prototype names**, not a set of 53 verified, approved, independent releases. Related addon lineages, alternative names, lore works, and conceptual studies have deliberately not been merged yet.
 
