@@ -704,3 +704,7 @@ Source inspection and portfolio verification do not verify addon installation, l
 - [x] Cover credential handling, safe rate-limit diagnostics and all-or-nothing cache writes with regression tests.
 
 Automatic server deployment remains separate; this update changes build validation, not live server files or deployment authorization.
+
+## 2026-11-01 — GuildChatBridge artwork supplied
+
+- [x] Connect the author-supplied GuildChatBridge portal image. All 42 active projects now have mapped artwork; the earlier missing-art item is resolved.

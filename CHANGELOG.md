@@ -951,3 +951,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Local activity refresh can reuse the existing GitHub CLI login; CI explicitly passes its GitHub token to the build. Tokens stay out of saved activity data.
 - Production builds require authenticated, fully fresh commit dates and stop on any failed source without replacing activity caches. Offline development remains available.
 - Activity errors distinguish primary rate-limit exhaustion and report reset/retry hints when GitHub supplies them.
+
+## 2026-11-01
+
+### Added
+- Connected Babuni.dev’s supplied GuildChatBridge.webp to the existing GuildChatBridge project, replacing its colored portal fallback. Optimized the 1254×1254 source to the established 512×512 WebP delivery size.

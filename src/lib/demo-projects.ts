@@ -348,6 +348,7 @@ export const demoProjects:readonly DemoProject[]=[
   },
 {
   "id": "guildchatai",
+  "portalArtwork": "/portal-content/GuildChatBridge.webp",
   "name": "GuildChatBridge",
   "shortSummary": "Paused WoW roleplaying experiment: guild-chat capture and manual sending; no working AI conversation bridge.",
   "evidence": "repo",

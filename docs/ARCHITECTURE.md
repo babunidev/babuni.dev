@@ -733,3 +733,7 @@ The stable `guildchatai` ID now displays GuildChatBridge and maps explicitly to 
 ## 2026-11-01 — Activity credential and failure boundary
 
 The activity CLI resolves GITHUB_TOKEN, then GH_TOKEN, then the local github.com GitHub CLI login. CI never tries a local CLI credential fallback. Resolution stays in process memory; neither credentials nor response bodies enter generated JSON. Authenticated calls validate public repository identity/visibility before reading commit metadata. --require-fresh is mandatory in prebuild: missing auth or any failed source throws before cache writes and before Astro build. Explicit non-strict sync and offline preparation keep existing last-good fallback semantics. The existing build job passes its read-only GITHUB_TOKEN only on the build step.
+
+## 2026-11-01 — GuildChatBridge portal image
+
+**Babuni.dev supplied:** GuildChatBridge.webp in the local public portal-content folder, requesting its use for the restored project. **AI implementation:** Map the image to stable ID `guildchatai`; resize the 1254×1254 WebP to the existing 512×512 portal standard and encode at quality 88. Preserve the supplied composition and the source file, existing circular mask, title, bubble behavior and project status. No replacement artwork, layout or interaction change was proposed. All 42 active projects now have portal artwork. **Verification:** WebP container/size and existing artwork-mapping regression checks, content validation and production build; no new physical-device acceptance or addon-runtime test is claimed.

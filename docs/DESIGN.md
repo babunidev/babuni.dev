@@ -725,3 +725,7 @@ Babuni.dev requested the renamed repository changes appear in the portfolio. Gui
 ## 2026-11-01 — Recently updated release accuracy
 
 Babuni.dev clarified that stale dates can misidentify Recently updated tiles. Production builds therefore stop rather than publish incomplete activity refreshes. The five-project/fourteen-day marker policy, gold visuals, per-visit shuffle and interaction timing are unchanged. Offline local previews may use existing cached dates and are not proof of fresh production metadata.
+
+## 2026-11-01 — GuildChatBridge portal image
+
+**Babuni.dev supplied:** GuildChatBridge.webp in the local public portal-content folder, requesting its use for the restored project. **AI implementation:** Map the image to stable ID `guildchatai`; resize the 1254×1254 WebP to the existing 512×512 portal standard and encode at quality 88. Preserve the supplied composition and the source file, existing circular mask, title, bubble behavior and project status. No replacement artwork, layout or interaction change was proposed. All 42 active projects now have portal artwork. **Verification:** WebP container/size and existing artwork-mapping regression checks, content validation and production build; no new physical-device acceptance or addon-runtime test is claimed.
