@@ -15,8 +15,8 @@ const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
 test('all active tiles have explicit status; all public source snapshots match their mapping',()=>{
  assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
  assert.deepEqual(validateSnapshots(connections,snapshots),[]);
- assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,36);
- assert.equal(Object.keys(snapshots).length,35);
+ assert.equal(Object.values(connections).filter(c=>c.status==='connected').length,37);
+ assert.equal(Object.keys(snapshots).length,36);
  for(const [id,c] of Object.entries(connections)){
   const source=repositoryModules(c,snapshots[c.repository],local);
   if(c.status!=='connected'){assert.deepEqual(source,[]);continue;}
@@ -86,7 +86,7 @@ test('repository coverage report matches the map and never lists private reposit
  const report=repositoryReport(demoProjects,connections,snapshots);
  assert.equal(report,readFileSync(new URL('../docs/REPOSITORY_CONNECTIONS.md',import.meta.url),'utf8'));
  assert.ok(report.includes('Local AI'));
- assert.equal(Object.values(connections).filter(c=>c.status==='needs-repository').length,5);
+ assert.equal(Object.values(connections).filter(c=>c.status==='needs-repository').length,4);
  assert.ok(report.includes('AsnkarGrotzschnapf'));assert.ok(report.includes('| master |'));
  for(const name of ['Ethera','arcanitebrothers'])assert.doesNotMatch(report,new RegExp('https://github\\.com/babunidev/'+name+'(?:[)/#?\\s]|$)'));
  assert.ok(report.includes('https://github.com/babunidev/Ethera-docs'));
