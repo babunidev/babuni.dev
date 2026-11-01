@@ -90,3 +90,9 @@ The small/big blooms still display immediate source-based excerpts and the exist
 ## WebP publishing policy — 2026-10-27
 
 All published images, including gallery captures, portal artwork, video posters and the favicon, use WebP. Current screenshot captures were found to contain JPEG bytes despite their historical `.png` names; these and JPEG posters use quality-85 WebP with unchanged dimensions. Future genuine PNG screenshots should use lossless WebP where practical, measuring output size and checking readability. Keep originals outside `public/`. `npm run content:check` rejects other image formats and invalid WebP container signatures before building. The browser capture may start as temporary PNG; convert it before adding it to the gallery and visual manifest.
+
+## 2026-11-01 — Folder-based Markdown collections
+
+The Buxbrew character archive introduces `document-list`, a generated module kind alongside text, gallery, video and resources. Nine cards are built from the pinned public source's Assets, Character, Docs, Family, Journal, Lore, Places, Relationships and Stories directories. A card lists available Markdown filenames in the modal reader. Selecting a filename loads the full Markdown inside the same reader; Back to the folder restores the list without closing the bloom. Root canon, timeline, writing guide and AGENTS documents are included in the Docs list.
+
+The folder modules are not manually authored duplicates of document bodies. Their `documents` entries are derived from the generated document index, with `title`, `path`, `bodyUrl` and pinned `source`. Individual files do not occupy bloom tiles. The Assets folder currently provides links to its three empty media subdirectories; no missing image or Markdown is invented. Refresh the source using `npm run content:sync`, then validate/test/build before publishing. The exception is limited to the character repository, not a general recursive importer for all public GitHub repositories.
