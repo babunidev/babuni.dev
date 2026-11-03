@@ -38,7 +38,7 @@ Only write claims based on material actually available to the agent: this conver
 
 Do not automatically publish raw private chats, identity details, tokens, keys, VPS credentials, unrelated personal or financial information, or third-party material. Public-facing development history should paraphrase relevant project directions, preserve meaningful attribution, and omit irrelevant personal content. Public release of verbatim quotes or sensitive materials requires explicit approval.
 
-Use labels **Babuni.dev requested**, **AI proposed**, **Babuni.dev decided**, **Implemented**, **Tested**, and **Open** where appropriate. Never fabricate a test, outcome, conversation, date, feature, or acceptance.
+Use labels **Babuni requested**, **AI proposed**, **Babuni decided**, **Implemented**, **Tested**, and **Open** where appropriate. Never fabricate a test, outcome, conversation, date, feature, or acceptance.
 
 ## Development safeguards
 
@@ -100,7 +100,7 @@ Identify the human creative as **Babuni** and the website/repository as **babuni
 
 ## Preserve approved interaction feel
 
-Babuni.dev explicitly requested on 2026-10-26: do not independently change established timing, positioning, or other approved feature behavior while solving another issue. Preserve the existing feel. If a proposed solution needs such a change that Babuni.dev has not already authorized, explain the idea and ask before implementing it. Record AI proposals separately from human decisions. In particular, clicking/selecting a project must never accelerate autonomous shifts: let the current shift finish at its normal tempo before opening.
+Babuni explicitly requested on 2026-10-26: do not independently change established timing, positioning, or other approved feature behavior while solving another issue. Preserve the existing feel. If a proposed solution needs such a change that Babuni has not already authorized, explain the idea and ask before implementing it. Record AI proposals separately from human decisions. In particular, clicking/selecting a project must never accelerate autonomous shifts: let the current shift finish at its normal tempo before opening.
 
 ## Historical development priorities and test attribution
 
@@ -108,7 +108,7 @@ On 2026-10-26, the creative prioritized architecture and underlying structures b
 
 ## Browser screenshot archive
 
-Babuni.dev requested on 2026-10-27 that browser test screenshots be added to the project's visual documentation. Publish all website images as WebP. Capture temporary PNGs outside `public/` if needed, convert genuine PNG screenshots to lossless WebP where practical, and inspect actual encoded format rather than relying on filenames. Save verification screenshots under `public/media/babuni-dev/images/verification/`, add them to BABUNI.DEV's Visual documentation gallery and `docs/VISUAL_DOCUMENTATION.md`, and caption the test context and historical status. Distinguish AI browser captures from human-supplied art and actual phone acceptance. Preserve earlier captures even when their design is superseded. Do not claim unavailable or unsaved screenshots were recovered.
+Babuni requested on 2026-10-27 that browser test screenshots be added to the project's visual documentation. Publish all website images as WebP. Capture temporary PNGs outside `public/` if needed, convert genuine PNG screenshots to lossless WebP where practical, and inspect actual encoded format rather than relying on filenames. Save verification screenshots under `public/media/babuni-dev/images/verification/`, add them to BABUNI.DEV's Visual documentation gallery and `docs/VISUAL_DOCUMENTATION.md`, and caption the test context and historical status. Distinguish AI browser captures from human-supplied art and actual phone acceptance. Preserve earlier captures even when their design is superseded. Do not claim unavailable or unsaved screenshots were recovered.
 
 ## Current-state and evidence safeguards
 
@@ -127,3 +127,7 @@ The site is statically generated, but its content is intentionally evolving. Imp
 Tests should verify stable behavior and safety: unique and valid identities, current mapping-to-snapshot consistency, accurate source attribution, public-only imports, safe Markdown and links, accessible assets, content loading, search, and the grid's interaction rules. Use the current catalog as data, not as an approval list frozen at one date. A creative's editorial choices must not be rejected by a test expecting yesterday's content.
 
 Keep intentional interface and animation decisions under test until the creative revises them. Editorial inconsistencies between a curated summary and an upstream README belong to a content review, not to a blocking assertion against a fixed phrase. Run content validation, tests, and the build against the current imported snapshots before publication.
+
+## Repository-local documentation standard
+
+Before writing or changing project documentation, read [docs/DOCUMENTATION.md](docs/DOCUMENTATION.md). These rules travel with this repository and do not depend on the babuni.dev ChatGPT Project. Preserve all project-specific technical, creative, canon, safety, licensing, and historical rules in this file; follow the linked standard for public first-person narrative, human–AI attribution, concise development journals, decision records, and evidence-based verification. **Babuni** is the human creative; **babuni.dev** is the website/portfolio, not the person. Preserve third-party credits and historical legal notices. References above to a dated “documentation-only audit” describe that past task, not a permanent ban on later authorized implementation.
