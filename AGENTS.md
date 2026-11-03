@@ -28,7 +28,7 @@ See docs/AI_COLLABORATION.md for attribution, provenance, privacy rules, and pub
 - docs/DECISIONS.md: decisions with status, alternatives, rationale, and ability to revisit.
 - docs/DESIGN.md, docs/ARCHITECTURE.md, docs/CONTENT.md: maintain consistency with changed behavior.
 - ROADMAP.md: keep status truthful and distinguish planned from built.
-- CONCEPT.md: revise only when Babuni.dev confirms a substantial change to vision.
+- CONCEPT.md: revise only when Babuni confirms a substantial change to vision.
 
 Prefer documentation updates in the same commit as the implementation. If a discussion changed direction but produced no code, record it as a design entry, **not** an implementation in CHANGELOG.
 
@@ -52,7 +52,7 @@ Use labels **Babuni requested**, **AI proposed**, **Babuni decided**, **Implemen
 
 ## Scope
 
-This file governs babuni.dev. The human–AI documentation method may be copied to Babuni.dev's other repositories **only when deliberately adopted there**; this file cannot automatically control other projects or ChatGPT conversations.
+This file governs babuni.dev. The human–AI documentation method may be copied to Babuni's other repositories **only when deliberately adopted there**; this file cannot automatically control other projects or ChatGPT conversations.
 
 
 ---
