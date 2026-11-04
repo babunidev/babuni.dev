@@ -93,6 +93,7 @@ The checklist below reflects this acceptance. Dated notes after the checklist ar
 
 - [x] Reconcile the active checklist with dated deployment and physical-device acceptance evidence; preserve historical notes.
 - [x] Inspect Babuni.admin main at `ef2d1c1f1d27e436b0e483d618318e06fbe84fc8` and document integration gaps. This is source review, not execution or security certification.
+- [x] Review current admin commit `17f8f5e` (including its new Morkahja-only health probe), follow the capability registry, profile schema, service routes and website dependency chain; record the two-repository implementation/acceptance matrix in docs/ADMIN_INTEGRATION.md. No operational connection exists yet.
 - [ ] Define a versioned source/dependency/output manifest: stable project/module IDs, upstream repository/path/commit, generated document, preview/intro, collection, HTML and search dependencies.
 - [ ] Implement a targeted document build with full-build parity tests, revision preconditions and stale-client/cache handling. Partial publication is not supported today.
 - [ ] Define a release identity and complete artifact contract for Babuni.admin to validate, stage, atomically activate, verify and roll back. Keep transport, credentials, approval and retention controls in the admin application.

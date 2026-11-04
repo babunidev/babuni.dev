@@ -812,3 +812,8 @@ The catalog now uses `amberbrew-story` as the sole project ID and **Amberbrew St
 ## 2026-11-04 — Roadmap reconciliation and local admin integration
 
 Babuni.dev requested an accurate remaining-work list and assessment of Babuni.admin. AI reconciled the active roadmap with recorded operator deployment checks and reviewed the admin's public revision `ef2d1c1`. The local-only portfolio workspace remains non-operational; outbound publishing is planned. The new ADMIN_INTEGRATION plan separates existing full static releases from proposed targeted document publishing, coherent output dependencies, release verification and visibility controls. Deployment orchestration belongs in Babuni.admin. Live loading and interaction measurements remain open; content completion is not a gate. No application behavior, upstream snapshots, server configuration or production release changed. Verification: documentation consistency and repository diff review; no new runtime, device or live performance result claimed.
+
+
+## 2026-11-04 — Two-repository integration boundary
+
+Code review of admin `17f8f5e` confirms no active GitHub/publishing capabilities or portfolio editor routes. Website source inputs, prepared Markdown/index, composed JSON and static HTML are separate layers; a reader upload alone cannot update them. See [ADMIN_INTEGRATION](ADMIN_INTEGRATION.md) for concrete source ownership, identity mapping, missing contracts and acceptance slices. Proposed discovery, targeted generation, revision-aware content and release artifacts are unimplemented; static full-build publishing requires no public admin backend.

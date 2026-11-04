@@ -792,3 +792,8 @@ Buxbrew's character archive is deliberately navigable as nine folder cards rathe
 ## 2026-11-04 — Roadmap reconciliation and local admin integration
 
 Babuni.dev requested an accurate remaining-work list and assessment of Babuni.admin. AI reconciled the active roadmap with recorded operator deployment checks and reviewed the admin's public revision `ef2d1c1`. The local-only portfolio workspace remains non-operational; outbound publishing is planned. The new ADMIN_INTEGRATION plan separates existing full static releases from proposed targeted document publishing, coherent output dependencies, release verification and visibility controls. Deployment orchestration belongs in Babuni.admin. Live loading and interaction measurements remain open; content completion is not a gate. No application behavior, upstream snapshots, server configuration or production release changed. Verification: documentation consistency and repository diff review; no new runtime, device or live performance result claimed.
+
+
+## 2026-11-04 — Admin integration preserves the portfolio experience
+
+The requested code-backed assessment keeps administration in the local Babuni.admin application. No grid controls, timing, geometry or public admin interface changed. Proposed future content-refresh behavior must preserve an already open bloom/reader and avoid mixing old previews with new documents; no automatic polling or reload design has been selected. [Integration assessment](ADMIN_INTEGRATION.md) separates existing behavior from proposed implementation.

@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Code-backed admin integration assessment (2026-11-04)
+- Expanded the integration report with actual admin routing/capability/profile evidence, website source/output dependencies and a staged implementation/acceptance matrix. No content-management or deployment feature added.
+
 ### Changed — Content-independent regression tests (2026-11-01)
 - Replaced brittle historical prose, pinned commit, fixed catalog-count and media-inventory assertions with current-data checks and synthetic test fixtures.
 - Preserved source validation, public/private repository boundaries, URL/asset safety and grid behavior testing.

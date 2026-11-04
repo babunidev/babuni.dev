@@ -1371,3 +1371,10 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 With the website already online, my next request was to make the roadmap reflect that progress and examine what Babuni.admin will need from it. AI reviewed the admin's public revision `ef2d1c1`: local connection and keyring work exists, but its portfolio workspace cannot yet edit or publish. The roadmap now separates completed hosting checks from live performance measurements and records an integration proposal for updating a document together with its previews and readable pages. Deployment controls belong in the local admin application; the website still supports full static builds, not targeted publishing.
 
 During publication, a newer documentation review appeared on main. AI retained that work while reconciling this update. Content validation and diff checks passed; no runtime change, server deployment or new live measurement was performed.
+
+
+## 2026-11-04 — Following the connection into the code
+
+The earlier documentation pass did not answer my request to understand how the two applications would work together. This time AI followed the admin's capability registry, profile schema, service routes and portfolio workspace alongside the website's actual source/build/loading chain, then rechecked the newer main commit `17f8f5e`. That commit adds a guarded Morkahja database health probe, distinct from website publishing. A saved connection profile cannot yet read GitHub or publish: those operations are disabled, and the portfolio editor does not exist. The website also needs a supported catalog contract and coordinated generation of a document's previews, reader and readable pages.
+
+The resulting assessment maps the work on both sides, beginning with read-only discovery and a reviewed document edit before targeted builds. A public admin endpoint or website redesign is unnecessary for the local-app direction. This was source inspection and documentation validation, not a running connection, fresh admin test suite or server deployment.
