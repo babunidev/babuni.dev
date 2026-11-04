@@ -787,3 +787,8 @@ Ordinary row/column shifts show their motion label, optionally alongside the exp
 ## 2026-11-01 — One folder per character-story bloom card
 
 Buxbrew's character archive is deliberately navigable as nine folder cards rather than a separate stone for every Markdown file. The big bloom retains its grid-native layout and reveals each folder's document filenames. In the framed reader, selecting a filename replaces the folder list with the complete Markdown; Back to the folder restores that list and keyboard focus without collapsing the bloom. The Assets card names the existing Illustrations, References and Screenshots subdirectories while awaiting actual media. No animation timings, artwork, stone placement or bloom footprint rules changed.
+
+
+## 2026-11-04 — Roadmap reconciliation and local admin integration
+
+Babuni.dev requested an accurate remaining-work list and assessment of Babuni.admin. AI reconciled the active roadmap with recorded operator deployment checks and reviewed the admin's public revision `ef2d1c1`. The local-only portfolio workspace remains non-operational; outbound publishing is planned. The new ADMIN_INTEGRATION plan separates existing full static releases from proposed targeted document publishing, coherent output dependencies, release verification and visibility controls. Deployment orchestration belongs in Babuni.admin. Live loading and interaction measurements remain open; content completion is not a gate. No application behavior, upstream snapshots, server configuration or production release changed. Verification: documentation consistency and repository diff review; no new runtime, device or live performance result claimed.

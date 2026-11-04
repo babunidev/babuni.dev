@@ -1,14 +1,14 @@
 # Development Roadmap
 
-## Current status — 2026-11-01
+## Current status — 2026-11-04
 
 **Babuni.dev acceptance:** Milestones 1–4 are complete for the present design. Babuni.dev reports thorough physical testing on two devices, responsive checks on phone/laptop/wide desktop, satisfying keyboard and reduced-motion alternatives, working hover/tap/ambient topics, fullscreen/viewer use, and many-hour sessions. The current neutral stone tiles and striking portals are the accepted visual direction. These are human observations, not new AI device tests or a guarantee against future regressions. Performance can be reviewed again later.
 
 Milestone 5's content pipeline is substantially implemented. Editorial review is ongoing work, not a blocker requiring every project to be finished. Babuni.dev explicitly authorizes publishing all 42 current catalog projects and their existing public-source documentation (2026-10-29). A future owner visibility toggle and optional preview deployments remain enhancements, not blockers for this approved collection. MDX is optional and deferred; current Markdown, image and video modules are sufficient.
 
-**Release update (2026-10-31):** The first static release was built from a separate clean Git worktree and staged on the shared VPS. The journal records successful public HTTPS (200), HTTP-to-HTTPS redirect (301), Certbot renewal dry-run, homepage and asset header checks, sitemap response, 404 behavior, and continued HTTP 200 responses from the existing Arcanite Brothers website and API health route. These are specific verified observations, not proof of full live-browser acceptance or measured production loading. More recent local changes are not automatically deployed.
+**Release status:** The static site is online. Operator-reported deployment records in `deploy/README.md` establish VPS setup, HTTPS/redirects, renewal dry runs, compression, asset cache headers, sitemap responses and preservation of the existing Arcanite Brothers site/API. These are dated checks, not a fresh live audit or proof of the latest deployed commit. CI tests/builds; it does not deploy automatically.
 
-**Next release priorities:** audit the deployed sitemap and asset behavior, perform public browser and real-network performance checks, determine how the current local version should be promoted safely, and continue source-backed editorial review. Owner publishing controls and optional preview deployments remain future enhancements.
+**Next priorities:** measure repeatable live loading and browser interaction performance; verify the served release; submit/check search indexing; coordinate content publishing with the local Babuni.admin application. Deployment controls belong in Babuni.admin rather than a second website administration interface. Editorial completion remains ongoing and is not a release gate. See [admin integration plan](docs/ADMIN_INTEGRATION.md).
 
 The checklist below reflects this acceptance. Dated notes after the checklist are historical; their earlier pending checks and superseded designs are not the current status.
 
@@ -36,7 +36,7 @@ The checklist below reflects this acceptance. Dated notes after the checklist ar
 **Babuni.dev's first desktop acceptance test (2026-10-26):** Local Astro 7.4.2 server returned the page successfully. On Babuni.dev's desktop, the centered BABUNI.DEV tile appeared correctly, mouse dragging felt smooth and appropriately paced, and the grid could be dragged indefinitely without encountering an edge. This was the initial desktop-only evidence. The later physical-device acceptance above supersedes its outstanding checks.
 - [x] Responsive coverage on phone, laptop and wide desktop accepted by Babuni.dev (2026-10-29).
 - [x] Prototype slow one-cell row/column shifts with testable seeded dice rounds (current timing/interaction feel accepted by Babuni.dev).
-- [x] Pause an active autonomous shift while dragging, resume afterward and defer new rounds while dragging. Bloom-specific conflict handling awaits bloom implementation.
+- [x] Preserve accepted drag/shift coordination and defer conflicting bloom transitions until the active shift finishes; later implementation notes supersede the early prototype pause behavior.
 - [x] Keyboard and reduced-motion alternatives accepted by Babuni.dev (2026-10-29); keyboard navigation described as satisfying.
 
 **Movement refinement (2026-10-26):** Babuni.dev requested smooth, slower arrow-key navigation; brief acceleration and an adjustable speed ceiling for mouse/touch dragging; and no two simultaneously shifting rows moving in the same direction. A matching restriction on columns is an AI-proposed extension, awaiting Babuni.dev review. Initial controller and directional shift cap are implemented and tested in an isolated preview. Historical tuning note; Milestone 1 is now accepted by Babuni.dev for the current behavior.
@@ -71,25 +71,33 @@ The checklist below reflects this acceptance. Dated notes after the checklist ar
 ## Milestone 5 — Content and automation
 - [x] Validate the implemented JSON module schema and repository-source mappings.
 - [ ] Optional/deferred: MDX only if a future need arises for interactive components inside authored Markdown; not required for current milestones.
-- [x] Populate source-backed project modules, including babuni.dev (35 current projects connected to 35 public repositories; editorial review remains ongoing).
+- [x] Populate source-backed project modules, including babuni.dev (42 catalog projects, with 36 connected public repository sources; editorial review remains ongoing).
 - [x] Surface repository development notes as first-class modules.
 - [ ] Ongoing human editorial review of AI-assisted text and project histories; attribution is implemented, accuracy review continues without requiring complete content before release.
 - [x] Add CI build checks.
 - [ ] Add preview deployments.
 - [x] Explicit publication authorization for the current 42-project catalog and existing public-source documentation (Babuni.dev, 2026-10-29).
-- [ ] Future enhancement: owner project visibility/publishing UI. Private material is not imported.
+- [ ] Future enhancement: project visibility/publishing controls in Babuni.admin, backed by an agreed website build contract. Private material is not imported.
 
 ## Milestone 6 — Release
-- [x] Prepare and install an isolated static VPS release with dedicated deployment account and separate Nginx site (2026-10-31; commands performed by the creative with AI guidance).
-- [x] Configure public `www.babuni.dev` DNS and HTTPS with HTTP redirect; verify Certbot dry-run renewal (2026-10-31).
-- [x] Check public homepage, static assets, caching headers, sitemap response, 404 behavior, and existing Arcanite Brothers website/API availability (specific HTTP checks recorded 2026-10-31).
+- [x] Configure VPS hosting, static release deployment, domain and HTTPS (operator-reported evidence in deploy/README.md).
 - [x] Responsive, keyboard/touch, fullscreen and long-session experience accepted by Babuni.dev.
-- [x] Verify sampled production compression, cache and security headers plus HTTP-level smoke checks (2026-10-31; see journal).
-- [ ] Measure real production loading and interaction performance, and perform live-browser/device regression checks for the deployed release.
-- [ ] Audit sitemap contents and confirm external indexing/discoverability; an HTTP 200 response alone does not establish indexing.
-- [x] Add 433 crawlable static home/project/module URLs, descriptive titles, canonical URLs, sitemap, crawler rules, sharing metadata and source-preserving readable documents; verify built links/headings/metadata. Search indexing is not guaranteed.
-- [x] Publish the first static release over public HTTPS and record deployment checks in the journal (2026-10-31; deployment is a dated snapshot, not necessarily current `main`).
-- [ ] Establish and verify the next reviewed release/update procedure; keep the changelog and journal current.
+- [x] Record operator checks of HTTPS, redirects, renewal simulation, gzip, asset caching, sitemap and existing-site/API health.
+- [ ] Measure current live cold/repeat loading and browser interaction performance; record device, network, date and served release.
+- [ ] Verify the intended release is served after each deployment; review security configuration separately from loading measurements.
+- [x] Add crawlable static home/project/module URLs, descriptive titles, canonical URLs, sitemap, crawler rules, sharing metadata and source-preserving readable documents; verify built links/headings/metadata. Search indexing is not guaranteed.
+- [x] Publish an initial static release; maintain changelog and journal.
+- [ ] Submit the sitemap and review actual search indexing; generated search metadata does not guarantee indexing.
+
+## Next technical work — 2026-11-04
+
+- [x] Reconcile the active checklist with dated deployment and physical-device acceptance evidence; preserve historical notes.
+- [x] Inspect Babuni.admin main at `ef2d1c1f1d27e436b0e483d618318e06fbe84fc8` and document integration gaps. This is source review, not execution or security certification.
+- [ ] Define a versioned source/dependency/output manifest: stable project/module IDs, upstream repository/path/commit, generated document, preview/intro, collection, HTML and search dependencies.
+- [ ] Implement a targeted document build with full-build parity tests, revision preconditions and stale-client/cache handling. Partial publication is not supported today.
+- [ ] Define a release identity and complete artifact contract for Babuni.admin to validate, stage, atomically activate, verify and roll back. Keep transport, credentials, approval and retention controls in the admin application.
+- [ ] Define project visibility once and apply it consistently to grid, menu, collections, readable pages, sitemap and media policy before enabling toggles.
+- [ ] Keep preview deployments optional; defer MDX until an actual content need appears.
 
 ## Documentation review — 2026-11-01
 

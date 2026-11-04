@@ -669,3 +669,8 @@ The existing `buxbrew-character-story` tile now connects to the public `babunide
 ## 2026-11-01 — Final project identity: amberbrew-story
 
 The active project entry is **Amberbrew Story** with internal ID `amberbrew-story`. The earlier `buxbrew-character-story` key is no longer used by the current code or repository mapping; previous paragraphs above preserve the earlier state historically. The 40 original Markdown documents remain sourced from `babunidev/AmberbrewStory`. The small bloom continues to sample up to eight populated modules, while the big bloom provides all eight standard-document modules, nine folders, and the project-source module. Individual folder documents open inside the existing reader.
+
+
+## 2026-11-04 — Roadmap reconciliation and local admin integration
+
+Babuni.dev requested an accurate remaining-work list and assessment of Babuni.admin. AI reconciled the active roadmap with recorded operator deployment checks and reviewed the admin's public revision `ef2d1c1`. The local-only portfolio workspace remains non-operational; outbound publishing is planned. The new ADMIN_INTEGRATION plan separates existing full static releases from proposed targeted document publishing, coherent output dependencies, release verification and visibility controls. Deployment orchestration belongs in Babuni.admin. Live loading and interaction measurements remain open; content completion is not a gate. No application behavior, upstream snapshots, server configuration or production release changed. Verification: documentation consistency and repository diff review; no new runtime, device or live performance result claimed.

@@ -1364,3 +1364,10 @@ The implementation additionally limits focus suppression to keyboard-visible foc
 **Iteration and Babuni decisions.** I preferred non-linear, initially busy discovery that became clearer through attention. Hovering a toy should give a clue; clicking it should open a first preview; selecting again should move deeper. Scroll-wheel-as-navigation was explored but rejected because it conflicted with ordinary reading. A conventional back route was kept for detailed content.
 
 **Outcome.** A four-depth model emerged: grid, small bloom, full bloom, expanded content. This was an interaction specification, not an implementation.
+
+
+## 2026-11-04 — Roadmap and the local admin connection
+
+With the website already online, my next request was to make the roadmap reflect that progress and examine what Babuni.admin will need from it. AI reviewed the admin's public revision `ef2d1c1`: local connection and keyring work exists, but its portfolio workspace cannot yet edit or publish. The roadmap now separates completed hosting checks from live performance measurements and records an integration proposal for updating a document together with its previews and readable pages. Deployment controls belong in the local admin application; the website still supports full static builds, not targeted publishing.
+
+During publication, a newer documentation review appeared on main. AI retained that work while reconciling this update. Content validation and diff checks passed; no runtime change, server deployment or new live measurement was performed.

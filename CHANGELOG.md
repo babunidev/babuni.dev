@@ -13,6 +13,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 - Changes are proposed on a review branch; full suite results and deployment are not yet verified.
 
 
+### Changed — Roadmap and admin integration planning (2026-11-04)
+- Corrected current release checklist against recorded deployment evidence; separated pending live measurements from completed hosting checks.
+- Documented the reviewed local Babuni.admin boundary and proposed website dependency/release contracts in docs/ADMIN_INTEGRATION.md. No targeted publishing functionality added.
+
 ### Changed — Randomized toy box and recent-update markers (2026-10-30)
 - Pinned BABUNI.DEV as the first project on load and shuffled remaining projects once per page load. Grid shifts preserve semantic identity.
 - Replaced update-priority placement with a gold corner label and additional gold portal ring on projects with verified recent public commits (provisional rule: five newest within fourteen days).
