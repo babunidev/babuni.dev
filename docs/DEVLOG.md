@@ -10,7 +10,7 @@ For specific decisions, implementation changes and technical measurements, see [
 
 Every content change meant rebuilding the whole site, even when only a paragraph of the journal had moved. After asking AI to trace how a document becomes a published page, the answer turned out to be small: one document feeds three files (its Markdown, its module data and its readable page), and the page's article can be rendered by the same functions the build already uses.
 
-AI wrote a renderer and a publish script that copy the live release with hard links, replace only those files and switch the live link, keeping the previous release for rollback. A dry run against the live site reproduced the deployed journal page byte for byte, and a test release on the server confirmed that a hard-linked copy leaves the old release untouched. The script has not yet been used for a real publication.
+AI wrote a renderer and a publish script that copy the live release with hard links, replace only those files and switch the live link, keeping the previous release for rollback. A dry run against the live site reproduced the deployed journal page byte for byte, and a test release on the server confirmed that a hard-linked copy leaves the old release untouched. Publishing this very entry was the first real use: a few seconds, no build, and the previous release left in place for rollback.
 
 ## 2026-11-01 — Letting the content change
 
