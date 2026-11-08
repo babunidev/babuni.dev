@@ -915,3 +915,16 @@ Babuni.dev requested an accurate remaining-work list and assessment of Babuni.ad
 ## 2026-11-04 — Ground the connection in both codebases
 
 **Human direction:** Babuni requested an actual analysis of how the admin can manage the website after the earlier review did not establish the connection. **AI finding:** GitHub and publish profiles have no capabilities or transport implementation; the portfolio workspace is a placeholder. The website has a full static pipeline, not a targeted document publisher. **Proposal, open:** begin with read-only catalog discovery, then reviewed source edits/full releases, then dependency-aware partial builds. Avoid a website rewrite or public management API for the documented outbound local-app approach. No schema, transport or automatic refresh behavior is represented as implemented or separately accepted. Detailed evidence and acceptance: [ADMIN_INTEGRATION](ADMIN_INTEGRATION.md).
+
+
+## 2026-11-08 — ROARguild community repository mapping
+
+**Status:** Accepted source mapping; local website verification pending.
+
+**Creative direction:** The existing `roar-guild-and-community` project identity should represent the ROAR guild community repository, not the separate WoW addon repository.
+
+**AI contribution:** Traced the existing public-document snapshot and on-demand reader pipeline, then extended its explicit path allowlist for the guild's community documents.
+
+**Decision:** Map the stable project ID to `babunidev/ROARguild` on `main`. Import the overview, concept, journal, changelog, decisions, roadmap, charter, community principles, activities, governance, Sunday road-bonfire concept, and Oracle design. Keep `roarguild` mapped to `babunidev/RoarGuildAddon`.
+
+**Boundary:** This is a pinned documentation connection, not a live mirror, not an addon-source import, and not evidence that the Oracle or guild activities are implemented. Local testing and creative review remain pending.

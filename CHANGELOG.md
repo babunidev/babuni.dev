@@ -1074,3 +1074,11 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Replaced the internal project ID `buxbrew-character-story` with `amberbrew-story` in the existing project entry, source connection, menu group and keyword pool, alongside the already updated **Amberbrew Story** display name.
 - Preserved its catalog order, original portal artwork, pinned 40 Markdown documents, nine folder-index modules and existing bloom/shift logic.
 - Updated repository report generation and strengthened rename tests. The generated public project route and on-demand module asset now use the new ID.
+
+
+## 2026-11-08 — ROARguild portfolio connection
+
+- Connected the stable Roar Guild community project to the public `babunidev/ROARguild` repository, keeping it separate from the Roar Guild Add-on project.
+- Added a pinned public snapshot of twelve selected documents, including the concept, guild working documents, Sunday road-bonfire idea, and Oracle design.
+- Extended the existing repository allowlist and on-demand document reader for these project-specific paths. No live GitHub fetching was added to the visitor-facing website.
+- Local website build, tests, and browser review remain pending.

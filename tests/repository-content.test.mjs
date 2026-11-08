@@ -2,7 +2,7 @@ import {presentDocument} from '../src/lib/document-presentation.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {REPOSITORY_DOCUMENTS,repositoryModules,composeProjectModules,documentPreview} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,repositoryDocuments,repositoryModules,composeProjectModules,documentPreview} from '../src/lib/repository-content.ts';
 import {moduleHasContent,selectModules} from '../src/lib/project-modules.ts';
 import {demoProjects} from '../src/lib/demo-projects.ts';
 import {validateConnections,validateSnapshots,fetchSnapshot,syncSnapshots} from '../scripts/sync-repositories.mjs';
@@ -25,11 +25,43 @@ test('all active tiles have explicit status; all public source snapshots match t
   assert.equal(new Set(merged.map(m=>m.id)).size,merged.length);
   assert.equal(selectModules(merged).length,Math.min(8,merged.filter(moduleHasContent).length));
   for(const module of source){
-   const doc=REPOSITORY_DOCUMENTS.find(d=>d.id===module.id);
+   const doc=repositoryDocuments(c.repository).find(d=>d.id===module.id);
    assert.equal(module.body,presentDocument(c.repository==='babunidev/babuni.dev'?local[doc.path]:snapshots[c.repository].documents.find(d=>d.path===doc.path).body,doc.path));
    assert.ok(module.preview.trim());assert.ok(module.source.startsWith(`https://github.com/${c.repository}/blob/`));
   }
  }
+});
+test('ROARguild maps the community project separately from the WoW addon',()=>{
+ const c=connections['roar-guild-and-community'];
+ assert.equal(c.status,'connected');
+ assert.equal(c.repository,'babunidev/ROARguild');
+ assert.equal(connections.roarguild.repository,'babunidev/RoarGuildAddon');
+ assert.equal(c.paths.length,12);
+ assert.ok(!c.paths.includes('AGENTS.md'));
+ assert.ok(!c.paths.includes('docs/PROJECT_STRUCTURE.md'));
+ const docs=repositoryDocuments(c.repository);
+ assert.ok(c.paths.every(path=>docs.some(doc=>doc.path===path)));
+ const source=repositoryModules(c,snapshots[c.repository]);
+ assert.deepEqual(source.map(module=>module.id),[
+  'overview','concept','journal','changes','decisions','roadmap',
+  'charter','community','activities','governance','sunday-campfires','oracle'
+ ]);
+ assert.ok(source.every(module=>module.source.includes('/'+snapshots[c.repository].commit+'/')));
+ assert.deepEqual(validateConnections(connections,demoProjects.map(p=>p.id)),[]);
+ assert.deepEqual(validateSnapshots(connections,snapshots),[]);
+});
+test('ROARguild sync fetches only its explicit community-document selection at one pinned revision',async()=>{
+ const c=connections['roar-guild-and-community'],calls=[];
+ const snapshot=await fetchSnapshot(c,{
+  resolveCommit:async(repository,branch)=>{assert.equal(repository,'babunidev/ROARguild');assert.equal(branch,'main');return commit;},
+  fetcher:async url=>{
+   calls.push(url);
+   if(url.includes('api.github.com'))return json({private:false,visibility:'public',full_name:'babunidev/ROARguild'});
+   return new Response('# Imported source\\n\\nPinned content.');
+  }
+ });
+ assert.deepEqual(snapshot.documents.map(document=>document.path),c.paths);
+ assert.ok(calls.slice(1).every(url=>url.includes('/'+commit+'/')));
 });
 test('source text replaces curated bodies; existing media and meaningful previews survive',()=>{
  const c=connections['babuni-dev'];const sourced=repositoryModules(c,undefined,local);

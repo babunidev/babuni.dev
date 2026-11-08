@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {join} from 'node:path';
 import {prepareDocumentAssets,documentAssetName} from '../scripts/build-document-assets.mjs';
-import {REPOSITORY_DOCUMENTS,indexedRepositoryModules,composeProjectModules,loadIndexedBody} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,repositoryDocuments,indexedRepositoryModules,composeProjectModules,loadIndexedBody} from '../src/lib/repository-content.ts';
 import {moduleHasContent,selectModules} from '../src/lib/project-modules.ts';
 import {presentDocument} from '../src/lib/document-presentation.ts';
 import {moduleIntro} from '../src/lib/big-bloom.ts';
@@ -28,6 +28,11 @@ test('on-demand bundle manifest includes only connected public source documents'
   }
   assert.equal(documentAssetName('babunidev/ButtonGame','docs/DEVLOG.md'),
     'babunidev--ButtonGame/docs--DEVLOG.md');
+  assert.equal(documentAssetName('babunidev/ROARguild','guild/CHARTER.md'),
+    'babunidev--ROARguild/guild--CHARTER.md');
+  assert.equal(documentAssetName('babunidev/ROARguild','community-tools/ORACLE.md'),
+    'babunidev--ROARguild/community-tools--ORACLE.md');
+  assert.throws(()=>documentAssetName('babunidev/ROARguild','AGENTS.md'));
   assert.throws(()=>documentAssetName('anyone/private','AGENTS.md'));
   assert.throws(()=>documentAssetName('babunidev/ButtonGame','../secret.md'));
 });
@@ -51,7 +56,7 @@ test('synchronous previews and big bloom intro retain exact source attribution',
     if(connection.status!=='connected'){assert.deepEqual(source,[]);continue;}
     assert.ok(source.length>0,project.id);
     for(const module of source){
-      const path=REPOSITORY_DOCUMENTS.find(d=>d.id===module.id).path;
+      const path=repositoryDocuments(connection.repository).find(d=>d.id===module.id).path;
       const body=connection.repository==='babunidev/babuni.dev'
         ?local[path]:snapshots[connection.repository].documents.find(d=>d.path===path).body;
       assert.equal(moduleIntro(module),moduleIntro({body:presentDocument(body,path),preview:module.preview}));
@@ -69,6 +74,9 @@ test('reader accepts only published same-origin paths and handles failed request
   const fetched=await loadIndexedBody(url,async (path)=>{requested=path;return new Response('full original Markdown');});
   assert.equal(requested,url);
   assert.equal(fetched,'full original Markdown');
+  const guildUrl='/_project-docs/babunidev--ROARguild/guild--CHARTER.md';
+  const guildBody=await loadIndexedBody(guildUrl,async path=>new Response(path===guildUrl?'Guild charter':'wrong path'));
+  assert.equal(guildBody,'Guild charter');
   await assert.rejects(()=>loadIndexedBody('https://example.com/evil.md'),/Invalid/);
   await assert.rejects(()=>loadIndexedBody('/_project-docs/babunidev--repo/AGENTS.md'),/Invalid/);
   await assert.rejects(()=>loadIndexedBody(url,async()=>new Response('',{status:404})),/404/);

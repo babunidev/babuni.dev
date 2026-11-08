@@ -8,6 +8,8 @@ import {moduleHasContent} from '../project-modules';
 export const publicProjects=demoProjects.map(project=>({...project,modules:modulesForProject(project.id,project.shortSummary).filter(moduleHasContent)}));
 export function moduleBody(module:{body?:string;bodyUrl?:string}):string {
  if(!module.bodyUrl)return module.body??'';
- if(!/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/.test(module.bodyUrl))throw new Error('Invalid generated document path');
+ const standard=/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/;
+ const roarGuild=/^\/_project-docs\/babunidev--ROARguild\/(?:guild--(?:CHARTER|COMMUNITY|ACTIVITIES|GOVERNANCE)\.md|events--sunday-campfires--README\.md|community-tools--ORACLE\.md)$/;
+ if(!standard.test(module.bodyUrl)&&!roarGuild.test(module.bodyUrl))throw new Error('Invalid generated document path');
  return readFileSync(fileURLToPath(new URL('../../../public'+module.bodyUrl,import.meta.url)),'utf8');
 }
