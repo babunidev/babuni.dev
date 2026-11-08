@@ -14,6 +14,22 @@ export const REPOSITORY_DOCUMENTS=[
   {path:'ROADMAP.md',id:'roadmap',title:'Roadmap'},
   {path:'docs/CONTENT.md',id:'content',title:'Content'},
 ] as const;
+
+export const ROAR_GUILD_REPOSITORY='babunidev/ROARguild';
+export const ROAR_GUILD_DOCUMENTS=[
+  {path:'guild/CHARTER.md',id:'charter',title:'Guild charter'},
+  {path:'guild/COMMUNITY.md',id:'community',title:'Community principles'},
+  {path:'guild/ACTIVITIES.md',id:'activities',title:'Activities and shared rituals'},
+  {path:'guild/GOVERNANCE.md',id:'governance',title:'Governance and responsibilities'},
+  {path:'events/sunday-campfires/README.md',id:'sunday-campfires',title:'Sunday road bonfires'},
+  {path:'community-tools/ORACLE.md',id:'oracle',title:'The Oracle'},
+] as const;
+export type RepositoryDocument={path:string;id:string;title:string};
+export function repositoryDocuments(repository:string):readonly RepositoryDocument[]{
+  return repository===ROAR_GUILD_REPOSITORY
+    ?[...REPOSITORY_DOCUMENTS,...ROAR_GUILD_DOCUMENTS]
+    :REPOSITORY_DOCUMENTS;
+}
 /** The Buxbrew story's public lore folders are indexed, not individual bloom cards. */
 export const CHARACTER_STORY_REPOSITORY='babunidev/AmberbrewStory';
 export const CHARACTER_STORY_FOLDERS=['assets','character','docs','family','journal','lore','places','relationships','stories'] as const;
@@ -49,7 +65,7 @@ export function repositoryModules(connection:RepositoryConnection|undefined,snap
   if(!local&&(!snapshot||snapshot.repository!==connection.repository||snapshot.branch!==connection.branch))return [];
   const documents=local?localDocuments:Object.fromEntries(snapshot!.documents.map(d=>[d.path,d.body]));
   const ref=local?connection.branch:snapshot!.commit;
-  return REPOSITORY_DOCUMENTS.filter(doc=>!connection.paths||connection.paths.includes(doc.path)).flatMap(doc=>{
+  return repositoryDocuments(connection.repository).filter(doc=>!connection.paths||connection.paths.includes(doc.path)).flatMap(doc=>{
     const original=documents[doc.path];if(!original?.trim())return [];
     const body=presentDocument(original,doc.path);
     return [{id:doc.id,type:'text' as const,title:doc.title,preview:documentPreview(body)||doc.title,body,
@@ -137,7 +153,8 @@ export function indexedCharacterStoryFolders(
 export async function loadIndexedBody(url:string,fetcher:typeof fetch=fetch,signal?:AbortSignal):Promise<string>{
   const standard=/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/;
   const story=/^\/_project-docs\/babunidev--AmberbrewStory\/(?:AGENTS|CANON|TIMELINE|WRITING-GUIDE|(?:assets|character|docs|family|journal|lore|places|relationships|stories)--[A-Za-z0-9_-]+(?:--[A-Za-z0-9_-]+)*)\.md$/;
-  if(!standard.test(url)&&!story.test(url))
+  const roarGuild=/^\/_project-docs\/babunidev--ROARguild\/(?:guild--(?:CHARTER|COMMUNITY|ACTIVITIES|GOVERNANCE)\.md|events--sunday-campfires--README\.md|community-tools--ORACLE\.md)$/;
+  if(!standard.test(url)&&!story.test(url)&&!roarGuild.test(url))
     throw new Error('Invalid project document URL');
   const response=await fetcher(url,{signal});
   if(!response.ok)throw new Error('Document unavailable (HTTP '+response.status+')');

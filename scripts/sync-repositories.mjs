@@ -3,7 +3,7 @@ import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
-import {REPOSITORY_DOCUMENTS,CHARACTER_STORY_REPOSITORY,characterStoryDocumentPath} from '../src/lib/repository-content.ts';
+import {repositoryDocuments,CHARACTER_STORY_REPOSITORY,characterStoryDocumentPath} from '../src/lib/repository-content.ts';
 const run=promisify(execFile);
 const root=fileURLToPath(new URL('..',import.meta.url));
 export function validateConnections(connections,projectIds){
@@ -23,7 +23,7 @@ export function validateConnections(connections,projectIds){
     if(branches.has(entry.repository)&&branches.get(entry.repository)!==entry.branch)errors.push(`${id}: shared repositories must use the same branch`);
     branches.set(entry.repository,entry.branch);
     if(typeof entry.branch!=='string'||!entry.branch.trim()||/[\s~^:?*\[\\]/.test(entry.branch)||entry.branch.includes('..')||entry.branch.startsWith('-'))errors.push(`${id}: invalid branch`);
-    if(entry.paths!==undefined&&(!Array.isArray(entry.paths)||!entry.paths.length||new Set(entry.paths).size!==entry.paths.length||entry.paths.some(p=>!REPOSITORY_DOCUMENTS.some(d=>d.path===p))))errors.push(`${id}: paths must select unique standard documentation files`);
+    if(entry.paths!==undefined&&(!Array.isArray(entry.paths)||!entry.paths.length||new Set(entry.paths).size!==entry.paths.length||entry.paths.some(p=>!repositoryDocuments(entry.repository??'').some(d=>d.path===p))))errors.push(`${id}: paths must select unique standard documentation files`);
   }
   return errors;
 }
@@ -37,7 +37,7 @@ export function validateSnapshots(connections,snapshots){
     if(!Array.isArray(s.documents)||!s.documents.length){errors.push(`${repository}: no source documents`);continue;}
     const seen=new Set();
     for(const d of s.documents){
-      if(!d||!(REPOSITORY_DOCUMENTS.some(doc=>doc.path===d.path)||repository===CHARACTER_STORY_REPOSITORY&&characterStoryDocumentPath(d.path))||seen.has(d.path)||typeof d.body!=='string'||!d.body.trim())errors.push(`${repository}: invalid, empty or duplicate document`);
+      if(!d||!(repositoryDocuments(repository).some(doc=>doc.path===d.path)||repository===CHARACTER_STORY_REPOSITORY&&characterStoryDocumentPath(d.path))||seen.has(d.path)||typeof d.body!=='string'||!d.body.trim())errors.push(`${repository}: invalid, empty or duplicate document`);
       seen.add(d?.path);
     }
   }
@@ -65,7 +65,7 @@ export async function fetchSnapshot(connection,{fetcher=fetch,resolveCommit=publ
   const commit=await resolveCommit(repository,branch);
   if(!/^[a-f0-9]{40}$/.test(commit))throw new Error(`${repository}: invalid commit`);
   const documents=[];
-  for(const {path} of REPOSITORY_DOCUMENTS){
+  for(const {path} of repositoryDocuments(repository)){
     if(connection.paths&&!connection.paths.includes(path))continue;
     const response=await request(`https://raw.githubusercontent.com/${repository}/${commit}/${path}`);
     if(response.status===404)continue;

@@ -172,8 +172,24 @@
     "branch": "main"
   },
   "roar-guild-and-community": {
-    "status": "needs-repository",
-    "note": "No matching repository found in the accessible account inventory on 2026-10-27."
+    "status": "connected",
+    "repository": "babunidev/ROARguild",
+    "branch": "main",
+    "paths": [
+      "README.md",
+      "CONCEPT.md",
+      "docs/DEVLOG.md",
+      "CHANGELOG.md",
+      "docs/DECISIONS.md",
+      "ROADMAP.md",
+      "guild/CHARTER.md",
+      "guild/COMMUNITY.md",
+      "guild/ACTIVITIES.md",
+      "guild/GOVERNANCE.md",
+      "events/sunday-campfires/README.md",
+      "community-tools/ORACLE.md"
+    ],
+    "note": "Public guild/community documentation. Separate from the Roar Guild Add-on repository mapped to stable ID roarguild."
   },
   "amberbrew-story": {
     "status": "connected",

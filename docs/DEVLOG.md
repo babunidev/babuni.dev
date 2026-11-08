@@ -1378,3 +1378,10 @@ During publication, a newer documentation review appeared on main. AI retained t
 The earlier documentation pass did not answer my request to understand how the two applications would work together. This time AI followed the admin's capability registry, profile schema, service routes and portfolio workspace alongside the website's actual source/build/loading chain, then rechecked the newer main commit `17f8f5e`. That commit adds a guarded Morkahja database health probe, distinct from website publishing. A saved connection profile cannot yet read GitHub or publish: those operations are disabled, and the portfolio editor does not exist. The website also needs a supported catalog contract and coordinated generation of a document's previews, reader and readable pages.
 
 The resulting assessment maps the work on both sides, beginning with read-only discovery and a reviewed document edit before targeted builds. A public admin endpoint or website redesign is unnecessary for the local-app direction. This was source inspection and documentation validation, not a running connection, fresh admin test suite or server deployment.
+
+
+## 2026-11-08 — Connecting the ROARguild project
+
+The ROARguild repository already held the community concept, guild working documents, the Sunday road-bonfire idea, and the Oracle design, but its portfolio tile was still marked as disconnected. After asking AI to trace the existing content pipeline, I chose to connect the community repository through the same pinned-snapshot system used by the other projects, while keeping it distinct from the separate Roar Guild Add-on.
+
+The selected documents now have a reviewed source revision and use the existing on-demand reader. The website remains a curated static snapshot rather than a live GitHub mirror; local build, tests, and browser review still determine whether this change is ready for publication.

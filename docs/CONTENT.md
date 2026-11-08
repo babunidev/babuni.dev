@@ -56,7 +56,7 @@ The public repository is not a full chat archive. Summarize project-relevant pro
 
 ## Current content boundaries and remaining work
 
-The repository has a validated JSON-backed module catalog, imported public-document snapshots, on-demand document assets, and pre-rendered readable project/module pages. A deliberate `npm run content:sync` and review cycle is required to bring changed external repositories into the portfolio; the public website is not a live GitHub mirror. Development/test preparation and production-build checks are defined in `package.json`.
+The repository has a validated JSON-backed module catalog, imported public-document snapshots, on-demand document assets, and pre-rendered readable project/module pages. A deliberate `npm run content:sync` and review cycle is required to bring changed external repositories into the portfolio; the public website is not a live GitHub mirror. The standard documentation contract is supplemented by explicit project-specific path allowlists for Amberbrew Story and ROARguild, so selected character-lore and guild-community materials can be imported without exposing arbitrary repository files. Development/test preparation and production-build checks are defined in `package.json`.
 
 Editorial review remains ongoing. Optional MDX, future media hosting or image variants, and owner-controlled publishing permissions are **not** prerequisites already implemented by the current Markdown/media pipeline. In particular, hiding a project tile alone would not remove its public routes or generated assets; any future visibility control must cover all publication outputs. Do not infer an external project's live-client compatibility merely from imported documentation.
 
