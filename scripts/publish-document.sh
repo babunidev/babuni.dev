@@ -13,9 +13,14 @@ ssh_cmd="ssh -i $key -o IdentitiesOnly=yes -o BatchMode=yes"
 cd "$(dirname "$0")/.."
 git fetch -q origin main
 work="$(mktemp -d)"
-eval "$(ssh-agent -s)" >/dev/null
-trap 'rm -rf "$work"; ssh-agent -k >/dev/null 2>&1 || true' EXIT
-ssh-add "$key"
+agent_started=0
+trap 'rm -rf "$work"; if [ "$agent_started" = 1 ]; then ssh-agent -k >/dev/null 2>&1 || true; fi' EXIT
+if ! ssh-add -l 2>/dev/null | grep -q "babuni.dev deployment"; then
+  [ -t 0 ] || { echo "SSH_KEY_NOT_LOADED: unlock the deployment key in your SSH agent first" >&2; exit 3; }
+  eval "$(ssh-agent -s)" >/dev/null
+  agent_started=1
+  ssh-add "$key"
+fi
 
 previous="$($ssh_cmd -n "$server" "readlink $remote/current")"
 echo "Live release: $previous"
