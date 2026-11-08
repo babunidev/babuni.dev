@@ -6,6 +6,12 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-08 — Publishing one document without a rebuild
+
+Every content change meant rebuilding the whole site, even when only a paragraph of the journal had moved. After asking AI to trace how a document becomes a published page, the answer turned out to be small: one document feeds three files (its Markdown, its module data and its readable page), and the page's article can be rendered by the same functions the build already uses.
+
+AI wrote a renderer and a publish script that copy the live release with hard links, replace only those files and switch the live link, keeping the previous release for rollback. A dry run against the live site reproduced the deployed journal page byte for byte, and a test release on the server confirmed that a hard-linked copy leaves the old release untouched. The script has not yet been used for a real publication.
+
 ## 2026-11-01 — Letting the content change
 
 After a routine repository sync failed tests because project documentation had evolved, I questioned why a living portfolio required yesterday’s prose and commit IDs to remain unchanged. The problem was in the tests, not in the creative decisions behind those updates. At my request, AI replaced content-specific assertions with checks for structure, source integrity and behavior, using artificial examples where exact text matters. A review branch now contains those changes; its full test results and integration are still pending.
