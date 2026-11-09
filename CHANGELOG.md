@@ -6,6 +6,11 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Per-repository document pull (2026-11-10)
+- Added `scripts/pull-repository.mjs`. It fetches fresh public documents for one connected repository (or `--all`), compares them with `src/content/repository-documents.json` and reports each new, changed or removed document. Only `--write` updates the snapshot, and only for repositories whose documents differ; a moved head with identical documents is left alone.
+- GitHub API metadata requests use the desktop login (`gh auth token` as a Bearer header) to avoid the anonymous rate limit. The token is sent to `https://api.github.com` only; `raw.githubusercontent.com` downloads stay anonymous, and the existing public-visibility check still rejects private repositories. A test covers the token boundary.
+- Verified by a dry run of `--all` (no `--write`) and the full test suite; nothing was written, committed or published.
+
 ### Added — Single-document publishing (2026-11-09)
 - Added `scripts/publish-document.mjs` and `scripts/publish-document.sh`. They render one committed document with the build's own functions, copy the live release with hard links, replace only the files that document feeds and switch the live link. The previous release stays on the server for rollback. Verified by dry runs against the live site and two publications of `docs/DEVLOG.md`; only babuni.dev documents are supported so far.
 - Babuni Admin gained a Documents page that runs the same check and publish for the standard documents. No Astro build is involved.
