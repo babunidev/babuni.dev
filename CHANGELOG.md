@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Single-document publishing (2026-11-09)
+- Added `scripts/publish-document.mjs` and `scripts/publish-document.sh`. They render one committed document with the build's own functions, copy the live release with hard links, replace only the files that document feeds and switch the live link. The previous release stays on the server for rollback. Verified by dry runs against the live site and two publications of `docs/DEVLOG.md`; only babuni.dev documents are supported so far.
+- Babuni Admin gained a Documents page that runs the same check and publish for the standard documents. No Astro build is involved.
+
 ### Changed — Code-backed admin integration assessment (2026-11-04)
 - Expanded the integration report with actual admin routing/capability/profile evidence, website source/output dependencies and a staged implementation/acceptance matrix. No content-management or deployment feature added.
 
