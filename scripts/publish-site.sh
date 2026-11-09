@@ -35,6 +35,7 @@ echo "Build finished: $(find "$work/site/dist" -type f | wc -l) files"
 
 mkdir -p "$work/live"
 rsync -a -e "$ssh_cmd" "$server:$remote/current/" "$work/live/"
+python3 scripts/keep-live-bundle.py "$work/live" "$work/site/dist"
 { diff -rq "$work/live" "$work/site/dist" --exclude=release.txt || true; } \
   | sed -E "s#^Files $work/live/(.*) and .* differ\$#CHANGED  \1#; s#^Only in $work/site/dist/?(.*): (.*)\$#ADDED    \1/\2#; s#^Only in $work/live/?(.*): (.*)\$#REMOVED  \1/\2#" \
   | sed 's#  /#  #; s#//#/#' | sort > "$work/changes.txt"
