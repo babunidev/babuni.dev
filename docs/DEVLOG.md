@@ -10,7 +10,7 @@ For specific decisions, implementation changes and technical measurements, see [
 
 Refreshing every source repository rewrote the whole snapshot, even when most projects had only moved their commit. AI drafted a pull script that compares fresh document text with the committed snapshot and touches a repository only when a document is new, changed or removed. Its first full run hit GitHub's anonymous rate limit.
 
-At my request, AI made the metadata calls use my desktop GitHub login, sending the token to the API host only while document downloads stay anonymous and private repositories are still refused. A dry run across all connected repositories then completed: 24 had document changes, the rest only a moved head. Nothing has been written to the snapshot yet; that review comes next.
+At my request, AI made the metadata calls use my desktop GitHub login, sending the token to the API host only while document downloads stay anonymous and private repositories are still refused. A dry run across all connected repositories then completed: 24 had document changes, the rest only a moved head. One AmberbrewStory chapter had disappeared; AI confirmed upstream that I had removed it on purpose after the character reset, so the website follows. With my go-ahead, AI wrote the 24 updates; content validation, all 191 tests and the production build passed.
 
 ## 2026-11-08 — Publishing one document without a rebuild
 
