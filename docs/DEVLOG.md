@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-10 — Making the repository documentation readable
+
+The portfolio's documentation had become harder to read than the projects themselves. Dated implementation notes, technical caveats and long audit records often appeared before a visitor could understand the work. For this review, I asked AI to inspect the GitHub repositories and improve the writing for people rather than merely reformatting Markdown. AI reviewed the entry pages across 41 repositories, rewrote eight overloaded READMEs, reorganized the Amberhearth introduction, preserved detailed material in linked references, and updated the shared writing guide in repositories using the common template. The [editorial audit](READER_EXPERIENCE_AUDIT_2026-11-10.md) identifies which documents changed and which substantial archives still need a deeper review. No application behavior, live website release or game testing followed from this documentation work.
+
 ## 2026-11-10 — Azeroth Moments, the real repository
 
 Azeroth Moments had the same split as Ethera: a small public shell for the website and the real repository beside it. With the real one public, I asked for the website to use it. AI switched the project over, checked the imported documents for leaked tokens or webhook URLs (none), and confirmed that the folder on my PC belongs to the real repository, so only the shell can go.
