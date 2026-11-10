@@ -69,10 +69,19 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
         title.textContent=module.title;
         const intro=document.createElement('p');intro.textContent=module.preview;
         const list=document.createElement('ul');list.className='module-document-list';
+        if(module.documents?.some(item=>item.image))list.classList.add('has-images');
         for(const item of module.documents??[]){
           const li=document.createElement('li'),button=document.createElement('button');
           button.type='button';button.className='bloom-action';button.textContent=item.title;
-          button.addEventListener('click',()=>showDocument(item));li.append(button);list.append(li);
+          button.addEventListener('click',()=>showDocument(item));
+          if(item.image){
+            // Paired image sits centered above its document; small icons keep their size,
+            // large images scale down to the reader width.
+            const image=document.createElement('img');image.className='document-entry-image';
+            image.src=item.image;image.alt='';image.loading='lazy';image.decoding='async';
+            image.addEventListener('click',()=>showDocument(item));li.append(image);
+          }
+          li.append(button);list.append(li);
         }
         const children:HTMLElement[]=[intro];
         if(list.children.length)children.push(list);

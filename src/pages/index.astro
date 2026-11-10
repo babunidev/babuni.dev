@@ -1,7 +1,11 @@
 ---
 import SeoHead from '../components/SeoHead.astro';
 import {demoProjects} from '../lib/demo-projects';
-import {projectPath} from '../lib/site';
+import {projectPath,SITE_URL,SITE_DESCRIPTION} from '../lib/site';
+const structured={'@context':'https://schema.org','@graph':[
+  {'@type':'WebSite','@id':SITE_URL+'/#website',name:'Babuni.dev',url:SITE_URL+'/',description:SITE_DESCRIPTION,inLanguage:'en',author:{'@id':SITE_URL+'/#babuni'}},
+  {'@type':'Person','@id':SITE_URL+'/#babuni',name:'Babuni',url:SITE_URL+'/',sameAs:['https://github.com/babunidev']},
+]};
 ---
 <!doctype html>
 <html lang="en">
@@ -11,6 +15,7 @@ import {projectPath} from '../lib/site';
   <meta name="theme-color" content="#141518" />
   <SeoHead />
   <link rel="icon" type="image/webp" sizes="64x64" href="/favicon.webp?v=b-mark-1" />
+  <script type="application/ld+json" set:html={JSON.stringify(structured).replace(/</g,'\\u003c')} />
 
 </head>
 <body>
@@ -196,6 +201,15 @@ import {projectPath} from '../lib/site';
   .big-bloom-card--selected{border-color:#e3c99b;box-shadow:inset 0 0 0 5px #49404a,0 0 24px #d8bd9133}
   .bloom-preview-credit,.bloom-collection-list{font:13px/1.5 system-ui,sans-serif;color:#d6c3a8;margin:6px 0}
   .bloom-collection-list{padding-left:20px}
+  .bloom-document-entries{list-style:none;padding:0;margin:4px 0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .bloom-document-entries li{display:flex;flex-direction:column;align-items:center;gap:4px;max-width:100%}
+  .document-entry-image{display:block;max-width:100%;height:auto;margin:0 auto;object-fit:contain}
+  .grid-bloom-module .document-entry-image{max-height:calc(var(--tile-size) * .4)}
+  .big-bloom-card .document-entry-image{max-height:calc(var(--tile-size) * .9)}
+  .module-document-list.has-images{list-style:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+  .module-document-list.has-images li{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:100%}
+  .module-document-list.has-images .document-entry-image{cursor:pointer}
+  .module-document-list.has-images .bloom-action{text-align:center}
   .site-help{position:relative}
   .site-nav #help-toggle{width:32px;height:32px;padding:0;border-radius:50%;cursor:help}
   #site-help-content{display:none;position:fixed;right:12px;top:calc(var(--header-height) + 8px);width:min(320px,calc(100vw - 24px));padding:16px;font:13px/1.5 system-ui,sans-serif;background:#242329;border:1px solid #a7977e;box-shadow:0 12px 36px #0008;color:#e9dfd2}

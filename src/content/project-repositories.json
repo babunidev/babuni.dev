@@ -238,5 +238,30 @@
     "repository": "babunidev/GuildChatBridge",
     "branch": "main",
     "note": "Restored at Babuni.dev’s request on 2026-11-01 under the renamed public repository. Previously withdrawn as GuildChatAI; stable ID retained. Paused experiment, not a working AI bridge."
+  },
+  "clearviewforever": {
+    "status": "connected",
+    "repository": "babunidev/ClearViewForever",
+    "branch": "main"
+  },
+  "eldgrim": {
+    "status": "connected",
+    "repository": "babunidev/eldgrim",
+    "branch": "main",
+    "folders": [
+      "character",
+      "lore",
+      "narrative",
+      "interaction",
+      "addon",
+      "agent",
+      "templates",
+      "assets"
+    ]
+  },
+  "talent-design-atlas": {
+    "status": "connected",
+    "repository": "babunidev/wowforeverstuff",
+    "branch": "main"
   }
 }

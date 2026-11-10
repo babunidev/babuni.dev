@@ -13,4 +13,6 @@ for(const url of urls){
  for(const match of html.matchAll(/href="(\/projects\/[^"#?]*)"/g))assert.ok(existsSync(resolve(root,'.'+match[1],'index.html')),url+' '+match[1]);
 }
 assert.ok(readFileSync(root+'/robots.txt','utf8').includes('Sitemap: '+origin+'/sitemap.xml'));
+const llms=readFileSync(root+'/llms.txt','utf8');assert.match(llms,/^# .+\n\n> .+/);
+for(const match of llms.matchAll(/\]\((https:[^)]+)\)/g))assert.ok(urls.includes(match[1])||match[1]===origin+'/sitemap.xml',`llms.txt link ${match[1]}`);
 console.log('Verified '+urls.length+' canonical, metadata-equipped public URLs and their internal project links.');

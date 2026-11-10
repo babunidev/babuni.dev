@@ -10,6 +10,14 @@ This register records **why decisions were made**, what alternatives were consid
 
 Give the decision a date or stable identifier, status, human direction, alternatives (mark AI-originated suggestions), rationale, and relevant evidence. Keep entries focused on choices rather than reproducing test logs or entire conversations. When a choice changes, identify the successor and mark the old decision **Superseded**; never silently erase its original rationale.
 
+## D-2026-11-10 — Folder modules for any repository, with paired images
+**Status:** Accepted creative direction; implemented, not yet visually accepted on the live site.
+**Creative direction:** Babuni asked for every new public repository to be on the website, and for repositories with folder structures to get folder modules like Amberbrew Story's, where a folder opens and its files can be read. An image with the same name as a Markdown file is shown centered above it, with the file name centered as well, so a list reads image, document, image, document. Small icons keep their size; larger images scale to the module or reader they appear in. Images may appear in the small bloom too.
+**AI implementation:** Folders are opt-in per repository (`folders` in `project-repositories.json`), so existing projects do not change. `docs` is excluded because its standard documents already have their own modules. AmberbrewStory keeps its reviewed folder list. Paired images are WebP, PNG or JPEG, are converted to WebP at pull time and stored under `public/media/repositories/`. Unpaired images are not imported. Without images, a folder keeps its earlier plain list (AI choice, so the approved look of Amberbrew Story's folders does not change).
+**Babuni decided (2026-11-10):** `wowforeveraddonsbabuni` must not be published on the website. AI had held it back because it is mostly other authors' addons.
+**Open:** No connected repository contained paired images at implementation time.
+**Evidence:** `src/lib/repository-content.ts`, `scripts/sync-repositories.mjs`, `scripts/pull-repository.mjs`, `src/scripts/module-preview.ts`, `src/scripts/module-detail.ts`, `tests/folder-modules.test.mjs`, fixture capture in `docs/VISUAL_DOCUMENTATION.md`.
+
 ## D-2026-10-30 — Per-visit assortment and recent activity
 **Status:** Accepted creative direction; highlight window and count provisional.
 **Creative direction:** Always start with BABUNI.DEV first, freshly shuffle the other projects for each visit, and mark recently updated tiles with a gold top-right label and an extra gold portal ring instead of placing them first.

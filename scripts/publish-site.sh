@@ -51,7 +51,11 @@ $ssh_cmd -n "$server" "cd $remote/releases && cp -al \"\$(readlink -f ../current
 rsync -rt --delete --exclude=release.txt --chmod=F644,D755 -e "$ssh_cmd" "$work/site/dist/" "$server:$remote/releases/$release/"
 $ssh_cmd -n "$server" "cd $remote/releases/$release && printf '%s\n' $release > release.txt.tmp && mv -f release.txt.tmp release.txt && test -s index.html"
 $ssh_cmd -n "$server" "cd $remote && ln -s releases/$release .current-$release && mv -Tf .current-$release current"
-live="$(curl -fsS --max-time 20 "https://www.babuni.dev/release.txt?check=$(date +%s)")"
-test "$live" = "$release"
+live="$(curl -fsS --max-time 20 "https://www.babuni.dev/release.txt?check=$(date +%s)" || true)"
+if [ "$live" != "$release" ]; then
+  $ssh_cmd -n "$server" "cd $remote && ln -s $previous .rb-$release && mv -Tf .rb-$release current"
+  echo "VERIFY_FAILED: live site reported '${live:-nothing}'; switched back to $previous" >&2
+  exit 5
+fi
 echo "Published and verified: $release"
 echo "Rollback: ssh ... 'cd $remote && ln -s $previous .rb && mv -Tf .rb current'"

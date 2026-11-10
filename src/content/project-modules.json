@@ -324,6 +324,11 @@
           "src": "/media/babuni-dev/images/verification/header-ordinary-shift.webp",
           "alt": "Ordinary column shift header without an opening-wait explanation.",
           "caption": "AI desktop browser check, 1 November 2026: ordinary shift shows Columns are shifting; clicking during it separately showed Waiting for shift to finish."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/folder-image-layout-fixture.webp",
+          "alt": "Folder lists with a small icon and a large image centered above document names in a small bloom, a big bloom and the reader.",
+          "caption": "AI headless-browser fixture, 10 November 2026: site stylesheet with generated test images; not the live grid, real project art or phone acceptance."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

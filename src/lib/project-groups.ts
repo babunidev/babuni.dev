@@ -32,7 +32,10 @@ export const PROJECT_GROUPS=[
       "amazin",
       "warriorstartattack",
       "roar-guild-and-community",
-      "amberbrew-story"
+      "amberbrew-story",
+      "clearviewforever",
+      "eldgrim",
+      "talent-design-atlas"
     ]
   },
   {

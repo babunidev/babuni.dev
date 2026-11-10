@@ -1,6 +1,7 @@
 import {presentDocument} from './document-presentation.ts';
 import {markdownExcerpt} from './markdown-excerpt.ts';
 import {type ProjectModule} from './project-modules.ts';
+import connectionMap from '../content/project-repositories.json' with {type:'json'};
 /** Public documentation contract; path overrides must select from this list. */
 export const REPOSITORY_DOCUMENTS=[
   {path:'README.md',id:'overview',title:'Overview'},
@@ -41,10 +42,46 @@ export function characterStoryDocumentPath(path:string):boolean {
 export interface RepositoryConnection {
   status:'connected'|'needs-repository'|'private-review'|'needs-confirmation';
   repository?:string;branch?:string;paths?:string[];note?:string;
+  /** Top-level folders whose Markdown appears as folder modules (opt-in per repository). */
+  folders?:string[];
 }
 export interface RepositorySnapshot {
   repository:string;branch:string;commit:string;syncedAt:string;
   documents:{path:string;body:string}[];
+  /** Images paired with a folder document by name; stored as WebP under public/media/repositories/. */
+  images?:{path:string;sha:string}[];
+}
+export const FOLDER_NAME=/^[A-Za-z0-9_-]+$/;
+export const FOLDER_IMAGE_EXTENSIONS=['webp','png','jpg','jpeg'] as const;
+/** Folders imported for a connection. AmberbrewStory keeps its reviewed folder list. */
+export function connectionFolders(connection:{repository?:string;folders?:readonly string[]}|undefined):readonly string[]{
+  if(connection?.repository===CHARACTER_STORY_REPOSITORY)return CHARACTER_STORY_FOLDERS;
+  return connection?.folders??[];
+}
+/** A Markdown file inside one of the given folders (any depth, conservative names). */
+export function folderDocumentPath(path:string,folders:readonly string[]):boolean {
+  const top=path.split('/')[0];
+  return folders.includes(top)&&/^[A-Za-z0-9_-]+\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\.md$/.test(path);
+}
+/** Same folder, same name, image extension: `lore/HEARTH.png` belongs to `lore/HEARTH.md`. */
+export function pairedImages(markdownPaths:readonly string[],imagePaths:readonly string[]):Map<string,string>{
+  const byStem=new Map<string,string>();
+  const rank=(path:string)=>FOLDER_IMAGE_EXTENSIONS.indexOf(path.slice(path.lastIndexOf('.')+1).toLowerCase() as typeof FOLDER_IMAGE_EXTENSIONS[number]);
+  for(const image of imagePaths){
+    if(rank(image)<0||!/^(?:[A-Za-z0-9_-]+\/)+[A-Za-z0-9_-]+\.[A-Za-z]+$/.test(image))continue;
+    const stem=image.slice(0,image.lastIndexOf('.'));
+    const current=byStem.get(stem);
+    if(current===undefined||rank(image)<rank(current))byStem.set(stem,image);
+  }
+  const pairs=new Map<string,string>();
+  for(const doc of markdownPaths){const image=byStem.get(doc.slice(0,-3));if(image)pairs.set(doc,image);}
+  return pairs;
+}
+/** Deterministic public URL of a paired image's WebP derivative. */
+export function repositoryImageUrl(repository:string,imagePath:string):string{
+  if(!/^babunidev\/[\w.-]+$/.test(repository)||!/^(?:[A-Za-z0-9_-]+\/)+[A-Za-z0-9_-]+\.[A-Za-z]+$/.test(imagePath))
+    throw new Error('Invalid repository image mapping');
+  return '/media/repositories/'+repository.replace('/','--')+'/'+imagePath.slice(0,imagePath.lastIndexOf('.')).replaceAll('/','--')+'.webp';
 }
 /** Deterministic source excerpt, not an AI-authored factual summary. */
 export function documentPreview(body:string):string {
@@ -86,7 +123,7 @@ export function composeProjectModules(curated:ProjectModule[],sourced:ProjectMod
 /** Compact, build-generated source metadata. The full Markdown is a separate
  * static asset fetched only if its detail reader is opened.
  */
-export interface IndexedDocument {path:string;url:string;preview:string;intro:string}
+export interface IndexedDocument {path:string;url:string;preview:string;intro:string;image?:string}
 export interface IndexedRepository {
   repository:string;branch:string;commit:string|null;documents:IndexedDocument[];
 }
@@ -129,7 +166,7 @@ export function indexedCharacterStoryFolders(
     const source='https://github.com/'+CHARACTER_STORY_REPOSITORY+'/tree/'+index.commit+'/'+folder;
     const entries=documents.map(doc=>({
       title:doc.path.startsWith(folder+'/')?doc.path.slice(folder.length+1):doc.path,
-      path:doc.path,bodyUrl:doc.url,
+      path:doc.path,bodyUrl:doc.url,...(doc.image?{image:doc.image}:{}),
       source:'https://github.com/'+CHARACTER_STORY_REPOSITORY+'/blob/'+index.commit+'/'+doc.path
     }));
     const links=folder==='assets'?['illustrations','references','screenshots'].map(name=>({
@@ -147,6 +184,35 @@ export function indexedCharacterStoryFolders(
     };
   });
 }
+/** Folder modules for any repository that opts in with `folders`. Each folder with
+ * Markdown becomes one document list; a paired image is shown above its document.
+ */
+export function indexedFolderModules(
+  connection:RepositoryConnection|undefined,index:IndexedRepository|undefined
+):ProjectModule[]{
+  if(connection?.status!=='connected'||!connection.repository||connection.repository===CHARACTER_STORY_REPOSITORY
+     ||!connection.folders?.length||!index||index.repository!==connection.repository||index.branch!==connection.branch
+     ||!/^[a-f0-9]{40}$/.test(index.commit??''))return [];
+  const repository=connection.repository;
+  return connection.folders.flatMap(folder=>{
+    const documents=index.documents.filter(doc=>folderDocumentPath(doc.path,[folder])).sort((a,b)=>a.path.localeCompare(b.path));
+    if(!documents.length)return [];
+    const title=folder[0].toUpperCase()+folder.slice(1);
+    const entries=documents.map(doc=>({
+      title:doc.path.slice(folder.length+1),path:doc.path,bodyUrl:doc.url,...(doc.image?{image:doc.image}:{}),
+      source:'https://github.com/'+repository+'/blob/'+index.commit+'/'+doc.path
+    }));
+    const preview=entries.length+' Markdown '+(entries.length===1?'document':'documents')+' in '+title+'. Select a file to read its complete text.';
+    return [{
+      id:'folder-'+folder.toLowerCase(),type:'document-list' as const,title,preview,
+      intro:'## '+title+' documents\n\n'+entries.map(e=>'- '+e.title).join('\n'),
+      documents:entries,source:'https://github.com/'+repository+'/tree/'+index.commit+'/'+folder
+    }];
+  });
+}
+const folderUrlPatterns=Object.values(connectionMap as Record<string,RepositoryConnection>)
+  .filter(c=>c.status==='connected'&&c.repository&&c.repository!==CHARACTER_STORY_REPOSITORY&&c.folders?.length)
+  .map(c=>new RegExp('^/_project-docs/'+c.repository!.replace('/','--').replace(/[.]/g,'\\.')+'/(?:'+c.folders!.join('|')+')(?:--[A-Za-z0-9_-]+)+\\.md$'));
 /** The allowed source is local, generated and same-origin. Never fetch a
  * remote repository or follow Markdown-provided URLs to display its body.
  */
@@ -154,7 +220,7 @@ export async function loadIndexedBody(url:string,fetcher:typeof fetch=fetch,sign
   const standard=/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/;
   const story=/^\/_project-docs\/babunidev--AmberbrewStory\/(?:AGENTS|CANON|TIMELINE|WRITING-GUIDE|(?:assets|character|docs|family|journal|lore|places|relationships|stories)--[A-Za-z0-9_-]+(?:--[A-Za-z0-9_-]+)*)\.md$/;
   const roarGuild=/^\/_project-docs\/babunidev--ROARguild\/(?:guild--(?:CHARTER|COMMUNITY|ACTIVITIES|GOVERNANCE)\.md|events--sunday-campfires--README\.md|community-tools--ORACLE\.md)$/;
-  if(!standard.test(url)&&!story.test(url)&&!roarGuild.test(url))
+  if(!standard.test(url)&&!story.test(url)&&!roarGuild.test(url)&&!folderUrlPatterns.some(pattern=>pattern.test(url)))
     throw new Error('Invalid project document URL');
   const response=await fetcher(url,{signal});
   if(!response.ok)throw new Error('Document unavailable (HTTP '+response.status+')');

@@ -1,7 +1,8 @@
 import {readFileSync,writeFileSync,mkdirSync,rmSync,renameSync} from 'node:fs';
 import {join,resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {REPOSITORY_DOCUMENTS,repositoryDocuments,documentPreview,characterStoryDocumentPath,CHARACTER_STORY_REPOSITORY} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,repositoryDocuments,documentPreview,characterStoryDocumentPath,CHARACTER_STORY_REPOSITORY,connectionFolders,folderDocumentPath,pairedImages,repositoryImageUrl} from '../src/lib/repository-content.ts';
+import {existsSync} from 'node:fs';
 import {presentDocument} from '../src/lib/document-presentation.ts';
 import {moduleIntro} from '../src/lib/big-bloom.ts';
 import {demoProjects} from '../src/lib/demo-projects.ts';
@@ -11,15 +12,15 @@ import {validateConnections,validateSnapshots} from './sync-repositories.mjs';
 const root=fileURLToPath(new URL('..',import.meta.url));
 const LOCAL='babunidev/babuni.dev';
 /** Deterministic, allowlisted URL names; no path from repository Markdown is used. */
-export function documentAssetName(repository,path){
-  if(!/^babunidev\/[\w.-]+$/.test(repository) || !(repositoryDocuments(repository).some(d=>d.path===path)||repository===CHARACTER_STORY_REPOSITORY&&characterStoryDocumentPath(path)))
+export function documentAssetName(repository,path,folders=[]){
+  if(!/^babunidev\/[\w.-]+$/.test(repository) || !(repositoryDocuments(repository).some(d=>d.path===path)||repository===CHARACTER_STORY_REPOSITORY&&characterStoryDocumentPath(path)||folderDocumentPath(path,folders)))
     throw new Error('Invalid public document asset mapping');
   return repository.replace('/','--')+'/'+path.replaceAll('/','--');
 }
 /** Pure indexing step; keep brief metadata in JS and Markdown outside JS.
  * Reorder presentation blocks without changing the preserved source snapshots.
  */
-export function prepareDocumentAssets(connections,snapshots,localDocuments){
+export function prepareDocumentAssets(connections,snapshots,localDocuments,{imageExists=url=>existsSync(join(root,'public',url))}={}){
   const errors=[
     ...validateConnections(connections,demoProjects.map(p=>p.id)),
     ...validateSnapshots(connections,snapshots)
@@ -37,16 +38,22 @@ export function prepareDocumentAssets(connections,snapshots,localDocuments){
       ?REPOSITORY_DOCUMENTS.map(d=>({path:d.path,body:localDocuments[d.path]}))
       :snapshot.documents;
     const documents=[];
+    const folders=connectionFolders(connection);
+    const pairs=pairedImages(source.map(d=>d.path).filter(p=>folderDocumentPath(p,folders)),(snapshot?.images??[]).map(i=>i.path));
     for(const {path,body} of source){
       if(!body?.trim())continue;
-      const file=documentAssetName(repository,path);
+      const file=documentAssetName(repository,path,folders);
+      const imagePath=pairs.get(path);
+      const image=imagePath?repositoryImageUrl(repository,imagePath):undefined;
+      if(image&&!imageExists(image))throw new Error(image+': paired image missing; run the repository pull with --write');
       const presented=presentDocument(body,path);
       assets.set(file,presented);
       documents.push({
         path,
         url:'/_project-docs/'+file,
         preview:documentPreview(presented)||repositoryDocuments(repository).find(d=>d.path===path)?.title||path,
-        intro:moduleIntro({body:presented,preview:''})
+        intro:moduleIntro({body:presented,preview:''}),
+        ...(image?{image}:{})
       });
     }
     index[repository]={
@@ -67,7 +74,7 @@ export function writeDocumentAssets({base=root}={}){
   const localDocuments=Object.fromEntries(REPOSITORY_DOCUMENTS.map(d=>[
     d.path,readFileSync(join(base,d.path),'utf8')
   ]));
-  const {index,assets}=prepareDocumentAssets(connections,snapshots,localDocuments);
+  const {index,assets}=prepareDocumentAssets(connections,snapshots,localDocuments,{imageExists:url=>existsSync(join(base,'public',url))});
   const destination=join(base,'public/_project-docs');
   const temporary=destination+'.tmp';
   const manifest=join(base,'src/generated/document-index.json');

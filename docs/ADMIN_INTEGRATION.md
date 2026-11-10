@@ -1,5 +1,90 @@
 # Babuni.admin ↔ babuni.dev integration
 
+## Briefing for Babuni Admin — ready to connect (2026-11-10)
+
+This section is the current handoff. The 2026-11-04 review below is a historical snapshot. Its finding that no publish route exists has since been superseded.
+
+babuni.dev now provides three command-line tools. Each one runs from the babuni.dev checkout (`~/Projects/babunidev/babuni.dev`, or `BABUNI_DEV_CHECKOUT` in the admin local service). Each one is safe to call without a terminal: it fails with a clear message instead of prompting.
+
+| Tool | Purpose | Babuni Admin status |
+|---|---|---|
+| `scripts/publish-document.sh` | Publish one babuni.dev document without a build | **Connected** (Documents page, `local-service/portfolioDocuments.mjs`) |
+| `scripts/pull-repository.mjs` | Update the pinned snapshot of documents from the other connected repositories | **Ready, not connected** |
+| `scripts/publish-site.sh` | Build committed `origin/main` and publish only the changed files | **Ready, not connected** |
+
+### Prerequisites on the operator's machine
+
+- **Deployment key in the SSH agent:** `ssh-add ~/.ssh/id_ed25519_babuni_deploy`. The publish scripts exit with code `3` and print `SSH_KEY_NOT_LOADED` on stderr if it is missing and there is no terminal.
+- **GitHub CLI logged in (`gh auth login`)**, for `pull-repository.mjs`. The token goes only to `https://api.github.com`. Raw document downloads stay anonymous, and private repositories are refused.
+- **`NODE_OPTIONS=--no-network-family-autoselection`** for `pull-repository.mjs` on the Nobara desktop. `publish-site.sh` sets it for its own build.
+
+### `scripts/pull-repository.mjs`: bring in source-repository document changes
+
+```
+node --experimental-strip-types scripts/pull-repository.mjs <name | owner/name ...> | --all [--write]
+```
+
+- **Without `--write`,** it is a check only and writes nothing.
+- **With `--write`,** it updates `src/content/repository-documents.json` in the working tree, and only for repositories whose document text changed. A repository whose head moved but whose documents are identical is left alone.
+- **It refuses to write if the snapshot file already has uncommitted changes.** It also validates the merged snapshot before writing.
+- **Several names can be given at once.** `--write` refuses while the snapshot file has uncommitted changes, so pull related repositories in one run.
+- **Paired folder images:** with `--write`, it also stores paired images as WebP under `public/media/repositories/`. Image changes appear as `NEW|CHANGED|REMOVED <image path>` lines, and those files must be committed together with the snapshot.
+- **It does not commit, push or publish.**
+- **Output (stdout), one block per repository:**
+  - `CHANGED   <owner/name>   <old8> -> <new8>`, followed by indented lines `NEW|CHANGED|REMOVED <path>`.
+  - Or `same      <owner/name>`, optionally with `(head moved …, documents identical)`.
+- **Final line:** `No document changes.`, `<n> repository(ies) have document changes. Add --write …` or `Snapshot updated for <n> repository(ies). …`
+- **Errors:** exit code `1`, with a one-line message on stderr.
+- **Recommendation:** show `REMOVED` documents prominently and ask for confirmation before `--write`. A removal takes the page off the website. On 2026-11-10, Babuni confirmed upstream that a removed AmberbrewStory chapter was intentional.
+- **Runtime:** a full `--all` check takes roughly a minute or two.
+
+### Between pull and publish: commit and push
+
+`publish-site.sh` builds **committed `origin/main`**, not the local working tree. After `--write`, the snapshot must be committed and pushed, or the publish will not include it. Babuni Admin needs one of two things here:
+- an explicit, confirmed "commit and push snapshot" step (path `src/content/repository-documents.json` only; message such as `content: pull document changes from <n> source repositories`), or
+- a clear handoff that asks the operator to do it.
+
+Never commit other working-tree changes along with the snapshot.
+
+### `scripts/publish-site.sh`: publish the built site
+
+```
+scripts/publish-site.sh            # dry run
+scripts/publish-site.sh --apply    # publish
+```
+
+- **Steps:** fetches `origin/main` and builds it in a temporary worktree (`npm ci` + `npm run build`), compares the build with the live release and lists the differences. With `--apply`, it creates a hard-linked release, switches `current`, and checks that `https://www.babuni.dev/release.txt` reports the new release.
+- **Output (stdout):**
+  - `Building origin/main <commit>; live release: releases/<name>`
+  - `Build finished: <n> files`
+  - `--- changes ---`, then one line per path: `CHANGED  <path>`, `ADDED    <path>` or `REMOVED  <path>`.
+  - Then `Nothing to publish.` or `Dry run: <n> path(s) differ. Add --apply to publish.`
+  - With `--apply`: `Creating release <name>`, `Published and verified: <name>` and `Rollback: ssh ... '<command>'`.
+- **The change list can run to hundreds of lines** (538 on 2026-11-10). The admin's current 64 KB stdout cap for document publishing may cut it. Parse the summary lines and show a count, plus a scrollable or abbreviated list.
+- **Exit codes:**
+  - `0`: success, including a dry run or nothing to publish.
+  - `3`: `SSH_KEY_NOT_LOADED`.
+  - `4`: `BUILD_FAILED`, with the last build log lines on stderr.
+  - `5`: `VERIFY_FAILED`. The live site did not report the new release after the switch, so the script switched back to the previous release automatically.
+  - Other non-zero values: a failure in another step.
+- **Runtime:** the build takes several minutes, so allow a timeout of at least 10 minutes for both the dry run and `--apply`. The document publisher's 90/180-second timeouts are far too short.
+- **Rollback:** the previous release stays on the server. Show the printed rollback line after a publish.
+
+### Rules for the admin side
+
+- **One lock for all publishing.** `publish-document.sh` and `publish-site.sh` both switch the live `current` link, so they must never run at the same time. Extend the existing `PUBLISH_BUSY` guard to cover both.
+- **Fixed scope.** Use fixed argument lists with no shell (`spawn(..., {shell:false})`), as the document route already does. Pull targets should be chosen from the connected repositories in `src/content/project-repositories.json`, never from free text.
+- **Dry run first, then a confirmed apply,** for both pull (`--write`) and site publish (`--apply`).
+- **Which path to use:** documents from other repositories always go pull → commit/push → `publish-site.sh`. `publish-document.sh` only covers babuni.dev's own standard documents.
+
+### Verified on 2026-11-10 (AI-run, on the Nobara desktop)
+
+- **Pull check:** `pull-repository.mjs --all` (dry run, then `--write`) found document changes in 24 of 37 connected repositories.
+- **Checks on the result:** `npm run content:check`, `npm run test:grid` (191 passed) and `npm run build` passed.
+- **Committed:** `fd89891`, pushed to `origin/main`.
+- **Published:** `publish-site.sh --apply` published release `20261110-004601-fd89891-site`, and the script reported it verified.
+- **Not done:** none of this has been run through Babuni Admin yet.
+
 ## Current code review — 2026-11-04
 
 **Request:** Babuni asked for an actual analysis of both repositories so the local administration application can manage the portfolio. The earlier review of documentation and a placeholder page did not establish an operational connection. This review follows the implemented routing, capability registry, profile schema and website generation/loading code instead.

@@ -3,8 +3,11 @@ export type TopicPoint='top'|'left'|'right';
 export const TOPIC_POINTS:readonly TopicPoint[]=['top','left','right'];
 
 /** Nine curated, provisional keywords per project; no release-status claims. */
-export const WOW_ADDON_IDS:readonly string[]=["guildchatai", "amazin", "battlereport", "buxbrew", "buxbrewcharge", "buxbrewding", "buxbrewresist", "favorcraft", "flourishforever", "gathermap", "groupbufftoggle", "lootfeed", "meleestartattack", "resistforever", "roar", "roaremotetrigger", "roarforever", "roarguild", "roarr", "roarrunlimited", "roarsounds", "socialforever", "totemtimers", "warriorstartattack", "workthatgodbod"];
+export const WOW_ADDON_IDS:readonly string[]=["guildchatai", "clearviewforever", "amazin", "battlereport", "buxbrew", "buxbrewcharge", "buxbrewding", "buxbrewresist", "favorcraft", "flourishforever", "gathermap", "groupbufftoggle", "lootfeed", "meleestartattack", "resistforever", "roar", "roaremotetrigger", "roarforever", "roarguild", "roarr", "roarrunlimited", "roarsounds", "socialforever", "totemtimers", "warriorstartattack", "workthatgodbod"];
 export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Object.freeze({
+  "clearviewforever": ["World of Warcraft add-on", "WoW Forever", "Screen clutter", "Nameplates", "Combat text", "Error messages", "XP popups", "Target portrait", "Lua"],
+  "eldgrim": ["Character project", "Amberhearth", "Roleplay", "Lore", "Character voice", "Narrative", "WoW Forever", "Guild chat recorder", "Discord agent design"],
+  "talent-design-atlas": ["Talent design", "WoW Forever", "Design ratings", "27 talent trees", "466 talents", "Class reviews", "Redesign ideas", "Game design", "PDF edition"],
   "guildchatai": ["World of Warcraft add-on", "Guild chat", "Roleplay experiment", "Paused prototype", "Character voice", "Manual chat command", "Lua", "Guild roster", "Local AI concept"],
   "babuni-dev": [
     "Interactive portfolio",

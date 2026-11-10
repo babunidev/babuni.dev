@@ -165,3 +165,10 @@ AI desktop browser capture: selected GuildChatBridge from the World of Warcraft 
 ![Ordinary shift header](../public/media/babuni-dev/images/verification/header-ordinary-shift.webp)
 
 AI desktop browser capture from the temporary 127.0.0.1:4327 preview. The header shows only “Columns are shifting” during an unqueued shift. After the capture, activating BABUNI.DEV during that shift visibly changed the header to “Waiting for shift to finish · BABUNI.DEV”; its small bloom subsequently opened. The screenshot was captured as JPEG and archived as WebP. A later attempted queued-close observation did not encounter a shift within the browser wait window, so no closing screenshot or fresh physical-device acceptance is claimed.
+
+## 2026-11-10 — Folder images above their documents
+
+![Folder image layout fixture](../public/media/babuni-dev/images/verification/folder-image-layout-fixture.webp)
+
+AI headless-Chrome capture of a fixture page using the site's built stylesheet and the markup the new folder code produces. It shows a small bloom, a big bloom card and the reader's folder index. A 64-pixel test icon keeps its size; a 1400-pixel test image scales to the card or reader width; names and buttons are centered; a document without an image shows only its name. The images are generated test squares, not project art. This is not a capture of the live grid, and no connected repository contained paired images at the time. Not phone acceptance.
+

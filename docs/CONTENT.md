@@ -679,3 +679,12 @@ Babuni.dev requested an accurate remaining-work list and assessment of Babuni.ad
 ## 2026-11-04 — Editing sources rather than generated modules
 
 The admin integration assessment distinguishes raw GitHub Markdown, curated website modules, local website documents and generated document-list collections. Admin edits must target the canonical raw source with revision checks, never the metadata-reordered/newest-first presentation copy. Shared local documents, folder listings and curated preview overrides must appear in the proposed dependency contract. Public import verification remains independent of admin-token access. See [integration assessment](ADMIN_INTEGRATION.md); these editor/build interfaces are not implemented.
+
+## 2026-11-10 — Three new public repositories and folder imports
+
+Babuni asked for the new public GitHub repositories to be added. AI found four that were not yet connected. Three are now projects: **ClearViewForever** (`clearviewforever`), **Eldgrim** (`eldgrim`) and **WoW Forever Talent Design Atlas** (`talent-design-atlas`, repository `wowforeverstuff`). All three are in the World of Warcraft menu group. Their summaries and nine keywords each are AI drafts based on each README and await Babuni's editorial review. None of the three has portal artwork yet.
+
+Eldgrim imports its `character`, `lore`, `narrative`, `interaction`, `addon`, `agent`, `templates` and `assets` folders as folder modules (25 Markdown files). `wowforeveraddonsbabuni` is not connected and, by Babuni's decision on 2026-11-10, is not to be published. It is a personal addon folder made up mostly of third-party addons such as Auctionator and Baganator. The private `azeroth-moments` and `Ethera` repositories stay out by rule.
+
+To add images to a folder list, put an image next to the Markdown file with the same name, for example `lore/AMBERHEARTH.png` beside `lore/AMBERHEARTH.md`, then pull the repository with `--write`.
+

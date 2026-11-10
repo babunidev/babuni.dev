@@ -153,3 +153,5 @@ vite.config.ts.timestamp-*
 /public/_project-docs/
 
 /public/_project-modules/
+
+.claude/settings.local.json

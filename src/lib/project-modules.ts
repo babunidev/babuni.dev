@@ -2,7 +2,7 @@
 export type ModuleType='text'|'gallery'|'video'|'resources'|'document-list';
 export interface ModuleImage {src:string;alt:string;caption?:string}
 export interface ModuleLink {label:string;href:string}
-export interface ModuleDocument {title:string;path:string;bodyUrl:string;source:string}
+export interface ModuleDocument {title:string;path:string;bodyUrl:string;source:string;image?:string}
 export interface ModuleVideo {src?:string;embed?:string;poster?:string;title:string}
 export interface ProjectModule {
   id:string;type:ModuleType;title:string;preview:string;

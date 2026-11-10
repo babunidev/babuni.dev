@@ -16,3 +16,11 @@ test('the GitHub token is sent to api.github.com only', async () => {
   ]);
   assert.equal(headers.Authorization,undefined,'caller headers are not mutated');
 });
+
+test('a newly connected repository is added to the snapshot, others stay untouched', async () => {
+  const {mergeSnapshots}=await import('../scripts/pull-repository.mjs');
+  const existing={'example/one':{commit:'a'},'example/two':{commit:'b'}};
+  const merged=mergeSnapshots(existing,{'example/two':{commit:'c'},'example/new':{commit:'d'}});
+  assert.deepEqual(merged,{'example/one':{commit:'a'},'example/two':{commit:'c'},'example/new':{commit:'d'}});
+  assert.equal(existing['example/two'].commit,'b','input is not mutated');
+});

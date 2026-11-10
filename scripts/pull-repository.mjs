@@ -2,7 +2,7 @@ import {readFileSync,writeFileSync,renameSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
-import {fetchSnapshot,validateSnapshots} from './sync-repositories.mjs';
+import {fetchSnapshot,validateSnapshots,storeRepositoryImages} from './sync-repositories.mjs';
 
 const root=fileURLToPath(new URL('..',import.meta.url));
 const LOCAL='babunidev/babuni.dev';
@@ -12,6 +12,11 @@ export function githubApiFetcher(token,fetcher=fetch){
   return (url,options={})=>new URL(url).origin==='https://api.github.com'
     ?fetcher(url,{...options,headers:{...options.headers,Authorization:'Bearer '+token}})
     :fetcher(url,options);
+}
+
+/** Pure: replaces updated repositories and adds newly connected ones; all others stay untouched. */
+export function mergeSnapshots(snapshots,updates){
+  return {...snapshots,...updates};
 }
 
 /** Pure: which documents differ between the committed snapshot and a fresh one. */
@@ -24,6 +29,13 @@ export function compareSnapshots(committed,fresh){
     else if(before.get(path)!==body)changes.push({path,kind:'CHANGED'});
   }
   for(const path of before.keys())if(!after.has(path))changes.push({path,kind:'REMOVED'});
+  const oldImages=new Map((committed?.images??[]).map(i=>[i.path,i.sha]));
+  const newImages=new Map((fresh.images??[]).map(i=>[i.path,i.sha]));
+  for(const [path,sha] of newImages){
+    if(!oldImages.has(path))changes.push({path,kind:'NEW'});
+    else if(oldImages.get(path)!==sha)changes.push({path,kind:'CHANGED'});
+  }
+  for(const path of oldImages.keys())if(!newImages.has(path))changes.push({path,kind:'REMOVED'});
   return changes;
 }
 
@@ -31,8 +43,8 @@ async function main(){
   const args=process.argv.slice(2);
   const write=args.includes('--write');
   const all=args.includes('--all');
-  const target=args.find(a=>!a.startsWith('--'));
-  if(!all&&!target)throw new Error('Usage: pull-repository.mjs <owner/name | name | --all> [--write]');
+  const targets=args.filter(a=>!a.startsWith('--')).map(a=>a.toLowerCase());
+  if(!all&&!targets.length)throw new Error('Usage: pull-repository.mjs <owner/name | name ...> | --all [--write]');
   const connections=JSON.parse(readFileSync(resolve(root,'src/content/project-repositories.json'),'utf8'));
   const file=resolve(root,'src/content/repository-documents.json');
   const text=readFileSync(file,'utf8');
@@ -40,12 +52,11 @@ async function main(){
   if(JSON.stringify(snapshots,null,2)+'\n'!==text)throw new Error('Snapshot formatting is not reproducible; refusing to continue');
   const unique=[...new Map(Object.values(connections)
     .filter(c=>c.status==='connected'&&c.repository!==LOCAL)
-    .map(c=>[c.repository,{repository:c.repository,branch:c.branch}])).values()];
-  const wanted=all?unique:unique.filter(c=>{
-    const name=c.repository.toLowerCase(),t=target.toLowerCase();
-    return name===t||name==='babunidev/'+t;
-  });
-  if(!wanted.length)throw new Error('Not a connected public source: '+target);
+    .map(c=>[c.repository,c])).values()];
+  const matches=t=>c=>{const name=c.repository.toLowerCase();return name===t||name==='babunidev/'+t;};
+  const unknown=targets.filter(t=>!unique.some(matches(t)));
+  if(unknown.length)throw new Error('Not a connected public source: '+unknown.join(', '));
+  const wanted=all?unique:unique.filter(c=>targets.some(t=>matches(t)(c)));
   let token;
   try{token=execFileSync('gh',['auth','token'],{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();}
   catch{throw new Error('No GitHub login: run gh auth login first');}
@@ -72,9 +83,10 @@ async function main(){
   if(!write){console.log(total+' repository(ies) have document changes. Add --write to update the snapshot.');return;}
   const dirty=execFileSync('git',['status','--porcelain','--','src/content/repository-documents.json'],{cwd:root,encoding:'utf8'}).trim();
   if(dirty)throw new Error('repository-documents.json has uncommitted changes; commit or stash them first');
-  const merged=Object.fromEntries(Object.entries(snapshots).map(([k,v])=>[k,updates[k]??v]));
+  const merged=mergeSnapshots(snapshots,updates);
   const errors=validateSnapshots(connections,merged);
   if(errors.length)throw new Error(errors.join('\n'));
+  for(const [repository,snapshot] of Object.entries(updates))await storeRepositoryImages(snapshot,snapshots[repository]);
   const temporary=file+'.tmp';
   writeFileSync(temporary,JSON.stringify(merged,null,2)+'\n');renameSync(temporary,file);
   console.log('Snapshot updated for '+total+' repository(ies). Review with git diff, then commit and publish.');

@@ -52,12 +52,26 @@ export function renderModulePreview(module:ProjectModule,projectName:string,onRe
     if(depth==='big'){const list=document.createElement('ul');list.className='bloom-collection-list';for(const video of videos){const item=document.createElement('li');item.textContent=video.title;list.append(item);}content.append(list);}
     if(videos.length>1){const count=document.createElement('span');count.className='video-count';count.textContent=videos.length+' videos';content.append(count);}
   }
-  if(module.type==='document-list'&&depth==='big'){
-    const list=document.createElement('ul');list.className='bloom-collection-list';
-    for(const item of (module.documents??[]).slice(0,12)){
-      const row=document.createElement('li');row.textContent=item.title;list.append(row);
+  if(module.type==='document-list'){
+    const documents=module.documents??[];
+    const illustrated=documents.some(item=>item.image);
+    // Folders with paired images show image above name, centered, in both blooms;
+    // plain folders keep their text list in the big bloom only.
+    if(illustrated||depth==='big'){
+      const list=document.createElement('ul');
+      list.className=illustrated?'bloom-collection-list bloom-document-entries':'bloom-collection-list';
+      for(const item of documents.slice(0,depth==='big'?12:4)){
+        const row=document.createElement('li');
+        if(item.image){
+          const image=document.createElement('img');image.className='document-entry-image';
+          image.src=item.image;image.alt='';image.loading='lazy';image.decoding='async';image.draggable=false;
+          row.append(image);
+        }
+        const name=document.createElement('span');name.textContent=item.title;row.append(name);
+        list.append(row);
+      }
+      if(list.children.length)content.append(list);
     }
-    if(list.children.length)content.append(list);
   }
   if(module.type==='resources')for(const item of module.links??[]){
     const link=document.createElement('a');link.className='bloom-action';link.textContent=item.label;

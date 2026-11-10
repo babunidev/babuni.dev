@@ -6,6 +6,30 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — New repositories, folder modules and folder images (2026-11-10)
+- Three new public repositories are now projects: ClearViewForever, Eldgrim and WoW Forever Talent Design Atlas (`wowforeverstuff`). Their summaries and keywords are AI drafts. They have no portal artwork yet. `wowforeveraddonsbabuni` is deliberately not published (Babuni's decision).
+- Any connected repository can now list top-level `folders` whose Markdown appears as folder modules that open in the reader, as Amberbrew Story's do. Eldgrim uses this for eight folders.
+- An image next to a folder document with the same name is imported, converted to WebP (`public/media/repositories/`) and shown centered above that document. This applies in the small bloom (up to four entries), the big bloom (up to twelve) and the reader's folder index. Small icons keep their size; larger images scale to fit.
+- `pull-repository.mjs` accepts several repository names in one run and reports image changes. `--write` stores the paired images.
+- The reader accepts folder documents only from connected repositories and their listed folders.
+- Tests: `tests/folder-modules.test.mjs` (fictional fixtures). `npm run test:grid` (205 passed), `npm run content:check` and `npm run build` (510 URLs checked) passed. The layout was checked with a headless-browser fixture, not on the live grid or a phone.
+
+### Added — Search and AI-search signals (2026-11-10)
+- The homepage now carries structured data: a `WebSite` and the `Person` Babuni, linked to the `babunidev` GitHub account.
+- The build now generates `/llms.txt`, a plain index for AI search tools: the site summary, a note on human–AI attribution and one line per project, generated from the current catalog. `search:check` verifies that its links resolve.
+- Sitemap entries now carry `<lastmod>` taken from each project's latest repository commit date. Projects without a connected repository have none.
+
+### Fixed — Page descriptions, author and publishing safety (2026-11-10)
+- Document-page descriptions now use the first prose paragraph and skip headings and bylines (including bold `**By:**` lines). When a document has no usable sentence, they fall back to "<document> of <project>: <summary>". This removed the "By: Babuni" descriptions, the stray line breaks, and the 24 identical Source-page descriptions.
+- Project structured data now names the author as Babuni, not Babuni.dev.
+- `pull-repository.mjs --write` now adds a newly connected repository instead of failing validation.
+- `publish-site.sh` now switches back to the previous release when the live check fails, and exits with code 5 (`VERIFY_FAILED`).
+- Verified with `npm run test:grid` (196 passed) and `npm run build` (476 URLs checked). Not yet published.
+
+### Changed — Babuni Admin briefing (2026-11-10)
+- Added a current handoff section to `docs/ADMIN_INTEGRATION.md`: which of the three publishing tools Babuni Admin already uses, the exact commands, output lines, exit codes, prerequisites and runtimes of `pull-repository.mjs` and `publish-site.sh`, the commit/push step between them, and rules for a shared publishing lock. Documentation only.
+- `.claude/settings.local.json` (personal Claude Code permissions) is now ignored by Git.
+
 ### Added — Per-repository document pull (2026-11-10)
 - Added `scripts/pull-repository.mjs`. It fetches fresh public documents for one connected repository (or `--all`), compares them with `src/content/repository-documents.json` and reports each new, changed or removed document. Only `--write` updates the snapshot, and only for repositories whose documents differ; a moved head with identical documents is left alone.
 - GitHub API metadata requests use the desktop login (`gh auth token` as a Bearer header) to avoid the anonymous rate limit. The token is sent to `https://api.github.com` only; `raw.githubusercontent.com` downloads stay anonymous, and the existing public-visibility check still rejects private repositories. A test covers the token boundary.

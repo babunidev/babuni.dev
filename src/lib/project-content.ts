@@ -2,7 +2,7 @@ import catalog from '../content/project-modules.json' with {type:'json'};
 import connections from '../content/project-repositories.json' with {type:'json'};
 import index from '../generated/document-index.json' with {type:'json'};
 import {type ProjectModule} from './project-modules.ts';
-import {indexedRepositoryModules,indexedCharacterStoryFolders,composeProjectModules,type RepositoryConnection,
+import {indexedRepositoryModules,indexedCharacterStoryFolders,indexedFolderModules,composeProjectModules,type RepositoryConnection,
   type IndexedRepository} from './repository-content.ts';
 const indexes=index as Record<string,IndexedRepository>;
 /** A compact, synchronous list of previews keeps every bloom animation and
@@ -18,6 +18,6 @@ export function modulesForProject(projectId:string,summary:string):ProjectModule
     const resource=local?.documents.find(d=>d.path===document);
     return {...entry,body:'',intro:resource?.intro,bodyUrl:resource?.url};
   });
-  const modules=composeProjectModules(curated,[...source,...indexedCharacterStoryFolders(connection,connection?.repository?indexes[connection.repository]:undefined)],connection?.status==='connected'?connection.repository:undefined);
+  const modules=composeProjectModules(curated,[...source,...indexedCharacterStoryFolders(connection,connection?.repository?indexes[connection.repository]:undefined),...indexedFolderModules(connection,connection?.repository?indexes[connection.repository]:undefined)],connection?.status==='connected'?connection.repository:undefined);
   return modules.length?modules:[{id:'overview',type:'text',title:'Overview',preview:summary,body:summary}];
 }

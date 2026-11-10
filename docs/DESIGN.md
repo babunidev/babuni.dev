@@ -797,3 +797,8 @@ Babuni.dev requested an accurate remaining-work list and assessment of Babuni.ad
 ## 2026-11-04 — Admin integration preserves the portfolio experience
 
 The requested code-backed assessment keeps administration in the local Babuni.admin application. No grid controls, timing, geometry or public admin interface changed. Proposed future content-refresh behavior must preserve an already open bloom/reader and avoid mixing old previews with new documents; no automatic polling or reload design has been selected. [Integration assessment](ADMIN_INTEGRATION.md) separates existing behavior from proposed implementation.
+
+## 2026-11-10 — Images above folder documents
+
+Babuni requested that folder lists can carry images: an image with the same name as a Markdown file sits centered above it, and the file name is centered beneath it, so the list reads image, document, image, document. In the reader's folder index, the image and the button below it both open the document. The big bloom shows up to twelve entries. The small bloom shows up to four entries, but only when the folder has images, so plain folders keep their text-only small bloom. Images keep their natural size until they would exceed the space: the full width, and at most 40% of a tile's height in a small bloom or 90% in a big bloom. Movement, timing and bloom geometry are unchanged.
+
