@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Reader-first documentation (2026-11-10)
+- Rewrote the shared documentation standard to prioritize human-readable introductions, distinct document purposes, preserved technical history, source-backed status claims and accurate attribution. Added a [41-repository readability review](docs/READER_EXPERIENCE_AUDIT_2026-11-10.md) and linked it from the project README; recorded the editorial session in the development journal. No application code, imported snapshot, build or deployment changed.
+
+
 ### Changed — Azeroth Moments source repository (2026-11-10)
 - Azeroth Moments now reads its documents from the public `babunidev/azeroth-moments` repository, which holds the implementation and fuller documentation, instead of the `AzerothMoments` documentation shell. The shell's snapshot was dropped. A scan of the imported documents for secrets found none.
 
