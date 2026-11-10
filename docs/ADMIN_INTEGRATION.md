@@ -27,6 +27,7 @@ node --experimental-strip-types scripts/pull-repository.mjs <name | owner/name .
 - **Without `--write`,** it is a check only and writes nothing.
 - **With `--write`,** it updates `src/content/repository-documents.json` in the working tree, and only for repositories whose document text changed. A repository whose head moved but whose documents are identical is left alone.
 - **It refuses to write if the snapshot file already has uncommitted changes.** It also validates the merged snapshot before writing.
+- **Repositories that are no longer connected** are dropped from the snapshot on `--write` and reported as `DROPPED   <owner/name>   (no longer connected)`.
 - **Several names can be given at once.** `--write` refuses while the snapshot file has uncommitted changes, so pull related repositories in one run.
 - **Paired folder images:** with `--write`, it also stores paired images as WebP under `public/media/repositories/`. Image changes appear as `NEW|CHANGED|REMOVED <image path>` lines, and those files must be committed together with the snapshot.
 - **It does not commit, push or publish.**

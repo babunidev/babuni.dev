@@ -24,3 +24,9 @@ test('a newly connected repository is added to the snapshot, others stay untouch
   assert.deepEqual(merged,{'example/one':{commit:'a'},'example/two':{commit:'c'},'example/new':{commit:'d'}});
   assert.equal(existing['example/two'].commit,'b','input is not mutated');
 });
+
+test('repositories that are no longer connected are dropped from the snapshot', async () => {
+  const {mergeSnapshots}=await import('../scripts/pull-repository.mjs');
+  const merged=mergeSnapshots({'example/old':{commit:'a'},'example/kept':{commit:'b'}},{'example/new':{commit:'c'}},new Set(['example/kept','example/new']));
+  assert.deepEqual(merged,{'example/kept':{commit:'b'},'example/new':{commit:'c'}});
+});

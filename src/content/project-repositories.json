@@ -51,9 +51,9 @@
   },
   "ethera-the-stonewrought": {
     "status": "connected",
-    "repository": "babunidev/Ethera-docs",
+    "repository": "babunidev/Ethera",
     "branch": "main",
-    "note": "Curated public documentation edition; implementation remains private. Published by Babuni.dev and anonymously verified 2026-10-28."
+    "note": "Ethera game, design and documentation repository, made public by Babuni on 2026-11-10. It replaces the separate Ethera-docs edition, which Babuni deleted."
   },
   "enchantvisuals": {
     "status": "connected",

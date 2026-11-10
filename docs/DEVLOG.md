@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-10 — Ethera in one place
+
+I made the Ethera and Azeroth Moments repositories public and deleted the separate Ethera-docs repository, because everything about Ethera should live in Ethera itself. If its documentation was missing there, I wanted it written to our documentation standard. AI checked first: all ten standard documents were already in Ethera, written to the same standard and far fuller than the old docs edition, so nothing needed writing. AI pointed the website at Ethera instead and taught the pull script to drop repositories that are no longer connected.
+
 ## 2026-11-10 — Only what I want to show
 
 Looking at the new projects again, I decided the Talent Design Atlas does not belong on the website, and I am removing its repository from GitHub, as I did with my addon folder. The portfolio should contain only work I actually want to publish. At my request, AI removed the atlas from the catalog, menus and source data; every remaining project now has its portal artwork.

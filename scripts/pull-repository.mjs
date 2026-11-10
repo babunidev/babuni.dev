@@ -14,9 +14,12 @@ export function githubApiFetcher(token,fetcher=fetch){
     :fetcher(url,options);
 }
 
-/** Pure: replaces updated repositories and adds newly connected ones; all others stay untouched. */
-export function mergeSnapshots(snapshots,updates){
-  return {...snapshots,...updates};
+/** Pure: replaces updated repositories, adds newly connected ones and drops repositories
+ * that are no longer connected (when `connected` is given); all others stay untouched.
+ */
+export function mergeSnapshots(snapshots,updates,connected){
+  const kept=connected?Object.fromEntries(Object.entries(snapshots).filter(([repository])=>connected.has(repository))):snapshots;
+  return {...kept,...updates};
 }
 
 /** Pure: which documents differ between the committed snapshot and a fresh one. */
@@ -79,11 +82,14 @@ async function main(){
     console.log('CHANGED   '+c.repository.padEnd(34)+head);
     for(const change of changes)console.log('            '+change.kind.padEnd(8)+change.path);
   }
+  const connected=new Set(unique.map(c=>c.repository));
+  const stale=Object.keys(snapshots).filter(repository=>!connected.has(repository));
+  for(const repository of stale){console.log('DROPPED   '+repository.padEnd(34)+'(no longer connected)');total++;}
   if(!total){console.log('No document changes.');return;}
   if(!write){console.log(total+' repository(ies) have document changes. Add --write to update the snapshot.');return;}
   const dirty=execFileSync('git',['status','--porcelain','--','src/content/repository-documents.json'],{cwd:root,encoding:'utf8'}).trim();
   if(dirty)throw new Error('repository-documents.json has uncommitted changes; commit or stash them first');
-  const merged=mergeSnapshots(snapshots,updates);
+  const merged=mergeSnapshots(snapshots,updates,connected);
   const errors=validateSnapshots(connections,merged);
   if(errors.length)throw new Error(errors.join('\n'));
   for(const [repository,snapshot] of Object.entries(updates))await storeRepositoryImages(snapshot,snapshots[repository]);

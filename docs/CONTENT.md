@@ -700,3 +700,7 @@ Babuni supplied `Eldgrim.webp` (1000×1000, 170 KiB). It exceeded the 150 KiB po
 
 Babuni withdrew WoW Forever Talent Design Atlas (`talent-design-atlas`, repository `wowforeverstuff`) from the website so that only projects meant for publication remain. Babuni is also removing that repository from GitHub, as was already done with `wowforeveraddonsbabuni`. AI removed the project's catalog entry, keywords, menu-group membership, repository connection and imported snapshot. The catalog now has 44 projects, and every project has portal artwork. Earlier entries mentioning the atlas are kept as history.
 
+## 2026-11-10 — Ethera now comes from the Ethera repository
+
+Babuni made the `Ethera` and `azeroth-moments` repositories public and deleted `Ethera-docs`, because everything about Ethera belongs in the Ethera repository. AI checked what Ethera already contains before changing the website. All ten standard documents are present, its `docs/DOCUMENTATION.md` is identical to babuni.dev's standard, and each document is two to five times longer than the 2026-10-28 Ethera-docs copy the website had shown. No documentation had to be created. AI switched the `ethera-the-stonewrought` connection to `babunidev/Ethera` at commit `47288bbe` and replaced the old snapshot. The project's ID, artwork, keywords and menu place are unchanged. The `concept/` and `game/` trees are not imported as folder modules.
+
