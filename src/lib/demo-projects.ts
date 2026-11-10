@@ -357,6 +357,7 @@ export const demoProjects:readonly DemoProject[]=[
 },
 {
   "id": "clearviewforever",
+  "portalArtwork": "/portal-content/ClearViewForever.webp",
   "name": "ClearViewForever",
   "shortSummary": "Minimal screen-clutter add-on for WoW Forever with switches for error messages, combat numbers, XP popups and nameplates.",
   "evidence": "repo",

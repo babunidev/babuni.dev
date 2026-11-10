@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — ClearViewForever artwork (2026-11-10)
+- ClearViewForever now uses its supplied portal artwork, `public/portal-content/ClearViewForever.webp`. It is a 1000×1000, quality-75 derivative (139 KiB) of the 1254×1254 original (515 KiB), made at Babuni's choice to meet the 150 KiB portal limit.
+
 ### Added — New repositories, folder modules and folder images (2026-11-10)
 - Three new public repositories are now projects: ClearViewForever, Eldgrim and WoW Forever Talent Design Atlas (`wowforeverstuff`). Their summaries and keywords are AI drafts. They have no portal artwork yet. `wowforeveraddonsbabuni` is deliberately not published (Babuni's decision).
 - Any connected repository can now list top-level `folders` whose Markdown appears as folder modules that open in the reader, as Amberbrew Story's do. Eldgrim uses this for eight folders.

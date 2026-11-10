@@ -688,3 +688,7 @@ Eldgrim imports its `character`, `lore`, `narrative`, `interaction`, `addon`, `a
 
 To add images to a folder list, put an image next to the Markdown file with the same name, for example `lore/AMBERHEARTH.png` beside `lore/AMBERHEARTH.md`, then pull the repository with `--write`.
 
+## 2026-11-10 — ClearViewForever portal artwork
+
+Babuni supplied `ClearViewForever.webp` in `public/portal-content/` for the new ClearViewForever project. AI checked that it is a valid 1254×1254 WebP and mapped it to `clearviewforever`. At 515 KiB it exceeded the 150 KiB portal limit. Babuni chose a derivative: AI resized it to 1000×1000 and re-encoded it at WebP quality 75 (139 KiB). The unchanged original is kept outside the repository in `../portal-artwork-originals/`. Eldgrim and WoW Forever Talent Design Atlas still have no artwork.
+
