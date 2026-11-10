@@ -26,9 +26,9 @@
   },
   "azeroth-moments": {
     "status": "connected",
-    "repository": "babunidev/AzerothMoments",
+    "repository": "babunidev/azeroth-moments",
     "branch": "main",
-    "note": "Public documentation shell; active implementation is separate and excluded by the public-only rule."
+    "note": "Azeroth Moments implementation and documentation repository, made public by Babuni on 2026-11-10. It replaces the separate AzerothMoments documentation shell."
   },
   "anskar-grotzschnapf": {
     "status": "connected",

@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Azeroth Moments source repository (2026-11-10)
+- Azeroth Moments now reads its documents from the public `babunidev/azeroth-moments` repository, which holds the implementation and fuller documentation, instead of the `AzerothMoments` documentation shell. The shell's snapshot was dropped. A scan of the imported documents for secrets found none.
+
 ### Changed — Ethera source repository (2026-11-10)
 - Ethera: The Stonewrought now reads its documents from the public `babunidev/Ethera` repository, replacing the deleted `Ethera-docs`. Its ten standard documents were already there, and they are fuller than the old edition.
 - `pull-repository.mjs --write` now drops snapshots of repositories that are no longer connected and reports them as `DROPPED`. There is a new test for this.

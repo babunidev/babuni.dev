@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-10 — Azeroth Moments, the real repository
+
+Azeroth Moments had the same split as Ethera: a small public shell for the website and the real repository beside it. With the real one public, I asked for the website to use it. AI switched the project over, checked the imported documents for leaked tokens or webhook URLs (none), and confirmed that the folder on my PC belongs to the real repository, so only the shell can go.
+
 ## 2026-11-10 — Ethera in one place
 
 I made the Ethera and Azeroth Moments repositories public and deleted the separate Ethera-docs repository, because everything about Ethera should live in Ethera itself. If its documentation was missing there, I wanted it written to our documentation standard. AI checked first: all ten standard documents were already in Ethera, written to the same standard and far fuller than the old docs edition, so nothing needed writing. AI pointed the website at Ethera instead and taught the pull script to drop repositories that are no longer connected.
