@@ -13,6 +13,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 - `pull-repository.mjs` accepts several repository names in one run and reports image changes. `--write` stores the paired images.
 - The reader accepts folder documents only from connected repositories and their listed folders.
 - Tests: `tests/folder-modules.test.mjs` (fictional fixtures). `npm run test:grid` (205 passed), `npm run content:check` and `npm run build` (510 URLs checked) passed. The layout was checked with a headless-browser fixture, not on the live grid or a phone.
+- Published as commit `1fb7428`, release `20261110-025839-1fb7428-site`; `publish-site.sh` reported it verified. An AI spot check found `/llms.txt` (45 projects) and the three new project pages live.
 
 ### Added — Search and AI-search signals (2026-11-10)
 - The homepage now carries structured data: a `WebSite` and the `Person` Babuni, linked to the `babunidev` GitHub account.
@@ -24,7 +25,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 - Project structured data now names the author as Babuni, not Babuni.dev.
 - `pull-repository.mjs --write` now adds a newly connected repository instead of failing validation.
 - `publish-site.sh` now switches back to the previous release when the live check fails, and exits with code 5 (`VERIFY_FAILED`).
-- Verified with `npm run test:grid` (196 passed) and `npm run build` (476 URLs checked). Not yet published.
+- Verified with `npm run test:grid` (196 passed) and `npm run build` (476 URLs checked). Published with the release below.
 
 ### Changed — Babuni Admin briefing (2026-11-10)
 - Added a current handoff section to `docs/ADMIN_INTEGRATION.md`: which of the three publishing tools Babuni Admin already uses, the exact commands, output lines, exit codes, prerequisites and runtimes of `pull-repository.mjs` and `publish-site.sh`, the commit/push step between them, and rules for a shared publishing lock. Documentation only.

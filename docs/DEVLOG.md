@@ -10,13 +10,13 @@ For specific decisions, implementation changes and technical measurements, see [
 
 Several repositories had appeared on my GitHub since the last sync, and I wanted all of them on the website. Where a repository has folders, I wanted the folders to work like Amberbrew Story's: open a folder, pick a file, read it. I also wanted pictures inside those lists. An image with the same name as a document sits centered above it, so the list reads image, document, image, document. Small icons stay small; large images scale to fit.
 
-AI found four public repositories that were missing. It added ClearViewForever, Eldgrim and my Talent Design Atlas, and drafted their summaries from the READMEs. It held back the fourth, my WoW Forever addon folder, because it is mostly other people's addons. I decided it stays off the website. AI then generalized the Amberbrew folder support so any repository can opt in, and gave Eldgrim eight folders. It added image pairing, WebP conversion and the centered image layout to both blooms and the reader. Tests and the build passed. None of my repositories has images yet, so AI checked the layout on a fixture page with test images rather than on the live grid.
+AI found four public repositories that were missing. It added ClearViewForever, Eldgrim and my Talent Design Atlas, and drafted their summaries from the READMEs. It held back the fourth, my WoW Forever addon folder, because it is mostly other people's addons. I decided it stays off the website. AI then generalized the Amberbrew folder support so any repository can opt in, and gave Eldgrim eight folders. It added image pairing, WebP conversion and the centered image layout to both blooms and the reader. Tests and the build passed. None of my repositories has images yet, so AI checked the layout on a fixture page with test images rather than on the live grid. With my go-ahead, AI committed and published everything; the release verified, and the new pages answered live.
 
 ## 2026-11-10 — Readable to search engines and AI
 
 With publishing working, the next question was how the site looks to search engines and AI search tools. At my request, AI reviewed the built pages. The structure was sound, but many document pages were described only as "By: Babuni", and the structured data named the website instead of me as the author. The review also found a bug in the new pull script: a newly connected repository could never be added.
 
-I asked for the fixes. AI rewrote how page descriptions are chosen, corrected the author, and added homepage structured data, an `llms.txt` index for AI tools and sitemap dates. It also made the site publisher roll back by itself if the live check fails. Tests and the build passed; the changes are not yet published.
+I asked for the fixes. AI rewrote how page descriptions are chosen, corrected the author, and added homepage structured data, an `llms.txt` index for AI tools and sitemap dates. It also made the site publisher roll back by itself if the live check fails. Tests and the build passed, and the changes went live with the next release.
 
 ## 2026-11-10 — Pulling only what changed
 
