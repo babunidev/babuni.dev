@@ -17,7 +17,7 @@ This is an editorial inventory of the **41 repositories** accessible under `babu
 | [Morkahja](https://github.com/babunidev/Morkahja) | Game introduction and reading map replace dated audit opening | Status, test and pull-request history in `docs/RELEASE_STATUS_HISTORY.md` |
 | [ResistForever](https://github.com/babunidev/ResistForever) | Tooltip explanation, installation and limitations precede equations | Formulas, API research and dated release checks in `docs/MODEL_REFERENCE.md` |
 
-The eight rewritten READMEs have **146 local Markdown links** in total; their targets were checked against the current repository file trees and none were missing. GitHub contents writes were confirmed. No game/client source, deployment, database or release artifact was changed in this pass.
+The eight rewritten READMEs have **more than 140 local Markdown links** in total; their targets were checked against the current repository file trees and none were missing. GitHub contents writes were confirmed. No game/client source, deployment, database or release artifact was changed in this pass.
 
 ## The other 33 repositories
 
