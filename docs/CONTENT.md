@@ -696,3 +696,7 @@ Babuni supplied `ClearViewForever.webp` in `public/portal-content/` for the new 
 
 Babuni supplied `Eldgrim.webp` (1000×1000, 170 KiB). It exceeded the 150 KiB portal limit, so AI applied the derivative approach Babuni had approved for ClearViewForever. Quality 75 at 1000 pixels still came to 164 KiB because the fire artwork is very detailed. AI therefore resized it to 900×900 at quality 75 (118 KiB) and checked it visually at half size. The unchanged original is in `../portal-artwork-originals/`. WoW Forever Talent Design Atlas is now the only project without artwork.
 
+## 2026-11-10 — WoW Forever Talent Design Atlas withdrawn
+
+Babuni withdrew WoW Forever Talent Design Atlas (`talent-design-atlas`, repository `wowforeverstuff`) from the website so that only projects meant for publication remain. Babuni is also removing that repository from GitHub, as was already done with `wowforeveraddonsbabuni`. AI removed the project's catalog entry, keywords, menu-group membership, repository connection and imported snapshot. The catalog now has 44 projects, and every project has portal artwork. Earlier entries mentioning the atlas are kept as history.
+

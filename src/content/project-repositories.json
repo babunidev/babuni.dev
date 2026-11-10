@@ -258,10 +258,5 @@
       "templates",
       "assets"
     ]
-  },
-  "talent-design-atlas": {
-    "status": "connected",
-    "repository": "babunidev/wowforeverstuff",
-    "branch": "main"
   }
 }

@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Removed — WoW Forever Talent Design Atlas (2026-11-10)
+- Removed the `talent-design-atlas` project at Babuni's request: its catalog entry, keywords, menu-group entry, `wowforeverstuff` connection and imported documents. The catalog now has 44 projects.
+
 ### Added — Eldgrim artwork (2026-11-10)
 - Eldgrim now uses its supplied portal artwork, `public/portal-content/Eldgrim.webp`. It is a 900×900, quality-75 derivative (118 KiB) of the 1000×1000 original (170 KiB), sized to meet the 150 KiB portal limit.
 

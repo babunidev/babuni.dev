@@ -34,8 +34,7 @@ export const PROJECT_GROUPS=[
       "roar-guild-and-community",
       "amberbrew-story",
       "clearviewforever",
-      "eldgrim",
-      "talent-design-atlas"
+      "eldgrim"
     ]
   },
   {

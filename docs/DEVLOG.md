@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-10 — Only what I want to show
+
+Looking at the new projects again, I decided the Talent Design Atlas does not belong on the website, and I am removing its repository from GitHub, as I did with my addon folder. The portfolio should contain only work I actually want to publish. At my request, AI removed the atlas from the catalog, menus and source data; every remaining project now has its portal artwork.
+
 ## 2026-11-10 — New repositories and pictures in the folders
 
 Several repositories had appeared on my GitHub since the last sync, and I wanted all of them on the website. Where a repository has folders, I wanted the folders to work like Amberbrew Story's: open a folder, pick a file, read it. I also wanted pictures inside those lists. An image with the same name as a document sits centered above it, so the list reads image, document, image, document. Small icons stay small; large images scale to fit.
