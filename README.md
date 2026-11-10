@@ -76,6 +76,7 @@ GitHub Actions runs automated tests and production builds for main-branch pushes
 - [Roadmap](ROADMAP.md) — milestones and ongoing work
 - [Changelog](CHANGELOG.md) — recorded changes to the repository
 - [Human–AI collaboration](docs/AI_COLLABORATION.md) — attribution, evidence, and narrative standards
+- [Repository documentation readability review](docs/READER_EXPERIENCE_AUDIT_2026-11-10.md) — what was edited across the portfolio and what remains only inventoried
 
 ### Design, engineering, and publishing
 
