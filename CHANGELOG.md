@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Eldgrim artwork (2026-11-10)
+- Eldgrim now uses its supplied portal artwork, `public/portal-content/Eldgrim.webp`. It is a 900×900, quality-75 derivative (118 KiB) of the 1000×1000 original (170 KiB), sized to meet the 150 KiB portal limit.
+
 ### Added — ClearViewForever artwork (2026-11-10)
 - ClearViewForever now uses its supplied portal artwork, `public/portal-content/ClearViewForever.webp`. It is a 1000×1000, quality-75 derivative (139 KiB) of the 1254×1254 original (515 KiB), made at Babuni's choice to meet the 150 KiB portal limit.
 

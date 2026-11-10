@@ -692,3 +692,7 @@ To add images to a folder list, put an image next to the Markdown file with the 
 
 Babuni supplied `ClearViewForever.webp` in `public/portal-content/` for the new ClearViewForever project. AI checked that it is a valid 1254×1254 WebP and mapped it to `clearviewforever`. At 515 KiB it exceeded the 150 KiB portal limit. Babuni chose a derivative: AI resized it to 1000×1000 and re-encoded it at WebP quality 75 (139 KiB). The unchanged original is kept outside the repository in `../portal-artwork-originals/`. Eldgrim and WoW Forever Talent Design Atlas still have no artwork.
 
+## 2026-11-10 — Eldgrim portal artwork
+
+Babuni supplied `Eldgrim.webp` (1000×1000, 170 KiB). It exceeded the 150 KiB portal limit, so AI applied the derivative approach Babuni had approved for ClearViewForever. Quality 75 at 1000 pixels still came to 164 KiB because the fire artwork is very detailed. AI therefore resized it to 900×900 at quality 75 (118 KiB) and checked it visually at half size. The unchanged original is in `../portal-artwork-originals/`. WoW Forever Talent Design Atlas is now the only project without artwork.
+

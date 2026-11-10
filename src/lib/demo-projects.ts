@@ -365,6 +365,7 @@ export const demoProjects:readonly DemoProject[]=[
 },
 {
   "id": "eldgrim",
+  "portalArtwork": "/portal-content/Eldgrim.webp",
   "name": "Eldgrim",
   "shortSummary": "Character and narrative project for Eldgrim, who initiated the Amberhearth fellowship, with a guild-chat recorder and a proposed local agent.",
   "evidence": "repo",
