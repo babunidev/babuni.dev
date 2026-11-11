@@ -3,7 +3,7 @@
 **Creative:** Babuni  
 **Project:** An interactive portfolio and digital workshop
 
-babuni.dev is a place to explore creative work rather than browse a conventional list of projects. Its starting point is a living field of engraved stone tiles, each with a colored portal into a different work. The field can be dragged, its rows and columns shift gently, and individual projects open into increasingly detailed views.
+babuni.dev is an interactive portfolio built around a moving grid of engraved stone tiles. Drag the grid to explore, then select a tile to open a preview of the project behind its colored portal. Each preview leads into deeper views for documents, images and other material.
 
 The website is also one of the projects it documents. Its concept, experiments, decisions, implementation, and human–AI collaboration are part of the work.
 
