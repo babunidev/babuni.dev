@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Share button on big-bloom cards (2026-11-13)
+- Every big-bloom card has a round share control (share symbol) in its top-right corner. It builds that module's deep link (`/#project=<id>&bloom=big&read=<module>`); on touch devices with a system share sheet it opens the sheet, elsewhere it copies the link to the clipboard and briefly glows with a “Link copied” status (falls back to a copy prompt if the clipboard is unavailable). Clicking it does not open the reader. Code in `src/scripts/module-share.ts`, wired in `src/scripts/grid.ts`, styled in `src/pages/index.astro`; test added to `tests/grid-deep-link.test.mjs`. Like Read more, the button is not a keyboard tab stop in the spatial grid.
+- Verification: `npm run test:grid` (211 passed). An AI headless-Chromium check against `astro dev` found 13 share buttons in the BABUNI.DEV big bloom; clicking the selected card's button copied `/#project=babuni-dev&bloom=big&read=videos` and left the reader closed. Not deployed; no phone test.
+
 ### Added — Living-grid deep links and a Play Morkahja link (2026-11-13)
 - The homepage now opens a project from its address: `/#project=<id>` opens the small bloom, `&bloom=big` the big bloom, and `&read=<module>` the big bloom plus that module's reader (`read` implies `bloom=big`). Example: `https://www.babuni.dev/#project=morkahja-rpg&bloom=big&read=changes`. Module ids match `/projects/<id>/<module>/`. The link starts after the intro and follows the same queued selection path as a click, so a running shift finishes at its normal tempo. Closing the reader or the bloom removes the hash with `history.replaceState`; an unknown project or module leaves the grid as usual. Parser in `src/lib/grid-deep-link.ts`, wiring in `src/scripts/grid.ts`, tests in `tests/grid-deep-link.test.mjs`. Opening a project by hand does not write a hash.
 - Morkahja has a curated `play` resources module, “Play Morkahja” (`https://www.babuni.dev/Morkahja/`), shown in its blooms. A project page with a `play` module shows its first link as a labelled button.

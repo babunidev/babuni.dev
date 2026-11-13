@@ -19,3 +19,9 @@ test('the hash builder round-trips through the parser',()=>{
  }
  assert.equal(gridDeepLinkHash({project:'example-game',read:'changes'}),'#project=example-game&bloom=big&read=changes');
 });
+test('a big-bloom share link reopens that module through the homepage hash',async()=>{
+ const {moduleShareUrl}=await import('../src/scripts/module-share.ts');
+ const url=moduleShareUrl('example-game','changes',new URL('https://www.babuni.dev/?grid-profile#project=other'));
+ assert.equal(url,'https://www.babuni.dev/#project=example-game&bloom=big&read=changes');
+ assert.deepEqual(parseGridDeepLink(new URL(url).hash),{project:'example-game',bloom:'big',read:'changes'});
+});

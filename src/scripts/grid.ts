@@ -9,6 +9,7 @@ import {installInteractionFeedback} from './interaction-feedback';
 import {projectModuleLoader} from '../lib/project-module-loader';
 import {selectModules,MODULE_OFFSETS,moduleRevealPlan,moduleHasContent} from '../lib/project-modules';
 import {renderModulePreview} from './module-preview';
+import {moduleShareUrl,renderShareButton} from './module-share';
 import {createModuleDetails} from './module-detail';
 import {bigBloomLayout,bigBloomVacancies,bigModuleCell,bigBloomRevealPlan} from '../lib/big-bloom';
 import {restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
@@ -934,6 +935,7 @@ if (viewport && world && status) {
       bloomModules=bigLayout.map(entry=>{
         const panel=renderModulePreview(entry.module,project.name,()=>details.open(entry.module,panel.querySelector<HTMLButtonElement>('.bloom-read-more')!),'big');
         panel.classList.add('big-bloom-card');
+        panel.append(renderShareButton(moduleShareUrl(project.id,entry.module.id),project.name+': '+entry.module.title,message=>{liveStatus.textContent=message;}));
         if(entry.module.id===moduleId)panel.classList.add('big-bloom-card--selected');
         layer.append(panel);return panel;
       });

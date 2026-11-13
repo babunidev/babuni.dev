@@ -198,6 +198,9 @@ const structured={'@context':'https://schema.org','@graph':[
   .big-bloom-card .bloom-title{font-size:clamp(20px,calc(var(--tile-size) * .1),26px)}
   .big-bloom-card .bloom-summary{font:400 clamp(14px,calc(var(--tile-size) * .071),18px)/1.55 system-ui,sans-serif;white-space:normal;max-height:none;overflow:visible}
   .big-bloom-card .bloom-media{max-height:calc(var(--tile-size) * .85)}
+  .bloom-share{position:absolute;top:8px;right:8px;z-index:1;display:grid;place-items:center;width:32px;height:32px;padding:0;border-radius:50%}
+  .bloom-share.is-copied{border-color:#ffe0a3;color:#ffe0a3;box-shadow:0 0 10px #ffd28266}
+  .big-bloom-card:has(.bloom-share) .bloom-title{padding-right:34px}
   .big-bloom-card--selected{border-color:#e3c99b;box-shadow:inset 0 0 0 5px #49404a,0 0 24px #d8bd9133}
   .bloom-preview-credit,.bloom-collection-list{font:13px/1.5 system-ui,sans-serif;color:#d6c3a8;margin:6px 0}
   .bloom-collection-list{padding-left:20px}

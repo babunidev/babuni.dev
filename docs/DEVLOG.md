@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-13 — A share button for each big-bloom module
+
+With deep links working, I wanted a way to hand them out without composing the address by hand, so I asked for a share symbol in the top-right corner of each big-bloom module. AI added a small round button that uses the phone's share sheet where one exists and otherwise copies the module's link, glowing briefly to confirm. AI tested it in a headless browser: the link copied correctly and the reader stayed closed. I have not yet tried it on my phone.
+
 ## 2026-11-10 — Making the repository documentation readable
 
 The portfolio's documentation had become harder to read than the projects themselves. Dated implementation notes, technical caveats and long audit records often appeared before a visitor could understand the work. For this review, I asked AI to inspect the GitHub repositories and improve the writing for people rather than merely reformatting Markdown. AI reviewed the entry pages across 41 repositories, rewrote eight overloaded READMEs, reorganized the Amberhearth introduction, preserved detailed material in linked references, and updated the shared writing guide in repositories using the common template. The [editorial audit](READER_EXPERIENCE_AUDIT_2026-11-10.md) identifies which documents changed and which substantial archives still need a deeper review. No application behavior, live website release or game testing followed from this documentation work.
