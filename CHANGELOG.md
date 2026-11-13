@@ -1142,3 +1142,8 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Added a pinned public snapshot of twelve selected documents, including the concept, guild working documents, Sunday road-bonfire idea, and Oracle design.
 - Extended the existing repository allowlist and on-demand document reader for these project-specific paths. No live GitHub fetching was added to the visitor-facing website.
 - Local website build, tests, and browser review remain pending.
+
+## 2026-11-13 — License and rights
+
+- Established MIT for original website software, with branding/assets excluded and updated repository documentation to explain the permission boundary.
+- Preserved third-party authorship and external assets' separate terms. No gameplay or runtime verification is claimed.
