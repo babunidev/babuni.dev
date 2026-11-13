@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Play Button Game module with QR code (2026-11-13)
+- The Button Game project page (`/projects/button-game/`) shows a “Play Button Game” button and a clickable QR code, both opening the live game at `https://babuni.dev/Buttongame/`, with the line “Scan with your phone to join the live game and the top-100 high score list.” The QR file from the game repository is kept unchanged in `src/assets/buttongame-qr.svg` and inlined by the build, because the `public/` image guard accepts only WebP. Markup and scoped `.bg-play` styles are in `src/pages/projects/[project]/index.astro`. Nothing is built under `/Buttongame/`.
+- Verification: `npm run content:check`, `npm run test:grid` (211 passed) and `npx astro build` passed. Claude Code (Claude Opus 5.5) took headless-Chrome screenshots at 375 px and 1280 px against `astro preview`: no sideways scrolling, both links point to the game. The QR code was not scanned with a phone. Not deployed.
+
 ### Changed — Documentation voice and AI attribution (2026-11-13)
 
 - Require first-person author narration in project documentation, factual changelog entries, and attribution by AI tool and verified model.
