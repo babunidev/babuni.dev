@@ -8,7 +8,7 @@ export function GET(){
   '',
   `> ${line(SITE_DESCRIPTION)}`,
   '',
-  'Babuni is the human creative behind babuni.dev and the projects below. Project journals and decision records credit AI contributions separately from Babuni\'s own direction and decisions. Each project page links to its readable documents; the original Markdown is served under /_project-docs/.',
+  'Online, I go by Babuni. In the project journals and decision records, I describe my creative direction and credit the AI work separately. Each project page links to its readable documents; the original Markdown is served under /_project-docs/.',
   '',
   '## Projects',
   '',

@@ -8,7 +8,7 @@ The favicon is an asset of the **babuni.dev** portfolio. The human creative is *
 
 ## Origin and attribution
 
-Babuni supplied an original image named `Enchanted Stone Portal Logo.png` and requested a browser icon containing only the large stone letter **B**, without the accompanying wordmark. The creative's direction was to preserve the original graphic's recognizable cracked stone, foliage, blue light, and warm portal glow rather than invent a different logo.
+At the time, I supplied an original image named `Enchanted Stone Portal Logo.png` and requested a browser icon containing only the large stone letter **B**, without the accompanying wordmark. At the time, my direction was to preserve the original graphic's recognizable cracked stone, foliage, blue light, and warm portal glow rather than invent a different logo.
 
 AI performed an image-editing pass with the image editor, then used Pillow to crop transparent margins and resize the result to a square 64 × 64 WebP with alpha. The reported output was lossless WebP. **The edit may have reconstructed or redrawn fine details; pixel-for-pixel equivalence to the supplied artwork is not claimed.** The original supplied file was not modified. It is not present in the current Git tree, so this repository does not claim to archive the original source.
 

@@ -6,14 +6,18 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Portfolio writing and credits (2026-11-13)
+
+- Revised project narratives, public summaries, and historical changelog entries to follow the repository writing standard. Updated the package author credit to Babuni.
+
 ### Added — Play Button Game module in the living grid (2026-11-13)
 - Button Game has a new `play-live` resources module, “Play Button Game”, in its blooms. The small bloom shows a “Play Button Game” button; the big bloom and the reader add the clickable QR code and the line “Scan with your phone to join the live game and the top-100 high score list.” Both open `https://babuni.dev/Buttongame/` in a new tab. The QR code is in the big bloom's right half because the project tile covers the selected card's lower-left quarter. The module page `/projects/button-game/play-live/` shows the same content.
 - Resources modules accept an optional `qr` image (`src`, `alt`, `caption`) that links to the module's first link. Validated by `npm run content:check`; type in `src/lib/project-modules.ts`, renderer in `src/scripts/module-qr.ts`, used by `module-preview.ts` and `module-detail.ts`, styles in `src/pages/index.astro`. The QR image is a lossless two-colour WebP rendered at 370 × 370 px from the supplied `buttongame-qr.svg`: `public/media/button-game/images/buttongame-qr.webp`.
-- Verification: `npm run content:check`, `npm run test:grid` (211 passed) and `npx astro build` passed. Claude Code (Claude Opus 5.5) checked the small bloom, big bloom and reader in headless Chrome against `astro preview` at 1280 px and 390 px: the button and QR links point to the game and the page doesn't scroll sideways. The QR code was not scanned with a phone. Not deployed.
+- Verification: `npm run content:check`, `npm run test:grid` (211 passed) and `npx astro build` passed. Headless Chrome checks covered the small bloom, big bloom and reader against `astro preview` at 1280 px and 390 px: the button and QR links point to the game and the page doesn't scroll sideways. The QR code was not scanned with a phone. Not deployed.
 
 ### Added — Play Button Game module with QR code (2026-11-13)
 - The Button Game project page (`/projects/button-game/`) shows a “Play Button Game” button and a clickable QR code, both opening the live game at `https://babuni.dev/Buttongame/`, with the line “Scan with your phone to join the live game and the top-100 high score list.” The QR file from the game repository is kept unchanged in `src/assets/buttongame-qr.svg` and inlined by the build, because the `public/` image guard accepts only WebP. Markup and scoped `.bg-play` styles are in `src/pages/projects/[project]/index.astro`. Nothing is built under `/Buttongame/`.
-- Verification: `npm run content:check`, `npm run test:grid` (211 passed) and `npx astro build` passed. Claude Code (Claude Opus 5.5) took headless-Chrome screenshots at 375 px and 1280 px against `astro preview`: no sideways scrolling, both links point to the game. The QR code was not scanned with a phone. Not deployed.
+- Verification: `npm run content:check`, `npm run test:grid` (211 passed) and `npx astro build` passed. Headless-Chrome screenshots were taken at 375 px and 1280 px against `astro preview`: no sideways scrolling, both links point to the game. The QR code was not scanned with a phone. Not deployed.
 
 ### Changed — Documentation voice and AI attribution (2026-11-13)
 
@@ -149,7 +153,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 ### Changed — WebP portal paths and BuxbrewResist artwork (2026-10-27)
 - Replaced eleven existing `portalArtwork` URL extensions from PNG to **WebP** and assigned `/portal-content/BuxbrewResist.webp` to the previously unillustrated BuxbrewResist project.
 - Added an opt-in local helper `npm run artwork:import -- "/path/to/folder"` to normalize source WebP filenames (including spaces and casing), check container signatures, and copy or rename the **already-converted original files** into `public/portal-content/` without recompression.
-- Added mapping/import tests. No original WebP file bytes were uploaded in the AI commit: the source images exist on Babuni.dev's local machine, outside this cloud chat's file access.
+- Added mapping/import tests. No original WebP file bytes were uploaded in the AI commit: the source images exist on Babuni's local machine, outside this cloud chat's file access.
 - **Temporary integration requirement:** content validation and GitHub CI cannot pass on the code-only commit until Babuni.dev stages and pushes all twelve original WebPs. Legacy PNGs may then be deleted and their deletions included in the artwork commit.
 
 ### Fixed — reuse living-grid tile elements at shift settlement (2026-10-27)
@@ -157,7 +161,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 - The shift-finish handoff previously updated logical history and repopulated stationary DOM cells, recreating affected portal image elements after arrival. It now rotates the *already-rendered tile DOM elements and their project-index identities* into the corresponding destination slots, then commits the shift history. Logos and their decoded image elements travel with the tiles and need no reattachment on visible settlement.
 - The wrapping element moves only to the opposite offscreen buffer edge, where normal identity recycling is still allowed; spatial shifting, the 4.4-second tempo, bloom vacancy mapping, subject bubbles, manual dragging and project selection remain unchanged.
 - Added tests for rows and columns in both directions, simultaneous independent lines, bloom-displaced visual columns, and settle-before-sync ordering.
-- Root cause is supported by source inspection but real desktop/phone flicker resolution still requires Babuni.dev's eyes and browser checks.
+- Root cause is supported by source inspection but real desktop/phone flicker resolution still requires Babuni's eyes and browser checks.
 
 ## 2026-10-27 — Lazy project documents and automated verification
 
@@ -169,7 +173,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 - Added tests for source parity, public-only export, initial-bundle separation, intro fidelity, local asset existence and reader errors. This commit does not change project content, portal artwork, animation timing or user-approved bloom design.
 
 ### Verification
-- Prior local result supplied by Babuni.dev: 92 grid tests passed, production build succeeded and npm audit found zero vulnerabilities, with a large JavaScript chunk warning. Post-change CI and browser performance measurements are pending; no speedup is claimed without evidence.
+- Prior local result supplied by Babuni: 92 grid tests passed, production build succeeded and npm audit found zero vulnerabilities, with a large JavaScript chunk warning. Post-change CI and browser performance measurements are pending; no speedup is claimed without evidence.
 
 ## 2026-10-26 — Uniform portal and symmetric indicator geometry
 
@@ -205,7 +209,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 - The creative visually approved the center-first small-bloom transition. New ambient behavior awaits their testing.
 
 ### Changed — project-wide author attribution (2026-10-26)
-- Standardized the **Babuni.dev** author identity across accessible GitHub repositories: public README credits, World of Warcraft add-on manifests, applicable package metadata and current project documentation.
+- Applied the historical **Babuni.dev** byline across accessible GitHub repositories: public README credits, World of Warcraft add-on manifests, applicable package metadata and current project documentation.
 - Replaced generic author-role references in this portfolio's working documentation with the artist name while preserving distinct AI contributions and historical records.
 
 ### Added — center-first project selection, small bloom and ambient hints (2026-10-26)
@@ -241,15 +245,15 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 ### Fixed — project identity swapping at the end of an autonomous shift (2026-10-26)
 - Before moving a row or column, reserve project identities for the incoming offscreen tiles. Previously, a tile could slide into view as one numbered/color-coded project and abruptly turn into another when the shift completed.
 - Prefer an already safe offscreen identity, or reuse the identity of the tile departing at the opposite edge. Keep existing visible tile identities unchanged. The ordinary spiral placement, manual speeds and shift timing are not changed.
-- Added regression tests for row shifts in both directions, column shifts in both directions, and opposite-moving simultaneous lines. Full local tests and Babuni.dev visual confirmation remain pending.
+- Added regression tests for row shifts in both directions, column shifts in both directions, and opposite-moving simultaneous lines. Full local tests and Babuni visual confirmation remain pending.
 
 ### Changed — 45-project demo and stale test correction (2026-10-26)
 - Added 45 distinct demo identities: BABUNI.DEV and PROJECT 02–45, so the centered 1920×1080 viewport can initially display 45 unique project tiles. Repeats remain necessary if panning exposes more than 45 partially visible tiles.
 - Moved demo content into a small independent module and added catalog/desktop spiral coverage tests. The spiral allocator and movement controls were not changed.
-- Updated two stale movement tests found in Babuni.dev's 28/30 run: assertions expecting prior (half-speed) settings, and an unrealistic speed-peak requirement with a 180px cursor-lead brake. The new test explicitly exercises maximum speed with sufficient lead.
+- Updated two stale movement tests found in Babuni's 28/30 run: assertions expecting prior (half-speed) settings, and an unrealistic speed-peak requirement with a 180px cursor-lead brake. The new test explicitly exercises maximum speed with sufficient lead.
 
 ### Verification
-- Babuni.dev's previous local suite: 28 passing, 2 outdated movement-test failures. Fresh full tests and real desktop inspection remain pending for the new revision.
+- Babuni's previous local suite: 28 passing, 2 outdated movement-test failures. Fresh full tests and real desktop inspection remain pending for the new revision.
 
 ### Added — spiral-first project recycling (2026-10-26)
 - Switched placeholder assignment from an indefinitely repeated coordinate hash to a clockwise center-out spiral, starting with BABUNI.DEV and then PROJECT 02 above, PROJECT 03 upper-right, through PROJECT 09 upper-left, and PROJECT 10 above the next ring.
@@ -259,7 +263,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 - Ten new placement tests cover spiral order, repeats with five projects, uniqueness during scrolling and responsive viewport simulations, offscreen retention, both-edge entrance detection, and line-shift identity mapping.
 
 ### Verification — spiral-first project recycling
-- Ten focused pure-placement Node tests passed in an isolated local run. A full Astro build, local integration suite and Babuni.dev's desktop/mobile visual review are still pending.
+- Ten focused pure-placement Node tests passed in an isolated local run. A full Astro build, local integration suite and Babuni's desktop/mobile visual review are still pending.
 
 ### Changed — manual movement tuning (2026-10-26)
 - Doubled mouse/touch maximum pan speed (440 to 880 CSS px/s) and arrow-key speed (130 to 260 CSS px/s), with correspondingly doubled acceleration and deceleration settings.
@@ -271,7 +275,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 - Explicitly exercise 200 reproducible rounds for each axis, including the same-direction restriction and earliest-successful-initiative priority. No application or movement algorithm was changed.
 
 ### Verification — seeded test fix
-- An isolated local Node run of the corrected axis-forcing test passed. Babuni.dev's full pre-fix `npm run test:grid` previously reported 18 passing and 1 failing tests. Babuni.dev subsequently pulled `eef55d0` and verified the complete local `npm run test:grid` suite: **19 passed, 0 failed**.
+- An isolated local Node run of the corrected axis-forcing test passed. Babuni's full pre-fix `npm run test:grid` previously reported 18 passing and 1 failing tests. Babuni.dev subsequently pulled `eef55d0` and verified the complete local `npm run test:grid` suite: **19 passed, 0 failed**.
 
 ### Changed — movement refinement, 2026-10-26
 - Replaced per-keypress arrow jumps with frame-driven, smoothly accelerating and decelerating held-arrow navigation (provisional 130 CSS px/s ceiling).
@@ -301,20 +305,20 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 ### Added
 - Dated foundation review (`docs/REVIEW-2026-10-26.md`) with findings, verification scope, and human–AI attribution.
 - README local development prerequisites and install/run/build commands.
-- Initial Astro 7 project foundation: package scripts, lockfile, TypeScript configuration, base page, favicons, and editor configuration (Babuni.dev's commit `294831c`).
+- Initial Astro 7 project foundation: package scripts, lockfile, TypeScript configuration, base page, favicons, and editor configuration (Babuni's commit `294831c`).
 - Project documentation baseline: concept, roadmap, agent guidance, design, architecture, content policy, decisions, journal, collaboration policy, and ChatGPT project instructions.
 - Updated README describing the portfolio's goals and documentation.
 
 ### Changed
 - Integrated local Astro foundation and documentation on `main` in merge commit `5902121`, preserving both agent instruction sets in AGENTS.md.
-- Aligned documented workflow to Babuni.dev's decision to develop directly on `main` unless requested otherwise.
+- Aligned documented workflow to Babuni's decision to develop directly on `main` unless requested otherwise.
 
 ### Fixed
 - Stale current framework status in D-011 and missing independent-build evidence in the architecture baseline.
 
 ### Verification
 - On 2026-10-26, an independent text-source snapshot of `ea90117` installed with lifecycle scripts disabled and passed `npm run build` (one static page). Manifest/lockfile consistency and relative Markdown links passed inspection. Dedicated type checking, browser testing, and dependency vulnerability auditing were not performed.
-- Babuni.dev reported Astro 7.4.2 starting successfully at localhost:4321 before the merge. The repository content and merge commit were verified on GitHub. At that time, no post-merge build or browser test had been independently performed.
+- Babuni reported Astro 7.4.2 starting successfully at localhost:4321 before the merge. The repository content and merge commit were verified on GitHub. At that time, no post-merge build or browser test had been independently performed.
 
 ### Added — 2026-10-26: project inventory research memory
 - Added `docs/PROJECT_INVENTORY.md`, a provisional 53-entry catalog of potential portfolio works with one-line descriptions, evidence levels and project relationships.
@@ -340,7 +344,7 @@ Each future entry should include the change, its user-visible or technical effec
 ### Fixed
 - Vertical shifts select actual occupied visual columns and commit matching source identities, removing sideways interpolation across displaced rows.
 - Expansion waits for shifts affecting either displaced run, including far-right columns.
-- Map dragging and arrow navigation close a bloom while allowing camera movement immediately.
+- Mapped dragging and arrow navigation close a bloom while allowing camera movement immediately.
 - Unrelated shift starts no longer dismiss portal topic bubbles. Bubble bottom-left anchors now meet the top of their rotated glowing squares.
 
 ## 2026-10-26 — Outward topic wings
@@ -364,7 +368,7 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Added
 - A gentle gold outline pulse on the queued project while opening, switching or closing waits for a shift. Reduced motion keeps a steady outline; the selected control exposes its busy state.
-- Babuni.dev’s supplied `PortalContentBabuniDev.png` in the BABUNI.DEV portal, centered behind a circular mask and recessed rim. Artwork follows semantic identity through tile reuse.
+- the supplied `PortalContentBabuniDev.png` in the BABUNI.DEV portal, centered behind a circular mask and recessed rim. Artwork follows semantic identity through tile reuse.
 
 ## 2026-10-26 — One action across the whole tile
 
@@ -485,7 +489,7 @@ Each future entry should include the change, its user-visible or technical effec
 
 ### Fixed — first CI finding (2026-10-27)
 - Preserve generated big-bloom intros exactly instead of re-truncating them when displayed. The first CI run passed 96/97 tests and exposed this one-character mismatch.
-- Update GitHub Actions checkout/setup-node to v5 for the Node 24 runner. Post-fix CI verification is still pending.
+- Updated GitHub Actions checkout/setup-node to v5 for the Node 24 runner. Post-fix CI verification is still pending.
 
 
 ### Added — client bundle-size report (2026-10-27)
@@ -501,7 +505,7 @@ Each future entry should include the change, its user-visible or technical effec
 - Restore clean-checkout content validation/builds by including the WebP binaries referenced by project metadata.
 - Preserve View source and credit footers when asynchronous document reading succeeds, fails or retries.
 ### Removed
-- Superseded portal PNGs, matching Babuni.dev’s local WebP conversion; historical originals remain recoverable from Git.
+- Superseded portal PNGs, matching Babuni’s local WebP conversion; historical originals remain recoverable from Git.
 
 
 ## 2026-10-27 — Render repository Markdown as document structure
@@ -573,7 +577,7 @@ Disabled the Astro development toolbar through project configuration. Replaced t
 
 ### Header B mark — 2026-10-27
 
-Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persistent header, using WebP, and explicitly authorized committing, pushing, updating and restarting the local site for future changes. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
+The persistent header received a WebP B mark to the left of BABUNI.DEV. AI reused the transparent 64×64 favicon at 32×32 CSS pixels, with fixed dimensions and decorative empty alternative text beside the existing accessible brand name. This adds no image duplicate or interaction changes.
 
 ## 2026-10-27 — Reader scroll handle
 
@@ -621,44 +625,44 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Identify retained MorkahjaWorld as the worldbuilding project in the tile summary/topics and add a human-scope clarification module. Existing public source text predates this correction and was not silently rewritten.
 
 ### Added
-- Map supplied ArcaniteBrothers.webp to Arcanitebrothers, preserving its exact original bytes. Twenty portal artworks are now mapped. Added removal/coverage regressions and updated active-catalog reports.
+- Mapped supplied ArcaniteBrothers.webp to Arcanitebrothers, preserving its exact original bytes. Twenty portal artworks are now mapped. Added removal/coverage regressions and updated active-catalog reports.
 
 ## 2026-10-28 — Two additional project withdrawals
 
 ### Removed
-- Removed The Amberbrew Family and Practical Templates Creator from the active catalog, both topic maps and unresolved repository mappings at Babuni.dev’s request. The active list now has 47 projects; no repository or source document was deleted.
+- Removed The Amberbrew Family and Practical Templates Creator from the active catalog, both topic maps and unresolved repository mappings. The active list now has 47 projects; no repository or source document was deleted.
 
 ## 2026-10-28 — Warehouse candidate withdrawal
 
 ### Removed
-- Removed Warehouse Performance Model from the active grid/search catalog, topic maps and unresolved repository mappings at Babuni.dev’s request. The list now contains 46 projects; connected sources and documents are unchanged.
+- Removed Warehouse Performance Model from the active grid/search catalog, topic maps and unresolved repository mappings. The list now contains 46 projects; connected sources and documents are unchanged.
 
 ## 2026-10-28 — GuildChatAI withdrawal
 
 ### Removed
-- Removed GuildChatAI from active grid/search, both topic maps and repository mapping at Babuni.dev’s request. Removed its ten now-unconnected cached documents; the GitHub repository is untouched. Active totals: 45 projects / 34 public sources.
+- Removed GuildChatAI from active grid/search, both topic maps and repository mapping. Removed its ten now-unconnected cached documents; the GitHub repository is untouched. Active totals: 45 projects / 34 public sources.
 
 ## 2026-10-28 — Dual-PC Streaming Setup withdrawal
 
 ### Removed
-- Removed Dual-PC Streaming Setup from active grid/search, both topic maps and unresolved repository mappings at Babuni.dev’s request. The active list now contains 44 projects; no imported documents or repository were deleted.
+- Removed Dual-PC Streaming Setup from active grid/search, both topic maps and unresolved repository mappings. The active list now contains 44 projects; no imported documents or repository were deleted.
 
 ## 2026-10-28 — Mech-Arena withdrawal
 
 ### Removed
-- Removed Mech-Arena from active grid/search, both topic maps and unresolved repository mappings at Babuni.dev’s request. The active catalog now has 43 entries; connected sources and imported documents are unchanged.
+- Removed Mech-Arena from active grid/search, both topic maps and unresolved repository mappings. The active catalog now has 43 entries; connected sources and imported documents are unchanged.
 
 ## 2026-10-28 — Local Prompt Lab folded into Anskar Grotzschnapf
 
 ### Removed
-- Removed Local Prompt Lab as an independent grid/search project, including topics and its unresolved repository mapping, at Babuni.dev’s direction that it belongs within Anskar Grotzschnapf. Active catalog: 42 projects. Its supplied WebP remains preserved, with no standalone assignment.
+- Removed Local Prompt Lab as an independent grid/search project, including topics and its unresolved repository mapping, at Babuni’s direction that it belongs within Anskar Grotzschnapf. Active catalog: 42 projects. Its supplied WebP remains preserved, with no standalone assignment.
 
 
 ## 2026-10-28 — Stable curated grid and neutral fillers
 
 ### Fixed
 - Preserve continuing tile identities when shifts settle; protect departing projects until their animation finishes. Entering tiles receive their final identity before moving.
-- Use five neutral filler identities instead of cloning visible projects when the catalog cannot fill all occupied positions. Fillers have no project, portal, bubbles, navigation or menu entry.
+- Used five neutral filler identities instead of cloning visible projects when the catalog cannot fill all occupied positions. Fillers have no project, portal, bubbles, navigation or menu entry.
 
 ### Added
 - Rocket Game 42, its public repository connection and ten reviewed source-document snapshots.
@@ -676,7 +680,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Stop neutral tiles accumulating through the offscreen retention band. Three neutral identities are unique in the viewport and shift overlap; repeated real projects fill unavoidable shortages. Continuing/staged tile identities remain stable, including intermediate camera synchronization.
 
 ### Changed
-- Use three subtle neutral marks (diamond, circle and square) instead of five indefinitely repeatable fillers. Tile size and movement timing remain unchanged.
+- Used three subtle neutral marks (diamond, circle and square) instead of five indefinitely repeatable fillers. Tile size and movement timing remain unchanged.
 - Group only the Projects menu into World of Warcraft, Morkahja, AI, Games and Music. Search filters within the same headings and direct navigation remains unchanged.
 - Rename the repository-backed addon to RoarGuild Add-on, remove its supplied logo assignment, and retain the existing guild logo only on the Roar Guild community tile.
 
@@ -684,25 +688,25 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 - Duplicate Morkahja Admin Console tile; retain Arcanitebrothers and its existing public documentation connection. No repository or document snapshot was deleted.
 
 ### Added
-- Mighty Morkah and Elixior as separate music projects with author-supplied descriptions and public YouTube/SoundCloud links. The planned gaming-video migration is labeled as planned, not completed. Analubia remains after Babuni.dev withdrew the removal suggestion.
+- Mighty Morkah and Elixior as separate music projects with author-supplied descriptions and public YouTube/SoundCloud links. The planned gaming-video migration is labeled as planned, not completed. Analubia remains after Babuni withdrew the removal suggestion.
 
 
 ## 2026-10-28 — Buxbrew character artwork
 
 ### Changed
-- Assign the supplied `BuxbrewCharacter.webp` to Buxbrew — character story, as requested by Babuni.dev. Original WebP bytes preserved.
+- Assigned the supplied `BuxbrewCharacter.webp` to Buxbrew — character story, as requested by Babuni.dev. Original WebP bytes preserved.
 
 
 ## 2026-10-28 — Morkahja portal artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `Morkahja.webp` to Morkahja (`morkahja-rpg`), preserving the original WebP bytes.
+- Assigned the supplied `Morkahja.webp` to Morkahja (`morkahja-rpg`), preserving the original WebP bytes.
 
 
 ## 2026-10-28 — TotemTimers artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `TotemTimers.webp` to the TotemTimers portal, preserving its original WebP bytes.
+- Assigned the supplied `TotemTimers.webp` to the TotemTimers portal, preserving its original WebP bytes.
 
 
 ## 2026-10-28 — Babuni Gaming
@@ -710,7 +714,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ### Added
 - Babuni Gaming as a separate Games-menu project with Overview, Gaming and add-ons, and Watch and follow modules.
 - Author-supplied YouTube, CurseForge and Instagram profile links; existing add-ons and Azeroth Moments retain their own project identities.
-- Original cat supplied by Babuni.dev as `Morningex1.jpg`, converted to lossless `/portal-content/BabuniGaming.webp` at its original dimensions without cropping or image edits.
+- Original cat supplied by Babuni as `Morningex1.jpg`, converted to lossless `/portal-content/BabuniGaming.webp` at its original dimensions without cropping or image edits.
 
 ### Changed
 - Catalog/search/topic/artwork coverage now includes 45 projects and 23 supplied portal-art assignments. No grid geometry or timing change.
@@ -719,37 +723,37 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-28 — EnchantVisuals artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `EnchantVisuals.webp` to EnchantVisuals, preserving original WebP bytes.
+- Assigned the supplied `EnchantVisuals.webp` to EnchantVisuals, preserving original WebP bytes.
 
 
 ## 2026-10-28 — Buxbrew display name
 
 ### Changed
-- Rename Buxbrew to Buxbrew Addon at Babuni.dev’s request. Stable ID and character-story entry retained.
+- Rename Buxbrew to Buxbrew Addon. Stable ID and character-story entry retained.
 
 
 ## 2026-10-28 — BuxbrewCharge artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `BuxbrewCharge.webp` to BuxbrewCharge, preserving original WebP bytes.
+- Assigned the supplied `BuxbrewCharge.webp` to BuxbrewCharge, preserving original WebP bytes.
 
 
 ## 2026-10-28 — Buxbrew Addon artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `BuxbrewAddon.webp` to Buxbrew Addon, preserving original WebP bytes.
+- Assigned the supplied `BuxbrewAddon.webp` to Buxbrew Addon, preserving original WebP bytes.
 
 
 ## 2026-10-29 — RoarGuild Add-on artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `RoarGuildAddon.webp` to RoarGuild Add-on, preserving original bytes. Community Roar Guild retains its separate artwork.
+- Assigned the supplied `RoarGuildAddon.webp` to RoarGuild Add-on, preserving original bytes. Community Roar Guild retains its separate artwork.
 
 
 ## 2026-10-29 — MeleeStartAttack artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `MeleeStartAttack.webp` to MeleeStartAttack, preserving original WebP bytes.
+- Assigned the supplied `MeleeStartAttack.webp` to MeleeStartAttack, preserving original WebP bytes.
 
 
 ## 2026-10-29 — Babuni Admin rename
@@ -763,31 +767,31 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Fixed
 - Switch the public documentation connection, resource link and ten-document snapshot to `babunidev/babuni.admin-docs`. Regenerated document assets/source URLs use the new canonical repository.
-- Remove the old active snapshot key; preserve historical document text, stable project ID and private-implementation exclusion.
+- Removed the old active snapshot key; preserve historical document text, stable project ID and private-implementation exclusion.
 
 
 ## 2026-10-29 — BuxbrewDing artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `BuxbrewDing.webp` to BuxbrewDing, preserving original WebP bytes.
+- Assigned the supplied `BuxbrewDing.webp` to BuxbrewDing, preserving original WebP bytes.
 
 
 ## 2026-10-29 — Amazin artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `Amazin.webp` to Amazin, preserving original WebP bytes.
+- Assigned the supplied `Amazin.webp` to Amazin, preserving original WebP bytes.
 
 
 ## 2026-10-29 — Mighty Morkah artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `MightyMorkah.webp` to Mighty Morkah, preserving original WebP bytes.
+- Assigned the supplied `MightyMorkah.webp` to Mighty Morkah, preserving original WebP bytes.
 
 
 ## 2026-10-29 — Elixior artwork
 
 ### Changed
-- Assign Babuni.dev’s supplied `Elexior.webp` to the Elixior music project, preserving original WebP bytes.
+- Assigned the supplied `Elexior.webp` to the Elixior music project, preserving original WebP bytes.
 
 
 ## 2026-10-29 — Commit-date first spiral
@@ -804,184 +808,184 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-10-29 — Remove Fantasy RPG Assets; GatherMap artwork
 
 ### Removed
-- Fantasy RPG Assets from the active catalog, menu group, topic data and unresolved-repository map at Babuni.dev’s direction. Historical records retained.
+- Fantasy RPG Assets from the active catalog, menu group, topic data and unresolved-repository map at Babuni’s direction. Historical records retained.
 
 ### Changed
-- Assign supplied GatherMap.webp to GatherMap, preserving original bytes. Catalog now has 44 projects and 33 supplied portal artworks.
+- Assigned supplied GatherMap.webp to GatherMap, preserving original bytes. Catalog now has 44 projects and 33 supplied portal artworks.
 
 
 ## 2026-10-29 — Shorter project names
 
 ### Changed
-- Rename Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI at Babuni.dev’s request. Stable IDs, source connections and artwork retained.
+- Rename Ethera: The Stonewrought to Ethera and Local AI Workstation to Local AI. Stable IDs, source connections and artwork retained.
 
 
 ## 2026-10-29 — Remove Fantasy Architecture
 
 ### Removed
 
-- Babuni.dev requested removing Fantasy Architecture because it is not a project. AI removed its catalog, menu, topic and unresolved-source entries; 43 projects remain.
+- Removed Fantasy Architecture from the catalog, menu, topics and unresolved source mappings; 43 projects remain.
 
 
 ## 2026-10-29 — Grimnir portal artwork
 
 ### Changed
 
-**Babuni.dev requested:** use the supplied Grimnir.webp for Grimnir. **AI execution:** map the existing stable project ID to `/portal-content/Grimnir.webp`, preserving the supplied WebP bytes and existing round portal mask. This replaces its provisional colored portal; 34 active projects now have supplied artwork. No project identity, source, timing or placement changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass. Original artwork is retained without re-encoding.
+- Mapped the existing stable project ID to `/portal-content/Grimnir.webp`, preserving the supplied WebP bytes and existing round portal mask. This replaces its provisional colored portal; 34 active projects now have supplied artwork. No project identity, source, timing or placement changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass. Original artwork is retained without re-encoding.
 
 
 ## 2026-10-29 — ROARSounds portal artwork
 
 ### Changed
 
-**Babuni.dev requested:** use the supplied ROARsounds.webp for ROARSounds. **AI execution:** assign it to the existing `roarsounds` identity, replacing its provisional colored portal. Preserve supplied WebP bytes and the round mask; 35 active projects now have supplied artwork. No timing, positioning, source or identity changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates. No browser screenshot taken.
+- Assigned it to the existing `roarsounds` identity, replacing its provisional colored portal. Preserve supplied WebP bytes and the round mask; 35 active projects now have supplied artwork. No timing, positioning, source or identity changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates. No browser screenshot taken.
 
 
 ## 2026-10-29 — Worldbuilding and Roar Guild artwork
 
 ### Changed
 
-**Babuni.dev supplied:** MorkahjaWorldbuilding.webp and ROAR.webp. **AI interpretation/execution:** assign the first to Morkahja Worldbuilding and replace Roar Guild’s ROARGuild.webp mapping with ROAR.webp. Preserve the former file as historical artwork and keep RoarGuild Add-on’s separate image. Both new WebPs are copied unchanged; 36 active projects now have supplied artwork. No identity, source, timing or positioning changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass.
+- Assigned `MorkahjaWorldbuilding.webp` to Morkahja Worldbuilding and replaced Roar Guild’s ROARGuild.webp mapping with ROAR.webp. Preserve the former file as historical artwork and keep RoarGuild Add-on’s separate image. Both new WebPs are copied unchanged; 36 active projects now have supplied artwork. No identity, source, timing or positioning changes. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture in this pass.
 
 
 ## 2026-10-29 — Correct ROAR artwork assignment
 
 ### Fixed
 
-**Babuni.dev corrected:** ROAR.webp belongs to ROAR, not Roar Guild, which already had artwork. **AI error and correction:** the previous assignment inferred the wrong project; assign ROAR.webp to stable ID `roar` and restore ROARGuild.webp to `roar-guild-and-community`. RoarGuild Add-on retains its separate artwork. Earlier entry records the superseded mistake. There are now 37 active artwork assignments. No image bytes or interaction behavior changed. **Verification:** distinct artwork regression assertions, content validation and static production build run before publication with cached activity dates; no browser screenshot taken.
+- The previous assignment inferred the wrong project; assign ROAR.webp to stable ID `roar` and restore ROARGuild.webp to `roar-guild-and-community`. RoarGuild Add-on retains its separate artwork. Earlier entry records the superseded mistake. There are now 37 active artwork assignments. No image bytes or interaction behavior changed. **Verification:** distinct artwork regression assertions, content validation and static production build run before publication with cached activity dates; no browser screenshot taken.
 
 
 ## 2026-10-29 — ROARRunlimited artwork
 
 ### Changed
 
-**Babuni.dev supplied:** RoarUnlimited.webp. **AI execution:** assign the unchanged WebP to the existing ROARRunlimited project (`roarrunlimited`), replacing its provisional colored portal and retaining the round mask. There are now 38 active artwork assignments. Other ROAR-family mappings, labels, timing and placement remain unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+- Assigned the unchanged WebP to the existing ROARRunlimited project (`roarrunlimited`), replacing its provisional colored portal and retaining the round mask. There are now 38 active artwork assignments. Other ROAR-family mappings, labels, timing and placement remain unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
 
 
 ## 2026-10-29 — ROARemoteTrigger artwork
 
 ### Changed
 
-**Babuni.dev supplied:** ROARRemoteTrigger.webp. **AI execution:** map the unchanged supplied WebP to the existing `roaremotetrigger` project, replacing its provisional colored portal with the existing round mask. There are now 39 active artwork assignments. Existing labels, other ROAR-family artwork, source mappings, timing and placement are preserved. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser screenshot taken.
+- Mapped the unchanged supplied WebP to the existing `roaremotetrigger` project, replacing its provisional colored portal with the existing round mask. There are now 39 active artwork assignments. Existing labels, other ROAR-family artwork, source mappings, timing and placement are preserved. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser screenshot taken.
 
 
 ## 2026-10-29 — Remove Analubia
 
 ### Removed
 
-**Babuni.dev decided:** remove Analubia to focus this portfolio on their own current projects; they described it as a past corporate collaboration and expressed uncertainty about present ownership. This is the human’s scope decision, not an independently verified ownership claim. **AI execution:** remove its active catalog, menu, topics and unresolved source mapping; preserve historical records and external projects. There are now 42 projects, 35 connected public sources and six needing repositories. No motion or layout changes. **Verification:** full tests, content validation and static production build run before publication using cached activity dates; no browser capture or source refresh.
+- Removed Analubia from the active catalog, menu, topics and unresolved source mapping; preserve historical records and external projects. There are now 42 projects, 35 connected public sources and six needing repositories. No motion or layout changes. **Verification:** full tests, content validation and static production build run before publication using cached activity dates; no browser capture or source refresh.
 
 
 ## 2026-10-29 — LootFeed artwork
 
 ### Changed
 
-**Babuni.dev supplied:** LootFeed.webp. **AI execution:** assign the unchanged supplied WebP to stable project ID `lootfeed`, replacing its provisional colored portal within the existing round mask. There are now 40 active artwork assignments. No project labels, source connections, timing or placement changed. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+- Assigned the unchanged supplied WebP to stable project ID `lootfeed`, replacing its provisional colored portal within the existing round mask. There are now 40 active artwork assignments. No project labels, source connections, timing or placement changed. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
 
 
 ## 2026-10-29 — Rocket Game 42 artwork
 
 ### Changed
 
-**Babuni.dev supplied:** Rocketgame42.webp. **AI execution:** assign the unchanged supplied WebP to stable project ID `rocket-game-42`, replacing its provisional colored portal within the existing round mask. There are now 41 active artwork assignments. Project identity, source, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+- Assigned the unchanged supplied WebP to stable project ID `rocket-game-42`, replacing its provisional colored portal within the existing round mask. There are now 41 active artwork assignments. Project identity, source, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
 
 
 ## 2026-10-29 — GroupBuffToggle artwork
 
 ### Changed
 
-**Babuni.dev supplied:** GroupBuff.webp. **AI execution:** assign the unchanged supplied WebP to the existing GroupBuffToggle project (`groupbufftoggle`), replacing its provisional colored portal within the existing round mask. All 42 current projects now have supplied portal artwork. Project names, source mappings, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
+- Assigned the unchanged supplied WebP to the existing GroupBuffToggle project (`groupbufftoggle`), replacing its provisional colored portal within the existing round mask. All 42 current projects now have supplied portal artwork. Project names, source mappings, timing and placement are unchanged. **Verification:** artwork regression tests, content validation and static production build run before publication using cached activity dates; no browser capture taken.
 
 
 ## 2026-10-29 — 512-pixel portal publishing assets
 
 ### Changed
 
-**Babuni.dev requested:** make all portal images smaller, suggesting 512 × 512. **AI implementation:** resize all 42 active portal WebPs to 512 × 512 with Lanczos resampling and WebP quality 85, preserving composition and transparency; update renderer intrinsic dimensions. This supersedes earlier byte-preservation rules for these published versions. Originals remain in Git history and in the local non-public `image-originals/portal-artwork-before-512-2026-10-29/` archive with a SHA-256 manifest. No artwork redesign, crop, portal size or animation changes. **Alternatives:** 384-pixel trial was smaller, but 512 follows the human’s chosen resolution and retains more detail. Total active portal bytes: 20,404,098 → 2,843,518 (86.1% reduction); largest 113,292 bytes. Gallery/verification images and favicon are outside this portal-only change. Import tooling still copies supplied files unchanged; intentional publishing optimization is separate. **Verification:** decoded all 42 WebPs and confirmed exact 512 × 512 dimensions; visually inspected a temporary contact sheet (not a browser capture); added a 150 KiB per-portal regression budget. Full tests, content validation and static production build run before publication with cached activity dates. No browser performance measurement claimed.
+- Resized all 42 active portal WebPs to 512 × 512 with Lanczos resampling and WebP quality 85, preserving composition and transparency; update renderer intrinsic dimensions. This supersedes earlier byte-preservation rules for these published versions. Originals remain in Git history and in the local non-public `image-originals/portal-artwork-before-512-2026-10-29/` archive with a SHA-256 manifest. No artwork redesign, crop, portal size or animation changes. **Alternatives:** 384-pixel trial was smaller, but 512 follows the human’s chosen resolution and retains more detail. Total active portal bytes: 20,404,098 → 2,843,518 (86.1% reduction); largest 113,292 bytes. Gallery/verification images and favicon are outside this portal-only change. Import tooling still copies supplied files unchanged; intentional publishing optimization is separate. **Verification:** decoded all 42 WebPs and confirmed exact 512 × 512 dimensions; visually inspected a temporary contact sheet (not a browser capture); added a 150 KiB per-portal regression budget. Full tests, content validation and static production build run before publication with cached activity dates. No browser performance measurement claimed.
 
 
 ## 2026-10-29 — First Babuni Gaming video embed
 
 ### Added
 
-**Babuni.dev supplied:** YouTube video `9fnC1ZI1iSY`, described as the first published stream test/showcase (not the first recording), with quiet microphone audio. **AI execution:** add a fourth Babuni Gaming module, Videos, using the existing click-to-load `youtube-nocookie.com` embed renderer and a descriptive label, not an invented official title. Other videos can join this collection later. Playback is served by YouTube; no recording is copied into the site and existing BABUNI.DEV local clips remain unchanged. Existing renderer requires Load video before creating the external player. **Verification:** content regression coverage, full tests, content validation and static production build run before publication with cached activity dates. YouTube page retrieval failed; official title, playback and embedding permission are not verified and require a live playback check. No browser screenshot taken.
+- Added a fourth Babuni Gaming module, Videos, starting with `9fnC1ZI1iSY` and using the existing click-to-load `youtube-nocookie.com` embed renderer and a descriptive label, not an invented official title. Other videos can join this collection later. Playback is served by YouTube; no recording is copied into the site and existing BABUNI.DEV local clips remain unchanged. Existing renderer requires Load video before creating the external player. **Verification:** content regression coverage, full tests, content validation and static production build run before publication with cached activity dates. YouTube page retrieval failed; official title, playback and embedding permission are not verified and require a live playback check. No browser screenshot taken.
 
 
 ## 2026-10-29 — Second Babuni Gaming video
 
 ### Added
 
-**Babuni.dev supplied:** YouTube video `B2pMsZPQfCc` as the second published video, with microphone audio still very quiet but acceptable to publish. **AI execution:** append it after the first recording in the existing Videos collection; update collection context to describe both videos. Labels are descriptive, not verified official titles. Existing click-to-load YouTube embeds handle playback; no local video copy or timing/layout changes. **Verification:** ordered collection regression assertions, content validation and static production build run before publication using cached activity dates. YouTube playback and embedding permission remain unverified; no browser capture taken.
+- Appended the second Babuni Gaming recording (`B2pMsZPQfCc`) after the first recording in the existing Videos collection; update collection context to describe both videos. Labels are descriptive, not verified official titles. Existing click-to-load YouTube embeds handle playback; no local video copy or timing/layout changes. **Verification:** ordered collection regression assertions, content validation and static production build run before publication using cached activity dates. YouTube playback and embedding permission remain unverified; no browser capture taken.
 
 
 ## 2026-10-29 — Visible embedded video previews
 
 ### Changed
 
-**Babuni.dev requested:** visible large video previews in modules, the big bloom and reader instead of empty Load video buttons, with the ability to play directly. **AI implementation:** replace the extra load button with a lazy embedded player using the existing approved-host validation, privacy-enhanced YouTube URL and referrer policy. Put the first player above preview text in small/big modules and remove the big-card iframe height cap; the reader shows all collection players at full content width and 16:9. Native hosted clips retain their existing behavior. **Trade-off:** embedded previews may contact the video provider when visible, before playback; this supersedes the prior click-before-player approach. AI keeps playback user initiated to avoid simultaneous audio from multiple modules; no autoplay loop is introduced. Playback controls work inside the embed without opening another bloom. **Verification:** all 32 test files, content validation and static production build passed, including lazy iframe creation and rejection of unsafe hosts. No live browser playback or YouTube availability verified, and no browser screenshot taken.
+- Replaced the extra load button with a lazy embedded player using the existing approved-host validation, privacy-enhanced YouTube URL and referrer policy. Put the first player above preview text in small/big modules and remove the big-card iframe height cap; the reader shows all collection players at full content width and 16:9. Native hosted clips retain their existing behavior. **Trade-off:** embedded previews may contact the video provider when visible, before playback; this supersedes the prior click-before-player approach. AI keeps playback user initiated to avoid simultaneous audio from multiple modules; no autoplay loop is introduced. Playback controls work inside the embed without opening another bloom. **Verification:** all 32 test files, content validation and static production build passed, including lazy iframe creation and rejection of unsafe hosts. No live browser playback or YouTube availability verified, and no browser screenshot taken.
 
 
 ## 2026-10-29 — Mighty Morkah video collection
 
 ### Added
 
-**Babuni.dev requested:** embed the Mighty Morkah channel’s videos using the same visible player previews. **AI execution:** add one Videos module with all ten video titles and watch IDs visible on the channel’s Videos page, in its displayed latest-first order. Preserve historical wording and WIP labels. Existing renderer shows the first player in small/big bloom and all ten lazy player embeds in the reader; playback remains user initiated. YouTube serves the media, with no copied video files. Existing overview and profile links remain. **Verification:** direct browser inspection of `https://www.youtube.com/@MightyMorkah/videos` found ten video entries (channel currently displays Morkah); search/page-fetch tools failed before browser fallback succeeded. No individual playback or embedding permission verified. Collection tests, full regression suite, content validation and static build run before publication with cached activity dates. No browser screenshot taken.
+- Added one Videos module with all ten video titles and watch IDs visible on the channel’s Videos page, in its displayed latest-first order. Preserve historical wording and WIP labels. Existing renderer shows the first player in small/big bloom and all ten lazy player embeds in the reader; playback remains user initiated. YouTube serves the media, with no copied video files. Existing overview and profile links remain. **Verification:** direct browser inspection of `https://www.youtube.com/@MightyMorkah/videos` found ten video entries (channel currently displays Morkah); search/page-fetch tools failed before browser fallback succeeded. No individual playback or embedding permission verified. Collection tests, full regression suite, content validation and static build run before publication with cached activity dates. No browser screenshot taken.
 
 
 ## 2026-10-29 — Matching video frames
 
 ### Changed
 
-**Babuni.dev requested:** frame video embeds like their surrounding bloom modules. **AI execution:** wrap supported players in a shared video-frame element with the module’s 2-pixel muted-gold border, 5-pixel dark inner band and shadow. The frame is inside the available content width, with no overlay intercepting player controls; applies to embedded and native videos in small bloom, big bloom and reader. Player aspect ratio and playback behavior remain unchanged. No source or media changes. **Verification:** all 32 test files, content validation and static build passed. Initial DOM test caught use of a property missing from its lightweight DOM fixture; AI used the equivalent children collection and reran successfully. No browser screenshot or visual browser acceptance performed in this pass.
+- Wrapped supported players in a shared video-frame element with the module’s 2-pixel muted-gold border, 5-pixel dark inner band and shadow. The frame is inside the available content width, with no overlay intercepting player controls; applies to embedded and native videos in small bloom, big bloom and reader. Player aspect ratio and playback behavior remain unchanged. No source or media changes. **Verification:** all 32 test files, content validation and static build passed. Initial DOM test caught use of a property missing from its lightweight DOM fixture; AI used the equivalent children collection and reran successfully. No browser screenshot or visual browser acceptance performed in this pass.
 
 
 ## 2026-10-29 — Selected module quarter overlay
 
 ### Fixed
 
-**Babuni.dev corrected:** selected big-bloom content should continue behind the portal tile, with only the bottom-left quarter covered and the right side visible. **AI diagnosis/execution:** remove the selected-card-only half-height cap on `.bloom-preview-content`; use the same full-height scrollable content region as other big cards. The actual anchor tile remains one grid cell over the lower-left quarter of the existing 2 × 2 module. No tile or module repositioning, resizing, timing or media changes. **Verification:** full regression suite, content validation and static build run before publication. Existing geometry tests cover the quarter anchor and vacancies; no live browser visual acceptance or screenshot taken in this pass.
+- Removed the selected-card-only half-height cap on `.bloom-preview-content`; use the same full-height scrollable content region as other big cards. The actual anchor tile remains one grid cell over the lower-left quarter of the existing 2 × 2 module. No tile or module repositioning, resizing, timing or media changes. **Verification:** full regression suite, content validation and static build run before publication. Existing geometry tests cover the quarter anchor and vacancies; no live browser visual acceptance or screenshot taken in this pass.
 
 
 ## 2026-10-29 — Keep incoming identities through shift commit
 
 ### Fixed
 
-**Babuni.dev reported:** rare identity changes immediately after the first or second startup shift, especially the last incoming tile, suspected after project removals. **AI investigation:** 400 ordinary simulated startup rounds preserved identities. Adding intermediate viewport syncs in which an incoming source briefly entered and left the visible set reproduced a first-round swap with 42 projects and three fillers (seed 0, expected index 1 became 40). This confirms a failure path, not a browser reproduction of the human’s exact incident. **AI implementation:** keep staged entrance sources retained and protected through intermediate syncs; explicitly release reservations only after resident settlement, history commit and final placement sync. Previously the first sync seeing an entrance released it, allowing later syncs to deduplicate/reassign it before completion. No catalog, duplicate policy, shift tempo, geometry or DOM transfer behavior changed. **Alternatives:** avoid padding the catalog or suppressing all deduplication; fix reservation lifetime at the shift boundary. **Verification:** new integrated placement/shift/resident test covers 400 startup rounds with intermediate syncs and all landed identities. The failing simulation passes after the fix; all 33 test files, content validation and static build passed. No sustained browser reproduction or screenshot captured; human startup acceptance remains open.
+- 400 ordinary simulated startup rounds preserved identities. Adding intermediate viewport syncs in which an incoming source briefly entered and left the visible set reproduced a first-round swap with 42 projects and three fillers (seed 0, expected index 1 became 40). This confirms a failure path, not a browser reproduction of the human’s exact incident. **AI implementation:** keep staged entrance sources retained and protected through intermediate syncs; explicitly release reservations only after resident settlement, history commit and final placement sync. Previously the first sync seeing an entrance released it, allowing later syncs to deduplicate/reassign it before completion. No catalog, duplicate policy, shift tempo, geometry or DOM transfer behavior changed. **Alternatives:** avoid padding the catalog or suppressing all deduplication; fix reservation lifetime at the shift boundary. **Verification:** new integrated placement/shift/resident test covers 400 startup rounds with intermediate syncs and all landed identities. The failing simulation passes after the fix; all 33 test files, content validation and static build passed. No sustained browser reproduction or screenshot captured; human startup acceptance remains open.
 
 
 ## 2026-10-29 — Body-first documentation and newest-first logs
 
 ### Changed
 
-**Babuni.dev requested:** move opening authorship, source, version, target, primary-file and verification facts to the end, and show newest changelog/development-journal entries first so modules lead with meaningful content. **AI interpretation/implementation:** add a deterministic Markdown presentation transform at document preparation, shared by repository modules and generated reader assets. Preserve original imported snapshots and upstream repositories; publish a reordered reading copy. Recognized leading labelled facts/lists/tables move intact into a final Document information section. Narrative text, safety notices inside the body, links and nested Markdown remain intact. Only log paths are date-sorted: complete sibling sections move with their subsections, dated entries sort newest first, same-day ties keep source order, undated sections keep their slots. ISO and English month dates are supported; omitted years are inferred only from an unambiguous sibling year. Unreleased entries sort first. No dates or chronology are invented for version-only or undated headings. **Alternatives:** avoid editing dozens of upstream repositories or deleting metadata; use one presentation layer for small previews, big intros and reader text. **Verification:** added metadata/preview, nested log/fence, month-date and ambiguous-year tests; all imported source documents pass a non-whitespace character preservation comparison. Existing exact-body tests now compare the presentation copy. Full regression suite, content validation and static build run before publication with cached activity dates; no source sync, browser capture or manual document-by-document editorial acceptance claimed. Limitations: unrecognized narrative-shaped facts and ambiguous dates retain their original position.
+- Added a deterministic Markdown presentation transform at document preparation, shared by repository modules and generated reader assets. Preserve original imported snapshots and upstream repositories; publish a reordered reading copy. Recognized leading labelled facts/lists/tables move intact into a final Document information section. Narrative text, safety notices inside the body, links and nested Markdown remain intact. Only log paths are date-sorted: complete sibling sections move with their subsections, dated entries sort newest first, same-day ties keep source order, undated sections keep their slots. ISO and English month dates are supported; omitted years are inferred only from an unambiguous sibling year. Unreleased entries sort first. No dates or chronology are invented for version-only or undated headings. **Alternatives:** avoid editing dozens of upstream repositories or deleting metadata; use one presentation layer for small previews, big intros and reader text. **Verification:** added metadata/preview, nested log/fence, month-date and ambiguous-year tests; all imported source documents pass a non-whitespace character preservation comparison. Existing exact-body tests now compare the presentation copy. Full regression suite, content validation and static build run before publication with cached activity dates; no source sync, browser capture or manual document-by-document editorial acceptance claimed. Limitations: unrecognized narrative-shaped facts and ambiguous dates retain their original position.
 
 
 ## 2026-10-29 — Larger reader and footer stripe
 
 ### Changed
 
-**Babuni.dev requested:** enlarge the reader to around 70% of available space and vertically from the header to a new thin footer, styled like the header at one-third its height. **AI interpretation/execution:** use 70vw reader width on desktop and full height between the persistent header and decorative footer. Preserve the existing edge-to-edge mobile reader and its bottom dismissal gap. Add an empty, noninteractive footer stripe with matching header background/border, height derived from one third of the current header. Move and restore both header and stripe with the modal so they remain visible at all four depths. Keep desktop outside-click margins, reader scrolling and opening/closing animations. Text retains its readable line-length limit. **Verification:** full regression suite, content validation and static production build run before publication using cached activity dates. No browser screenshot or visual acceptance performed in this pass.
+- Used 70vw reader width on desktop and full height between the persistent header and decorative footer. Preserve the existing edge-to-edge mobile reader and its bottom dismissal gap. Add an empty, noninteractive footer stripe with matching header background/border, height derived from one third of the current header. Move and restore both header and stripe with the modal so they remain visible at all four depths. Keep desktop outside-click margins, reader scrolling and opening/closing animations. Text retains its readable line-length limit. **Verification:** full regression suite, content validation and static production build run before publication using cached activity dates. No browser screenshot or visual acceptance performed in this pass.
 
 
 ## 2026-10-29 — Warmer and larger typography
 
 ### Changed
 
-**Babuni.dev requested:** larger project titles, with short names larger within the same width, slightly larger bloom text (especially small bloom), and a friendly warm palette like the repository links with readable matching backgrounds. **AI implementation:** length-based tile-title scale (short/medium/long) within the common 89% title width; increase small headings/body including the mobile override, make a smaller increase to big-bloom typography, and raise reader body text from 17 to 18px. Use warm cream/gold headings and body text on charcoal-brown bloom/reader backgrounds. Captions and secondary bloom text grow slightly. Artwork, tile/module dimensions, geometry and animation timing are unchanged; larger content continues to use existing internal scrolling. **Alternatives:** use three deterministic name-length scales rather than measuring text during grid animation; no new font dependency or per-frame layout work. **Verification:** full regression suite, content validation and static build run before publication using cached activity dates. No browser screenshot or visual/device acceptance performed in this pass.
+- Length-based tile-title scale (short/medium/long) within the common 89% title width; increase small headings/body including the mobile override, make a smaller increase to big-bloom typography, and raise reader body text from 17 to 18px. Use warm cream/gold headings and body text on charcoal-brown bloom/reader backgrounds. Captions and secondary bloom text grow slightly. Artwork, tile/module dimensions, geometry and animation timing are unchanged; larger content continues to use existing internal scrolling. **Alternatives:** use three deterministic name-length scales rather than measuring text during grid animation; no new font dependency or per-frame layout work. **Verification:** full regression suite, content validation and static build run before publication using cached activity dates. No browser screenshot or visual/device acceptance performed in this pass.
 
 
 ## 2026-10-29 — Physical acceptance and release-readiness audit
 
 ### Changed
 
-**Babuni.dev confirmed:** thorough testing on two physical devices, responsive phone/laptop/wide-desktop coverage, satisfying keyboard and reduced-motion alternatives, topic interactions, fullscreen and many-hour sessions; accept milestones 1–4 and the neutral stone/portal design. Record this as human evidence, not new AI hardware verification. Content remains living WIP; owner project publishing toggles remain needed, and future performance review can follow later. **AI execution:** update current roadmap checkboxes and status, explicitly label older notes historical, keep optional MDX deferred, and document production/SEO/hosting findings in `docs/RELEASE_READINESS-2026-10-29.md`. **Measured:** production build passed; total artifact 15.20 MiB; one 699,389-byte JS chunk (199,545 gzip / 160,907 Brotli simulated), existing large-chunk warning. Initial HTML has no project headings/links; generated content is interactive and source docs load on demand. **AI proposals:** crawlable static project/document routes, search/share metadata, integrated publishing visibility, then separate VPS hostname/directory/HTTPS configuration and real delivery measurement. These are plans, not implemented features or deployment. No DNS, private content, VPS or existing website changes. Verification: static artifact inspection; full tests/content checks/build run before publication. No new live load-time/FPS/browser/device test claimed.
+- Updated current roadmap checkboxes and status, explicitly label older notes historical, keep optional MDX deferred, and document production/SEO/hosting findings in `docs/RELEASE_READINESS-2026-10-29.md`. **Measured:** production build passed; total artifact 15.20 MiB; one 699,389-byte JS chunk (199,545 gzip / 160,907 Brotli simulated), existing large-chunk warning. Initial HTML has no project headings/links; generated content is interactive and source docs load on demand. **AI proposals:** crawlable static project/document routes, search/share metadata, integrated publishing visibility, then separate VPS hostname/directory/HTTPS configuration and real delivery measurement. These are plans, not implemented features or deployment. No DNS, private content, VPS or existing website changes. Verification: static artifact inspection; full tests/content checks/build run before publication. No new live load-time/FPS/browser/device test claimed.
 
 
 ## 2026-10-29 — Prepare public discovery and production delivery
 
 ### Added / Changed
 
-**Babuni.dev authorized:** publish every current catalog project and existing public-source content; implement readable pages, search/share information, sitemap, sensible crawler rules and real links, and investigate the bundle with production caching/compression prepared before weekend hosting. **AI implementation:** add static `/projects/` directory, 42 stable project pages and populated module pages from the same current module/source pipeline (433 HTML URLs total); preserve source links, Markdown safety, authorship, WIP content and date presentation. Add `www.babuni.dev` canonical site identity, per-page titles/descriptions/Open Graph/social images, project CreativeWork data, sitemap and robots.txt. Real project-directory link is in Projects menu, with a no-JavaScript home fallback. No private repositories or unconnected account inventory imported.
+- Added static `/projects/` directory, 42 stable project pages and populated module pages from the same current module/source pipeline (433 HTML URLs total); preserve source links, Markdown safety, authorship, WIP content and date presentation. Add `www.babuni.dev` canonical site identity, per-page titles/descriptions/Open Graph/social images, project CreativeWork data, sitemap and robots.txt. Real project-directory link is in Projects menu, with a no-JavaScript home fallback. No private repositories or unconnected account inventory imported.
 
 **Bundle change:** generate 42 per-project JSON collections and fetch only a selected project, cached with deduplicated pending requests and retry after failure. Start fetching alongside the existing shift/centering procedure; a still-loading selected tile retains busy feedback and stale completions cannot reopen a closed/different selection. Keep the original motion, module content volume and source documents. Initial JS reduced from the audited 683 KiB / 195 KiB gzip to approximately 118 KiB / 37 KiB gzip; the 500 kB warning disappears without raising the warning limit. These are artifact/compression estimates, not internet transfer timings.
 
@@ -994,35 +998,35 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 
 ### Removed
 
-**Babuni.dev feedback:** the separate readable pages feel unattractive and do not need a Browse project pages link in the grid menu; asks how sources update and why the preview connection fails. **AI execution:** remove only that menu link, keeping the approved grid and blooms as the ordinary experience. Readable URLs, sitemap and useful no-JavaScript fallback remain publicly available to people and crawlers alike; they are not bot-only or private pages. No page redesign is claimed. Both readable pages and blooms use the same curated data and revision-pinned public snapshots, regenerated during content preparation/build; upstream document changes require a deliberate content sync, whereas commit-date refresh is separate. **Connection diagnosis:** 4326 was the temporary production preview deliberately stopped after verification; the regular local development server is on 4321. **Verification:** direct local HTTP checks, content validation, static build and canonical/internal-link checks run before publication; no browser screenshot taken for this menu-only removal. No DNS/VPS change or source snapshot refresh.
+- Removed only that menu link, keeping the approved grid and blooms as the ordinary experience. Readable URLs, sitemap and useful no-JavaScript fallback remain publicly available to people and crawlers alike; they are not bot-only or private pages. No page redesign is claimed. Both readable pages and blooms use the same curated data and revision-pinned public snapshots, regenerated during content preparation/build; upstream document changes require a deliberate content sync, whereas commit-date refresh is separate. **Connection diagnosis:** 4326 was the temporary production preview deliberately stopped after verification; the regular local development server is on 4321. **Verification:** direct local HTTP checks, content validation, static build and canonical/internal-link checks run before publication; no browser screenshot taken for this menu-only removal. No DNS/VPS change or source snapshot refresh.
 
 
 ## 2026-10-30 — Golden shift status in the header
 
 ### Changed
 
-**Babuni.dev requested:** emphasize Rows/Columns are shifting and Waiting for shift to finish with a warm golden glow like the selected waiting tile, and clarify that opening waits for the shift. **AI execution:** centralize header presentation, add a static gold text glow for those two status families, and append the wait explanation to autonomous-shift messages. All direct selection waiting/centering updates use the same presenter so the glow clears for ordinary exploration, reading and centering. Existing tile feedback, 4.4-second shift tempo and opening sequence are unchanged; no extra animation is introduced, including for reduced motion. **Verification:** targeted status tests, full regression suite, content validation, static build and public-link checks run before publication with cached activity dates. No browser screenshot taken in this pass; visual acceptance remains with Babuni.dev.
+- Centralized header presentation, add a static gold text glow for those two status families, and append the wait explanation to autonomous-shift messages. All direct selection waiting/centering updates use the same presenter so the glow clears for ordinary exploration, reading and centering. Existing tile feedback, 4.4-second shift tempo and opening sequence are unchanged; no extra animation is introduced, including for reduced motion. **Verification:** targeted status tests, full regression suite, content validation, static build and public-link checks run before publication with cached activity dates. No browser screenshot taken in this pass; visual acceptance remains with Babuni.dev.
 
 
 ## 2026-10-30 — Launch-readiness and server-access audit
 
 ### Changed
 
-**Babuni.dev asked:** check remaining launch gaps and explain direct agent/server access versus repeated manual server pulls/builds. **AI audit:** current source is clean; 37 test files, content validation, static production build and all 430 public URL/link checks passed. Current initial JS is about 120 KiB raw / 38 KiB gzip. Production dependency registry audit reported zero known advisories, not a complete security guarantee. No new browser/device or live VPS/load measurement performed. **Result:** code is ready for deployment preparation; SSH access, server-specific Nginx validation, DNS, HTTPS/renewal and live smoke/header/loading checks remain. Current CI tests/builds but does not deploy. **AI recommendation:** dedicated SSH deployment account and key, versioned static release upload and rollback, followed optionally by a manually triggered GitHub deployment workflow. These access/automation proposals are not configured or authorized as completed work. Existing Arcanite Brothers remains untouched. The local `.ssh` directory has no private key; no SSH session, key creation, new permissions or server change attempted. Update `deploy/README.md` with these distinctions and the current 41-project catalog count. Content curation and future visibility UI are not launch blockers for the already approved public catalog.
+- Current source is clean; 37 test files, content validation, static production build and all 430 public URL/link checks passed. Current initial JS is about 120 KiB raw / 38 KiB gzip. Production dependency registry audit reported zero known advisories, not a complete security guarantee. No new browser/device or live VPS/load measurement performed. **Result:** code is ready for deployment preparation; SSH access, server-specific Nginx validation, DNS, HTTPS/renewal and live smoke/header/loading checks remain. Current CI tests/builds but does not deploy. **AI recommendation:** dedicated SSH deployment account and key, versioned static release upload and rollback, followed optionally by a manually triggered GitHub deployment workflow. These access/automation proposals are not configured or authorized as completed work. Existing Arcanite Brothers remains untouched. The local `.ssh` directory has no private key; no SSH session, key creation, new permissions or server change attempted. Update `deploy/README.md` with these distinctions and the current 41-project catalog count. Content curation and future visibility UI are not launch blockers for the already approved public catalog.
 
 
 ## 2026-10-31 — ActionEmotes #1 identity and public-source update
 
 ### Changed
 
-**Babuni.dev confirmed:** Buxbrew Charge is now ActionEmotes #1 and its public repository is `babunidev/ActionEmotes-1`; import its added documentation into the portfolio. **AI verification/execution:** verify public visibility and main branch, import only this project’s ten standard documents at `bb9bac59c88db3f05f824519eaaf2e37cb780e59`, replace the retired snapshot/source key, and update the display name, repository mapping and source-based action/emote summary/topics. Stable ID `buxbrewcharge`, existing public page paths and `BuxbrewCharge.webp` artwork remain, avoiding duplicate tiles or broken stable URLs. Refresh this repository’s verified commit metadata for the opening chronology and regenerate the connection report. Other repository snapshots are not refreshed. **Source limitation:** the README still describes the rename as proposed and the repository as retaining the former name; preserve its imported wording as source evidence while using the human-confirmed current identity in portfolio labels/links. Addon files/runtime behavior are not changed or tested. **Verification:** rename/source/artwork regression coverage, full tests, content validation, static build and generated page/link checks run before publication. No browser screenshot, VPS or DNS changes.
+- Verified public visibility and main branch, import only this project’s ten standard documents at `bb9bac59c88db3f05f824519eaaf2e37cb780e59`, replace the retired snapshot/source key, and update the display name, repository mapping and source-based action/emote summary/topics. Stable ID `buxbrewcharge`, existing public page paths and `BuxbrewCharge.webp` artwork remain, avoiding duplicate tiles or broken stable URLs. Refresh this repository’s verified commit metadata for the opening chronology and regenerate the connection report. Other repository snapshots are not refreshed. **Source limitation:** the README still describes the rename as proposed and the repository as retaining the former name; preserve its imported wording as source evidence while using the human-confirmed current identity in portfolio labels/links. Addon files/runtime behavior are not changed or tested. **Verification:** rename/source/artwork regression coverage, full tests, content validation, static build and generated page/link checks run before publication. No browser screenshot, VPS or DNS changes.
 
 
 ## 2026-10-31 — Import Action Emotes #1 final documentation baseline
 
 ### Changed
 
-**Babuni.dev supplied:** merged ActionEmotes-1 PR #1 and final commit `e475a45108753c9eda8de1e774e2ba95058d65c0`, requesting their revised documentation and outstanding `BuxbreCharge.toc` installation concern appear on the website. **AI verification/execution:** verify PR #1 is merged at that exact commit and publicly fetch all ten standard documents, replacing only this project’s snapshot. Its first-person history and documentation baseline now feed blooms/readable pages/readers; the prior proposed-rename wording is resolved by the new upstream README. Update verified activity metadata and add repository/review/commit links to the existing Project source module, explicitly stating that the historical filename remains unmodified and needs an installation check. Preserve stable project identity/artwork and all other repository snapshots. **Verification:** regression coverage, content validation, static build and all public page/link checks run before publication. No addon installation, in-game or filename change, browser screenshot, VPS or DNS action claimed.
+- Verified PR #1 is merged at that exact commit and publicly fetch all ten standard documents, replacing only this project’s snapshot. Its first-person history and documentation baseline now feed blooms/readable pages/readers; the prior proposed-rename wording is resolved by the new upstream README. Update verified activity metadata and add repository/review/commit links to the existing Project source module, explicitly stating that the historical filename remains unmodified and needs an installation check. Preserve stable project identity/artwork and all other repository snapshots. **Verification:** regression coverage, content validation, static build and all public page/link checks run before publication. No addon installation, in-game or filename change, browser screenshot, VPS or DNS action claimed.
 
 ## 2026-10-31 — Topic variety and actual public project sources
 
@@ -1046,7 +1050,7 @@ Babuni.dev additionally requested the B to the left of BABUNI.DEV in the persist
 ## 2026-11-01
 
 ### Added
-- Connected Babuni.dev’s supplied GuildChatBridge.webp to the existing GuildChatBridge project, replacing its colored portal fallback. Optimized the 1254×1254 source to the established 512×512 WebP delivery size.
+- Connected the supplied GuildChatBridge.webp to the existing GuildChatBridge project, replacing its colored portal fallback. Optimized the 1254×1254 source to the established 512×512 WebP delivery size.
 
 ## 2026-11-01
 

@@ -4,7 +4,7 @@
 
 ## Scope and method
 
-Babuni.dev requested production size/download/loading measurements, investigation of the existing large client chunk, resize continuity and new portal artwork. This is a local static-production assessment, not the Astro dev server and not an internet/mobile benchmark.
+At the time, I requested production size/download/loading measurements, investigation of the existing large client chunk, resize continuity and new portal artwork. This is a local static-production assessment, not the Astro dev server and not an internet/mobile benchmark.
 
 A frozen pre-change dist was served on loopback; the updated static build was served on another loopback port. Both measurement servers sent Cache-Control: no-store and no content compression. A temporary external probe recorded Navigation/Resource/Paint entries into hidden DOM, sampled one second after load. This was necessary because read-only browser evaluation does not expose Performance APIs directly. The probe itself was excluded from resource totals; its extra HTML tag and execution still add small measurement overhead. It is not shipped in the final clean build. Screenshots and module-state checks were also made on this production build.
 
@@ -60,7 +60,7 @@ The first capture showed missing logos after the temporary measurement server en
 
 ## Human long-session evidence and remaining checks
 
-Babuni.dev reports the cache update no longer feels progressively slower after hours; Firefox has little or no issue, with some remaining Chrome unevenness. The mentioned long computer uptime is a hypothesis, not a diagnosed cause. No new full browser trace, heap measurement or hours-long agent run was performed here.
+At the time, I reported the cache update no longer feels progressively slower after hours; Firefox has little or no issue, with some remaining Chrome unevenness. The mentioned long computer uptime is a hypothesis, not a diagnosed cause. No new full browser trace, heap measurement or hours-long agent run was performed here.
 
 Remaining: human fullscreen/window resize confirmation; physical phone orientation; deployed-host compression/network tests; decide on image derivatives and preview-data loading without changing the approved feel; trace the affected Chrome profile if unevenness continues.
 

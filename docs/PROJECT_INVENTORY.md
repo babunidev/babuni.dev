@@ -15,9 +15,9 @@ Earlier 44-, 47-, 49-, and 53-entry counts appear below because the catalog chan
 
 ## Purpose and provenance
 
-Babuni.dev asked to collect work discussed across chats, projects and repositories, including abandoned concepts, small addons, old games, visual studies and works in progress, then order it approximately by most recent work. The AI assembled the list from available conversations, uploaded/project material and connected GitHub README/repository evidence. This is a **working memory** to help choose authentic prototype tile titles and later research actual exhibits.
+At the time, I asked to collect work discussed across chats, projects and repositories, including abandoned concepts, small addons, old games, visual studies and works in progress, then order it approximately by most recent work. The AI assembled the list from available conversations, uploaded/project material and connected GitHub README/repository evidence. This is a **working memory** to help choose authentic prototype tile titles and later research actual exhibits.
 
-**Important boundaries:** Ordering is approximate (recent GitHub update order is more reliable than old conversation chronology). A row is a candidate *work, variant, subproject or collection*, not a claim of an independent released product. Some entries are ancestors/renames or belong under a larger project. Inclusion does **not** mean approval for public exhibition, correctness of every earlier claim, access to original assets, or confirmation of release or functionality. Babuni.dev approval and source verification are required before converting entries into production content. Do not publish private conversations or copyrighted game assets by default.
+**Important boundaries:** Ordering is approximate (recent GitHub update order is more reliable than old conversation chronology). A row is a candidate *work, variant, subproject or collection*, not a claim of an independent released product. Some entries are ancestors/renames or belong under a larger project. Inclusion does **not** mean approval for public exhibition, correctness of every earlier claim, access to original assets, or confirmation of release or functionality. My approval and source verification are required before converting entries into production content. Do not publish private conversations or copyrighted game assets by default.
 
 **Evidence key:** `repo` = README found in the accessible GitHub account; `repo-lineage` = documented repository likely part of a family; `repo-context` = supported by related repository documentation; `document` = recovered creative document; `conversation` = prior discussion only; `repository-doc` = this portfolio's own documented methodology; `name-only` = named repository without substantive verified contents. Statuses and timeline require a fresh check.
 
@@ -62,7 +62,7 @@ Babuni.dev asked to collect work discussed across chats, projects and repositori
 | 35 | WarriorStartAttack | Auto-attack helper for warrior abilities. | repo-lineage |
 | 36 | GuildChatAI | Experimental guild chat project with limited public description. | repo |
 | 37 | Practical Templates Babuni.dev | Concept for an automated Babuni.dev of practical digital templates. | conversation |
-| 38 | Human–AI Development Journal | Record of Babuni.dev direction, AI work, decisions and technical verification. | repository-doc |
+| 38 | Human–AI Development Journal | Record of My direction, AI work, decisions and technical verification. | repository-doc |
 | 39 | ROAR Guild and Community | WoW guild community design and shared roleplaying rituals. | conversation |
 | 40 | The Amberbrew Family | Warcraft character and family lore centered on the Amberbrew household. | conversation |
 | 41 | Buxbrew — character story | Roleplaying story of Jasmine 'Buxbrew' Amberbrew. | conversation |
@@ -101,41 +101,41 @@ Babuni.dev asked to collect work discussed across chats, projects and repositori
 
 ## Additional curation override — 2026-10-28
 
-Babuni.dev additionally withdrew The Amberbrew Family and Practical Templates Creator. The historical research table is retained; the active catalog now contains 47 entries. This supersedes the earlier 49-entry count. No reason beyond the explicit human removal instruction is inferred.
+At the time, I additionally withdrew The Amberbrew Family and Practical Templates Creator. The historical research table is retained; the active catalog now contains 47 entries. This supersedes the earlier 49-entry count. No reason beyond the explicit human removal instruction is inferred.
 
 ## 2026-10-28 — Warehouse Performance Model withdrawn
 
-**Babuni.dev requested:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.
+**My request:** remove Warehouse Performance Model too. **Implemented by AI:** removed its semantic ID from the active grid/search catalog, both topic maps and unresolved repository mappings. No connected snapshot or curated module existed; no repository, document, artwork or other project was deleted. Current totals: 46 entries, 35 connected public sources, nine missing-repository entries and two family-clarification entries. Historical inventory mentions remain historical. No interaction timing or layout change.
 
 ## 2026-10-28 — GuildChatAI withdrawn
 
-**Babuni.dev requested:** remove GuildChatAI too. **AI implementation:** removed its active catalog/topic/mapping records and the orphaned public GuildChatAI snapshot (ten documents). All other retained snapshots, projects, artwork and interaction behavior remain unchanged. No repository deletion was requested or performed. Active totals: 45 entries, 34 connected public sources, 33 external snapshots and 316 external documents. Historical research mentions remain historical. Verification is recorded in DEVLOG.
+**My request:** remove GuildChatAI too. **AI implementation:** removed its active catalog/topic/mapping records and the orphaned public GuildChatAI snapshot (ten documents). All other retained snapshots, projects, artwork and interaction behavior remain unchanged. No repository deletion was requested or performed. Active totals: 45 entries, 34 connected public sources, 33 external snapshots and 316 external documents. Historical research mentions remain historical. Verification is recorded in DEVLOG.
 
 ## 2026-10-28 — Dual-PC Streaming Setup withdrawn
 
-**Babuni.dev requested:** remove Dual-PC Streaming Setup too. **AI implementation:** removed its active semantic ID, topics and unresolved repository mapping. It had no connected source snapshot or curated module content. All other sources, projects, artwork and interactions remain unchanged; historical mentions remain historical. Current totals: 44 entries, 34 connected public sources, eight missing-repository entries and two family-clarification entries. No repository deletion or new timing/layout change. Verification is recorded in DEVLOG.
+**My request:** remove Dual-PC Streaming Setup too. **AI implementation:** removed its active semantic ID, topics and unresolved repository mapping. It had no connected source snapshot or curated module content. All other sources, projects, artwork and interactions remain unchanged; historical mentions remain historical. Current totals: 44 entries, 34 connected public sources, eight missing-repository entries and two family-clarification entries. No repository deletion or new timing/layout change. Verification is recorded in DEVLOG.
 
 ## 2026-10-28 — Mech-Arena withdrawn
 
-**Babuni.dev requested:** remove Mech-Arena too. **AI implementation:** removed its active semantic ID, topic records and unresolved repository mapping. It had no connected source snapshot or curated module content. Other projects, documents, artwork, layout and timing remain unchanged; historical research mentions remain historical. Totals: 43 entries, 34 connected public sources, seven missing-repository entries and two family-clarification entries. No repository deletion. Verification is recorded in DEVLOG.
+**My request:** remove Mech-Arena too. **AI implementation:** removed its active semantic ID, topic records and unresolved repository mapping. It had no connected source snapshot or curated module content. Other projects, documents, artwork, layout and timing remain unchanged; historical research mentions remain historical. Totals: 43 entries, 34 connected public sources, seven missing-repository entries and two family-clarification entries. No repository deletion. Verification is recorded in DEVLOG.
 
 ## 2026-10-28 — Local Prompt Lab is part of Anskar Grotzschnapf
 
-**Babuni.dev clarified:** Local Prompt Lab is part of the Anskar Grotzschnapf project, not an independent project. **AI implementation:** removed the standalone catalog/topic/mapping records, retaining Anskar Grotzschnapf and its existing public source unchanged. No imported Local Prompt Lab snapshot or curated modules existed to transfer. Preserve supplied LocalPromptLab.webp as historical artwork rather than delete it. Active totals: 42 entries, 34 connected public sources, six missing-repository entries and two family-clarification entries. Nineteen active artwork assignments; twenty supplied portal WebPs retained. No repository deletion, automatic source rewrite or interaction change. Verification is recorded in DEVLOG.
+**My clarification:** Local Prompt Lab is part of the Anskar Grotzschnapf project, not an independent project. **AI implementation:** removed the standalone catalog/topic/mapping records, retaining Anskar Grotzschnapf and its existing public source unchanged. No imported Local Prompt Lab snapshot or curated modules existed to transfer. Preserve supplied LocalPromptLab.webp as historical artwork rather than delete it. Active totals: 42 entries, 34 connected public sources, six missing-repository entries and two family-clarification entries. Nineteen active artwork assignments; twenty supplied portal WebPs retained. No repository deletion, automatic source rewrite or interaction change. Verification is recorded in DEVLOG.
 
 
 ## Current naming correction — 2026-10-29
 
-Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
+At the time, I renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
 
 
 ## Curation correction — 2026-10-29
 
-Babuni.dev withdrew Fantasy RPG Assets because it is not a standalone project. Active catalog now has 44 projects; the original candidate table remains historical.
+At the time, I withdrew Fantasy RPG Assets because it is not a standalone project. Active catalog now has 44 projects; the original candidate table remains historical.
 
 ## 2026-11-01 — GuildChatBridge restored from revised public source
 
-**Babuni.dev requested:** Check the renamed/revised GuildChatBridge repository and implement its changes in the portfolio. **AI interpretation:** Restore the previously withdrawn GuildChatAI project under its new public name, retaining stable ID `guildchatai` rather than introducing a duplicate. This supersedes its 2026-10-28 withdrawal for the active catalog only; the withdrawal remains historical evidence.
+**My request:** Check the renamed/revised GuildChatBridge repository and implement its changes in the portfolio. **AI interpretation:** Restore the previously withdrawn GuildChatAI project under its new public name, retaining stable ID `guildchatai` rather than introducing a duplicate. This supersedes its 2026-10-28 withdrawal for the active catalog only; the withdrawal remains historical evidence.
 
 **Implemented:** Connect `babunidev/GuildChatBridge` main at `483951aea324dec948452f66ac06c9117b5f8bea`, anonymously verified, importing its ten standard Markdown documents only. Restore its searchable World of Warcraft menu entry, source links and nine-keyword pool, with one guaranteed World of Warcraft add-on bubble. Its summary explicitly calls it a paused roleplaying experiment: guild-chat capture and manual sending exist in source, but an autonomous AI conversation bridge is absent and unverified. Existing runtime identifiers GuildChatAI, GuildChatAIDB and /gcai remain upstream historical/current implementation details, not an additional portfolio project. No game-code change, resumption decision or client compatibility test is implied.
 
@@ -143,7 +143,7 @@ Babuni.dev withdrew Fantasy RPG Assets because it is not a standalone project. A
 
 ## 2026-11-01 — Amazin renamed to StealthEmotes
 
-**Babuni.dev requested:** Replace Amazin with the supplied StealthEmotes repository. **AI interpretation/implementation:** Update the display name and public connection while preserving semantic ID `amazin`, the existing Amazin.webp artwork, WoW menu grouping and nine-keyword/add-on classification. Replace only this repository snapshot after anonymous verification; no duplicate project is introduced and other snapshots are retained.
+**My request:** Replace Amazin with the supplied StealthEmotes repository. **AI interpretation/implementation:** Update the display name and public connection while preserving semantic ID `amazin`, the existing Amazin.webp artwork, WoW menu grouping and nine-keyword/add-on classification. Replace only this repository snapshot after anonymous verification; no duplicate project is introduced and other snapshots are retained.
 
 The upstream README identifies StealthEmotes as formerly Amazin, but still contains stale wording that the rename is proposed and the repository remains amazin. The author’s explicit instruction and verified new repository establish the portfolio name; raw upstream history is not silently rewritten. A Project source note distinguishes current repository naming from unchanged Amazin.lua/Amazin.toc, saved variables and /amazin commands. Source behavior is watched-slot emotes and rested-XP reporting, not confirmed successful Stealth detection. No addon-code change, new artwork or runtime test is claimed.
 
@@ -151,7 +151,7 @@ The upstream README identifies StealthEmotes as formerly Amazin, but still conta
 
 ## 2026-11-01 — LevelUpAnnouncer replaces BuxbrewDing
 
-**Babuni.dev requested:** Replace BuxbrewDing with the supplied LevelUpAnnouncer repository. **AI implementation:** Rename the active tile and update its explicit public mapping, source link and ten standard document snapshot, keeping stable ID `buxbrewding`, BuxbrewDing.webp, WoW grouping and one guaranteed add-on cue. No duplicate project is added. Only this repository snapshot is replaced.
+**My request:** Replace BuxbrewDing with the supplied LevelUpAnnouncer repository. **AI implementation:** Rename the active tile and update its explicit public mapping, source link and ten standard document snapshot, keeping stable ID `buxbrewding`, BuxbrewDing.webp, WoW grouping and one guaranteed add-on cue. No duplicate project is added. Only this repository snapshot is replaced.
 
 **Source evidence and alternatives:** The reviewed README describes 60 roleplay level-up announcements, local previews and explicit manual guild sends, superseding the portfolio’s prior unknown-purpose summary. The evidence classification changes from name-only to repository-backed; the nine keywords now reflect those documented subjects. The pinned README confirms the repository rename; installed BuxbrewDing.lua/BuxbrewDing.toc and /buxbrew commands retain historical names. The portfolio resource note explains that distinction rather than silently rewriting imported history or renaming game files. Lua/client compatibility and announcement behavior remain unverified; no addon code, release/version decision or installed runtime change is claimed.
 
@@ -159,39 +159,39 @@ The upstream README identifies StealthEmotes as formerly Amazin, but still conta
 
 ## 2026-11-01 — BuxbrewResist renamed
 
-At Babuni.dev’s request, the existing BuxbrewResist entry now displays ResistInsight and connects to the renamed public repository. Stable ID `buxbrewresist` and supplied BuxbrewResist.webp remain. The current README identifies it as on hold and the predecessor of the separate ResistForever project. Historical inventory names are retained as evidence; no new tile is added.
+At my request, the existing BuxbrewResist entry now displays ResistInsight and connects to the renamed public repository. Stable ID `buxbrewresist` and supplied BuxbrewResist.webp remain. The current README identifies it as on hold and the predecessor of the separate ResistForever project. Historical inventory names are retained as evidence; no new tile is added.
 
 ## 2026-11-01 — Buxbrew Addon renamed
 
-At Babuni.dev’s request, stable ID `buxbrew` now displays ActionEmotes #2 and uses the ActionEmotes-2 public repository. It retains BuxbrewAddon.webp and remains separate from ActionEmotes #1 and Buxbrew — character story. The current source documents support a concrete emote-addon summary, replacing the earlier name-only classification. Historical inventory names remain evidence, not duplicate projects.
+At my request, stable ID `buxbrew` now displays ActionEmotes #2 and uses the ActionEmotes-2 public repository. It retains BuxbrewAddon.webp and remains separate from ActionEmotes #1 and Buxbrew — character story. The current source documents support a concrete emote-addon summary, replacing the earlier name-only classification. Historical inventory names remain evidence, not duplicate projects.
 
 ## 2026-11-01 — ROAR renamed
 
-At Babuni.dev’s request, stable ID `roar` now displays Battle Emotes Legacy and uses the BattleEmotesLegacy public repository. ROAR.webp remains its artwork. The installed package’s ROARR name must not be confused with stable ID `roarr`, which remains a separate project/repository. Historical inventory names remain evidence rather than duplicate catalog entries.
+At my request, stable ID `roar` now displays Battle Emotes Legacy and uses the BattleEmotesLegacy public repository. ROAR.webp remains its artwork. The installed package’s ROARR name must not be confused with stable ID `roarr`, which remains a separate project/repository. Historical inventory names remain evidence rather than duplicate catalog entries.
 
 ## 2026-11-01 — ROARR renamed
 
-At Babuni.dev’s request, stable ID `roarr` now displays Battle Emotes and uses the BattleEmotes public repository. ROARR.webp remains its image. The previously renamed `roar` entry remains Battle Emotes Legacy with its separate source and ROAR.webp. Installed names in either source are not used to merge their identities.
+At my request, stable ID `roarr` now displays Battle Emotes and uses the BattleEmotes public repository. ROARR.webp remains its image. The previously renamed `roar` entry remains Battle Emotes Legacy with its separate source and ROAR.webp. Installed names in either source are not used to merge their identities.
 
 ## 2026-11-01 — ROARRunlimited renamed
 
-At Babuni.dev’s request, stable ID `roarrunlimited` now displays MultiActionEmotes and uses the renamed public repository. RoarUnlimited.webp is retained. Battle Emotes and Battle Emotes Legacy remain separate records; historical names in source documents do not introduce duplicate tiles.
+At my request, stable ID `roarrunlimited` now displays MultiActionEmotes and uses the renamed public repository. RoarUnlimited.webp is retained. Battle Emotes and Battle Emotes Legacy remain separate records; historical names in source documents do not introduce duplicate tiles.
 
 ## 2026-11-01 — RoarGuildAddon repository supplied
 
-At Babuni.dev’s request, the RoarGuild Add-on entry now connects to RoarGuildAddon instead of RoarGuild. Stable ID `roarguild`, its existing title and RoarGuildAddon.webp remain. Roar Guild community stays a separate project with its own image. Historical inventory/source names are retained as evidence rather than duplicate entries.
+At my request, the RoarGuild Add-on entry now connects to RoarGuildAddon instead of RoarGuild. Stable ID `roarguild`, its existing title and RoarGuildAddon.webp remain. Roar Guild community stays a separate project with its own image. Historical inventory/source names are retained as evidence rather than duplicate entries.
 
 ## 2026-11-01 — ROARSounds renamed
 
-At Babuni.dev’s request, stable ID `roarsounds` displays RoarSoundEffects and uses the renamed public repository. ROARsounds.webp remains its artwork. Its historical installed ROAR package name does not merge it with Battle Emotes Legacy, Battle Emotes or the other ROAR-family projects.
+At my request, stable ID `roarsounds` displays RoarSoundEffects and uses the renamed public repository. ROARsounds.webp remains its artwork. Its historical installed ROAR package name does not merge it with Battle Emotes Legacy, Battle Emotes or the other ROAR-family projects.
 
 ## 2026-11-01 — ROARemoteTrigger renamed
 
-At Babuni.dev’s request, stable ID `roaremotetrigger` now displays EmoteTrigger and connects to the renamed public repository. ROARRemoteTrigger.webp remains its artwork. Historical installed ROARTrigger identifiers are distinct from both the repository name and the separate RoarGuild Add-on project.
+At my request, stable ID `roaremotetrigger` now displays EmoteTrigger and connects to the renamed public repository. ROARRemoteTrigger.webp remains its artwork. Historical installed ROARTrigger identifiers are distinct from both the repository name and the separate RoarGuild Add-on project.
 
 ## 2026-11-01 — EmoteTrigger renamed again
 
-At Babuni.dev’s request, stable ID `roaremotetrigger` now displays Roar Guild Addon Wrath and uses RoarGuildAddonWrath. The intermediate EmoteTrigger name and original ROARemoteTrigger name remain historical. ROARRemoteTrigger.webp is retained; the separate non-Wrath addon and guild community are unaffected.
+At my request, stable ID `roaremotetrigger` now displays Roar Guild Addon Wrath and uses RoarGuildAddonWrath. The intermediate EmoteTrigger name and original ROARemoteTrigger name remain historical. ROARRemoteTrigger.webp is retained; the separate non-Wrath addon and guild community are unaffected.
 
 ## 2026-11-01 — Amberbrew Story identity clarification
 

@@ -17,7 +17,7 @@ Current runtime membership is defined in [`src/lib/project-groups.ts`](../src/li
 
 All 42 project IDs appear **exactly once** in the five groups, as checked against the current project catalog. These are checked-in repository counts, not evidence that the latest changes have been deployed or individually inspected in a browser. Renamed projects retain stable IDs: for example, `amazin` now displays **StealthEmotes**, `roar` **Battle Emotes Legacy**, `roarr` **Battle Emotes**, and `roaremotetrigger` **Roar Guild Addon Wrath**. The `guildchatai` ID now represents **GuildChatBridge**, without creating an additional project.
 
-The human creative approved organization by theme. The earlier proposed categories and alternatives below document that decision's evolution; withdrawals, merges, and later names supersede their original counts.
+At the time, I approved organization by theme. The earlier proposed categories and alternatives below document that decision's evolution; withdrawals, merges, and later names supersede their original counts.
 
 ## Original proposal — 2026-10-28 (historical)
 
@@ -90,7 +90,7 @@ At this point in the original proposal, runtime metadata had not yet been added.
 
 ## Approved correction and implementation — 2026-10-28 (historical checkpoint)
 
-Babuni.dev approved the menu-only grouping. Runtime membership is in `src/lib/project-groups.ts`: World of Warcraft (29), Morkahja (5), AI (5), Games (3), Music (2), totaling 44. The earlier list above is historical: Morkahja Admin Console was removed as a duplicate of retained Arcanitebrothers; RoarGuild is now RoarGuild Add-on and has no supplied image; Roar Guild community alone retains the guild image. Analubia remains after the human withdrew the removal suggestion. Music adds Mighty Morkah and Elixior as separate linked profiles. Other provisional placements follow the approved proposal. No category influences grid order or geometry.
+At the time, I approved the menu-only grouping. Runtime membership is in `src/lib/project-groups.ts`: World of Warcraft (29), Morkahja (5), AI (5), Games (3), Music (2), totaling 44. The earlier list above is historical: Morkahja Admin Console was removed as a duplicate of retained Arcanitebrothers; RoarGuild is now RoarGuild Add-on and has no supplied image; Roar Guild community alone retains the guild image. Analubia remains after the human withdrew the removal suggestion. Music adds Mighty Morkah and Elixior as separate linked profiles. Other provisional placements follow the approved proposal. No category influences grid order or geometry.
 
 
 ## Babuni Gaming addition — 2026-10-28
@@ -100,9 +100,9 @@ Babuni.dev added Babuni Gaming as a distinct gaming, streaming and sharing proje
 
 ## Current naming correction — 2026-10-29
 
-Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
+At the time, I renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
 
 
 ## Fantasy RPG Assets withdrawn — 2026-10-29 (historical checkpoint)
 
-Babuni.dev removed Fantasy RPG Assets as a non-project. AI group now contains four active entries, and total catalog count is 44. Prior lists above remain historical.
+At the time, I removed Fantasy RPG Assets as a non-project. AI group now contains four active entries, and total catalog count is 44. Prior lists above remain historical.

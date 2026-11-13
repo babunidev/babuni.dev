@@ -75,7 +75,7 @@ This record is marked `needs-confirmation`. An independent public source has not
 - Anskar Grotzschnapf maps to the verified `AsnkarGrotzschnapf` spelling and its `master` branch.
 - Azeroth Moments uses the public `AzerothMoments` documentation shell. Its README states that the active application lives separately; that private implementation was not imported.
 - Human curation on 2026-10-28 removed WoW Forever Talent Design Atlas, Redridge Recipe Planner, Human–AI Development Journal and Morkahja — World and Peoples from the active catalog. Their historical inventory evidence is retained; no GitHub repository was deleted.
-- MorkahjaWorld is the retained worldbuilding tile, as clarified by Babuni.dev. Its actual public repository currently contains placeholder documentation; no lore corpus is inferred or transferred.
+- MorkahjaWorld is the retained worldbuilding tile, as clarified by me. Its actual public repository currently contains placeholder documentation; no lore corpus is inferred or transferred.
 - Babuni.dev explicitly added Rocket Game 42 on 2026-10-28; it maps to the anonymously verified public Rocketgame42 repository. Historical discovery alone was not treated as approval.
 
 - Roar Guild (stable ID `roar-guild-and-community`) maps to the public community repository `babunidev/ROARguild`. It is separate from Roar Guild Add-on (stable ID `roarguild`), which maps to `babunidev/RoarGuildAddon`.

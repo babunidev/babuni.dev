@@ -104,7 +104,7 @@ AI browser captures, not human phone acceptance. Original encoded captures retai
 
 ## Human neutral-wall regression report — 2026-10-28
 
-`neutral-wall-human-report.webp` is Babuni.dev's supplied desktop screenshot of the rejected repeated-placeholder walls. Converted from actual PNG to lossless WebP, with original retained outside public assets. It is failure evidence for the superseded five-filler policy, not an AI verification capture or proof of the corrected behavior.
+`neutral-wall-human-report.webp` is my supplied desktop screenshot of the rejected repeated-placeholder walls. Converted from actual PNG to lossless WebP, with original retained outside public assets. It is failure evidence for the superseded five-filler policy, not an AI verification capture or proof of the corrected behavior.
 
 
 ## Bounded neutral and music menu checks — 2026-10-28
@@ -135,7 +135,7 @@ Two AI browser captures at 1920×1080, converted from actual JPEG to quality-85 
 - `chronological-first-spiral.webp` — early intro cascade with BABUNI.DEV, Ethera and Morkahja leading. Scaled/incomplete tiles are the existing reveal animation.
 - `chronological-grid-after-shifts.webp` — fully revealed field after normal autonomous shifts; this later frame is not the pristine initial order.
 
-This was a verification of the **earlier chronological ordering**, superseded on 2026-10-30 by the creative's decision to shuffle other projects once per visit while keeping BABUNI.DEV first. The initial DOM in this historical capture contained 45 visible identities and the first nine spiral cells exactly matched the then-generated chronological IDs. Project menu categories remained intact; selecting Babuni Admin opened its eight-preview bloom with the correct public documentation link. A failed first DOM read used an unavailable parseFloat helper; a clean reload/read succeeded. No screenshot was saved from that failed read. These checks are not extended physical-device acceptance.
+This was a verification of the **earlier chronological ordering**, superseded on 2026-10-30 by my decision to shuffle other projects once per visit while keeping BABUNI.DEV first. The initial DOM in this historical capture contained 45 visible identities and the first nine spiral cells exactly matched the then-generated chronological IDs. Project menu categories remained intact; selecting Babuni Admin opened its eight-preview bloom with the correct public documentation link. A failed first DOM read used an unavailable parseFloat helper; a clean reload/read succeeded. No screenshot was saved from that failed read. These checks are not extended physical-device acceptance.
 
 
 ## 2026-10-29 — Search-readable pages and on-demand modules
