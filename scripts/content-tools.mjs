@@ -30,16 +30,16 @@ export function validateContent(catalog, {projects=demoProjects, root=resolve(fi
     entries.forEach((entry,index)=>{
       const at=`${project}[${index}]`, before=errors.length;
       if(!object(entry)){fail(at,'expected module object');return;}
-      keys(entry,['id','type','title','preview','body','document','images','video','videos','links','source','credit'],at);
+      keys(entry,['id','type','title','preview','body','document','images','video','videos','links','qr','source','credit'],at);
       for(const field of ['id','title'])if(!string(entry[field]))fail(`${at}.${field}`,'required nonempty text');
       if(string(entry.id)&&!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.id))fail(`${at}.id`,'use lowercase words separated by hyphens');
       if(ids.has(entry.id))fail(`${at}.id`,'duplicate module ID');ids.add(entry.id);
       if(typeof entry.preview!=='string')fail(`${at}.preview`,'required text (may be empty for an empty module)');
       if(entry.source!==undefined&&!http(entry.source))fail(`${at}.source`,'expected HTTP(S) source URL');
       if(entry.credit!==undefined&&!string(entry.credit))fail(`${at}.credit`,'expected nonempty credit');
-      const fields={text:['body','document'],gallery:['images'],video:['video','videos'],resources:['links']}[entry.type];
+      const fields={text:['body','document'],gallery:['images'],video:['video','videos'],resources:['links','qr']}[entry.type];
       if(!fields){fail(`${at}.type`,'expected text, gallery, video or resources');return;}
-      for(const field of ['body','document','images','video','videos','links'])if(entry[field]!==undefined&&!fields.includes(field))fail(`${at}.${field}`,'field does not belong to this module type');
+      for(const field of ['body','document','images','video','videos','links','qr'])if(entry[field]!==undefined&&!fields.includes(field))fail(`${at}.${field}`,'field does not belong to this module type');
       if(entry.type==='text'){
         if(entry.body!==undefined&&typeof entry.body!=='string')fail(`${at}.body`,'expected text');
         if(entry.document!==undefined){
@@ -55,6 +55,7 @@ export function validateContent(catalog, {projects=demoProjects, root=resolve(fi
       };
       records('images',['src','alt','caption'],(image,loc)=>{asset(image.src,`${loc}.src`);if(!string(image.alt))fail(`${loc}.alt`,'required descriptive alternative text');if(image.caption!==undefined&&!string(image.caption))fail(`${loc}.caption`,'expected nonempty text');});
       records('links',['label','href'],(link,loc)=>{if(!string(link.label))fail(`${loc}.label`,'required link label');if(!http(link.href))fail(`${loc}.href`,'expected HTTP(S) URL');});
+      if(entry.qr!==undefined){if(!object(entry.qr))fail(`${at}.qr`,'expected image object');else{keys(entry.qr,['src','alt','caption'],`${at}.qr`);asset(entry.qr.src,`${at}.qr.src`);if(!string(entry.qr.alt))fail(`${at}.qr.alt`,'required descriptive alternative text');if(!entry.links?.length)fail(`${at}.qr`,'a QR code needs a link to open');}}
       const video=(record,loc)=>{
         keys(record,['src','embed','poster','title'],loc);
         if(!string(record.title))fail(`${loc}.title`,'required video title');

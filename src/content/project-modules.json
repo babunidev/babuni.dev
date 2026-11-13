@@ -381,6 +381,23 @@
   ],
   "button-game": [
     {
+      "id": "play-live",
+      "type": "resources",
+      "title": "Play Button Game",
+      "preview": "Play the live game in your browser, or scan the code to play on your phone.",
+      "links": [
+        {
+          "label": "Play Button Game",
+          "href": "https://babuni.dev/Buttongame/"
+        }
+      ],
+      "qr": {
+        "src": "/media/button-game/images/buttongame-qr.webp",
+        "alt": "QR code to play Button Game at babuni.dev/Buttongame",
+        "caption": "Scan with your phone to join the live game and the top-100 high score list."
+      }
+    },
+    {
       "id": "overview",
       "type": "text",
       "title": "Button Game",

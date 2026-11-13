@@ -97,6 +97,14 @@ const structured={'@context':'https://schema.org','@graph':[
   .bloom-media img{width:100%;height:100%;object-fit:contain}
   .bloom-action{font:500 11px/1.3 system-ui,sans-serif;color:#e8d3b0;cursor:pointer;display:block;pointer-events:auto;background:#282730;border:1px solid #726858;padding:4px 6px;text-decoration:none}
   .bloom-action:focus-visible{outline:2px solid #e3c99b;outline-offset:2px}
+  .bloom-action:has(+ .module-qr){width:max-content;max-width:100%;margin:8px auto 0;padding:9px 20px;border-radius:999px;border:0;background:#2ec4c4;color:#041013;font-weight:700;font-size:14px}
+  .bloom-action:has(+ .module-qr):hover{background:#5fe0e0}
+  .module-qr{display:block;width:max-content;margin:10px auto 6px;pointer-events:auto}
+  .module-qr img{display:block;width:150px;height:150px;max-width:none;padding:8px;border-radius:10px;background:#fff}
+  .module-qr-hint{text-align:center}
+  /* In blooms the project tile covers the selected card's lower-left quarter, so keep the code clear of it. */
+  .bloom-preview-content .module-qr,.bloom-preview-content .bloom-action:has(+ .module-qr){margin-right:0}
+  .bloom-preview-content .module-qr-hint{text-align:right;margin-left:auto;max-width:50%}
   .grid-bloom-module .bloom-summary{flex-shrink:0}
   @media(max-width:520px){.grid-bloom-module{padding:9px;gap:6px}.bloom-kicker{font-size:8px}.bloom-title{font-size:15px}.bloom-summary{font-size:13px}.bloom-close{font-size:10px;padding:3px 7px}}
 

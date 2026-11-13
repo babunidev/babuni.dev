@@ -1,6 +1,7 @@
 import {installReaderScroll} from './reader-scroll';
 import {shrinkReader} from './reader-transition';
 import {attachReaderHeader} from './site-navigation';
+import {appendModuleQr} from './module-qr.ts';
 import {videosForModule,type ProjectModule} from '../lib/project-modules';
 import {renderVideo} from './module-preview';
 import {renderDocument} from './document-reader';
@@ -45,6 +46,7 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
     }
     if(module.type==='video')for(const video of videosForModule(module))content.append(renderVideo(video));
     if(module.type==='resources')for(const item of module.links??[]){const link=document.createElement('a');link.href=item.href;link.textContent=item.label;link.className='bloom-action';link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
+    if(module.type==='resources')appendModuleQr(content,module);
     if(module.source&&module.type!=='document-list'){const source=document.createElement('a');source.href=module.source;source.textContent='View source';source.target='_blank';source.rel='noopener noreferrer';content.append(source);}
     if(module.credit){const credit=document.createElement('p');credit.className='module-credit';credit.textContent=module.credit;content.append(credit);}
     function backToBloom(){

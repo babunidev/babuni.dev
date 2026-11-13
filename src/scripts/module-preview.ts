@@ -1,5 +1,6 @@
 import {renderDocument} from './document-reader.ts';
 import {moduleIntro} from '../lib/big-bloom.ts';
+import {appendModuleQr} from './module-qr.ts';
 import {safeEmbedUrl,videosForModule,type ModuleVideo,type ProjectModule} from '../lib/project-modules.ts';
 /** Embedded players show their preview immediately; playback remains user initiated. */
 export function renderVideo(video:ModuleVideo):HTMLElement {
@@ -77,6 +78,8 @@ export function renderModulePreview(module:ProjectModule,projectName:string,onRe
     const link=document.createElement('a');link.className='bloom-action';link.textContent=item.label;
     link.href=item.href;link.target='_blank';link.rel='noopener noreferrer';content.append(link);
   }
+  // A small-bloom card is one tile, too small for a scannable code; the big bloom and reader show it.
+  if(module.type==='resources'&&depth==='big')appendModuleQr(content,module);
   if(depth==='big'&&module.credit){const credit=document.createElement('p');credit.className='bloom-preview-credit';credit.textContent=module.credit;content.append(credit);}
   if(onReadMore){
     const read=document.createElement('button');read.type='button';read.className='bloom-action bloom-read-more';

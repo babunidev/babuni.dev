@@ -10,6 +10,8 @@ export interface ProjectModule {
   video?:ModuleVideo;
   videos?:ModuleVideo[];
   links?:ModuleLink[];
+  /** Resources only: a scannable code opening the first link. */
+  qr?:ModuleImage;
   documents?:ModuleDocument[];
   source?:string;credit?:string;
 }
