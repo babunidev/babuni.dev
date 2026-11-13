@@ -14,7 +14,7 @@ This document sets the publication and evidence rules. [AGENTS.md](../AGENTS.md)
 
 Public-facing development history is written **from the human creative's first-person perspective**, in natural, varied prose. Use “I” and “my” within sentences, but **never begin a sentence with “I” or “My.”** Refer to a person who conceives or makes work as a **creative**, not a **creator**.
 
-Write about the motivation, the choice, the collaboration, and the result. Avoid promotional language, repetitive labels, and exhaustive accounts of routine commands. Technical specifications, changelogs, and evidence registers can use a neutral reference voice where that is clearer.
+Write about the motivation, the choice, the collaboration, and the result. Avoid promotional language, repetitive labels, and exhaustive accounts of routine commands. Keep changelogs factual and technical details direct.
 
 First-person narration does **not** mean claiming personal execution of AI work. Write plainly when AI drafted a document, changed code, generated a visualization, or ran a test. Likewise, an AI suggestion cannot become the creative's idea or approved decision without evidence.
 
