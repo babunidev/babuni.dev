@@ -6,6 +6,11 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Living-grid deep links and a Play Morkahja link (2026-11-13)
+- The homepage now opens a project from its address: `/#project=<id>` opens the small bloom, `&bloom=big` the big bloom, and `&read=<module>` the big bloom plus that module's reader (`read` implies `bloom=big`). Example: `https://www.babuni.dev/#project=morkahja-rpg&bloom=big&read=changes`. Module ids match `/projects/<id>/<module>/`. The link starts after the intro and follows the same queued selection path as a click, so a running shift finishes at its normal tempo. Closing the reader or the bloom removes the hash with `history.replaceState`; an unknown project or module leaves the grid as usual. Parser in `src/lib/grid-deep-link.ts`, wiring in `src/scripts/grid.ts`, tests in `tests/grid-deep-link.test.mjs`. Opening a project by hand does not write a hash.
+- Morkahja has a curated `play` resources module, “Play Morkahja” (`https://www.babuni.dev/Morkahja/`), shown in its blooms. A project page with a `play` module shows its first link as a labelled button.
+- Verification: `npm run test:grid` (210 passed) and `npx astro build` passed. An AI headless-Chrome check against `astro preview` opened the Morkahja big bloom at 4.4 s and the Changelog reader at 6.5 s, cleared the hash after the reader closed, ignored an unknown project, and found the Play button on `/projects/morkahja-rpg/`. Not deployed; no phone test.
+
 ### Changed — Reader-first documentation (2026-11-10)
 - Rewrote the shared documentation standard to prioritize human-readable introductions, distinct document purposes, preserved technical history, source-backed status claims and accurate attribution. Added a [41-repository readability review](docs/READER_EXPERIENCE_AUDIT_2026-11-10.md) and linked it from the project README; recorded the editorial session in the development journal. No application code, imported snapshot, build or deployment changed.
 

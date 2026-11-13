@@ -464,6 +464,20 @@
       "body": ""
     }
   ],
+  "morkahja-rpg": [
+    {
+      "id": "play",
+      "type": "resources",
+      "title": "Play Morkahja",
+      "preview": "Open the playable browser game in a new tab.",
+      "links": [
+        {
+          "label": "Play Morkahja",
+          "href": "https://www.babuni.dev/Morkahja/"
+        }
+      ]
+    }
+  ],
   "morkahjaworld": [
     {
       "id": "scope-clarification",

@@ -7,7 +7,7 @@ import aboutText from '../content/about.md?raw';
 import {installSiteNavigation} from './site-navigation';
 import {installInteractionFeedback} from './interaction-feedback';
 import {projectModuleLoader} from '../lib/project-module-loader';
-import {selectModules,MODULE_OFFSETS,moduleRevealPlan} from '../lib/project-modules';
+import {selectModules,MODULE_OFFSETS,moduleRevealPlan,moduleHasContent} from '../lib/project-modules';
 import {renderModulePreview} from './module-preview';
 import {createModuleDetails} from './module-detail';
 import {bigBloomLayout,bigBloomVacancies,bigModuleCell,bigBloomRevealPlan} from '../lib/big-bloom';
@@ -15,6 +15,7 @@ import {restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
 import { gridWindow, logicalCell, positiveModulo, tileSizeForWidth, resizedPan } from '../lib/grid-math';
 import { easeInOut, SHIFT_DURATION_MS, planShiftRound, sourceCell, type ShiftEvent } from '../lib/grid-shifts';
 import {settledResidents} from '../lib/shift-settlement';
+import {parseGridDeepLink,type GridDeepLink} from '../lib/grid-deep-link';
 import { createManualPanState, panIsMoving, queuePointerTravel, stepManualPan } from '../lib/grid-controls';
 import { ProjectPlacement, spiralIndex, visibleCellBounds, type CellCoordinate } from '../lib/project-placement';
 import {gridProjects as demoProjects,recentlyUpdatedIds} from '../lib/grid-projects';
@@ -101,6 +102,20 @@ if (viewport && world && status) {
   function projectName(){return demoProjects.find(project=>project.id===selectedChoice?.projectId)?.name??'project';}
   function explorationStatus(){return selectedChoice?`Exploring ${projectName()} · ${bigBloomOpen?'big':'small'} bloom`:'Living grid';}
   let readerActivity:string|null=null;
+  // A homepage hash (#project=…&bloom=big&read=…) replays the visitor's own
+  // steps: select the tile, open its bloom, then open the reader. It uses the
+  // same queued paths as a click, so active shifts keep their normal tempo.
+  let deepLink:GridDeepLink|null=null;
+  // True once a link hash has been adopted, until the visitor closes what it
+  // opened; startup housekeeping must not erase a hash that is still unread.
+  let deepLinkInUrl=false;
+  function clearDeepLink():void {
+    deepLink=null;
+    if(!deepLinkInUrl)return;
+    deepLinkInUrl=false;
+    if(!parseGridDeepLink(location.hash))return;
+    try{window.history.replaceState(window.history.state,'',location.pathname+location.search);}catch{}
+  }
   function activity(message:string){
     if(!heading)return;
     const status=headerActivity(readerActivity??message);
@@ -111,11 +126,11 @@ if (viewport && world && status) {
     readerActivity=open?(title==='About BABUNI.DEV'?'About BABUNI.DEV':`Reading ${projectName()} · ${title}`):null;
     activity(explorationStatus());
     if(open){pauseBloomMedia();manualPan=createManualPanState();pauseMovement();}
-    else{surface.scrollTop=0;surface.scrollLeft=0;resumeMovement();if(!moving)nextRound(restWait);}
+    else{clearDeepLink();surface.scrollTop=0;surface.scrollLeft=0;resumeMovement();if(!moving)nextRound(restWait);}
   });
 
   let directNavigationTimer:ReturnType<typeof setTimeout>|null=null;
-  installSiteNavigation(id=>{
+  function openProject(id:string):void {
     details.close();
     if(directNavigationTimer!==null)clearTimeout(directNavigationTimer);
     const index=demoProjects.findIndex(project=>project.id===id);
@@ -126,7 +141,7 @@ if (viewport && world && status) {
         activity(`${moving?'Waiting for shift to finish':'Switching projects'} · ${demoProjects[index].name}`);
         directNavigationTimer=setTimeout(navigate,100);return;
       }
-      if(selectedChoice||bloomModule){stopSelection();directNavigationTimer=setTimeout(navigate,100);return;}
+      if(selectedChoice||bloomModule){const link=deepLink;stopSelection();deepLink=link;directNavigationTimer=setTimeout(navigate,100);return;}
       let slot=slots.find(slot=>slot.projectIndex===index);
       if(!slot){
         slot=slots.find(slot=>slot.element.getAttribute('aria-hidden')==='true');
@@ -139,7 +154,50 @@ if (viewport && world && status) {
       beginSelection({source:sourceAtCell(slot.column,slot.row),projectId:id});
     };
     navigate();
-  },trigger=>{
+  }
+  /** Start a deep link once the first grid has rendered and its intro has
+   * played. Unknown projects simply leave the grid as it is. */
+  function applyDeepLink():void {
+    const link=parseGridDeepLink(location.hash);
+    if(!link)return;
+    deepLinkInUrl=true;
+    if(!demoProjects.some(project=>project.id===link.project)){clearDeepLink();return;}
+    deepLink=link;
+    let waited=0;
+    const start=()=>{
+      if(deepLink!==link)return;
+      if((introPending>0||!slots.length)&&waited<4000){waited+=100;setTimeout(start,100);return;}
+      openProject(link.project);
+    };
+    start();
+  }
+  /** Small bloom has opened for the linked project: deepen it if asked. */
+  function continueDeepLink(projectId:string):void {
+    const link=deepLink;
+    if(!link||link.project!==projectId)return;
+    if(link.bloom!=='big'){deepLink=null;return;}
+    const modules=projectModuleLoader.get(projectId)??[];
+    const read=link.read&&modules.some(module=>module.id===link.read&&moduleHasContent(module))?link.read:null;
+    const target=read??bloomModules[0]?.dataset.moduleId;
+    if(!target){deepLink=null;return;}
+    deepLink={...link,read};
+    requestBigBloom(target);
+  }
+  /** Big bloom has settled: open the linked module's reader from its card. */
+  function finishDeepLink(projectId:string):void {
+    const link=deepLink;
+    if(!link||link.project!==projectId)return;
+    deepLink=null;
+    const card=bloomModules[0],entry=bigLayout[0];
+    if(!link.read||!card||entry?.module.id!==link.read)return;
+    const open=()=>{
+      if(!bigBloomOpen||bloomModules[0]!==card||details.isOpen())return;
+      details.open(entry.module,card.querySelector<HTMLButtonElement>('.bloom-read-more')!);
+    };
+    // Let the selected card finish growing into place before the reader opens.
+    if(prefersReduced.matches)open();else setTimeout(open,INTRO_SPAWN_DURATION_MS);
+  }
+  installSiteNavigation(openProject,trigger=>{
     if(directNavigationTimer!==null){clearTimeout(directNavigationTimer);directNavigationTimer=null;}
     details.open({id:'about',type:'text',title:'About BABUNI.DEV',preview:'',
       body:aboutText,
@@ -390,7 +448,7 @@ if (viewport && world && status) {
     }
   }
   function rebuildPool(preserveBloom=false,force=false):void {
-    preserveBloom=preserveBloom||bigBloomOpen||!!selectedChoice||!!pendingChoice;
+    preserveBloom=preserveBloom||bigBloomOpen||!!selectedChoice||!!pendingChoice||!!deepLink;
     const rect=surface.getBoundingClientRect();
     if(!rect.width||!rect.height) return;
     // ResizeObserver repeats the initial size; never rebuild/replay for that.
@@ -673,6 +731,7 @@ if (viewport && world && status) {
    * immediately while the old right-hand tiles slide home.
    */
   function stopSelection(animateReturn=true,nextChoice:ProjectChoice|null=null):void {
+    clearDeepLink();
     pendingBigBloom=null;clearDepthFeedback();surface.classList.remove('is-big-bloom-waiting');
     const wasActive=!!selectedChoice||!!centering||!!bloomModule||!!pendingChoice;
     const hadBloom=!!bloomModule;
@@ -799,6 +858,7 @@ if (viewport && world && status) {
       liveStatus.textContent=project.name+': '+modules.length+' preview modules opened.';
       for(const slot of slots)slot.element.style.removeProperty('transition');
       if(moving)resumeMovement();else nextRound(1500);
+      continueDeepLink(project.id);
     },prefersReduced.matches?0:BLOOM_SHIFT_DURATION_MS);
   }
 
@@ -895,6 +955,7 @@ if (viewport && world && status) {
         else if(activePointer===null)surface.focus({preventScroll:true});
         activity(`Exploring ${project.name} · big bloom`);
         liveStatus.textContent=project.name+': '+bloomModules.length+' large modules in the living grid.';
+        finishDeepLink(project.id);
       });
     },bloomModules.find(panel=>panel.dataset.moduleId===moduleId)?.querySelector<HTMLElement>('.bloom-read-more')??null);
   }
@@ -966,7 +1027,7 @@ if (viewport && world && status) {
     }
     const chosen=locate(choice);
     if(!chosen){
-      pendingChoice=null;highlightSelection();
+      pendingChoice=null;highlightSelection();clearDeepLink();
       liveStatus.textContent='That project has moved out of reach. Please select it again.';
       return;
     }
@@ -1210,4 +1271,6 @@ if (viewport && world && status) {
   scheduleAmbient(AMBIENT_INTERVAL_MS);
   new ResizeObserver(()=>rebuildPool()).observe(surface);
   rebuildPool();
+  applyDeepLink();
+  window.addEventListener('hashchange',applyDeepLink);
 }

@@ -936,3 +936,16 @@ Babuni.dev requested an accurate remaining-work list and assessment of Babuni.ad
 **Decision:** Map the stable project ID to `babunidev/ROARguild` on `main`. Import the overview, concept, journal, changelog, decisions, roadmap, charter, community principles, activities, governance, Sunday road-bonfire concept, and Oracle design. Keep `roarguild` mapped to `babunidev/RoarGuildAddon`.
 
 **Boundary:** This is a pinned documentation connection, not a live mirror, not an addon-source import, and not evidence that the Oracle or guild activities are implemented. Local testing and creative review remain pending.
+
+## 2026-11-13 — Deep links into the living grid use a homepage hash
+
+**Status:** Implemented, not deployed. **Requested by:** Morkahja's patch notes (“Full changelog” link), which needed to open the Morkahja changelog inside the living grid rather than on the separate reading page.
+
+**Choice:** A fragment on the homepage, `#project=<id>&bloom=small|big&read=<module>`. The request proposed this shape; the AI kept its parameter names and made `read` imply `bloom=big`, because the reader opens from a big-bloom card.
+
+**Alternatives:** New static routes per project/module (more pages, duplicate entry points); query parameters (sent to the server and cached separately, with no benefit for a static site).
+
+**Rationale:** Works on the static host without new pages, reuses the click path so approved timing is unchanged, and fails quietly to the ordinary grid.
+
+**Open:** Writing the hash when a visitor opens a project by hand (making any open project shareable) was proposed but not implemented, because it changes established behavior and needs Babuni's decision.
+
