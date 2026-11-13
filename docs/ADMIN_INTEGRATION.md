@@ -36,7 +36,7 @@ node --experimental-strip-types scripts/pull-repository.mjs <name | owner/name .
   - Or `same      <owner/name>`, optionally with `(head moved …, documents identical)`.
 - **Final line:** `No document changes.`, `<n> repository(ies) have document changes. Add --write …` or `Snapshot updated for <n> repository(ies). …`
 - **Errors:** exit code `1`, with a one-line message on stderr.
-- **Recommendation:** show `REMOVED` documents prominently and ask for confirmation before `--write`. A removal takes the page off the website. On 2026-11-10, Babuni confirmed upstream that a removed AmberbrewStory chapter was intentional.
+- **Recommendation:** show `REMOVED` documents prominently and ask for confirmation before `--write`. A removal takes the page off the website. On 2026-11-10, I confirmed upstream that a removed AmberbrewStory chapter was intentional.
 - **Runtime:** a full `--all` check takes roughly a minute or two.
 
 ### Between pull and publish: commit and push
@@ -88,7 +88,7 @@ scripts/publish-site.sh --apply    # publish
 
 ## Current code review — 2026-11-04
 
-**Request:** Babuni asked for an actual analysis of both repositories so the local administration application can manage the portfolio. The earlier review of documentation and a placeholder page did not establish an operational connection. This review follows the implemented routing, capability registry, profile schema and website generation/loading code instead.
+**Request:** At the time, I asked for an actual analysis of both repositories so the local administration application can manage the portfolio. The earlier review of documentation and a placeholder page did not establish an operational connection. This review follows the implemented routing, capability registry, profile schema and website generation/loading code instead.
 
 **Baselines:** babuni.admin main commit was verified as `17f8f5e44afdf514829282d507afea2b7eddb629` through the commits endpoint after an earlier tree response exposed an older baseline; website parent is `d12fe74`. Remote files were read at the pinned admin revision. This is code inspection, not an execution of the admin app, a complete security audit or a live connection test. No upstream snapshots, admin code, credentials or server state were modified.
 

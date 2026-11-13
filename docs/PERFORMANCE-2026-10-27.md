@@ -2,7 +2,7 @@
 
 > **Historical performance investigation (27 October 2026).** All numbers below are local samples or synthetic benchmarks from that date. They are not production FPS, a controlled speedup measurement, or a diagnosis of any current browser issue. The report's open checks and bundle warning describe the original investigation. For later optimization and release work see [28 October performance report](PERFORMANCE-2026-10-28.md), [release-readiness audit](RELEASE_READINESS-2026-10-29.md), and [deployment notes](../deploy/README.md).
 
-**Human evidence:** Babuni.dev reports desktop motion sometimes hangs/looks less fluent. A click momentarily stops an existing shift. User requested gradual drag braking.
+**Human evidence:** At the time, I reported desktop motion sometimes hangs/looks less fluent. A click momentarily stops an existing shift. User requested gradual drag braking.
 
 ## Confirmed mechanisms and changes
 
@@ -22,7 +22,7 @@ A synthetic coordinate benchmark used 200 historical shifts, 120 coordinates and
 
 ## Follow-up
 
-- Recheck held click during a moving line, long drag/release and a project switch after several minutes on Babuni.dev’s desktop.
+- Recheck held click during a moving line, long drag/release and a project switch after several minutes on my desktop.
 - Recheck small and big bloom displacement while vertical lines move; caches must not change occupancy.
 - If unevenness persists, capture a performance trace in the affected desktop browser to distinguish scripting/layout, raster/compositing, image decoding and display pacing. No GPU bottleneck has been proven by this work.
 - Build still reports the existing large JavaScript chunk warning. No complete load-time/memory/GPU audit or new physical-phone test is claimed.
@@ -37,7 +37,7 @@ Saved samples: [before](performance/grid-profile-before.json) and [after](perfor
 
 ## Retained source cache — 2026-10-27 follow-up
 
-Babuni.dev reports that a long-open tab becomes less smooth when dragging, while Firefox feels better than Chrome. No heap leak has been proven. The bounded tile pool and pruned placement assignments are separate from the append-only shift history. Previously every settlement cleared the coordinate cache, so rebuilding sources replayed increasing history.
+At the time, I reported that a long-open tab becomes less smooth when dragging, while Firefox feels better than Chrome. No heap leak has been proven. The bounded tile pool and pruned placement assignments are separate from the append-only shift history. Previously every settlement cleared the coordinate cache, so rebuilding sources replayed increasing history.
 
 The new cache retains up to 2,048 coordinate sources and advances them through appended moves; individual LRU eviction avoids whole-cache flushes. Unseen coordinates still replay full history, and the history itself is not bounded by this change. The vacancy-free source fast path avoids unnecessary occupied/resting allocations. All approved timings and scroll behavior stay unchanged.
 

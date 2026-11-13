@@ -28,7 +28,7 @@ These paths referred to the original temporary preparation workspace, not folder
 
 AI inspected each private project's README and CONCEPT on 2026-10-28 and adapted a deliberately limited public summary into ten standard documents. It did not mirror private docs, Git history, runtime code, assets, configuration, operator/player records or raw conversations. Runtime, release and security results remain source-reported rather than independently verified. MorkahjaWorld remains a reserved project; arcanitebrothers is the local Morkahja Admin tool. Music contributor credit is retained for Morkahja without distributing music.
 
-The documents preserve Babuni.dev's authorship and direction and label AI editorial work. This is a starting public edition, not a full recovery of private development history or a canonical world archive. More material can be explicitly reviewed later.
+The documents preserve my authorship and direction and label AI editorial work. This is a starting public edition, not a full recovery of private development history or a canonical world archive. More material can be explicitly reviewed later.
 
 ## Initial verification and publication blocker — historical
 
@@ -54,15 +54,15 @@ The importer fetched all forty documents anonymously. Existing external snapshot
 
 ## Naming correction — 2026-10-29 (historical)
 
-Babuni.dev renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
+At the time, I renamed the project formerly listed as Arcanitebrothers to **Babuni Admin**. Stable website ID and Morkahja group membership remain unchanged. Its separate public documentation edition keeps the earlier repository name for now; implementation remains private. Earlier tables and narrative are historical.
 
 
 ## Documentation-only Admin destination — 2026-10-29 (superseded)
 
-Babuni.dev renamed the public edition to `babunidev/babuni.admin-docs`. The website mapping and ten-document snapshot now use that canonical name, anonymously verified public. Earlier tables describe the original preparation/history; source bodies and pinned revision remain unchanged.
+At the time, I renamed the public edition to `babunidev/babuni.admin-docs`. The website mapping and ten-document snapshot now use that canonical name, anonymously verified public. Earlier tables describe the original preparation/history; source bodies and pinned revision remain unchanged.
 
 ## Subsequent public-source decision — 2026-10-31
 
-The creative later chose to make the actual **Morkahja**, **MorkahjaWorld**, and **babuni.admin** project repositories public. Their repository visibility was anonymously verified before the portfolio's standard Markdown documentation mappings were updated. These changes replaced the corresponding documentation-only source editions without changing their stable portfolio project identities. The earlier privacy boundary was a deliberate decision at the time, not an assertion that those three implementations remain private today.
+At the time, I later chose to make the actual **Morkahja**, **MorkahjaWorld**, and **babuni.admin** project repositories public. Their repository visibility was anonymously verified before the portfolio's standard Markdown documentation mappings were updated. These changes replaced the corresponding documentation-only source editions without changing their stable portfolio project identities. The earlier privacy boundary was a deliberate decision at the time, not an assertion that those three implementations remain private today.
 
 **Remaining boundary:** Ethera still uses `Ethera-docs`, and its implementation has not been made public through this mapping. Public availability of a repository does not grant blanket permission to redistribute assets or prove the project is complete, tested, or deployed. Any further publication or source refresh must be explicitly authorized and reviewed; see [Module authoring](MODULE_AUTHORING.md).

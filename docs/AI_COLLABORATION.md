@@ -6,7 +6,7 @@ Follow [the documentation standard](DOCUMENTATION.md) for first-person author vo
 
 babuni.dev is both a creative portfolio and a record of how the work came into being. The human creative, **Babuni**, originates and directs the vision, makes decisions, corrects interpretations, and assesses results. AI may research, propose, write, design, implement, and test under that direction. Neither contribution should be hidden or misattributed.
 
-The living stone grid is an example. Its toy-box premise, shifting plates, portal information points, endless field, and physically reserved bloom cells emerged through the creative's direction and corrections. Describing it simply as “AI built a portfolio” would obscure the work that shaped it.
+The living stone grid is an example. Its toy-box premise, shifting plates, portal information points, endless field, and physically reserved bloom cells emerged through my direction and corrections. Describing it simply as “AI built a portfolio” would obscure the work that shaped it.
 
 This document sets the publication and evidence rules. [AGENTS.md](../AGENTS.md) governs development practice, while [DEVLOG.md](DEVLOG.md) tells the story.
 
@@ -22,7 +22,7 @@ First-person narration does **not** mean claiming personal execution of AI work.
 
 1. **Creative direction:** The creative's original idea, goal, constraint, question, observation, or correction.
 2. **AI contribution:** A suggestion, interpretation, research finding, draft, design, code change, or action performed by AI.
-3. **Decision and iteration:** What the creative accepted, rejected, refined, or deferred, including consequential alternatives and misunderstandings.
+3. **Decision and iteration:** What I accepted, rejected, refined, or deferred, including consequential alternatives and misunderstandings.
 4. **Implementation:** What actually changed, with file, issue, PR, or commit references where available.
 5. **Verification:** What was tested or observed, by whom and how, and what remains uncertain.
 

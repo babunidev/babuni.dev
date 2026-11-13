@@ -20,7 +20,7 @@ The persistent navigation provides direct access to projects, galleries, and the
 
 ## Project status
 
-The interactive prototype and its core exploration stages have been implemented. On **29 October 2026**, the creative accepted milestones 1–4 after physical-device and long-session testing. At that checkpoint, the catalog contained **42 retained projects**, with WebP portal artwork assigned to each, and **35 connected public repository sources**. The broader candidate inventory is not the same as the approved public catalog.
+The interactive prototype and its core exploration stages have been implemented. On **29 October 2026**, I accepted milestones 1–4 after physical-device and long-session testing. At that checkpoint, the catalog contained **42 retained projects**, with WebP portal artwork assigned to each, and **35 connected public repository sources**. The broader candidate inventory is not the same as the approved public catalog.
 
 A subsequent change on **30 October 2026** retained BABUNI.DEV as the initial tile and shuffled the other projects once per visit. Recently updated projects receive a gold label and portal-ring indicator, based on a provisional activity rule. These changes are recorded in the source and changelog; their browser behavior was not separately verified in that change record.
 
