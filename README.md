@@ -99,4 +99,4 @@ Explore before explaining. Keep the playful interactions intact without sacrific
 
 ## License
 
-No software license has been selected. Public access to the repository does not, by itself, grant permission to reuse its source code.
+Original website software is licensed under [MIT](LICENSE). Logos, original artwork, and other showcased creative content are not automatically included; see [asset rights](ASSET_RIGHTS.md).
