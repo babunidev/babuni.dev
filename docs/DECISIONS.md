@@ -949,3 +949,6 @@ Babuni.dev requested an accurate remaining-work list and assessment of Babuni.ad
 
 **Open:** Writing the hash when a visitor opens a project by hand (making any open project shareable) was proposed but not implemented, because it changes established behavior and needs Babuni's decision.
 
+## 2026-11-13 — Licensing decision
+
+To make the reuse terms explicit, I approved MIT for original website software; logos, branding and featured creative assets retain separate rights. This applies only to material for which the relevant rights can be granted; third-party contributors keep their own credits and licenses. AI assistance committed the license notice and updated project-facing documentation. This was a legal/documentation change, not a runtime feature or test.
