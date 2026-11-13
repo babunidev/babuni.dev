@@ -1,5 +1,7 @@
 # Human–AI Collaboration and Provenance
 
+Follow [the documentation standard](DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution.
+
 ## Purpose
 
 babuni.dev is both a creative portfolio and a record of how the work came into being. The human creative, **Babuni**, originates and directs the vision, makes decisions, corrects interpretations, and assesses results. AI may research, propose, write, design, implement, and test under that direction. Neither contribution should be hidden or misattributed.

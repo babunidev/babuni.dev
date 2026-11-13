@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Documentation voice and AI attribution (2026-11-13)
+
+- Require first-person author narration in project documentation, factual changelog entries, and attribution by AI tool and verified model.
+
 ### Added — Share button on big-bloom cards (2026-11-13)
 - Every big-bloom card has a round share control (share symbol) in its top-right corner. It builds that module's deep link (`/#project=<id>&bloom=big&read=<module>`); on touch devices with a system share sheet it opens the sheet, elsewhere it copies the link to the clipboard and briefly glows with a “Link copied” status (falls back to a copy prompt if the clipboard is unavailable). Clicking it does not open the reader. Code in `src/scripts/module-share.ts`, wired in `src/scripts/grid.ts`, styled in `src/pages/index.astro`; test added to `tests/grid-deep-link.test.mjs`. Like Read more, the button is not a keyboard tab stop in the spatial grid.
 - Verification: `npm run test:grid` (211 passed). An AI headless-Chromium check against `astro dev` found 13 share buttons in the BABUNI.DEV big bloom; clicking the selected card's button copied `/#project=babuni-dev&bloom=big&read=videos` and left the reader closed. Not deployed; no phone test.

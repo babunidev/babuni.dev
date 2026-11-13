@@ -19,7 +19,7 @@ For each substantial change, preserve this causal sequence:
 
 See docs/AI_COLLABORATION.md for attribution, provenance, privacy rules, and publication style.
 
-**Public narrative style:** Write development stories from the human creative's first-person perspective. Never start a sentence with “I” or “My”; integrate those pronouns naturally into varied sentences. Use “creative” instead of “creator” for the maker of a work. Explain AI proposals and actions as AI work, not as code or testing personally performed by the creative. Keep journal entries brief and readable, separate proposals from implemented and verified work, and preserve the significance of corrections and abandoned approaches. Use neutral technical prose in specifications where it reads better.
+**Public narrative style:** Write development stories from the human creative's first-person perspective. Never start a sentence with “I” or “My”; integrate those pronouns naturally into varied sentences. Use “creative” instead of “creator” for the maker of a work. Explain AI proposals and actions as AI work, not as code or testing personally performed by the creative. Keep journal entries brief and readable, separate proposals from implemented and verified work, and preserve the significance of corrections and abandoned approaches.
 
 ## Every meaningful change must update documentation
 
@@ -38,7 +38,7 @@ Only write claims based on material actually available to the agent: this conver
 
 Do not automatically publish raw private chats, identity details, tokens, keys, VPS credentials, unrelated personal or financial information, or third-party material. Public-facing development history should paraphrase relevant project directions, preserve meaningful attribution, and omit irrelevant personal content. Public release of verbatim quotes or sensitive materials requires explicit approval.
 
-Use labels **Babuni requested**, **AI proposed**, **Babuni decided**, **Implemented**, **Tested**, and **Open** where appropriate. Never fabricate a test, outcome, conversation, date, feature, or acceptance.
+Describe requests and decisions in the creative’s first-person voice. Name the tool and verified model for AI proposals and retain status labels where appropriate. Never fabricate a test, outcome, conversation, date, feature, or acceptance.
 
 ## Development safeguards
 
@@ -130,4 +130,4 @@ Keep intentional interface and animation decisions under test until the creative
 
 ## Repository-local documentation standard
 
-Before writing or changing project documentation, read [docs/DOCUMENTATION.md](docs/DOCUMENTATION.md). These rules travel with this repository and do not depend on the babuni.dev ChatGPT Project. Preserve all project-specific technical, creative, canon, safety, licensing, and historical rules in this file; follow the linked standard for public first-person narrative, human–AI attribution, concise development journals, decision records, and evidence-based verification. **Babuni** is the human creative; **babuni.dev** is the website/portfolio, not the person. Preserve third-party credits and historical legal notices. References above to a dated “documentation-only audit” describe that past task, not a permanent ban on later authorized implementation.
+Follow [the documentation standard](docs/DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution. These rules travel with this repository and do not depend on the babuni.dev ChatGPT Project. Preserve all project-specific technical, creative, canon, safety, licensing, and historical rules in this file; follow the linked standard for public first-person narrative, human–AI attribution, concise development journals, decision records, and evidence-based verification. **Babuni** is the human creative; **babuni.dev** is the website/portfolio, not the person. Preserve third-party credits and historical legal notices. References above to a dated “documentation-only audit” describe that past task, not a permanent ban on later authorized implementation.
