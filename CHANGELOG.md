@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Babuni Gaming source repository (2026-11-14)
+- Babuni Gaming now reads its documents from the public `babunidev/babunigaming` repository at commit `8e2bd813`. The four standard documents present there are imported: `README.md`, `docs/DEVLOG.md`, `CHANGELOG.md` and `docs/CONTENT.md`. The existing Watch and follow and Videos modules stay. A scan of the imported documents for secrets found none.
+
 ### Added — Play Button Game module in the living grid (2026-11-13)
 - Button Game has a new `play-live` resources module, “Play Button Game”, in its blooms. The small bloom shows a “Play Button Game” button; the big bloom and the reader add the clickable QR code and the line “Scan with your phone to join the live game and the top-100 high score list.” Both open `https://babuni.dev/Buttongame/` in a new tab. The QR code is in the big bloom's right half because the project tile covers the selected card's lower-left quarter. The module page `/projects/button-game/play-live/` shows the same content.
 - Resources modules accept an optional `qr` image (`src`, `alt`, `caption`) that links to the module's first link. Validated by `npm run content:check`; type in `src/lib/project-modules.ts`, renderer in `src/scripts/module-qr.ts`, used by `module-preview.ts` and `module-detail.ts`, styles in `src/pages/index.astro`. The QR image is a lossless two-colour WebP rendered at 370 × 370 px from the supplied `buttongame-qr.svg`: `public/media/button-game/images/buttongame-qr.webp`.

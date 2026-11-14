@@ -688,6 +688,10 @@ Eldgrim imports its `character`, `lore`, `narrative`, `interaction`, `addon`, `a
 
 To add images to a folder list, put an image next to the Markdown file with the same name, for example `lore/AMBERHEARTH.png` beside `lore/AMBERHEARTH.md`, then pull the repository with `--write`.
 
+## 2026-11-14 — Babuni Gaming now comes from babunigaming
+
+At Babuni's request, AI connected the `babuni-gaming` project to the public `babunidev/babunigaming` repository at commit `8e2bd813`. The repository's description calls it the website entry for Babuni Gaming. Four standard documents are present and imported: `README.md`, `docs/DEVLOG.md`, `CHANGELOG.md` and `docs/CONTENT.md`. `docs/GAMING_AND_ADDONS.md`, `docs/CHANNELS.md` and `docs/VIDEOS.md` are outside the shared document list, so they are not imported; the existing Gaming and add-ons, Watch and follow, and Videos modules stay. AI scanned the imported documents for tokens, keys and webhook URLs and found none. The project's ID, artwork, keywords and menu place are unchanged.
+
 ## 2026-11-10 — ClearViewForever portal artwork
 
 Babuni supplied `ClearViewForever.webp` in `public/portal-content/` for the new ClearViewForever project. AI checked that it is a valid 1254×1254 WebP and mapped it to `clearviewforever`. At 515 KiB it exceeded the 150 KiB portal limit. Babuni chose a derivative: AI resized it to 1000×1000 and re-encoded it at WebP quality 75 (139 KiB). The unchanged original is kept outside the repository in `../portal-artwork-originals/`. Eldgrim and WoW Forever Talent Design Atlas still have no artwork.

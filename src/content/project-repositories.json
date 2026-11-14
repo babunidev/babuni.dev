@@ -230,8 +230,10 @@
     "note": "Public music profile supplied by Babuni.dev on 2026-10-28; no repository required to browse the linked work. No repository has been supplied."
   },
   "babuni-gaming": {
-    "status": "needs-repository",
-    "note": "Gaming/streaming project confirmed by Babuni.dev on 2026-10-28, represented by supplied YouTube, CurseForge and Instagram profiles. No dedicated repository supplied; linked content works without one."
+    "status": "connected",
+    "repository": "babunidev/babunigaming",
+    "branch": "main",
+    "note": "Public Babuni Gaming repository supplied by Babuni on 2026-11-14. Standard documents are imported; the existing channel and video modules stay."
   },
   "guildchatai": {
     "status": "connected",

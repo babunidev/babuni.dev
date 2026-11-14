@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-14 — Babuni Gaming has its repository
+
+Babuni Gaming was already on the portfolio, with its channels and videos written on the site, and no repository of its own. I found the public repository at `babunidev/babunigaming` and asked for it to be connected the same way as the other projects. AI checked that the repository is public on `main`, pointed the `babuni-gaming` project at it, and imported the four standard documents that are there. The YouTube, CurseForge and Instagram links, and the two videos, stay as they were.
+
 ## 2026-11-13 — A share button for each big-bloom module
 
 With deep links working, I wanted a way to hand them out without composing the address by hand, so I asked for a share symbol in the top-right corner of each big-bloom module. AI added a small round button that uses the phone's share sheet where one exists and otherwise copies the module's link, glowing briefly to confirm. AI tested it in a headless browser: the link copied correctly and the reader stayed closed. I have not yet tried it on my phone.

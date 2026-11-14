@@ -2110,5 +2110,29 @@
         "body": "# Azeroth Moments — Media, Captions and Publication Records\n\n**Author:** Babuni.dev\n\n## Source and derivative separation\n\nThe watch directory contains original game captures. Discord uploads those original bytes, unchanged. Instagram preparation creates intermediate JPEG images or FFmpeg-rendered MP4 videos suited to that platform. Staged outputs are temporary media needed by Instagram's official API; they are not replacements for original source files.\n\n## Media types and transformations\n\nThe [original brief](BRIEF.md) describes PNG, JPEG and WebP screenshots, validation after copy completion, SHA-256 deduplication and a publishing queue. The [adaptive addendum](BRIEF_ADDENDUM.md) requires handling freeform geometry without stretching or silent cropping and adds landscape portrait carousels. The [video addendum](VIDEO_ADDENDUM.md) covers MP4, MOV and MKV source video; Discord uploads those originals, while Instagram receives H.264/AAC MP4 derivatives. Default landscape video order: Preview, Left, Middle, Right.\n\n## Provenance and safety\n\nSource media ownership and the desired publishing aesthetic belong to Babuni.dev. Store original filename/hash, media type, relevant transformation settings, queue/run status and verified external platform IDs when available. Never include webhook credentials, OAuth tokens, staging secrets, private account logs or other unpublished media in public portfolio materials. Ambiguous API responses need reconciliation before retry to avoid accidental duplicate posts.\n\nThe source documentation describes R2/S3-compatible staging and a persistent queue. This audit did not query connected accounts, inspect active credential values, run a service or verify remote outcomes.\n"
       }
     ]
+  },
+  "babunidev/babunigaming": {
+    "repository": "babunidev/babunigaming",
+    "branch": "main",
+    "commit": "8e2bd813208c5c2d8997737192605eced33af272",
+    "syncedAt": "2026-11-14T13:34:45.799Z",
+    "documents": [
+      {
+        "path": "README.md",
+        "body": "# Babuni Gaming\n\n![Original Babuni Gaming cat artwork](assets/BabuniGaming.webp)\n\nBabuni Gaming is where I share what I play and stream. World of Warcraft is my current focus, and there's room here for other games as well.\n\nThrough YouTube and Instagram, I share recordings and moments from playing. CurseForge is where I publish my World of Warcraft add-ons.\n\n- [Gaming and add-ons](docs/GAMING_AND_ADDONS.md)\n- [Watch and follow](docs/CHANNELS.md)\n- [Videos](docs/VIDEOS.md)\n- [Development journal](docs/DEVLOG.md)\n- [Changelog](CHANGELOG.md)\n\n[Visit Babuni Gaming on the portfolio](https://www.babuni.dev/#project=babuni-gaming&bloom=big&read=overview).\n"
+      },
+      {
+        "path": "docs/DEVLOG.md",
+        "body": "# Development journal\n\n## 2026-11-14 — Giving Babuni Gaming its own source repository\n\nWith Babuni Gaming already on the portfolio, I wanted its content in its own repository so I could write updates there. OpenAI Codex (GPT-6) checked the live project and its four pages, adapted the copy into my voice, and copied the published WebP of my cat artwork. The repository now holds the project copy, channels, recordings, and update history.\n\n## 2026-10-29 — The first two published videos\n\nFor the first video I shared on the portfolio, I picked a published stream test and showcase. The second published video followed it in the same collection. Both had quiet microphone audio. The portfolio's development record credits AI with adding the videos and drafting their descriptive labels. The tool and model were not recorded.\n\n## 2026-10-28 — A home for the gaming side of my work\n\nFor Babuni Gaming, I wanted a place for streams and experiences across games, with World of Warcraft as the current focus. Some of my add-on work and Azeroth Moments belong to that story. For the portal, I supplied my original cat drawing from `Morningex1.jpg`. The portfolio's development record credits AI with drafting the original summaries and preparing the artwork for the site. The tool and model were not recorded.\n"
+      },
+      {
+        "path": "CHANGELOG.md",
+        "body": "# Changelog\n\n## 2026-11-14\n\n### Added\n\n- Added the portfolio overview, gaming and add-on context, three profile links, and two published video links to this repository.\n- Added the published Babuni Gaming WebP artwork, a development journal, and the portfolio content mapping.\n"
+      },
+      {
+        "path": "docs/CONTENT.md",
+        "body": "# Portfolio content\n\nThe source project is `babunidev/babunigaming` on `main`. The portfolio project ID is `babuni-gaming`.\n\n| Portfolio module ID | Title | Repository source |\n| --- | --- | --- |\n| `overview` | Overview | [README.md](../README.md) |\n| `gaming-and-addons` | Gaming and add-ons | [GAMING_AND_ADDONS.md](GAMING_AND_ADDONS.md) |\n| `channels` | Watch and follow | [CHANNELS.md](CHANNELS.md) |\n| `videos` | Videos | [VIDEOS.md](VIDEOS.md) |\n| `journal` | Development journal | [DEVLOG.md](DEVLOG.md) |\n| `changes` | Changelog | [CHANGELOG.md](../CHANGELOG.md) |\n\nThe first four IDs are the existing public module routes. Keep them when switching to repository content. The channel list supplies the resource labels and URLs. The ordered YouTube watch links supply the video IDs and display labels for the existing privacy-enhanced YouTube player. The labels are descriptive.\n\nUse [BabuniGaming.webp](../assets/BabuniGaming.webp) as the portal image. This is the published 512 × 512 WebP of Babuni's cat artwork. The original drawing is credited to Babuni.\n\nAdd new recordings to [Videos](VIDEOS.md) in display order. Add dated accounts of creative decisions and AI collaboration to the [development journal](DEVLOG.md). Record actual changes in the [changelog](../CHANGELOG.md).\n"
+      }
+    ]
   }
 }
