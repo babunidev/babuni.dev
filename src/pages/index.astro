@@ -191,6 +191,10 @@ const structured={'@context':'https://schema.org','@graph':[
   @media(max-width:760px){.site-header{gap:8px;padding:0 12px}.brand{font-size:14px;letter-spacing:.12em}.site-nav{gap:8px;font-size:13px}.site-nav button{padding:7px 9px}.header-note{display:block;left:12px;right:12px;top:48px;max-width:none;transform:none;font-size:10px}.site-header{align-items:flex-start;padding-top:8px}:root{--header-height:76px}}
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   .bloom-preview-content{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:8px;flex:1;scrollbar-width:none}
+  /* Small bloom cards never scroll, so a drag anywhere on the card pans the grid. */
+  .grid-bloom-module:not(.big-bloom-card),
+  .grid-bloom-module:not(.big-bloom-card) .bloom-preview-content,
+  .grid-bloom-module:not(.big-bloom-card) .bloom-summary{overflow:hidden}
   .bloom-close{flex-shrink:0}
   .bloom-read-more{margin-top:auto;align-self:flex-end;flex-shrink:0}
   .grid-bloom-module:has(.bloom-read-more){cursor:pointer}
@@ -206,6 +210,8 @@ const structured={'@context':'https://schema.org','@graph':[
   .big-bloom-card .bloom-title{font-size:clamp(20px,calc(var(--tile-size) * .1),26px)}
   .big-bloom-card .bloom-summary{font:400 clamp(14px,calc(var(--tile-size) * .071),18px)/1.55 system-ui,sans-serif;white-space:normal;max-height:none;overflow:visible}
   .big-bloom-card .bloom-media{max-height:calc(var(--tile-size) * .85)}
+  /* A phone uses the whole big-bloom card to drag the grid. Desktop keeps the preview scroller. */
+  @media (hover: none) and (pointer: coarse){.big-bloom-card .bloom-preview-content{overflow:hidden}}
   .bloom-share{position:absolute;top:8px;right:8px;z-index:1;display:grid;place-items:center;width:32px;height:32px;padding:0;border-radius:50%}
   .bloom-share.is-copied{border-color:#ffe0a3;color:#ffe0a3;box-shadow:0 0 10px #ffd28266}
   .big-bloom-card:has(.bloom-share) .bloom-title{padding-right:34px}

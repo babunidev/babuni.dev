@@ -76,6 +76,7 @@ if (viewport && world && status) {
   let lastAmbientPoint:TopicPoint|null=null;
   let pointerDownSelect:HTMLButtonElement|null=null;
   let pointerDownPanel:HTMLElement|null=null;
+  let pointerDownSmall:HTMLElement|null=null;
   let activeTopic:HTMLDivElement|null=null;
   let manualPan=createManualPanState();
   let manualFrame:number|null=null;
@@ -1173,12 +1174,15 @@ if (viewport && world && status) {
   });
   surface.addEventListener('pointerdown',event=>{
     if(activePointer!==null||!event.isPrimary||(event.pointerType==='mouse'&&event.button!==0))return;
+    // Card bodies pan the grid. Links, buttons, and players keep their own pointer.
     if(event.target instanceof Element&&event.target.closest('.grid-bloom-module')
-       &&(!bigBloomOpen||event.target.closest('button,a,video,iframe')))return;
+       &&event.target.closest('button,a,video,iframe'))return;
     layer.querySelectorAll<HTMLElement>('.grid-bloom-module[data-dragged]').forEach(panel=>delete panel.dataset.dragged);
     cancelIntro();
     pointerDownSelect=selectFrom(event.target);
-    pointerDownPanel=bigBloomOpen&&event.target instanceof Element?event.target.closest<HTMLElement>('.big-bloom-card'):null;
+    const bloomTarget=event.target instanceof Element?event.target.closest<HTMLElement>('.grid-bloom-module'):null;
+    pointerDownPanel=bigBloomOpen?bloomTarget:null;
+    pointerDownSmall=!bigBloomOpen?bloomTarget:null;
     pointerDownX=event.clientX;pointerDownY=event.clientY;pointerDragged=false;
     activePointer=event.pointerId; lastX=event.clientX; lastY=event.clientY;
     surface.setPointerCapture(event.pointerId);
@@ -1192,6 +1196,9 @@ if (viewport && world && status) {
       if(bigBloomOpen||bigTransitioning){
         if(centering){centering=null;centerCompletion=null;if(centerFrame!==null)cancelAnimationFrame(centerFrame);centerFrame=null;}
         const panel=document.elementFromPoint(pointerDownX,pointerDownY)?.closest<HTMLElement>('.big-bloom-card');
+        if(panel)panel.dataset.dragged='true';
+      }else{
+        const panel=document.elementFromPoint(pointerDownX,pointerDownY)?.closest<HTMLElement>('.grid-bloom-module');
         if(panel)panel.dataset.dragged='true';
       }
       if(!bloomModule&&!closeAfterShift&&(selectedChoice||pendingChoice||centering))stopSelection();
@@ -1209,11 +1216,13 @@ if (viewport && world && status) {
     activePointer=null;surface.classList.remove('is-dragging');
     let chosen:ProjectChoice|null=null;
     let activatePanel:HTMLElement|null=null;
+    let activateSmall:HTMLElement|null=null;
     if(isTap){
       // Pointer capture retargets pointerup to the viewport. Hit-test the
       // actual release position and require the same tile button at both ends.
       const hit=document.elementFromPoint(event.clientX,event.clientY);
       if(pointerDownPanel&&hit?.closest('.big-bloom-card')===pointerDownPanel)activatePanel=pointerDownPanel;
+      if(pointerDownSmall&&hit?.closest('.grid-bloom-module')===pointerDownSmall)activateSmall=pointerDownSmall;
       const select=selectFrom(hit);
       const selectedTile=select?.closest<HTMLDivElement>('.grid-tile');
       if(selectedTile&&select===pointerDownSelect&&surface.contains(selectedTile)){
@@ -1221,7 +1230,7 @@ if (viewport && world && status) {
         hideTopic();
       }else hideTopic();
     }
-    pointerDownSelect=null;pointerDownPanel=null;
+    pointerDownSelect=null;pointerDownPanel=null;pointerDownSmall=null;
     if(event.type==='pointercancel')hideTopic();
     // Discard remaining cursor lag on release: no delayed ghost-chase.
     manualPan.pending={x:0,y:0};
@@ -1233,6 +1242,7 @@ if (viewport && world && status) {
       if(pendingChoice&&!selectedChoice&&bloomClosingTimer===null)resumeMovement();
     }else resumeMovement();
     if(activatePanel){const entry=bigLayout.find(entry=>entry.module.id===activatePanel!.dataset.moduleId);if(entry)details.open(entry.module,activatePanel.querySelector<HTMLButtonElement>('.bloom-read-more')!);}
+    if(activateSmall?.dataset.moduleId)requestBigBloom(activateSmall.dataset.moduleId);
     refreshMobileTopics();
   }
   surface.addEventListener('pointerup',release);
