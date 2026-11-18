@@ -2,11 +2,9 @@
 
 Follow [the documentation standard](DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution.
 
-## Purpose
+## Making the portfolio
 
-babuni.dev is both a creative portfolio and a record of how the work came into being. The human creative, **Babuni**, originates and directs the vision, makes decisions, corrects interpretations, and assesses results. AI may research, propose, write, design, implement, and test under that direction. Neither contribution should be hidden or misattributed.
-
-The living stone grid is an example. Its toy-box premise, shifting plates, portal information points, endless field, and physically reserved bloom cells emerged through the creative's direction and corrections. Describing it simply as “AI built a portfolio” would obscure the work that shaped it.
+With babuni.dev, I wanted a portfolio that also records how the work came into being. The toy-box premise, shifting stone plates, portal information points, endless field and reserved bloom cells grew through my direction and corrections. AI helped explore, document and implement decisions as recorded in the development journal.
 
 This document sets the publication and evidence rules. [AGENTS.md](../AGENTS.md) governs development practice, while [DEVLOG.md](DEVLOG.md) tells the story.
 
@@ -70,3 +68,7 @@ That audit examined the repository and its existing documentation, but did **not
 ## Reuse in other projects
 
 This method can be adapted for other Babuni repositories, but only when deliberately adopted in their own project rules. Neither this file nor a ChatGPT conversation automatically changes another project's instructions.
+
+## 18 November 2026 — Collaboration record review
+
+At my request, Codex (GPT-6) revised this record for first-person voice and checked the attribution against the available repository documentation. Where an earlier AI tool or model is missing from the record, its identity remains unconfirmed.
