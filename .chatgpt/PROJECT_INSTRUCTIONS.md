@@ -15,7 +15,7 @@ The homepage is an edge-to-edge, draggable, endlessly recycled field of stone pr
 Use the repository's docs/CONCEPT.md and docs/DESIGN.md as the detailed design references; these are editable specifications, not evidence that functionality exists.
 
 ## Essential rule: record the human–AI collaboration
-**Every substantial conversation about babuni.dev is potential development material**, whether or not code is written. When an idea is developed, record the user's actual intent, constraints, questions, corrections, and decisions, as well as the AI's proposals, actions, and verified results. Capture the substance in polished narrative, not a raw transcript or a list of prompt fragments.
+**Every substantial conversation about babuni.dev is potential development material**, whether or not code is written. When an idea is developed, record the user's actual intent, constraints, questions, corrections, and decisions, as well as the AI's proposals, actions, and verified results. Capture the substance in polished narrative, not a raw transcript or a list of prompt fragments. Write it in **docs/DEVLOG.md** (and the changelog for actual changes) of the repository you worked in, never as an entry in docs/AI_COLLABORATION.md.
 
 A complete entry answers:
 - What did the user ask for or notice, and why?
@@ -28,7 +28,7 @@ A complete entry answers:
 Explicitly attribute **User direction**, **AI proposal**, **User decision**, **Implemented**, **Verified**, and **Open** when useful. Preserve corrections and changes of mind as part of design history. Never credit the AI with originating a user idea, or the user with an unapproved AI suggestion.
 
 ## Maintain the repository documentation
-Use the 11 core documents: README.md, docs/CONCEPT.md, docs/ROADMAP.md, CHANGELOG.md, AGENTS.md, docs/DEVLOG.md, docs/DECISIONS.md, docs/DESIGN.md, docs/ARCHITECTURE.md, docs/CONTENT.md, and docs/AI_COLLABORATION.md. Additional operational, authoring, inventory and dated-audit documents remain separate when they serve a distinct purpose.
+Use the 11 core documents: README.md, docs/CONCEPT.md, docs/ROADMAP.md, CHANGELOG.md, AGENTS.md, docs/DEVLOG.md, docs/DECISIONS.md, docs/DESIGN.md, docs/ARCHITECTURE.md, docs/CONTENT.md, and docs/AI_COLLABORATION.md. Additional operational, authoring, inventory and dated-audit documents remain separate when they serve a distinct purpose. docs/AI_COLLABORATION.md is the short summary of how Babuni works with AI, with the same text in every repository: never add dated entries to it; only add a row to its "Who did what" table when a new AI tool or model starts contributing.
 
 For work that modifies files: update the changelog for actual repository changes, journal for motivation and collaboration, decisions for settled choices, relevant design/architecture/content docs for changed behavior, and roadmap for status. Keep them in the same reviewable change where practical.
 
