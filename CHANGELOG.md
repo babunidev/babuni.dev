@@ -6,6 +6,14 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Readers show one title; blooms preview the newest entry (2026-11-19)
+- Standard documents (README, CHANGELOG and the `docs/` standard files) no longer repeat their module title: their own H1 is dropped, because the reader, the blooms and the module pages already show the title. Documents inside folders keep their H1, since there the title is only a file name.
+- Changelogs and journals open on their newest entry. The text above the first entry moves to the end of the document under **About this log**; nothing is removed. Decision records get the same treatment but keep their own order.
+- Small-bloom previews of changelogs, journals and decision records show the newest dated entry, its heading in bold and its first paragraph or bullet, instead of a description of what the document is. A source-derived entry now replaces a curated description for these three modules. Previews of other documents skip `**Label:** value` metadata lines and bylines. A folder card shows the opening of the folder's own README instead of "N Markdown documents".
+- The Classic WoW Addons portal is a medallion combining all 20 projects' portal artworks, Action Emotes #1 at the centre and the rest of the emote family around it.
+- Code in `src/lib/document-presentation.ts` and `src/lib/repository-content.ts`; tests in `tests/document-presentation.test.mjs` and `tests/repository-content.test.mjs`. The source-preservation test now allows exactly the dropped title and the two headings presentation adds.
+- Verification: `npm run test:grid` (220 passed), `npm run content:check` and `npm run build` passed. Claude Code (Claude Opus 5.5) checked Eldgrim's changelog reader and small bloom and the collection tile in headless Chrome at 1280 px and 390 px: one "Changelog" title, the reader opening on 2026-11-19, the introduction at the end, log cards showing an entry, no page errors.
+
 ### Changed — The Great Iceflow Relay is its own project again (2026-11-19)
 - The Great Iceflow Relay returned from the Classic WoW Addons collection to its own tile and its recreated repository `babunidev/TheGreatIceflowRelay`, because a WoW Forever edition was planned for it the same evening. Its id `the-great-iceflow-relay`, artwork, topics and menu place are restored, its old links and pages work directly again, and it no longer appears among the collection's folders or downloads. The catalog has 25 projects.
 - Verification: `npm run content:check`, `npm run test:grid` (214 passed) and `npm run build` (296 public URLs verified) passed after pulling both repositories; the live site was checked after publishing. Claude Code (Claude Opus 5.5).

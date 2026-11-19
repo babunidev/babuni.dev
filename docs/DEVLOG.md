@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-19 — Seeing what is new at a glance
+
+Every reader said "Changelog" twice, once as the reader's title and once as the document's own heading, and the small bloom only described what a changelog is. I wanted the newest change to be the first thing visible, and any introduction moved to the bottom. Claude Code (Claude Opus 5.5) changed how documents are presented on the site rather than editing every repository: the duplicate heading is gone, logs open on their latest entry with their introduction at the end, and the small blooms now preview that entry. While checking, AI noticed that decision records and the collection's folder cards had the same problem and fixed them too. It also combined all 20 portal artworks of the collection into one medallion.
+
 ## 2026-11-19 — The relay keeps its own tile
 
 Later that evening I planned a WoW Forever edition of The Great Iceflow Relay, so it is still in development and keeps its own repository and tile. Its repository had already been deleted; at my choice Claude Code (Claude Opus 5.5) recreated it from the full local history and restored the tile.

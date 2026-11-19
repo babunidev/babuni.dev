@@ -166,3 +166,11 @@ test('a log preview shows its newest entry, not its introduction',()=>{
  assert.equal(documentPreview(body,'CHANGELOG.md'),'**Added — example (2026-11-19)** · A new thing.');
  assert.match(documentPreview('# Overview\n\nAn addon.\n','README.md'),/^An addon/);
 });
+test('a register preview shows its newest dated entry even when the file runs oldest first',()=>{
+ const body='## D-001 — Old idea\n\nUndated.\n\n## 2026-10-27 — Audit\n\nOlder.\n\n## 2026-11-13 — Licensing\n\nNewest.\n';
+ assert.equal(documentPreview(body,'docs/DECISIONS.md'),'**2026-11-13 — Licensing** · Newest.');
+});
+test('previews skip "**Label:** value" metadata and bylines before the description',()=>{
+ assert.equal(documentPreview('# Example\n\n**By:** Someone  \n**Target client:** 1.12\n\nA small addon that does one thing.\n'),'A small addon that does one thing.');
+ assert.equal(documentPreview('**By Someone** · Formerly Other\n\nThe real description.\n'),'The real description.');
+});

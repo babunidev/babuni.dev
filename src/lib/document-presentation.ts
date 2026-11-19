@@ -51,7 +51,10 @@ function sortLog(body:string):string {
 const TITLED_DOCUMENT=/^(?:docs\/)?(?:README|CHANGELOG|CONCEPT|DEVLOG|ARCHITECTURE|DESIGN|DECISIONS|AI_COLLABORATION|ROADMAP|CONTENT)\.md$/i;
 /** Dated logs: newest entry first, so a reader opens on the latest change. */
 const LOG_DOCUMENT=/(?:^|\/)(?:CHANGELOG|DEVLOG|JOURNAL|DEVELOPMENT_JOURNAL)\.md$/i;
-export function isLogDocument(path:string):boolean{return LOG_DOCUMENT.test(path);}
+/** Registers of dated entries that open on an entry but keep their own order. */
+const REGISTER_DOCUMENT=/(?:^|\/)DECISIONS\.md$/i;
+/** Logs and registers: their preview and first view are an entry, not their introduction. */
+export function isLogDocument(path:string):boolean{return LOG_DOCUMENT.test(path)||REGISTER_DOCUMENT.test(path);}
 export function dropsDocumentTitle(path:string):boolean{return TITLED_DOCUMENT.test(path);}
 /** In a log, the text above the first entry (what the log is, how to read it)
  * moves to the end under "About this log", so every view starts with an entry. */
@@ -83,6 +86,7 @@ export function presentDocument(source:string,path=''):string {
  let body=kept.join('');
  if(titleDropped)body=body.replace(/^\s+/,'');
  if(LOG_DOCUMENT.test(path))body=sortLog(moveLogPreamble(body));
+ else if(REGISTER_DOCUMENT.test(path))body=moveLogPreamble(body);
  if(metadata.length)body=body.trimEnd()+'\n\n## Document information\n\n'+metadata.map(s=>s.trim()).join('\n\n')+'\n';
  return body;
 }

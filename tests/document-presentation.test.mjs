@@ -44,3 +44,8 @@ test('a log opens on its newest entry; its introduction moves to the end',()=>{
  assert.ok(out.startsWith('## 2026-11-19 — new'));
  assert.ok(out.trimEnd().endsWith('## About this log\n\nWhat this file records.'));
 });
+test('a decision register opens on an entry but keeps its own order',()=>{
+ const out=presentDocument('# Decisions\n\nHow to read this register.\n\n## D-001 — First\n\nA.\n\n## D-002 — Second\n\nB.\n','docs/DECISIONS.md');
+ assert.ok(out.startsWith('## D-001 — First'));assert.ok(out.indexOf('D-001')<out.indexOf('D-002'));
+ assert.ok(out.includes('## About this log\n\nHow to read this register.'));
+});

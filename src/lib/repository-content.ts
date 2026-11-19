@@ -111,10 +111,22 @@ export function repositoryImageUrl(repository:string,imagePath:string):string{
  * A heading that only groups sub-entries (e.g. "Unreleased") yields to the first
  * sub-entry that has text. */
 const DATED=/\b20\d{2}-\d{2}-\d{2}\b|\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}\b|\b\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\b|\bunreleased\b/i;
+const MONTHS=['january','february','march','april','may','june','july','august','september','october','november','december'];
+/** Sortable date of an entry heading, or null; "Unreleased" counts as newest. */
+function headingDate(text:string):number|null {
+  if(/\bunreleased\b/i.test(text))return Infinity;
+  const iso=text.match(/\b(20\d{2})-(\d{2})-(\d{2})\b/);if(iso)return +iso[1]*1e4+ +iso[2]*100+ +iso[3];
+  const a=text.match(/\b(\d{1,2})\s+([A-Za-z]+)\s+(20\d{2})\b/),b=text.match(/\b([A-Za-z]+)\s+(\d{1,2}),?\s+(20\d{2})\b/);
+  const m=a?{d:+a[1],m:MONTHS.indexOf(a[2].toLowerCase()),y:+a[3]}:b?{d:+b[2],m:MONTHS.indexOf(b[1].toLowerCase()),y:+b[3]}:null;
+  return m&&m.m>=0?m.y*1e4+(m.m+1)*100+m.d:null;
+}
 function logEntryPreview(body:string):string {
   const tokens=Lexer.lex(body,{gfm:true});
-  // Prefer the first dated entry; an undated opening story is not the latest change.
-  const start=tokens.findIndex(token=>token.type==='heading'&&token.depth>=2&&DATED.test(token.text));
+  // Start at the entry with the latest date (the first one on a tie), so an undated
+  // opening story or an oldest-first register still previews its newest entry.
+  let start=-1,best=-1;
+  tokens.forEach((token,i)=>{if(token.type!=='heading'||token.depth<2)return;const date=headingDate(token.text);if(date!==null&&date>best){best=date;start=i;}});
+  if(start<0)start=tokens.findIndex(token=>token.type==='heading'&&token.depth>=2&&DATED.test(token.text));
   let heading='';
   for(const token of start>=0?tokens.slice(start):tokens){
     if(token.type==='heading'){if(token.depth>=2)heading=token.text;continue;}
@@ -135,7 +147,8 @@ export function documentPreview(body:string,path=''):string {
     if(fenced)continue;
     const text=line.trim();
     if(!text){if(paragraph.length)break;continue;}
-    if(/^(?:#|\||>|[-*]\s|\d+\.\s|---|\*\*(?:Author|Owner|State|Status|Recorded|Origin|Edition))/i.test(text))continue;
+    // Headings, tables, quotes, lists and "**Label:** value" metadata lines are not a description.
+    if(/^(?:#|\||>|[-*]\s|\d+\.\s|---|\*\*(?:Author|Owner|State|Status|Recorded|Origin|Edition))/i.test(text)||/^\*\*[^*\n]{1,60}:\*\*/.test(text)||/^\*\*By\b/i.test(text))continue;
     paragraph.push(text);
   }
   return markdownExcerpt(paragraph.join(' ')||body,180);
@@ -153,7 +166,7 @@ export function repositoryModules(connection:RepositoryConnection|undefined,snap
       source:`https://github.com/${connection.repository}/blob/${ref}/${found.path}`}];
   });
 }
-const LOG_MODULES=new Set(['changes','journal']);
+const LOG_MODULES=new Set(['changes','journal','decisions']);
 /** Source text replaces matching curated text; manually authored media stays intact. */
 export function composeProjectModules(curated:ProjectModule[],sourced:ProjectModule[],repository?:string):ProjectModule[]{
   const result=curated.map(module=>{
@@ -250,7 +263,9 @@ export function indexedFolderModules(
       title:doc.path.slice(folder.length+1),path:doc.path,bodyUrl:doc.url,...(doc.image?{image:doc.image}:{}),
       source:'https://github.com/'+repository+'/blob/'+index.commit+'/'+doc.path
     }));
-    const preview=entries.length+' Markdown '+(entries.length===1?'document':'documents')+' in '+title+'. Select a file to read its complete text.';
+    // The folder's own README says what is inside; the document count is the fallback.
+    const readme=documents.find(doc=>doc.path===folder+'/README.md');
+    const preview=readme?.preview||entries.length+' Markdown '+(entries.length===1?'document':'documents')+' in '+title+'. Select a file to read its complete text.';
     return [{
       id:'folder-'+folder.toLowerCase(),type:'document-list' as const,title,preview,
       intro:'## '+title+' documents\n\n'+entries.map(e=>'- '+e.title).join('\n'),
