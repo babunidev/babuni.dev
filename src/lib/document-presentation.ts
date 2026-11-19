@@ -46,9 +46,30 @@ function sortLog(body:string):string {
  }
  return render(root);
 }
+/** Standard documents at a repository root or in docs/: the reader, the blooms and
+ * the module page already show their module title, so the document's own H1 is dropped. */
+const TITLED_DOCUMENT=/^(?:docs\/)?(?:README|CHANGELOG|CONCEPT|DEVLOG|ARCHITECTURE|DESIGN|DECISIONS|AI_COLLABORATION|ROADMAP|CONTENT)\.md$/i;
+/** Dated logs: newest entry first, so a reader opens on the latest change. */
+const LOG_DOCUMENT=/(?:^|\/)(?:CHANGELOG|DEVLOG|JOURNAL|DEVELOPMENT_JOURNAL)\.md$/i;
+export function isLogDocument(path:string):boolean{return LOG_DOCUMENT.test(path);}
+export function dropsDocumentTitle(path:string):boolean{return TITLED_DOCUMENT.test(path);}
+/** In a log, the text above the first entry (what the log is, how to read it)
+ * moves to the end under "About this log", so every view starts with an entry. */
+function moveLogPreamble(body:string):string {
+ const tokens=Lexer.lex(body,{gfm:true});
+ let i=0;const head:string[]=[];
+ while(i<tokens.length&&(tokens[i].type==='space'||tokens[i].type==='heading'&&(tokens[i] as {depth:number}).depth===1))head.push(tokens[i++].raw);
+ const preamble:string[]=[];
+ while(i<tokens.length&&tokens[i].type!=='heading')preamble.push(tokens[i++].raw);
+ if(i>=tokens.length||!preamble.join('').trim())return body;
+ const entries=tokens.slice(i).map(token=>token.raw).join('');
+ return head.join('')+entries.trimEnd()+'\n\n## About this log\n\n'+preamble.join('').trim()+'\n';
+}
 export function presentDocument(source:string,path=''):string {
  const kept:string[]=[],metadata:string[]=[];let leading=true;
+ const dropTitle=TITLED_DOCUMENT.test(path);let titleDropped=false;
  for(const token of Lexer.lex(source,{gfm:true})){
+  if(leading&&token.type==='heading'&&token.depth===1&&dropTitle&&!titleDropped){titleDropped=true;continue;}
   if(leading&&(token.type==='space'||token.type==='heading'&&token.depth===1)){kept.push(token.raw);continue;}
   if(leading&&metadataBlock(token.raw)){metadata.push(token.raw);continue;}
   if(leading&&token.type==='paragraph'){
@@ -60,7 +81,8 @@ export function presentDocument(source:string,path=''):string {
   leading=false;kept.push(token.raw);
  }
  let body=kept.join('');
- if(/(?:^|\/)(?:CHANGELOG|DEVLOG|JOURNAL|DEVELOPMENT_JOURNAL)\.md$/i.test(path))body=sortLog(body);
+ if(titleDropped)body=body.replace(/^\s+/,'');
+ if(LOG_DOCUMENT.test(path))body=sortLog(moveLogPreamble(body));
  if(metadata.length)body=body.trimEnd()+'\n\n## Document information\n\n'+metadata.map(s=>s.trim()).join('\n\n')+'\n';
  return body;
 }

@@ -51,7 +51,7 @@ export function prepareDocumentAssets(connections,snapshots,localDocuments,{imag
       documents.push({
         path,
         url:'/_project-docs/'+file,
-        preview:documentPreview(presented)||repositoryDocuments(repository).find(d=>documentLocations(d).includes(path))?.title||path,
+        preview:documentPreview(presented,path)||repositoryDocuments(repository).find(d=>documentLocations(d).includes(path))?.title||path,
         intro:moduleIntro({body:presented,preview:''}),
         ...(image?{image}:{})
       });

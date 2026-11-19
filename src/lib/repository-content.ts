@@ -1,4 +1,5 @@
-import {presentDocument} from './document-presentation.ts';
+import {presentDocument,isLogDocument} from './document-presentation.ts';
+import {Lexer} from 'marked';
 import {markdownExcerpt} from './markdown-excerpt.ts';
 import {type ProjectModule} from './project-modules.ts';
 import connectionMap from '../content/project-repositories.json' with {type:'json'};
@@ -106,8 +107,28 @@ export function repositoryImageUrl(repository:string,imagePath:string):string{
     throw new Error('Invalid repository image mapping');
   return '/media/repositories/'+repository.replace('/','--')+'/'+imagePath.slice(0,imagePath.lastIndexOf('.')).replaceAll('/','--')+'.webp';
 }
-/** Deterministic source excerpt, not an AI-authored factual summary. */
-export function documentPreview(body:string):string {
+/** A log's newest entry: its heading in bold, then its first paragraph or bullet.
+ * A heading that only groups sub-entries (e.g. "Unreleased") yields to the first
+ * sub-entry that has text. */
+const DATED=/\b20\d{2}-\d{2}-\d{2}\b|\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}\b|\b\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\b|\bunreleased\b/i;
+function logEntryPreview(body:string):string {
+  const tokens=Lexer.lex(body,{gfm:true});
+  // Prefer the first dated entry; an undated opening story is not the latest change.
+  const start=tokens.findIndex(token=>token.type==='heading'&&token.depth>=2&&DATED.test(token.text));
+  let heading='';
+  for(const token of start>=0?tokens.slice(start):tokens){
+    if(token.type==='heading'){if(token.depth>=2)heading=token.text;continue;}
+    if(!heading||token.type==='space'||token.type==='hr')continue;
+    const text=token.type==='list'?(token.items[0]?.text??''):(token as {text?:string}).text??'';
+    if(!text.trim())continue;
+    return markdownExcerpt('**'+heading.replace(/\*\*/g,'')+'** · '+text.replace(/\s+/g,' ').trim(),180);
+  }
+  return '';
+}
+/** Deterministic source excerpt, not an AI-authored factual summary. Logs show
+ * their newest entry instead of the text that introduces them. */
+export function documentPreview(body:string,path=''):string {
+  if(isLogDocument(path)){const entry=logEntryPreview(body);if(entry)return entry;}
   const lines=body.split(/\r?\n/);let fenced=false;const paragraph:string[]=[];
   for(const line of lines){
     if(/^\s*```/.test(line)){fenced=!fenced;continue;}
@@ -128,15 +149,18 @@ export function repositoryModules(connection:RepositoryConnection|undefined,snap
   return repositoryDocuments(connection.repository).filter(doc=>documentSelected(connection,doc)).flatMap(doc=>{
     const found=findDocument(doc,path=>documents[path]?.trim()?documents[path]:undefined);if(!found)return [];
     const body=presentDocument(found.value,found.path);
-    return [{id:doc.id,type:'text' as const,title:doc.title,preview:documentPreview(body)||doc.title,body,
+    return [{id:doc.id,type:'text' as const,title:doc.title,preview:documentPreview(body,found.path)||doc.title,body,
       source:`https://github.com/${connection.repository}/blob/${ref}/${found.path}`}];
   });
 }
+const LOG_MODULES=new Set(['changes','journal']);
 /** Source text replaces matching curated text; manually authored media stays intact. */
 export function composeProjectModules(curated:ProjectModule[],sourced:ProjectModule[],repository?:string):ProjectModule[]{
   const result=curated.map(module=>{
     const source=sourced.find(item=>item.id===module.id);
-    return source?{...module,...source,preview:module.preview.trim()||source.preview}:module;
+    // A log's newest entry beats a curated description of what the log is.
+    const preview=LOG_MODULES.has(module.id)?source?.preview||module.preview:module.preview.trim()||source?.preview;
+    return source?{...module,...source,preview:preview??''}:module;
   });
   for(const module of sourced)if(!result.some(item=>item.id===module.id))result.push(module);
   if(repository&&!result.some(module=>module.id==='source'))result.push({id:'source',type:'resources',title:'Project source',preview:'Read the project repository and its documentation.',links:[{label:'Repository',href:`https://github.com/${repository}`} ]});

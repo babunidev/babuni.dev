@@ -160,3 +160,9 @@ test('imported documents follow current public repositories without freezing rev
   }
  }
 });
+
+test('a log preview shows its newest entry, not its introduction',()=>{
+ const body=presentDocument('# Changelog\n\nWhat a changelog is.\n\n## [Unreleased]\n\n### Added — example (2026-11-19)\n\n- A new thing.\n\n## 2026-01-01\n\n- Old.\n','CHANGELOG.md');
+ assert.equal(documentPreview(body,'CHANGELOG.md'),'**Added — example (2026-11-19)** · A new thing.');
+ assert.match(documentPreview('# Overview\n\nAn addon.\n','README.md'),/^An addon/);
+});
