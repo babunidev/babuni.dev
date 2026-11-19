@@ -55,6 +55,8 @@ export function findDocument<T>(doc:RepositoryDocument,lookup:(path:string)=>T|u
 /** The Buxbrew story's public lore folders are indexed, not individual bloom cards. */
 export const CHARACTER_STORY_REPOSITORY='babunidev/AmberbrewStory';
 export const CHARACTER_STORY_FOLDERS=['assets','character','docs','family','journal','lore','places','relationships','stories'] as const;
+/** Root-level writing references. CANON, TIMELINE and WRITING-GUIDE moved to docs/ on 2026-11-19 and are
+ * imported through the docs folder; their root names stay allowed as legacy locations. */
 export const CHARACTER_STORY_ROOT_FILES=['AGENTS.md','CANON.md','TIMELINE.md','WRITING-GUIDE.md'] as const;
 export function characterStoryDocumentPath(path:string):boolean {
   return (CHARACTER_STORY_ROOT_FILES as readonly string[]).includes(path)

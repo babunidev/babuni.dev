@@ -413,7 +413,7 @@
       "preview": "Quick Strikes, bouncing numbers, score collection and time rewards.",
       "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
       "body": "Quick Strike rewards the first hit just after a target appears. Floating values collide and merge before their earned score reaches the collector. Special combinations include 21 → 42 and 37 → 73. Selected milestones award visible time bonuses. These details are documented in the game concept; this portfolio is not a separate gameplay verification.",
-      "source": "https://github.com/babunidev/ButtonGame/blob/main/CONCEPT.md"
+      "source": "https://github.com/babunidev/ButtonGame/blob/main/docs/CONCEPT.md"
     },
     {
       "id": "wifi",
@@ -445,7 +445,7 @@
         },
         {
           "label": "Concept and mechanics",
-          "href": "https://github.com/babunidev/ButtonGame/blob/main/CONCEPT.md"
+          "href": "https://github.com/babunidev/ButtonGame/blob/main/docs/CONCEPT.md"
         },
         {
           "label": "Development journal",

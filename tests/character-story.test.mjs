@@ -32,8 +32,9 @@ test('Buxbrew folder modules cover all imported Markdown and preserve the 42-pro
       'missing indexed source: '+file.path);
     assert.ok(existsSync(new URL('../public/_project-docs/'+documentAssetName(CHARACTER_STORY_REPOSITORY,file.path),import.meta.url)));
   }
-  for(const file of CHARACTER_STORY_ROOT_FILES)
-    assert.ok(folders.find(x=>x.id==='folder-docs').documents.some(d=>d.path===file),file);
+  // Writing references sit in docs/ since 2026-11-19; the root locations remain supported.
+  for(const file of CHARACTER_STORY_ROOT_FILES.filter(f=>snapshot.documents.some(d=>d.path===f||d.path==='docs/'+f)))
+    assert.ok(folders.find(x=>x.id==='folder-docs').documents.some(d=>d.path===file||d.path==='docs/'+file),file);
   const assets=folders.find(x=>x.id==='folder-assets');
   assert.ok(Array.isArray(assets.documents)); // Empty today; may contain public Markdown after a later source sync.
   const modules=modulesForProject('amberbrew-story','Buxbrew roleplaying story');

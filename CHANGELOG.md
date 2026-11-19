@@ -6,6 +6,11 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Documents re-synced after the repositories moved into `docs/` (2026-11-19)
+- `npm run content:sync` refreshed all 40 connected repositories. Every concept and roadmap is now read from `docs/CONCEPT.md` and `docs/ROADMAP.md`; no repository lost a document. AmberbrewStory's `CANON.md`, `TIMELINE.md` and `WRITING-GUIDE.md` now come from `docs/` and still appear in its Docs folder. The snapshots also carry upstream text changes made since the previous sync; a scan of the new text for tokens, keys and webhook URLs found none.
+- The ButtonGame concept link in `src/content/project-modules.json` points to `docs/CONCEPT.md`. The AmberbrewStory test accepts the writing references in either location.
+- Verification: `npm run content:check`, `npm run test:grid` (212 passed) and `npm run build` (509 public URLs verified) passed; the built pages link 39 concepts in `docs/` and none in a root. Claude Code (Claude Opus 5.5). Not deployed.
+
 ### Changed — babuni.dev documentation moved into `docs/` (2026-11-19)
 - Moved `CONCEPT.md`, `ROADMAP.md` and `ASSET_RIGHTS.md` to `docs/`. The root now holds only `README.md`, `AGENTS.md`, `LICENSE`, `CHANGELOG.md` and project configuration. Relative links in the moved files, in `README.md` and in `docs/` were updated, as were `AGENTS.md`, `.chatgpt/PROJECT_INSTRUCTIONS.md`, the BABUNI.DEV concept module in `src/content/project-modules.json`, and the documentation table in `docs/DOCUMENTATION.md`, which now states the root rule. `AGENTS.md` asks for new documents to go in `docs/`. Historical changelog entries keep the paths they used at the time.
 - BABUNI.DEV is the first repository on the new layout; its concept and roadmap modules read and link the `docs/` files. Other repositories are unchanged.
