@@ -6,6 +6,11 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Share button in the reader and links to folder documents (2026-11-19)
+- The reader has the same round share button as the big-bloom cards, in its top-right corner. It shares the view on screen: the module (`/#project=<id>&bloom=big&read=<module>`), or, inside a folder reader, the open document with `&doc=<path>`, e.g. `/#project=amberbrew-story&bloom=big&read=folder-lore&doc=lore/continuity-notes.md`. Back in the folder list it shares the folder again. The button is a keyboard tab stop in the reader and the title leaves room for it. The About reader has no share button.
+- A `doc` link opens the reader at that document. It needs `read`, accepts only a Markdown path of the conservative folder-document form, and an unknown path leaves the folder list open. Parser in `src/lib/grid-deep-link.ts`, share URL in `src/scripts/module-share.ts`, reader in `src/scripts/module-detail.ts`, wiring in `src/scripts/grid.ts` (`openReader`), styles in `src/pages/index.astro`; tests in `tests/grid-deep-link.test.mjs`.
+- Verification: `npm run test:grid` (214 passed), `npm run content:check` and `npm run build` passed. Claude Code (Claude Opus 5.5) opened both kinds of link in headless Chrome against `astro preview` at 1280 px and 390 px; 20 checks passed, including the copied links, the button position, no sideways scrolling and no page errors. Captures added to the visual documentation. Not tested on a phone. Not deployed.
+
 ### Changed — Documents re-synced after the repositories moved into `docs/` (2026-11-19)
 - `npm run content:sync` refreshed all 40 connected repositories. Every concept and roadmap is now read from `docs/CONCEPT.md` and `docs/ROADMAP.md`; no repository lost a document. AmberbrewStory's `CANON.md`, `TIMELINE.md` and `WRITING-GUIDE.md` now come from `docs/` and still appear in its Docs folder. The snapshots also carry upstream text changes made since the previous sync; a scan of the new text for tokens, keys and webhook URLs found none.
 - The ButtonGame concept link in `src/content/project-modules.json` points to `docs/CONCEPT.md`. The AmberbrewStory test accepts the writing references in either location.

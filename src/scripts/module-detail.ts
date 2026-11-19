@@ -7,6 +7,11 @@ import {renderVideo} from './module-preview';
 import {renderDocument} from './document-reader';
 import {createDocumentBody} from './document-body';
 import {installReaderDismissal} from './reader-dismissal';
+import {renderShareButton} from './module-share';
+/** How the reader's share button links back to what is open. `doc` is the
+ * folder document on screen, or null for the module itself. */
+export interface ReaderShare {url:(doc:string|null)=>string;title:string;announce:(message:string)=>void}
+export interface ReaderOptions {share?:ReaderShare;doc?:string|null}
 /** Detail is modal; big bloom itself belongs to the living grid. */
 export function createModuleDetails(onChange:(open:boolean,title?:string)=>void){
   let detail:HTMLDialogElement|null=null;
@@ -18,7 +23,7 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
   let documentRequest:AbortController|null=null;
   function stopPlayers(root:HTMLElement){root.querySelectorAll('video').forEach(video=>video.pause());root.querySelectorAll('iframe').forEach(frame=>{const figure=frame.closest('figure');if(figure)figure.replaceWith(renderVideo({embed:frame.src,title:frame.title}));else frame.remove();});}
   function closeDetail(){disposeScroll?.();disposeScroll=null;cancelClosing?.();cancelClosing=null;closing=false;dismissReader=null;if(!detail)return;documentRequest?.abort();documentRequest=null;stopPlayers(detail);restoreHeader?.();restoreHeader=null;detail.close();detail.remove();detail=null;onChange(false);}
-  function openDetail(module:ProjectModule,trigger:HTMLButtonElement){
+  function openDetail(module:ProjectModule,trigger:HTMLButtonElement,options:ReaderOptions={}){
     closeDetail();
     onChange(true,module.title);
     const view=document.createElement('dialog');view.className='module-detail';view.setAttribute('aria-label',module.title+' detail');detail=view;
@@ -59,6 +64,13 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
     }
     dismissReader=backToBloom;
     const panel=document.createElement('div');panel.className='module-detail-panel';const scroller=document.createElement('div');scroller.className='reader-scroll-content';scroller.append(title,content);panel.append(scroller);
+    // The document on screen inside a folder reader; null shows the module itself.
+    let currentDoc:string|null=null;
+    const share=options.share;
+    if(share){
+      panel.classList.add('has-share');
+      panel.append(renderShareButton(()=>({url:share.url(currentDoc),title:currentDoc?share.title+' · '+title.textContent:share.title}),share.title,share.announce,{focusable:true}));
+    }
     installReaderDismissal(view,backToBloom,panel);
     view.append(panel);document.body.append(view);restoreHeader=attachReaderHeader(view);view.showModal();disposeScroll=installReaderScroll(panel,scroller,content);
     if(module.type==='document-list'){
@@ -67,7 +79,7 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
         link.className='bloom-action';link.target='_blank';link.rel='noopener noreferrer';return link;
       };
       const showIndex=():void=>{
-        documentRequest?.abort();documentRequest=null;
+        documentRequest?.abort();documentRequest=null;currentDoc=null;
         title.textContent=module.title;
         const intro=document.createElement('p');intro.textContent=module.preview;
         const list=document.createElement('ul');list.className='module-document-list';
@@ -95,7 +107,7 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
       const showDocument=(item:NonNullable<typeof module.documents>[number]):void=>{
         documentRequest?.abort();
         const controller=new AbortController();documentRequest=controller;
-        title.textContent=item.title;
+        title.textContent=item.title;currentDoc=item.path;
         const back=document.createElement('button');back.type='button';
         back.className='bloom-action';back.textContent='Back to '+module.title;
         back.addEventListener('click',()=>{showIndex();(content.querySelector('button')??title).focus({preventScroll:true});});
@@ -107,6 +119,8 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
         scroller.scrollTop=0;void body.load();
       };
       showIndex();
+      const linked=options.doc?module.documents?.find(item=>item.path===options.doc):undefined;
+      if(linked)showDocument(linked);
     }
     title.focus({preventScroll:true});
   }

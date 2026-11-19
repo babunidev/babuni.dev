@@ -172,3 +172,11 @@ AI desktop browser capture from the temporary 127.0.0.1:4327 preview. The header
 
 AI headless-Chrome capture of a fixture page using the site's built stylesheet and the markup the new folder code produces. It shows a small bloom, a big bloom card and the reader's folder index. A 64-pixel test icon keeps its size; a 1400-pixel test image scales to the card or reader width; names and buttons are centered; a document without an image shows only its name. The images are generated test squares, not project art. This is not a capture of the live grid, and no connected repository contained paired images at the time. Not phone acceptance.
 
+
+## 2026-11-19 — Sharing from the reader
+
+![Reader share button](../public/media/babuni-dev/images/verification/reader-share-desktop.webp)
+
+![Folder document link on a narrow screen](../public/media/babuni-dev/images/verification/reader-share-folder-document-phone.webp)
+
+AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview, at 1280 and 390 pixels. A deep link opened the changelog reader, and a second link opened one lore document inside Amberbrew Story's Lore folder. In both, the share button sits in the reader's top-right corner and copied the link to exactly the view on screen. These are browser simulations, not a physical phone test.

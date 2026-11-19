@@ -329,6 +329,16 @@
           "src": "/media/babuni-dev/images/verification/folder-image-layout-fixture.webp",
           "alt": "Folder lists with a small icon and a large image centered above document names in a small bloom, a big bloom and the reader.",
           "caption": "AI headless-browser fixture, 10 November 2026: site stylesheet with generated test images; not the live grid, real project art or phone acceptance."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/reader-share-desktop.webp",
+          "alt": "The changelog reader with a round share button in its top-right corner.",
+          "caption": "AI headless-Chrome capture, 19 November 2026, of the local preview at 1280 px: the reader opened from a deep link shows its share button. Not a phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/reader-share-folder-document-phone.webp",
+          "alt": "A single lore document open inside the Amberbrew Story folder reader on a narrow screen, with the share button top right.",
+          "caption": "AI headless-Chrome capture, 19 November 2026, at 390 px: a document link opened one lore file inside its folder reader. Not a physical phone test."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

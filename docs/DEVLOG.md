@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-19 — Sharing straight from the reader
+
+The share button on the big-bloom cards links to a module, but once a document was open in the reader there was no way to pass that view on. I asked for the same share button in the reader's top-right corner, and for links that open the reader directly. Claude Code (Claude Opus 5.5) added the button and extended the links so that a folder reader can open at one document: sharing a lore file from Amberbrew Story now gives a link to that file, not only to the folder. AI tested both kinds of link in a headless browser at desktop and phone widths; I have not yet tried it on my phone.
+
 ## 2026-11-19 — Documentation belongs in `docs/`
 
 Finding my way around my repositories had become harder than it should be, so I decided that the root should hold only what a visitor or agent needs first: the README, AGENTS.md, the license and the changelog. Everything else is documentation and goes into `docs/`, with AGENTS.md pointing to it. Before any work, I asked whether this would make agents worse at following my rules and what it would cost across all the projects.

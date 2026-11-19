@@ -7,7 +7,7 @@ import aboutText from '../content/about.md?raw';
 import {installSiteNavigation} from './site-navigation';
 import {installInteractionFeedback} from './interaction-feedback';
 import {projectModuleLoader} from '../lib/project-module-loader';
-import {selectModules,MODULE_OFFSETS,moduleRevealPlan,moduleHasContent} from '../lib/project-modules';
+import {selectModules,MODULE_OFFSETS,moduleRevealPlan,moduleHasContent,type ProjectModule} from '../lib/project-modules';
 import {renderModulePreview} from './module-preview';
 import {moduleShareUrl,renderShareButton} from './module-share';
 import {createModuleDetails} from './module-detail';
@@ -131,6 +131,18 @@ if (viewport && world && status) {
     else{clearDeepLink();surface.scrollTop=0;surface.scrollLeft=0;resumeMovement();if(!moving)nextRound(restWait);}
   });
 
+  /** Open a project module's reader with a share button for exactly what it
+   * shows; `doc` opens one document of a folder reader. */
+  function openReader(module:ProjectModule,trigger:HTMLButtonElement,doc:string|null=null):void {
+    const projectId=selectedChoice?.projectId;
+    if(!projectId){details.open(module,trigger);return;}
+    details.open(module,trigger,{doc,share:{
+      url:current=>moduleShareUrl(projectId,module.id,location,current),
+      title:projectName()+': '+module.title,
+      announce:message=>{liveStatus.textContent=message;}
+    }});
+  }
+
   let directNavigationTimer:ReturnType<typeof setTimeout>|null=null;
   function openProject(id:string):void {
     details.close();
@@ -194,7 +206,7 @@ if (viewport && world && status) {
     if(!link.read||!card||entry?.module.id!==link.read)return;
     const open=()=>{
       if(!bigBloomOpen||bloomModules[0]!==card||details.isOpen())return;
-      details.open(entry.module,card.querySelector<HTMLButtonElement>('.bloom-read-more')!);
+      openReader(entry.module,card.querySelector<HTMLButtonElement>('.bloom-read-more')!,link.doc);
     };
     // Let the selected card finish growing into place before the reader opens.
     if(prefersReduced.matches)open();else setTimeout(open,INTRO_SPAWN_DURATION_MS);
@@ -934,7 +946,7 @@ if (viewport && world && status) {
       surface.scrollTop=0;surface.scrollLeft=0;
       bloomCells=bigBloomVacancies(bloomAnchor,bigLayout);
       bloomModules=bigLayout.map(entry=>{
-        const panel=renderModulePreview(entry.module,project.name,()=>details.open(entry.module,panel.querySelector<HTMLButtonElement>('.bloom-read-more')!),'big');
+        const panel=renderModulePreview(entry.module,project.name,()=>openReader(entry.module,panel.querySelector<HTMLButtonElement>('.bloom-read-more')!),'big');
         panel.classList.add('big-bloom-card');
         panel.append(renderShareButton(moduleShareUrl(project.id,entry.module.id),project.name+': '+entry.module.title,message=>{liveStatus.textContent=message;}));
         if(entry.module.id===moduleId)panel.classList.add('big-bloom-card--selected');
@@ -1241,7 +1253,7 @@ if (viewport && world && status) {
       // Every active shift finishes at its original tempo before opening.
       if(pendingChoice&&!selectedChoice&&bloomClosingTimer===null)resumeMovement();
     }else resumeMovement();
-    if(activatePanel){const entry=bigLayout.find(entry=>entry.module.id===activatePanel!.dataset.moduleId);if(entry)details.open(entry.module,activatePanel.querySelector<HTMLButtonElement>('.bloom-read-more')!);}
+    if(activatePanel){const entry=bigLayout.find(entry=>entry.module.id===activatePanel!.dataset.moduleId);if(entry)openReader(entry.module,activatePanel.querySelector<HTMLButtonElement>('.bloom-read-more')!);}
     if(activateSmall?.dataset.moduleId)requestBigBloom(activateSmall.dataset.moduleId);
     refreshMobileTopics();
   }
