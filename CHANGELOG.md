@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — The Great Iceflow Relay is its own project again (2026-11-19)
+- The Great Iceflow Relay returned from the Classic WoW Addons collection to its own tile and its recreated repository `babunidev/TheGreatIceflowRelay`, because a WoW Forever edition was planned for it the same evening. Its id `the-great-iceflow-relay`, artwork, topics and menu place are restored, its old links and pages work directly again, and it no longer appears among the collection's folders or downloads. The catalog has 25 projects.
+- Verification: `npm run content:check`, `npm run test:grid` (214 passed) and `npm run build` (296 public URLs verified) passed after pulling both repositories; the live site was checked after publishing. Claude Code (Claude Opus 5.5).
+
 ### Changed — 21 addon tiles become the Classic WoW Addons project (2026-11-19)
 - The finished 1.12 and 3.3.5 addons and the EnchantVisuals client mod now come from one repository, `babunidev/ClassicWoWAddons`, as one project with a folder module per addon, a Downloads module linking all 21 install zips, and the collection's overview, journal, changelog and decisions. The catalog has 24 projects instead of 44. Retired ids: buxbrewcharge, buxbrew, amazin, roar, roarr, roarrunlimited, roarguild, roaremotetrigger, roarsounds, totemtimers, groupbufftoggle, lootfeed, battlereport, workthatgodbod, the-great-iceflow-relay, meleestartattack, warriorstartattack, buxbrewresist, buxbrewding, guildchatai, enchantvisuals.
 - Old addresses keep working. `#project=<old id>` opens that addon's folder in the collection, and `&read=<module>` opens the matching document there (for example `#project=lootfeed&read=changes` opens `LootFeed/CHANGELOG.md`). The 252 former `/projects/<old id>/…` pages are generated forwarding pages with `noindex` and the new canonical address. Mapping in `src/lib/merged-projects.ts`, used by `src/scripts/grid.ts` and `astro.config.mjs`.

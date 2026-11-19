@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-19 — The relay keeps its own tile
+
+Later that evening I planned a WoW Forever edition of The Great Iceflow Relay, so it is still in development and keeps its own repository and tile. Its repository had already been deleted; at my choice Claude Code (Claude Opus 5.5) recreated it from the full local history and restored the tile.
+
 ## 2026-11-19 — One tile for the finished addons
 
 A brief I wrote for combining the emote addons led to a larger idea: most of my old World of Warcraft addons are small projects for the 1.12 and 3.3.5 clients that I will not develop further, and together they filled a quarter of the grid. I decided to put all of them into one repository with install zips and to give them one tile, while the active WoW Forever addons keep their own repositories. Claude Code (Claude Opus 5.5) checked the old roadmaps, which held only test checklists and unapproved ideas, built the `ClassicWoWAddons` repository with each addon's full history, and switched the website to it. Old links and pages now lead into the collection. The tile's artwork is a stand-in until I have a proper portal for it.

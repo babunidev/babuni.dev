@@ -19,7 +19,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=24;
+export const DEMO_PROJECT_COUNT=25;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -116,6 +116,14 @@ export const demoProjects:readonly DemoProject[]=[
     "shortSummary": "Babuni's finished addons for the WoW 1.12 and 3.3.5 clients and the EnchantVisuals client mod, collected in one repository with install zips.",
     "evidence": "repo",
     "tint": "hsl(263 58% 62%)"
+  },
+  {
+    "id": "the-great-iceflow-relay",
+    "portalArtwork": "/portal-content/TheGreatIceflowRelay.webp",
+    "name": "The Great Iceflow Relay",
+    "shortSummary": "Player-organized WoW ball-passing checkpoint minigame.",
+    "evidence": "repo",
+    "tint": "hsl(283 58% 62%)"
   },
   {
     "id": "gathermap",

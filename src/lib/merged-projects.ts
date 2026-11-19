@@ -1,7 +1,8 @@
 /** Projects merged into one collection, with where their old addresses now lead.
- * On 2026-11-19 Babuni moved 21 finished addons for the 1.12 and 3.3.5 clients into
+ * On 2026-11-19 Babuni moved 20 finished addons for the 1.12 and 3.3.5 clients into
  * babunidev/ClassicWoWAddons, one folder each. Their former tiles are retired; their
- * project pages and `#project=` links forward to the matching folder module. */
+ * project pages and `#project=` links forward to the matching folder module.
+ * The Great Iceflow Relay was part of it for a few hours and is its own project again. */
 export const CLASSIC_WOW_PROJECT='classic-wow-addons';
 /** Former project id -> folder in the collection repository. */
 export const MERGED_PROJECTS:Readonly<Record<string,string>>=Object.freeze({
@@ -9,7 +10,7 @@ export const MERGED_PROJECTS:Readonly<Record<string,string>>=Object.freeze({
   roar:'BattleEmotesLegacy',roarr:'BattleEmotes',roarrunlimited:'MultiActionEmotes',
   roarguild:'RoarGuildAddon',roaremotetrigger:'RoarGuildAddonWrath',roarsounds:'RoarSoundEffects',
   totemtimers:'TotemTimers',groupbufftoggle:'GroupBuffToggle',lootfeed:'LootFeed',
-  battlereport:'BattleReport',workthatgodbod:'WorkThatGodBod','the-great-iceflow-relay':'TheGreatIceflowRelay',
+  battlereport:'BattleReport',workthatgodbod:'WorkThatGodBod',
   meleestartattack:'MeleeStartAttack',warriorstartattack:'WarriorStartAttack',buxbrewresist:'ResistInsight',
   buxbrewding:'LevelUpAnnouncer',guildchatai:'GuildChatBridge',enchantvisuals:'EnchantVisuals'
 });

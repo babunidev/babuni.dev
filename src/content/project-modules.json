@@ -685,7 +685,7 @@
       "id": "downloads",
       "type": "resources",
       "title": "Downloads",
-      "preview": "Install zips for all 21 addons. Extract one into Interface/AddOns; the zip already holds the folder name the game expects.",
+      "preview": "Install zips for all 20 projects. Extract one into Interface/AddOns; the zip already holds the folder name the game expects.",
       "links": [
         {
           "label": "ActionEmotes #1",
@@ -754,10 +754,6 @@
         {
           "label": "ResistInsight",
           "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/ResistInsight.zip"
-        },
-        {
-          "label": "The Great Iceflow Relay",
-          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/TheGreatIceflowRelay.zip"
         },
         {
           "label": "TotemTimers",

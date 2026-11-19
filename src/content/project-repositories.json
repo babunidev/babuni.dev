@@ -77,12 +77,16 @@
       "LootFeed",
       "MeleeStartAttack",
       "ResistInsight",
-      "TheGreatIceflowRelay",
       "TotemTimers",
       "WarriorStartAttack",
       "WorkThatGodBod"
     ],
-    "note": "Collection of Babuni's finished 1.12 and 3.3.5 addons and the EnchantVisuals client mod, created 2026-11-19 from 21 former repositories; one folder module per addon."
+    "note": "Collection of Babuni's finished 1.12 and 3.3.5 addons and the EnchantVisuals client mod, created 2026-11-19 from 21 former repositories (The Great Iceflow Relay returned to its own repository the same day); one folder module per addon."
+  },
+  "the-great-iceflow-relay": {
+    "status": "connected",
+    "repository": "babunidev/TheGreatIceflowRelay",
+    "branch": "main"
   },
   "gathermap": {
     "status": "connected",

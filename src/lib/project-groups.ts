@@ -5,6 +5,7 @@ export const PROJECT_GROUPS=[
     "ids": [
       "socialforever",
       "classic-wow-addons",
+      "the-great-iceflow-relay",
       "roarforever",
       "flourishforever",
       "azeroth-moments",

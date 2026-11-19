@@ -268,6 +268,17 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
     "Combat reports",
     "Lua",
     "Install zips"
+  ],
+  "the-great-iceflow-relay": [
+    "Player minigame",
+    "Checkpoint relay",
+    "Player organized",
+    "World of Warcraft",
+    "Community play",
+    "Relay race",
+    "Azeroth",
+    "Game event",
+    "Shared adventure"
   ]
 });
 
