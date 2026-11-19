@@ -2,7 +2,7 @@
 
 This reference describes the intended visual and interaction behavior of babuni.dev. **The opening sections describe the current design direction; the dated sections that follow preserve earlier prototypes and their original verification limits.** An older entry is not a current specification when a later decision supersedes it.
 
-The creative direction is recorded in [Concept](../CONCEPT.md); accepted and superseded choices in [Decisions](DECISIONS.md); implementation in [Architecture](ARCHITECTURE.md); and actual changes, tests, and observations in [Changelog](../CHANGELOG.md) and [Development journal](DEVLOG.md). Design acceptance and source implementation must not be conflated.
+The creative direction is recorded in [Concept](CONCEPT.md); accepted and superseded choices in [Decisions](DECISIONS.md); implementation in [Architecture](ARCHITECTURE.md); and actual changes, tests, and observations in [Changelog](../CHANGELOG.md) and [Development journal](DEVLOG.md). Design acceptance and source implementation must not be conflated.
 
 ## Current design direction — project assortment and activity (2026-10-30)
 - BABUNI.DEV remains the first tile at startup; all other project identities are independently shuffled once per page load. Grid shifts move existing project identities, without re-shuffling them.

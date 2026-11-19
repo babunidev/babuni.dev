@@ -7,7 +7,7 @@
       "preview": "An exploratory workshop of projects, ideas and experiments.",
       "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
       "body": "Babuni.dev is a collection to explore rather than a linear portfolio. The living stone grid invites discovery through portals, topic wings and project blooms. Finished work, experiments and evolving ideas share the same surface.",
-      "source": "https://github.com/babunidev/babuni.dev/blob/main/CONCEPT.md"
+      "source": "https://github.com/babunidev/babuni.dev/blob/main/docs/CONCEPT.md"
     },
     {
       "id": "concept",
@@ -15,8 +15,8 @@
       "title": "Concept",
       "preview": "The toy box: discovery, shifting plates and four depths of exploration.",
       "credit": "Creative direction and authorship: Babuni.dev. AI-assisted implementation and editorial summaries are identified in the source record.",
-      "document": "CONCEPT.md",
-      "source": "https://github.com/babunidev/babuni.dev/blob/main/CONCEPT.md"
+      "document": "docs/CONCEPT.md",
+      "source": "https://github.com/babunidev/babuni.dev/blob/main/docs/CONCEPT.md"
     },
     {
       "id": "journal",

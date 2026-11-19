@@ -23,7 +23,7 @@ A persistent header provides access to Projects, Gallery, and About. Direct proj
 
 Tiles belong to grid cells rather than floating independently. From time to time, a whole row or column moves smoothly by one cell, like a slow-moving plate. The motion should make the surface feel alive without fighting the visitor for attention.
 
-Randomized, dice-inspired movement was part of the early design. The proposed d20 rolls and initiative modifiers are historical design material, **not a promise that those exact values govern the current implementation**. Engineering details and their verification belong in [Design](docs/DESIGN.md) and [Architecture](docs/ARCHITECTURE.md).
+Randomized, dice-inspired movement was part of the early design. The proposed d20 rolls and initiative modifiers are historical design material, **not a promise that those exact values govern the current implementation**. Engineering details and their verification belong in [Design](DESIGN.md) and [Architecture](ARCHITECTURE.md).
 
 The assortment also evolved. An earlier clockwise, newest-first spiral helped establish the opening layout. On 30 October 2026, the chosen direction became **BABUNI.DEV first, with the other projects shuffled once per visit**; their identities remain stable during subsequent movement. Recently updated projects can stand out through a gold label and an extra portal ring rather than being moved to the front. The exact activity window and count remain provisional.
 
@@ -72,8 +72,8 @@ The journal should explain how something came to be, including useful disagreeme
 
 This concept describes **what the experience is meant to feel like and why it takes this form**. It does not certify that every detail is implemented or tested. Dates, release status, exact tile geometry, shift rules, accessibility behavior, performance measurements, and unresolved engineering constraints are tracked separately:
 
-- [Design reference](docs/DESIGN.md) — precise intended interaction and visual behavior
-- [Decision register](docs/DECISIONS.md) — accepted, revised, and provisional choices
-- [Development journal](docs/DEVLOG.md) — human-directed development and verification history
-- [Architecture](docs/ARCHITECTURE.md) — implementation and technical constraints
+- [Design reference](DESIGN.md) — precise intended interaction and visual behavior
+- [Decision register](DECISIONS.md) — accepted, revised, and provisional choices
+- [Development journal](DEVLOG.md) — human-directed development and verification history
+- [Architecture](ARCHITECTURE.md) — implementation and technical constraints
 - [Roadmap](ROADMAP.md) — milestone status and work still open

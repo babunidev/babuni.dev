@@ -4,7 +4,7 @@ This register records **why decisions were made**, what alternatives were consid
 
 **Decision statuses:** **Accepted** (explicit creative approval), **Proposed** (not approved), **Experimental** (being evaluated), **Superseded** (replaced by a later decision), and **Open** (unresolved). Implementation and verification are separate: an accepted decision may be unbuilt, and a committed implementation may still need browser or device testing. Retrospective entries identify reconstructed context rather than inventing missing conversations.
 
-**Reading the history:** Numbered early decisions and later date-based entries coexist; section order is not a reliable current-priority list. Superseded designs remain as evidence of the process. Consult [Concept](../CONCEPT.md) for the lasting vision, [Design](DESIGN.md) for intended behavior, [Changelog](../CHANGELOG.md) for committed changes, and [Development journal](DEVLOG.md) for the fuller human–AI narrative.
+**Reading the history:** Numbered early decisions and later date-based entries coexist; section order is not a reliable current-priority list. Superseded designs remain as evidence of the process. Consult [Concept](CONCEPT.md) for the lasting vision, [Design](DESIGN.md) for intended behavior, [Changelog](../CHANGELOG.md) for committed changes, and [Development journal](DEVLOG.md) for the fuller human–AI narrative.
 
 ## Adding or revising a decision
 

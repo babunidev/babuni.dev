@@ -26,7 +26,7 @@ A subsequent change on **30 October 2026** retained BABUNI.DEV as the initial ti
 
 The first release was staged on the VPS on **31 October 2026**. The [development journal](docs/DEVLOG.md) records subsequent public HTTPS and redirect checks, a successful Certbot renewal dry run, working static asset responses, and successful checks of the existing Arcanite Brothers website and API. These observations verify specific deployment functions, **not** every interaction or performance characteristic of the live site. Later local commits and edits are not necessarily part of the deployed release.
 
-Publishing controls, continuing content review, production performance measurements, and further browser/device checks remain separate work. For dated milestones and limitations, see the [roadmap](ROADMAP.md) and [development journal](docs/DEVLOG.md).
+Publishing controls, continuing content review, production performance measurements, and further browser/device checks remain separate work. For dated milestones and limitations, see the [roadmap](docs/ROADMAP.md) and [development journal](docs/DEVLOG.md).
 
 ## Local development
 
@@ -70,10 +70,10 @@ GitHub Actions runs automated tests and production builds for main-branch pushes
 
 ### Creative direction and development history
 
-- [Concept](CONCEPT.md) — the creative vision and interaction principles
+- [Concept](docs/CONCEPT.md) — the creative vision and interaction principles
 - [Development journal](docs/DEVLOG.md) — the human perspective, collaboration, experiments, and results
 - [Decision register](docs/DECISIONS.md) — accepted choices, alternatives, and open questions
-- [Roadmap](ROADMAP.md) — milestones and ongoing work
+- [Roadmap](docs/ROADMAP.md) — milestones and ongoing work
 - [Changelog](CHANGELOG.md) — recorded changes to the repository
 - [Human–AI collaboration](docs/AI_COLLABORATION.md) — attribution, evidence, and narrative standards
 - [Repository documentation readability review](docs/READER_EXPERIENCE_AUDIT_2026-11-10.md) — what was edited across the portfolio and what remains only inventoried
@@ -99,4 +99,4 @@ Explore before explaining. Keep the playful interactions intact without sacrific
 
 ## License
 
-Original website software is licensed under [MIT](LICENSE). Logos, original artwork, and other showcased creative content are not automatically included; see [asset rights](ASSET_RIGHTS.md).
+Original website software is licensed under [MIT](LICENSE). Logos, original artwork, and other showcased creative content are not automatically included; see [asset rights](docs/ASSET_RIGHTS.md).

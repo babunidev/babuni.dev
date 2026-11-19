@@ -4,7 +4,7 @@ These rules apply to cloud and local coding agents working on this repository.
 
 ## Primary responsibility
 
-Develop Babuni's interactive, exploratory babuni.dev portfolio without replacing stated decisions with conventional portfolio patterns. Read CONCEPT.md, docs/DESIGN.md, and relevant existing code before modifying features. An image mockup or conversation is not proof that a feature is implemented.
+Develop Babuni's interactive, exploratory babuni.dev portfolio without replacing stated decisions with conventional portfolio patterns. Read docs/CONCEPT.md, docs/DESIGN.md, and relevant existing code before modifying features. An image mockup or conversation is not proof that a feature is implemented.
 
 ## Human–AI authorship is mandatory
 
@@ -23,12 +23,14 @@ See docs/AI_COLLABORATION.md for attribution, provenance, privacy rules, and pub
 
 ## Every meaningful change must update documentation
 
+The repository root holds only `README.md`, `AGENTS.md`, `LICENSE` and `CHANGELOG.md`. All other documentation lives in `docs/`; put new documents there.
+
 - CHANGELOG.md: only actual changes, organized by Added / Changed / Fixed / Removed / Security.
 - docs/DEVLOG.md: editorial development narrative about goals, human input, AI contribution, trade-offs, tests, failures, discoveries.
 - docs/DECISIONS.md: decisions with status, alternatives, rationale, and ability to revisit.
 - docs/DESIGN.md, docs/ARCHITECTURE.md, docs/CONTENT.md: maintain consistency with changed behavior.
-- ROADMAP.md: keep status truthful and distinguish planned from built.
-- CONCEPT.md: revise only when Babuni confirms a substantial change to vision.
+- docs/ROADMAP.md: keep status truthful and distinguish planned from built.
+- docs/CONCEPT.md: revise only when Babuni confirms a substantial change to vision.
 
 Prefer documentation updates in the same commit as the implementation. If a discussion changed direction but produced no code, record it as a design entry, **not** an implementation in CHANGELOG.
 

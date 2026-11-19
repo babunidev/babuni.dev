@@ -10,7 +10,7 @@ The checked-in catalog has **44 project IDs**: **41 connected mappings**, **2 ne
 
 | Project | Repository | Branch | Available documents |
 |---|---|---|---|
-| BABUNI.DEV | [babunidev/babuni.dev](https://github.com/babunidev/babuni.dev) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
+| BABUNI.DEV | [babunidev/babuni.dev](https://github.com/babunidev/babuni.dev) | main | 10: `README.md`, `docs/CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `docs/ROADMAP.md`, `docs/CONTENT.md` |
 | Button Game | [babunidev/ButtonGame](https://github.com/babunidev/ButtonGame) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | SocialForever | [babunidev/SocialForever](https://github.com/babunidev/SocialForever) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |
 | RoarForever | [babunidev/RoarForever](https://github.com/babunidev/RoarForever) | main | 10: `README.md`, `CONCEPT.md`, `docs/DEVLOG.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/DECISIONS.md`, `docs/AI_COLLABORATION.md`, `ROADMAP.md`, `docs/CONTENT.md` |

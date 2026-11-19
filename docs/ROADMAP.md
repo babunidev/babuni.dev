@@ -8,7 +8,7 @@ Milestone 5's content pipeline is substantially implemented. Editorial review is
 
 **Release status:** The static site is online. Operator-reported deployment records in `deploy/README.md` establish VPS setup, HTTPS/redirects, renewal dry runs, compression, asset cache headers, sitemap responses and preservation of the existing Arcanite Brothers site/API. These are dated checks, not a fresh live audit or proof of the latest deployed commit. CI tests/builds; it does not deploy automatically.
 
-**Next priorities:** measure repeatable live loading and browser interaction performance; verify the served release; submit/check search indexing; coordinate content publishing with the local Babuni.admin application. Deployment controls belong in Babuni.admin rather than a second website administration interface. Editorial completion remains ongoing and is not a release gate. See [admin integration plan](docs/ADMIN_INTEGRATION.md).
+**Next priorities:** measure repeatable live loading and browser interaction performance; verify the served release; submit/check search indexing; coordinate content publishing with the local Babuni.admin application. Deployment controls belong in Babuni.admin rather than a second website administration interface. Editorial completion remains ongoing and is not a release gate. See [admin integration plan](ADMIN_INTEGRATION.md).
 
 The checklist below reflects this acceptance. Dated notes after the checklist are historical; their earlier pending checks and superseded designs are not the current status.
 

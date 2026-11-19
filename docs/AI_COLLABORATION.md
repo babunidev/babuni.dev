@@ -47,9 +47,9 @@ Preserve original credits and licenses for source documents and media. A public 
 | [Development journal](DEVLOG.md) | Brief, publishable first-person story of the creative process |
 | [Decision register](DECISIONS.md) | Accepted, proposed, superseded, and open decisions with rationale |
 | [Changelog](../CHANGELOG.md) | Actual repository changes and stated verification limits |
-| [Concept](../CONCEPT.md) | Lasting creative vision, not a running implementation report |
+| [Concept](CONCEPT.md) | Lasting creative vision, not a running implementation report |
 | [Design](DESIGN.md), [Architecture](ARCHITECTURE.md), [Content](CONTENT.md) | Current specifications and clearly marked historical context |
-| [Roadmap](../ROADMAP.md) | Milestones and current outstanding work |
+| [Roadmap](ROADMAP.md) | Milestones and current outstanding work |
 
 For substantial implementation work, update the relevant documents together when practical. For discussion-only work, prepare a documentation-ready account without pretending a repository change occurred.
 
@@ -63,7 +63,7 @@ This is the kind of history worth retaining. The creative correction explains **
 
 An earlier documentation audit recorded the distinction between **53 candidate tiles**, **34 mapped tiles / 33 public sources**, **15 original WebP portal artworks**, and **21 archived AI captures** at that particular checkpoint. It also compared earlier 97-test reports with a later journal report of 126 tests. These counts are historical, **not current inventory or verification claims**.
 
-That audit examined the repository and its existing documentation, but did **not** run new tests, a content sync, production build, physical-device trials, or deployment. Its core editorial conclusion remains: external project documents are revision-pinned snapshots, and updates require deliberate synchronization and review. Current status belongs in the repository, [roadmap](../ROADMAP.md), and newer dated records.
+That audit examined the repository and its existing documentation, but did **not** run new tests, a content sync, production build, physical-device trials, or deployment. Its core editorial conclusion remains: external project documents are revision-pinned snapshots, and updates require deliberate synchronization and review. Current status belongs in the repository, [roadmap](ROADMAP.md), and newer dated records.
 
 ## Reuse in other projects
 

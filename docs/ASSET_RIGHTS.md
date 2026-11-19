@@ -1,6 +1,6 @@
 # Website code, artwork and identity
 
-The original website code and associated software documentation are offered under the [MIT License](LICENSE).
+The original website code and associated software documentation are offered under the [MIT License](../LICENSE).
 
 That permission does **not** apply automatically to the Babuni name, personal identity, project logos, brand marks, original artwork, screenshots, writing or other showcased creative work. Those materials retain their own rights unless a specific project license or file notice grants reuse.
 

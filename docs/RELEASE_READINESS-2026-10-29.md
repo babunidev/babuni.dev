@@ -1,6 +1,6 @@
 # Release readiness — 2026-10-29
 
-> **Historical release-readiness review (29 October 2026).** The tasks, code sizes and open questions below describe a predeployment checkpoint. Later work added readable pages, search metadata and the initial HTTPS release on 31 October; do not read original pending items as present-day blockers. The creative's device acceptance and local test evidence retain their original dates and limits. Current release procedures are documented in [deployment](../deploy/README.md); later milestones in [roadmap](../ROADMAP.md).
+> **Historical release-readiness review (29 October 2026).** The tasks, code sizes and open questions below describe a predeployment checkpoint. Later work added readable pages, search metadata and the initial HTTPS release on 31 October; do not read original pending items as present-day blockers. The creative's device acceptance and local test evidence retain their original dates and limits. Current release procedures are documented in [deployment](../deploy/README.md); later milestones in [roadmap](ROADMAP.md).
 
 ## Implementation update
 

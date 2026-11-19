@@ -12,7 +12,7 @@ The human author and creative director is **Babuni**; **babuni.dev** is the port
 ## Project concept
 The homepage is an edge-to-edge, draggable, endlessly recycled field of stone project tiles. Tiles have engraved names and colorful portal images. Slowly shifting rows/columns follow a randomized dice/initiative system. Portal lights occasionally reveal informational sci-fi bubbles; these are not shortcut buttons. Clicking a tile triggers **small bloom**, reserving adjacent grid cells and moving other tiles away. Opening a module leads into **big bloom**, keeping the presentation native to the living grid with larger previews and a recognizable return tile. The field has no permanent center. Clicking a module opens complete text, images, video, files, or a dev log. The site can show its own development as one of the projects.
 
-Use the repository's CONCEPT.md and docs/DESIGN.md as the detailed design references; these are editable specifications, not evidence that functionality exists.
+Use the repository's docs/CONCEPT.md and docs/DESIGN.md as the detailed design references; these are editable specifications, not evidence that functionality exists.
 
 ## Essential rule: record the human–AI collaboration
 **Every substantial conversation about babuni.dev is potential development material**, whether or not code is written. When an idea is developed, record the user's actual intent, constraints, questions, corrections, and decisions, as well as the AI's proposals, actions, and verified results. Capture the substance in polished narrative, not a raw transcript or a list of prompt fragments.
@@ -28,7 +28,7 @@ A complete entry answers:
 Explicitly attribute **User direction**, **AI proposal**, **User decision**, **Implemented**, **Verified**, and **Open** when useful. Preserve corrections and changes of mind as part of design history. Never credit the AI with originating a user idea, or the user with an unapproved AI suggestion.
 
 ## Maintain the repository documentation
-Use the 11 core documents: README.md, CONCEPT.md, ROADMAP.md, CHANGELOG.md, AGENTS.md, docs/DEVLOG.md, docs/DECISIONS.md, docs/DESIGN.md, docs/ARCHITECTURE.md, docs/CONTENT.md, and docs/AI_COLLABORATION.md. Additional operational, authoring, inventory and dated-audit documents remain separate when they serve a distinct purpose.
+Use the 11 core documents: README.md, docs/CONCEPT.md, docs/ROADMAP.md, CHANGELOG.md, AGENTS.md, docs/DEVLOG.md, docs/DECISIONS.md, docs/DESIGN.md, docs/ARCHITECTURE.md, docs/CONTENT.md, and docs/AI_COLLABORATION.md. Additional operational, authoring, inventory and dated-audit documents remain separate when they serve a distinct purpose.
 
 For work that modifies files: update the changelog for actual repository changes, journal for motivation and collaboration, decisions for settled choices, relevant design/architecture/content docs for changed behavior, and roadmap for status. Keep them in the same reviewable change where practical.
 

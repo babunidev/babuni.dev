@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — babuni.dev documentation moved into `docs/` (2026-11-19)
+- Moved `CONCEPT.md`, `ROADMAP.md` and `ASSET_RIGHTS.md` to `docs/`. The root now holds only `README.md`, `AGENTS.md`, `LICENSE`, `CHANGELOG.md` and project configuration. Relative links in the moved files, in `README.md` and in `docs/` were updated, as were `AGENTS.md`, `.chatgpt/PROJECT_INSTRUCTIONS.md`, the BABUNI.DEV concept module in `src/content/project-modules.json`, and the documentation table in `docs/DOCUMENTATION.md`, which now states the root rule. `AGENTS.md` asks for new documents to go in `docs/`. Historical changelog entries keep the paths they used at the time.
+- BABUNI.DEV is the first repository on the new layout; its concept and roadmap modules read and link the `docs/` files. Other repositories are unchanged.
+
 ### Changed — Concept and roadmap move into `docs/` (2026-11-19)
 - The documentation contract now places the concept at `docs/CONCEPT.md` and the roadmap at `docs/ROADMAP.md`. Only `README.md`, `AGENTS.md`, `LICENSE` and `CHANGELOG.md` stay in a repository root. Each moved document keeps its earlier root location as `legacyPath` in `REPOSITORY_DOCUMENTS` (`src/lib/repository-content.ts`).
 - `npm run content:sync` fetches the `docs/` location first and reads the root file only when the `docs/` file is missing or empty, so repositories can move one at a time. The snapshot records where the file actually was, and the module's source link points there. Snapshot validation, connection `paths` overrides, document asset names, the local babuni.dev documents and `npm run content:report` accept either location (`scripts/sync-repositories.mjs`, `scripts/build-document-assets.mjs`, `scripts/content-tools.mjs`, `scripts/repository-report.mjs`). The report's shared-contract section states the new layout; its table lists the actual locations.
