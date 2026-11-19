@@ -1,74 +1,28 @@
-# Human–AI Collaboration and Provenance
+# Human–AI collaboration
 
-Follow [the documentation standard](DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution.
+## How I work with AI
 
-## Making the portfolio
+Every project here begins with something I want to see in a game, on a screen or in a story. The ideas, the direction and the decisions are mine, and so are the playtests and the checks on my own devices. AI helps me get there. In my early projects that meant asking ChatGPT for Lua in a conversation, copying the changes into local files and trying them in the game. Today coding agents work directly in the repositories: they research, write code and documentation and run tests, while I decide what to build, try it out and say what works and what doesn't.
 
-With babuni.dev, I wanted a portfolio that also records how the work came into being. The toy-box premise, shifting stone plates, portal information points, endless field and reserved bloom cells grew through my direction and corrections. AI helped explore, document and implement decisions as recorded in the development journal.
+Two rules hold this record together. Work is credited to whoever did it: the story is told in my voice, but when AI wrote code or a document, the record says so and names the tool and, where it is known, the model. And a plan is not a result: proposed, accepted, built, tested and published stay separate, and an automated test by an AI is not the same as my own check in the game or on my phone.
 
-This document sets the publication and evidence rules. [AGENTS.md](../AGENTS.md) governs development practice, while [DEVLOG.md](DEVLOG.md) tells the story.
+## Who did what
 
-## Authorship and narrative voice
+| Who | Role | Model as recorded |
+| --- | --- | --- |
+| **Babuni** | Creative: ideas, direction, decisions, corrections, playtesting and device checks | — |
+| **ChatGPT** | Chat assistant: ideas, research, code and text drafts in conversation | Not recorded |
+| **Codex** | Coding agent in the repository: research, code, documentation and tests | GPT-6 |
+| **Claude Code** | Coding agent in the repository: research, code, documentation and tests | Claude Opus 5.5 |
+| **Earlier AI help** | Work that older entries describe only as “AI” | Tool and model not recorded |
 
-Public-facing development history is written **from the human creative's first-person perspective**, in natural, varied prose. Use “I” and “my” within sentences, but **never begin a sentence with “I” or “My.”** Refer to a person who conceives or makes work as a **creative**, not a **creator**.
+The journal and the changelog name the tool for each piece of AI work. A model that was not recorded stays unrecorded rather than guessed.
 
-Write about the motivation, the choice, the collaboration, and the result. Avoid promotional language, repetitive labels, and exhaustive accounts of routine commands. Keep changelogs factual and technical details direct.
+## Where the details are
 
-First-person narration does **not** mean claiming personal execution of AI work. Write plainly when AI drafted a document, changed code, generated a visualization, or ran a test. Likewise, an AI suggestion cannot become the creative's idea or approved decision without evidence.
+- [Development journal](DEVLOG.md): the story of the project in my voice, including what I asked for and what AI did.
+- [Decision record](DECISIONS.md): what was decided, by whom and why.
+- [Changelog](../CHANGELOG.md): what changed and how it was checked.
+- [Documentation standard](DOCUMENTATION.md) and [AGENTS.md](../AGENTS.md): the writing and working rules for everyone who contributes, human or AI.
 
-## Five kinds of evidence
-
-1. **Creative direction:** The creative's original idea, goal, constraint, question, observation, or correction.
-2. **AI contribution:** A suggestion, interpretation, research finding, draft, design, code change, or action performed by AI.
-3. **Decision and iteration:** What the creative accepted, rejected, refined, or deferred, including consequential alternatives and misunderstandings.
-4. **Implementation:** What actually changed, with file, issue, PR, or commit references where available.
-5. **Verification:** What was tested or observed, by whom and how, and what remains uncertain.
-
-These are evidence categories, **not five mandatory subheadings for every journal entry**. A two-sentence adjustment can be sufficient. Larger work may need a fuller account. Preserve cause and effect without turning the journal into a transcript.
-
-## Status and source integrity
-
-Keep **proposed**, **accepted**, **implemented**, **verified**, and **deployed** distinct. A design mockup is not a shipped feature; a commit is not a passing test; a passing automated test is not a real-device observation; a local build is not proof of production deployment.
-
-Use material actually available: the current conversation, accessible previous discussions, supplied files, repository contents, commits, and recorded test evidence. An agent does not necessarily have access to every archived conversation, local file, or tool session. Mark incomplete historical reconstructions as **retrospective**, and never invent missing motives, dialogue, approvals, results, or dates.
-
-Attribute human device checks to the creative and AI-driven browser or automated tests to the agent that performed them. Record verification limits when material.
-
-## Publication and privacy
-
-The repository is public, but project conversations are not automatically public documents. Publish concise, relevant summaries rather than raw transcripts. Exclude credentials, keys, private account details, unrelated personal information, sensitive infrastructure data, and third-party material without appropriate rights or authorization.
-
-Preserve original credits and licenses for source documents and media. A public repository link is not evidence that its content was authored by AI or that it was tested in a running application.
-
-## Where information belongs
-
-| Document | Primary responsibility |
-| --- | --- |
-| [Development journal](DEVLOG.md) | Brief, publishable first-person story of the creative process |
-| [Decision register](DECISIONS.md) | Accepted, proposed, superseded, and open decisions with rationale |
-| [Changelog](../CHANGELOG.md) | Actual repository changes and stated verification limits |
-| [Concept](CONCEPT.md) | Lasting creative vision, not a running implementation report |
-| [Design](DESIGN.md), [Architecture](ARCHITECTURE.md), [Content](CONTENT.md) | Current specifications and clearly marked historical context |
-| [Roadmap](ROADMAP.md) | Milestones and current outstanding work |
-
-For substantial implementation work, update the relevant documents together when practical. For discussion-only work, prepare a documentation-ready account without pretending a repository change occurred.
-
-## Example: making physical space for a bloom
-
-The early bloom visualization showed floating panels around the selected project. That AI interpretation missed the spatial relationship I wanted: selecting a tile should physically move its neighbors aside and reserve actual grid cells for content. After the correction, the design became a grid-native bloom rather than an overlay dashboard.
-
-This is the kind of history worth retaining. The creative correction explains **why** the design changed; implementation and test evidence belong alongside the appropriate dated development record. At the time of the early example, the behavior had not yet been implemented; later work must not be retroactively attributed to that original experiment.
-
-## Historical provenance checkpoint — 27 October 2026
-
-An earlier documentation audit recorded the distinction between **53 candidate tiles**, **34 mapped tiles / 33 public sources**, **15 original WebP portal artworks**, and **21 archived AI captures** at that particular checkpoint. It also compared earlier 97-test reports with a later journal report of 126 tests. These counts are historical, **not current inventory or verification claims**.
-
-That audit examined the repository and its existing documentation, but did **not** run new tests, a content sync, production build, physical-device trials, or deployment. Its core editorial conclusion remains: external project documents are revision-pinned snapshots, and updates require deliberate synchronization and review. Current status belongs in the repository, [roadmap](ROADMAP.md), and newer dated records.
-
-## Reuse in other projects
-
-This method can be adapted for other Babuni repositories, but only when deliberately adopted in their own project rules. Neither this file nor a ChatGPT conversation automatically changes another project's instructions.
-
-## 18 November 2026 — Collaboration record review
-
-At my request, Codex (GPT-6) revised this record for first-person voice and checked the attribution against the available repository documentation. Where an earlier AI tool or model is missing from the record, its identity remains unconfirmed.
+The earlier, longer version of this record, as it stood on 19 November 2026, is kept in the [Git history](https://github.com/babunidev/babuni.dev/blob/eb3957429da6195fdf0d6aa282d6a5046fe1048d/docs/AI_COLLABORATION.md).

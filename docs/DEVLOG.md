@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-19 — One collaboration record for every project
+
+The human–AI collaboration file had grown into three things at once: writing rules for agents, old audit counts and a second journal. Since it describes how I work with AI, I wanted it short and the same in every repository. Claude Code (Claude Opus 5.5) rewrote it into one shared text with three parts, how I work with AI, who did what and where the details are, and filled each project's table only with the tools and models its records actually name. The rules stay in the documentation standard, and the longer earlier versions remain in the Git history.
+
 ## 2026-11-19 — Seeing what is new at a glance
 
 Every reader said "Changelog" twice, once as the reader's title and once as the document's own heading, and the small bloom only described what a changelog is. I wanted the newest change to be the first thing visible, and any introduction moved to the bottom. Claude Code (Claude Opus 5.5) changed how documents are presented on the site rather than editing every repository: the duplicate heading is gone, logs open on their latest entry with their introduction at the end, and the small blooms now preview that entry. While checking, AI noticed that decision records and the collection's folder cards had the same problem and fixed them too. It also combined all 20 portal artworks of the collection into one medallion.

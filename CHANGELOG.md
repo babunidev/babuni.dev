@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — human–AI collaboration record (2026-11-19)
+- Rewrote `docs/AI_COLLABORATION.md` to the shared text used in all of Babuni's repositories: how Babuni works with AI, who did what (the tools and recorded models named in this project's records) and where the details are. The earlier, longer version stays in the Git history. Claude Code (Claude Opus 5.5).
+
 ### Changed — Readers show one title; blooms preview the newest entry (2026-11-19)
 - Standard documents (README, CHANGELOG and the `docs/` standard files) no longer repeat their module title: their own H1 is dropped, because the reader, the blooms and the module pages already show the title. Documents inside folders keep their H1, since there the title is only a file name.
 - Changelogs and journals open on their newest entry. The text above the first entry moves to the end of the document under **About this log**; nothing is removed. Decision records get the same treatment but keep their own order.
