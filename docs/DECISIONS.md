@@ -966,3 +966,15 @@ To make the reuse terms explicit, I approved MIT for original website software; 
 **Alternatives:** Keep the existing layout (no cost, but a cluttered root); move every repository at once and switch the website in the same step (any repository not yet moved would lose its concept and roadmap modules); move the changelog too (against common tooling defaults).
 
 **Not adopted:** A git-ignored one-line `CLAUDE.md` per repository, proposed by AI and approved by Babuni, then withdrawn by AI after it observed that Claude Code already loads AGENTS.md when it reads files in the repository.
+
+## 2026-11-19 — The finished 1.12 and 3.3.5 addons become one project
+
+**Status:** Accepted, implemented. **Directed by:** Babuni.
+
+**Choice:** The 20 addons for the 1.12 and 3.3.5 clients and the EnchantVisuals client mod live in `babunidev/ClassicWoWAddons`, one folder each with its full history, and appear on the website as one project with a folder module per addon. Their former tiles, pages and repositories are retired.
+
+**Criterion:** Addons with entries for further development keep their own repository. Babuni decided that the AI-written verification checklists and unapproved ideas in the old roadmaps do not count. The active WoW Forever addons stay separate projects and repositories; most publish to CurseForge, which expects one addon per repository.
+
+**AI proposals:** A collection per client version (rejected: only two 3.3.5 addons); archiving the old repositories (rejected by Babuni, because archived repositories remain in the GitHub list); forwarding every old address instead of letting it fail (accepted). The emote-family brief's single "WoW Emote Addons" tile is replaced by this collection; FlourishForever and RoarForever keep their own tiles.
+
+**Open:** Final portal artwork for the collection. The WeakAuras chapter of the emote-family history awaits Babuni's interview text.

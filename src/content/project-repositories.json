@@ -55,120 +55,38 @@
     "branch": "main",
     "note": "Ethera game, design and documentation repository, made public by Babuni on 2026-11-10. It replaces the separate Ethera-docs edition, which Babuni deleted."
   },
-  "enchantvisuals": {
+  "classic-wow-addons": {
     "status": "connected",
-    "repository": "babunidev/EnchantVisuals",
-    "branch": "main"
-  },
-  "totemtimers": {
-    "status": "connected",
-    "repository": "babunidev/TotemTimers",
-    "branch": "main"
-  },
-  "groupbufftoggle": {
-    "status": "connected",
-    "repository": "babunidev/GroupBuffToggle",
-    "branch": "main"
-  },
-  "lootfeed": {
-    "status": "connected",
-    "repository": "babunidev/LootFeed",
-    "branch": "main"
+    "repository": "babunidev/ClassicWoWAddons",
+    "branch": "main",
+    "folders": [
+      "ActionEmotes-1",
+      "StealthEmotes",
+      "ActionEmotes-2",
+      "BattleEmotesLegacy",
+      "BattleEmotes",
+      "MultiActionEmotes",
+      "RoarGuildAddon",
+      "RoarGuildAddonWrath",
+      "RoarSoundEffects",
+      "BattleReport",
+      "EnchantVisuals",
+      "GroupBuffToggle",
+      "GuildChatBridge",
+      "LevelUpAnnouncer",
+      "LootFeed",
+      "MeleeStartAttack",
+      "ResistInsight",
+      "TheGreatIceflowRelay",
+      "TotemTimers",
+      "WarriorStartAttack",
+      "WorkThatGodBod"
+    ],
+    "note": "Collection of Babuni's finished 1.12 and 3.3.5 addons and the EnchantVisuals client mod, created 2026-11-19 from 21 former repositories; one folder module per addon."
   },
   "gathermap": {
     "status": "connected",
     "repository": "babunidev/GatherMap",
-    "branch": "main"
-  },
-  "battlereport": {
-    "status": "connected",
-    "repository": "babunidev/BattleReport",
-    "branch": "main"
-  },
-  "roarguild": {
-    "status": "connected",
-    "repository": "babunidev/RoarGuildAddon",
-    "branch": "main",
-    "note": "Renamed repository supplied by Babuni.dev on 2026-11-01. Keep RoarGuild Add-on display name, stable ID and artwork; separate from the Roar Guild community. Historical installed roarguild filenames and /rogu remain in source documents."
-  },
-  "workthatgodbod": {
-    "status": "connected",
-    "repository": "babunidev/WorkThatGodBod",
-    "branch": "main"
-  },
-  "the-great-iceflow-relay": {
-    "status": "connected",
-    "repository": "babunidev/TheGreatIceflowRelay",
-    "branch": "main"
-  },
-  "roarrunlimited": {
-    "status": "connected",
-    "repository": "babunidev/MultiActionEmotes",
-    "branch": "main",
-    "note": "Renamed MultiActionEmotes at Babuni.dev’s request on 2026-11-01. Stable ID roarrunlimited and RoarUnlimited.webp retained. Historical installed ROARRunlimited filenames, /roed and ROEDDB remain in source documents."
-  },
-  "roarr": {
-    "status": "connected",
-    "repository": "babunidev/BattleEmotes",
-    "branch": "main",
-    "note": "Renamed Battle Emotes at Babuni.dev’s request on 2026-11-01. Stable ID roarr and ROARR.webp retained. Separate from Battle Emotes Legacy; installed ROARR filenames, /roarr and ROARRDB remain historical names."
-  },
-  "roarsounds": {
-    "status": "connected",
-    "repository": "babunidev/RoarSoundEffects",
-    "branch": "main",
-    "note": "Renamed source supplied by Babuni.dev on 2026-11-01. Stable ID roarsounds and ROARsounds.webp remain. Historical installed ROAR identifiers are distinct from the other ROAR-family projects."
-  },
-  "roaremotetrigger": {
-    "status": "connected",
-    "repository": "babunidev/RoarGuildAddonWrath",
-    "branch": "main",
-    "note": "Renamed again at Babuni.dev’s request on 2026-11-01: Roar Guild Addon Wrath replaces EmoteTrigger (formerly ROARemoteTrigger). Stable ID and ROARRemoteTrigger.webp retained. The Wrath port keeps ROARTrigger installation names and excludes Roarboard; separate from RoarGuildAddon."
-  },
-  "roar": {
-    "status": "connected",
-    "repository": "babunidev/BattleEmotesLegacy",
-    "branch": "main",
-    "note": "Renamed Battle Emotes Legacy at Babuni.dev’s request on 2026-11-01. Stable ID roar and ROAR.webp retained. Installed ROARR names are distinct from the separate Battle Emotes project (stable ID roarr)."
-  },
-  "meleestartattack": {
-    "status": "connected",
-    "repository": "babunidev/MeleeStartAttack",
-    "branch": "main"
-  },
-  "buxbrewresist": {
-    "status": "connected",
-    "repository": "babunidev/ResistInsight",
-    "branch": "main",
-    "note": "Renamed source supplied by Babuni.dev on 2026-11-01. Stable identity and BuxbrewResist.webp retained; original version is on hold and is distinct from its ResistForever successor. Installed filenames and /buxres remain historical names."
-  },
-  "buxbrewding": {
-    "status": "connected",
-    "repository": "babunidev/LevelUpAnnouncer",
-    "branch": "main",
-    "note": "Renamed source supplied by Babuni.dev on 2026-11-01. Preserve stable ID and BuxbrewDing.webp artwork; installed addon filenames and /buxbrew commands remain historical names."
-  },
-  "buxbrewcharge": {
-    "status": "connected",
-    "repository": "babunidev/ActionEmotes-1",
-    "branch": "main",
-    "note": "Repository renamed by Babuni.dev; portfolio display name ActionEmotes #1 confirmed 2026-10-31. Stable project ID and existing artwork retained. Historical source/addon names remain in original documentation."
-  },
-  "buxbrew": {
-    "status": "connected",
-    "repository": "babunidev/ActionEmotes-2",
-    "branch": "main",
-    "note": "Renamed ActionEmotes #2 at Babuni.dev’s request on 2026-11-01. Stable ID and BuxbrewAddon.webp retained; source installation names remain Buxbrew/MadAxeBuxbrew. Separate from ActionEmotes #1 and the character-story project."
-  },
-  "amazin": {
-    "status": "connected",
-    "repository": "babunidev/StealthEmotes",
-    "branch": "main",
-    "note": "Renamed repository supplied by Babuni.dev on 2026-11-01; stable ID and supplied Amazin.webp artwork retained. Installed addon filenames, commands and saved variables remain Amazin upstream."
-  },
-  "warriorstartattack": {
-    "status": "connected",
-    "repository": "babunidev/WarriorStartAttack",
     "branch": "main"
   },
   "roar-guild-and-community": {
@@ -234,12 +152,6 @@
     "repository": "babunidev/babunigaming",
     "branch": "main",
     "note": "Public Babuni Gaming repository supplied by Babuni on 2026-11-14. Standard documents are imported; the existing channel and video modules stay."
-  },
-  "guildchatai": {
-    "status": "connected",
-    "repository": "babunidev/GuildChatBridge",
-    "branch": "main",
-    "note": "Restored at Babuni.dev’s request on 2026-11-01 under the renamed public repository. Previously withdrawn as GuildChatAI; stable ID retained. Paused experiment, not a working AI bridge."
   },
   "clearviewforever": {
     "status": "connected",

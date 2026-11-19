@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-19 — One tile for the finished addons
+
+A brief I wrote for combining the emote addons led to a larger idea: most of my old World of Warcraft addons are small projects for the 1.12 and 3.3.5 clients that I will not develop further, and together they filled a quarter of the grid. I decided to put all of them into one repository with install zips and to give them one tile, while the active WoW Forever addons keep their own repositories. Claude Code (Claude Opus 5.5) checked the old roadmaps, which held only test checklists and unapproved ideas, built the `ClassicWoWAddons` repository with each addon's full history, and switched the website to it. Old links and pages now lead into the collection. The tile's artwork is a stand-in until I have a proper portal for it.
+
 ## 2026-11-19 — The project icon leads back
 
 Inside a big bloom or the reader, the project you were in was no longer visible, and going back meant knowing about Escape or clicking beside the panel. I asked for the project's icon in the top-left corner of the reader and, smaller, of every big-bloom card, and for a click on it to take me back one step. Claude Code (Claude Opus 5.5) used the portal artwork the grid already shows and connected the icon to the existing back paths, so the timing stays exactly as approved. A first version indented the reader's title beside the icon; AI noticed in its own screenshots that this looked odd on a phone and moved the icon and the share button into a row above the title instead. AI tested it in a headless browser at desktop and phone widths; I have not yet tried it on my phone.

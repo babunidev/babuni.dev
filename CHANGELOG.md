@@ -6,6 +6,13 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — 21 addon tiles become the Classic WoW Addons project (2026-11-19)
+- The finished 1.12 and 3.3.5 addons and the EnchantVisuals client mod now come from one repository, `babunidev/ClassicWoWAddons`, as one project with a folder module per addon, a Downloads module linking all 21 install zips, and the collection's overview, journal, changelog and decisions. The catalog has 24 projects instead of 44. Retired ids: buxbrewcharge, buxbrew, amazin, roar, roarr, roarrunlimited, roarguild, roaremotetrigger, roarsounds, totemtimers, groupbufftoggle, lootfeed, battlereport, workthatgodbod, the-great-iceflow-relay, meleestartattack, warriorstartattack, buxbrewresist, buxbrewding, guildchatai, enchantvisuals.
+- Old addresses keep working. `#project=<old id>` opens that addon's folder in the collection, and `&read=<module>` opens the matching document there (for example `#project=lootfeed&read=changes` opens `LootFeed/CHANGELOG.md`). The 252 former `/projects/<old id>/…` pages are generated forwarding pages with `noindex` and the new canonical address. Mapping in `src/lib/merged-projects.ts`, used by `src/scripts/grid.ts` and `astro.config.mjs`.
+- Project groups and topic keywords follow the catalog. The sync's per-repository limit for extra Markdown documents rose from 200 to 400 because the collection holds about 265. The collection's portal artwork is a temporary composite of four of its addons' portals (`public/portal-content/ClassicWoWAddons.webp`).
+- Tests no longer depend on the old ids or on a catalog of at least 45 projects.
+- Verification: `npm run content:sync`, `content:report`, `content:check`, `npm run test:grid` (214 passed) and `npm run build` (285 public URLs verified) passed. Claude Code (Claude Opus 5.5) checked in headless Chrome against `astro preview` at 1280 px and 390 px: 19 checks passed, including one collection tile and no retired tiles in the grid, 21 folder cards and the downloads card, old links opening the right folder or document, an old static page forwarding, no sideways scrolling and no page errors.
+
 ### Added — Project icon in the reader and on big-bloom cards (2026-11-19)
 - Every big-bloom card shows the project's round portal artwork in its top-left corner. Clicking it returns to the small bloom, exactly like Escape (`requestSmallBloom`), so a running transition finishes first. The card's title moves aside for it.
 - The reader shows the same icon in its top-left corner. Clicking it closes the reader back to the big bloom, exactly like Escape or a backdrop click. The icon and the share button now sit in their own row above the reader's title. The About reader has neither.

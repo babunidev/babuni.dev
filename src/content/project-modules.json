@@ -349,6 +349,11 @@
           "src": "/media/babuni-dev/images/verification/project-icon-reader-phone.webp",
           "alt": "The Button Game changelog reader on a narrow screen with the project icon top left, the share button top right and the title below them.",
           "caption": "AI headless-Chrome capture, 19 November 2026, at 390 px. Clicking the icon closed the reader and kept the big bloom open. Not a physical phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/classic-wow-addons-grid.webp",
+          "alt": "The living grid after the merge: 24 project tiles, none of them a retired 1.12 or 3.3.5 addon.",
+          "caption": "AI headless-Chrome capture, 19 November 2026, of the local preview at 1280 px after 21 addon tiles became the single Classic WoW Addons project. Not a phone test."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."
@@ -675,178 +680,99 @@
       "credit": "Project rename directed by Babuni.dev; AI-assisted source-label clarification. Public source documents retain their historical wording."
     }
   ],
-  "buxbrewcharge": [
+  "classic-wow-addons": [
     {
-      "id": "source",
+      "id": "downloads",
       "type": "resources",
-      "title": "Project source",
-      "preview": "The original Action Emotes #1 source and its revised documentation. The historical BuxbreCharge.toc filename still requires an installation check.",
+      "title": "Downloads",
+      "preview": "Install zips for all 21 addons. Extract one into Interface/AddOns; the zip already holds the folder name the game expects.",
       "links": [
         {
-          "label": "Repository",
-          "href": "https://github.com/babunidev/ActionEmotes-1"
+          "label": "ActionEmotes #1",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/ActionEmotes-1.zip"
         },
         {
-          "label": "Merged documentation review — #1",
-          "href": "https://github.com/babunidev/ActionEmotes-1/pull/1"
+          "label": "StealthEmotes",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/StealthEmotes.zip"
         },
         {
-          "label": "Documentation baseline — e475a45",
-          "href": "https://github.com/babunidev/ActionEmotes-1/commit/e475a45108753c9eda8de1e774e2ba95058d65c0"
-        }
-      ],
-      "credit": "Project authorship: Babuni.dev. Baseline and unresolved installation concern supplied by Babuni.dev; AI verified the public merged review and imported its documentation. No addon code or filename was changed."
-    }
-  ],
-  "guildchatai": [],
-  "amazin": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "StealthEmotes replaces the former Amazin project name. The installed addon still uses Amazin filenames and /amazin commands; the current source README retains earlier proposed-rename wording.",
-      "links": [
+          "label": "ActionEmotes #2",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/ActionEmotes-2.zip"
+        },
         {
-          "label": "StealthEmotes repository",
-          "href": "https://github.com/babunidev/StealthEmotes"
-        }
-      ],
-      "credit": "Repository replacement directed by Babuni.dev; AI-assisted clarification of current repository versus historical runtime names."
-    }
-  ],
-  "buxbrewding": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "LevelUpAnnouncer replaces BuxbrewDing as the portfolio/repository name. Upstream documents and installed BuxbrewDing files still retain their historical names.",
-      "links": [
+          "label": "Battle Emotes Legacy",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/BattleEmotesLegacy.zip"
+        },
         {
-          "label": "LevelUpAnnouncer repository",
-          "href": "https://github.com/babunidev/LevelUpAnnouncer"
-        }
-      ],
-      "credit": "Name and repository replacement directed by Babuni.dev; AI-assisted source clarification."
-    }
-  ],
-  "buxbrewresist": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "ResistInsight, formerly BuxbrewResist, is on hold. It is the original project behind ResistForever; installed addon files and /buxres still use their historical names.",
-      "links": [
+          "label": "Battle Emotes",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/BattleEmotes.zip"
+        },
         {
-          "label": "ResistInsight repository",
-          "href": "https://github.com/babunidev/ResistInsight"
-        }
-      ],
-      "credit": "Repository rename requested by Babuni.dev; AI-assisted source clarification based on the public README."
-    }
-  ],
-  "buxbrew": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "ActionEmotes #2, formerly Buxbrew Addon. Historical Buxbrew/MadAxeBuxbrew file names and /mae commands remain in the source documentation.",
-      "links": [
+          "label": "MultiActionEmotes",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/MultiActionEmotes.zip"
+        },
         {
-          "label": "ActionEmotes #2 repository",
-          "href": "https://github.com/babunidev/ActionEmotes-2"
-        }
-      ],
-      "credit": "Name and repository replacement requested by Babuni.dev; AI-assisted source clarification."
-    }
-  ],
-  "roar": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "Battle Emotes Legacy replaces the former ROAR repository name. This project installs as ROARR with /roarr commands; it remains separate from the separate Battle Emotes project and RoarForever.",
-      "links": [
+          "label": "RoarGuild Add-on",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/RoarGuildAddon.zip"
+        },
         {
-          "label": "Battle Emotes Legacy repository",
-          "href": "https://github.com/babunidev/BattleEmotesLegacy"
-        }
-      ],
-      "credit": "Repository rename requested by Babuni.dev; AI-assisted clarification of historical and installed names."
-    }
-  ],
-  "roarr": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "Battle Emotes, formerly the roarr repository. The installed addon retains ROARR filenames and /roarr commands. Battle Emotes Legacy remains a separate historical project.",
-      "links": [
+          "label": "Roar Guild Addon Wrath",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/RoarGuildAddonWrath.zip"
+        },
         {
-          "label": "Battle Emotes repository",
-          "href": "https://github.com/babunidev/BattleEmotes"
-        }
-      ],
-      "credit": "Name and repository replacement requested by Babuni.dev; AI-assisted clarification from the current public README."
-    }
-  ],
-  "roarrunlimited": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "MultiActionEmotes replaces ROARRunlimited as the project/repository name. Historical installation identifiers and /roed commands remain in the imported source documents.",
-      "links": [
+          "label": "RoarSoundEffects",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/RoarSoundEffects.zip"
+        },
         {
-          "label": "MultiActionEmotes repository",
-          "href": "https://github.com/babunidev/MultiActionEmotes"
-        }
-      ],
-      "credit": "Name and source replacement requested by Babuni.dev; AI-assisted clarification based on public repository documentation."
-    }
-  ],
-  "roarguild": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "RoarGuild Add-on uses the RoarGuildAddon repository. Installed roarguild files and /rogu commands retain historical names; the Roar Guild community remains a separate project.",
-      "links": [
+          "label": "BattleReport",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/BattleReport.zip"
+        },
         {
-          "label": "RoarGuild Add-on repository",
-          "href": "https://github.com/babunidev/RoarGuildAddon"
-        }
-      ],
-      "credit": "Repository replacement requested by Babuni.dev; AI-assisted source clarification from the current public documents."
-    }
-  ],
-  "roarsounds": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "RoarSoundEffects replaces ROARSounds as the project/repository name. The installed addon retains its historical ROAR folder and files; sound playback uses game-provided assets.",
-      "links": [
+          "label": "EnchantVisuals",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/EnchantVisuals.zip"
+        },
         {
-          "label": "RoarSoundEffects repository",
-          "href": "https://github.com/babunidev/RoarSoundEffects"
-        }
-      ],
-      "credit": "Repository/name replacement requested by Babuni.dev; AI-assisted clarification from current public source documentation."
-    }
-  ],
-  "roaremotetrigger": [
-    {
-      "id": "source",
-      "type": "resources",
-      "title": "Project source",
-      "preview": "Roar Guild Addon Wrath, previously EmoteTrigger and ROARemoteTrigger. This Wrath-era port keeps installed ROARTrigger files and /rogu commands; Roarboard remains in the separate Roar Guild addon.",
-      "links": [
+          "label": "GroupBuffToggle",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/GroupBuffToggle.zip"
+        },
         {
-          "label": "Roar Guild Addon Wrath repository",
-          "href": "https://github.com/babunidev/RoarGuildAddonWrath"
+          "label": "GuildChatBridge",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/GuildChatBridge.zip"
+        },
+        {
+          "label": "LevelUpAnnouncer",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/LevelUpAnnouncer.zip"
+        },
+        {
+          "label": "LootFeed",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/LootFeed.zip"
+        },
+        {
+          "label": "MeleeStartAttack",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/MeleeStartAttack.zip"
+        },
+        {
+          "label": "ResistInsight",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/ResistInsight.zip"
+        },
+        {
+          "label": "The Great Iceflow Relay",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/TheGreatIceflowRelay.zip"
+        },
+        {
+          "label": "TotemTimers",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/TotemTimers.zip"
+        },
+        {
+          "label": "WarriorStartAttack",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/WarriorStartAttack.zip"
+        },
+        {
+          "label": "WorkThatGodBod",
+          "href": "https://github.com/babunidev/ClassicWoWAddons/raw/main/downloads/WorkThatGodBod.zip"
         }
       ],
-      "credit": "Name and repository replacement requested by Babuni.dev; AI-assisted clarification from current public documents."
+      "credit": "Addons and their design: Babuni. Release zips from the former repositories; the other zips were built from each addon's runtime files by Claude Code (Claude Opus 5.5) on 2026-11-19 and not tested in a game client."
     }
   ]
 }

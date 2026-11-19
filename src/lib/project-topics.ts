@@ -3,11 +3,30 @@ export type TopicPoint='top'|'left'|'right';
 export const TOPIC_POINTS:readonly TopicPoint[]=['top','left','right'];
 
 /** Nine curated, provisional keywords per project; no release-status claims. */
-export const WOW_ADDON_IDS:readonly string[]=["guildchatai", "clearviewforever", "amazin", "battlereport", "buxbrew", "buxbrewcharge", "buxbrewding", "buxbrewresist", "favorcraft", "flourishforever", "gathermap", "groupbufftoggle", "lootfeed", "meleestartattack", "resistforever", "roar", "roaremotetrigger", "roarforever", "roarguild", "roarr", "roarrunlimited", "roarsounds", "socialforever", "totemtimers", "warriorstartattack", "workthatgodbod"];
+export const WOW_ADDON_IDS:readonly string[]=["clearviewforever", "favorcraft", "flourishforever", "gathermap", "resistforever", "roarforever", "socialforever", "classic-wow-addons"];
 export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Object.freeze({
-  "clearviewforever": ["World of Warcraft add-on", "WoW Forever", "Screen clutter", "Nameplates", "Combat text", "Error messages", "XP popups", "Target portrait", "Lua"],
-  "eldgrim": ["Character project", "Amberhearth", "Roleplay", "Lore", "Character voice", "Narrative", "WoW Forever", "Guild chat recorder", "Discord agent design"],
-  "guildchatai": ["World of Warcraft add-on", "Guild chat", "Roleplay experiment", "Paused prototype", "Character voice", "Manual chat command", "Lua", "Guild roster", "Local AI concept"],
+  "clearviewforever": [
+    "World of Warcraft add-on",
+    "WoW Forever",
+    "Screen clutter",
+    "Nameplates",
+    "Combat text",
+    "Error messages",
+    "XP popups",
+    "Target portrait",
+    "Lua"
+  ],
+  "eldgrim": [
+    "Character project",
+    "Amberhearth",
+    "Roleplay",
+    "Lore",
+    "Character voice",
+    "Narrative",
+    "WoW Forever",
+    "Guild chat recorder",
+    "Discord agent design"
+  ],
   "babuni-dev": [
     "Interactive portfolio",
     "Living grid",
@@ -140,50 +159,6 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
     "Game concepts",
     "Creative experiments"
   ],
-  "enchantvisuals": [
-    "Visual effects",
-    "Weapon effects",
-    "Client mod",
-    "World of Warcraft",
-    "Weapon visuals",
-    "Game presentation",
-    "Enchantment art",
-    "Visual experiments",
-    "Character equipment"
-  ],
-  "totemtimers": [
-    "World of Warcraft add-on",
-    "Shaman tools",
-    "Totems and shields",
-    "Totem timers",
-    "Shaman interface",
-    "Lua",
-    "Spell information",
-    "Class tools",
-    "Combat interface"
-  ],
-  "groupbufftoggle": [
-    "World of Warcraft add-on",
-    "Party frames",
-    "Buff controls",
-    "Group interface",
-    "Spell display",
-    "Lua",
-    "Interface controls",
-    "Buff information",
-    "Party tools"
-  ],
-  "lootfeed": [
-    "World of Warcraft add-on",
-    "Loot interface",
-    "Group rolls",
-    "Animated display",
-    "Loot information",
-    "Lua",
-    "Group loot",
-    "Interface feedback",
-    "Game interface"
-  ],
   "gathermap": [
     "World of Warcraft add-on",
     "Exploration tools",
@@ -194,182 +169,6 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
     "Lua",
     "World exploration",
     "Gathering tools"
-  ],
-  "battlereport": [
-    "World of Warcraft add-on",
-    "Combat analytics",
-    "Encounters",
-    "Combat statistics",
-    "Combat information",
-    "Lua",
-    "Battle reports",
-    "Encounter history",
-    "Combat tools"
-  ],
-  "roarguild": [
-    "World of Warcraft add-on",
-    "Action emotes",
-    "Guild invitations",
-    "Roarboard",
-    "Character profiles",
-    "Custom emote pools",
-    "Shared message board",
-    "Community tools",
-    "Lua"
-],
-  "workthatgodbod": [
-    "World of Warcraft add-on",
-    "Wellness prompts",
-    "Movement cues",
-    "Hydration",
-    "Everyday movement",
-    "Roleplay prompts",
-    "Lua",
-    "Player wellbeing",
-    "Friendly reminders"
-  ],
-  "the-great-iceflow-relay": [
-    "Player minigame",
-    "Checkpoint relay",
-    "Player organized",
-    "World of Warcraft",
-    "Community play",
-    "Relay race",
-    "Azeroth",
-    "Game event",
-    "Shared adventure"
-  ],
-  "roarrunlimited": [
-    "World of Warcraft add-on",
-    "Multiple action slots",
-    "Independent cooldowns",
-    "Chance controls",
-    "Built-in emotes",
-    "Numbered configurations",
-    "Character expression",
-    "Roleplay tools",
-    "Lua"
-],
-  "roarr": [
-    "World of Warcraft add-on",
-    "Battle emotes",
-    "Action-bar slot",
-    "Built-in emotes",
-    "Chance controls",
-    "Cooldown controls",
-    "Setup tutorial",
-    "Character expression",
-    "Lua"
-],
-  "roarsounds": [
-    "World of Warcraft add-on",
-    "Roar sound effects",
-    "Character sounds",
-    "Emote events",
-    "Race and sex",
-    "Unit identity",
-    "Lua",
-    "Audio restoration",
-    "Roleplay audio"
-],
-  "roaremotetrigger": [
-    "World of Warcraft add-on",
-    "Wrath 3.3.5",
-    "Action-bar slots",
-    "Native emotes",
-    "Chance controls",
-    "Cooldown controls",
-    "Character profiles",
-    "Guild messages",
-    "Lua"
-],
-  "roar": [
-    "World of Warcraft add-on",
-    "Battle emotes",
-    "Action-bar slot",
-    "Built-in emotes",
-    "Chance controls",
-    "Cooldown controls",
-    "Character flavor",
-    "Lua",
-    "Legacy project"
-],
-  "meleestartattack": [
-    "World of Warcraft add-on",
-    "Combat helper",
-    "Melee classes",
-    "Start attacks",
-    "Combat controls",
-    "Lua",
-    "Player abilities",
-    "Melee tools",
-    "Game interface"
-  ],
-  "buxbrewresist": [
-    "World of Warcraft add-on",
-    "Spell resistance",
-    "Damage estimates",
-    "Character tooltips",
-    "On hold",
-    "ResistForever origins",
-    "Lua",
-    "Combat explanations",
-    "Resistance stats"
-],
-  "buxbrewding": [
-    "World of Warcraft add-on",
-    "Level-up announcements",
-    "Guild chat",
-    "60 roleplay messages",
-    "Local previews",
-    "Manual announcements",
-    "Lua",
-    "Character milestones",
-    "Roleplay"
-],
-  "buxbrewcharge": [
-    "World of Warcraft add-on",
-    "Action emotes",
-    "Action-bar slot",
-    "Built-in emotes",
-    "ActionEmotes #1",
-    "Lua",
-    "Character expression",
-    "Player actions",
-    "Roleplay tools"
-  ],
-  "buxbrew": [
-    "World of Warcraft add-on",
-    "ActionEmotes #2",
-    "Custom emotes",
-    "Action-bar slot",
-    "Character voice",
-    "Per-character settings",
-    "Roleplay writing",
-    "EMOTE chat",
-    "Lua"
-],
-  "amazin": [
-    "World of Warcraft add-on",
-    "Stealth emotes",
-    "Rested XP",
-    "Character expression",
-    "Player actions",
-    "Lua",
-    "Roleplay tools",
-    "Action-bar slot",
-    "Game interface"
-  ],
-  "warriorstartattack": [
-    "World of Warcraft add-on",
-    "Combat helper",
-    "Warrior abilities",
-    "Auto-attack",
-    "Combat controls",
-    "Lua",
-    "Melee tools",
-    "Warrior tools",
-    "Game interface"
   ],
   "roar-guild-and-community": [
     "Community",
@@ -458,6 +257,17 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
     "Original music",
     "Creative process",
     "Musical exploration"
+  ],
+  "classic-wow-addons": [
+    "World of Warcraft add-on",
+    "Collection",
+    "WoW 1.12",
+    "WoW 3.3.5",
+    "Action emotes",
+    "Guild tools",
+    "Combat reports",
+    "Lua",
+    "Install zips"
   ]
 });
 

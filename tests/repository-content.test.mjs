@@ -39,7 +39,8 @@ test('ROARguild maps the community project separately from the WoW addon',()=>{
  const c=connections['roar-guild-and-community'];
  assert.equal(c.status,'connected');
  assert.equal(c.repository,'babunidev/ROARguild');
- assert.equal(connections.roarguild.repository,'babunidev/RoarGuildAddon');
+ assert.ok(connections['classic-wow-addons'].folders.includes('RoarGuildAddon'));
+ assert.notEqual(connections['classic-wow-addons'].repository,c.repository);
  assert.equal(c.paths.length,12);
  assert.ok(!c.paths.includes('AGENTS.md'));
  assert.ok(!c.paths.includes('docs/PROJECT_STRUCTURE.md'));

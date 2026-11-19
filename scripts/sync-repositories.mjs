@@ -100,7 +100,8 @@ export async function fetchSnapshot(connection,{fetcher=fetch,resolveCommit=publ
     const known=new Set(documents.map(doc=>doc.path));
     const extra=inventory.tree.filter(file=>file.type==='blob'&&allowed(file.path)
       &&!known.has(file.path)).map(file=>file.path).sort();
-    if(extra.length>200)throw new Error(`${repository}: too many Markdown documents for reviewed import`);
+    // ClassicWoWAddons alone holds about 265 folder documents (21 former repositories).
+    if(extra.length>400)throw new Error(`${repository}: too many Markdown documents for reviewed import`);
     for(const path of extra){
       const response=await request(`https://raw.githubusercontent.com/${repository}/${commit}/${path}`);
       if(!response.ok)throw new Error(`${repository}/${path}: inventory document unavailable (${response.status})`);

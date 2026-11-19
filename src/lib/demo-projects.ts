@@ -2,7 +2,8 @@
  * Provisional visual project tiles transcribed from docs/PROJECT_INVENTORY.md
  * (53 initial candidates, 2026-10-26; 42 retained after GuildChatBridge restoration on 2026-11-01;
  * public repositories added on 2026-11-10 with AI-drafted summaries; the talent atlas
- * was withdrawn by Babuni the same day).
+ * was withdrawn by Babuni the same day; on 2026-11-19 Babuni merged 21 finished
+ * 1.12/3.3.5 addons into the single Classic WoW Addons project, see merged-projects.ts).
  * Removed duplicates and non-projects are documented in the source inventory.
  * Remaining provisional entries still need review. This is a data snapshot:
  * revisit/verify the source before promoting an entry to real portfolio content.
@@ -18,7 +19,7 @@ export interface DemoProject {
   /** Optional public URL for artwork clipped by the shared circular portal. */
   portalArtwork?: string;
 }
-export const DEMO_PROJECT_COUNT=44;
+export const DEMO_PROJECT_COUNT=24;
 export const demoProjects:readonly DemoProject[]=[
   {
     "id": "babuni-dev",
@@ -109,36 +110,12 @@ export const demoProjects:readonly DemoProject[]=[
     "tint": "hsl(125 58% 62%)"
   },
   {
-    "id": "enchantvisuals",
-    "portalArtwork": "/portal-content/EnchantVisuals.webp",
-    "name": "EnchantVisuals",
-    "shortSummary": "Native client mod combining weapon enchant and imbue visuals.",
+    "id": "classic-wow-addons",
+    "portalArtwork": "/portal-content/ClassicWoWAddons.webp",
+    "name": "Classic WoW Addons",
+    "shortSummary": "Babuni's finished addons for the WoW 1.12 and 3.3.5 clients and the EnchantVisuals client mod, collected in one repository with install zips.",
     "evidence": "repo",
     "tint": "hsl(263 58% 62%)"
-  },
-  {
-    "id": "totemtimers",
-    "portalArtwork": "/portal-content/TotemTimers.webp",
-    "name": "TotemTimers",
-    "shortSummary": "Shaman totem, shield and weapon-enhancement tracking.",
-    "evidence": "repo",
-    "tint": "hsl(40 58% 62%)"
-  },
-  {
-    "id": "groupbufftoggle",
-    "portalArtwork": "/portal-content/GroupBuff.webp",
-    "name": "GroupBuffToggle",
-    "shortSummary": "Toggleable party and target unit-frame buffs.",
-    "evidence": "repo",
-    "tint": "hsl(178 58% 62%)"
-  },
-  {
-    "id": "lootfeed",
-    "portalArtwork": "/portal-content/LootFeed.webp",
-    "name": "LootFeed",
-    "shortSummary": "Animated loot and group-roll information display.",
-    "evidence": "repo",
-    "tint": "hsl(315 58% 62%)"
   },
   {
     "id": "gathermap",
@@ -147,134 +124,6 @@ export const demoProjects:readonly DemoProject[]=[
     "evidence": "repo",
     "tint": "hsl(93 58% 62%)",
     "portalArtwork": "/portal-content/GatherMap.webp"
-  },
-  {
-    "id": "battlereport",
-    "portalArtwork": "/portal-content/BattleReport.webp",
-    "name": "BattleReport",
-    "shortSummary": "Personal encounter and combat-statistics reporter.",
-    "evidence": "repo",
-    "tint": "hsl(230 58% 62%)"
-  },
-  {
-    "id": "roarguild",
-    "portalArtwork": "/portal-content/RoarGuildAddon.webp",
-    "name": "RoarGuild Add-on",
-    "shortSummary": "Character-expression addon with configurable action emotes, recruitment messages and Roarboard.",
-    "evidence": "repo",
-    "tint": "hsl(8 58% 62%)"
-  },
-  {
-    "id": "workthatgodbod",
-    "portalArtwork": "/portal-content/WorkThatGodBod.webp",
-    "name": "WorkThatGodBod",
-    "shortSummary": "In-game posture, movement and hydration reminders.",
-    "evidence": "repo",
-    "tint": "hsl(145 58% 62%)"
-  },
-  {
-    "id": "the-great-iceflow-relay",
-    "portalArtwork": "/portal-content/TheGreatIceflowRelay.webp",
-    "name": "The Great Iceflow Relay",
-    "shortSummary": "Player-organized WoW ball-passing checkpoint minigame.",
-    "evidence": "repo",
-    "tint": "hsl(283 58% 62%)"
-  },
-  {
-    "id": "roarrunlimited",
-    "portalArtwork": "/portal-content/RoarUnlimited.webp",
-    "name": "MultiActionEmotes",
-    "shortSummary": "Multiple action-slot emote configurations with independent chances and cooldowns.",
-    "evidence": "repo",
-    "tint": "hsl(60 58% 62%)"
-  },
-  {
-    "id": "roarr",
-    "portalArtwork": "/portal-content/ROARR.webp",
-    "name": "Battle Emotes",
-    "shortSummary": "Action-slot roleplay emotes with chance, cooldown and tutorial controls; distinct from Battle Emotes Legacy.",
-    "evidence": "repo",
-    "tint": "hsl(198 58% 62%)"
-  },
-  {
-    "id": "roarsounds",
-    "portalArtwork": "/portal-content/ROARsounds.webp",
-    "name": "RoarSoundEffects",
-    "shortSummary": "Addon for restoring built-in character roar sounds from recognized emote events; no game audio is bundled.",
-    "evidence": "repo",
-    "tint": "hsl(335 58% 62%)"
-  },
-  {
-    "id": "roaremotetrigger",
-    "portalArtwork": "/portal-content/ROARRemoteTrigger.webp",
-    "name": "Roar Guild Addon Wrath",
-    "shortSummary": "Wrath 3.3.5 port of the Roar Guild addon, with action-slot emotes and character profiles; Roarboard is not included.",
-    "evidence": "repo",
-    "tint": "hsl(113 58% 62%)"
-  },
-  {
-    "id": "roar",
-    "portalArtwork": "/portal-content/ROAR.webp",
-    "name": "Battle Emotes Legacy",
-    "shortSummary": "Historical action-slot emote addon with configurable chance and cooldown; installed as ROARR.",
-    "evidence": "repo",
-    "tint": "hsl(250 58% 62%)"
-  },
-  {
-    "id": "meleestartattack",
-    "portalArtwork": "/portal-content/MeleeStartAttack.webp",
-    "name": "MeleeStartAttack",
-    "shortSummary": "Attack-start helper for several melee classes.",
-    "evidence": "repo",
-    "tint": "hsl(28 58% 62%)"
-  },
-  {
-    "id": "buxbrewresist",
-    "portalArtwork": "/portal-content/BuxbrewResist.webp",
-    "name": "ResistInsight",
-    "shortSummary": "On-hold resistance-tooltip addon for WoW 1.12 and predecessor of ResistForever; explains estimated spell resistance and damage reduction.",
-    "evidence": "repo",
-    "tint": "hsl(165 58% 62%)"
-  },
-  {
-    "id": "buxbrewding",
-    "portalArtwork": "/portal-content/BuxbrewDing.webp",
-    "name": "LevelUpAnnouncer",
-    "shortSummary": "Guild level-up announcer with 60 roleplay messages, local previews and manual sends; live-client compatibility remains unverified.",
-    "evidence": "repo",
-    "tint": "hsl(303 58% 62%)"
-  },
-  {
-    "id": "buxbrewcharge",
-    "portalArtwork": "/portal-content/BuxbrewCharge.webp",
-    "name": "ActionEmotes #1",
-    "shortSummary": "Babuni.dev’s first WoW add-on: action-bar-triggered character emotes, originally BuxbrewCharge.",
-    "evidence": "repo",
-    "tint": "hsl(80 58% 62%)"
-  },
-  {
-    "id": "buxbrew",
-    "portalArtwork": "/portal-content/BuxbrewAddon.webp",
-    "name": "ActionEmotes #2",
-    "shortSummary": "Custom roleplay emotes triggered by a watched action-bar slot, with a cooldown and per-character settings.",
-    "evidence": "repo",
-    "tint": "hsl(218 58% 62%)"
-  },
-  {
-    "id": "amazin",
-    "portalArtwork": "/portal-content/Amazin.webp",
-    "name": "StealthEmotes",
-    "shortSummary": "Action-slot emote addon with rested experience reporting; successful Stealth casts are not detected.",
-    "evidence": "repo",
-    "tint": "hsl(355 58% 62%)"
-  },
-  {
-    "id": "warriorstartattack",
-    "portalArtwork": "/portal-content/WarriorStartAttack.webp",
-    "name": "WarriorStartAttack",
-    "shortSummary": "Auto-attack helper for warrior abilities.",
-    "evidence": "repo-lineage",
-    "tint": "hsl(133 58% 62%)"
   },
   {
     "id": "roar-guild-and-community",
@@ -348,28 +197,20 @@ export const demoProjects:readonly DemoProject[]=[
     "tint": "#edaa35",
     "portalArtwork": "/portal-content/BabuniGaming.webp"
   },
-{
-  "id": "guildchatai",
-  "portalArtwork": "/portal-content/GuildChatBridge.webp",
-  "name": "GuildChatBridge",
-  "shortSummary": "Paused WoW roleplaying experiment: guild-chat capture and manual sending; no working AI conversation bridge.",
-  "evidence": "repo",
-  "tint": "#8d91bd"
-},
-{
-  "id": "clearviewforever",
-  "portalArtwork": "/portal-content/ClearViewForever.webp",
-  "name": "ClearViewForever",
-  "shortSummary": "Minimal screen-clutter add-on for WoW Forever with switches for error messages, combat numbers, XP popups and nameplates.",
-  "evidence": "repo",
-  "tint": "#7fb6c9"
-},
-{
-  "id": "eldgrim",
-  "portalArtwork": "/portal-content/Eldgrim.webp",
-  "name": "Eldgrim",
-  "shortSummary": "Character and narrative project for Eldgrim, who initiated the Amberhearth fellowship, with a guild-chat recorder and a proposed local agent.",
-  "evidence": "repo",
-  "tint": "#c98a4b"
-}
+  {
+    "id": "clearviewforever",
+    "portalArtwork": "/portal-content/ClearViewForever.webp",
+    "name": "ClearViewForever",
+    "shortSummary": "Minimal screen-clutter add-on for WoW Forever with switches for error messages, combat numbers, XP popups and nameplates.",
+    "evidence": "repo",
+    "tint": "#7fb6c9"
+  },
+  {
+    "id": "eldgrim",
+    "portalArtwork": "/portal-content/Eldgrim.webp",
+    "name": "Eldgrim",
+    "shortSummary": "Character and narrative project for Eldgrim, who initiated the Amberhearth fellowship, with a guild-chat recorder and a proposed local agent.",
+    "evidence": "repo",
+    "tint": "#c98a4b"
+  }
 ];

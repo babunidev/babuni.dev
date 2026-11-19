@@ -11,6 +11,7 @@ import {selectModules,MODULE_OFFSETS,moduleRevealPlan,moduleHasContent,type Proj
 import {renderModulePreview} from './module-preview';
 import {moduleShareUrl,renderShareButton} from './module-share';
 import {renderProjectIcon} from './project-icon';
+import {mergedProjectTarget} from '../lib/merged-projects';
 import {createModuleDetails} from './module-detail';
 import {bigBloomLayout,bigBloomVacancies,bigModuleCell,bigBloomRevealPlan} from '../lib/big-bloom';
 import {restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
@@ -176,8 +177,11 @@ if (viewport && world && status) {
   /** Start a deep link once the first grid has rendered and its intro has
    * played. Unknown projects simply leave the grid as it is. */
   function applyDeepLink():void {
-    const link=parseGridDeepLink(location.hash);
-    if(!link)return;
+    const parsed=parseGridDeepLink(location.hash);
+    if(!parsed)return;
+    // Links to a project merged into a collection open its folder there.
+    const merged=mergedProjectTarget(parsed.project,parsed.read);
+    const link:GridDeepLink=merged?{project:merged.project,bloom:'big',read:merged.read,doc:merged.doc??parsed.doc}:parsed;
     deepLinkInUrl=true;
     if(!demoProjects.some(project=>project.id===link.project)){clearDeepLink();return;}
     deepLink=link;
