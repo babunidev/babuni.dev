@@ -3,10 +3,11 @@ import {resolve, sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {demoProjects} from '../src/lib/demo-projects.ts';
 import {moduleHasContent, safeEmbedUrl} from '../src/lib/project-modules.ts';
-import {REPOSITORY_DOCUMENTS,repositoryModules,composeProjectModules} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,documentLocations,repositoryModules,composeProjectModules} from '../src/lib/repository-content.ts';
+import {readLocalDocuments} from './build-document-assets.mjs';
 import {validateConnections,validateSnapshots} from './sync-repositories.mjs';
 
-export const documentPaths = REPOSITORY_DOCUMENTS.map(document=>document.path);
+export const documentPaths = REPOSITORY_DOCUMENTS.flatMap(documentLocations);
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const string = value => typeof value === 'string' && !!value.trim();
 const http = value => {try {const u=new URL(value); return ['http:','https:'].includes(u.protocol) && !u.username && !u.password;} catch {return false;}};
@@ -87,7 +88,7 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
       const catalog=JSON.parse(readFileSync(new URL('../src/content/project-modules.json',import.meta.url),'utf8'));
       const connections=JSON.parse(readFileSync(new URL('../src/content/project-repositories.json',import.meta.url),'utf8'));
       const snapshots=JSON.parse(readFileSync(new URL('../src/content/repository-documents.json',import.meta.url),'utf8'));
-      const local=Object.fromEntries(documentPaths.map(path=>[path,readFileSync(new URL('../'+path,import.meta.url),'utf8')]));
+      const local=readLocalDocuments();
       const repositoryErrors=[...validateConnections(connections,demoProjects.map(p=>p.id)),...validateSnapshots(connections,snapshots)];
       if(repositoryErrors.length)throw new Error(repositoryErrors.join('\n'));
       const original=validateContent(catalog);

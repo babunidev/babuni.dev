@@ -952,3 +952,15 @@ Babuni.dev requested an accurate remaining-work list and assessment of Babuni.ad
 ## 2026-11-13 — Licensing decision
 
 To make the reuse terms explicit, I approved MIT for original website software; logos, branding and featured creative assets retain separate rights. This applies only to material for which the relevant rights can be granted; third-party contributors keep their own credits and licenses. AI assistance committed the license notice and updated project-facing documentation. This was a legal/documentation change, not a runtime feature or test.
+
+## 2026-11-19 — Repository roots hold only README, AGENTS, LICENSE and CHANGELOG
+
+**Status:** Accepted; website support implemented, repositories not yet moved. **Directed by:** Babuni, to make the repositories easier to navigate.
+
+**Choice:** All documentation other than `README.md`, `AGENTS.md`, `LICENSE` and `CHANGELOG.md` lives in `docs/`; AGENTS.md points to it. For the shared contract this moves `CONCEPT.md` and `ROADMAP.md` to `docs/CONCEPT.md` and `docs/ROADMAP.md`. The changelog stays in the root because release tools and addon packagers expect it there by default.
+
+**Sequence (AI proposal, accepted):** Change the website first, with the root files as a fallback, then move the repositories gradually. The `docs/` location wins when both exist.
+
+**Alternatives:** Keep the existing layout (no cost, but a cluttered root); move every repository at once and switch the website in the same step (any repository not yet moved would lose its concept and roadmap modules); move the changelog too (against common tooling defaults).
+
+**Not adopted:** A git-ignored one-line `CLAUDE.md` per repository, proposed by AI and approved by Babuni, then withdrawn by AI after it observed that Claude Code already loads AGENTS.md when it reads files in the repository.

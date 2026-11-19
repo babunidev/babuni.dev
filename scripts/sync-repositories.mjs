@@ -3,7 +3,7 @@ import {resolve,join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
-import {repositoryDocuments,CHARACTER_STORY_REPOSITORY,characterStoryDocumentPath,connectionFolders,folderDocumentPath,pairedImages,repositoryImageUrl,FOLDER_NAME,FOLDER_IMAGE_EXTENSIONS} from '../src/lib/repository-content.ts';
+import {repositoryDocuments,documentLocations,documentSelected,standardDocumentPath,CHARACTER_STORY_REPOSITORY,characterStoryDocumentPath,connectionFolders,folderDocumentPath,pairedImages,repositoryImageUrl,FOLDER_NAME,FOLDER_IMAGE_EXTENSIONS} from '../src/lib/repository-content.ts';
 const run=promisify(execFile);
 const root=fileURLToPath(new URL('..',import.meta.url));
 export function validateConnections(connections,projectIds){
@@ -23,7 +23,7 @@ export function validateConnections(connections,projectIds){
     if(branches.has(entry.repository)&&branches.get(entry.repository)!==entry.branch)errors.push(`${id}: shared repositories must use the same branch`);
     branches.set(entry.repository,entry.branch);
     if(typeof entry.branch!=='string'||!entry.branch.trim()||/[\s~^:?*\[\\]/.test(entry.branch)||entry.branch.includes('..')||entry.branch.startsWith('-'))errors.push(`${id}: invalid branch`);
-    if(entry.paths!==undefined&&(!Array.isArray(entry.paths)||!entry.paths.length||new Set(entry.paths).size!==entry.paths.length||entry.paths.some(p=>!repositoryDocuments(entry.repository??'').some(d=>d.path===p))))errors.push(`${id}: paths must select unique standard documentation files`);
+    if(entry.paths!==undefined&&(!Array.isArray(entry.paths)||!entry.paths.length||new Set(entry.paths).size!==entry.paths.length||entry.paths.some(p=>!standardDocumentPath(entry.repository??'',p))))errors.push(`${id}: paths must select unique standard documentation files`);
     if(entry.folders!==undefined&&(!Array.isArray(entry.folders)||!entry.folders.length||new Set(entry.folders).size!==entry.folders.length
       ||entry.folders.some(f=>typeof f!=='string'||!FOLDER_NAME.test(f)||f==='docs')||entry.repository===CHARACTER_STORY_REPOSITORY))
       errors.push(`${id}: folders must list unique top-level folder names (not docs)`);
@@ -41,7 +41,7 @@ export function validateSnapshots(connections,snapshots){
     if(!Array.isArray(s.documents)||!s.documents.length){errors.push(`${repository}: no source documents`);continue;}
     const seen=new Set();
     for(const d of s.documents){
-      if(!d||!(repositoryDocuments(repository).some(doc=>doc.path===d.path)||(repository===CHARACTER_STORY_REPOSITORY?characterStoryDocumentPath(d.path):folderDocumentPath(d.path,folders)))||seen.has(d.path)||typeof d.body!=='string'||!d.body.trim())errors.push(`${repository}: invalid, empty or duplicate document`);
+      if(!d||!(standardDocumentPath(repository,d.path)||(repository===CHARACTER_STORY_REPOSITORY?characterStoryDocumentPath(d.path):folderDocumentPath(d.path,folders)))||seen.has(d.path)||typeof d.body!=='string'||!d.body.trim())errors.push(`${repository}: invalid, empty or duplicate document`);
       seen.add(d?.path);
     }
     if(s.images!==undefined){
@@ -75,12 +75,15 @@ export async function fetchSnapshot(connection,{fetcher=fetch,resolveCommit=publ
   const commit=await resolveCommit(repository,branch);
   if(!/^[a-f0-9]{40}$/.test(commit))throw new Error(`${repository}: invalid commit`);
   const documents=[];
-  for(const {path} of repositoryDocuments(repository)){
-    if(connection.paths&&!connection.paths.includes(path))continue;
-    const response=await request(`https://raw.githubusercontent.com/${repository}/${commit}/${path}`);
-    if(response.status===404)continue;
-    if(!response.ok)throw new Error(`${repository}/${path}: fetch failed (${response.status})`);
-    const body=await responseText(response);if(body.trim())documents.push({path,body});
+  for(const doc of repositoryDocuments(repository)){
+    if(!documentSelected(connection,doc))continue;
+    // docs/ is preferred; a root legacy location is read only when docs/ has no nonempty file.
+    for(const path of documentLocations(doc)){
+      const response=await request(`https://raw.githubusercontent.com/${repository}/${commit}/${path}`);
+      if(response.status===404)continue;
+      if(!response.ok)throw new Error(`${repository}/${path}: fetch failed (${response.status})`);
+      const body=await responseText(response);if(body.trim()){documents.push({path,body});break;}
+    }
   }
   const folders=connectionFolders(connection);
   let images=[];

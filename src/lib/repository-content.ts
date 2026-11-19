@@ -2,17 +2,21 @@ import {presentDocument} from './document-presentation.ts';
 import {markdownExcerpt} from './markdown-excerpt.ts';
 import {type ProjectModule} from './project-modules.ts';
 import connectionMap from '../content/project-repositories.json' with {type:'json'};
-/** Public documentation contract; path overrides must select from this list. */
+/** Public documentation contract; path overrides must select from this list.
+ * Only README, AGENTS, LICENSE and CHANGELOG stay in a repository root; all other
+ * documentation lives in docs/. `legacyPath` is the earlier root location, read
+ * only when the docs/ file is absent, so repositories can move one at a time.
+ */
 export const REPOSITORY_DOCUMENTS=[
   {path:'README.md',id:'overview',title:'Overview'},
-  {path:'CONCEPT.md',id:'concept',title:'Concept'},
+  {path:'docs/CONCEPT.md',legacyPath:'CONCEPT.md',id:'concept',title:'Concept'},
   {path:'docs/DEVLOG.md',id:'journal',title:'Development journal'},
   {path:'CHANGELOG.md',id:'changes',title:'Changelog'},
   {path:'docs/ARCHITECTURE.md',id:'architecture',title:'Architecture'},
   {path:'docs/DESIGN.md',id:'design',title:'Design'},
   {path:'docs/DECISIONS.md',id:'decisions',title:'Decisions'},
   {path:'docs/AI_COLLABORATION.md',id:'collaboration',title:'Human–AI collaboration'},
-  {path:'ROADMAP.md',id:'roadmap',title:'Roadmap'},
+  {path:'docs/ROADMAP.md',legacyPath:'ROADMAP.md',id:'roadmap',title:'Roadmap'},
   {path:'docs/CONTENT.md',id:'content',title:'Content'},
 ] as const;
 
@@ -25,11 +29,28 @@ export const ROAR_GUILD_DOCUMENTS=[
   {path:'events/sunday-campfires/README.md',id:'sunday-campfires',title:'Sunday road bonfires'},
   {path:'community-tools/ORACLE.md',id:'oracle',title:'The Oracle'},
 ] as const;
-export type RepositoryDocument={path:string;id:string;title:string};
+export type RepositoryDocument={path:string;legacyPath?:string;id:string;title:string};
 export function repositoryDocuments(repository:string):readonly RepositoryDocument[]{
   return repository===ROAR_GUILD_REPOSITORY
     ?[...REPOSITORY_DOCUMENTS,...ROAR_GUILD_DOCUMENTS]
     :REPOSITORY_DOCUMENTS;
+}
+/** Where a standard document may be found, preferred location first. */
+export function documentLocations(doc:RepositoryDocument):string[]{
+  return doc.legacyPath?[doc.path,doc.legacyPath]:[doc.path];
+}
+/** True for a current or legacy location of one of the repository's standard documents. */
+export function standardDocumentPath(repository:string,path:string):boolean{
+  return repositoryDocuments(repository).some(doc=>documentLocations(doc).includes(path));
+}
+/** A connection's optional `paths` override may name either location of a document. */
+export function documentSelected(connection:{paths?:readonly string[]},doc:RepositoryDocument):boolean{
+  return !connection.paths||documentLocations(doc).some(path=>connection.paths!.includes(path));
+}
+/** The first location of `doc` that holds a nonempty body, if any. */
+export function findDocument<T>(doc:RepositoryDocument,lookup:(path:string)=>T|undefined):{path:string;value:T}|undefined{
+  for(const path of documentLocations(doc)){const value=lookup(path);if(value!==undefined)return {path,value};}
+  return undefined;
 }
 /** The Buxbrew story's public lore folders are indexed, not individual bloom cards. */
 export const CHARACTER_STORY_REPOSITORY='babunidev/AmberbrewStory';
@@ -102,11 +123,11 @@ export function repositoryModules(connection:RepositoryConnection|undefined,snap
   if(!local&&(!snapshot||snapshot.repository!==connection.repository||snapshot.branch!==connection.branch))return [];
   const documents=local?localDocuments:Object.fromEntries(snapshot!.documents.map(d=>[d.path,d.body]));
   const ref=local?connection.branch:snapshot!.commit;
-  return repositoryDocuments(connection.repository).filter(doc=>!connection.paths||connection.paths.includes(doc.path)).flatMap(doc=>{
-    const original=documents[doc.path];if(!original?.trim())return [];
-    const body=presentDocument(original,doc.path);
+  return repositoryDocuments(connection.repository).filter(doc=>documentSelected(connection,doc)).flatMap(doc=>{
+    const found=findDocument(doc,path=>documents[path]?.trim()?documents[path]:undefined);if(!found)return [];
+    const body=presentDocument(found.value,found.path);
     return [{id:doc.id,type:'text' as const,title:doc.title,preview:documentPreview(body)||doc.title,body,
-      source:`https://github.com/${connection.repository}/blob/${ref}/${doc.path}`}];
+      source:`https://github.com/${connection.repository}/blob/${ref}/${found.path}`}];
   });
 }
 /** Source text replaces matching curated text; manually authored media stays intact. */
@@ -136,12 +157,13 @@ export function indexedRepositoryModules(
   const local=connection.repository==='babunidev/babuni.dev';
   if(!local&&!/^[a-f0-9]{40}$/.test(index.commit??''))return [];
   return REPOSITORY_DOCUMENTS
-    .filter(doc=>!connection.paths||connection.paths.includes(doc.path))
+    .filter(doc=>documentSelected(connection,doc))
     .flatMap(doc=>{
-      const document=index.documents.find(item=>item.path===doc.path);
-      if(!document)return [];
+      const found=findDocument(doc,path=>index.documents.find(item=>item.path===path));
+      if(!found)return [];
+      const document=found.value;
       const source='https://github.com/'+connection.repository+'/blob/'+
-        (local?connection.branch:index.commit)+'/'+doc.path;
+        (local?connection.branch:index.commit)+'/'+found.path;
       return [{
         id:doc.id,type:'text' as const,title:doc.title,preview:document.preview,
         intro:document.intro,body:'',bodyUrl:document.url,source
@@ -217,7 +239,7 @@ const folderUrlPatterns=Object.values(connectionMap as Record<string,RepositoryC
  * remote repository or follow Markdown-provided URLs to display its body.
  */
 export async function loadIndexedBody(url:string,fetcher:typeof fetch=fetch,signal?:AbortSignal):Promise<string>{
-  const standard=/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/;
+  const standard=/^\/_project-docs\/babunidev--[\w.-]+\/(?:README\.md|CONCEPT\.md|CHANGELOG\.md|ROADMAP\.md|docs--[A-Z_]+\.md)$/; // root CONCEPT/ROADMAP are legacy locations
   const story=/^\/_project-docs\/babunidev--AmberbrewStory\/(?:AGENTS|CANON|TIMELINE|WRITING-GUIDE|(?:assets|character|docs|family|journal|lore|places|relationships|stories)--[A-Za-z0-9_-]+(?:--[A-Za-z0-9_-]+)*)\.md$/;
   const roarGuild=/^\/_project-docs\/babunidev--ROARguild\/(?:guild--(?:CHARTER|COMMUNITY|ACTIVITIES|GOVERNANCE)\.md|events--sunday-campfires--README\.md|community-tools--ORACLE\.md)$/;
   if(!standard.test(url)&&!story.test(url)&&!roarGuild.test(url)&&!folderUrlPatterns.some(pattern=>pattern.test(url)))

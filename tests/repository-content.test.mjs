@@ -2,13 +2,14 @@ import {presentDocument} from '../src/lib/document-presentation.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {REPOSITORY_DOCUMENTS,repositoryDocuments,repositoryModules,composeProjectModules,documentPreview} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,repositoryDocuments,repositoryModules,composeProjectModules,documentPreview,findDocument,documentLocations} from '../src/lib/repository-content.ts';
+import {readLocalDocuments} from '../scripts/build-document-assets.mjs';
 import {moduleHasContent,selectModules} from '../src/lib/project-modules.ts';
 import {demoProjects} from '../src/lib/demo-projects.ts';
 import {validateConnections,validateSnapshots,fetchSnapshot,syncSnapshots} from '../scripts/sync-repositories.mjs';
 const read=path=>JSON.parse(readFileSync(new URL('../src/content/'+path,import.meta.url),'utf8'));
 const connections=read('project-repositories.json'),snapshots=read('repository-documents.json'),catalog=read('project-modules.json');
-const local=Object.fromEntries(REPOSITORY_DOCUMENTS.map(d=>[d.path,readFileSync(new URL('../'+d.path,import.meta.url),'utf8')]));
+const local=readLocalDocuments();
 const commit='a'.repeat(40),connection={status:'connected',repository:'babunidev/example',branch:'master'};
 const metadata={private:false,visibility:'public',full_name:'babunidev/example'};
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status});
@@ -26,7 +27,10 @@ test('all active tiles have explicit status; all public source snapshots match t
   assert.equal(selectModules(merged).length,Math.min(8,merged.filter(moduleHasContent).length));
   for(const module of source){
    const doc=repositoryDocuments(c.repository).find(d=>d.id===module.id);
-   assert.equal(module.body,presentDocument(c.repository==='babunidev/babuni.dev'?local[doc.path]:snapshots[c.repository].documents.find(d=>d.path===doc.path).body,doc.path));
+   const bodies=c.repository==='babunidev/babuni.dev'?local:Object.fromEntries(snapshots[c.repository].documents.map(d=>[d.path,d.body]));
+   const found=findDocument(doc,path=>bodies[path]);
+   assert.equal(module.body,presentDocument(found.value,found.path));
+   assert.ok(module.source.endsWith('/'+found.path));
    assert.ok(module.preview.trim());assert.ok(module.source.startsWith(`https://github.com/${c.repository}/blob/`));
   }
  }
@@ -40,7 +44,7 @@ test('ROARguild maps the community project separately from the WoW addon',()=>{
  assert.ok(!c.paths.includes('AGENTS.md'));
  assert.ok(!c.paths.includes('docs/PROJECT_STRUCTURE.md'));
  const docs=repositoryDocuments(c.repository);
- assert.ok(c.paths.every(path=>docs.some(doc=>doc.path===path)));
+ assert.ok(c.paths.every(path=>docs.some(doc=>documentLocations(doc).includes(path))));
  const source=repositoryModules(c,snapshots[c.repository]);
  assert.deepEqual(source.map(module=>module.id),[
   'overview','concept','journal','changes','decisions','roadmap',
@@ -60,7 +64,9 @@ test('ROARguild sync fetches only its explicit community-document selection at o
    return new Response('# Imported source\\n\\nPinned content.');
   }
  });
- assert.deepEqual(snapshot.documents.map(document=>document.path),c.paths);
+ // A legacy root path in `paths` selects the document; its docs/ location is still preferred.
+ const preferred=c.paths.map(p=>REPOSITORY_DOCUMENTS.find(d=>d.legacyPath===p)?.path??p);
+ assert.deepEqual(snapshot.documents.map(document=>document.path),preferred);
  assert.ok(calls.slice(1).every(url=>url.includes('/'+commit+'/')));
 });
 test('source text replaces curated bodies; existing media and meaningful previews survive',()=>{
@@ -97,6 +103,19 @@ test('sync resolves one revision per public repo, allows missing files and uses 
  }});
  assert.equal(resolutions,1);assert.equal(snapshot.commit,commit);assert.deepEqual(snapshot.documents,[{path:'README.md',body:'# Real\n\nSource text.'}]);
  assert.ok(calls.slice(1).every(url=>url.includes('/'+commit+'/')));
+});
+test('sync prefers docs/ locations and falls back to legacy root files',async()=>{
+ const files={'docs/CONCEPT.md':'# Moved concept','CONCEPT.md':'# Stale root concept','ROADMAP.md':'# Root roadmap'};
+ const snapshot=await fetchSnapshot(connection,{resolveCommit:async()=>commit,now:()=> '2026-11-19T00:00:00Z',fetcher:async url=>{
+  if(url.startsWith('https://api.github.com/'))return json(metadata);
+  const path=url.split('/'+commit+'/')[1];
+  return files[path]?new Response(files[path]):new Response('',{status:404});
+ }});
+ assert.deepEqual(snapshot.documents,[{path:'docs/CONCEPT.md',body:'# Moved concept'},{path:'ROADMAP.md',body:'# Root roadmap'}]);
+ const modules=repositoryModules(connection,snapshot);
+ assert.ok(modules.find(m=>m.id==='concept').source.endsWith('/'+commit+'/docs/CONCEPT.md'));
+ assert.ok(modules.find(m=>m.id==='roadmap').source.endsWith('/'+commit+'/ROADMAP.md'));
+ assert.deepEqual(validateSnapshots({x:connection},{[connection.repository]:snapshot}),[]);
 });
 test('private repositories and failed fetches never yield a publishable snapshot',async()=>{
  let resolved=false;

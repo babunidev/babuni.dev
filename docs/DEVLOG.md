@@ -6,6 +6,12 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-19 — Documentation belongs in `docs/`
+
+Finding my way around my repositories had become harder than it should be, so I decided that the root should hold only what a visitor or agent needs first: the README, AGENTS.md, the license and the changelog. Everything else is documentation and goes into `docs/`, with AGENTS.md pointing to it. Before any work, I asked whether this would make agents worse at following my rules and what it would cost across all the projects.
+
+Claude Code (Claude Opus 5.5) explained that agents follow the paths AGENTS.md gives them, so the location matters less than keeping AGENTS.md a clear index. It also found that almost all the references to these files are in generated snapshots, so the real cost is small. It first suggested a one-line CLAUDE.md in each repository, then withdrew the suggestion after seeing that Claude Code already loads AGENTS.md by itself. On its recommendation, I chose to change the website first: it now looks for the concept and roadmap in `docs/` and falls back to the old root files, so nothing breaks while the repositories move one by one. AI implemented and tested this; no repository has moved yet. I also had the old release worktree removed, a leftover copy from the first deployment.
+
 ## 2026-11-14 — Babuni Gaming has its repository
 
 Babuni Gaming was already on the portfolio, with its channels and videos written on the site, and no repository of its own. I found the public repository at `babunidev/babunigaming` and asked for it to be connected the same way as the other projects. AI checked that the repository is public on `main`, pointed the `babuni-gaming` project at it, and imported the four standard documents that are there. The YouTube, CurseForge and Instagram links, and the two videos, stay as they were.

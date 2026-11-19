@@ -6,6 +6,15 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Concept and roadmap move into `docs/` (2026-11-19)
+- The documentation contract now places the concept at `docs/CONCEPT.md` and the roadmap at `docs/ROADMAP.md`. Only `README.md`, `AGENTS.md`, `LICENSE` and `CHANGELOG.md` stay in a repository root. Each moved document keeps its earlier root location as `legacyPath` in `REPOSITORY_DOCUMENTS` (`src/lib/repository-content.ts`).
+- `npm run content:sync` fetches the `docs/` location first and reads the root file only when the `docs/` file is missing or empty, so repositories can move one at a time. The snapshot records where the file actually was, and the module's source link points there. Snapshot validation, connection `paths` overrides, document asset names, the local babuni.dev documents and `npm run content:report` accept either location (`scripts/sync-repositories.mjs`, `scripts/build-document-assets.mjs`, `scripts/content-tools.mjs`, `scripts/repository-report.mjs`). The report's shared-contract section states the new layout; its table lists the actual locations.
+- No repository has moved yet; the generated document index and on-demand assets are unchanged.
+- Verification: `npm run test:grid` (212 passed, including a new fallback test with a fictional fixture), `npm run content:check` and `npm run build` (509 public URLs verified) passed. Claude Code (Claude Opus 5.5). Not deployed.
+
+### Removed — Stale release worktree (2026-11-19)
+- Removed the local Git worktree `../babuni.dev-release`, a detached checkout of `8e47ce5` made for the first VPS release on 2026-10-31. It had no local changes and its commit is part of `main`. The deployed release directory on the VPS is unaffected.
+
 ### Changed — Babuni Gaming source repository (2026-11-14)
 - Babuni Gaming now reads its documents from the public `babunidev/babunigaming` repository at commit `8e2bd813`. The four standard documents present there are imported: `README.md`, `docs/DEVLOG.md`, `CHANGELOG.md` and `docs/CONTENT.md`. The existing Watch and follow and Videos modules stay. A scan of the imported documents for secrets found none.
 

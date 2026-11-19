@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {join} from 'node:path';
 import {prepareDocumentAssets,documentAssetName} from '../scripts/build-document-assets.mjs';
-import {REPOSITORY_DOCUMENTS,repositoryDocuments,indexedRepositoryModules,composeProjectModules,loadIndexedBody} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,repositoryDocuments,indexedRepositoryModules,composeProjectModules,loadIndexedBody,findDocument} from '../src/lib/repository-content.ts';
+import {readLocalDocuments} from '../scripts/build-document-assets.mjs';
 import {moduleHasContent,selectModules} from '../src/lib/project-modules.ts';
 import {presentDocument} from '../src/lib/document-presentation.ts';
 import {moduleIntro} from '../src/lib/big-bloom.ts';
@@ -12,7 +13,7 @@ const fromRoot=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const connections=JSON.parse(fromRoot('src/content/project-repositories.json'));
 const snapshots=JSON.parse(fromRoot('src/content/repository-documents.json'));
 const published=JSON.parse(fromRoot('src/generated/document-index.json'));
-const local=Object.fromEntries(REPOSITORY_DOCUMENTS.map(d=>[d.path,fromRoot(d.path)]));
+const local=readLocalDocuments();
 test('on-demand bundle manifest includes only connected public source documents',()=>{
   const {index,assets}=prepareDocumentAssets(connections,snapshots,local);
   assert.deepEqual(index,published);
@@ -56,9 +57,11 @@ test('synchronous previews and big bloom intro retain exact source attribution',
     if(connection.status!=='connected'){assert.deepEqual(source,[]);continue;}
     assert.ok(source.length>0,project.id);
     for(const module of source){
-      const path=repositoryDocuments(connection.repository).find(d=>d.id===module.id).path;
-      const body=connection.repository==='babunidev/babuni.dev'
-        ?local[path]:snapshots[connection.repository].documents.find(d=>d.path===path).body;
+      const doc=repositoryDocuments(connection.repository).find(d=>d.id===module.id);
+      const bodies=connection.repository==='babunidev/babuni.dev'
+        ?local:Object.fromEntries(snapshots[connection.repository].documents.map(d=>[d.path,d.body]));
+      const {path,value:body}=findDocument(doc,p=>bodies[p]);
+      assert.ok(module.source.endsWith('/'+path));
       assert.equal(moduleIntro(module),moduleIntro({body:presentDocument(body,path),preview:module.preview}));
       assert.equal(module.body,'');
       assert.equal(moduleHasContent(module),true);

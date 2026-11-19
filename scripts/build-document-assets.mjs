@@ -1,7 +1,7 @@
 import {readFileSync,writeFileSync,mkdirSync,rmSync,renameSync} from 'node:fs';
 import {join,resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {REPOSITORY_DOCUMENTS,repositoryDocuments,documentPreview,characterStoryDocumentPath,CHARACTER_STORY_REPOSITORY,connectionFolders,folderDocumentPath,pairedImages,repositoryImageUrl} from '../src/lib/repository-content.ts';
+import {REPOSITORY_DOCUMENTS,repositoryDocuments,documentLocations,findDocument,standardDocumentPath,documentPreview,characterStoryDocumentPath,CHARACTER_STORY_REPOSITORY,connectionFolders,folderDocumentPath,pairedImages,repositoryImageUrl} from '../src/lib/repository-content.ts';
 import {existsSync} from 'node:fs';
 import {presentDocument} from '../src/lib/document-presentation.ts';
 import {moduleIntro} from '../src/lib/big-bloom.ts';
@@ -13,7 +13,7 @@ const root=fileURLToPath(new URL('..',import.meta.url));
 const LOCAL='babunidev/babuni.dev';
 /** Deterministic, allowlisted URL names; no path from repository Markdown is used. */
 export function documentAssetName(repository,path,folders=[]){
-  if(!/^babunidev\/[\w.-]+$/.test(repository) || !(repositoryDocuments(repository).some(d=>d.path===path)||repository===CHARACTER_STORY_REPOSITORY&&characterStoryDocumentPath(path)||folderDocumentPath(path,folders)))
+  if(!/^babunidev\/[\w.-]+$/.test(repository) || !(standardDocumentPath(repository,path)||repository===CHARACTER_STORY_REPOSITORY&&characterStoryDocumentPath(path)||folderDocumentPath(path,folders)))
     throw new Error('Invalid public document asset mapping');
   return repository.replace('/','--')+'/'+path.replaceAll('/','--');
 }
@@ -35,7 +35,7 @@ export function prepareDocumentAssets(connections,snapshots,localDocuments,{imag
     const local=repository===LOCAL;
     const snapshot=local?null:snapshots[repository];
     const source=local
-      ?REPOSITORY_DOCUMENTS.map(d=>({path:d.path,body:localDocuments[d.path]}))
+      ?REPOSITORY_DOCUMENTS.map(d=>{const found=findDocument(d,path=>localDocuments[path]);return {path:found?.path??d.path,body:found?.value};})
       :snapshot.documents;
     const documents=[];
     const folders=connectionFolders(connection);
@@ -51,7 +51,7 @@ export function prepareDocumentAssets(connections,snapshots,localDocuments,{imag
       documents.push({
         path,
         url:'/_project-docs/'+file,
-        preview:documentPreview(presented)||repositoryDocuments(repository).find(d=>d.path===path)?.title||path,
+        preview:documentPreview(presented)||repositoryDocuments(repository).find(d=>documentLocations(d).includes(path))?.title||path,
         intro:moduleIntro({body:presented,preview:''}),
         ...(image?{image}:{})
       });
@@ -63,6 +63,13 @@ export function prepareDocumentAssets(connections,snapshots,localDocuments,{imag
   }
   return {index,assets};
 }
+/** babuni.dev's own standard documents, each from its first existing location. */
+export function readLocalDocuments(base=root){
+  return Object.fromEntries(REPOSITORY_DOCUMENTS.flatMap(d=>{
+    const path=documentLocations(d).find(p=>existsSync(join(base,p)));
+    return path?[[path,readFileSync(join(base,path),'utf8')]]:[];
+  }));
+}
 /** Build from checked-in snapshots only; no live GitHub calls or credentials.
  * Invoked by npm predev, pretest:grid and prebuild.
  */
@@ -71,9 +78,7 @@ export function writeDocumentAssets({base=root}={}){
   const readJson=path=>JSON.parse(readFileSync(join(base,path),'utf8'));
   const connections=readJson('src/content/project-repositories.json');
   const snapshots=readJson('src/content/repository-documents.json');
-  const localDocuments=Object.fromEntries(REPOSITORY_DOCUMENTS.map(d=>[
-    d.path,readFileSync(join(base,d.path),'utf8')
-  ]));
+  const localDocuments=readLocalDocuments(base);
   const {index,assets}=prepareDocumentAssets(connections,snapshots,localDocuments,{imageExists:url=>existsSync(join(base,'public',url))});
   const destination=join(base,'public/_project-docs');
   const temporary=destination+'.tmp';

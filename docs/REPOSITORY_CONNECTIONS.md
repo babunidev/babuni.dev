@@ -83,15 +83,17 @@ This record is marked `needs-confirmation`. An independent public source has not
 ## Shared documentation contract
 
 - Overview: `README.md`
-- Concept: `CONCEPT.md`
+- Concept: `docs/CONCEPT.md`
 - Development journal: `docs/DEVLOG.md`
 - Changelog: `CHANGELOG.md`
 - Architecture: `docs/ARCHITECTURE.md`
 - Design: `docs/DESIGN.md`
 - Decisions: `docs/DECISIONS.md`
 - Human–AI collaboration: `docs/AI_COLLABORATION.md`
-- Roadmap: `ROADMAP.md`
+- Roadmap: `docs/ROADMAP.md`
 - Content: `docs/CONTENT.md`
+
+Only `README.md`, `AGENTS.md`, `LICENSE` and `CHANGELOG.md` belong in a repository root. Until a repository moves its concept and roadmap into `docs/`, the earlier root `CONCEPT.md` and `ROADMAP.md` are read instead; the `docs/` file wins when both exist.
 
 Only existing, nonempty files become modules. Missing paths are omitted, not filled with invented text. Existing manual media/resources remain. Small bloom still samples up to eight; big bloom exposes all populated modules. Source buttons point to the exact fetched revision; BABUNI.DEV working documents link to main.
 
