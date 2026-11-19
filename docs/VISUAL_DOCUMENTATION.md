@@ -180,3 +180,11 @@ AI headless-Chrome capture of a fixture page using the site's built stylesheet a
 ![Folder document link on a narrow screen](../public/media/babuni-dev/images/verification/reader-share-folder-document-phone.webp)
 
 AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview, at 1280 and 390 pixels. A deep link opened the changelog reader, and a second link opened one lore document inside Amberbrew Story's Lore folder. In both, the share button sits in the reader's top-right corner and copied the link to exactly the view on screen. These are browser simulations, not a physical phone test.
+
+## 2026-11-19 — The project icon leads back
+
+![Project icons on big-bloom cards](../public/media/babuni-dev/images/verification/project-icon-big-bloom-desktop.webp)
+
+![Project icon in the reader on a narrow screen](../public/media/babuni-dev/images/verification/project-icon-reader-phone.webp)
+
+AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels. Every Button Game big-bloom card carries the round project icon top left; in the reader the icon and the share button form a row above the title. In the same run, the reader icon returned to the big bloom and a card icon returned to the small bloom. Browser simulations, not a physical phone test.

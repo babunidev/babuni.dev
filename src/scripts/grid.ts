@@ -10,6 +10,7 @@ import {projectModuleLoader} from '../lib/project-module-loader';
 import {selectModules,MODULE_OFFSETS,moduleRevealPlan,moduleHasContent,type ProjectModule} from '../lib/project-modules';
 import {renderModulePreview} from './module-preview';
 import {moduleShareUrl,renderShareButton} from './module-share';
+import {renderProjectIcon} from './project-icon';
 import {createModuleDetails} from './module-detail';
 import {bigBloomLayout,bigBloomVacancies,bigModuleCell,bigBloomRevealPlan} from '../lib/big-bloom';
 import {restingCell,moduleVacancies,tileAtCenter} from '../lib/bloom-geometry';
@@ -136,7 +137,10 @@ if (viewport && world && status) {
   function openReader(module:ProjectModule,trigger:HTMLButtonElement,doc:string|null=null):void {
     const projectId=selectedChoice?.projectId;
     if(!projectId){details.open(module,trigger);return;}
-    details.open(module,trigger,{doc,share:{
+    const artwork=demoProjects.find(project=>project.id===projectId)?.portalArtwork;
+    details.open(module,trigger,{doc,
+      icon:artwork?{src:artwork,label:'Back to '+projectName()}:undefined,
+      share:{
       url:current=>moduleShareUrl(projectId,module.id,location,current),
       title:projectName()+': '+module.title,
       announce:message=>{liveStatus.textContent=message;}
@@ -949,6 +953,7 @@ if (viewport && world && status) {
         const panel=renderModulePreview(entry.module,project.name,()=>openReader(entry.module,panel.querySelector<HTMLButtonElement>('.bloom-read-more')!),'big');
         panel.classList.add('big-bloom-card');
         panel.append(renderShareButton(moduleShareUrl(project.id,entry.module.id),project.name+': '+entry.module.title,message=>{liveStatus.textContent=message;}));
+        if(project.portalArtwork)panel.append(renderProjectIcon(project.portalArtwork,'Back to the small bloom of '+project.name,requestSmallBloom));
         if(entry.module.id===moduleId)panel.classList.add('big-bloom-card--selected');
         layer.append(panel);return panel;
       });

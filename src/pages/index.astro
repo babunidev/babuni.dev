@@ -216,7 +216,13 @@ const structured={'@context':'https://schema.org','@graph':[
   .bloom-share.is-copied{border-color:#ffe0a3;color:#ffe0a3;box-shadow:0 0 10px #ffd28266}
   .big-bloom-card:has(.bloom-share) .bloom-title{padding-right:34px}
   .module-detail-panel>.bloom-share{top:14px;right:22px;z-index:2}
-  .module-detail-panel.has-share h1{padding-right:44px}
+  .project-icon{position:absolute;top:8px;left:8px;z-index:1;width:32px;height:32px;padding:0;border-radius:50%;overflow:hidden}
+  .project-icon img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;pointer-events:none}
+  .project-icon:hover,.project-icon:focus-visible{border-color:#ffe0a3;box-shadow:0 0 10px #ffd28266}
+  .big-bloom-card:has(.project-icon) .bloom-title{padding-left:34px}
+  .module-detail-panel>.project-icon{top:14px;left:14px;z-index:2;width:40px;height:40px}
+  /* Icon and share button get their own row above the title. */
+  .module-detail-panel:is(.has-icon,.has-share) .reader-scroll-content{padding-top:68px}
   .big-bloom-card--selected{border-color:#e3c99b;box-shadow:inset 0 0 0 5px #49404a,0 0 24px #d8bd9133}
   .bloom-preview-credit,.bloom-collection-list{font:13px/1.5 system-ui,sans-serif;color:#d6c3a8;margin:6px 0}
   .bloom-collection-list{padding-left:20px}

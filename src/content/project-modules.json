@@ -339,6 +339,16 @@
           "src": "/media/babuni-dev/images/verification/reader-share-folder-document-phone.webp",
           "alt": "A single lore document open inside the Amberbrew Story folder reader on a narrow screen, with the share button top right.",
           "caption": "AI headless-Chrome capture, 19 November 2026, at 390 px: a document link opened one lore file inside its folder reader. Not a physical phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/project-icon-big-bloom-desktop.webp",
+          "alt": "Button Game big bloom: every card shows the round Button Game icon in its top-left corner and the share button in its top-right corner.",
+          "caption": "AI headless-Chrome capture, 19 November 2026, of the local preview at 1280 px. Clicking a card's icon returned to the small bloom. Not a phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/project-icon-reader-phone.webp",
+          "alt": "The Button Game changelog reader on a narrow screen with the project icon top left, the share button top right and the title below them.",
+          "caption": "AI headless-Chrome capture, 19 November 2026, at 390 px. Clicking the icon closed the reader and kept the big bloom open. Not a physical phone test."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

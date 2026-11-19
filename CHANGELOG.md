@@ -6,6 +6,12 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Project icon in the reader and on big-bloom cards (2026-11-19)
+- Every big-bloom card shows the project's round portal artwork in its top-left corner. Clicking it returns to the small bloom, exactly like Escape (`requestSmallBloom`), so a running transition finishes first. The card's title moves aside for it.
+- The reader shows the same icon in its top-left corner. Clicking it closes the reader back to the big bloom, exactly like Escape or a backdrop click. The icon and the share button now sit in their own row above the reader's title. The About reader has neither.
+- Code in `src/scripts/project-icon.ts`, `src/scripts/module-detail.ts` and `src/scripts/grid.ts`; styles in `src/pages/index.astro`.
+- Verification: `npm run test:grid` (214 passed) and `npm run build` passed. Claude Code (Claude Opus 5.5) checked Button Game in headless Chrome against `astro preview` at 1280 px and 390 px: 28 checks passed (icon placement and artwork, the reader returning to the big bloom, every big-bloom card carrying one icon, the card icon returning to the small bloom without opening a reader, no sideways scrolling, no page errors). Captures added to the visual documentation. Not tested on a phone. Not deployed.
+
 ### Added — Share button in the reader and links to folder documents (2026-11-19)
 - The reader has the same round share button as the big-bloom cards, in its top-right corner. It shares the view on screen: the module (`/#project=<id>&bloom=big&read=<module>`), or, inside a folder reader, the open document with `&doc=<path>`, e.g. `/#project=amberbrew-story&bloom=big&read=folder-lore&doc=lore/continuity-notes.md`. Back in the folder list it shares the folder again. The button is a keyboard tab stop in the reader and the title leaves room for it. The About reader has no share button.
 - A `doc` link opens the reader at that document. It needs `read`, accepts only a Markdown path of the conservative folder-document form, and an unknown path leaves the folder list open. Parser in `src/lib/grid-deep-link.ts`, share URL in `src/scripts/module-share.ts`, reader in `src/scripts/module-detail.ts`, wiring in `src/scripts/grid.ts` (`openReader`), styles in `src/pages/index.astro`; tests in `tests/grid-deep-link.test.mjs`.

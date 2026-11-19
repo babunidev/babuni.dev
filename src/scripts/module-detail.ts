@@ -8,10 +8,13 @@ import {renderDocument} from './document-reader';
 import {createDocumentBody} from './document-body';
 import {installReaderDismissal} from './reader-dismissal';
 import {renderShareButton} from './module-share';
+import {renderProjectIcon} from './project-icon';
 /** How the reader's share button links back to what is open. `doc` is the
  * folder document on screen, or null for the module itself. */
 export interface ReaderShare {url:(doc:string|null)=>string;title:string;announce:(message:string)=>void}
-export interface ReaderOptions {share?:ReaderShare;doc?:string|null}
+/** The project's icon in the top-left corner; clicking it returns to the big bloom. */
+export interface ReaderIcon {src:string;label:string}
+export interface ReaderOptions {share?:ReaderShare;doc?:string|null;icon?:ReaderIcon}
 /** Detail is modal; big bloom itself belongs to the living grid. */
 export function createModuleDetails(onChange:(open:boolean,title?:string)=>void){
   let detail:HTMLDialogElement|null=null;
@@ -66,6 +69,10 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
     const panel=document.createElement('div');panel.className='module-detail-panel';const scroller=document.createElement('div');scroller.className='reader-scroll-content';scroller.append(title,content);panel.append(scroller);
     // The document on screen inside a folder reader; null shows the module itself.
     let currentDoc:string|null=null;
+    if(options.icon){
+      panel.classList.add('has-icon');
+      panel.append(renderProjectIcon(options.icon.src,options.icon.label,backToBloom,{focusable:true}));
+    }
     const share=options.share;
     if(share){
       panel.classList.add('has-share');

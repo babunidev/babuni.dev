@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-19 — The project icon leads back
+
+Inside a big bloom or the reader, the project you were in was no longer visible, and going back meant knowing about Escape or clicking beside the panel. I asked for the project's icon in the top-left corner of the reader and, smaller, of every big-bloom card, and for a click on it to take me back one step. Claude Code (Claude Opus 5.5) used the portal artwork the grid already shows and connected the icon to the existing back paths, so the timing stays exactly as approved. A first version indented the reader's title beside the icon; AI noticed in its own screenshots that this looked odd on a phone and moved the icon and the share button into a row above the title instead. AI tested it in a headless browser at desktop and phone widths; I have not yet tried it on my phone.
+
 ## 2026-11-19 — Sharing straight from the reader
 
 The share button on the big-bloom cards links to a module, but once a document was open in the reader there was no way to pass that view on. I asked for the same share button in the reader's top-right corner, and for links that open the reader directly. Claude Code (Claude Opus 5.5) added the button and extended the links so that a folder reader can open at one document: sharing a lore file from Amberbrew Story now gives a link to that file, not only to the folder. AI tested both kinds of link in a headless browser at desktop and phone widths; I have not yet tried it on my phone.
