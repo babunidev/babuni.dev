@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Fixed — Grimnir listen link (2026-11-20)
+- The Grimnir Listen module now links Babuni's Indikin.online page (`https://indikin.online/share/storymaker/babuni?v=5.0`) instead of the direct episode link, which did not work for Babuni. Module title: **Listen on Indikin.online**. The Grimnir repository snapshot is refreshed to the matching README. Claude Code (Claude Opus 5.5).
+
 ### Changed — Grimnir portal artwork (2026-11-20)
 - Grimnir's portal shows `public/portal-content/GrimnirBrunti.webp`, made from the image Babuni supplied: a 700 × 700 crop of the 878 × 886 screenshot (leaving out the pointer in its top-left corner and the frame panel on its right), scaled to 512 × 512 and encoded as WebP. The previous `Grimnir.webp` is kept, unassigned.
 - Verification: `npm run content:check`, `npm run test:grid` and `npm run build` passed; checked in headless Chrome. Claude Code (Claude Opus 5.5).

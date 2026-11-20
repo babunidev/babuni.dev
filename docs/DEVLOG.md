@@ -1477,3 +1477,7 @@ Claude Code (Claude Opus 5.5) found the existing public `audiobookGrimnir` repos
 ## 2026-11-20 — a new face for Grimnir
 
 With Chapter One out, I gave the Grimnir portal a new image: a Grimnir woman of copper-gold scales and stone light. Claude Code (Claude Opus 5.5) cropped the screenshot I supplied to a square around her face, leaving out the mouse pointer and the frame edge it had caught, and assigned it as the portal artwork. The old portal image is kept. Tests and the build passed, and the portal was checked in headless Chrome.
+
+## 2026-11-20 — a link that works
+
+The direct Chapter One link didn't work for me, so Grimnir's Listen module and the audiobook README now point to my Indikin.online page instead. Claude Code (Claude Opus 5.5) swapped the links in both repositories and refreshed the site's copy of the README.

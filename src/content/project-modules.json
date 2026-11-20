@@ -775,12 +775,12 @@
     {
       "id": "listen",
       "type": "resources",
-      "title": "Listen to Chapter One",
-      "preview": "Chapter One — Skyland Morning, the first audiobook episode, streams on Indikin.online.",
+      "title": "Listen on Indikin.online",
+      "preview": "Chapter One — Skyland Morning, the first audiobook episode, streams on Babuni's Indikin.online page.",
       "links": [
         {
-          "label": "Listen to Chapter One — Skyland Morning",
-          "href": "https://indikin.online/share/film/chapter-one-skyland-morning?v=5.0"
+          "label": "Listen to Chapter One on Indikin.online",
+          "href": "https://indikin.online/share/storymaker/babuni?v=5.0"
         }
       ]
     }
