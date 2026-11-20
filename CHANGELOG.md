@@ -7,7 +7,7 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 ## [Unreleased]
 
 ### Added — Grimnir audiobook connected; Chapter One listen link (2026-11-20)
-- The `grimnir` project is connected to the public `babunidev/audiobookGrimnir` repository at commit `1457a72c` (previously `needs-confirmation`). Eight documents are imported: README, Concept, Development journal, Changelog, Decisions, Human–AI collaboration, Roadmap and Content.
+- The `grimnir` project is connected to the public `babunidev/audiobookGrimnir` repository at commit `0822cc6d` (previously `needs-confirmation`). Eight documents are imported: README, Concept, Development journal, Changelog, Decisions, Human–AI collaboration, Roadmap and Content.
 - New first module **Listen to Chapter One** (resources) links the first published audiobook episode, *Chapter One — Skyland Morning*, on Indikin.online.
 - Grimnir's summary and keywords now describe the audiobook *Brunti* instead of general cultural material. Stable ID, name, artwork and menu place are unchanged.
 - Verification: `npm run content:check`, `npm run test:grid` (220 passed) and `npm run build` passed; the Grimnir bloom was checked in headless Chrome. Claude Code (Claude Opus 5.5).
