@@ -121,9 +121,9 @@
   },
   "grimnir": {
     "status": "connected",
-    "repository": "babunidev/audiobookGrimnir",
+    "repository": "babunidev/Brunti-audiobook",
     "branch": "main",
-    "note": "Brunti, the Morkahja audiobook led by a young Grimnir warrior. Babuni connected it on 2026-11-20 when Chapter 1 was published on Indikin.online."
+    "note": "Brunti, the Morkahja audiobook led by a young Grimnir warrior. Babuni connected it on 2026-11-20 when Chapter 1 was published on Indikin.online; renamed from audiobookGrimnir the same day. Stable ID grimnir is kept."
   },
   "morkahja-rpg": {
     "status": "connected",

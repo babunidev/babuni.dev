@@ -1481,3 +1481,7 @@ With Chapter One out, I gave the Grimnir portal a new image: a Grimnir woman of 
 ## 2026-11-20 — a link that works
 
 The direct Chapter One link didn't work for me, so Grimnir's Listen module and the audiobook README now point to my Indikin.online page instead. Claude Code (Claude Opus 5.5) swapped the links in both repositories and refreshed the site's copy of the README.
+
+## 2026-11-20 — Grimnir becomes Brunti Audiobook
+
+The portal's name should say what the project is, so I renamed it: the repository is now `Brunti-audiobook` and the portal reads Brunti Audiobook. Claude Code (Claude Opus 5.5) renamed the GitHub repository, updated its commit links, moved the site's snapshot to the new name and changed the display name, keeping the stable ID `grimnir` so earlier links still open the project.

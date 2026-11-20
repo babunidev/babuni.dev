@@ -50,7 +50,7 @@ Private sources remain excluded. Ethera continues using its public documentation
 
 - None currently.
 
-Grimnir (`grimnir`) was marked `needs-confirmation` until 2026-11-20, when Babuni identified it as the audiobook project and it was connected to `babunidev/audiobookGrimnir`.
+Grimnir (`grimnir`) was marked `needs-confirmation` until 2026-11-20, when Babuni identified it as the audiobook project and it was connected to `babunidev/audiobookGrimnir`, renamed the same day to `babunidev/Brunti-audiobook`. Its display name is Brunti Audiobook; the stable ID stays `grimnir`.
 
 ## Naming and coverage notes
 

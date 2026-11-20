@@ -719,3 +719,7 @@ Babuni identified the Grimnir portal as the audiobook project and published Chap
 ## 2026-11-20 — Grimnir portal artwork
 
 **Babuni supplied:** a new image for Grimnir, as a screenshot. **AI execution:** cropped it to 700 × 700 to exclude the captured pointer and frame panel, scaled it to 512 × 512 and saved it as `GrimnirBrunti.webp`, assigned to stable ID `grimnir`. The crop is the only change to the art. `Grimnir.webp` is retained unassigned, as with earlier replaced art.
+
+## 2026-11-20 — Brunti Audiobook
+
+**Babuni decided:** rename the project to Brunti Audiobook and its repository to `Brunti-audiobook`. **AI execution:** renamed the GitHub repository, switched the connection and snapshot key, and changed the display name and summary. Stable ID `grimnir`, artwork and modules unchanged; earlier entries naming Grimnir or `audiobookGrimnir` are history.

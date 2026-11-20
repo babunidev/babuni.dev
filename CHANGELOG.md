@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Grimnir renamed to Brunti Audiobook (2026-11-20)
+- The project formerly shown as Grimnir is now **Brunti Audiobook**, and its source is the renamed `babunidev/Brunti-audiobook` repository (formerly `audiobookGrimnir`); the snapshot moved to the new key. Stable ID `grimnir`, artwork, modules and menu place are unchanged, so existing `#project=grimnir` and `/projects/grimnir/` links keep working. The summary no longer repeats the name.
+- Verification: `npm run content:check`, `npm run test:grid` and `npm run build`; checked in headless Chrome. Claude Code (Claude Opus 5.5).
+
 ### Fixed — Grimnir listen link (2026-11-20)
 - The Grimnir Listen module now links Babuni's Indikin.online page (`https://indikin.online/share/storymaker/babuni?v=5.0`) instead of the direct episode link, which did not work for Babuni. Module title: **Listen on Indikin.online**. The Grimnir repository snapshot is refreshed to the matching README. Claude Code (Claude Opus 5.5).
 
