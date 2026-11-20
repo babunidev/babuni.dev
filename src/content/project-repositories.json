@@ -120,8 +120,10 @@
     "note": "The Amberbrew family and Jasmine 'Buxbrew' Amberbrew character archive; renamed from BuxbrewCharacterStory. Eight standard documents and nine pinned lore folders remain available."
   },
   "grimnir": {
-    "status": "needs-confirmation",
-    "note": "Related project family is known, but an independent public repository is not confirmed."
+    "status": "connected",
+    "repository": "babunidev/audiobookGrimnir",
+    "branch": "main",
+    "note": "Brunti, the Morkahja audiobook led by a young Grimnir warrior. Babuni connected it on 2026-11-20 when Chapter 1 was published on Indikin.online."
   },
   "morkahja-rpg": {
     "status": "connected",

@@ -6,6 +6,12 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Grimnir audiobook connected; Chapter One listen link (2026-11-20)
+- The `grimnir` project is connected to the public `babunidev/audiobookGrimnir` repository at commit `1457a72c` (previously `needs-confirmation`). Eight documents are imported: README, Concept, Development journal, Changelog, Decisions, Human–AI collaboration, Roadmap and Content.
+- New first module **Listen to Chapter One** (resources) links the first published audiobook episode, *Chapter One — Skyland Morning*, on Indikin.online.
+- Grimnir's summary and keywords now describe the audiobook *Brunti* instead of general cultural material. Stable ID, name, artwork and menu place are unchanged.
+- Verification: `npm run content:check`, `npm run test:grid` (220 passed) and `npm run build` passed; the Grimnir bloom was checked in headless Chrome. Claude Code (Claude Opus 5.5).
+
 ### Changed — human–AI collaboration record (2026-11-19)
 - Added a rule to `AGENTS.md` and `docs/DOCUMENTATION.md`: `docs/AI_COLLABORATION.md` takes no dated entries; contributions are recorded in the journal and changelog. Claude Code (Claude Opus 5.5).
 - Rewrote `docs/AI_COLLABORATION.md` to the shared text used in all of Babuni's repositories: how Babuni works with AI, who did what (the tools and recorded models named in this project's records) and where the details are. The earlier, longer version stays in the Git history. Claude Code (Claude Opus 5.5).

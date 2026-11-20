@@ -770,5 +770,19 @@
       ],
       "credit": "Addons and their design: Babuni. Release zips from the former repositories; the other zips were built from each addon's runtime files by Claude Code (Claude Opus 5.5) on 2026-11-19 and not tested in a game client."
     }
+  ],
+  "grimnir": [
+    {
+      "id": "listen",
+      "type": "resources",
+      "title": "Listen to Chapter One",
+      "preview": "Chapter One — Skyland Morning, the first audiobook episode, streams on Indikin.online.",
+      "links": [
+        {
+          "label": "Listen to Chapter One — Skyland Morning",
+          "href": "https://indikin.online/share/film/chapter-one-skyland-morning?v=5.0"
+        }
+      ]
+    }
   ]
 }

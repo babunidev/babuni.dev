@@ -153,7 +153,7 @@ export const demoProjects:readonly DemoProject[]=[
     "id": "grimnir",
     "portalArtwork": "/portal-content/Grimnir.webp",
     "name": "Grimnir",
-    "shortSummary": "Cultural and narrative material within the Morkahja world.",
+    "shortSummary": "Brunti, an audiobook of Morkahja encounters led by a young Grimnir warrior.",
     "evidence": "repo-context",
     "tint": "hsl(343 58% 62%)"
   },

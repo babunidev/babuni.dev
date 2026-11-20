@@ -193,15 +193,15 @@ export const projectKeywordPools:Readonly<Record<string,readonly string[]>>=Obje
     "Creative writing"
   ],
   "grimnir": [
-    "Fantasy culture",
+    "Audiobook",
+    "Brunti",
     "Morkahja world",
-    "Cultural stories",
-    "Worldbuilding",
+    "Fantasy novel",
     "Fantasy peoples",
-    "Lore",
+    "Narration",
     "Storytelling",
     "Creative writing",
-    "World design"
+    "Lore"
   ],
   "morkahja-rpg": [
     "Fantasy RPG",

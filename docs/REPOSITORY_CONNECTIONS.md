@@ -48,9 +48,9 @@ Private sources remain excluded. Ethera continues using its public documentation
 
 ## Project-family clarification needed
 
-- Grimnir (grimnir)
+- None currently.
 
-This record is marked `needs-confirmation`. An independent public source has not been established in the checked-in mapping; do not assume a separate repository or merge it into another project without a creative decision.
+Grimnir (`grimnir`) was marked `needs-confirmation` until 2026-11-20, when Babuni identified it as the audiobook project and it was connected to `babunidev/audiobookGrimnir`.
 
 ## Naming and coverage notes
 

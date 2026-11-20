@@ -712,3 +712,7 @@ Babuni made the `Ethera` and `azeroth-moments` repositories public and deleted `
 
 At Babuni's request, AI switched the `azeroth-moments` project from the small public `AzerothMoments` documentation shell (8 documents) to the now-public `babunidev/azeroth-moments` repository at commit `d070d8c1`, which holds the implementation and the fuller documentation. Ten standard documents are imported. AI scanned them for webhook URLs, tokens and keys before publishing and found none. The project's ID, artwork, keywords and menu place are unchanged. Babuni's local folder `~/Projects/AzerothMoments` is a clone of `azeroth-moments` through GitHub's redirect from the old `Morkahja/azeroth-moments` address, not of the shell. The `AzerothMoments` shell repository is no longer used by the website and can be deleted.
 
+## 2026-11-20 — Grimnir is the audiobook
+
+Babuni identified the Grimnir portal as the audiobook project and published Chapter 1, *Skyland Morning*, on Indikin.online. AI connected `grimnir` to the public `babunidev/audiobookGrimnir` repository at commit `1457a72c` (eight standard documents) and added a first **Listen to Chapter One** resources module linking the episode. The repository keeps `CONCEPT.md` and `ROADMAP.md` in its root; the site's root fallback reads them. Summary and keywords now describe the audiobook *Brunti*; they are AI drafts awaiting Babuni's review. ID, display name, artwork and menu place are unchanged. A babuni.dev audio release waits for payments.
+
