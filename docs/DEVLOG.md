@@ -1474,3 +1474,6 @@ Chapter 1 of my Grimnir audiobook, *Skyland Morning*, is published on Indikin.on
 
 Claude Code (Claude Opus 5.5) found the existing public `audiobookGrimnir` repository, added the listen link to its README and status notes, and connected it to the Grimnir portal, which had been waiting for a confirmed source. A new Listen module opens the project, followed by the repository's imported documents. The summary and keywords were rewritten around the audiobook; they are AI drafts for my review. Content validation, the 220 grid tests and the build passed, and the bloom was checked in headless Chrome. The AI did not listen to the episode.
 
+## 2026-11-20 — a new face for Grimnir
+
+With Chapter One out, I gave the Grimnir portal a new image: a Grimnir woman of copper-gold scales and stone light. Claude Code (Claude Opus 5.5) cropped the screenshot I supplied to a square around her face, leaving out the mouse pointer and the frame edge it had caught, and assigned it as the portal artwork. The old portal image is kept. Tests and the build passed, and the portal was checked in headless Chrome.

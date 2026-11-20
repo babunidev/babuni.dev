@@ -716,3 +716,6 @@ At Babuni's request, AI switched the `azeroth-moments` project from the small pu
 
 Babuni identified the Grimnir portal as the audiobook project and published Chapter 1, *Skyland Morning*, on Indikin.online. AI connected `grimnir` to the public `babunidev/audiobookGrimnir` repository at commit `0822cc6d` (eight standard documents) and added a first **Listen to Chapter One** resources module linking the episode. The repository keeps `CONCEPT.md` and `ROADMAP.md` in its root; the site's root fallback reads them. Summary and keywords now describe the audiobook *Brunti*; they are AI drafts awaiting Babuni's review. ID, display name, artwork and menu place are unchanged. A babuni.dev audio release waits for payments.
 
+## 2026-11-20 — Grimnir portal artwork
+
+**Babuni supplied:** a new image for Grimnir, as a screenshot. **AI execution:** cropped it to 700 × 700 to exclude the captured pointer and frame panel, scaled it to 512 × 512 and saved it as `GrimnirBrunti.webp`, assigned to stable ID `grimnir`. The crop is the only change to the art. `Grimnir.webp` is retained unassigned, as with earlier replaced art.
