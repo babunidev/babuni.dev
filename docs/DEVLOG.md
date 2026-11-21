@@ -1485,3 +1485,7 @@ The direct Chapter One link didn't work for me, so Grimnir's Listen module and t
 ## 2026-11-20 — Grimnir becomes Brunti Audiobook
 
 The portal's name should say what the project is, so I renamed it: the repository is now `Brunti-audiobook` and the portal reads Brunti Audiobook. Claude Code (Claude Opus 5.5) renamed the GitHub repository, updated its commit links, moved the site's snapshot to the new name and changed the display name, keeping the stable ID `grimnir` so earlier links still open the project.
+
+## 2026-11-21 — Rocket Game 42 gets a play button
+
+With Rocket Game 42 now live at babuni.dev/Rocketgame42 with touch controls and a global high score list, I wanted the project on my website to carry its own module with the play button, and a QR code I can share that brings people to that module rather than straight into the game. Claude Code (Claude Opus 5.5) added a Play Rocket Game 42 module following the Button Game one, generated the QR code for the site's existing deep link (`#project=rocket-game-42&read=play-live`) so it opens the module in the reader, and checked it in headless Chrome on phone and desktop sizes. The QR code has not yet been scanned with a real phone.

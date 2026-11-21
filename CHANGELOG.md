@@ -6,6 +6,11 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Play Rocket Game 42 module with shareable QR code (2026-11-21)
+- Rocket Game 42 has a new `play-live` resources module, **Play Rocket Game 42**, whose button opens the live game at `https://babuni.dev/Rocketgame42/` (touch controls, global top-100 high score list).
+- Its QR code (`public/media/rocket-game-42/images/rocketgame42-qr.webp`, lossless 410 × 410) encodes the deep link `https://www.babuni.dev/#project=rocket-game-42&read=play-live`, so scanning it opens this module in the reader with the Play button. Unlike Button Game's QR, it leads to the website module rather than straight to the game; clicking the QR image still opens the game. Caption: “Scan to open this page on your phone, then tap Play. Touch controls and one global top-100 high score list.” The SVG source is kept in the Rocketgame42 repository (`assets/qr/`).
+- Verification: `npm run content:check`, `npm run test:grid` (220 passed) and `npx astro build` passed; the QR image was decoded back to the deep link; the deep link was opened in headless Chrome against `astro preview` at phone (390 px) and desktop (1280 px) size: the reader opens on the module, the button and QR link to the game, no sideways scrolling, no errors. `/projects/rocket-game-42/play-live/` renders too. Not scanned with a real phone. Claude Code (Claude Opus 5.5).
+
 ### Changed — Grimnir renamed to Brunti Audiobook (2026-11-20)
 - The project formerly shown as Grimnir is now **Brunti Audiobook**, and its source is the renamed `babunidev/Brunti-audiobook` repository (formerly `audiobookGrimnir`); the snapshot moved to the new key. Stable ID `grimnir`, artwork, modules and menu place are unchanged, so existing `#project=grimnir` and `/projects/grimnir/` links keep working. The summary no longer repeats the name.
 - Verification: `npm run content:check`, `npm run test:grid` and `npm run build`; checked in headless Chrome. Claude Code (Claude Opus 5.5).

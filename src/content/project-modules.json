@@ -784,5 +784,24 @@
         }
       ]
     }
+  ],
+  "rocket-game-42": [
+    {
+      "id": "play-live",
+      "type": "resources",
+      "title": "Play Rocket Game 42",
+      "preview": "Defend the mothership in your browser or on your phone, and take a place on the global high score list.",
+      "links": [
+        {
+          "label": "Play Rocket Game 42",
+          "href": "https://babuni.dev/Rocketgame42/"
+        }
+      ],
+      "qr": {
+        "src": "/media/rocket-game-42/images/rocketgame42-qr.webp",
+        "alt": "QR code that opens this Rocket Game 42 play module on babuni.dev",
+        "caption": "Scan to open this page on your phone, then tap Play. Touch controls and one global top-100 high score list."
+      }
+    }
   ]
 }
