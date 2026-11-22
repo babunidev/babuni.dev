@@ -803,5 +803,24 @@
         "caption": "Scan to open this page on your phone, then tap Play. Touch controls and one global top-100 high score list."
       }
     }
+  ],
+  "eldgrim": [
+    {
+      "id": "addon-download",
+      "type": "resources",
+      "title": "Addon download",
+      "preview": "The Eldgrim addon for World of Warcraft Forever as an install zip: the hearth board with Eldgrim's Ember and member quests. Extract it into Interface/AddOns; the zip already holds the Eldgrim folder the game expects. The link always gives the latest version. Alpha.",
+      "links": [
+        {
+          "label": "Eldgrim addon (zip)",
+          "href": "https://github.com/babunidev/eldgrim/raw/main/addon/downloads/Eldgrim.zip"
+        },
+        {
+          "label": "Addon documentation",
+          "href": "https://github.com/babunidev/eldgrim/blob/main/addon/README.md"
+        }
+      ],
+      "credit": "Addon directed by Babuni.dev; implemented with AI assistance (Claude Code). The zip is built from the addon source in the Eldgrim repository."
+    }
   ]
 }

@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-23 — The Eldgrim addon to download
+
+I wanted Amberhearth's members to install the Eldgrim addon from the website, from a zip that stays current with every update. Claude Code (Claude Opus 5.5) built the zip in the Eldgrim repository, rebuilt with each addon change, and added an Addon download module to the Eldgrim tile that links it, in the same way as the downloads of my Classic addons.
+
 ## 2026-11-19 — One collaboration record for every project
 
 The human–AI collaboration file had grown into three things at once: writing rules for agents, old audit counts and a second journal. Since it describes how I work with AI, I wanted it short and the same in every repository. Claude Code (Claude Opus 5.5) rewrote it into one shared text with three parts, how I work with AI, who did what and where the details are, and filled each project's table only with the tools and models its records actually name. The rules stay in the documentation standard, and the longer earlier versions remain in the Git history.
