@@ -2,6 +2,7 @@
 # Usage: scripts/publish-site.sh [--apply]
 # Builds committed origin/main in a temporary worktree, compares it with the live site
 # and publishes only the files that differ, as a hard-linked release.
+# Every release gets a `screenshots` link to $remote/shared/screenshots (server media, not in Git).
 # DEPLOY_KEY=<path> uses an unencrypted key file instead of the SSH agent
 # (the daily GitHub Actions job, .github/workflows/daily-publish.yml).
 set -euo pipefail
@@ -36,9 +37,9 @@ git worktree add -q --detach "$work/site" origin/main
 echo "Build finished: $(find "$work/site/dist" -type f | wc -l) files"
 
 mkdir -p "$work/live"
-rsync -a -e "$ssh_cmd" "$server:$remote/current/" "$work/live/"
+rsync -a --exclude=/screenshots -e "$ssh_cmd" "$server:$remote/current/" "$work/live/"
 python3 scripts/keep-live-bundle.py "$work/live" "$work/site/dist"
-{ diff -rq "$work/live" "$work/site/dist" --exclude=release.txt || true; } \
+{ diff -rq "$work/live" "$work/site/dist" --exclude=release.txt --exclude=screenshots || true; } \
   | sed -E "s#^Files $work/live/(.*) and .* differ\$#CHANGED  \1#; s#^Only in $work/site/dist/?(.*): (.*)\$#ADDED    \1/\2#; s#^Only in $work/live/?(.*): (.*)\$#REMOVED  \1/\2#" \
   | sed 's#  /#  #; s#//#/#' | sort > "$work/changes.txt"
 echo "--- changes ---"
@@ -50,7 +51,8 @@ if [ "$apply" != "--apply" ]; then echo "Dry run: $count path(s) differ. Add --a
 release="$(date +%Y%m%d-%H%M%S)-$commit-site"
 echo "Creating release $release"
 $ssh_cmd -n "$server" "cd $remote/releases && cp -al \"\$(readlink -f ../current)\" $release"
-rsync -rt --delete --exclude=release.txt --chmod=F644,D755 -e "$ssh_cmd" "$work/site/dist/" "$server:$remote/releases/$release/"
+rsync -rt --delete --exclude=release.txt --exclude=/screenshots --chmod=F644,D755 -e "$ssh_cmd" "$work/site/dist/" "$server:$remote/releases/$release/"
+$ssh_cmd -n "$server" "ln -sfn $remote/shared/screenshots $remote/releases/$release/screenshots"
 $ssh_cmd -n "$server" "cd $remote/releases/$release && printf '%s\n' $release > release.txt.tmp && mv -f release.txt.tmp release.txt && test -s index.html"
 $ssh_cmd -n "$server" "cd $remote && ln -s releases/$release .current-$release && mv -Tf .current-$release current"
 live="$(curl -fsS --max-time 20 "https://www.babuni.dev/release.txt?check=$(date +%s)" || true)"

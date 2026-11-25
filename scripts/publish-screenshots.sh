@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage: scripts/publish-screenshots.sh
-# Uploads public/screenshots/ (ignored by Git) to the server's media folder, which nginx serves at
-# /screenshots/. Files already on the server are never overwritten or deleted. Afterwards every file
+# Uploads public/screenshots/ (ignored by Git) to the server's media folder, which every release
+# links as /screenshots/ (scripts/publish-site.sh). Files already on the server are never overwritten or deleted. Afterwards every file
 # in src/content/server-media.json is checked on the server by SHA-256, and one over HTTPS.
 set -euo pipefail
 key="${DEPLOY_KEY:-$HOME/.ssh/id_ed25519_babuni_deploy}"
@@ -24,4 +24,4 @@ echo "Server holds all $(wc -l < "$expected") listed files with matching checksu
 first="$(head -n1 "$expected" | sed 's/^[a-f0-9]*  //')"
 status="$(curl -s -o /dev/null -w '%{http_code} %{content_type}' "https://www.babuni.dev/screenshots/$first")"
 echo "HTTPS check /screenshots/$first: $status"
-[ "${status%% *}" = 200 ] || { echo "Not served yet: has deploy/install-screenshots-location.sh been run on the server?" >&2; exit 3; }
+[ "${status%% *}" = 200 ] || { echo "Not served: does /var/www/babuni.dev/current/screenshots link to the media folder? scripts/publish-site.sh adds it." >&2; exit 3; }

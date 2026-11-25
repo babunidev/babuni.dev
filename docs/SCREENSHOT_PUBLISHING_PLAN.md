@@ -4,7 +4,7 @@ Babuni asked on 2026-11-25 for the development screenshots in `~/Pictures/Develo
 
 ## Where the images live
 
-**Decision (Babuni, 2026-11-25): no screenshots in Git.** Git holds the software and its own images (artwork, icons, QR codes). Screenshots live in a media folder on the server, `/var/www/babuni.dev/shared/screenshots/`, which nginx serves at `https://www.babuni.dev/screenshots/`. Visitors load every image from the server anyway; Git was only the way files reached it.
+**Decision (Babuni, 2026-11-25): no screenshots in Git.** Git holds the software and its own images (artwork, icons, QR codes). Screenshots live in a media folder on the server, `/var/www/babuni.dev/shared/screenshots/`, which every release links as `screenshots`, so it is served at `https://www.babuni.dev/screenshots/` with the deploy key alone. Visitors load every image from the server anyway; Git was only the way files reached it.
 
 - **Outside the releases:** `scripts/publish-site.sh` replaces the release folders and deletes files that are not in the build, but never touches `shared/`.
 - **What Git keeps instead:** `src/content/server-media.json` lists every file with its size and SHA-256. The content check uses it to confirm that every gallery or journal image exists, and the upload script uses it to confirm that the server has the same bytes.

@@ -8,7 +8,7 @@ Target: `https://www.babuni.dev`. Keep `arcanitebrothers.com`, its `/var/www/mor
 
 ## Routine release procedure
 
-**Screenshots (2026-11-25):** screenshots are not part of the release. They live in `/var/www/babuni.dev/shared/screenshots/`, served at `/screenshots/` by `nginx-screenshots-locations.conf`, which Babuni installs once with `sudo bash /home/babunideploy/setup/install-screenshots-location.sh`. Upload new ones with `scripts/publish-screenshots.sh` before publishing pages that use them. `publish-site.sh` never touches `shared/`.
+**Screenshots (2026-11-25):** screenshots are not part of the release. They live in `/var/www/babuni.dev/shared/screenshots/`; `publish-site.sh` gives every release a `screenshots` link to that folder and never changes or deletes its contents, so no nginx change or administrator step is needed. Upload new ones with `scripts/publish-screenshots.sh` before publishing pages that use them.
 
 **Daily automatic publish (2026-11-25):** `.github/workflows/daily-publish.yml` runs `scripts/publish-site.sh --apply` at 04:17 UTC every day and on demand (Actions → Daily publish → Run workflow). It publishes whatever is on `origin/main` when the build differs from the live site. It uses a separate unencrypted key, stored only as the `BABUNI_DEPLOY_SSH_KEY` repository secret and installed with the `restrict` option in `babunideploy`'s `authorized_keys`. To stop it, disable the workflow or remove that key line from the server.
 
