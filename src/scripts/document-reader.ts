@@ -1,4 +1,5 @@
 import {Lexer,type Token} from 'marked';
+import {screenshotImage,renderScreenshotThumb} from './image-lightbox.ts';
 
 function decodeText(value:string):string {
   const named:Record<string,string>={amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:'\u00a0'};
@@ -72,7 +73,10 @@ export function renderDocument(source:string,sourceUrl?:string,interactive=true)
         case 'html':text(parent,token.raw);break;
         case 'paragraph':{
           if(linkCard(parent,token.tokens))break;
-          const p=document.createElement('p');render(p,token.tokens);parent.append(p);break;
+          const content=token.tokens.filter(t=>!(t.type==='text'&&!t.text.trim()||t.type==='br'));
+          const gallery=interactive&&content.length>0&&content.every(t=>t.type==='image'&&screenshotImage(t.href));
+          const p=document.createElement(gallery?'div':'p');if(gallery)p.className='screenshot-row';
+          render(p,gallery?content:token.tokens);parent.append(p);break;
         }
         case 'heading':{
           const h=document.createElement('h'+Math.min(6,token.depth+1));render(h,token.tokens);
@@ -124,10 +128,12 @@ export function renderDocument(source:string,sourceUrl?:string,interactive=true)
           table.append(head,body);wrapper.append(table);parent.append(wrapper);break;
         }
         case 'link':link(parent,token);break;
-        // Embed the explicitly supplied About portrait from our own public assets.
-        // Other document images remain links under the explicit-media policy.
+        // Embed the explicitly supplied About portrait and published development screenshots
+        // (thumbnail that opens large) from our own public assets. Other images remain links.
         case 'image':{
-          if(token.href==='/babuni-about-portrait.webp'){
+          const screenshot=interactive?screenshotImage(token.href):null;
+          if(screenshot)parent.append(renderScreenshotThumb(screenshot.src,screenshot.thumb,decodeText(token.text)));
+          else if(token.href==='/babuni-about-portrait.webp'){
             const img=document.createElement('img');
             img.src='/babuni-about-portrait.webp';
             img.alt=decodeText(token.text||'Illustrated portrait of Babuni');

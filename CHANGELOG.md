@@ -6,6 +6,14 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Development screenshots in galleries and journals (2026-11-25)
+- `scripts/import-screenshots.mjs` (`npm run screenshots:import -- <source-folder> <project-id>`): turns dated PNG screenshots into WebP quality 85 at most 1600 px plus a 480 px thumbnail, under `public/media/<project-id>/screenshots/<date>/` and `…/thumbs/`. Pure-white rows at the bottom edge (a captured page shorter than the browser window) are cropped; nothing else is edited. Existing files are never overwritten.
+- Reader: a Markdown image whose URL is a published screenshot (`https://www.babuni.dev/media/<id>/screenshots/<date>/<name>.webp` or the same path without the host) shows as a small thumbnail button; a paragraph of only such images becomes a wrapping row. Activating a thumbnail opens the full image with its alt text in a dialog above the reader (`src/scripts/image-lightbox.ts`); a click anywhere, Escape or Close returns focus to the thumbnail with the reader still open. Every other image stays a link, and previews never load images.
+- Excerpts skip paragraphs that contain only images, so bloom previews do not run alt texts together.
+- Button Game: the empty `images` gallery is now *Screenshots*, with nine captioned screenshots from 13 November 2026 (13 published, 283 KB in total, from 2.9 MB of originals). The ButtonGame journal (snapshot `312e425`) shows ten of them in its two 13 November entries.
+- `docs/SCREENSHOT_PUBLISHING_PLAN.md`: where screenshots live, their format, and the order and status per project.
+- Verification: `npm run content:check`, `npm run test:grid` (238 passed) and `npm run build` passed. In a Playwright Chromium check at 1400×900 and 390×844, the Button Game journal showed 10 thumbnails, the lightbox opened the full image, and Escape or a click outside closed only the lightbox with focus back on the thumbnail; the gallery showed 9 figures. Not yet checked on a physical phone. Claude Code (Claude Opus 5.5).
+
 ### Added — Daily publish job (2026-11-25)
 - `.github/workflows/daily-publish.yml` runs every day at 04:17 UTC (and on demand): it installs locked dependencies, runs `npm run test:grid`, then `scripts/publish-site.sh --apply`, which rebuilds `origin/main` with fresh repository activity and publishes only if the result differs from the live site (timestamp-only activity changes keep the live bundle). The Projects menu order and the "Recently updated" badges therefore follow the latest commits within a day.
 - `scripts/publish-site.sh` accepts `DEPLOY_KEY=<path>` to use an unencrypted key file instead of the SSH agent. The job writes the key from the `BABUNI_DEPLOY_SSH_KEY` repository secret to the runner's temporary folder, pins the server's ED25519 host key and removes the key afterwards. The job's key is separate from Babuni's own deployment key.

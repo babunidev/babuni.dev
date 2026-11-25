@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {renderDocument,safeDocumentUrl} from '../src/scripts/document-reader.ts';
+import {screenshotImage} from '../src/scripts/image-lightbox.ts';
 import {documentDOM,nodes} from './helpers/document-dom.mjs';
 const snapshots=JSON.parse(readFileSync(new URL('../src/content/repository-documents.json',import.meta.url),'utf8'));
 const source='https://github.com/babunidev/WorkThatGodBod/blob/abcdef/docs/CONTENT.md';
@@ -53,7 +54,9 @@ test('every imported document parses without introducing executable source eleme
  for(const snapshot of Object.values(snapshots))for(const document of snapshot.documents){
   const reader=renderDocument(document.body,`https://github.com/${snapshot.repository}/blob/${snapshot.commit}/${document.path}`);
   assert.ok(reader.textContent.trim(),document.path);
-  for(const tag of ['script','iframe','object','img','style'])assert.equal(nodes(reader,tag).length,0);
+  for(const tag of ['script','iframe','object','style'])assert.equal(nodes(reader,tag).length,0);
+  const thumbs=nodes(reader,'button').filter(n=>n.className==='screenshot-thumb');
+  assert.equal(nodes(reader,'img').length,thumbs.length,document.path+': only published screenshots may embed');
   count++;
  }
  assert.ok(count>=376,'the imported public Markdown baseline must remain available');
@@ -80,4 +83,17 @@ test('readers group text into one card per main section; previews stay unsection
  assert.equal(nodes(renderDocument('Plain paragraph only.'),'section').length,1);
  assert.equal(nodes(renderDocument(body,undefined,false),'section').length,0);
  assert.equal(nodes(renderDocument('## A\n\nx\n\n## B\n\ny'),'section').length,2);
+});
+test('published development screenshots render as thumbnails; other images stay links',t=>{
+ documentDOM(t);
+ const body='Before the change.\n\n![Phone view](https://www.babuni.dev/media/sample-game/screenshots/2026-01-02/phone-view.webp) ![Desk](/media/sample-game/screenshots/2026-01-02/desk.webp)\n\nInline ![Inline shot](https://babuni.dev/media/sample-game/screenshots/2026-01-02/inline.webp) here.\n\n![Elsewhere](https://example.com/media/sample-game/screenshots/2026-01-02/x.webp) ![Wrong](/media/sample-game/screenshots/2026-01-02/x.png)';
+ const reader=renderDocument(body,source);
+ const thumbs=nodes(reader,'button').filter(n=>n.className==='screenshot-thumb');
+ assert.equal(thumbs.length,3);
+ assert.deepEqual(nodes(reader,'img').map(n=>n.src),['/media/sample-game/screenshots/2026-01-02/thumbs/phone-view.webp','/media/sample-game/screenshots/2026-01-02/thumbs/desk.webp','/media/sample-game/screenshots/2026-01-02/thumbs/inline.webp']);
+ assert.equal(nodes(reader,'div').filter(n=>n.className==='screenshot-row').length,1);
+ assert.equal(nodes(reader,'img')[0].alt,'Phone view');
+ assert.equal(nodes(reader,'a').length,2,'foreign hosts and non-WebP files remain plain links');
+ assert.equal(nodes(renderDocument(body,source,false),'img').length,0,'previews never fetch images');
+ for(const bad of ['https://www.babuni.dev.evil.com/media/a/screenshots/2026-01-02/x.webp','/media/a/screenshots/2026-01-02/../x.webp','/media/A/screenshots/2026-01-02/x.webp','//babuni.dev/media/a/screenshots/2026-01-02/x.webp'])assert.equal(screenshotImage(bad),null,bad);
 });

@@ -23,6 +23,8 @@ export function markdownExcerpt(source:string,limit:number):string {
   let result='';
   for(const token of tokens){
     if(token.type==='def')continue;
+    // A row of screenshots is not text: its alt texts would read as one run-on sentence.
+    if(token.type==='paragraph'&&token.tokens.some(t=>t.type==='image')&&token.tokens.every(t=>t.type==='image'||t.type==='br'||t.type==='text'&&!t.text.trim()))continue;
     const raw=token.raw;
     if(result.length+raw.length<=limit){result+=raw;continue;}
     const budget=limit-result.length-1;

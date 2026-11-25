@@ -16,3 +16,8 @@ test('bounded excerpts retain inline formatting and complete blocks',()=>{
  assert.ok(excerpt.length<=180);assert.ok(excerpt.startsWith('**'));assert.ok(excerpt.endsWith('**…'));
  assert.equal(markdownExcerpt('# Title\n\n> Quote\n\n- First\n- Second',180),'> Quote\n\n- First\n- Second');
 });
+test('excerpts skip rows of images so previews read as text',()=>{
+ const excerpt=markdownExcerpt('First paragraph.\n\n![Before view](/media/sample/screenshots/2026-01-02/a.webp) ![After view](/media/sample/screenshots/2026-01-02/b.webp)\n\nSecond paragraph.',400);
+ assert.ok(!excerpt.includes('Before view')&&!excerpt.includes('!['),excerpt);
+ assert.ok(excerpt.includes('First paragraph.')&&excerpt.includes('Second paragraph.'));
+});

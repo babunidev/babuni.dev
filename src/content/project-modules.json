@@ -526,9 +526,56 @@
     {
       "id": "images",
       "type": "gallery",
-      "title": "Images",
-      "preview": "",
-      "images": []
+      "title": "Screenshots",
+      "preview": "Development screenshots: the public server, the babuni.dev play module and the high scores.",
+      "images": [
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/public-server-desktop.webp",
+          "alt": "The public server test under /Buttongame/ on a desktop browser, with live players on the left and the high-score list on the right.",
+          "caption": "Public server test, desktop browser — 13 November 2026. Development browser capture with test scores."
+        },
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/public-server-phone.webp",
+          "alt": "The public server test in a phone-sized window, live players above the playfield.",
+          "caption": "Public server test, phone-sized window — 13 November 2026. Development browser capture with test scores."
+        },
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/public-server-score-submitted.webp",
+          "alt": "Game Over after a test round on the public server, showing the top of the high-score list.",
+          "caption": "Game Over after a test round — 13 November 2026. Development browser capture with test scores."
+        },
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/website-play-module-2.webp",
+          "alt": "The Play Button Game module on babuni.dev with a QR code to join from a phone.",
+          "caption": "The babuni.dev play module with its QR code — 13 November 2026. Development browser capture with test scores."
+        },
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/live-babuni-dev-buttongame-desktop.webp",
+          "alt": "The live game at babuni.dev/Buttongame on a desktop browser.",
+          "caption": "Live at babuni.dev/Buttongame, desktop browser — 13 November 2026. Development browser capture with test scores."
+        },
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/live-babuni-dev-buttongame-phone.webp",
+          "alt": "The live game at babuni.dev/Buttongame in a phone-sized window.",
+          "caption": "Live at babuni.dev/Buttongame, phone-sized window — 13 November 2026. Development browser capture with test scores."
+        },
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/welcome-highscores-desktop.webp",
+          "alt": "The High scores panel beside the playfield, showing names and points only.",
+          "caption": "High scores before reaction time and APM were added — 13 November 2026. Development browser capture with test scores."
+        },
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/highscores-with-reaction-apm-desktop.webp",
+          "alt": "The High scores panel with reaction time and APM under each name.",
+          "caption": "High scores with reaction time and APM — 13 November 2026. Development browser capture with test scores."
+        },
+        {
+          "src": "/media/button-game/screenshots/2026-11-13/highscores-with-reaction-apm-narrow.webp",
+          "alt": "In a narrow window the high scores with reaction time and APM sit below the playfield.",
+          "caption": "High scores with reaction time and APM, narrow window — 13 November 2026. Development browser capture with test scores."
+        }
+      ],
+      "credit": "Game and creative direction: Babuni. Screenshots taken during AI-assisted development; see the development journal."
     },
     {
       "id": "video",

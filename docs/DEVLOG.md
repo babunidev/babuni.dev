@@ -6,6 +6,14 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-25 — Screenshots where people can see them
+
+Hundreds of development screenshots were sitting in a folder on my computer, and I wanted them on the website: in each project's grid modules, and as small images in the development logs that open large when clicked. I asked Claude Code (Claude Opus 5.5) for a plan, one project at a time, and whether the images belong on GitHub or only on the server.
+
+Claude recommended GitHub for small WebP copies and keeping the PNG originals on my computer. The publish script rebuilds the site from GitHub and deletes anything on the server that is not in the build, so server-only images would vanish. Measured on 53 screenshots: 62 MB as PNG, 43 MB lossless, 4 MB as WebP quality 85. Each project's journal links its images by their full babuni.dev address, which also works on GitHub. The plan is in [SCREENSHOT_PUBLISHING_PLAN.md](SCREENSHOT_PUBLISHING_PLAN.md).
+
+Button Game went first. Claude wrote an import script, filled the empty gallery and added the images to the two 13 November entries in the Button Game journal. The first browser check found two problems: a white strip under several screenshots, where the test page had been shorter than the window, and the journal's preview card reading the image descriptions as one sentence. The script now crops empty white rows at the bottom, and previews skip rows of images. Claude's browser check of the journal, the large view and the gallery passed on desktop and phone sizes; my own phone check is still to come.
+
 ## 2026-11-25 — A daily refresh
 
 The Projects list is sorted by latest update, and I wanted that order refreshed once a day. Of the two options Claude Code (Claude Opus 5.5) offered, a timer on my computer or a GitHub Actions job, I chose GitHub Actions. The job rebuilds the site every morning and publishes only when something changed. It uses its own deployment key, which I add to the server and to the repository secrets myself.

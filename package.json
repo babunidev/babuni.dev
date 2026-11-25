@@ -26,7 +26,8 @@
     "activity:sync": "node --experimental-strip-types scripts/sync-project-activity.mjs",
     "search:check": "node scripts/check-public-pages.mjs",
     "postbuild": "npm run search:check",
-    "activity:prepare": "node --experimental-strip-types scripts/sync-project-activity.mjs --offline"
+    "activity:prepare": "node --experimental-strip-types scripts/sync-project-activity.mjs --offline",
+    "screenshots:import": "node scripts/import-screenshots.mjs"
   },
   "dependencies": {
     "astro": "^7.4.2",

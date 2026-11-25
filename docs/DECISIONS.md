@@ -10,6 +10,13 @@ This register records **why decisions were made**, what alternatives were consid
 
 Give the decision a date or stable identifier, status, human direction, alternatives (mark AI-originated suggestions), rationale, and relevant evidence. Keep entries focused on choices rather than reproducing test logs or entire conversations. When a choice changes, identify the successor and mark the old decision **Superseded**; never silently erase its original rationale.
 
+## D-2026-11-25 — Development screenshots: small WebP copies on GitHub, originals stay local
+**Status:** accepted (Babuni asked for the screenshots to be committed and pushed, 2026-11-25); format and paths proposed by Claude Code (Claude Opus 5.5).
+**Decision:** web-sized WebP derivatives (quality 85, at most 1600 px, plus 480 px thumbnails) are committed under `public/media/<project-id>/screenshots/<date>/`; the PNG originals stay in Babuni's local screenshot collection. Journals link the full image by its `https://www.babuni.dev/…` address; the reader shows the thumbnail and opens it large.
+**Alternatives:** server-only images (removed by the next `publish-site.sh --delete` sync, and invisible to GitHub); committing the PNG originals or lossless WebP (about 15 and 10 times larger in the sample; Git keeps every byte); copies in each project repository (a second import path for the same files).
+**Changes an earlier rule:** the 2026-10-27 rule asked for lossless WebP where practical. For development screenshots lossy quality 85 is used, because lossless saved only about 30% in the sample.
+**Revisit** if the total grows past a few hundred megabytes, for example by moving media to a separate host without changing module definitions.
+
 ## D-2026-11-25 — Projects menu ordered by latest update
 
 **Status:** accepted (Babuni, 2026-11-25). **Replaces** the menu-only category grouping approved earlier (see `docs/PROJECT_GROUPING_PROPOSAL.md`, now historical).
