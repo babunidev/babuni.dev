@@ -1,8 +1,8 @@
 Online, I'm known as **Babuni**. Behind that name is **Alex**, with interests in practical work, art, music, games, technology and imagined worlds.
 
-## The person behind the projects
-
 ![Illustrated portrait of Babuni](/babuni-about-portrait.webp)
+
+## The person behind the projects
 
 Originally from Germany and now living in Sweden, I've worked in baking, food service, warehouses, gardening and outdoor maintenance. 
 Alongside that practical side, I've always been drawn to stories, games, drawing, music and creating things from scratch. Over the years, I've written and performed songs, developed characters, imagined worlds and enjoyed the people and stories that grow around games.
@@ -23,38 +23,38 @@ For development work, my role is to come up with ideas, design systems, make dec
 
 ## Elsewhere
 
+![](/about-links/github.webp)
 **[GitHub — Babuni Dev](https://github.com/babunidev)**
-
 Source repositories, project documentation and development history.
 
+![](/about-links/curseforge.webp)
 **[CurseForge — Babuni Gaming](https://www.curseforge.com/members/babunigaming/projects)**
-
 World of Warcraft addons published for other players to use.
 
+![](/about-links/instagram-babuni-gaming.webp)
 **[Instagram — Babuni Gaming](https://www.instagram.com/babunigaming/)**
-
 Gaming screenshots, moments and other posts.
 
+![](/about-links/youtube-babuni-gaming.webp)
 **[YouTube — Babuni Gaming](https://www.youtube.com/@babunigamingg)**
-
 Videos and recordings from games.
 
+![](/about-links/youtube-musik.webp)
 **[YouTube — babuni.musik](https://www.youtube.com/@babunimusik)**
-
 Piano performances and music videos.
 
+![](/about-links/soundcloud-musik.webp)
 **[SoundCloud — babuni.musik](https://soundcloud.com/babunimusik)**
-
 Music and audio recordings from babuni.musik.
 
+![](/about-links/anskar.webp)
 **[Instagram — Anskar Grotzschnapf](https://www.instagram.com/anskargrotzschnapf/)**
-
 Artwork from an automated poetry-and-image project.
 
+![](/about-links/anskar.webp)
 **[Etsy — Anskar Art Prints](https://www.etsy.com/se-en/shop/Anskarartprints)**
-
 The shop for Anskar's digital artwork.
 
-**[Arcanite Brothers — Morkahja](https://arcanitebrothers.com/)**
-
-The website for the playable online game Morkahja.
+![](/about-links/morkahja.webp)
+**[Morkahja — Play online](https://www.babuni.dev/Morkahja/)**
+The playable online game Morkahja, in its new home on babuni.dev.

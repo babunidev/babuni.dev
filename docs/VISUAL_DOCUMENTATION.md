@@ -188,3 +188,14 @@ AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview, at 1280 a
 ![Project icon in the reader on a narrow screen](../public/media/babuni-dev/images/verification/project-icon-reader-phone.webp)
 
 AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels. Every Button Game big-bloom card carries the round project icon top left; in the reader the icon and the share button form a row above the title. In the same run, the reader icon returned to the big bloom and a card icon returned to the small bloom. Browser simulations, not a physical phone test.
+
+## 2026-11-25 — Projects menu by activity and About link cards
+
+![Projects menu sorted by latest update](../public/media/babuni-dev/images/verification/projects-menu-by-activity-desktop.webp)
+
+![About links as cards](../public/media/babuni-dev/images/verification/about-link-cards-desktop.webp)
+
+![About portrait above its heading on a narrow screen](../public/media/babuni-dev/images/verification/about-portrait-heading-phone.webp)
+
+AI headless-Chrome captures from the temporary localhost:4391 preview, at 1366 and 390 pixels. The Projects menu lists the most recently updated project first with "today" / "2 days ago" labels; the About page shows the Elsewhere links as cards with a picture, title and description, and the portrait above "The person behind the projects". Not a physical phone test.
+

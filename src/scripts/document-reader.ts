@@ -17,6 +17,7 @@ export function safeDocumentUrl(value:string,sourceUrl?:string):string|null {
     return url.href;
   }catch{return null;}
 }
+const LINK_CARD_IMAGE=/^\/about-links\/[a-z0-9-]+\.webp$/;
 /** Parse Markdown tokens, then construct safe DOM nodes. Never insert raw HTML. */
 export function renderDocument(source:string,sourceUrl?:string,interactive=true):HTMLElement {
   const article=document.createElement('div');article.className='module-document';
@@ -29,6 +30,23 @@ export function renderDocument(source:string,sourceUrl?:string,interactive=true)
     if(token.title)element.title=decodeText(token.title);
     if(interactive)links.push({element:element as HTMLAnchorElement,href:token.href});parent.append(element);
   }
+  /** `![](/about-links/x.webp)` + `**[Title](url)**` + description → one card link.
+   * Only our own thumbnails under /about-links/ qualify; anything else renders as text. */
+  function linkCard(parent:HTMLElement,tokens:readonly Token[]):boolean {
+    const [image,...rest]=tokens.filter(t=>!(t.type==='text'&&!t.text.trim()));
+    const titleIndex=rest.findIndex(t=>t.type==='strong'&&t.tokens?.length===1&&t.tokens[0].type==='link');
+    if(image?.type!=='image'||!LINK_CARD_IMAGE.test(image.href)||titleIndex!==0)return false;
+    const target=rest[0].tokens![0] as Token&{href:string;tokens:Token[]};
+    const card=document.createElement(interactive?'a':'span');card.className='link-card';
+    const img=document.createElement('img');img.src=image.href;img.alt='';img.width=96;img.height=96;img.loading='lazy';img.decoding='async';
+    const body=document.createElement('span');body.className='link-card-body';
+    const title=document.createElement('strong');title.className='link-card-title';render(title,target.tokens);
+    const description=document.createElement('span');description.className='link-card-text';
+    render(description,rest.slice(1));description.textContent=description.textContent?.trim()??'';
+    body.append(title);if(description.textContent)body.append(description);
+    card.append(img,body);if(interactive)links.push({element:card as HTMLAnchorElement,href:target.href});parent.append(card);
+    return true;
+  }
   function render(parent:HTMLElement,tokens:readonly Token[]):void {
     for(const token of tokens){
       switch(token.type){
@@ -37,6 +55,7 @@ export function renderDocument(source:string,sourceUrl?:string,interactive=true)
         case 'escape':text(parent,token.text);break;
         case 'html':text(parent,token.raw);break;
         case 'paragraph':{
+          if(linkCard(parent,token.tokens))break;
           const p=document.createElement('p');render(p,token.tokens);parent.append(p);break;
         }
         case 'heading':{

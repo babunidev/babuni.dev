@@ -1,13 +1,25 @@
 import {demoProjects} from '../lib/demo-projects.ts';
-import {PROJECT_GROUPS} from '../lib/project-groups.ts';
+import {projectsByActivity,validActivity} from '../lib/project-activity.ts';
+import connections from '../content/project-repositories.json' with {type:'json'};
+import activity from '../generated/project-activity.json' with {type:'json'};
+/** Most recently updated first (newest branch-head commit, refreshed on every build). */
+const byActivity=projectsByActivity(demoProjects,connections,activity);
 export function matchingProjects(query:string){
   const words=query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
-  return demoProjects.filter(project=>words.every(word=>(project.name+' '+project.shortSummary).toLocaleLowerCase().includes(word)))
-    .sort((a,b)=>a.name.localeCompare(b.name));
+  return byActivity.filter(project=>words.every(word=>(project.name+' '+project.shortSummary).toLocaleLowerCase().includes(word)));
 }
-export function groupedProjects(query:string){
-  const matches=matchingProjects(query);
-  return PROJECT_GROUPS.map(group=>({title:group.title,projects:matches.filter(project=>(group.ids as readonly string[]).includes(project.id))})).filter(group=>group.projects.length);
+/** Last public commit date for a project, or null when it has no connected repository. */
+export function projectUpdatedAt(id:string):Date|null {
+  const c=(connections as Record<string,{status:string;repository?:string;branch?:string}>)[id];
+  if(c?.status!=='connected'||!c.repository||!c.branch)return null;
+  const value=(activity as Record<string,unknown>)[c.repository];
+  return validActivity(value,c.branch)?new Date(value.committedAt):null;
+}
+export function updatedLabel(date:Date,now=Date.now()):string {
+  const days=Math.max(0,Math.floor((now-date.getTime())/86400000));
+  if(days===0)return 'today';if(days===1)return 'yesterday';if(days<30)return `${days} days ago`;
+  const months=Math.floor(days/30);if(months<12)return months===1?'1 month ago':`${months} months ago`;
+  const years=Math.floor(days/365);return years<=1?'1 year ago':`${years} years ago`;
 }
 /** Keep the existing header and decorative footer above the modal backdrop. */
 export function attachReaderHeader(view:HTMLElement):()=>void {
@@ -38,15 +50,15 @@ export function installSiteNavigation(select:(id:string)=>void,about:(trigger:HT
   function close(){menu.hidden=true;toggle.setAttribute('aria-expanded','false');}
   function render(){
     list.replaceChildren();const projects=matchingProjects(search.value);
-    for(const group of groupedProjects(search.value)){
-      const section=document.createElement('section');section.className='project-menu-group';
-      const heading=document.createElement('h3');heading.textContent=group.title;section.append(heading);
-      section.setAttribute('aria-label',group.title);
-      for(const project of group.projects){
-        const button=document.createElement('button');button.type='button';button.textContent=project.name;
-        button.addEventListener('click',()=>{close();select(project.id);});section.append(button);
+    for(const project of projects){
+      const button=document.createElement('button');button.type='button';
+      const name=document.createElement('span');name.className='project-menu-name';name.textContent=project.name;button.append(name);
+      const updated=projectUpdatedAt(project.id);
+      if(updated){
+        const when=document.createElement('time');when.className='project-menu-updated';when.dateTime=updated.toISOString();
+        when.textContent=updatedLabel(updated);when.title='Last updated '+updated.toLocaleDateString();button.append(when);
       }
-      list.append(section);
+      button.addEventListener('click',()=>{close();select(project.id);});list.append(button);
     }
     count.textContent=projects.length?`${projects.length} ${projects.length===1?'project':'projects'}`:'No projects found.';
   }

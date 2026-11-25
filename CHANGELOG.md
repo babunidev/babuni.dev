@@ -6,6 +6,14 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Projects menu sorted by latest update; About links as cards (2026-11-25)
+- The **Projects** menu is one list, most recently updated project first, instead of the category groups. Order comes from each connected repository's newest branch-head commit (`src/generated/project-activity.json`, refreshed by `activity:sync` on every production build); projects without a connected repository follow in catalog order. Each entry shows how long ago it was updated ("today", "3 days ago"). Search filters the same ordered list. `src/lib/project-groups.ts` and `groupedProjects` are removed.
+- The About page's **Elsewhere** links are cards: a 72 px picture on the left, the link as title and the description under it; the whole card is the link. Pictures are 192 px WebP thumbnails in `public/about-links/`, made from Babuni's portal artwork, plus the babuni.musik channel picture for the two music links. The Markdown reader renders a card only for a paragraph that starts with an image from `/about-links/` followed by a bold link; other images stay links.
+- The About portrait now comes before the heading "The person behind the projects".
+### Fixed — Morkahja link on the About page (2026-11-25)
+- The Morkahja link pointed to `arcanitebrothers.com`, which no longer answers. It now opens the game's new home, `https://www.babuni.dev/Morkahja/`.
+- Verification: `npm run test:grid` (222 passed, including new card and menu-order tests) and `npm run build` (activity sync, content check, 311 public URLs) passed; checked in headless Chrome against `astro preview` at 1366 px and 390 px: menu order newest first, nine cards with the right links, portrait above the heading, no sideways scrolling. Not tested on a physical phone. Claude Code (Claude Opus 5.5).
+
 ### Added — Eldgrim addon download module (2026-11-23)
 - Eldgrim has a new `addon-download` resources module, **Addon download**, linking the install zip `https://github.com/babunidev/eldgrim/raw/main/addon/downloads/Eldgrim.zip` and the addon README. The zip lives in the Eldgrim repository, holds only the `Eldgrim` folder the game loads and is rebuilt there with every addon change, so the link always gives the latest version.
 - Verification: `npm run content:check`, `npm run test:grid` (220 passed) and the production build passed; the generated Eldgrim module data contains the link; the raw URL returned the committed zip byte for byte. Claude Code (Claude Opus 5.5).

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {matchingProjects,attachReaderHeader,groupedProjects} from '../src/scripts/site-navigation.ts';
+import {matchingProjects,attachReaderHeader,projectUpdatedAt,updatedLabel} from '../src/scripts/site-navigation.ts';
 import {demoProjects} from '../src/lib/demo-projects.ts';
 import {ProjectPlacement} from '../src/lib/project-placement.ts';
 test('project search finds current catalog entries regardless of naming',()=>{
@@ -34,15 +34,20 @@ test('direct reservation replaces a stale buffered identity before camera recycl
  assert.equal(placement.get(source),3);
 });
 
-test('menu groups include every current project once and respect searching',()=>{
- const groups=groupedProjects('');
- const ids=groups.flatMap(g=>g.projects.map(p=>p.id));
- assert.equal(ids.length,demoProjects.length);
- assert.equal(new Set(ids).size,demoProjects.length);
+test('menu lists every project once, most recently updated first, and respects searching',()=>{
+ const ids=matchingProjects('').map(p=>p.id);
  assert.deepEqual(ids.slice().sort(),demoProjects.map(p=>p.id).sort());
- assert.deepEqual(groupedProjects('no such project'),[]);
- for(const project of demoProjects){
-  const matches=groupedProjects(project.name).flatMap(g=>g.projects.map(p=>p.id));
-  assert.ok(matches.includes(project.id),project.id);
- }
+ const times=matchingProjects('').map(p=>projectUpdatedAt(p.id)?.getTime()??null);
+ const dated=times.filter(t=>t!==null);
+ assert.deepEqual(dated,dated.slice().sort((a,b)=>b-a),'newest first');
+ assert.ok(times.indexOf(null)===-1||times.slice(times.indexOf(null)).every(t=>t===null),'undated projects last');
+ assert.deepEqual(matchingProjects('no such project'),[]);
+});
+test('update labels read naturally',()=>{
+ const now=Date.parse('2026-11-25T12:00:00Z'),day=86400000;
+ assert.equal(updatedLabel(new Date(now-3600000),now),'today');
+ assert.equal(updatedLabel(new Date(now-day),now),'yesterday');
+ assert.equal(updatedLabel(new Date(now-5*day),now),'5 days ago');
+ assert.equal(updatedLabel(new Date(now-40*day),now),'1 month ago');
+ assert.equal(updatedLabel(new Date(now-800*day),now),'2 years ago');
 });

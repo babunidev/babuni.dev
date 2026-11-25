@@ -354,6 +354,21 @@
           "src": "/media/babuni-dev/images/verification/classic-wow-addons-grid.webp",
           "alt": "The living grid after the merge: 24 project tiles, none of them a retired 1.12 or 3.3.5 addon.",
           "caption": "AI headless-Chrome capture, 19 November 2026, of the local preview at 1280 px after 21 addon tiles became the single Classic WoW Addons project. Not a phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/projects-menu-by-activity-desktop.webp",
+          "alt": "The Projects menu as one list: Morkahja updated today at the top, then projects updated two, three and five days ago.",
+          "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1366 px. Not a phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/about-link-cards-desktop.webp",
+          "alt": "The About page's Elsewhere links as cards, each with a square picture on the left, the link title and a short description.",
+          "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1366 px. Not a phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/about-portrait-heading-phone.webp",
+          "alt": "The About page on a narrow screen with Babuni's portrait above the heading The person behind the projects.",
+          "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px. Not a physical phone test."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

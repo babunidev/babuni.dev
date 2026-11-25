@@ -109,7 +109,7 @@ Local Linux keyring/profile infrastructure exists. Latest code also implements a
 
 | Website code/data | Current responsibility | Integration requirement |
 | --- | --- | --- |
-| `src/lib/demo-projects.ts`, `project-groups.ts`, `project-topics.ts` | Stable project identities, titles/artwork, menu groups and bubbles | Admin must read the actual catalog rather than invent IDs from titles or repository names. These inputs are partly TypeScript, not one editable JSON database |
+| `src/lib/demo-projects.ts`, `project-topics.ts` | Stable project identities, titles/artwork and bubbles (menu groups were removed on 2026-11-25; the menu is ordered by latest update) | Admin must read the actual catalog rather than invent IDs from titles or repository names. These inputs are partly TypeScript, not one editable JSON database |
 | `src/content/project-repositories.json` | Public repository/branch/status and optional document selection per project | This is the website's connection map; an admin connection UUID is a separate identity |
 | `scripts/sync-repositories.mjs` | Anonymous public-visibility check, immutable revision fetch, raw snapshots; CLI refreshes all connected external sources | Add a bounded one-source/document refresh operation with expected revision; do not run a whole-catalog refresh for one edit |
 | `src/content/repository-documents.json` | Raw imported source text and repository commit | Admin edits the original GitHub file, not the reordered reading copy; compare raw source and preserve credits |

@@ -6,6 +6,12 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-25 — What changed most recently, first
+
+I wanted the Projects list in the top right sorted by activity instead of by category, so the most recently updated project is always on top. Claude Code (Claude Opus 5.5) sorted it by the date of each repository's latest commit, which the site already reads for the "Recently updated" badges, and added a short "3 days ago" next to each name. The order is refreshed whenever the site is built; a daily refresh needs a scheduled build and publish, which is still to be decided.
+
+On the About page, the Morkahja link still pointed to the old Arcanite Brothers website, which no longer answers; the game now lives at babuni.dev/Morkahja/, so the link goes there. I also wanted the links to look like small cards with a picture on the left, the link as a title and the description underneath. Claude Code used my portal artwork for the pictures, and the babuni.musik channel picture for the two music links, because no portal art exists for music. The heading "The person behind the projects" now sits under my portrait instead of above it.
+
 ## 2026-11-23 — The Eldgrim addon to download
 
 I wanted Amberhearth's members to install the Eldgrim addon from the website, from a zip that stays current with every update. Claude Code (Claude Opus 5.5) built the zip in the Eldgrim repository, rebuilt with each addon change, and added an Addon download module to the Eldgrim tile that links it, in the same way as the downloads of my Classic addons.

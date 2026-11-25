@@ -817,3 +817,10 @@ Babuni.dev requested an accurate remaining-work list and assessment of Babuni.ad
 ## 2026-11-04 — Two-repository integration boundary
 
 Code review of admin `17f8f5e` confirms no active GitHub/publishing capabilities or portfolio editor routes. Website source inputs, prepared Markdown/index, composed JSON and static HTML are separate layers; a reader upload alone cannot update them. See [ADMIN_INTEGRATION](ADMIN_INTEGRATION.md) for concrete source ownership, identity mapping, missing contracts and acceptance slices. Proposed discovery, targeted generation, revision-aware content and release artifacts are unimplemented; static full-build publishing requires no public admin backend.
+
+## 2026-11-25 — Projects menu by activity, About link cards
+
+`src/scripts/site-navigation.ts` orders the menu with `projectsByActivity` (connected repository's newest branch-head commit from `src/generated/project-activity.json`, newest first, unconnected projects last in catalog order) and labels each entry with `updatedLabel`. `src/lib/project-groups.ts` and `groupedProjects` are removed; the 2026-10-28 note about them is historical. The activity snapshot is refreshed by `activity:sync --require-fresh` in `prebuild`, so the order is as fresh as the last production build.
+
+`renderDocument` turns a paragraph of the form `![](/about-links/<name>.webp)` + `**[Title](url)**` + text into one `a.link-card`. The image path must match `^/about-links/[a-z0-9-]+\.webp$`, so only the site's own thumbnails load; imported documents keep the explicit-media policy.
+

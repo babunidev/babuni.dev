@@ -58,3 +58,14 @@ test('every imported document parses without introducing executable source eleme
  }
  assert.ok(count>=376,'the imported public Markdown baseline must remain available');
 });
+test('own /about-links/ thumbnails turn image + bold link + text into one card link; others do not',t=>{
+ documentDOM(t);
+ const reader=renderDocument('![](/about-links/sample.webp)\n**[Sample site](https://example.com/)**\nA short description.\n\n![](https://evil.example/x.webp)\n**[Other](https://example.com/other)**\nText.');
+ const cards=nodes(reader,'a').filter(a=>a.className==='link-card');
+ assert.equal(cards.length,1);
+ assert.equal(cards[0].href,'https://example.com/');assert.equal(cards[0].target,'_blank');
+ assert.equal(nodes(cards[0],'img')[0].src,'/about-links/sample.webp');
+ assert.equal(nodes(cards[0],'strong')[0].textContent,'Sample site');
+ assert.ok(cards[0].textContent.includes('A short description.'));
+ assert.equal(nodes(reader,'img').length,1,'foreign images never load');
+});

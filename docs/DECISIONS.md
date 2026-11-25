@@ -10,6 +10,13 @@ This register records **why decisions were made**, what alternatives were consid
 
 Give the decision a date or stable identifier, status, human direction, alternatives (mark AI-originated suggestions), rationale, and relevant evidence. Keep entries focused on choices rather than reproducing test logs or entire conversations. When a choice changes, identify the successor and mark the old decision **Superseded**; never silently erase its original rationale.
 
+## D-2026-11-25 — Projects menu ordered by latest update
+
+**Status:** accepted (Babuni, 2026-11-25). **Replaces** the menu-only category grouping approved earlier (see `docs/PROJECT_GROUPING_PROPOSAL.md`, now historical).
+**Decision:** the Projects menu is a single list ordered by each connected repository's newest branch-head commit, newest first; unconnected projects follow in catalog order. Grid order and per-visit shuffling are unaffected.
+**Alternatives:** keep categories and sort inside each one (not what was asked); fetch activity live in the browser (GitHub's unauthenticated rate limit of 60 requests per hour per visitor makes this unreliable).
+**Open:** Babuni asked for the order to refresh once a day. It refreshes on each production build; a daily automatic build and publish is not set up yet (AI note: it needs the deployment key available to an unattended job).
+
 ## D-2026-11-10 — Folder modules for any repository, with paired images
 **Status:** Accepted creative direction; implemented, not yet visually accepted on the live site.
 **Creative direction:** Babuni asked for every new public repository to be on the website, and for repositories with folder structures to get folder modules like Amberbrew Story's, where a folder opens and its files can be read. An image with the same name as a Markdown file is shown centered above it, with the file name centered as well, so a list reads image, document, image, document. Small icons keep their size; larger images scale to the module or reader they appear in. Images may appear in the small bloom too.
