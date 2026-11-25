@@ -1013,6 +1013,65 @@
         "alt": "QR code that opens this Rocket Game 42 play module on babuni.dev",
         "caption": "Scan to open this page on your phone, then tap Play. Touch controls and one global top-100 high score list."
       }
+    },
+    {
+      "id": "screenshots",
+      "type": "gallery",
+      "title": "Screenshots",
+      "preview": "Rocket Game 42 on babuni.dev: desktop, phone and tablet, with the shared high-score list.",
+      "images": [
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/desktop-welcome-global-highscores.webp",
+          "alt": "The welcome screen with the shared high-score list, desktop, mock scores.",
+          "caption": "The welcome screen with the shared high-score list, desktop, mock scores — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/desktop-gameover-saved-global-rank.webp",
+          "alt": "Game over with the score saved and its place in the top 100, mock scores.",
+          "caption": "Game over with the score saved and its place in the top 100, mock scores — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/phone-landscape-steer-and-laser.webp",
+          "alt": "Steering and firing the laser on a phone in landscape.",
+          "caption": "Steering and firing the laser on a phone in landscape — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/phone-portrait-playing.webp",
+          "alt": "Playing on a phone held upright.",
+          "caption": "Playing on a phone held upright — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/tablet-landscape-playing.webp",
+          "alt": "Playing on a tablet.",
+          "caption": "Playing on a tablet — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/live-desktop-welcome.webp",
+          "alt": "The live game at babuni.dev/Rocketgame42 before the first score.",
+          "caption": "The live game at babuni.dev/Rocketgame42 before the first score — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/live-phone-landscape-playing.webp",
+          "alt": "The live game on a phone in landscape.",
+          "caption": "The live game on a phone in landscape — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/website-deeplink-desktop.webp",
+          "alt": "The Play Rocket Game 42 module on babuni.dev with its QR code, desktop.",
+          "caption": "The Play Rocket Game 42 module on babuni.dev with its QR code, desktop — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/website-deeplink-phone.webp",
+          "alt": "The same module on a phone.",
+          "caption": "The same module on a phone — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/rocket-game-42/2026-11-21/live-website-deeplink-phone.webp",
+          "alt": "The module on the live website, opened through the deep link on a phone.",
+          "caption": "The module on the live website, opened through the deep link on a phone — 21 November 2026. Development screenshot."
+        }
+      ],
+      "credit": "Game and creative direction: Babuni. Screenshots with mock scores, taken during AI-assisted development; see the development journal."
     }
   ],
   "eldgrim": [
@@ -1032,6 +1091,75 @@
         }
       ],
       "credit": "Addon directed by Babuni.dev; implemented with AI assistance (Claude Code). The zip is built from the addon source in the Eldgrim repository."
+    },
+    {
+      "id": "screenshots",
+      "type": "gallery",
+      "title": "Screenshots",
+      "preview": "Eldgrim's Hearth board in the addon, from its first frame to the quest notebook.",
+      "images": [
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-board-empty.webp",
+          "alt": "Eldgrim's Hearth board in its new coal-and-fire frame, still empty.",
+          "caption": "Eldgrim's Hearth board in its new coal-and-fire frame, still empty — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-flame-emblem-and-corners.webp",
+          "alt": "The flame emblem and the frame corners.",
+          "caption": "The flame emblem and the frame corners — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-board-at-1x.webp",
+          "alt": "The board at its normal size with sample quests.",
+          "caption": "The board at its normal size with sample quests — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-board-help-only-in-tooltips.webp",
+          "alt": "The board with its help moved into tooltips.",
+          "caption": "The board with its help moved into tooltips — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/first-ember-a-fire-of-your-own.webp",
+          "alt": "The first weekly ember, A Fire of Your Own, on the board.",
+          "caption": "The first weekly ember, A Fire of Your Own, on the board — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-board-discord-proof-and-confirm.webp",
+          "alt": "A quest asking for proof in Discord and another member's confirmation, sample members.",
+          "caption": "A quest asking for proof in Discord and another member's confirmation, sample members — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-form-without-proof-choice.webp",
+          "alt": "The quest form without a choice of proof.",
+          "caption": "The quest form without a choice of proof — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-quests-without-end-date.webp",
+          "alt": "Member quests without an end date.",
+          "caption": "Member quests without an end date — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-board-new-quest-form.webp",
+          "alt": "Writing a new member quest.",
+          "caption": "Writing a new member quest — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-20/hearth-board-quest-chosen.webp",
+          "alt": "A quest chosen on the board.",
+          "caption": "A quest chosen on the board — 20 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-22/hearth-quest-form-mode.webp",
+          "alt": "The quest form saying whether a quest is for everyone or for one person.",
+          "caption": "The quest form saying whether a quest is for everyone or for one person — 22 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/eldgrim/2026-11-22/hearth-quest-notebook.webp",
+          "alt": "The notebook for the one quest a member is on.",
+          "caption": "The notebook for the one quest a member is on — 22 November 2026. Development screenshot."
+        }
+      ],
+      "credit": "Creative direction: Babuni. Screenshots with sample quests and members, taken during AI-assisted development; see the development journal."
     }
   ]
 }

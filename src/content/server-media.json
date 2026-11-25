@@ -371,6 +371,102 @@
   "bytes": 13668,
   "sha256": "da092d4955d423473f9b98a3a539d69277c29ec559406034b77af250b53315f8"
  },
+ "/screenshots/eldgrim/2026-11-20/first-ember-a-fire-of-your-own.webp": {
+  "bytes": 88972,
+  "sha256": "971d328c5ac8d3957eddb95d0b8a3720539351a14590f5fbcd731fd3b5e053e9"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-board-at-1x.webp": {
+  "bytes": 69196,
+  "sha256": "a0a6547e62915f2b490a8a27b87bbb66bb9562a205a9376acb35fa494ea18b36"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-board-discord-proof-and-confirm.webp": {
+  "bytes": 129656,
+  "sha256": "e3963f3068c3453693feb49920d9cda19c9754e161da41184681cd5692925546"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-board-empty.webp": {
+  "bytes": 53788,
+  "sha256": "763419fb326e109bdb0e38049108d5f2af1d21dab171fed00e167943669b8ecd"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-board-help-only-in-tooltips.webp": {
+  "bytes": 118246,
+  "sha256": "66abfb4b71aad52cbf5ccb7173ca0c0c0512ac710355717f7c2700219823ba59"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-board-new-quest-form.webp": {
+  "bytes": 113830,
+  "sha256": "0009cc45ab08a06237ce779f3cecd2a67232ac45f8bef955b80fdd6d733800f0"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-board-quest-chosen.webp": {
+  "bytes": 123716,
+  "sha256": "5cb9933e3f5bfe35b5e8f3627f3ddd393a2ac541c6c29747114b39ab38d03ec7"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-flame-emblem-and-corners.webp": {
+  "bytes": 35416,
+  "sha256": "1fedbf4588587f59cec14ad1d29d925353b66cec17c99cb4f3fcc927a33a8560"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-form-without-proof-choice.webp": {
+  "bytes": 116916,
+  "sha256": "1550af31409996605d98f9bbe161b66a924f82340ea15b4316fc5d433e69bfc9"
+ },
+ "/screenshots/eldgrim/2026-11-20/hearth-quests-without-end-date.webp": {
+  "bytes": 87234,
+  "sha256": "cfaacb3c94298093ab5d4860ddd0a348f452f8ed23b3a482e3472ef791484f33"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/first-ember-a-fire-of-your-own.webp": {
+  "bytes": 15316,
+  "sha256": "fe338324ad8af009d0f54a6895ddfb509469d572e342cf9135ae81ef8c551119"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-board-at-1x.webp": {
+  "bytes": 14434,
+  "sha256": "e20afabc59a96aebeef70959abce26822dba6a6b8c955799183c08ea93ef04fe"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-board-discord-proof-and-confirm.webp": {
+  "bytes": 15536,
+  "sha256": "ba02ded39912ffd7ac7324bc31d0ed84182ff6e1df60c88d0aa937572e07af9e"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-board-empty.webp": {
+  "bytes": 7848,
+  "sha256": "d952d61391f04233ffe72df3760d45e034e9878502564fb60c65e7edb6b0e66b"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-board-help-only-in-tooltips.webp": {
+  "bytes": 14928,
+  "sha256": "64da3bfe545f4a34108866e8961a2fe458ac2a072a6e346443c168fa5ccb33fb"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-board-new-quest-form.webp": {
+  "bytes": 14446,
+  "sha256": "2db09ac39f0a770259a1e158eaeaf722b279e2330381b2c66062221f9676b693"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-board-quest-chosen.webp": {
+  "bytes": 15396,
+  "sha256": "f7d7089aaa402936f92eb8fc076b9a0b013efe5d79a5fea6e54f94c641a79088"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-flame-emblem-and-corners.webp": {
+  "bytes": 14972,
+  "sha256": "425c6f381e4cf37ff5ffc3223635c0f64a865c4e2b984200fbf238f888d64d66"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-form-without-proof-choice.webp": {
+  "bytes": 14418,
+  "sha256": "09ff7f856f03e9585124c64f475e806c16cbc3ece315509dd6721101586ddb02"
+ },
+ "/screenshots/eldgrim/2026-11-20/thumbs/hearth-quests-without-end-date.webp": {
+  "bytes": 16406,
+  "sha256": "65f0be72cd6a65c8259c695aa4ef454722aabf2534838f82eec6888a4c1b35b8"
+ },
+ "/screenshots/eldgrim/2026-11-22/hearth-quest-form-mode.webp": {
+  "bytes": 108052,
+  "sha256": "504adc00a1f6d8548e8c81d79ef29343b11e08ada6fc2bb90309d1753eda631f"
+ },
+ "/screenshots/eldgrim/2026-11-22/hearth-quest-notebook.webp": {
+  "bytes": 103738,
+  "sha256": "44f3e1de1fcfd39adb34d7cffbf581e202802ba1b8e5acef3689b7d443b9c6f6"
+ },
+ "/screenshots/eldgrim/2026-11-22/thumbs/hearth-quest-form-mode.webp": {
+  "bytes": 13828,
+  "sha256": "3c5b8367d701d91ef24f741037fe66f9f2bfecd52856ec6660a18581955070c3"
+ },
+ "/screenshots/eldgrim/2026-11-22/thumbs/hearth-quest-notebook.webp": {
+  "bytes": 13560,
+  "sha256": "3a9179581f5bda2c4012f7d55f883a607c5cd3bca260ba07171f25051a20b9e8"
+ },
  "/screenshots/morkahja-rpg/2026-11-12/screenshot-20261112-210047.webp": {
   "bytes": 20854,
   "sha256": "64f57929fac27ae0d069321a28e181f53528d7e0b9e46651e4d20124a6a60890"
@@ -4914,5 +5010,109 @@
  "/screenshots/morkahja-rpg/2026-11-24/travel-wait-phone-prompt.webp": {
   "bytes": 53044,
   "sha256": "415044b36d300601c20ba23f91a96382beef0e1e0ae8e9388bedf12ac658c5ff"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/desktop-gameover-saved-global-rank.webp": {
+  "bytes": 39164,
+  "sha256": "ebe9802e335972a82a73546f81d225534a73b680af4909974566aabb5232924e"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/desktop-welcome-global-highscores.webp": {
+  "bytes": 39942,
+  "sha256": "14df51d594b286881aabf26be28a2c5778ca6c530d59aaccb1b3b5cff7de3d13"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/live-desktop-welcome.webp": {
+  "bytes": 35862,
+  "sha256": "962ec5731eb3151275cd3742f4b03d26d4e9eba9a1ae4d9ac2d9eb1f36913701"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/live-phone-landscape-playing.webp": {
+  "bytes": 31408,
+  "sha256": "5ff6f1ed377602bd33049330be35aa63673da1c71abcc6d21c18ebcba1ab2948"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/live-website-deeplink-phone.webp": {
+  "bytes": 67394,
+  "sha256": "04da726708064c55163215286646e15288f5797c1688def36d5a0c36dfcc5ec7"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/phone-landscape-gameover.webp": {
+  "bytes": 37016,
+  "sha256": "c6e82e7f99c49a99476e8d537f15092dca4a9441d12f444b0f53300436a3d0c4"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/phone-landscape-steer-and-laser.webp": {
+  "bytes": 33114,
+  "sha256": "7140b80a8797d092291ffa2c5aa0831355a0693d52ae55bc78f0b80d31250510"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/phone-landscape-welcome.webp": {
+  "bytes": 44018,
+  "sha256": "02f57cb3d53c0cac2879b78ca5b2810692709e856638c60655a195f65b2b0ec3"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/phone-portrait-playing.webp": {
+  "bytes": 34700,
+  "sha256": "4981e875f59903c733b17ee3e6da4449090961603a1e76b8fe5ae5348acef065"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/tablet-landscape-playing.webp": {
+  "bytes": 32070,
+  "sha256": "fb9aa6d967496524633462b892887dce4e675581db08b19a584ff0235f62fb70"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/desktop-gameover-saved-global-rank.webp": {
+  "bytes": 8620,
+  "sha256": "6e94374ce44ceb0ac072136847cc56410228678014cfd87917a24dcca07651b6"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/desktop-welcome-global-highscores.webp": {
+  "bytes": 8194,
+  "sha256": "e88b96199c985d54921d54d4c297f3b242faee3355f58ecba1f5f63a9bb72a87"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/live-desktop-welcome.webp": {
+  "bytes": 7214,
+  "sha256": "dd0aad51f55e461f01e55e9b42f46a907b0f56f74cb50ed1c509cac06d56e387"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/live-phone-landscape-playing.webp": {
+  "bytes": 5292,
+  "sha256": "6ca35fbdbf99b2d0900b1a583a58155607b91201665c710d640fc60e5f266df2"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/live-website-deeplink-phone.webp": {
+  "bytes": 11998,
+  "sha256": "9a196212bfc404ec7274435493619204d5e99c873981b970f8dcb23dc8e31928"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/phone-landscape-gameover.webp": {
+  "bytes": 5358,
+  "sha256": "8dc7704f05db06cc631d9f517ce83bed2eed491a653b7019a519c5f093549816"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/phone-landscape-steer-and-laser.webp": {
+  "bytes": 5530,
+  "sha256": "5d0d566f78594fde60e49e38bc1fdf79f843d68d820a00fde192a39825a93400"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/phone-landscape-welcome.webp": {
+  "bytes": 5634,
+  "sha256": "ee57173eeae99e5b3b6dacb51b2b964c141e4a0af7d8255806b7ba754350b530"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/phone-portrait-playing.webp": {
+  "bytes": 5238,
+  "sha256": "c608b38613c55374e488e03ca75c2d5f640bbae30ff7ac05ce2279eb93a82b86"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/tablet-landscape-playing.webp": {
+  "bytes": 5286,
+  "sha256": "f4e20ca2489b81841ca1a1daca579815c0f74c0a678d83f4b5522555fd05a75a"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/website-deeplink-desktop-2.webp": {
+  "bytes": 10072,
+  "sha256": "e2d0eacc721aa2e892528f871ddf1f7a8149e4ede9eee720742b9abdf116f63f"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/website-deeplink-desktop.webp": {
+  "bytes": 10242,
+  "sha256": "137a011d86b67c7e11084669b2734aeb0db8de1982dd5064a0fa930f80246af9"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/thumbs/website-deeplink-phone.webp": {
+  "bytes": 11818,
+  "sha256": "0e251f530bf4f7f7f06801c47a9e8f87c7b37d60c817b3296cebce892067bcc8"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/website-deeplink-desktop-2.webp": {
+  "bytes": 55298,
+  "sha256": "99536b54d880d9e75bcc4551649f4c2de7266338c19d4916cc65f54f7c1b6987"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/website-deeplink-desktop.webp": {
+  "bytes": 55186,
+  "sha256": "ed62f3bc811907229c0b549c75580de8f59c69f890ceb376c47d8d6a85cc863d"
+ },
+ "/screenshots/rocket-game-42/2026-11-21/website-deeplink-phone.webp": {
+  "bytes": 65632,
+  "sha256": "55e982ba8ebb6205d05c7d2283556655cedcdc7be04f0d14f2e60c3de7cbcc9d"
  }
 }

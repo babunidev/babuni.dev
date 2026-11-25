@@ -6,6 +6,11 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Rocket Game 42 and Eldgrim screenshots (2026-11-25)
+- Rocket Game 42: 13 screenshots on the server media folder (mock scores), a *Screenshots* gallery with 10 and the same 10 in two journal entries (snapshot `7fa6107`).
+- Eldgrim: 12 hearth-board screenshots (sample quests and members), a *Screenshots* gallery with all 12 and the same in five journal entries (snapshot `6be8a89`, which also brings in Eldgrim documents Babuni changed since `1c448f9`).
+- Verification: `npm run content:check`, `npm run test:grid` (239 passed) and `npm run build` passed. Claude Code (Claude Opus 5.5).
+
 ### Added — Morkahja screenshots (2026-11-25)
 - 568 Morkahja development screenshots (12–24 November 2026) on the server media folder, 55 MB from 584 MB of originals, listed in `src/content/server-media.json`. Left out after review: two QR codes and three Soul Link QR screens (they encode addresses or invite links), a browser warning showing a local network address, and one blank capture.
 - `morkahja-rpg` has a new *Screenshots* gallery with 20 captioned images. The Morkahja journal (snapshot `1c02390`) shows 124 of them in 45 entries; the snapshot also brings in the Morkahja documents Babuni changed since `a05846a`.

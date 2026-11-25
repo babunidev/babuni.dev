@@ -31,8 +31,8 @@ Every image is looked at before it is published. Screenshots that show live user
 | # | Project (site ID) | Screenshot folders | Count | Status |
 |---|---|---|---|---|
 | 1 | Button Game (`button-game`) | `Buttongame` | 13 | Done 2026-11-25: 13 published (283 KB), 9 in the gallery, 10 in the journal |
-| 2 | Rocket Game 42 (`rocket-game-42`) | `Rocketgame42` | 13 | Planned |
-| 3 | Eldgrim (`eldgrim`) | `Eldgrim`, `eldgrim` | 12 | Planned |
+| 2 | Rocket Game 42 (`rocket-game-42`) | `Rocketgame42` | 13 | Done 2026-11-25: 13 on the server (656 KB), 10 in the gallery and in 2 journal entries |
+| 3 | Eldgrim (`eldgrim`) | `Eldgrim`, `eldgrim` | 12 | Done 2026-11-25: 12 on the server (1.3 MB), all in the gallery and in 5 journal entries |
 | 4 | Babuni Admin (`arcanitebrothers`) | `babuni-admin`, `babuni.admin` | 38 | Planned, needs a careful privacy check |
 | 5 | Morkahja (`morkahja-rpg`) | `Morkahja` | 35 | Done 2026-11-25 together with row 7 |
 | 6 | BABUNI.DEV (`babuni-dev`) | `babuni.dev`, `babunidev` | 127 | Planned; joins the existing visual documentation |
