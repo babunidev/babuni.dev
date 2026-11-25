@@ -4,7 +4,7 @@ This document is the **visual evidence index** for babuni.dev: dated browser cap
 
 **Evidence rules:** Identify who supplied or captured an image, what environment or viewport it shows when known, what the image demonstrates, and what it cannot establish. A simulated mobile viewport is not a physical phone test; a still image does not establish animation smoothness or performance. Retain superseded and failed captures with accurate captions. Do not reconstruct missing timestamps or claim that an inaccessible capture was recovered.
 
-**Publishing rules:** Keep original source files and authorship distinct from published derivatives. Website-ready images belong under `public/media/babuni-dev/images/verification/` (or the appropriate project media folder); the gallery must reference the intended published asset. Verify WebP content rather than trusting a filename extension. Preserve credits, relevant rights, and accessibility descriptions. Where a screenshot documents a change, link its dated evidence to the corresponding journal or design decision.
+**Publishing rules:** Keep original source files and authorship distinct from published derivatives. Since 2026-11-25 screenshots are not kept in Git: website-ready captures belong in the server media folder, locally `public/screenshots/babuni-dev/verification/` (or `public/screenshots/<project-id>/`), listed in `src/content/server-media.json` (see [Screenshot publishing plan](SCREENSHOT_PUBLISHING_PLAN.md)). The files named below were moved there from `public/media/babuni-dev/images/verification/` that day; the gallery must reference the intended published asset. Verify WebP content rather than trusting a filename extension. Preserve credits, relevant rights, and accessibility descriptions. Where a screenshot documents a change, link its dated evidence to the corresponding journal or design decision.
 
 ## Initial screenshot archive — historical starting set
 
@@ -140,85 +140,85 @@ This was a verification of the **earlier chronological ordering**, superseded on
 
 ## 2026-10-29 — Search-readable pages and on-demand modules
 
-![AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification.](../public/media/babuni-dev/images/verification/readable-project-release.webp)
+![AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification.](../public/screenshots/babuni-dev/verification/readable-project-release.webp)
 
 AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification.
 
-![AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.](../public/media/babuni-dev/images/verification/on-demand-bloom-release.webp)
+![AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.](../public/screenshots/babuni-dev/verification/on-demand-bloom-release.webp)
 
 AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.
 
 ## 2026-10-31 — Random keyword discovery
 
-![SocialForever keyword bubbles](../public/media/babuni-dev/images/verification/random-keyword-bubbles.webp)
+![SocialForever keyword bubbles](../public/screenshots/babuni-dev/verification/random-keyword-bubbles.webp)
 
 AI browser capture at 127.0.0.1:4327, desktop viewport. SocialForever displays three distinct sampled keywords including the guaranteed “World of Warcraft add-on” cue. Keyboard focus re-entry visibly changed its pair of keywords; the current reveal remained visible during autonomous motion. This is an agent browser observation, not a new physical-phone acceptance. The browser API returned JPEG; the archived website image is verified WebP.
 
 ## 2026-11-01 — GuildChatBridge restored
 
-![Restored GuildChatBridge small bloom](../public/media/babuni-dev/images/verification/guildchatbridge-restored.webp)
+![Restored GuildChatBridge small bloom](../public/screenshots/babuni-dev/verification/guildchatbridge-restored.webp)
 
 AI desktop browser capture: selected GuildChatBridge from the World of Warcraft menu, observed centering and eight source-backed small-bloom previews, including the paused concept and decisions. JPEG capture converted to verified WebP. No supplied project artwork, live-addon test or physical-phone acceptance is claimed.
 
 ## 2026-11-01 — Waiting copy only for queued actions
 
-![Ordinary shift header](../public/media/babuni-dev/images/verification/header-ordinary-shift.webp)
+![Ordinary shift header](../public/screenshots/babuni-dev/verification/header-ordinary-shift.webp)
 
 AI desktop browser capture from the temporary 127.0.0.1:4327 preview. The header shows only “Columns are shifting” during an unqueued shift. After the capture, activating BABUNI.DEV during that shift visibly changed the header to “Waiting for shift to finish · BABUNI.DEV”; its small bloom subsequently opened. The screenshot was captured as JPEG and archived as WebP. A later attempted queued-close observation did not encounter a shift within the browser wait window, so no closing screenshot or fresh physical-device acceptance is claimed.
 
 ## 2026-11-10 — Folder images above their documents
 
-![Folder image layout fixture](../public/media/babuni-dev/images/verification/folder-image-layout-fixture.webp)
+![Folder image layout fixture](../public/screenshots/babuni-dev/verification/folder-image-layout-fixture.webp)
 
 AI headless-Chrome capture of a fixture page using the site's built stylesheet and the markup the new folder code produces. It shows a small bloom, a big bloom card and the reader's folder index. A 64-pixel test icon keeps its size; a 1400-pixel test image scales to the card or reader width; names and buttons are centered; a document without an image shows only its name. The images are generated test squares, not project art. This is not a capture of the live grid, and no connected repository contained paired images at the time. Not phone acceptance.
 
 
 ## 2026-11-19 — Sharing from the reader
 
-![Reader share button](../public/media/babuni-dev/images/verification/reader-share-desktop.webp)
+![Reader share button](../public/screenshots/babuni-dev/verification/reader-share-desktop.webp)
 
-![Folder document link on a narrow screen](../public/media/babuni-dev/images/verification/reader-share-folder-document-phone.webp)
+![Folder document link on a narrow screen](../public/screenshots/babuni-dev/verification/reader-share-folder-document-phone.webp)
 
 AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview, at 1280 and 390 pixels. A deep link opened the changelog reader, and a second link opened one lore document inside Amberbrew Story's Lore folder. In both, the share button sits in the reader's top-right corner and copied the link to exactly the view on screen. These are browser simulations, not a physical phone test.
 
 ## 2026-11-19 — The project icon leads back
 
-![Project icons on big-bloom cards](../public/media/babuni-dev/images/verification/project-icon-big-bloom-desktop.webp)
+![Project icons on big-bloom cards](../public/screenshots/babuni-dev/verification/project-icon-big-bloom-desktop.webp)
 
-![Project icon in the reader on a narrow screen](../public/media/babuni-dev/images/verification/project-icon-reader-phone.webp)
+![Project icon in the reader on a narrow screen](../public/screenshots/babuni-dev/verification/project-icon-reader-phone.webp)
 
 AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels. Every Button Game big-bloom card carries the round project icon top left; in the reader the icon and the share button form a row above the title. In the same run, the reader icon returned to the big bloom and a card icon returned to the small bloom. Browser simulations, not a physical phone test.
 
 ## 2026-11-25 — Projects menu by activity and About link cards
 
-![Projects menu sorted by latest update](../public/media/babuni-dev/images/verification/projects-menu-by-activity-desktop.webp)
+![Projects menu sorted by latest update](../public/screenshots/babuni-dev/verification/projects-menu-by-activity-desktop.webp)
 
-![About links as cards](../public/media/babuni-dev/images/verification/about-link-cards-desktop.webp)
+![About links as cards](../public/screenshots/babuni-dev/verification/about-link-cards-desktop.webp)
 
-![About portrait above its heading on a narrow screen](../public/media/babuni-dev/images/verification/about-portrait-heading-phone.webp)
+![About portrait above its heading on a narrow screen](../public/screenshots/babuni-dev/verification/about-portrait-heading-phone.webp)
 
 AI headless-Chrome captures from the temporary localhost:4391 preview, at 1366 and 390 pixels. The Projects menu lists the most recently updated project first with "today" / "2 days ago" labels; the About page shows the Elsewhere links as cards with a picture, title and description, and the portrait above "The person behind the projects". Not a physical phone test.
 
 ## 2026-11-25 — A sign-up form inside the Morkahja reader
 
-![Morkahja sign-up frame in the reader](../public/media/babuni-dev/images/verification/signup-reader-desktop.webp)
+![Morkahja sign-up frame in the reader](../public/screenshots/babuni-dev/verification/signup-reader-desktop.webp)
 
-![Morkahja sign-up frame on a narrow screen](../public/media/babuni-dev/images/verification/signup-reader-phone.webp)
+![Morkahja sign-up frame on a narrow screen](../public/screenshots/babuni-dev/verification/signup-reader-phone.webp)
 
 AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels, taken after Show sign-up form was pressed in Morkahja's Follow the journey reader. The frame shows the live EmailOctopus page; no address was submitted. Browser simulations, not a physical phone test.
 
 ## 2026-11-25 — The sign-up form as a big-bloom card
 
-![Morkahja big bloom with the sign-up card in the center](../public/media/babuni-dev/images/verification/signup-big-bloom-desktop.webp)
+![Morkahja big bloom with the sign-up card in the center](../public/screenshots/babuni-dev/verification/signup-big-bloom-desktop.webp)
 
-![The sign-up card scaled to fit on a narrow screen](../public/media/babuni-dev/images/verification/signup-big-bloom-phone.webp)
+![The sign-up card scaled to fit on a narrow screen](../public/screenshots/babuni-dev/verification/signup-big-bloom-phone.webp)
 
 AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels, after Babuni asked for the form directly in the big bloom. The project tile is hidden while the sign-up card is the central one. These supersede the reader captures above as the current design. Browser simulations, not a physical phone test; nothing was submitted.
 
 ## 2026-11-25 — Reader text in section cards
 
-![Changelog reader with one card per entry](../public/media/babuni-dev/images/verification/reader-section-cards-changelog-desktop.webp)
+![Changelog reader with one card per entry](../public/screenshots/babuni-dev/verification/reader-section-cards-changelog-desktop.webp)
 
-![About page as section cards on a narrow screen](../public/media/babuni-dev/images/verification/reader-section-cards-about-phone.webp)
+![About page as section cards on a narrow screen](../public/screenshots/babuni-dev/verification/reader-section-cards-about-phone.webp)
 
 AI headless-Chrome captures from the temporary localhost:4392 preview at 1366 and 390 pixels: each main section of a reader is its own card with the heading on top. Not a physical phone test.

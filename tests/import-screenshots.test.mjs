@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {screenshotName,screenshotUrls,blankBottomRows} from '../scripts/import-screenshots.mjs';
 import {screenshotImage} from '../src/scripts/image-lightbox.ts';
+import {SERVER_MEDIA_URL,readManifest} from '../scripts/server-media.mjs';
 
 test('screenshot names drop the folder date and become URL-safe',()=>{
  assert.equal(screenshotName('2026-01-02-Sample Übersicht_2.png','2026-01-02'),'sample-ubersicht-2');
@@ -19,4 +20,12 @@ test('only pure-white rows at the bottom count as empty, at most half the image'
  assert.equal(blankBottomRows(image([255,255,255,255]),2,4,3),2,'never more than half');
  const alpha=Uint8Array.from([10,10,10,0, 10,10,10,0, 255,255,255,0, 255,255,255,0]);
  assert.equal(blankBottomRows(alpha,1,4,4),2,'alpha is ignored');
+});
+test('server media manifest lists only valid screenshot paths with size and checksum',()=>{
+ for(const [url,record] of Object.entries(readManifest())){
+  assert.match(url,SERVER_MEDIA_URL);
+  assert.ok(Number.isInteger(record.bytes)&&record.bytes>0,url);
+  assert.match(record.sha256,/^[a-f0-9]{64}$/,url);
+ }
+ for(const bad of ['/screenshots/a/b/../c.webp','/screenshots/a/c.webp','/screenshots/a/b/c.png','/media/a/b/c.webp'])assert.doesNotMatch(bad,SERVER_MEDIA_URL);
 });

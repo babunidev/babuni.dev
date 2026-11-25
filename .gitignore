@@ -155,3 +155,6 @@ vite.config.ts.timestamp-*
 /public/_project-modules/
 
 .claude/settings.local.json
+
+# Screenshots live on the server (shared/screenshots), listed in src/content/server-media.json
+/public/screenshots/

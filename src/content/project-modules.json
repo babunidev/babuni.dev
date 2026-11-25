@@ -61,7 +61,7 @@
       "preview": "Portal artwork, prototypes and browser verification captures from the project’s development.",
       "images": [
         {
-          "src": "/media/babuni-dev/images/small-bloom.webp",
+          "src": "/screenshots/babuni-dev/verification/small-bloom.webp",
           "alt": "BABUNI.DEV with adjacent summary and project notes modules.",
           "caption": "Small-bloom prototype, October 2026."
         },
@@ -71,332 +71,332 @@
           "caption": "First supplied portal artwork, October 2026."
         },
         {
-          "src": "/media/babuni-dev/images/verification/big-bloom-grid-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/big-bloom-grid-preview.webp",
           "alt": "Development browser capture: big bloom grid preview",
           "caption": "AI browser verification — big bloom grid preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/big-bloom-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/big-bloom-preview.webp",
           "alt": "Development browser capture: big bloom preview",
           "caption": "AI browser verification — big bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/bloom-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/bloom-preview.webp",
           "alt": "Development browser capture: bloom preview",
           "caption": "AI browser verification — bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/calm-bloom-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/calm-bloom-preview.webp",
           "alt": "Development browser capture: calm bloom preview",
           "caption": "AI browser verification — calm bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/framed-detail-reader.webp",
+          "src": "/screenshots/babuni-dev/verification/framed-detail-reader.webp",
           "alt": "Development browser capture: framed detail reader",
           "caption": "AI browser verification — framed detail reader. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/markdown-bloom-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/markdown-bloom-preview.webp",
           "alt": "Development browser capture: markdown bloom preview",
           "caption": "AI browser verification — markdown bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/markdown-reader-workthatgodbod.webp",
+          "src": "/screenshots/babuni-dev/verification/markdown-reader-workthatgodbod.webp",
           "alt": "Development browser capture: markdown reader workthatgodbod",
           "caption": "AI browser verification — markdown reader workthatgodbod. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/mobile-center-topics-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/mobile-center-topics-preview.webp",
           "alt": "Development browser capture: mobile center topics preview",
           "caption": "AI browser verification — mobile center topics preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/mobile-persistent-bloom-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/mobile-persistent-bloom-preview.webp",
           "alt": "Development browser capture: mobile persistent bloom preview",
           "caption": "AI browser verification — mobile persistent bloom preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/module-previews.webp",
+          "src": "/screenshots/babuni-dev/verification/module-previews.webp",
           "alt": "Development browser capture: module previews",
           "caption": "AI browser verification — module previews. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/new-portal-artworks.webp",
+          "src": "/screenshots/babuni-dev/verification/new-portal-artworks.webp",
           "alt": "Development browser capture: new portal artworks",
           "caption": "AI browser verification — new portal artworks. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/open-bloom-no-topics-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/open-bloom-no-topics-preview.webp",
           "alt": "Development browser capture: open bloom no topics preview",
           "caption": "AI browser verification — open bloom no topics preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/portal-logo-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/portal-logo-preview.webp",
           "alt": "Development browser capture: portal logo preview",
           "caption": "AI browser verification — portal logo preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-outside-dismissal.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-outside-dismissal.webp",
           "alt": "Development browser capture: reader outside dismissal",
           "caption": "AI browser verification — reader outside dismissal. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/repository-backed-roar-detail.webp",
+          "src": "/screenshots/babuni-dev/verification/repository-backed-roar-detail.webp",
           "alt": "Development browser capture: repository backed roar detail",
           "caption": "AI browser verification — repository backed roar detail. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/restored-reader-attribution.webp",
+          "src": "/screenshots/babuni-dev/verification/restored-reader-attribution.webp",
           "alt": "Development browser capture: restored reader attribution",
           "caption": "AI browser verification — restored reader attribution. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/stronger-waiting-feedback.webp",
+          "src": "/screenshots/babuni-dev/verification/stronger-waiting-feedback.webp",
           "alt": "Development browser capture: stronger waiting feedback",
           "caption": "AI browser verification — stronger waiting feedback. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/topic-wings-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/topic-wings-preview.webp",
           "alt": "Development browser capture: topic wings preview",
           "caption": "AI browser verification — topic wings preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/unified-tile-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/unified-tile-preview.webp",
           "alt": "Development browser capture: unified tile preview",
           "caption": "AI browser verification — unified tile preview. Historical development state, October 2026; may show superseded behavior. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/persistent-header-project-search.webp",
+          "src": "/screenshots/babuni-dev/verification/persistent-header-project-search.webp",
           "alt": "Projects search available inside the About reader",
           "caption": "AI browser verification, 2026-10-27: Projects search available inside the About reader. Development state; not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/persistent-header-big-bloom.webp",
+          "src": "/screenshots/babuni-dev/verification/persistent-header-big-bloom.webp",
           "alt": "Persistent site header above grid-native big bloom",
           "caption": "AI browser verification, 2026-10-27: Persistent site header above grid-native big bloom. Development state; not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-controls-about-wip.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-controls-about-wip.webp",
           "alt": "WIP About with verified public profile links and centered activity",
           "caption": "AI desktop browser verification, 2026-10-27: WIP About with verified public profile links and centered activity. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-contextual-activity.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-contextual-activity.webp",
           "alt": "Reader with project/document activity and header-end controls help",
           "caption": "AI desktop browser verification, 2026-10-27: Reader with project/document activity and header-end controls help. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/webp-publication-check.webp",
+          "src": "/screenshots/babuni-dev/verification/webp-publication-check.webp",
           "alt": "Browser verification of WebP portal artwork, gallery image and video poster in the small bloom.",
           "caption": "AI desktop browser verification, 2026-10-27: WebP media loaded and gallery Next image worked. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/desktop-shift-playback.webp",
+          "src": "/screenshots/babuni-dev/verification/desktop-shift-playback.webp",
           "alt": "Desktop grid after dragging with gradual active-shift braking.",
           "caption": "AI desktop browser verification, 2026-10-27: drag braking and shift playback investigation. A still image does not establish frame rate; see the performance report."
         },
         {
-          "src": "/media/babuni-dev/images/verification/spatial-keyboard-highlight.webp",
+          "src": "/screenshots/babuni-dev/verification/spatial-keyboard-highlight.webp",
           "alt": "Keyboard-highlighted Human–AI collaboration module after closing its reader back to big bloom.",
           "caption": "AI desktop browser verification, 2026-10-27: reader Escape restored focus to its big-bloom module. Highlight is separate from opening."
         },
         {
-          "src": "/media/babuni-dev/images/verification/browser-branding.webp",
+          "src": "/screenshots/babuni-dev/verification/browser-branding.webp",
           "alt": "Living grid without the Astro development toolbar.",
           "caption": "AI desktop browser check, 2026-10-27: toolbar absent and B favicon metadata checked. Browser tab chrome is outside this capture."
         },
         {
-          "src": "/media/babuni-dev/images/verification/header-branding.webp",
+          "src": "/screenshots/babuni-dev/verification/header-branding.webp",
           "alt": "Graphic-only B beside BABUNI.DEV in the header.",
           "caption": "AI desktop browser verification, 2026-10-27: transparent WebP B displayed beside the brand; Astro toolbar absent."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-scroll-first-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-scroll-first-preview.webp",
           "alt": "AI desktop browser, 2026-10-27: first thumb preview before its length was capped; superseded.",
           "caption": "AI desktop browser, 2026-10-27: first thumb preview before its length was capped; superseded."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-scroll-dragged.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-scroll-dragged.webp",
           "alt": "AI desktop browser, 2026-10-27: compact frameless reader handle dragged down to the final About links; native scrollbar remains hidden.",
           "caption": "AI desktop browser, 2026-10-27: compact frameless reader handle dragged down to the final About links; native scrollbar remains hidden."
         },
         {
-          "src": "/media/babuni-dev/images/verification/retained-cache-bloom.webp",
+          "src": "/screenshots/babuni-dev/verification/retained-cache-bloom.webp",
           "alt": "BABUNI.DEV small bloom remains open after dragging the optimized grid.",
           "caption": "AI desktop smoke check, 2026-10-27: selection waited for normal shift completion, opened eight modules, and retained bloom during dragging. This still capture is not long-session/FPS evidence."
         },
         {
-          "src": "/media/babuni-dev/images/verification/public-documentation-reader.webp",
+          "src": "/screenshots/babuni-dev/verification/public-documentation-reader.webp",
           "alt": "Ethera Concept from its public documentation edition rendered in the reader.",
           "caption": "AI desktop browser verification, 2026-10-28: Ethera opened eight small-bloom modules, eleven big-bloom modules and the Markdown Concept reader. View source points to the pinned public Ethera-docs commit."
         },
         {
-          "src": "/media/babuni-dev/images/verification/resize-first-server-ended.webp",
+          "src": "/screenshots/babuni-dev/verification/resize-first-server-ended.webp",
           "alt": "AI production test, 2026-10-28: initial resized small bloom; temporary measurement server had ended, so artwork reloads failed. Superseded by the verified capture.",
           "caption": "AI production test, 2026-10-28: initial resized small bloom; temporary measurement server had ended, so artwork reloads failed. Superseded by the verified capture."
         },
         {
-          "src": "/media/babuni-dev/images/verification/production-small-bloom-resize.webp",
+          "src": "/screenshots/babuni-dev/verification/production-small-bloom-resize.webp",
           "alt": "AI production browser, 2026-10-28: same eight small-bloom modules retained at 900×680 after responsive resize; selected artwork loaded.",
           "caption": "AI production browser, 2026-10-28: same eight small-bloom modules retained at 900×680 after responsive resize; selected artwork loaded."
         },
         {
-          "src": "/media/babuni-dev/images/verification/production-big-bloom-resize.webp",
+          "src": "/screenshots/babuni-dev/verification/production-big-bloom-resize.webp",
           "alt": "AI production browser, 2026-10-28: same thirteen big-bloom modules retained after desktop and phone-size resize; reader also survived and returned to this bloom.",
           "caption": "AI production browser, 2026-10-28: same thirteen big-bloom modules retained after desktop and phone-size resize; reader also survived and returned to this bloom."
         },
         {
-          "src": "/media/babuni-dev/images/verification/arcanitebrothers-banner-verified.webp",
+          "src": "/screenshots/babuni-dev/verification/arcanitebrothers-banner-verified.webp",
           "alt": "Arcanitebrothers selected with the supplied banner in its circular portal and eight preview modules.",
           "caption": "AI desktop browser, 2026-10-28: supplied 1536px ArcaniteBrothers WebP decoded successfully; 49-entry menu excludes the four withdrawn projects. Historical screenshot after catalog curation."
         },
         {
-          "src": "/media/babuni-dev/images/verification/curated-grid-default.webp",
+          "src": "/screenshots/babuni-dev/verification/curated-grid-default.webp",
           "alt": "curated grid default",
           "caption": "AI browser capture at the default viewport; curated projects before the dense desktop check."
         },
         {
-          "src": "/media/babuni-dev/images/verification/curated-grid-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/curated-grid-desktop.webp",
           "alt": "curated grid desktop",
           "caption": "AI browser capture at 1920×1080, including partly visible edges and a neutral tile at the left edge. Shifts were active; this is not physical-device acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/neutral-wall-human-report.webp",
+          "src": "/screenshots/babuni-dev/verification/neutral-wall-human-report.webp",
           "alt": "Human desktop report showing repeated gray tiles forming walls.",
           "caption": "Babuni.dev supplied this desktop screenshot on 2026-10-28. It documents the rejected five-filler behavior before the bounded-neutral fix; it is not a current success capture."
         },
         {
-          "src": "/media/babuni-dev/images/verification/bounded-neutral-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/bounded-neutral-desktop.webp",
           "alt": "bounded neutral desktop",
           "caption": "AI browser capture at 1920×1080 before wide panning; three-neutral policy active. Short verification, not physical-device acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/bounded-neutral-after-pan.webp",
+          "src": "/screenshots/babuni-dev/verification/bounded-neutral-after-pan.webp",
           "alt": "bounded neutral after pan",
           "caption": "AI browser capture after two wide desktop drags. DOM checks counted three distinct neutral identities among 54 partly/full visible tiles; real project repeats are intentional capacity fallback."
         },
         {
-          "src": "/media/babuni-dev/images/verification/music-project-menu.webp",
+          "src": "/screenshots/babuni-dev/verification/music-project-menu.webp",
           "alt": "music project menu",
           "caption": "AI browser capture of Music search in the approved grouped menu, showing Mighty Morkah and Elixior. Profile descriptions and links were supplied by Babuni.dev."
         },
         {
-          "src": "/media/babuni-dev/images/verification/babuni-gaming-project-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/babuni-gaming-project-preview.webp",
           "alt": "Babuni Gaming with the original cat portal and three populated small-bloom modules.",
           "caption": "AI browser verification, 2026-10-28: direct menu search opened Babuni Gaming, the original-size WebP cat loaded, and all three supplied profile links were present. Not physical-phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/babuni-admin-renamed-preview.webp",
+          "src": "/screenshots/babuni-dev/verification/babuni-admin-renamed-preview.webp",
           "alt": "Babuni Admin selected with its retained artwork and explicit public documentation resource.",
           "caption": "AI browser verification, 2026-10-29: Babuni Admin search opened the same stable project; its documentation link points only to the existing public edition, with earlier names explained. Historical source documents retain their original wording."
         },
         {
-          "src": "/media/babuni-dev/images/verification/chronological-first-spiral.webp",
+          "src": "/screenshots/babuni-dev/verification/chronological-first-spiral.webp",
           "alt": "chronological first spiral",
           "caption": "AI browser, 2026-10-29, 1920×1080: early intro cascade after live 35/35 public-date refresh. BABUNI.DEV, Ethera and Morkahja lead the first spiral; early scaled tiles are the existing reveal animation, not changed geometry."
         },
         {
-          "src": "/media/babuni-dev/images/verification/chronological-grid-after-shifts.webp",
+          "src": "/screenshots/babuni-dev/verification/chronological-grid-after-shifts.webp",
           "alt": "chronological grid after shifts",
           "caption": "AI browser, 2026-10-29: fully revealed grid after normal autonomous shifts. Initial DOM placement for the first nine projects exactly matched the build-generated chronology; this later frame is movement history, not a second resort."
         },
         {
-          "src": "/media/babuni-dev/images/verification/readable-project-release.webp",
+          "src": "/screenshots/babuni-dev/verification/readable-project-release.webp",
           "alt": "AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification.",
           "caption": "AI desktop production preview: LootFeed readable project page with server-rendered Markdown and real links; pre-deployment localhost verification."
         },
         {
-          "src": "/media/babuni-dev/images/verification/on-demand-bloom-release.webp",
+          "src": "/screenshots/babuni-dev/verification/on-demand-bloom-release.webp",
           "alt": "AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement.",
           "caption": "AI desktop production preview: LootFeed small bloom after on-demand module loading; original shift wait feedback and normal reveal observed. Not a physical-device or internet-load measurement."
         },
         {
-          "src": "/media/babuni-dev/images/verification/random-keyword-bubbles.webp",
+          "src": "/screenshots/babuni-dev/verification/random-keyword-bubbles.webp",
           "alt": "SocialForever with three sampled keywords, including World of Warcraft add-on.",
           "caption": "AI browser verification, 31 October 2026: three distinct labels from the nine-keyword pool; the add-on cue is present. Historical desktop preview, not phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/guildchatbridge-restored.webp",
+          "src": "/screenshots/babuni-dev/verification/guildchatbridge-restored.webp",
           "alt": "GuildChatBridge restored with paused-experiment documentation in its small bloom.",
           "caption": "AI desktop browser verification, 1 November 2026: menu selection centers the restored project and opens its imported documents; no addon runtime test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/header-ordinary-shift.webp",
+          "src": "/screenshots/babuni-dev/verification/header-ordinary-shift.webp",
           "alt": "Ordinary column shift header without an opening-wait explanation.",
           "caption": "AI desktop browser check, 1 November 2026: ordinary shift shows Columns are shifting; clicking during it separately showed Waiting for shift to finish."
         },
         {
-          "src": "/media/babuni-dev/images/verification/folder-image-layout-fixture.webp",
+          "src": "/screenshots/babuni-dev/verification/folder-image-layout-fixture.webp",
           "alt": "Folder lists with a small icon and a large image centered above document names in a small bloom, a big bloom and the reader.",
           "caption": "AI headless-browser fixture, 10 November 2026: site stylesheet with generated test images; not the live grid, real project art or phone acceptance."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-share-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-share-desktop.webp",
           "alt": "The changelog reader with a round share button in its top-right corner.",
           "caption": "AI headless-Chrome capture, 19 November 2026, of the local preview at 1280 px: the reader opened from a deep link shows its share button. Not a phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-share-folder-document-phone.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-share-folder-document-phone.webp",
           "alt": "A single lore document open inside the Amberbrew Story folder reader on a narrow screen, with the share button top right.",
           "caption": "AI headless-Chrome capture, 19 November 2026, at 390 px: a document link opened one lore file inside its folder reader. Not a physical phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/project-icon-big-bloom-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/project-icon-big-bloom-desktop.webp",
           "alt": "Button Game big bloom: every card shows the round Button Game icon in its top-left corner and the share button in its top-right corner.",
           "caption": "AI headless-Chrome capture, 19 November 2026, of the local preview at 1280 px. Clicking a card's icon returned to the small bloom. Not a phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/project-icon-reader-phone.webp",
+          "src": "/screenshots/babuni-dev/verification/project-icon-reader-phone.webp",
           "alt": "The Button Game changelog reader on a narrow screen with the project icon top left, the share button top right and the title below them.",
           "caption": "AI headless-Chrome capture, 19 November 2026, at 390 px. Clicking the icon closed the reader and kept the big bloom open. Not a physical phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/classic-wow-addons-grid.webp",
+          "src": "/screenshots/babuni-dev/verification/classic-wow-addons-grid.webp",
           "alt": "The living grid after the merge: 24 project tiles, none of them a retired 1.12 or 3.3.5 addon.",
           "caption": "AI headless-Chrome capture, 19 November 2026, of the local preview at 1280 px after 21 addon tiles became the single Classic WoW Addons project. Not a phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/projects-menu-by-activity-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/projects-menu-by-activity-desktop.webp",
           "alt": "The Projects menu as one list: Morkahja updated today at the top, then projects updated two, three and five days ago.",
           "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1366 px. Not a phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/about-link-cards-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/about-link-cards-desktop.webp",
           "alt": "The About page's Elsewhere links as cards, each with a square picture on the left, the link title and a short description.",
           "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1366 px. Not a phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/about-portrait-heading-phone.webp",
+          "src": "/screenshots/babuni-dev/verification/about-portrait-heading-phone.webp",
           "alt": "The About page on a narrow screen with Babuni's portrait above the heading The person behind the projects.",
           "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px. Not a physical phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-section-cards-changelog-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-section-cards-changelog-desktop.webp",
           "alt": "The BABUNI.DEV changelog reader with each dated entry in its own rounded card, heading on top.",
           "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1366 px. Not a phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/reader-section-cards-about-phone.webp",
+          "src": "/screenshots/babuni-dev/verification/reader-section-cards-about-phone.webp",
           "alt": "The About page on a narrow screen: the introduction and portrait in one card, the next section starting in another.",
           "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px. Not a physical phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/signup-reader-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/signup-reader-desktop.webp",
           "alt": "The Morkahja reader Follow the journey after Show sign-up form was pressed: the EmailOctopus sign-up page with email field, consent box and Subscribe button inside a gold-bordered frame.",
           "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1280 px. Until the button press, no request reached EmailOctopus or reCAPTCHA. Nothing was submitted. Not a phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/signup-reader-phone.webp",
+          "src": "/screenshots/babuni-dev/verification/signup-reader-phone.webp",
           "alt": "The same sign-up frame on a narrow screen, the greeting, email field, consent box and Subscribe button stacked in one column.",
           "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px: the whole form fits the 600-pixel frame without sideways scrolling. Nothing was submitted. Not a physical phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/signup-big-bloom-desktop.webp",
+          "src": "/screenshots/babuni-dev/verification/signup-big-bloom-desktop.webp",
           "alt": "Morkahja's big bloom with the sign-up card in the center: the EmailOctopus form fills the card, and the project tile no longer covers its lower-left quarter.",
           "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1280 px, after the form moved from the reader into the big bloom. Nothing was submitted. Not a phone test."
         },
         {
-          "src": "/media/babuni-dev/images/verification/signup-big-bloom-phone.webp",
+          "src": "/screenshots/babuni-dev/verification/signup-big-bloom-phone.webp",
           "alt": "The same big bloom on a narrow screen: the whole sign-up form scaled down to fit its card, between neighboring module cards.",
           "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px: the form is scaled to about two thirds so it fits the card without scrolling. Not a physical phone test."
         }
@@ -530,47 +530,47 @@
       "preview": "Development screenshots: the public server, the babuni.dev play module and the high scores.",
       "images": [
         {
-          "src": "/media/button-game/screenshots/2026-11-13/public-server-desktop.webp",
+          "src": "/screenshots/button-game/2026-11-13/public-server-desktop.webp",
           "alt": "The public server test under /Buttongame/ on a desktop browser, with live players on the left and the high-score list on the right.",
           "caption": "Public server test, desktop browser — 13 November 2026. Development browser capture with test scores."
         },
         {
-          "src": "/media/button-game/screenshots/2026-11-13/public-server-phone.webp",
+          "src": "/screenshots/button-game/2026-11-13/public-server-phone.webp",
           "alt": "The public server test in a phone-sized window, live players above the playfield.",
           "caption": "Public server test, phone-sized window — 13 November 2026. Development browser capture with test scores."
         },
         {
-          "src": "/media/button-game/screenshots/2026-11-13/public-server-score-submitted.webp",
+          "src": "/screenshots/button-game/2026-11-13/public-server-score-submitted.webp",
           "alt": "Game Over after a test round on the public server, showing the top of the high-score list.",
           "caption": "Game Over after a test round — 13 November 2026. Development browser capture with test scores."
         },
         {
-          "src": "/media/button-game/screenshots/2026-11-13/website-play-module-2.webp",
+          "src": "/screenshots/button-game/2026-11-13/website-play-module-2.webp",
           "alt": "The Play Button Game module on babuni.dev with a QR code to join from a phone.",
           "caption": "The babuni.dev play module with its QR code — 13 November 2026. Development browser capture with test scores."
         },
         {
-          "src": "/media/button-game/screenshots/2026-11-13/live-babuni-dev-buttongame-desktop.webp",
+          "src": "/screenshots/button-game/2026-11-13/live-babuni-dev-buttongame-desktop.webp",
           "alt": "The live game at babuni.dev/Buttongame on a desktop browser.",
           "caption": "Live at babuni.dev/Buttongame, desktop browser — 13 November 2026. Development browser capture with test scores."
         },
         {
-          "src": "/media/button-game/screenshots/2026-11-13/live-babuni-dev-buttongame-phone.webp",
+          "src": "/screenshots/button-game/2026-11-13/live-babuni-dev-buttongame-phone.webp",
           "alt": "The live game at babuni.dev/Buttongame in a phone-sized window.",
           "caption": "Live at babuni.dev/Buttongame, phone-sized window — 13 November 2026. Development browser capture with test scores."
         },
         {
-          "src": "/media/button-game/screenshots/2026-11-13/welcome-highscores-desktop.webp",
+          "src": "/screenshots/button-game/2026-11-13/welcome-highscores-desktop.webp",
           "alt": "The High scores panel beside the playfield, showing names and points only.",
           "caption": "High scores before reaction time and APM were added — 13 November 2026. Development browser capture with test scores."
         },
         {
-          "src": "/media/button-game/screenshots/2026-11-13/highscores-with-reaction-apm-desktop.webp",
+          "src": "/screenshots/button-game/2026-11-13/highscores-with-reaction-apm-desktop.webp",
           "alt": "The High scores panel with reaction time and APM under each name.",
           "caption": "High scores with reaction time and APM — 13 November 2026. Development browser capture with test scores."
         },
         {
-          "src": "/media/button-game/screenshots/2026-11-13/highscores-with-reaction-apm-narrow.webp",
+          "src": "/screenshots/button-game/2026-11-13/highscores-with-reaction-apm-narrow.webp",
           "alt": "In a narrow window the high scores with reaction time and APM sit below the playfield.",
           "caption": "High scores with reaction time and APM, narrow window — 13 November 2026. Development browser capture with test scores."
         }

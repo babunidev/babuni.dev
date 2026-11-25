@@ -1,6 +1,7 @@
-/** Development screenshots published by scripts/import-screenshots.mjs. A journal links the full
- * image, on babuni.dev or root-relative; the reader shows its thumbnail and opens it large. */
-const SCREENSHOT=/^(?:https:\/\/(?:www\.)?babuni\.dev)?(\/media\/[a-z0-9]+(?:-[a-z0-9]+)*\/screenshots\/\d{4}-\d{2}-\d{2}\/)([a-z0-9]+(?:-[a-z0-9]+)*\.webp)$/;
+/** Development screenshots made by scripts/import-screenshots.mjs and served from the server's
+ * media folder at /screenshots/<project>/<date>/. A journal links the full image, on babuni.dev or
+ * root-relative; the reader shows its thumbnail and opens it large. */
+const SCREENSHOT=/^(?:https:\/\/(?:www\.)?babuni\.dev)?(\/screenshots\/[a-z0-9]+(?:-[a-z0-9]+)*\/\d{4}-\d{2}-\d{2}\/)([a-z0-9]+(?:-[a-z0-9]+)*\.webp)$/;
 
 /** Same-origin full and thumbnail paths of a published screenshot, or null for any other image. */
 export function screenshotImage(href:string):{src:string;thumb:string}|null {

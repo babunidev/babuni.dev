@@ -1,4 +1,5 @@
 import {existsSync, readFileSync, realpathSync, statSync} from 'node:fs';
+import {readManifest,MANIFEST} from './server-media.mjs';
 import {resolve, sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {demoProjects} from '../src/lib/demo-projects.ts';
@@ -12,11 +13,13 @@ const object = value => value !== null && typeof value === 'object' && !Array.is
 const string = value => typeof value === 'string' && !!value.trim();
 const http = value => {try {const u=new URL(value); return ['http:','https:'].includes(u.protocol) && !u.username && !u.password;} catch {return false;}};
 export function validateContent(catalog, {projects=demoProjects, root=resolve(fileURLToPath(new URL('..', import.meta.url)))}={}) {
-  const errors=[], counts=[];
+  const errors=[], counts=[], serverMedia=readManifest(root);
   const fail=(at,message)=>errors.push(`${at}: ${message}`);
   const keys=(entry,allowed,at)=>Object.keys(entry).forEach(key=>{if(!allowed.includes(key))fail(`${at}.${key}`,'unknown field');});
   const asset=(value,at)=>{
     if(typeof value!=='string'||!value.startsWith('/')||value.startsWith('//')||/[?#\\%]/.test(value)||value.split('/').includes('..'))return fail(at,'use a public URL such as /media/project/image.webp');
+    // Screenshots are not in Git: they must be listed in the server media manifest.
+    if(value.startsWith('/screenshots/')){if(!serverMedia[value])fail(at,`${value} is not in ${MANIFEST}`);return;}
     const base=resolve(root,'public'), path=resolve(base,`.${value}`);
     if(!existsSync(path))return fail(at,`missing asset ${value}`);
     if(!statSync(path).isFile())fail(at,'expected a file');

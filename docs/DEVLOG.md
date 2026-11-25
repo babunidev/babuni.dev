@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-25 — No screenshots in Git
+
+After seeing the numbers I decided against keeping screenshots on GitHub at all, in every project: GitHub is for the software and the images that belong to it. Visitors load the pictures from my server anyway, so the screenshots now live in a media folder there, outside the site's release folders, and GitHub only keeps a list of them with a checksum for each. Claude Code (Claude Opus 5.5) moved the Button Game set and the 67 older verification screenshots there, wrote the upload script and prepared the nginx rule, which I install on the server myself because it needs my password. Analubia stays off the website until I have decided how publicly I can work on it.
+
 ## 2026-11-25 — Screenshots where people can see them
 
 Hundreds of development screenshots were sitting in a folder on my computer, and I wanted them on the website: in each project's grid modules, and as small images in the development logs that open large when clicked. I asked Claude Code (Claude Opus 5.5) for a plan, one project at a time, and whether the images belong on GitHub or only on the server.

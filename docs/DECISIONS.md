@@ -10,12 +10,13 @@ This register records **why decisions were made**, what alternatives were consid
 
 Give the decision a date or stable identifier, status, human direction, alternatives (mark AI-originated suggestions), rationale, and relevant evidence. Keep entries focused on choices rather than reproducing test logs or entire conversations. When a choice changes, identify the successor and mark the old decision **Superseded**; never silently erase its original rationale.
 
-## D-2026-11-25 — Development screenshots: small WebP copies on GitHub, originals stay local
-**Status:** accepted (Babuni asked for the screenshots to be committed and pushed, 2026-11-25); format and paths proposed by Claude Code (Claude Opus 5.5).
-**Decision:** web-sized WebP derivatives (quality 85, at most 1600 px, plus 480 px thumbnails) are committed under `public/media/<project-id>/screenshots/<date>/`; the PNG originals stay in Babuni's local screenshot collection. Journals link the full image by its `https://www.babuni.dev/…` address; the reader shows the thumbnail and opens it large.
-**Alternatives:** server-only images (removed by the next `publish-site.sh --delete` sync, and invisible to GitHub); committing the PNG originals or lossless WebP (about 15 and 10 times larger in the sample; Git keeps every byte); copies in each project repository (a second import path for the same files).
-**Changes an earlier rule:** the 2026-10-27 rule asked for lossless WebP where practical. For development screenshots lossy quality 85 is used, because lossless saved only about 30% in the sample.
-**Revisit** if the total grows past a few hundred megabytes, for example by moving media to a separate host without changing module definitions.
+## D-2026-11-25 — Screenshots live in the server's media folder, not in Git
+**Status:** accepted (Babuni, 2026-11-25). Replaces the same day's first version, which committed small WebP copies to Git (`4c1c30a`).
+**Decision:** Git holds the software and its own images; no screenshots. Screenshots are WebP files in `/var/www/babuni.dev/shared/screenshots/`, served by an nginx rule at `/screenshots/<project-id>/<folder>/[thumbs/]<name>.webp`. `src/content/server-media.json` in Git lists each file with size and SHA-256. Development screenshots are WebP quality 85 at most 1600 px plus 480 px thumbnails (proposed by Claude Code, Claude Opus 5.5); journals link them by their `https://www.babuni.dev/screenshots/…` address.
+**Why:** visitors load the images from the server in any case; keeping them out of Git keeps the repositories small. The folder sits outside the release directories, so `publish-site.sh --delete` cannot remove it.
+**Alternatives:** small copies in Git (the first version; Babuni preferred no screenshots in Git at all); PNG originals or lossless WebP (about 15 and 10 times larger in a sample); Git LFS (GitHub's free tier allows 1 GB of downloads a month); hosted object storage such as Cloudflare R2 (another account to look after; the option if the server runs out of space).
+**Changes an earlier rule:** the 2026-10-27 rule asked for lossless WebP where practical and a verification folder in `public/media/`. Development screenshots now use lossy quality 85; the 67 existing verification captures were moved unchanged.
+**Open:** the server copy has no Git backup; Babuni's local `public/screenshots/` and the PNG originals are the backup. Whether the screen recordings in `public/media/babuni-dev/videos/` move too is undecided.
 
 ## D-2026-11-25 — Projects menu ordered by latest update
 

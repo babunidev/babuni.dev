@@ -6,6 +6,14 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Screenshots moved out of Git into the server's media folder (2026-11-25)
+- Babuni decided that Git holds no screenshots. The 13 Button Game screenshots (with thumbnails) and the 67 verification captures from `public/media/babuni-dev/images/` (66 in `verification/`, plus `small-bloom.webp`) moved to `public/screenshots/<project-id>/…`, which Git ignores, and to `/var/www/babuni.dev/shared/screenshots/` on the server, served at `/screenshots/`. The verification captures were moved byte for byte.
+- `src/content/server-media.json` lists all 93 files with size and SHA-256; `scripts/server-media.mjs update` refreshes it. `npm run content:check` now requires every `/screenshots/` image in a module to be listed there.
+- `scripts/publish-screenshots.sh` uploads new files (never overwriting or deleting), compares every listed checksum with the server and checks one file over HTTPS. `npm run screenshots:import` now writes to `public/screenshots/` and updates the manifest.
+- `deploy/nginx-screenshots-locations.conf` and `deploy/install-screenshots-location.sh`: a `^~ /screenshots/` rule serving only WebP files with checked names from `shared/`, cached for 30 days, installed once by Babuni with sudo.
+- The reader's thumbnails, gallery paths, `docs/VISUAL_DOCUMENTATION.md`, `docs/MODULE_AUTHORING.md`, `AGENTS.md`, `docs/DECISIONS.md` and `docs/SCREENSHOT_PUBLISHING_PLAN.md` use the new paths. The ButtonGame journal links the new addresses.
+- Verification: upload of 93 files, all checksums matching on the server; `npm run content:check`, `npm run test:grid` and `npm run build` passed. Claude Code (Claude Opus 5.5).
+
 ### Added — Development screenshots in galleries and journals (2026-11-25)
 - `scripts/import-screenshots.mjs` (`npm run screenshots:import -- <source-folder> <project-id>`): turns dated PNG screenshots into WebP quality 85 at most 1600 px plus a 480 px thumbnail, under `public/media/<project-id>/screenshots/<date>/` and `…/thumbs/`. Pure-white rows at the bottom edge (a captured page shorter than the browser window) are cropped; nothing else is edited. Existing files are never overwritten.
 - Reader: a Markdown image whose URL is a published screenshot (`https://www.babuni.dev/media/<id>/screenshots/<date>/<name>.webp` or the same path without the host) shows as a small thumbnail button; a paragraph of only such images becomes a wrapping row. Activating a thumbnail opens the full image with its alt text in a dialog above the reader (`src/scripts/image-lightbox.ts`); a click anywhere, Escape or Close returns focus to the thumbnail with the reader still open. Every other image stays a link, and previews never load images.

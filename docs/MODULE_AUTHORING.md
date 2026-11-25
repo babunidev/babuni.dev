@@ -12,10 +12,10 @@ Project definitions live in `src/content/project-modules.json`, keyed by stable 
 
 ## Media files and publication
 
-- `public/media/babuni-dev/images/` — website screenshots, sketches and artwork.
+- `public/media/babuni-dev/images/` — sketches and artwork (screenshots are in server media, below).
 - `public/media/babuni-dev/videos/` — web-ready clips and poster images.
 - Use the same structure under `public/media/button-game/` when its media is ready.
-- `public/media/<project-id>/screenshots/<YYYY-MM-DD>/` — development screenshots made by `npm run screenshots:import`, with thumbnails in `thumbs/`. A gallery module lists them like any image. In a journal, `![alt](https://www.babuni.dev/media/<project-id>/screenshots/<date>/<name>.webp)` shows the thumbnail in the reader and opens the full image on click; the alt text is its caption there. See [Screenshot publishing plan](SCREENSHOT_PUBLISHING_PLAN.md).
+- `/screenshots/<project-id>/<folder>/` — screenshots, **not in Git**: served from the server's media folder, kept locally in `public/screenshots/` and listed in `src/content/server-media.json` (the content check requires every `/screenshots/` image to be listed there). `npm run screenshots:import` makes dated folders with thumbnails in `thumbs/`; `scripts/publish-screenshots.sh` uploads them. In a journal, `![alt](https://www.babuni.dev/screenshots/<project-id>/<date>/<name>.webp)` shows the thumbnail in the reader and opens the full image on click; the alt text is its caption there. See [Screenshot publishing plan](SCREENSHOT_PUBLISHING_PLAN.md).
 - Refer to these as `/media/babuni-dev/images/filename.webp`, without `public` in the URL.
 
 GitHub versions the assets. The deployed website serves them; GitHub is not a video streaming backend. The current native player progressively loads an MP4/WebM URL on demand (`preload="none"`), with no autoplay. MP4 exports here have their metadata at the beginning for playback/seek support. Larger future libraries can use an external media host without changing module identity. A file alone does not create a module: add it to the catalog explicitly.

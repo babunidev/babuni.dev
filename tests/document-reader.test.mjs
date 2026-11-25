@@ -86,14 +86,14 @@ test('readers group text into one card per main section; previews stay unsection
 });
 test('published development screenshots render as thumbnails; other images stay links',t=>{
  documentDOM(t);
- const body='Before the change.\n\n![Phone view](https://www.babuni.dev/media/sample-game/screenshots/2026-01-02/phone-view.webp) ![Desk](/media/sample-game/screenshots/2026-01-02/desk.webp)\n\nInline ![Inline shot](https://babuni.dev/media/sample-game/screenshots/2026-01-02/inline.webp) here.\n\n![Elsewhere](https://example.com/media/sample-game/screenshots/2026-01-02/x.webp) ![Wrong](/media/sample-game/screenshots/2026-01-02/x.png)';
+ const body='Before the change.\n\n![Phone view](https://www.babuni.dev/screenshots/sample-game/2026-01-02/phone-view.webp) ![Desk](/screenshots/sample-game/2026-01-02/desk.webp)\n\nInline ![Inline shot](https://babuni.dev/screenshots/sample-game/2026-01-02/inline.webp) here.\n\n![Elsewhere](https://example.com/screenshots/sample-game/2026-01-02/x.webp) ![Wrong](/screenshots/sample-game/2026-01-02/x.png)';
  const reader=renderDocument(body,source);
  const thumbs=nodes(reader,'button').filter(n=>n.className==='screenshot-thumb');
  assert.equal(thumbs.length,3);
- assert.deepEqual(nodes(reader,'img').map(n=>n.src),['/media/sample-game/screenshots/2026-01-02/thumbs/phone-view.webp','/media/sample-game/screenshots/2026-01-02/thumbs/desk.webp','/media/sample-game/screenshots/2026-01-02/thumbs/inline.webp']);
+ assert.deepEqual(nodes(reader,'img').map(n=>n.src),['/screenshots/sample-game/2026-01-02/thumbs/phone-view.webp','/screenshots/sample-game/2026-01-02/thumbs/desk.webp','/screenshots/sample-game/2026-01-02/thumbs/inline.webp']);
  assert.equal(nodes(reader,'div').filter(n=>n.className==='screenshot-row').length,1);
  assert.equal(nodes(reader,'img')[0].alt,'Phone view');
  assert.equal(nodes(reader,'a').length,2,'foreign hosts and non-WebP files remain plain links');
  assert.equal(nodes(renderDocument(body,source,false),'img').length,0,'previews never fetch images');
- for(const bad of ['https://www.babuni.dev.evil.com/media/a/screenshots/2026-01-02/x.webp','/media/a/screenshots/2026-01-02/../x.webp','/media/A/screenshots/2026-01-02/x.webp','//babuni.dev/media/a/screenshots/2026-01-02/x.webp'])assert.equal(screenshotImage(bad),null,bad);
+ for(const bad of ['https://www.babuni.dev.evil.com/screenshots/a/2026-01-02/x.webp','/screenshots/a/2026-01-02/../x.webp','/screenshots/A/2026-01-02/x.webp','//babuni.dev/screenshots/a/2026-01-02/x.webp','/media/a/screenshots/2026-01-02/x.webp'])assert.equal(screenshotImage(bad),null,bad);
 });

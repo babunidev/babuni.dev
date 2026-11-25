@@ -1,0 +1,374 @@
+{
+ "/screenshots/babuni-dev/verification/about-link-cards-desktop.webp": {
+  "bytes": 311134,
+  "sha256": "205a2bd1d1d9750404ac1ec6cef69ab296307b3bf7e52f58688236438a6c30da"
+ },
+ "/screenshots/babuni-dev/verification/about-portrait-heading-phone.webp": {
+  "bytes": 275804,
+  "sha256": "b745c3e25ea6daea8d5071d8972346d19fcdae5e74f0fbce7fd38bfb09df96d9"
+ },
+ "/screenshots/babuni-dev/verification/arcanitebrothers-banner-verified.webp": {
+  "bytes": 89980,
+  "sha256": "d2ded390c97c200fb3e8312a7cc04339fbd507a4e871c478ba18be8c86a7c152"
+ },
+ "/screenshots/babuni-dev/verification/babuni-admin-renamed-preview.webp": {
+  "bytes": 105000,
+  "sha256": "9f987a147c39100685b126af8582de9b12a69a4df6c274914d69ef01580f9af9"
+ },
+ "/screenshots/babuni-dev/verification/babuni-gaming-project-preview.webp": {
+  "bytes": 80908,
+  "sha256": "9e41f9c847c7901bea29315f8a664d32b902dcffd5b8a362151d64468252670b"
+ },
+ "/screenshots/babuni-dev/verification/big-bloom-grid-preview.webp": {
+  "bytes": 87024,
+  "sha256": "c882b1553d24f2079ddee24261d7f402b7183bb9217ad88458051850250f6a5b"
+ },
+ "/screenshots/babuni-dev/verification/big-bloom-preview.webp": {
+  "bytes": 36064,
+  "sha256": "ec888067a3340e01d9f131a7ae830c8292a9b911dad95d0172ce9ee5e30d1770"
+ },
+ "/screenshots/babuni-dev/verification/bloom-preview.webp": {
+  "bytes": 35130,
+  "sha256": "ee29a3a28480e0941364dc6d14aa49647bd4e1da54235e02e1711f903b107241"
+ },
+ "/screenshots/babuni-dev/verification/bounded-neutral-after-pan.webp": {
+  "bytes": 150810,
+  "sha256": "cf3442f1eb9ac3d0c210c1def626b0ba02bc0d5456674952b83e326f01960367"
+ },
+ "/screenshots/babuni-dev/verification/bounded-neutral-desktop.webp": {
+  "bytes": 194620,
+  "sha256": "4dff0eb129feae805d8984387ac694fd37f7d9f70f42303ba96b2a5c72087cda"
+ },
+ "/screenshots/babuni-dev/verification/browser-branding.webp": {
+  "bytes": 89410,
+  "sha256": "6b52ff2310818eef7dfb761f339e3cfca4bf6eefef141e66a48ebf9ed63067f6"
+ },
+ "/screenshots/babuni-dev/verification/calm-bloom-preview.webp": {
+  "bytes": 63302,
+  "sha256": "0274001e0ac722a789561ffa21b9a4073d158d86849868c9266701ad63ec28d3"
+ },
+ "/screenshots/babuni-dev/verification/chronological-first-spiral.webp": {
+  "bytes": 25440,
+  "sha256": "f1cc7907405f418e977acffdd4e6fcd5e86a825ba075b37cc025ea6a62d05bb5"
+ },
+ "/screenshots/babuni-dev/verification/chronological-grid-after-shifts.webp": {
+  "bytes": 213848,
+  "sha256": "82b820d2c3b1a96f6786d6278e9db763b8bdadd16898c5b140813c8abcae948e"
+ },
+ "/screenshots/babuni-dev/verification/classic-wow-addons-grid.webp": {
+  "bytes": 579770,
+  "sha256": "7dab78bd3799e61c74e36b645a8ea846c88b428b33e026b7bf16e36a11893e51"
+ },
+ "/screenshots/babuni-dev/verification/curated-grid-default.webp": {
+  "bytes": 97428,
+  "sha256": "3f482523339b074a0e1a05ea7353f04448398079191b6db252f03d362f1f9dfa"
+ },
+ "/screenshots/babuni-dev/verification/curated-grid-desktop.webp": {
+  "bytes": 184692,
+  "sha256": "55a9f06829b6a7a5a773a745fdf56d295aa6f9eb6fe36605727c3f65cef82df5"
+ },
+ "/screenshots/babuni-dev/verification/desktop-shift-playback.webp": {
+  "bytes": 75920,
+  "sha256": "054336959f4ababa6e3bf8855bb01e14b9aa42581c25c00ebb63bf58bcd9d43f"
+ },
+ "/screenshots/babuni-dev/verification/folder-image-layout-fixture.webp": {
+  "bytes": 90614,
+  "sha256": "fc6c38a1f7d37ff8b518702763aa9134317558dcaa3a7a8b12efbf99bd1afabd"
+ },
+ "/screenshots/babuni-dev/verification/framed-detail-reader.webp": {
+  "bytes": 116676,
+  "sha256": "7b5a3c8811355f51edc2f8aa7f611f30a5a168528e5dc5aa039d765ca7587003"
+ },
+ "/screenshots/babuni-dev/verification/guildchatbridge-restored.webp": {
+  "bytes": 139916,
+  "sha256": "ca61f08f8583265a748c69cfe4d354611f9e0260422314e8cfd5df3e50b94327"
+ },
+ "/screenshots/babuni-dev/verification/header-branding.webp": {
+  "bytes": 90046,
+  "sha256": "f032867780070af33c2289d26cb0e98198c281b2ed934b4c5b455c1539f7bde1"
+ },
+ "/screenshots/babuni-dev/verification/header-ordinary-shift.webp": {
+  "bytes": 133842,
+  "sha256": "821aded40a117abbd2baa47c8cf9f53c9949e9354a7b802dafcfbe04a7a7e02a"
+ },
+ "/screenshots/babuni-dev/verification/markdown-bloom-preview.webp": {
+  "bytes": 113820,
+  "sha256": "df41d5e7746bfd0472345e609db641c92477c30c3cec82a9eb51ad97c505ada6"
+ },
+ "/screenshots/babuni-dev/verification/markdown-reader-workthatgodbod.webp": {
+  "bytes": 91884,
+  "sha256": "e7316fcc7c9f71af4b1ff1845534acfa927105df00b2950c2a7470e3f4a5144a"
+ },
+ "/screenshots/babuni-dev/verification/mobile-center-topics-preview.webp": {
+  "bytes": 33714,
+  "sha256": "a2c249a4e4ba7b2ead5a87652818a30b053bef8634a2631204984dc0b68ba9b9"
+ },
+ "/screenshots/babuni-dev/verification/mobile-persistent-bloom-preview.webp": {
+  "bytes": 33930,
+  "sha256": "db74628f8cf42078081d20226731724a72a38f242ed04ebddafafa58028a2348"
+ },
+ "/screenshots/babuni-dev/verification/module-previews.webp": {
+  "bytes": 74594,
+  "sha256": "a577b49baa8b359182f37d1d463bd6c65a6be3e0c7cdb03c219960721a5c379e"
+ },
+ "/screenshots/babuni-dev/verification/music-project-menu.webp": {
+  "bytes": 148742,
+  "sha256": "07d1646799491cf6619ea03de2a531ee448f9ce353ad3e0ee8b41696d9ae8efa"
+ },
+ "/screenshots/babuni-dev/verification/neutral-wall-human-report.webp": {
+  "bytes": 433010,
+  "sha256": "c5350c3a42ce4009cbba4dbac0c997295542d817331de271695fe236c24a756a"
+ },
+ "/screenshots/babuni-dev/verification/new-portal-artworks.webp": {
+  "bytes": 76342,
+  "sha256": "e340bc6da3dea6a01fcd82cb5d096b03bd3f00e0e52f123ab5f2e057a9e92e08"
+ },
+ "/screenshots/babuni-dev/verification/on-demand-bloom-release.webp": {
+  "bytes": 130698,
+  "sha256": "f45cf1192008048f2b930d38f509c6f3e2498a1edc470ac086264b21ed2901d9"
+ },
+ "/screenshots/babuni-dev/verification/open-bloom-no-topics-preview.webp": {
+  "bytes": 65816,
+  "sha256": "7b0d22104bea0a9f4a1169d43d5a6dff85f7eb7fb53a542639d3b9a953a97a56"
+ },
+ "/screenshots/babuni-dev/verification/persistent-header-big-bloom.webp": {
+  "bytes": 108108,
+  "sha256": "387a8f065097c31d1cce022c992d6d6835ec9e45a42eee9caffbf519fd73fbeb"
+ },
+ "/screenshots/babuni-dev/verification/persistent-header-project-search.webp": {
+  "bytes": 58134,
+  "sha256": "54cffaeda495fab8955c1eabe1f1b0a6591916ce2b92aa46e8349844521b6c33"
+ },
+ "/screenshots/babuni-dev/verification/portal-logo-preview.webp": {
+  "bytes": 64986,
+  "sha256": "8e8aa9e52ea1b9ace2c3bebaf6faf47aae37c73fc9c4abb9242aec382dd7ba6e"
+ },
+ "/screenshots/babuni-dev/verification/production-big-bloom-resize.webp": {
+  "bytes": 79036,
+  "sha256": "f01266a6aa4a0350ca631b6c4e212d999246eec2070e8dd0890007817dd897a2"
+ },
+ "/screenshots/babuni-dev/verification/production-small-bloom-resize.webp": {
+  "bytes": 69652,
+  "sha256": "af94c8a4210056fface9b379f45760d541e58ca85e8b5447f526db15f7e0ba5c"
+ },
+ "/screenshots/babuni-dev/verification/project-icon-big-bloom-desktop.webp": {
+  "bytes": 370798,
+  "sha256": "81e3c16b471a7b0c705a23152adc9351c129935ce2a56c751295a689f1f6ec20"
+ },
+ "/screenshots/babuni-dev/verification/project-icon-reader-phone.webp": {
+  "bytes": 42002,
+  "sha256": "239ecfee6d0f34f8a04617db4ef69ad841b0cb68197ce4461ac6770e304c0d67"
+ },
+ "/screenshots/babuni-dev/verification/projects-menu-by-activity-desktop.webp": {
+  "bytes": 629212,
+  "sha256": "5c55d2487f0b3e42999d7b2374da5b569ff53154b9ad8f4aed56a6d32174f58b"
+ },
+ "/screenshots/babuni-dev/verification/public-documentation-reader.webp": {
+  "bytes": 111100,
+  "sha256": "c17581eeba46a54c209e4683837177d95a401622b901e58be5d07de3d5009816"
+ },
+ "/screenshots/babuni-dev/verification/random-keyword-bubbles.webp": {
+  "bytes": 131990,
+  "sha256": "80f8c209d3019d114fcc85828aba6ed746058c200f6d98fa3ca6c4555ec43451"
+ },
+ "/screenshots/babuni-dev/verification/readable-project-release.webp": {
+  "bytes": 59630,
+  "sha256": "4c48a24d8ad93224a24319a6525cc59693044bc83f882aa6cadf4aebbf28f85c"
+ },
+ "/screenshots/babuni-dev/verification/reader-contextual-activity.webp": {
+  "bytes": 79450,
+  "sha256": "79fdd0fb2e15c933b7c11c1a5562b06f5373c5ee2e485e6893c88b7e9abb178b"
+ },
+ "/screenshots/babuni-dev/verification/reader-controls-about-wip.webp": {
+  "bytes": 82122,
+  "sha256": "3a3fbfa911bb46165d4f6fc1505761153a13f06dc9bc32c75314cf046392eef9"
+ },
+ "/screenshots/babuni-dev/verification/reader-outside-dismissal.webp": {
+  "bytes": 125780,
+  "sha256": "31acb29dffaa79632374e2ba1072394bf463ec887552a3f5a6c250b8da04e33c"
+ },
+ "/screenshots/babuni-dev/verification/reader-scroll-dragged.webp": {
+  "bytes": 75754,
+  "sha256": "320a432815453e5b53341dcea7dbfcf57a5105d8c3bad7fb2f3396247be07e36"
+ },
+ "/screenshots/babuni-dev/verification/reader-scroll-first-preview.webp": {
+  "bytes": 83466,
+  "sha256": "a5c679c3905020dc1bcb542e4288ab5604bd1a6f44ec17fa8589a6ca01c37b23"
+ },
+ "/screenshots/babuni-dev/verification/reader-section-cards-about-phone.webp": {
+  "bytes": 228540,
+  "sha256": "9c22d688982c6c29b431a7b6205f0b489a31c5c52f06540d9b7cc82da95e33f0"
+ },
+ "/screenshots/babuni-dev/verification/reader-section-cards-changelog-desktop.webp": {
+  "bytes": 181352,
+  "sha256": "a85db1518fe7fb5a7ea501a24e136832c4d88f0d05eb42b5d0058da0c89fc268"
+ },
+ "/screenshots/babuni-dev/verification/reader-share-desktop.webp": {
+  "bytes": 119118,
+  "sha256": "798bf448c7d1c03e527d791d65fee2634004d27bfdf8f120cd567cc4772493db"
+ },
+ "/screenshots/babuni-dev/verification/reader-share-folder-document-phone.webp": {
+  "bytes": 36670,
+  "sha256": "dd363a9e5dbe36aecd7a6c6a4ddaa17a65613177ca316969a87b131d1371d8a1"
+ },
+ "/screenshots/babuni-dev/verification/repository-backed-roar-detail.webp": {
+  "bytes": 40586,
+  "sha256": "047374a4c4680b0395ce48a9a1e3fcaeaaaafa796d981cdcea5b54e10fcbce7f"
+ },
+ "/screenshots/babuni-dev/verification/resize-first-server-ended.webp": {
+  "bytes": 63440,
+  "sha256": "c116461ece5033e748c83ca399d951e0aa04035284a33a4b779ca73cf3d7c60e"
+ },
+ "/screenshots/babuni-dev/verification/restored-reader-attribution.webp": {
+  "bytes": 108842,
+  "sha256": "ef99c1841d542fb0b5f103b475944637d5587e18b9a213b3e2a14b9b79893f61"
+ },
+ "/screenshots/babuni-dev/verification/retained-cache-bloom.webp": {
+  "bytes": 79508,
+  "sha256": "9fdd1cfe28db58e6d2996ebefa5e63a9b2400d55fb7eafa482f35d7259bd1777"
+ },
+ "/screenshots/babuni-dev/verification/signup-big-bloom-desktop.webp": {
+  "bytes": 286362,
+  "sha256": "bb7393688d89ef21f92235d317614305e9a9ced21ae0515798efa67af6b6c4d6"
+ },
+ "/screenshots/babuni-dev/verification/signup-big-bloom-phone.webp": {
+  "bytes": 424786,
+  "sha256": "ecd1d5606e11fddd80f66062055a4796eb90924086429d7b0f98761b0d3fc2a5"
+ },
+ "/screenshots/babuni-dev/verification/signup-reader-desktop.webp": {
+  "bytes": 213536,
+  "sha256": "f8da919b806f508bc5c935020a33438290314e5ca0a26773b9da96d0ab249e5b"
+ },
+ "/screenshots/babuni-dev/verification/signup-reader-phone.webp": {
+  "bytes": 226128,
+  "sha256": "f369ff681c57fe9cda751deb3bcc61dac5486e5feaf278fa296d1659496406e8"
+ },
+ "/screenshots/babuni-dev/verification/small-bloom.webp": {
+  "bytes": 65816,
+  "sha256": "7b0d22104bea0a9f4a1169d43d5a6dff85f7eb7fb53a542639d3b9a953a97a56"
+ },
+ "/screenshots/babuni-dev/verification/spatial-keyboard-highlight.webp": {
+  "bytes": 134370,
+  "sha256": "ef87164b89685ad44a3cc48eeeab1f2c25b5cf99be178a46330d184f4ccd5a4b"
+ },
+ "/screenshots/babuni-dev/verification/stronger-waiting-feedback.webp": {
+  "bytes": 76758,
+  "sha256": "74f99a3a10912606334f43fbe4a0401ddd83d78e3c9c928a718c0b1af0987edd"
+ },
+ "/screenshots/babuni-dev/verification/topic-wings-preview.webp": {
+  "bytes": 58394,
+  "sha256": "13d199080b81a689e20e436c3522f9a82e8e317cc73dc1ae9252755cb52239b3"
+ },
+ "/screenshots/babuni-dev/verification/unified-tile-preview.webp": {
+  "bytes": 57204,
+  "sha256": "f0e9d9a4e07d55c492908a060dfefeab17a064dbb63b27b0ace4eb90b33d3277"
+ },
+ "/screenshots/babuni-dev/verification/webp-publication-check.webp": {
+  "bytes": 86616,
+  "sha256": "3f81af40cd26290ed90466de5252d2fa6be3ab1180760f2af4044dbb40befb57"
+ },
+ "/screenshots/button-game/2026-11-13/highscores-with-reaction-apm-desktop-2.webp": {
+  "bytes": 22774,
+  "sha256": "620403317745f6829d40230edf5c612ecbf435ea8392637259d9fbfa1473c19b"
+ },
+ "/screenshots/button-game/2026-11-13/highscores-with-reaction-apm-desktop.webp": {
+  "bytes": 21958,
+  "sha256": "df5a13833a15de745c7ac085b9db40aa00fa7f1a3822559e88598a56adcb16c2"
+ },
+ "/screenshots/button-game/2026-11-13/highscores-with-reaction-apm-narrow-2.webp": {
+  "bytes": 19442,
+  "sha256": "8ee1c2e865b608eaaf64e42342b5209498d4efbc66598d1e65c2dc8e1130575e"
+ },
+ "/screenshots/button-game/2026-11-13/highscores-with-reaction-apm-narrow.webp": {
+  "bytes": 19538,
+  "sha256": "edce6513569ad67df9ee31b90f4990d43832f5033e2011159510e6afde45d9f1"
+ },
+ "/screenshots/button-game/2026-11-13/live-babuni-dev-buttongame-desktop.webp": {
+  "bytes": 15352,
+  "sha256": "0908c4ef5a38624926302b50a97e213956aa66d47e25d9d0fc4962a33525bf1c"
+ },
+ "/screenshots/button-game/2026-11-13/live-babuni-dev-buttongame-phone.webp": {
+  "bytes": 11752,
+  "sha256": "eeb2bef826d9756e624a374043aadf5b54a404089d53ecf33f8932919c36dada"
+ },
+ "/screenshots/button-game/2026-11-13/public-server-desktop.webp": {
+  "bytes": 19650,
+  "sha256": "deb9040be66849d5d447d02075d47093c5d1fde63291200d6b0bd73902cc3f6c"
+ },
+ "/screenshots/button-game/2026-11-13/public-server-phone.webp": {
+  "bytes": 13882,
+  "sha256": "4c7072792d15db4ce1d7014e9f6dcaeec01205f41f6a71913b561d89a366def9"
+ },
+ "/screenshots/button-game/2026-11-13/public-server-score-submitted.webp": {
+  "bytes": 25998,
+  "sha256": "455275fd018b215c56d8a414e9f034e25177118a3e48a9066b94771dd47dc06b"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/highscores-with-reaction-apm-desktop-2.webp": {
+  "bytes": 3584,
+  "sha256": "560fdcbdb6ce218eca2167543893a6c0fc4311ae8266e50e213e5b4eac22e0bf"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/highscores-with-reaction-apm-desktop.webp": {
+  "bytes": 3426,
+  "sha256": "8a90cdcd5b5696f3f1a43ada936de93c1b2447fd8d6d36e7db7508b7a2a846ac"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/highscores-with-reaction-apm-narrow-2.webp": {
+  "bytes": 4586,
+  "sha256": "4fbc1279c88f960c080ad85976bc1d20ead008420602f84caf09b7456048f4b4"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/highscores-with-reaction-apm-narrow.webp": {
+  "bytes": 4612,
+  "sha256": "93a3990891e003b892c43080d17e16fbeb1ce972cd5cf683e96b3a17bd117501"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/live-babuni-dev-buttongame-desktop.webp": {
+  "bytes": 2956,
+  "sha256": "529d5e96ef7d4f96d0bc228ba5f693dbcd75bf88cef37e5bcaa38ef8e7d8a8ac"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/live-babuni-dev-buttongame-phone.webp": {
+  "bytes": 4068,
+  "sha256": "0f0feaebd952b927c8d66cc7984d2d524a42d2a994edaa5dd13b4165febc07b5"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/public-server-desktop.webp": {
+  "bytes": 3650,
+  "sha256": "04c6dac1c404771d07c4cec4fe4bf8ec92ce98a709d7d50e63549e8f239e0e5c"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/public-server-phone.webp": {
+  "bytes": 4568,
+  "sha256": "c6cfed2a737e82813d118efecf94ffa5359058e002cbaedc2dc52c21ef4523c3"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/public-server-score-submitted.webp": {
+  "bytes": 4642,
+  "sha256": "82a29928351ba9ef4a65ff864e5435b3f5985244c5120a3cf390611a166f342e"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/website-play-module-2.webp": {
+  "bytes": 9058,
+  "sha256": "74ae3cf9cfecde5457aa41a16614c1eed2c6eb195fbcc606ac95ff627437c77b"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/website-play-module.webp": {
+  "bytes": 9350,
+  "sha256": "fe5c043ef14443e95ab1d19dbbc6deaf8aff338f0624570736a6415f9b31ac15"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/welcome-highscores-desktop.webp": {
+  "bytes": 3230,
+  "sha256": "4facd3fc166894a5f53d47bf3abb2adcbe423c075a434e5d8a0d02f0e4f760b7"
+ },
+ "/screenshots/button-game/2026-11-13/thumbs/welcome-highscores-phone.webp": {
+  "bytes": 5524,
+  "sha256": "bc08410f4c609ab5fd7320e325a5e818f3780c94b068da105d0e79fe6182a197"
+ },
+ "/screenshots/button-game/2026-11-13/website-play-module-2.webp": {
+  "bytes": 11354,
+  "sha256": "35ad3d2e06de088f7abc93c71d8d0ba5a1f8493c3c7bf9ce9de9d7d78e0b54b9"
+ },
+ "/screenshots/button-game/2026-11-13/website-play-module.webp": {
+  "bytes": 11536,
+  "sha256": "6f089f6cf77ba8ec088bd097ea60c643bdaa4e86e4df12d848d5e659f784c2f7"
+ },
+ "/screenshots/button-game/2026-11-13/welcome-highscores-desktop.webp": {
+  "bytes": 20000,
+  "sha256": "f0a1798ef5f576964401c6ca4ec53709a53b4e3d0eefc322dafceede1b398722"
+ },
+ "/screenshots/button-game/2026-11-13/welcome-highscores-phone.webp": {
+  "bytes": 13668,
+  "sha256": "da092d4955d423473f9b98a3a539d69277c29ec559406034b77af250b53315f8"
+ }
+}

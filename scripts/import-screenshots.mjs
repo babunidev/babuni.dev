@@ -1,10 +1,12 @@
 // Usage: npm run screenshots:import -- <source-folder> <project-id> [--only name,name]
 // Turns dated development screenshots (<source>/<YYYY-MM-DD>/*.png) into web-sized WebP
-// files and thumbnails under public/media/<project-id>/screenshots/<date>/.
+// files and thumbnails under public/screenshots/<project-id>/<date>/ (ignored by Git), then
+// records them in src/content/server-media.json. Upload with scripts/publish-screenshots.sh.
 // Originals are only read. Existing outputs are never overwritten.
-import {readdirSync,existsSync,mkdirSync,writeFileSync,statSync} from 'node:fs';
+import {readdirSync,existsSync,mkdirSync,statSync} from 'node:fs';
 import {join,resolve,basename,extname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {updateManifest} from './server-media.mjs';
 
 const root=fileURLToPath(new URL('..',import.meta.url));
 const DATE=/^\d{4}-\d{2}-\d{2}$/;
@@ -21,7 +23,7 @@ export function screenshotName(file,date){
 }
 /** Public URLs of a screenshot and its thumbnail. */
 export function screenshotUrls(project,date,name){
-  const base=`/media/${project}/screenshots/${date}/`;
+  const base=`/screenshots/${project}/${date}/`;
   return {src:base+name+'.webp',thumb:base+'thumbs/'+name+'.webp'};
 }
 
@@ -86,7 +88,6 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   for(const r of results)console.log(`${r.skipped?'kept   ':'created'} ${r.src}  ${r.width}×${r.height}  ${kb(r.originalBytes)} → ${kb(r.bytes)} (+${kb(r.thumbBytes)} thumb)${r.croppedRows?`, ${r.croppedRows} empty rows cropped`:''}`);
   const sum=k=>results.reduce((s,r)=>s+r[k],0);
   console.log(`${results.length} screenshots: ${kb(sum('originalBytes'))} original → ${kb(sum('bytes')+sum('thumbBytes'))} published`);
-  const manifest=join(root,'.astro','screenshots-'+project+'.json');
-  mkdirSync(join(root,'.astro'),{recursive:true});writeFileSync(manifest,JSON.stringify(results,null,1));
-  console.log('Manifest: '+manifest);
+  const {changed}=updateManifest();
+  console.log(`src/content/server-media.json: ${changed} entries added or changed. Next: scripts/publish-screenshots.sh`);
 }
