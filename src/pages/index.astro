@@ -204,10 +204,16 @@ const structured={'@context':'https://schema.org','@graph':[
   .module-signup{margin:24px 0 8px}
   .module-signup-note{font:13px/1.5 system-ui,sans-serif;color:#b8afbc}
   .signup-frame{display:block;width:100%;height:600px;border:0;background:#140a07}
+  .big-bloom-card.signup-card{padding:0;cursor:default}
+  .signup-card .bloom-preview-content{position:absolute;inset:5px}
+  .signup-card-frame{position:absolute;inset:0;padding:0;border:0;box-shadow:none;overflow:hidden;background:#140a07}
+  .signup-card-frame .signup-frame{position:absolute;top:0;left:0;width:100%;height:100%;transform-origin:top left}
+  .signup-enter{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
   .is-big-bloom-waiting .grid-tile--selected .tile-select::after{content:'';position:absolute;inset:4px;border:3px solid #ffe0a3;box-shadow:inset 0 0 24px #ffd2827a,0 0 24px #ffd282b3;pointer-events:none;animation:selection-wait 1400ms ease-in-out infinite}
   .grid-viewport.is-big-bloom{overflow:clip}
   .is-bloom-opening .grid-tile--depth-transition{transition:transform 520ms cubic-bezier(.22,.75,.25,1)}
   .grid-tile--big-anchor{z-index:4}
+  .is-big-bloom-form .grid-tile--big-anchor{visibility:hidden}
   .big-bloom-card{padding:clamp(12px,calc(var(--tile-size) * .085),24px);gap:12px;overflow:hidden;transform-origin:top left}
   .big-bloom-card .bloom-title{font-size:clamp(20px,calc(var(--tile-size) * .1),26px)}
   .big-bloom-card .bloom-summary{font:400 clamp(14px,calc(var(--tile-size) * .071),18px)/1.55 system-ui,sans-serif;white-space:normal;max-height:none;overflow:visible}

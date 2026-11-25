@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-25 — The form is the card
+
+Once the sign-up was live, having to press a button to see the form felt like one step too many, and the reader was the wrong place for it. I asked for the form to be visible straight away and to live in the big bloom, with the small bloom keeping the short text. Claude Code (Claude Opus 5.5) made the big-bloom card nothing but the form, scaled down on smaller screens so it always fits whole. In its own screenshots AI then noticed that the Morkahja tile, which always sits in the lower-left quarter of the card you opened, covered the email field. It offered three ways out; I chose to hide the tile while the sign-up card is in the center, since its round icon already leads back. I also wanted the EmailOctopus advertisement gone. AI found that removing it is part of EmailOctopus's paid Pro plan, so on the free plan it stays rather than being hidden by a trick.
+
 ## 2026-11-25 — A way to follow Morkahja
 
 Morkahja is changing every day, and I wanted people to be able to hear about it. I chose EmailOctopus, published a sign-up page there, and decided that the form belongs inside a module of the Morkahja project: no bare link, and nothing collected in the game. Claude Sonnet 5.5 wrote a developer brief for it. Its main point was safety: the game runs on the same address as the website and keeps each player's keys in the browser, so EmailOctopus's script must never run on the site. The form is shown in a separate frame instead, which loads only when a visitor presses a button. I then asked Claude Code (Claude Opus 5.5) to build it from the brief.

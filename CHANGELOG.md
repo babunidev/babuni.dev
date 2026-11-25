@@ -6,6 +6,14 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Sign-up form shown directly in the big bloom (2026-11-25)
+- Morkahja's **Follow the journey** big-bloom card is now only the EmailOctopus form, with no title, text, button or Read more. The small bloom still shows the title and preview, and its Read more opens the big bloom on the form. The reader's **Show sign-up form** button is gone; the reader, no longer reached from the card, shows the form directly.
+- The form fills the card inside its border and is scaled to fit where the card is smaller than 440 px (factor 0.88 at 800 px viewport width, 0.68 at 390 px), so nothing scrolls inside it.
+- While the sign-up card is the selected, central card, the project tile that normally covers its lower-left quarter is hidden (`.is-big-bloom-form`) and leaves the keyboard order; the card's round project icon still leads back to the small bloom. A tap on the card no longer opens a reader, and share links to the card open the big bloom without a reader.
+- A visually hidden “Go to the sign-up form” button is the card's keyboard stop; Enter moves focus into the form.
+- The frame now loads when the big bloom opens, not after a press: opening Morkahja's big bloom contacts EmailOctopus and Google reCAPTCHA.
+- Verification: `npm run test:grid` (232 passed) and `npm run build` passed. Headless Chrome against `astro preview` at 1280, 800 and 390 px: the small-bloom card's Read more and the share link both open the big bloom on the form with no reader; the tile is hidden and the form's lower-left quarter is reachable; the whole form is visible without inner scrolling; a tap on the card's edge opens nothing; Enter on the keyboard stop focuses the form; the project icon returns to the small bloom with the tile visible again; no console errors. No address was submitted. Not tested on a real phone or in Safari. Claude Code (Claude Opus 5.5).
+
 ### Fixed — CurseForge profile link (2026-11-25)
 - The CurseForge links on the About page and in Babuni Gaming's **Watch and follow** module pointed to `members/babunigaming`; they now open `https://www.curseforge.com/members/babunidev/projects`, the profile that owns the published addons (RoarForever, FlourishForever, SocialForever, ClearViewForever, Favorcraft, ResistForever), checked in Chrome. Link titles now read "CurseForge — Babunidev". Claude Code (Claude Opus 5.5).
 

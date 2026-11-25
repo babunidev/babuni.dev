@@ -379,6 +379,16 @@
           "src": "/media/babuni-dev/images/verification/signup-reader-phone.webp",
           "alt": "The same sign-up frame on a narrow screen, the greeting, email field, consent box and Subscribe button stacked in one column.",
           "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px: the whole form fits the 600-pixel frame without sideways scrolling. Nothing was submitted. Not a physical phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/signup-big-bloom-desktop.webp",
+          "alt": "Morkahja's big bloom with the sign-up card in the center: the EmailOctopus form fills the card, and the project tile no longer covers its lower-left quarter.",
+          "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1280 px, after the form moved from the reader into the big bloom. Nothing was submitted. Not a phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/signup-big-bloom-phone.webp",
+          "alt": "The same big bloom on a narrow screen: the whole sign-up form scaled down to fit its card, between neighboring module cards.",
+          "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px: the form is scaled to about two thirds so it fits the card without scrolling. Not a physical phone test."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

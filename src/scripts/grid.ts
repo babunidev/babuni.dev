@@ -212,6 +212,8 @@ if (viewport && world && status) {
     deepLink=null;
     const card=bloomModules[0],entry=bigLayout[0];
     if(!link.read||!card||entry?.module.id!==link.read)return;
+    // A sign-up card already shows its form; the big bloom is its full view.
+    if(entry.module.type==='signup')return;
     const open=()=>{
       if(!bigBloomOpen||bloomModules[0]!==card||details.isOpen())return;
       openReader(entry.module,card.querySelector<HTMLButtonElement>('.bloom-read-more')!,link.doc);
@@ -227,7 +229,8 @@ if (viewport && world && status) {
   });
 
   function keyboardItems():KeyboardItem[]{
-    const tiles=slots.filter(slot=>slot.projectIndex!==undefined&&slot.projectIndex<demoProjects.length).map(slot=>{
+    const tiles=slots.filter(slot=>slot.projectIndex!==undefined&&slot.projectIndex<demoProjects.length)
+      .filter(slot=>!(anchorHidden()&&slot.element.classList.contains('grid-tile--big-anchor'))).map(slot=>{
       const cell=paintedCell(slot);
       return {element:slot.element.querySelector<HTMLButtonElement>('.tile-select')!,container:slot.element,x:cell.column+.5,y:cell.row+.5};
     });
@@ -348,7 +351,11 @@ if (viewport && world && status) {
         &&demoProjects[slot.projectIndex??-1]?.id===choice.projectId;
     });
   }
+  /** A sign-up card in the center is a form; the project tile would cover its
+   * fields, so the tile is hidden while that card is the selected one. */
+  function anchorHidden():boolean {return bigBloomOpen&&bigLayout[0]?.module.type==='signup';}
   function highlightSelection():void {
+    surface.classList.toggle('is-big-bloom-form',anchorHidden());
     for(const slot of slots){
       const anchor=bigBloomOpen&&!!bloomAnchor&&slot.column===bloomAnchor.column&&slot.row===bloomAnchor.row;
       slot.element.classList.toggle('grid-tile--big-anchor',anchor);
@@ -774,7 +781,7 @@ if (viewport && world && status) {
     details.close();pauseBloomMedia();
     smallBloom?.panels.forEach(panel=>panel.remove());smallBloom=null;bigLayout=[];
     bigBloomOpen=false;bigTransitioning=false;centerCompletion=null;
-    surface.classList.remove('is-big-bloom');
+    surface.classList.remove('is-big-bloom','is-big-bloom-form');
     pendingChoice=nextChoice;
     centering=null;
     if(centerFrame!==null){cancelAnimationFrame(centerFrame);centerFrame=null;}
@@ -1262,7 +1269,7 @@ if (viewport && world && status) {
       // Every active shift finishes at its original tempo before opening.
       if(pendingChoice&&!selectedChoice&&bloomClosingTimer===null)resumeMovement();
     }else resumeMovement();
-    if(activatePanel){const entry=bigLayout.find(entry=>entry.module.id===activatePanel!.dataset.moduleId);if(entry)openReader(entry.module,activatePanel.querySelector<HTMLButtonElement>('.bloom-read-more')!);}
+    if(activatePanel){const entry=bigLayout.find(entry=>entry.module.id===activatePanel!.dataset.moduleId);if(entry&&entry.module.type!=='signup')openReader(entry.module,activatePanel.querySelector<HTMLButtonElement>('.bloom-read-more')!);}
     if(activateSmall?.dataset.moduleId)requestBigBloom(activateSmall.dataset.moduleId);
     refreshMobileTopics();
   }

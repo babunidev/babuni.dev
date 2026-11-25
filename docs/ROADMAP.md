@@ -808,5 +808,7 @@ The source identifies a Wrath-era port, not a numbered sequel; Roarboard remains
 - [x] `signup` module kind and Morkahja's Follow the journey module, framing the EmailOctopus page after a button press (headless-browser checks at 1280 and 390 px).
 - [ ] A real sign-up end to end, by Babuni, after release.
 - [ ] iOS Safari: frame focus, touch scrolling and third-party storage.
-- [ ] Babuni's review of the module title, preview, button label and disclosure line.
+- [x] Form shown directly in the big bloom, without a button; project tile hidden over it (Babuni's revision, same day).
+- [ ] Babuni's review of the module title and preview.
+- [ ] Optional: EmailOctopus Pro plan to remove the “Powered by EmailOctopus” badge (Babuni's account).
 

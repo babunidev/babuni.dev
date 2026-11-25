@@ -206,3 +206,12 @@ AI headless-Chrome captures from the temporary localhost:4391 preview, at 1366 a
 ![Morkahja sign-up frame on a narrow screen](../public/media/babuni-dev/images/verification/signup-reader-phone.webp)
 
 AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels, taken after Show sign-up form was pressed in Morkahja's Follow the journey reader. The frame shows the live EmailOctopus page; no address was submitted. Browser simulations, not a physical phone test.
+
+## 2026-11-25 — The sign-up form as a big-bloom card
+
+![Morkahja big bloom with the sign-up card in the center](../public/media/babuni-dev/images/verification/signup-big-bloom-desktop.webp)
+
+![The sign-up card scaled to fit on a narrow screen](../public/media/babuni-dev/images/verification/signup-big-bloom-phone.webp)
+
+AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels, after Babuni asked for the form directly in the big bloom. The project tile is hidden while the sign-up card is the central one. These supersede the reader captures above as the current design. Browser simulations, not a physical phone test; nothing was submitted.
+

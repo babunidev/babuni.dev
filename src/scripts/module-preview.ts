@@ -1,6 +1,7 @@
 import {renderDocument} from './document-reader.ts';
 import {moduleIntro} from '../lib/big-bloom.ts';
 import {appendModuleQr} from './module-qr.ts';
+import {renderSignupCard} from './module-signup.ts';
 import {safeEmbedUrl,videosForModule,type ModuleVideo,type ProjectModule} from '../lib/project-modules.ts';
 /** Embedded players show their preview immediately; playback remains user initiated. */
 export function renderVideo(video:ModuleVideo):HTMLElement {
@@ -44,6 +45,11 @@ export function renderModulePreview(module:ProjectModule,projectName:string,onRe
   summary.className='bloom-summary module-document';
   const content=document.createElement('div');content.className='bloom-preview-content';
   content.append(title,summary);panel.append(content);
+  // A big-bloom sign-up card is the form itself: no title, text or Read more.
+  if(module.type==='signup'&&depth==='big'){
+    const enter=renderSignupCard(module,content);
+    if(enter){panel.className+=' signup-card';panel.append(enter);return panel;}
+  }
   if(module.type==='gallery'&&module.images?.length){
     const figure=document.createElement('figure');figure.className='bloom-media';
     const image=document.createElement('img');image.loading='lazy';image.decoding='async';image.draggable=false;
