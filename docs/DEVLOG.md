@@ -10,6 +10,8 @@ For specific decisions, implementation changes and technical measurements, see [
 
 After seeing the numbers I decided against keeping screenshots on GitHub at all, in every project: GitHub is for the software and the images that belong to it. Visitors load the pictures from my server anyway, so the screenshots now live in a media folder there, outside the site's release folders, and GitHub only keeps a list of them with a checksum for each. Claude Code (Claude Opus 5.5) moved the Button Game set and the 67 older verification screenshots there, and wrote the upload script. Its first idea needed a server setup step with my password; I asked why other projects publish with the existing deploy key alone, and Claude replaced that step with a link inside each release, so everything runs with the same key. Analubia stays off the website until I have decided how publicly I can work on it.
 
+![The live Button Game journal loading its thumbnails from the server's media folder](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/live-button-game-journal-thumbnails-desktop.webp) ![The live Morkahja journal with its screenshot rows](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-journal-thumbnails-desktop.webp) ![Morkahja's Screenshots gallery](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-screenshots-gallery-desktop.webp) ![An Eldgrim journal screenshot opened large](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/live-eldgrim-journal-lightbox-desktop.webp)
+
 ## 2026-11-25 — Screenshots where people can see them
 
 Hundreds of development screenshots were sitting in a folder on my computer, and I wanted them on the website: in each project's grid modules, and as small images in the development logs that open large when clicked. I asked Claude Code (Claude Opus 5.5) for a plan, one project at a time, and whether the images belong on GitHub or only on the server.
@@ -17,6 +19,8 @@ Hundreds of development screenshots were sitting in a folder on my computer, and
 Claude recommended GitHub for small WebP copies and keeping the PNG originals on my computer. The publish script rebuilds the site from GitHub and deletes anything on the server that is not in the build, so server-only images would vanish. Measured on 53 screenshots: 62 MB as PNG, 43 MB lossless, 4 MB as WebP quality 85. Each project's journal links its images by their full babuni.dev address, which also works on GitHub. The plan is in [SCREENSHOT_PUBLISHING_PLAN.md](SCREENSHOT_PUBLISHING_PLAN.md).
 
 Button Game went first. Claude wrote an import script, filled the empty gallery and added the images to the two 13 November entries in the Button Game journal. The first browser check found two problems: a white strip under several screenshots, where the test page had been shorter than the window, and the journal's preview card reading the image descriptions as one sentence. The script now crops empty white rows at the bottom, and previews skip rows of images. Claude's browser check of the journal, the large view and the gallery passed on desktop and phone sizes; my own phone check is still to come.
+
+![First check: journal thumbnails with a white strip under them](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-desktop.webp) ![First check: the large view with the same white band](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-desktop.webp) ![After cropping the empty rows](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-desktop-3.webp) ![The thumbnails on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-phone-2.webp) ![Button Game's new Screenshots gallery](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/button-game-screenshots-gallery-desktop-2.webp)
 
 ## 2026-11-25 — A daily refresh
 
@@ -26,21 +30,29 @@ The Projects list is sorted by latest update, and I wanted that order refreshed 
 
 Once the sign-up was live, having to press a button to see the form felt like one step too many, and the reader was the wrong place for it. I asked for the form to be visible straight away and to live in the big bloom, with the small bloom keeping the short text. Claude Code (Claude Opus 5.5) made the big-bloom card nothing but the form, scaled down on smaller screens so it always fits whole. In its own screenshots AI then noticed that the Morkahja tile, which always sits in the lower-left quarter of the card you opened, covered the email field. It offered three ways out; I chose to hide the tile while the sign-up card is in the center, since its round icon already leads back. I also wanted the EmailOctopus advertisement gone. AI found that removing it is part of EmailOctopus's paid Pro plan, so on the free plan it stays rather than being hidden by a trick.
 
+![The sign-up form as the whole big-bloom card](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/signup-big-bloom-desktop-card.webp) ![The form card on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/signup-big-bloom-phone-card.webp) ![The form card on a tablet](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/signup-big-bloom-tablet-card.webp)
+
 ## 2026-11-25 — A way to follow Morkahja
 
 Morkahja is changing every day, and I wanted people to be able to hear about it. I chose EmailOctopus, published a sign-up page there, and decided that the form belongs inside a module of the Morkahja project: no bare link, and nothing collected in the game. Claude Sonnet 5.5 wrote a developer brief for it. Its main point was safety: the game runs on the same address as the website and keeps each player's keys in the browser, so EmailOctopus's script must never run on the site. The form is shown in a separate frame instead, which loads only when a visitor presses a button. I then asked Claude Code (Claude Opus 5.5) to build it from the brief.
 
 AI added a new module kind for sign-ups and the **Follow the journey** module, checked in a headless browser that nothing reaches EmailOctopus or Google before the button press, and measured the form at phone and desktop widths. It found one thing the brief had not foreseen: inside the frame, reCAPTCHA asked for its own cookies and the frame refused, filling the console with errors. AI allowed that one request, which gives the frame no access to the website's storage. The title, the text and the button wording are AI proposals I can change. A real sign-up is still mine to try once it is live.
 
+![The Follow the journey module in the reader, before the form showed directly](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/signup-desktop-reader-before.webp) ![The EmailOctopus form in the reader](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/signup-desktop-reader-form.webp) ![The form on the live site](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/signup-live-desktop-reader-form.webp) ![The form on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/signup-phone-reader-form.webp)
+
 ## 2026-11-25 — Text in cards
 
 I liked the new link cards on the About page and wanted the rest of the text to look like that too: in every reader on the website, each part of a text in its own card, as a design. Claude Code (Claude Opus 5.5) changed the shared reader so that each main section of a document becomes a card with its heading on top. It applies to About, the text modules and every imported document; the previews in the blooms stay as they were.
+
+![The About page's link cards that started the idea](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/about-link-cards-desktop.webp) ![About in section cards](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-desktop.webp) ![The architecture document in section cards](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/reader-section-cards-architecture-desktop.webp) ![The changelog in section cards](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/reader-section-cards-changes-desktop.webp) ![Section cards on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-phone.webp)
 
 ## 2026-11-25 — What changed most recently, first
 
 I wanted the Projects list in the top right sorted by activity instead of by category, so the most recently updated project is always on top. Claude Code (Claude Opus 5.5) sorted it by the date of each repository's latest commit, which the site already reads for the "Recently updated" badges, and added a short "3 days ago" next to each name. The order is refreshed whenever the site is built; a daily refresh needs a scheduled build and publish, which is still to be decided.
 
 On the About page, the Morkahja link still pointed to the old Arcanite Brothers website, which no longer answers; the game now lives at babuni.dev/Morkahja/, so the link goes there. I also wanted the links to look like small cards with a picture on the left, the link as a title and the description underneath. Claude Code used my portal artwork for the pictures, and the babuni.musik channel picture for the two music links, because no portal art exists for music. The heading "The person behind the projects" now sits under my portrait instead of above it.
+
+![The Projects menu ordered by latest update](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/projects-menu-by-activity-desktop.webp) ![The same menu on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-25/projects-menu-by-activity-phone.webp)
 
 ## 2026-11-23 — The Eldgrim addon to download
 
@@ -54,6 +66,8 @@ The human–AI collaboration file had grown into three things at once: writing r
 
 Every reader said "Changelog" twice, once as the reader's title and once as the document's own heading, and the small bloom only described what a changelog is. I wanted the newest change to be the first thing visible, and any introduction moved to the bottom. Claude Code (Claude Opus 5.5) changed how documents are presented on the site rather than editing every repository: the duplicate heading is gone, logs open on their latest entry with their introduction at the end, and the small blooms now preview that entry. While checking, AI noticed that decision records and the collection's folder cards had the same problem and fixed them too. It also combined all 20 portal artworks of the collection into one medallion.
 
+![A changelog reader with one title instead of two](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/reader-single-title-desktop.webp) ![Small-bloom cards showing the newest entry](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/small-bloom-entries-desktop.webp) ![The single title on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/reader-single-title-phone.webp)
+
 ## 2026-11-19 — The relay keeps its own tile
 
 Later that evening I planned a WoW Forever edition of The Great Iceflow Relay, so it is still in development and keeps its own repository and tile. Its repository had already been deleted; at my choice Claude Code (Claude Opus 5.5) recreated it from the full local history and restored the tile.
@@ -62,13 +76,19 @@ Later that evening I planned a WoW Forever edition of The Great Iceflow Relay, s
 
 A brief I wrote for combining the emote addons led to a larger idea: most of my old World of Warcraft addons are small projects for the 1.12 and 3.3.5 clients that I will not develop further, and together they filled a quarter of the grid. I decided to put all of them into one repository with install zips and to give them one tile, while the active WoW Forever addons keep their own repositories. Claude Code (Claude Opus 5.5) checked the old roadmaps, which held only test checklists and unapproved ideas, built the `ClassicWoWAddons` repository with each addon's full history, and switched the website to it. Old links and pages now lead into the collection. The tile's artwork is a stand-in until I have a proper portal for it.
 
+![The portal artwork for the Classic WoW Addons collection](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/classic-wow-addons-portal.webp) ![The collection tile in the living grid](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/collection-grid-desktop.webp) ![The collection's big bloom with one card per addon](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/collection-big-bloom-desktop.webp) ![The addon cards with their own artwork](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/collection-artwork-desktop.webp) ![All the folder icons of the collection](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/project-folder-icons.webp)
+
 ## 2026-11-19 — The project icon leads back
 
 Inside a big bloom or the reader, the project you were in was no longer visible, and going back meant knowing about Escape or clicking beside the panel. I asked for the project's icon in the top-left corner of the reader and, smaller, of every big-bloom card, and for a click on it to take me back one step. Claude Code (Claude Opus 5.5) used the portal artwork the grid already shows and connected the icon to the existing back paths, so the timing stays exactly as approved. A first version indented the reader's title beside the icon; AI noticed in its own screenshots that this looked odd on a phone and moved the icon and the share button into a row above the title instead. AI tested it in a headless browser at desktop and phone widths; I have not yet tried it on my phone.
 
+![The project icon in the top-left corner of a big bloom](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/project-icon-big-bloom-desktop.webp) ![The same icon in the reader](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/project-icon-reader-desktop.webp) ![The project icon on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/project-icon-big-bloom-phone.webp)
+
 ## 2026-11-19 — Sharing straight from the reader
 
 The share button on the big-bloom cards links to a module, but once a document was open in the reader there was no way to pass that view on. I asked for the same share button in the reader's top-right corner, and for links that open the reader directly. Claude Code (Claude Opus 5.5) added the button and extended the links so that a folder reader can open at one document: sharing a lore file from Amberbrew Story now gives a link to that file, not only to the folder. AI tested both kinds of link in a headless browser at desktop and phone widths; I have not yet tried it on my phone.
+
+![The share button in the reader](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/reader-share-desktop.webp) ![Sharing one document inside a folder reader](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/reader-share-folder-document-desktop.webp) ![The reader's share button on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-19/reader-share-phone.webp)
 
 ## 2026-11-19 — Documentation belongs in `docs/`
 
@@ -83,6 +103,8 @@ Babuni Gaming was already on the portfolio, with its channels and videos written
 ## 2026-11-13 — A share button for each big-bloom module
 
 With deep links working, I wanted a way to hand them out without composing the address by hand, so I asked for a share symbol in the top-right corner of each big-bloom module. AI added a small round button that uses the phone's share sheet where one exists and otherwise copies the module's link, glowing briefly to confirm. AI tested it in a headless browser: the link copied correctly and the reader stayed closed. I have not yet tried it on my phone.
+
+![Big-bloom cards with the round share button in the corner, local build](https://www.babuni.dev/screenshots/babuni-dev/2026-11-13/big-bloom-share-buttons.webp) ![The share buttons on the live site](https://www.babuni.dev/screenshots/babuni-dev/2026-11-13/live-big-bloom-share-buttons.webp) ![A deep link opening a project straight in its big bloom](https://www.babuni.dev/screenshots/babuni-dev/2026-11-13/deep-link-big-bloom.webp) ![A deep link opening a changelog in the reader](https://www.babuni.dev/screenshots/babuni-dev/2026-11-13/deep-link-changelog-reader.webp) ![The Play Button Game card with its QR code in Button Game's big bloom](https://www.babuni.dev/screenshots/babuni-dev/2026-11-13/grid-button-game-play-module-big-bloom-desktop.webp)
 
 ## 2026-11-10 — Making the repository documentation readable
 
@@ -1518,13 +1540,19 @@ Claude Code (Claude Opus 5.5) found the existing public `audiobookGrimnir` repos
 
 With Chapter One out, I gave the Grimnir portal a new image: a Grimnir woman of copper-gold scales and stone light. Claude Code (Claude Opus 5.5) cropped the screenshot I supplied to a square around her face, leaving out the mouse pointer and the frame edge it had caught, and assigned it as the portal artwork. The old portal image is kept. Tests and the build passed, and the portal was checked in headless Chrome.
 
+![The new Grimnir portal image in a small bloom](https://www.babuni.dev/screenshots/babuni-dev/2026-11-20/grimnir-portal-art-small.webp) ![The new portal on a phone](https://www.babuni.dev/screenshots/babuni-dev/2026-11-20/grimnir-portal-art-phone.webp)
+
 ## 2026-11-20 — a link that works
 
 The direct Chapter One link didn't work for me, so Grimnir's Listen module and the audiobook README now point to my Indikin.online page instead. Claude Code (Claude Opus 5.5) swapped the links in both repositories and refreshed the site's copy of the README.
 
+![The Listen module pointing to the Indikin.online page](https://www.babuni.dev/screenshots/babuni-dev/2026-11-20/grimnir-listen-big-bloom.webp) ![Listen in the small bloom](https://www.babuni.dev/screenshots/babuni-dev/2026-11-20/grimnir-listen-small-bloom.webp)
+
 ## 2026-11-20 — Grimnir becomes Brunti Audiobook
 
 The portal's name should say what the project is, so I renamed it: the repository is now `Brunti-audiobook` and the portal reads Brunti Audiobook. Claude Code (Claude Opus 5.5) renamed the GitHub repository, updated its commit links, moved the site's snapshot to the new name and changed the display name, keeping the stable ID `grimnir` so earlier links still open the project.
+
+![The portal now reading Brunti Audiobook](https://www.babuni.dev/screenshots/babuni-dev/2026-11-20/brunti-audiobook-rename-small.webp)
 
 ## 2026-11-21 — Rocket Game 42 gets a play button
 

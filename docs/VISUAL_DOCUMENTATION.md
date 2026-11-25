@@ -222,3 +222,55 @@ AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 an
 ![About page as section cards on a narrow screen](../public/screenshots/babuni-dev/verification/reader-section-cards-about-phone.webp)
 
 AI headless-Chrome captures from the temporary localhost:4392 preview at 1366 and 390 pixels: each main section of a reader is its own card with the heading on top. Not a physical phone test.
+
+## Development screenshots, 13–25 November 2026
+
+Added on 2026-11-25 from Babuni's local screenshot collection, where AI agents saved their browser captures. Served from the server media folder (`/screenshots/babuni-dev/<date>/`), not kept in Git; 171 are on the server, these 47 are in the gallery and the development journal. Captures of the same day's first screenshot check keep the white strip that check found, as history. Browser captures, not physical-device acceptance.
+
+- `2026-11-13/big-bloom-share-buttons.webp` — Big-bloom cards with the round share button in the corner, local build.
+- `2026-11-13/live-big-bloom-share-buttons.webp` — The share buttons on the live site.
+- `2026-11-13/deep-link-big-bloom.webp` — A deep link opening a project straight in its big bloom.
+- `2026-11-13/deep-link-changelog-reader.webp` — A deep link opening a changelog in the reader.
+- `2026-11-13/grid-button-game-play-module-big-bloom-desktop.webp` — The Play Button Game card with its QR code in Button Game's big bloom.
+- `2026-11-19/reader-single-title-desktop.webp` — A changelog reader with one title instead of two.
+- `2026-11-19/small-bloom-entries-desktop.webp` — Small-bloom cards showing the newest entry.
+- `2026-11-19/reader-single-title-phone.webp` — The single title on a phone.
+- `2026-11-19/classic-wow-addons-portal.webp` — The portal artwork for the Classic WoW Addons collection.
+- `2026-11-19/collection-grid-desktop.webp` — The collection tile in the living grid.
+- `2026-11-19/collection-big-bloom-desktop.webp` — The collection's big bloom with one card per addon.
+- `2026-11-19/collection-artwork-desktop.webp` — The addon cards with their own artwork.
+- `2026-11-19/project-folder-icons.webp` — All the folder icons of the collection.
+- `2026-11-19/project-icon-big-bloom-desktop.webp` — The project icon in the top-left corner of a big bloom.
+- `2026-11-19/project-icon-reader-desktop.webp` — The same icon in the reader.
+- `2026-11-19/project-icon-big-bloom-phone.webp` — The project icon on a phone.
+- `2026-11-19/reader-share-desktop.webp` — The share button in the reader.
+- `2026-11-19/reader-share-folder-document-desktop.webp` — Sharing one document inside a folder reader.
+- `2026-11-19/reader-share-phone.webp` — The reader's share button on a phone.
+- `2026-11-20/grimnir-portal-art-small.webp` — The new Grimnir portal image in a small bloom.
+- `2026-11-20/grimnir-portal-art-phone.webp` — The new portal on a phone.
+- `2026-11-20/grimnir-listen-big-bloom.webp` — The Listen module pointing to the Indikin.online page.
+- `2026-11-20/grimnir-listen-small-bloom.webp` — Listen in the small bloom.
+- `2026-11-20/brunti-audiobook-rename-small.webp` — The portal now reading Brunti Audiobook.
+- `2026-11-25/projects-menu-by-activity-desktop.webp` — The Projects menu ordered by latest update.
+- `2026-11-25/projects-menu-by-activity-phone.webp` — The same menu on a phone.
+- `2026-11-25/about-link-cards-desktop.webp` — The About page's link cards that started the idea.
+- `2026-11-25/reader-section-cards-about-desktop.webp` — About in section cards.
+- `2026-11-25/reader-section-cards-architecture-desktop.webp` — The architecture document in section cards.
+- `2026-11-25/reader-section-cards-changes-desktop.webp` — The changelog in section cards.
+- `2026-11-25/reader-section-cards-about-phone.webp` — Section cards on a phone.
+- `2026-11-25/signup-desktop-reader-before.webp` — The Follow the journey module in the reader, before the form showed directly.
+- `2026-11-25/signup-desktop-reader-form.webp` — The EmailOctopus form in the reader.
+- `2026-11-25/signup-live-desktop-reader-form.webp` — The form on the live site.
+- `2026-11-25/signup-phone-reader-form.webp` — The form on a phone.
+- `2026-11-25/signup-big-bloom-desktop-card.webp` — The sign-up form as the whole big-bloom card.
+- `2026-11-25/signup-big-bloom-phone-card.webp` — The form card on a phone.
+- `2026-11-25/signup-big-bloom-tablet-card.webp` — The form card on a tablet.
+- `2026-11-25/button-game-journal-thumbnails-desktop.webp` — First check: journal thumbnails with a white strip under them.
+- `2026-11-25/button-game-journal-lightbox-desktop.webp` — First check: the large view with the same white band.
+- `2026-11-25/button-game-journal-lightbox-desktop-3.webp` — After cropping the empty rows.
+- `2026-11-25/button-game-journal-thumbnails-phone-2.webp` — The thumbnails on a phone.
+- `2026-11-25/button-game-screenshots-gallery-desktop-2.webp` — Button Game's new Screenshots gallery.
+- `2026-11-25/live-button-game-journal-thumbnails-desktop.webp` — The live Button Game journal loading its thumbnails from the server's media folder.
+- `2026-11-25/live-morkahja-rpg-journal-thumbnails-desktop.webp` — The live Morkahja journal with its screenshot rows.
+- `2026-11-25/live-morkahja-rpg-screenshots-gallery-desktop.webp` — Morkahja's Screenshots gallery.
+- `2026-11-25/live-eldgrim-journal-lightbox-desktop.webp` — An Eldgrim journal screenshot opened large.

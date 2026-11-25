@@ -399,6 +399,241 @@
           "src": "/screenshots/babuni-dev/verification/signup-big-bloom-phone.webp",
           "alt": "The same big bloom on a narrow screen: the whole sign-up form scaled down to fit its card, between neighboring module cards.",
           "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px: the form is scaled to about two thirds so it fits the card without scrolling. Not a physical phone test."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-13/big-bloom-share-buttons.webp",
+          "alt": "Big-bloom cards with the round share button in the corner, local build.",
+          "caption": "Big-bloom cards with the round share button in the corner, local build — 13 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-13/live-big-bloom-share-buttons.webp",
+          "alt": "The share buttons on the live site.",
+          "caption": "The share buttons on the live site — 13 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-13/deep-link-big-bloom.webp",
+          "alt": "A deep link opening a project straight in its big bloom.",
+          "caption": "A deep link opening a project straight in its big bloom — 13 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-13/deep-link-changelog-reader.webp",
+          "alt": "A deep link opening a changelog in the reader.",
+          "caption": "A deep link opening a changelog in the reader — 13 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-module-big-bloom-desktop.webp",
+          "alt": "The Play Button Game card with its QR code in Button Game's big bloom.",
+          "caption": "The Play Button Game card with its QR code in Button Game's big bloom — 13 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/reader-single-title-desktop.webp",
+          "alt": "A changelog reader with one title instead of two.",
+          "caption": "A changelog reader with one title instead of two — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/small-bloom-entries-desktop.webp",
+          "alt": "Small-bloom cards showing the newest entry.",
+          "caption": "Small-bloom cards showing the newest entry — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/reader-single-title-phone.webp",
+          "alt": "The single title on a phone.",
+          "caption": "The single title on a phone — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/classic-wow-addons-portal.webp",
+          "alt": "The portal artwork for the Classic WoW Addons collection.",
+          "caption": "The portal artwork for the Classic WoW Addons collection — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/collection-grid-desktop.webp",
+          "alt": "The collection tile in the living grid.",
+          "caption": "The collection tile in the living grid — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/collection-big-bloom-desktop.webp",
+          "alt": "The collection's big bloom with one card per addon.",
+          "caption": "The collection's big bloom with one card per addon — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/collection-artwork-desktop.webp",
+          "alt": "The addon cards with their own artwork.",
+          "caption": "The addon cards with their own artwork — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/project-folder-icons.webp",
+          "alt": "All the folder icons of the collection.",
+          "caption": "All the folder icons of the collection — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/project-icon-big-bloom-desktop.webp",
+          "alt": "The project icon in the top-left corner of a big bloom.",
+          "caption": "The project icon in the top-left corner of a big bloom — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/project-icon-reader-desktop.webp",
+          "alt": "The same icon in the reader.",
+          "caption": "The same icon in the reader — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/project-icon-big-bloom-phone.webp",
+          "alt": "The project icon on a phone.",
+          "caption": "The project icon on a phone — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/reader-share-desktop.webp",
+          "alt": "The share button in the reader.",
+          "caption": "The share button in the reader — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/reader-share-folder-document-desktop.webp",
+          "alt": "Sharing one document inside a folder reader.",
+          "caption": "Sharing one document inside a folder reader — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-19/reader-share-phone.webp",
+          "alt": "The reader's share button on a phone.",
+          "caption": "The reader's share button on a phone — 19 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-20/grimnir-portal-art-small.webp",
+          "alt": "The new Grimnir portal image in a small bloom.",
+          "caption": "The new Grimnir portal image in a small bloom — 20 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-20/grimnir-portal-art-phone.webp",
+          "alt": "The new portal on a phone.",
+          "caption": "The new portal on a phone — 20 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-20/grimnir-listen-big-bloom.webp",
+          "alt": "The Listen module pointing to the Indikin.online page.",
+          "caption": "The Listen module pointing to the Indikin.online page — 20 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-20/grimnir-listen-small-bloom.webp",
+          "alt": "Listen in the small bloom.",
+          "caption": "Listen in the small bloom — 20 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-20/brunti-audiobook-rename-small.webp",
+          "alt": "The portal now reading Brunti Audiobook.",
+          "caption": "The portal now reading Brunti Audiobook — 20 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/projects-menu-by-activity-desktop.webp",
+          "alt": "The Projects menu ordered by latest update.",
+          "caption": "The Projects menu ordered by latest update — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/projects-menu-by-activity-phone.webp",
+          "alt": "The same menu on a phone.",
+          "caption": "The same menu on a phone — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/about-link-cards-desktop.webp",
+          "alt": "The About page's link cards that started the idea.",
+          "caption": "The About page's link cards that started the idea — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-desktop.webp",
+          "alt": "About in section cards.",
+          "caption": "About in section cards — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/reader-section-cards-architecture-desktop.webp",
+          "alt": "The architecture document in section cards.",
+          "caption": "The architecture document in section cards — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/reader-section-cards-changes-desktop.webp",
+          "alt": "The changelog in section cards.",
+          "caption": "The changelog in section cards — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-phone.webp",
+          "alt": "Section cards on a phone.",
+          "caption": "Section cards on a phone — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/signup-desktop-reader-before.webp",
+          "alt": "The Follow the journey module in the reader, before the form showed directly.",
+          "caption": "The Follow the journey module in the reader, before the form showed directly — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/signup-desktop-reader-form.webp",
+          "alt": "The EmailOctopus form in the reader.",
+          "caption": "The EmailOctopus form in the reader — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/signup-live-desktop-reader-form.webp",
+          "alt": "The form on the live site.",
+          "caption": "The form on the live site — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/signup-phone-reader-form.webp",
+          "alt": "The form on a phone.",
+          "caption": "The form on a phone — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/signup-big-bloom-desktop-card.webp",
+          "alt": "The sign-up form as the whole big-bloom card.",
+          "caption": "The sign-up form as the whole big-bloom card — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/signup-big-bloom-phone-card.webp",
+          "alt": "The form card on a phone.",
+          "caption": "The form card on a phone — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/signup-big-bloom-tablet-card.webp",
+          "alt": "The form card on a tablet.",
+          "caption": "The form card on a tablet — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-desktop.webp",
+          "alt": "First check: journal thumbnails with a white strip under them.",
+          "caption": "First check: journal thumbnails with a white strip under them — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-desktop.webp",
+          "alt": "First check: the large view with the same white band.",
+          "caption": "First check: the large view with the same white band — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-desktop-3.webp",
+          "alt": "After cropping the empty rows.",
+          "caption": "After cropping the empty rows — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-phone-2.webp",
+          "alt": "The thumbnails on a phone.",
+          "caption": "The thumbnails on a phone — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/button-game-screenshots-gallery-desktop-2.webp",
+          "alt": "Button Game's new Screenshots gallery.",
+          "caption": "Button Game's new Screenshots gallery — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/live-button-game-journal-thumbnails-desktop.webp",
+          "alt": "The live Button Game journal loading its thumbnails from the server's media folder.",
+          "caption": "The live Button Game journal loading its thumbnails from the server's media folder — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-journal-thumbnails-desktop.webp",
+          "alt": "The live Morkahja journal with its screenshot rows.",
+          "caption": "The live Morkahja journal with its screenshot rows — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-screenshots-gallery-desktop.webp",
+          "alt": "Morkahja's Screenshots gallery.",
+          "caption": "Morkahja's Screenshots gallery — 25 November 2026. AI browser capture during development; not physical-device acceptance."
+        },
+        {
+          "src": "/screenshots/babuni-dev/2026-11-25/live-eldgrim-journal-lightbox-desktop.webp",
+          "alt": "An Eldgrim journal screenshot opened large.",
+          "caption": "An Eldgrim journal screenshot opened large — 25 November 2026. AI browser capture during development; not physical-device acceptance."
         }
       ],
       "credit": "Original visual records supplied by Babuni.dev; browser verification captures by the AI agent, archived at Babuni.dev’s request. Historical captures may show superseded designs."

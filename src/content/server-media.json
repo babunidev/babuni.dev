@@ -295,6 +295,1374 @@
   "bytes": 3552,
   "sha256": "746bde9906162ae2bfdc77079252798662812b5832826d4a815c17f8c9228e8b"
  },
+ "/screenshots/babuni-dev/2026-11-13/big-bloom-share-buttons.webp": {
+  "bytes": 164384,
+  "sha256": "178fe86444c69ae7fac9f37e7d55f40576015004db8ca66609ed7bdb3181548d"
+ },
+ "/screenshots/babuni-dev/2026-11-13/button-game-play-module-desktop.webp": {
+  "bytes": 77814,
+  "sha256": "a5cb2b08e60c46dfce30b5c58fd29606c8ec8831cfb8d844b93f0c0de007488b"
+ },
+ "/screenshots/babuni-dev/2026-11-13/button-game-play-module-phone.webp": {
+  "bytes": 53024,
+  "sha256": "77451f6bf8174b210f3250a8db78041a752a22fce8deab977245f52008d80ba3"
+ },
+ "/screenshots/babuni-dev/2026-11-13/deep-link-big-bloom-2.webp": {
+  "bytes": 21182,
+  "sha256": "c1dc82b0291b99cf899b286f329b627c677f059a85fee17876edfb58a7059057"
+ },
+ "/screenshots/babuni-dev/2026-11-13/deep-link-big-bloom.webp": {
+  "bytes": 17624,
+  "sha256": "cf5910909a86dc9300b6af87f51b0525de4f174e9a2f1bb0e69f944db441f642"
+ },
+ "/screenshots/babuni-dev/2026-11-13/deep-link-changelog-reader-2.webp": {
+  "bytes": 110604,
+  "sha256": "411a40d188b0f2ce3935ba4993e7140d0ec2610f17406676c01d838acf3ff786"
+ },
+ "/screenshots/babuni-dev/2026-11-13/deep-link-changelog-reader.webp": {
+  "bytes": 108706,
+  "sha256": "8d2d2224dac58a7b4ba368a798a1d783adbe684470d3409d84a1ff1c2feb4c03"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-big-bloom-desktop-2.webp": {
+  "bytes": 149298,
+  "sha256": "2012c8d9fdf9d7e8ec14c340bfb490df6f31bc3bf2b972327eeeeb578f9708f6"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-big-bloom-desktop.webp": {
+  "bytes": 83414,
+  "sha256": "ae4ca09bb084c42c214f06d9cae714cc01a7dcc24587c403f36127ff9611e267"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-big-bloom-phone-2.webp": {
+  "bytes": 54738,
+  "sha256": "1e4f3c4460294a54bcee77b775d15491f19731355da7e9cc51ed00ebfcc132b5"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-module-big-bloom-desktop-2.webp": {
+  "bytes": 166704,
+  "sha256": "95589b4db192895370b17db4eeec494cafc2fbe7131410b3718ffbb2184e446e"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-module-big-bloom-desktop.webp": {
+  "bytes": 139364,
+  "sha256": "6da10a74894d27d6cd1012dfe501a285066840d46550362dd25b32850ef65c49"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-module-big-bloom-phone-2.webp": {
+  "bytes": 53176,
+  "sha256": "cbac3141024a1628b2899649fcfe230dfbb57002138867388dca0dfc2b7d1f25"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-module-big-bloom-phone.webp": {
+  "bytes": 49668,
+  "sha256": "8aee5098465046f92a7c4a6a183b138e73181119671f3f816117392c07187e2f"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-reader-desktop-2.webp": {
+  "bytes": 45248,
+  "sha256": "cf6210324176f62c22366a432b661e97c87a0e2f37b11717867d300e004249a7"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-reader-desktop-3.webp": {
+  "bytes": 55938,
+  "sha256": "8e03764808ef069f51bd8a0c3fee80b8d04b35903fbba5873a37436919fd724e"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-reader-desktop.webp": {
+  "bytes": 85504,
+  "sha256": "4fb12bf6ea7b6882dab0d18bc7fd66b2cbec78721b265e30a4a961997e7b9b89"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-reader-phone-2.webp": {
+  "bytes": 18272,
+  "sha256": "fb2b8e4bbf96526427bfc647b1ab4e3781c7a5fb20cdf36eaa94123ead695e9b"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-reader-phone-3.webp": {
+  "bytes": 16772,
+  "sha256": "260b1b319be3506e2319d0aef2e71b6eaae472d966c6b1399ae20c73238a7dec"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-play-reader-phone.webp": {
+  "bytes": 47114,
+  "sha256": "25ea13b3402a1b7bd944e02726abfcb14ab2e470ab200165a8d61598f2609e57"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-small-bloom-desktop-2.webp": {
+  "bytes": 133218,
+  "sha256": "e943b42508dae58ed485f27a42dcb9d743c3d6b165971ca70abf5ecda1e51179"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-small-bloom-desktop.webp": {
+  "bytes": 87908,
+  "sha256": "9c681bae444f11363d4f5231247fa6951f9343e3004013ee397ee4da69011dba"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-small-bloom-phone-2.webp": {
+  "bytes": 57626,
+  "sha256": "3645b79295bd8917e4a35d000a49e9125f71be46cee95d997a1ec08e38a69f2f"
+ },
+ "/screenshots/babuni-dev/2026-11-13/grid-button-game-small-bloom-phone.webp": {
+  "bytes": 43940,
+  "sha256": "46041d736341fe6cf225e09e0d5485fa5a9d3ca5daffabb1563249f7c8a3f1dc"
+ },
+ "/screenshots/babuni-dev/2026-11-13/live-big-bloom-share-buttons.webp": {
+  "bytes": 158198,
+  "sha256": "e70eb05f9ad88dd0e3d9347e323d954b23da6506a944af78ea984c3be27761a0"
+ },
+ "/screenshots/babuni-dev/2026-11-13/live-deep-link-big-bloom.webp": {
+  "bytes": 19896,
+  "sha256": "9701a97deb9c7b229227d5229ba87b2a1d9568563a3b123d3499f5dd6132c9de"
+ },
+ "/screenshots/babuni-dev/2026-11-13/live-deep-link-changelog-reader.webp": {
+  "bytes": 120178,
+  "sha256": "03942bdb6ea45b6d57f36765eadc1f1ad064913b697745230eb7fb0b815dc4c0"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/big-bloom-share-buttons.webp": {
+  "bytes": 24276,
+  "sha256": "967338cf1652d6f8f57606addce6e8f234b9d770bd5f1913791af008f3639549"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/button-game-play-module-desktop.webp": {
+  "bytes": 12866,
+  "sha256": "c7a03399a90f3c12e1c3ace1e1b8c44f666642ff09083822d7c4b17ab91c5a2f"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/button-game-play-module-phone.webp": {
+  "bytes": 12244,
+  "sha256": "7316164c3fdfe340a4cd25819be24f986c0f9802ecdb6b138dfb0154a81645b3"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/deep-link-big-bloom-2.webp": {
+  "bytes": 3310,
+  "sha256": "3d0cc7a075e098659cd3348dbd55bc5d2359116851756889616340484bed389c"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/deep-link-big-bloom.webp": {
+  "bytes": 2862,
+  "sha256": "26072385570a24b02a0cb91aa419c50e1d92806d11344af066af1c13bc4aaa83"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/deep-link-changelog-reader-2.webp": {
+  "bytes": 16292,
+  "sha256": "b24765b76662214863f7404e79592267cf1130ba39c9c5bb9366a978b399a144"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/deep-link-changelog-reader.webp": {
+  "bytes": 16024,
+  "sha256": "60dd0d901d7e67bc800c3f42c04bc677e383033eb3ad20a30cdb384595a2e9d5"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-big-bloom-desktop-2.webp": {
+  "bytes": 25956,
+  "sha256": "4f5a8cc54c8fbfc6ff49ceea0cf9e9ef2282c456ef8e2ed719c3c3948d3b861f"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-big-bloom-desktop.webp": {
+  "bytes": 14022,
+  "sha256": "1cb5e1eaddcfcbbdc8d2f53bdbf3402f44dce506b7b7a87718b87d1500cf49d1"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-big-bloom-phone-2.webp": {
+  "bytes": 18666,
+  "sha256": "8367bcc7bd136cc6d165a4d63e7a59bca5f3937c95b6121806fc1d9e57adace3"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-module-big-bloom-desktop-2.webp": {
+  "bytes": 29668,
+  "sha256": "20b81f1d100af01d5dd5e18422c4349e538e21443ffe257f938c0a84390dea5a"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-module-big-bloom-desktop.webp": {
+  "bytes": 24456,
+  "sha256": "c923f0bc3114fdeeb2709638e3bb55aa317a4cf9daa7bb0da1c07cad5bd969b7"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-module-big-bloom-phone-2.webp": {
+  "bytes": 18380,
+  "sha256": "89ca58bf73d238d018bf8f403b52a6a5852a480bf7bb05c639e4ad1f54bb279e"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-module-big-bloom-phone.webp": {
+  "bytes": 17332,
+  "sha256": "7f7f8daf3b78084a4409ef7125b342afa225a1eb0dc9b6d5ae330988628bb27f"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-reader-desktop-2.webp": {
+  "bytes": 8502,
+  "sha256": "6c9f8cdc8c1ec1c01ed26a0a97a3aba3008add81187c19962d4658e859aaf91a"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-reader-desktop-3.webp": {
+  "bytes": 9988,
+  "sha256": "b10a394f4d7bb002716633b10857c960e58c913c973f368f64cbc6255bf75688"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-reader-desktop.webp": {
+  "bytes": 14488,
+  "sha256": "4f96bd63a10173fa035f565a346c3e8ee2137924d330f2685e7724e60c0d2cf7"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-reader-phone-2.webp": {
+  "bytes": 7086,
+  "sha256": "3d71fb49a66f382b3c9d2e19c78e7dfeac624bd730e2241f58ca4dcfc34bedc2"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-reader-phone-3.webp": {
+  "bytes": 6488,
+  "sha256": "05894690d173cb69c33580862552349e2fd756871e4d081517a6cb823102999e"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-play-reader-phone.webp": {
+  "bytes": 15378,
+  "sha256": "307c4cba56e35d03f16933dd3c33aa398d3852ba77bed0f448da791787f2698b"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-small-bloom-desktop-2.webp": {
+  "bytes": 21884,
+  "sha256": "ff9f40e5ebbeccddd085202edd128c093be94023dfc8b33e2c38ea7a31046d84"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-small-bloom-desktop.webp": {
+  "bytes": 14940,
+  "sha256": "e586ad05b5d735d1ef8e6395677ecf1b697180591751454a1ad350edd167abb3"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-small-bloom-phone-2.webp": {
+  "bytes": 19198,
+  "sha256": "ba7d696048240585b120a5fa372dd500b0e97e4be5a9a9d6d7d4d847a0056b57"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/grid-button-game-small-bloom-phone.webp": {
+  "bytes": 14476,
+  "sha256": "de740e286e3af086af568a078da73c421319f6f41020023a90a64c2da89e5cc9"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/live-big-bloom-share-buttons.webp": {
+  "bytes": 22858,
+  "sha256": "e1af277f1c2b446565604c4eeb0c7a1388ccbde170d187f37048669fc29486e5"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/live-deep-link-big-bloom.webp": {
+  "bytes": 3014,
+  "sha256": "abf73bba1fe5866b6ab7d2e48aca60a754bf10b89850c1fa6d7f7c45785fa249"
+ },
+ "/screenshots/babuni-dev/2026-11-13/thumbs/live-deep-link-changelog-reader.webp": {
+  "bytes": 17714,
+  "sha256": "f45d7a2c0541a6aefda9e0ee33a151ad9f8f5f35f79ac7f664f0f51cf4ca7747"
+ },
+ "/screenshots/babuni-dev/2026-11-19/classic-wow-addons-portal-standin.webp": {
+  "bytes": 96680,
+  "sha256": "983a82ac9c0757c1bfc53c158698b0b48de976d677cd12f616896393efc599c1"
+ },
+ "/screenshots/babuni-dev/2026-11-19/classic-wow-addons-portal.webp": {
+  "bytes": 273676,
+  "sha256": "06ca731f1e6a32d351f8ed7227546f5a0a0c259ba1ea55a6717499567ebd9f50"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-artwork-desktop-2.webp": {
+  "bytes": 92092,
+  "sha256": "ede02c1dc3aee53107c4eca9cceffac7a882164a8686c7541915cfff4b9daa6d"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-artwork-desktop.webp": {
+  "bytes": 93148,
+  "sha256": "bc5b126e924aff4c84f6bde9d5df90ecb0243c17a500294a97814dec0e06ebde"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-artwork-phone-2.webp": {
+  "bytes": 54408,
+  "sha256": "5c216860d95eb0cec1eaff403913ffc73da8e70c4dcab804850c22c5c8cd436f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-artwork-phone.webp": {
+  "bytes": 46314,
+  "sha256": "a008f4f37397f052e192b4cf67a24dc48e7f38032710ef709ae0c2d3b6e39d03"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-big-bloom-desktop.webp": {
+  "bytes": 51692,
+  "sha256": "63a0c112677da29471b08f71196f39c803d596ccd3aab3fab406de4b4977291f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-big-bloom-phone.webp": {
+  "bytes": 33802,
+  "sha256": "0b1a914941bd76995428bbb03b73b8fff5825f2e52fbd393bba3363c87dd59fd"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-grid-desktop.webp": {
+  "bytes": 118092,
+  "sha256": "1f4df8a27ba698b4b8a6adc143c1ac9cd911ec187aaa21416f77cc7a76ed7c0e"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-grid-phone.webp": {
+  "bytes": 61530,
+  "sha256": "36ae263226681d3db60153410429428b545ad3db8246c8fac314887242b909e0"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-old-link-desktop.webp": {
+  "bytes": 59848,
+  "sha256": "32a7c833b43784e79accbae60ed788d987d4dc9f5d1485772699752a7eb81769"
+ },
+ "/screenshots/babuni-dev/2026-11-19/collection-old-link-phone.webp": {
+  "bytes": 36522,
+  "sha256": "8cb0cdbc7860fc5c6e06a22c8c54b3b57c6ec5d3a137019b15d1869a66863c64"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-collection-artwork-desktop.webp": {
+  "bytes": 112742,
+  "sha256": "366971d86fd2a574feb49ebf32e10f6079fbb24a132ccbd6cd865849030a64dd"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-collection-artwork-phone.webp": {
+  "bytes": 52462,
+  "sha256": "498f6aa324879b932d89d4c104520ead7a2cb8a3a270b8401160c75c5c64fd70"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-collection-big-bloom-desktop.webp": {
+  "bytes": 66280,
+  "sha256": "f7c7ee47999275716ea1c67b6ad4cd71a15750f5dc1b01c911fc3e0c3e6e83ae"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-collection-big-bloom-phone.webp": {
+  "bytes": 32074,
+  "sha256": "f5f05382b5b76dc6b8b9587c70297aac5743868aa8a5878431ce8fe021575a3c"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-collection-grid-desktop.webp": {
+  "bytes": 118436,
+  "sha256": "0d696cd38d02d89ab9f4e62a6938cdcc73cf31dc4708653f437531125e4c5d6b"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-collection-grid-phone.webp": {
+  "bytes": 61626,
+  "sha256": "342c849b5057b35a5d1db25964bfde2e89e2237ed708483b5ec4b12d0a374b8f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-collection-old-link-desktop.webp": {
+  "bytes": 57760,
+  "sha256": "02b5bab41caadd32b7fcbe21539d2f61143912696a74a554e83dd352b1c2eb19"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-collection-old-link-phone.webp": {
+  "bytes": 37162,
+  "sha256": "df394e8b1f99912e8ed747a9fa6761da26219a7716e2730359bc256b8f361c1e"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-share-desktop-2.webp": {
+  "bytes": 85568,
+  "sha256": "cb258793df8a46b3c7d1f7b8b41a5d72acc75723f875ad96cd506f520cfba44e"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-share-desktop.webp": {
+  "bytes": 75114,
+  "sha256": "dec1e110ba6e82e465ee957fbb7f0373b342458c0a3d8adf398070fe2110a165"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-share-folder-document-desktop-2.webp": {
+  "bytes": 66262,
+  "sha256": "aa4969a535f1194395fcd209c5354d3cfde9b543346f6d11f03328a4f90eb2e1"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-share-folder-document-desktop.webp": {
+  "bytes": 67506,
+  "sha256": "d3d8140f36f71a5674cef20d95e0ba637bcdd64b974d6750036ef552719aa94d"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-share-folder-document-phone-2.webp": {
+  "bytes": 37440,
+  "sha256": "60fad3039b08d17de1e2eedfb2b5cb5719784f0d0e64572fd7ae7b752916f68d"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-share-folder-document-phone.webp": {
+  "bytes": 37270,
+  "sha256": "44322e602a7d45407d77678567b2a60aa423c1df79b0f295a7c3e3e9878a677c"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-share-phone-2.webp": {
+  "bytes": 49898,
+  "sha256": "8b655bbdb46af9757687138ac652d580638c9bd1bd23caebbbd8e6f0c1ff8433"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-share-phone.webp": {
+  "bytes": 49868,
+  "sha256": "a5069a697e2b505479cdf934b55944b3da2569a2617d359bbae31911e8438924"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-single-title-desktop.webp": {
+  "bytes": 93922,
+  "sha256": "58550600b63c19cc4d580e256b1cc29ea3869cec9faaa55117a1c87d4f63dc3a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-reader-single-title-phone.webp": {
+  "bytes": 48726,
+  "sha256": "45dbb1c1c7710ec1711b58e71b3c8b0bfe82f16dae0ff9e764037bfbfb353766"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-small-bloom-entries-desktop.webp": {
+  "bytes": 106192,
+  "sha256": "d9cadeb9c3dc02306cc97e7bbdd8ed502612e3359a812924ee3d3e7be39dbafa"
+ },
+ "/screenshots/babuni-dev/2026-11-19/live-small-bloom-entries-phone.webp": {
+  "bytes": 53808,
+  "sha256": "87c21e5c838f18ba24b6c9489651e2d59062a1be624d3f48af238ad2b33b683c"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-folder-icons.webp": {
+  "bytes": 257592,
+  "sha256": "d0707ee2e8d3f3e67c84d88910a011113d0de405bf1dfb4ff1169c6897ef5b6f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-icon-big-bloom-desktop-2.webp": {
+  "bytes": 95184,
+  "sha256": "4832e763858ec609a36b27e6edb844771d61a2e19850e14f705a84a97c42144b"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-icon-big-bloom-desktop.webp": {
+  "bytes": 129566,
+  "sha256": "7b4f564df8d5e8ffe79fc3e2021a263de49bae75a83adbb14e492f2eb85b72f2"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-icon-big-bloom-phone-2.webp": {
+  "bytes": 51078,
+  "sha256": "5e939660b6c5717b6241cdf78d3dab2a15287e5b6e8a082492ef7b9487ec3045"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-icon-big-bloom-phone.webp": {
+  "bytes": 53162,
+  "sha256": "e92b952dbd38b27fc24ada91ff54d293cab81d068f6ecd0ff3fe0751e37223c8"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-icon-reader-desktop-2.webp": {
+  "bytes": 75734,
+  "sha256": "fe902a4bb3f866b420ea3ee68c56b950a732b849a83c348cdbd85007974b4423"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-icon-reader-desktop.webp": {
+  "bytes": 81688,
+  "sha256": "5eb3251c1ef24a309d72a820ff9ce14d10813311042cdb6d5d81ea01ed18264f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-icon-reader-phone-2.webp": {
+  "bytes": 41396,
+  "sha256": "173b744932ffe88261534abd8493079ae0741d8cbe634961e41ab637e41016c2"
+ },
+ "/screenshots/babuni-dev/2026-11-19/project-icon-reader-phone.webp": {
+  "bytes": 44328,
+  "sha256": "6b5715fa2329b682b1a6ad004dea3d7749a324a401154d77b35566547f9a4ac0"
+ },
+ "/screenshots/babuni-dev/2026-11-19/reader-share-desktop.webp": {
+  "bytes": 82032,
+  "sha256": "4834f9680b894d88ef095822151e449d5e1cd00ce3ef96921095df4809e9ab61"
+ },
+ "/screenshots/babuni-dev/2026-11-19/reader-share-folder-document-desktop.webp": {
+  "bytes": 67020,
+  "sha256": "db6a19579f35b425251c15b32f618ceca453dc5a8415c079a6e889303706a57a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/reader-share-folder-document-phone.webp": {
+  "bytes": 37688,
+  "sha256": "c4209544b90a01d426e0abbd61707ba9f490f551d4f9e7a67817fead645d4ad2"
+ },
+ "/screenshots/babuni-dev/2026-11-19/reader-share-phone.webp": {
+  "bytes": 49920,
+  "sha256": "a454e044f9cddd692f0018bccd25c063efbe4b2cc3cfb55b9b3e34750e1f46d9"
+ },
+ "/screenshots/babuni-dev/2026-11-19/reader-single-title-desktop-2.webp": {
+  "bytes": 95408,
+  "sha256": "33a38011f132f3f49c08ec001866fbdef148488cf389b11b807c9dabaae93451"
+ },
+ "/screenshots/babuni-dev/2026-11-19/reader-single-title-desktop.webp": {
+  "bytes": 87560,
+  "sha256": "db8019be3d104110a1565abd0bbbb53affc1bbe9c3c863074ef504bcb1476ee0"
+ },
+ "/screenshots/babuni-dev/2026-11-19/reader-single-title-phone-2.webp": {
+  "bytes": 46024,
+  "sha256": "da364bb9112b7b870951d90d79914e6e724de931e968b0a6248de61050c9300f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/reader-single-title-phone.webp": {
+  "bytes": 45544,
+  "sha256": "f2c88c0a09aa964bc9909c7dc2be6e4341f9a129df36ed4468b48b74da061107"
+ },
+ "/screenshots/babuni-dev/2026-11-19/small-bloom-entries-desktop-2.webp": {
+  "bytes": 108956,
+  "sha256": "bfa9835776ff1f3113c9a7b3c106d7c8cda5291e464b255915ac4b3de93eee26"
+ },
+ "/screenshots/babuni-dev/2026-11-19/small-bloom-entries-desktop.webp": {
+  "bytes": 105590,
+  "sha256": "6454d2635b65ebe4662fa66c47daf69f32b4aa3aa2403b7844135acf4b52ae3a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/small-bloom-entries-phone-2.webp": {
+  "bytes": 50588,
+  "sha256": "c9176183a683d1aa6874c5c6e8f2be59a156cf5fb4c6bab25eff037350780c55"
+ },
+ "/screenshots/babuni-dev/2026-11-19/small-bloom-entries-phone.webp": {
+  "bytes": 49068,
+  "sha256": "e1abb451d477b98066602416c64a36a97e5eae5ec8bf728c364b3e97b81da8db"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/classic-wow-addons-portal-standin.webp": {
+  "bytes": 62062,
+  "sha256": "716f5f369ea5c1d55c7a000b3b962d9392b6c84989d03c6028c3ede6ee3ee7df"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/classic-wow-addons-portal.webp": {
+  "bytes": 56852,
+  "sha256": "c9b42b0557b251f148b6cad78a89c802d3edbda750296a4d777db5b80c779dbf"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-artwork-desktop-2.webp": {
+  "bytes": 14968,
+  "sha256": "be0d0cd5b24ebdf4a1bcf97227bdc13e4d8bf1ea85b663cb817174ccb3608443"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-artwork-desktop.webp": {
+  "bytes": 15440,
+  "sha256": "2e9f3296be42b0a5ca29bf02dca0d447be75524d6c2e6ab95ecaaf216afd7f1b"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-artwork-phone-2.webp": {
+  "bytes": 17512,
+  "sha256": "f1bce522b01361faa51d05aa2d4d4832dfc21bc56eabb884d0a9c9315c709114"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-artwork-phone.webp": {
+  "bytes": 15442,
+  "sha256": "85a1717d86df22b205cd4c317db818b22fbbd9ca0810183048e7c4dc6de1f3e9"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-big-bloom-desktop.webp": {
+  "bytes": 8842,
+  "sha256": "e25ea5c8d8cf6fc49b23f9397069e76476f2703c1f4bd05e033c863a510c509a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-big-bloom-phone.webp": {
+  "bytes": 11220,
+  "sha256": "d76efc3c5675fec40c75ef7b42cdb4e9f4144f5f0bb7e862b0155567f61ae174"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-grid-desktop.webp": {
+  "bytes": 19058,
+  "sha256": "4342aef26dbf0890f0fb34a3fca56998b0da56c4a59b2a6aacd312d6f5d94aac"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-grid-phone.webp": {
+  "bytes": 19166,
+  "sha256": "ed96f925716c8a10ba81e8a0c5de0b6baca55ace1d39e968f8ebc7ca9b22193d"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-old-link-desktop.webp": {
+  "bytes": 11824,
+  "sha256": "8fda5e8807e105124a4c6736e54589738328f7f02b0e18edb5b4ca37c6e3380f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/collection-old-link-phone.webp": {
+  "bytes": 12946,
+  "sha256": "b09208c190cbfdd25e66232289a50460d4ab815e9965dd9eee812ec5975f7610"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-collection-artwork-desktop.webp": {
+  "bytes": 18242,
+  "sha256": "0fae35cc1959353b26b80663860bc9ce9f608bb46cf4453e92ece91c7a630820"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-collection-artwork-phone.webp": {
+  "bytes": 16834,
+  "sha256": "04547366955703fcd67e37ae613e89fbdca532ca9c52d8befdf003f90bf79de0"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-collection-big-bloom-desktop.webp": {
+  "bytes": 11332,
+  "sha256": "9711802f1f0a6d92b2e443a57ef705311ceac20ab070a7be1fe4f6006a4805bd"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-collection-big-bloom-phone.webp": {
+  "bytes": 10768,
+  "sha256": "afcbd69f2313a5a6e6e04c512d114de772b2a611e0a47b8c200f31b3bf94bbd1"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-collection-grid-desktop.webp": {
+  "bytes": 19398,
+  "sha256": "0861597ea48786767a65eac86e75bfd846e37272742ab4c7a671dae39e69519c"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-collection-grid-phone.webp": {
+  "bytes": 19290,
+  "sha256": "41a304004d0ea6816c2db96132b51b2412abf6b2a4c7b489662a993b70a16f58"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-collection-old-link-desktop.webp": {
+  "bytes": 11310,
+  "sha256": "eef7df6988c0672dc5c3a09b7507d33c1ab08c09ad4c1e250894e1892568f1bf"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-collection-old-link-phone.webp": {
+  "bytes": 13042,
+  "sha256": "d8ff1f56352e2bf46c7a4e0f1d14ce6e400c1256bdc795203a8c443446ae3fd7"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-share-desktop-2.webp": {
+  "bytes": 15260,
+  "sha256": "7dbfc46cd681799ebd4fbf305953fe33c604a5e5cafcaa9c35d98643eec31427"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-share-desktop.webp": {
+  "bytes": 13660,
+  "sha256": "198d9243bb3212e59f2f86ae166515d10da6a8c329e97fbb9b9dcac1dc22a54a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-share-folder-document-desktop-2.webp": {
+  "bytes": 12666,
+  "sha256": "7726bebdd58aefe1cdacac899afd715a9b266cfff179e84826a9a67d1519ad64"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-share-folder-document-desktop.webp": {
+  "bytes": 12828,
+  "sha256": "5da7b46ae0faf2e928d30c268800eb67167e916ce58fa4407c92b571ef05d766"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-share-folder-document-phone-2.webp": {
+  "bytes": 13814,
+  "sha256": "12c98d9e42e7844405c8185a0a888ca6acfd55880aca20f59c1ae3b4da8142a2"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-share-folder-document-phone.webp": {
+  "bytes": 13784,
+  "sha256": "5a1ba377f2f6b5d47342ff47ab120ba46597e19bc7a4206ae4d29d49f61c388a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-share-phone-2.webp": {
+  "bytes": 16686,
+  "sha256": "6cc72f5e24e1aaa8408b19900c99275dac44f028f36caed07c15d0b868dc1eb1"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-share-phone.webp": {
+  "bytes": 16674,
+  "sha256": "8911cf222614e3a3c51c66a1c2c5b1184f4b5c3ece5d9aa432a32884183e584a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-single-title-desktop.webp": {
+  "bytes": 17310,
+  "sha256": "b7b7f7ad5321dc902fa4c5b2b06bbb2ffa825ba6f79ef16859e601d8a22ee0e7"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-reader-single-title-phone.webp": {
+  "bytes": 16278,
+  "sha256": "25127131263075355665d7de0066dfbd6d5cacc11d6043959a476011cc004d51"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-small-bloom-entries-desktop.webp": {
+  "bytes": 17290,
+  "sha256": "8818230085c5b7227eea2f8c01857326e1c43fba22e62fb3dd2810eb530cd9c0"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/live-small-bloom-entries-phone.webp": {
+  "bytes": 17506,
+  "sha256": "af6861548bfa7d2a6ae61ee2aeb1e4d7ec882a3bda1670103b36c19d1f13687f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-folder-icons.webp": {
+  "bytes": 52108,
+  "sha256": "295ff6ae2a00c2cb267775dd801ceb55fa71ed367b8077b41383fc76530082ec"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-icon-big-bloom-desktop-2.webp": {
+  "bytes": 16990,
+  "sha256": "c9569d0c21dc67bb6a3252c2fda3011f8d1332ee207e54d6ffc313ebb91cea6d"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-icon-big-bloom-desktop.webp": {
+  "bytes": 22542,
+  "sha256": "6042510e019318338fd1a7b07e86c9ee820d651a90e2498cad7bf9a1eeeae1de"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-icon-big-bloom-phone-2.webp": {
+  "bytes": 17644,
+  "sha256": "9baa0d4fb22da2682a9a8ec25f77935680652795f5a2584e5fa8006080667949"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-icon-big-bloom-phone.webp": {
+  "bytes": 18056,
+  "sha256": "3872bf08d19adf8cc1ad47655a6d6616676d80fffc6e4536387457912c38369f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-icon-reader-desktop-2.webp": {
+  "bytes": 14094,
+  "sha256": "79888af5d7c907c06420a11705b13911c897a428900814556266c6c18a08879c"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-icon-reader-desktop.webp": {
+  "bytes": 14900,
+  "sha256": "23f973fd127fb12993d2461cb8f628e11169dabcc2be27be88fc6e87765f277b"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-icon-reader-phone-2.webp": {
+  "bytes": 14128,
+  "sha256": "09ae64c309e61f34aa82e8773c9e6bf909348e0b7b55403edbe69f1788103dc8"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/project-icon-reader-phone.webp": {
+  "bytes": 15280,
+  "sha256": "28eeff6072aaca6c2a20ac3c3df8e04746b749a1c4c284c26d0d0c99161ca90f"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/reader-share-desktop.webp": {
+  "bytes": 14666,
+  "sha256": "cadb29605f3b3638f45c7820d08b2db46f3bcc1c6cda32486d9a0ca762c7f54a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/reader-share-folder-document-desktop.webp": {
+  "bytes": 12832,
+  "sha256": "a7bc0514b626def1bdf240c8188b66b4706a277628045d0b6dc97fa160884f2a"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/reader-share-folder-document-phone.webp": {
+  "bytes": 14064,
+  "sha256": "5c70b09142acb4c809fa7db7138509dc95e1ab952583168f0eca0f221881cce7"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/reader-share-phone.webp": {
+  "bytes": 16672,
+  "sha256": "4a71fa27f64e0f00bfa62bc2eefa0275fe3ec8e7d9ddca112aa37ce47c0dc5fc"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/reader-single-title-desktop-2.webp": {
+  "bytes": 17796,
+  "sha256": "9297a0b536028ae66a78d4f037b83c5bd521d71ad7a53c44ef2d2fb64ab9ff61"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/reader-single-title-desktop.webp": {
+  "bytes": 16272,
+  "sha256": "64024988231aee1d2400b09b24472d0d3aef9a3ed49457c8ad22cbb790f6fa93"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/reader-single-title-phone-2.webp": {
+  "bytes": 15438,
+  "sha256": "fb8527ff28e470b723205a2643c014392a562ad8d391be3c10c9cf3d5cc7990b"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/reader-single-title-phone.webp": {
+  "bytes": 15236,
+  "sha256": "63b1ba8e16033059c08aa5452b8f574b9ec4e9f463a56527f0d4fe4e11a63a9d"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/small-bloom-entries-desktop-2.webp": {
+  "bytes": 18110,
+  "sha256": "ad84f20d41e07057316720712e43e41ad8b982975c8724ab61f1b105415dd0d9"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/small-bloom-entries-desktop.webp": {
+  "bytes": 17410,
+  "sha256": "63d1b6e3d87762bf3b893a045ac6be153af5626f2da1744ee277abc8a105ba95"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/small-bloom-entries-phone-2.webp": {
+  "bytes": 16756,
+  "sha256": "03b3bcaf55ac8b46bd8136cdf80c60defbd54f96a3c1f3ecdd20d06a10b0fc61"
+ },
+ "/screenshots/babuni-dev/2026-11-19/thumbs/small-bloom-entries-phone.webp": {
+  "bytes": 15886,
+  "sha256": "bb956444dae5d0555ed21b6f96d757741e59e7e47b64d3b1b574b6b692f81f2c"
+ },
+ "/screenshots/babuni-dev/2026-11-20/brunti-audiobook-rename-phone-2.webp": {
+  "bytes": 52532,
+  "sha256": "6a7d5b2fc6f772e21e27cc678d9351029382030e32651f8e4529d242d5db6306"
+ },
+ "/screenshots/babuni-dev/2026-11-20/brunti-audiobook-rename-phone.webp": {
+  "bytes": 47962,
+  "sha256": "a746e6717aba50795b47d437a996220cc239f6565be0249a8d5cd8101216884e"
+ },
+ "/screenshots/babuni-dev/2026-11-20/brunti-audiobook-rename-small-2.webp": {
+  "bytes": 132746,
+  "sha256": "a08ad5596de9f6638902171db0e34ae51012ca123ec3f7faaedd7fb696d663b8"
+ },
+ "/screenshots/babuni-dev/2026-11-20/brunti-audiobook-rename-small.webp": {
+  "bytes": 130982,
+  "sha256": "4d622fa0050bb67bc9e44811a766492a9e92631edc097be8a07202c353852d50"
+ },
+ "/screenshots/babuni-dev/2026-11-20/grimnir-listen-big-bloom-2.webp": {
+  "bytes": 149800,
+  "sha256": "c656ed934b8d963425a3db5eeb4c55a9fb71a97fab9ebc46c919961e15761ec9"
+ },
+ "/screenshots/babuni-dev/2026-11-20/grimnir-listen-big-bloom.webp": {
+  "bytes": 83138,
+  "sha256": "077f220c6cdd9f84f3c913b28653c7eb3530c1ca433ac7474d5e9fb4c6baa1aa"
+ },
+ "/screenshots/babuni-dev/2026-11-20/grimnir-listen-phone-bloom-2.webp": {
+  "bytes": 51118,
+  "sha256": "fab02b61eb8ea9bda63156559dcf86109226fa9c7e208451f3bce9d537ea5dec"
+ },
+ "/screenshots/babuni-dev/2026-11-20/grimnir-listen-phone-bloom.webp": {
+  "bytes": 40850,
+  "sha256": "f6d5022079e33b71a4dea5d7fb8fcee94abe91bd53855c374ff2f55b261f019d"
+ },
+ "/screenshots/babuni-dev/2026-11-20/grimnir-listen-small-bloom-2.webp": {
+  "bytes": 129870,
+  "sha256": "15b6b175839789185a662630a225ad744d536838f6df4afc4273c0ddc293242a"
+ },
+ "/screenshots/babuni-dev/2026-11-20/grimnir-listen-small-bloom.webp": {
+  "bytes": 82238,
+  "sha256": "2dff26716fc007105d3b71676a3a0512f45cd5f6571cd382b881a1d5330dd60d"
+ },
+ "/screenshots/babuni-dev/2026-11-20/grimnir-portal-art-phone.webp": {
+  "bytes": 45712,
+  "sha256": "d1d574f9f8744b6d44f0f18e7d345b21dfe71491ccebeec2ffc7a68a764d797e"
+ },
+ "/screenshots/babuni-dev/2026-11-20/grimnir-portal-art-small.webp": {
+  "bytes": 133388,
+  "sha256": "a30c395cf18148c34d2bca3c0a4875f75e0b9de3f304233853edec95fb8f4fd6"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/brunti-audiobook-rename-phone-2.webp": {
+  "bytes": 17914,
+  "sha256": "b20a403667c72b7a03cd76b555c0d28d19cf5bfe18eb8c92fa2209802f54fc00"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/brunti-audiobook-rename-phone.webp": {
+  "bytes": 15740,
+  "sha256": "75310c48dfb26d742567f0c2a9ccaf2967b951a7c78507558bd280719fbbdeb6"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/brunti-audiobook-rename-small-2.webp": {
+  "bytes": 21710,
+  "sha256": "5145ce718a78f60b33195a573f35f7e096a9bb0ac6b39e5c3af06043ee635a2e"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/brunti-audiobook-rename-small.webp": {
+  "bytes": 21388,
+  "sha256": "f0d91bb9be47e8206d0d87d8a32aac31eb4060026cc1439b7843466e9b0bd400"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/grimnir-listen-big-bloom-2.webp": {
+  "bytes": 26246,
+  "sha256": "499a2b9ab196ace07b3ec830bf521c266312db6f1a77e7a28ab17a7d5925cfaa"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/grimnir-listen-big-bloom.webp": {
+  "bytes": 14338,
+  "sha256": "865184eee42c9a75322bded568886cf6d0c3af7eb685ffd6ccb839f2fb20f45c"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/grimnir-listen-phone-bloom-2.webp": {
+  "bytes": 17008,
+  "sha256": "651b8d5ec10e3dd60307fa56d8acac580bd5ee69bc4893cb52b9d0b394b5b177"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/grimnir-listen-phone-bloom.webp": {
+  "bytes": 14246,
+  "sha256": "5bcf451d65ee2486f111395f89b04c4f59060c2632ec39e5a89a11f57ae95a96"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/grimnir-listen-small-bloom-2.webp": {
+  "bytes": 21516,
+  "sha256": "be92cf4e858aa2bf90efc3dc926b86d59d1f54a5df370d9702f23fd4315f7236"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/grimnir-listen-small-bloom.webp": {
+  "bytes": 13964,
+  "sha256": "604f89317d67a115733c4ba16d6289068d6194f2e37de68090924b551c6fcd47"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/grimnir-portal-art-phone.webp": {
+  "bytes": 15126,
+  "sha256": "8f63f3e7c7f71928ac42132fa1eac8215d4dfbd525c881fe593d9b19c848788a"
+ },
+ "/screenshots/babuni-dev/2026-11-20/thumbs/grimnir-portal-art-small.webp": {
+  "bytes": 22374,
+  "sha256": "8ed0527340de15ffacbffcad3413d3f0fdd60d67a267323cbbc263be317333a2"
+ },
+ "/screenshots/babuni-dev/2026-11-25/about-link-cards-desktop.webp": {
+  "bytes": 83092,
+  "sha256": "d7cb8f03797a4b7f4978de70e8fa46c2aff8c06fe838e5648325b7558752b44d"
+ },
+ "/screenshots/babuni-dev/2026-11-25/about-link-cards-phone.webp": {
+  "bytes": 96250,
+  "sha256": "bade709778830b37fcc5ac495f9139c82265a5f51ebf25fe4c1c5b55e68a49c5"
+ },
+ "/screenshots/babuni-dev/2026-11-25/about-portrait-heading-desktop.webp": {
+  "bytes": 122044,
+  "sha256": "ab0d3b31812d00642aaa49cb4a90d96d3e08143d1a4a66e4061f0b1c07204d35"
+ },
+ "/screenshots/babuni-dev/2026-11-25/about-portrait-heading-phone.webp": {
+  "bytes": 169054,
+  "sha256": "b3b3f945d8e8bfa417c6720cceb4b72f76a9931cc897b7e4c2b2a2466afa80a9"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-desktop-2.webp": {
+  "bytes": 27852,
+  "sha256": "89478f02c0929dd11ad050881ada1b444acc5d6c03cb5bb6f3c4f0708ff1ce69"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-desktop-3.webp": {
+  "bytes": 24510,
+  "sha256": "b12bf98c2047872dedf65fb56dd7d53daaf7ace20d18a7b057d5b442b86fdf46"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-desktop.webp": {
+  "bytes": 27960,
+  "sha256": "708a2bf12c914b3a6acd2d522829e712f72c147523974e827f6c832e52e4dea1"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-phone-2.webp": {
+  "bytes": 34236,
+  "sha256": "2ada473286c4b13cc6c7d5f75ec32146f585b925a057dd0f1dd681a6fd4b9eef"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-lightbox-phone.webp": {
+  "bytes": 32690,
+  "sha256": "0146cce112b9b7ae1db530248305c503ccce4937dc7b357857bce6172ead1f35"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-desktop-2.webp": {
+  "bytes": 105942,
+  "sha256": "597e729094f6341747a6c74fa1e5464bacb225933197279d0fd45f841153f76e"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-desktop-3.webp": {
+  "bytes": 84324,
+  "sha256": "31addac5cd8a0ffc82793d930291ee7dbc7cba7e0f486bdd7f9cbeecf2406b1a"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-desktop.webp": {
+  "bytes": 104170,
+  "sha256": "ae10018c0b04ef94bfc15577024f51b8ccafc4c0d326b3654d168ab5888f3a84"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-phone-2.webp": {
+  "bytes": 92490,
+  "sha256": "c47308ac3f78d84c6d4c89a79e16971c4aa2b8481d443d9e08e6708e5f3f299e"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-journal-thumbnails-phone.webp": {
+  "bytes": 94892,
+  "sha256": "2a77958500bfef5f6e0eb525a6e607068a8a877d7cd8085f564ba9b81af51831"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-screenshots-gallery-desktop-2.webp": {
+  "bytes": 46484,
+  "sha256": "30b8d1f782009fbd4d22e23081d424189e31929f242efa649e2f383df1afe7a2"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-screenshots-gallery-desktop.webp": {
+  "bytes": 37044,
+  "sha256": "3428398563d9cba2280bcf0924b27696ba0208bdd823171fc39a80644c970a77"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-screenshots-gallery-phone-2.webp": {
+  "bytes": 51212,
+  "sha256": "30969735c1dedeced6e3dc5b668f45a4a05ff6184ad3d97ca0a54c4863217568"
+ },
+ "/screenshots/babuni-dev/2026-11-25/button-game-screenshots-gallery-phone.webp": {
+  "bytes": 46694,
+  "sha256": "5d462ea679fbd4869416446da69c57dfd92b302d516dc81ff69f0bf6daa259c9"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-arcanitebrothers-journal-lightbox-desktop.webp": {
+  "bytes": 35216,
+  "sha256": "81eab966d4585a41bfe0fb14860071969ac0ce940063b5e04cbe0b3d750bd394"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-arcanitebrothers-journal-lightbox-phone.webp": {
+  "bytes": 35528,
+  "sha256": "53b05b5048185dd66eb6994dad0c4a752fafe4160666add6a0654bb6421975bd"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-arcanitebrothers-journal-thumbnails-desktop.webp": {
+  "bytes": 78194,
+  "sha256": "d0b1f62aaadf45d114dce29fa96b0ff7b73709223a629555d670bc3581e5e469"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-arcanitebrothers-journal-thumbnails-phone.webp": {
+  "bytes": 86308,
+  "sha256": "48c8ce07450831a6dae02d7e5b2e09a6c650a64f62baea83ec2aadcbfdc47bfb"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-arcanitebrothers-screenshots-gallery-desktop.webp": {
+  "bytes": 52602,
+  "sha256": "c4927ced83900ea9860a564a7617dbcf46156b85660d6c358be58b35cbd61d7b"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-arcanitebrothers-screenshots-gallery-phone.webp": {
+  "bytes": 60256,
+  "sha256": "750859cc119991383ea8fe873fbdc573b7d3cf2ae51e93fe40a2194d4cf99421"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-button-game-journal-lightbox-desktop.webp": {
+  "bytes": 25076,
+  "sha256": "a03dace9cb2ada1c8b66ff870853d3b24a1c4c4e3b47177349bf6711635a000b"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-button-game-journal-lightbox-phone.webp": {
+  "bytes": 35252,
+  "sha256": "af7f70828fce007d8cfe0f6af021c84832ee256c38f828e15ed2586732f11ec8"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-button-game-journal-thumbnails-desktop.webp": {
+  "bytes": 105680,
+  "sha256": "71006a4e7d9931ece6f9e082fab98fb14ec9d1c52f53d36daa1e6fb3b70a030a"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-button-game-journal-thumbnails-phone.webp": {
+  "bytes": 97800,
+  "sha256": "ceb779f9b90fde93413f49238709c607145c8b712599f5e2408f1168ffee9748"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-button-game-screenshots-gallery-desktop.webp": {
+  "bytes": 47004,
+  "sha256": "3a3a6b2ca51b7ad703acbb9a4ef5c9564cc74465b0b5070904629a419fa6da23"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-button-game-screenshots-gallery-phone.webp": {
+  "bytes": 46782,
+  "sha256": "e070d627ce139c89f2f5909ec5c4db73675c2c37e7eeef787c9d4905411e905b"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-eldgrim-journal-lightbox-desktop.webp": {
+  "bytes": 91784,
+  "sha256": "990149f1fab9b0807fbd7e9886f01b093c1a05318699cfbc2e61dc00156b12ff"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-eldgrim-journal-lightbox-phone.webp": {
+  "bytes": 62392,
+  "sha256": "91fb496d3d5b1b2f669aa41a952c3f7579ab05cc1d245068f5f3920b72d6590c"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-eldgrim-journal-thumbnails-desktop.webp": {
+  "bytes": 135800,
+  "sha256": "bec6858d957dcc65e36ce8b15177ee9571e9d1d37d0b62146e9ee2ec027aa9df"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-eldgrim-journal-thumbnails-phone.webp": {
+  "bytes": 103040,
+  "sha256": "bbb37c34ac0a2246db5e21ba58ddb46c0710fdbda3ce116a207b1246c28cd216"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-eldgrim-screenshots-gallery-desktop.webp": {
+  "bytes": 43538,
+  "sha256": "5ce3acb4f170a2cdd93fa234d7da1264726c74478c8ae8bdf0b9b35860b5e3f2"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-eldgrim-screenshots-gallery-phone.webp": {
+  "bytes": 81192,
+  "sha256": "ca91993973996b1981a4471ffdb68db965a93f19f70fc9a512d854e8df83947c"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-journal-lightbox-desktop.webp": {
+  "bytes": 80854,
+  "sha256": "e92fbbf2768cbbb6a415d0c5c3ed5a88a8b5479d7febe750fdc0d9de973f6cdd"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-journal-lightbox-phone.webp": {
+  "bytes": 55256,
+  "sha256": "b9199ef670182be80499e11102fd94653718c299dc7236c887d1fd1b186f9a4c"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-journal-thumbnails-desktop.webp": {
+  "bytes": 104344,
+  "sha256": "94729a559493b6cf792855a5dd6abe48d02b5d1b520b6cfa01f0f819190ad9d9"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-journal-thumbnails-phone.webp": {
+  "bytes": 96558,
+  "sha256": "e25eb745455ce8519ff7744f35c56a7a5bd8ed9b95c27873e939de8889bbde02"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-screenshots-gallery-desktop.webp": {
+  "bytes": 49620,
+  "sha256": "e7ea0ca99615be038cd33c064184cfaae9a023c12fc02b27c97b13bf4adbb5f4"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-morkahja-rpg-screenshots-gallery-phone.webp": {
+  "bytes": 78900,
+  "sha256": "b9b9a7401c739219b6c03c1fdee626c4b9a0d3c21aecffd3e4e7fa6cc8019363"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-rocket-game-42-journal-lightbox-desktop.webp": {
+  "bytes": 42706,
+  "sha256": "637629e00da4da03335e54cbf321e39d2218d02ea8ddac6812ad71d4f146ac15"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-rocket-game-42-journal-lightbox-phone.webp": {
+  "bytes": 43718,
+  "sha256": "caaffcb885c4b4649b662175495e2d3d5ae2b516b9fa1233925492eabe9475b0"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-rocket-game-42-journal-thumbnails-desktop.webp": {
+  "bytes": 125830,
+  "sha256": "1e3f327ed21d3a69ab5e8d02620e05379c4124fe207f16abaea2d180a4bbeaa5"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-rocket-game-42-journal-thumbnails-phone.webp": {
+  "bytes": 93186,
+  "sha256": "23ea9ae44203bb45095592d54e30d6b75b3afb3af3cd1be88fede157c74d8eac"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-rocket-game-42-screenshots-gallery-desktop.webp": {
+  "bytes": 57602,
+  "sha256": "6f2a173ca8f664d21f84e0b85471e367e98038ac840d3b0ec2312438d2f83691"
+ },
+ "/screenshots/babuni-dev/2026-11-25/live-rocket-game-42-screenshots-gallery-phone.webp": {
+  "bytes": 67632,
+  "sha256": "73a58aaa0f4757a64d81a940547ede04ca19fb7a7db67cde6565b51abc1a3460"
+ },
+ "/screenshots/babuni-dev/2026-11-25/projects-menu-by-activity-desktop.webp": {
+  "bytes": 129362,
+  "sha256": "e4bcd297bf46f58777e0b316a45dedc3730d5293f3a187e244e850a267356cd1"
+ },
+ "/screenshots/babuni-dev/2026-11-25/projects-menu-by-activity-phone.webp": {
+  "bytes": 84728,
+  "sha256": "329405a15b2d8290a854f70604c907bb03bd3083ecb4c4e9433e729fa02a69e1"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-desktop-2.webp": {
+  "bytes": 105370,
+  "sha256": "620d90a4312955c3c176c0e1736daa5565204ad9ee2a09e655b171b2293230a7"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-desktop.webp": {
+  "bytes": 103480,
+  "sha256": "62fc730799ffd94ad3f208517934657d505f611c8d0f539660dff1dbe2e530ab"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-links-desktop-2.webp": {
+  "bytes": 104240,
+  "sha256": "3c1fa2bca21461a707cbc02e750833dc656843245e8261e1ad7d195fbecc37a2"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-links-desktop.webp": {
+  "bytes": 102704,
+  "sha256": "ae2b21e497ab09c8b0b27208c5b8d7fbd2675d9fed6d4ce10c7ce18faa1b2256"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-links-phone-2.webp": {
+  "bytes": 108376,
+  "sha256": "9f51097d16be404b558764fb9b177e8d08f651b234804fa50c4e11dbe58e3251"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-links-phone.webp": {
+  "bytes": 108396,
+  "sha256": "809226dd4dc04669e785bee84631d70f6fd23f19e496df153a3cd7287deb225f"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-phone-2.webp": {
+  "bytes": 126252,
+  "sha256": "d08020c31306a06cfa9d2de25d9b23f088a033f50c4e55f75f09d3b9974658d1"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-about-phone.webp": {
+  "bytes": 126616,
+  "sha256": "f70e6ccbfa22a65f579bb54413a1ae3fcb0ef076dab1fb463f836f0a6b986456"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-architecture-desktop-2.webp": {
+  "bytes": 137038,
+  "sha256": "458732aecdaeddfb278ac1f8bfb40310e75b3e859dfa515dd7ecd9346151147d"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-architecture-desktop.webp": {
+  "bytes": 79184,
+  "sha256": "f85313c9a08e3a8f70d7b6bc7933ac413ca841d36550bd3606525e3b8cf6570a"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-architecture-phone-2.webp": {
+  "bytes": 102992,
+  "sha256": "6ece746271ba5b85665927554c856f26d1c1c6f833063f8e6127e7ede41f3f70"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-architecture-phone.webp": {
+  "bytes": 40162,
+  "sha256": "564cd7cb4fb776681067a3616da7f554180a5d89bea7096b3e826300bded56b5"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-changes-desktop-2.webp": {
+  "bytes": 116684,
+  "sha256": "80e6293ca0545f5f492ba48395cf0886d9a51a228f40c44779e30a84725aa004"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-changes-desktop.webp": {
+  "bytes": 79720,
+  "sha256": "782601b84a93d56c1181aee9aad4bbb9ea9bfa52baa7f3a3d34e0f4b63d51867"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-changes-phone-2.webp": {
+  "bytes": 89212,
+  "sha256": "04b741c43fafd7f069eb6b6c462d637af62ba66420e94edd95e7ac8e3f3157fd"
+ },
+ "/screenshots/babuni-dev/2026-11-25/reader-section-cards-changes-phone.webp": {
+  "bytes": 31302,
+  "sha256": "4b65f5385261adeba450aa91498bbc6cad8b730ee9039055be4b890aaedf1226"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-big-bloom-desktop-card.webp": {
+  "bytes": 26006,
+  "sha256": "b0534bf13a1889b7b6fbd93b86846a09a7df1682c63613ec0da222356a9af9cd"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-big-bloom-desktop.webp": {
+  "bytes": 81350,
+  "sha256": "a74676391a58392589f46c6a97d1f20fa7f8209d9b2aad8905a3cf82712e892f"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-big-bloom-phone-card.webp": {
+  "bytes": 29088,
+  "sha256": "4abb2e11e96147d6ec0ff89b3da0bfe3cda4f40602211ceb7a2299dd846802fd"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-big-bloom-phone.webp": {
+  "bytes": 98418,
+  "sha256": "174bcda634972356a4f8d599533f610aa70f33934e36676e95c97e82862fdce3"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-big-bloom-tablet-card.webp": {
+  "bytes": 21006,
+  "sha256": "11c3c9459323941b5f58d1ffb71464ec723e2907a510268c69e29b7aa7fff0fa"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-desktop-big-bloom.webp": {
+  "bytes": 103486,
+  "sha256": "0fe6f66a64ee817960d0e05bd6d07367cd0d504717c13eec6cc3aeac932f1555"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-desktop-reader-before.webp": {
+  "bytes": 18044,
+  "sha256": "034463920aea764ef51da1e2dae075b283958ea6a2ab6571fbc099008950d542"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-desktop-reader-form.webp": {
+  "bytes": 71750,
+  "sha256": "de1fef3652b3cda1d4b67b0e10d5f80c068cf08845c6e9b26041e3a20421b4d0"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-live-desktop-reader-form.webp": {
+  "bytes": 81726,
+  "sha256": "f61e165318eb5880df5d4f40d8601a86f7fd0201af8c5a1dd32b617948e5b7dd"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-live-phone-reader-form.webp": {
+  "bytes": 72626,
+  "sha256": "6bf37893a4ad07962414dc81171333e58b823c315cc72a3c6081b1e54a5c878a"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-phone-big-bloom.webp": {
+  "bytes": 96228,
+  "sha256": "8b66571c1973ee517a2e46a214f8ea7717449d95f1ab74e48b43b5463cd3d9ec"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-phone-reader-before.webp": {
+  "bytes": 37618,
+  "sha256": "2f4602917b01466701c4ec58acd4d6eced77622662142f587783873706ad9191"
+ },
+ "/screenshots/babuni-dev/2026-11-25/signup-phone-reader-form.webp": {
+  "bytes": 64382,
+  "sha256": "f76dad0fdc2bb252a59960cbd17218254cc2a8b22fd17c11f544f013d0e6845f"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/about-link-cards-desktop.webp": {
+  "bytes": 12638,
+  "sha256": "09bd7686b3f9d98d4b159b472a5bbdff71cc829f5e90a4d2e85e7f7b4f5f9bd7"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/about-link-cards-phone.webp": {
+  "bytes": 14146,
+  "sha256": "336c429079691e6065414280ebd62b26c39882e3117bbe3385a95190ec5c0300"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/about-portrait-heading-desktop.webp": {
+  "bytes": 17148,
+  "sha256": "1ac15718548e0bcd2a3b2db8de41f21c0618b26570e81344c6157ac455af999b"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/about-portrait-heading-phone.webp": {
+  "bytes": 18464,
+  "sha256": "462492d459c4184366dd1597dacae9193eb613512407fe47e34991104c6c3ba7"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-lightbox-desktop-2.webp": {
+  "bytes": 3824,
+  "sha256": "fdd4604ab88a10fd57d2b8ea3f746887293464d13dc38ee94ea06af5554398c0"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-lightbox-desktop-3.webp": {
+  "bytes": 4104,
+  "sha256": "0bd3d1600fec60df95ace93c35a4cc33ea398a529b25466d2490373e1ca09a21"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-lightbox-desktop.webp": {
+  "bytes": 3812,
+  "sha256": "2a507ef11576faf63a6d3dadd64f32fe1051fab144aa846a961694648c5c6244"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-lightbox-phone-2.webp": {
+  "bytes": 4590,
+  "sha256": "b7a705f832f12f5a37ba96d6ed670a425e1b42ab0ca90a5c1e512f864e3ad9a2"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-lightbox-phone.webp": {
+  "bytes": 4674,
+  "sha256": "2a8fc101f169da071af6872543c94e85afe9e0fa147e5a8532a49486b13d72b9"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-thumbnails-desktop-2.webp": {
+  "bytes": 16688,
+  "sha256": "1a393485b7e09b50911bf82a59c926adc066b0f63e017071ea3d43f00c106d75"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-thumbnails-desktop-3.webp": {
+  "bytes": 13352,
+  "sha256": "336cb3f2ed66e5fee9ae6f8dd748d7c726142b69068596ba8ee48b635156d18a"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-thumbnails-desktop.webp": {
+  "bytes": 16294,
+  "sha256": "9eaabb3b460b20bb2fbdb13fa1502ed5cc79a513343f91378cbdedaed4bee26b"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-thumbnails-phone-2.webp": {
+  "bytes": 14712,
+  "sha256": "ee9e21972aca6c8f07a3180910c5bc55a5e51d412f13d24d7f2e4b98432b6643"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-journal-thumbnails-phone.webp": {
+  "bytes": 15156,
+  "sha256": "510e0cdb9dcaad36491e77b524806a7ccf9c71204bb7c756a9c5c972413ce61c"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-screenshots-gallery-desktop-2.webp": {
+  "bytes": 6810,
+  "sha256": "6c312f513dd022a7e39563e932bc36a7c9760556e2ca905d4082f074964ce4e9"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-screenshots-gallery-desktop.webp": {
+  "bytes": 5680,
+  "sha256": "a77b74350b502f3d6b67fb47c80b3349551ad02e01e46bda8aae3d97a321bac7"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-screenshots-gallery-phone-2.webp": {
+  "bytes": 7332,
+  "sha256": "7462112735fa96a53f6c2252fb81b461521e96031b28d2b4945482e6de953215"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/button-game-screenshots-gallery-phone.webp": {
+  "bytes": 6786,
+  "sha256": "0c9f23985aee46b9f422be97631a3f2703a57558f177948b8f44530dc329b43d"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-arcanitebrothers-journal-lightbox-desktop.webp": {
+  "bytes": 3334,
+  "sha256": "0618624a469cace3088e4e8555dbecb5e45bead1653ca0c49a1294496d7d8ab1"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-arcanitebrothers-journal-lightbox-phone.webp": {
+  "bytes": 3544,
+  "sha256": "2cceca6b148e6836ef046eeff27a89df3ed0bbd8203f62aa8dc121840b062733"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-arcanitebrothers-journal-thumbnails-desktop.webp": {
+  "bytes": 12042,
+  "sha256": "9377e3306115666a2e049c5754329b506dd780db9ec8c9a88bf7a9fec6951a26"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-arcanitebrothers-journal-thumbnails-phone.webp": {
+  "bytes": 13166,
+  "sha256": "bf6639088737bdb121c2177fe1a55baea964c73a35819ae3a275bc1d86f2b0d9"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-arcanitebrothers-screenshots-gallery-desktop.webp": {
+  "bytes": 6062,
+  "sha256": "ca06a6ccd86c8dd33897202d213ceacb6e5cff41f02b25758e0ead53176528dd"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-arcanitebrothers-screenshots-gallery-phone.webp": {
+  "bytes": 6388,
+  "sha256": "cdd3eedbdc0b38420d0db85cacf7fe323992cb1e9d293af3b864abd5651a4ea7"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-button-game-journal-lightbox-desktop.webp": {
+  "bytes": 4148,
+  "sha256": "f950ec83952e1e0449f3e4ab25497c839e90272c04cbd9dd84d2b721fe0249b3"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-button-game-journal-lightbox-phone.webp": {
+  "bytes": 4554,
+  "sha256": "efef26088709e9d5ae1708e7ea43289d830363b6502c81bad840d3f81836841f"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-button-game-journal-thumbnails-desktop.webp": {
+  "bytes": 16076,
+  "sha256": "18af9ee64094e0371cf03b7b741ff4bfe814f2d2e4f3531a232d58a9593aed03"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-button-game-journal-thumbnails-phone.webp": {
+  "bytes": 15306,
+  "sha256": "67532a55abdaf4991494cba5a819360beac6c9be5154980e647d5ff14906ea13"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-button-game-screenshots-gallery-desktop.webp": {
+  "bytes": 6950,
+  "sha256": "81ca4253456680e56f7ae0e194dadd6664eda6be6ff2515e52dd8e0511ff967a"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-button-game-screenshots-gallery-phone.webp": {
+  "bytes": 6850,
+  "sha256": "6f3998eff320fc0b544bbaa8e67132d9015ec7dd54bbe78c53e74c2742648413"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-eldgrim-journal-lightbox-desktop.webp": {
+  "bytes": 12392,
+  "sha256": "a0384af0e780d2891395c31bc27ce2c670fddeda18eb126982ca4036bdac18da"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-eldgrim-journal-lightbox-phone.webp": {
+  "bytes": 7598,
+  "sha256": "cafc1bd09f84ddee9e0555b9f6aa8de3e66c95c3f518323f166df306b37c1aa0"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-eldgrim-journal-thumbnails-desktop.webp": {
+  "bytes": 19214,
+  "sha256": "9b3812a1294761e7320ed1c68581b8d401a60ae556ce2a5b2b1741cb7221aeb1"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-eldgrim-journal-thumbnails-phone.webp": {
+  "bytes": 15170,
+  "sha256": "95c12c00347d80ab08d74d830cf9da1f86a99068ab85e72fce9cac77bf323547"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-eldgrim-screenshots-gallery-desktop.webp": {
+  "bytes": 6704,
+  "sha256": "79e772c7e765556192f68eb84c5b28e608b06e07c2895213508ca8618bf2531c"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-eldgrim-screenshots-gallery-phone.webp": {
+  "bytes": 12192,
+  "sha256": "abb86aed92d201ad37e212ebefe6753ba717fc6edc1fde028e509b0dd6b2d04b"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-morkahja-rpg-journal-lightbox-desktop.webp": {
+  "bytes": 10160,
+  "sha256": "e253f30e2a593b87a557e20a6c3cafc9dbaec72a4c3470fd80681cfa38042ae3"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-morkahja-rpg-journal-lightbox-phone.webp": {
+  "bytes": 5668,
+  "sha256": "4053f788cf828e18ac57973eb41cbde1a3aa7b809d432472c9435d0bd927e6b4"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-morkahja-rpg-journal-thumbnails-desktop.webp": {
+  "bytes": 15416,
+  "sha256": "0cb35f56eac975371d6e435805c3c57b51614ff27c9a6f3a2f81de16a49ad983"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-morkahja-rpg-journal-thumbnails-phone.webp": {
+  "bytes": 13534,
+  "sha256": "f8094df9a9d56fac8fadd45d0478ee3fdd7c2e8b33f805266bed33e5ec50ee30"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-morkahja-rpg-screenshots-gallery-desktop.webp": {
+  "bytes": 6900,
+  "sha256": "6101753f09cf15d4bab9360c45d2c7654905b05945970619ba138b38a37424ec"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-morkahja-rpg-screenshots-gallery-phone.webp": {
+  "bytes": 10532,
+  "sha256": "11527505afbbeb09bef5289cbe778b1d54b1524d26b4595f3196417e0bf3aa38"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-rocket-game-42-journal-lightbox-desktop.webp": {
+  "bytes": 6738,
+  "sha256": "2c7278f21b657f91749e4c8ec2a530375896c94a4cf5b5d9fa42057447d0a567"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-rocket-game-42-journal-lightbox-phone.webp": {
+  "bytes": 5726,
+  "sha256": "4bb0c4109cd42b90ab11f5de77f5f7429f51147c8aa16703e8a0fb40644ffea5"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-rocket-game-42-journal-thumbnails-desktop.webp": {
+  "bytes": 18216,
+  "sha256": "8fe553ccf103dd0a543e93e42b3b29ea74cb04f7f90bb511df08f73042d373cf"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-rocket-game-42-journal-thumbnails-phone.webp": {
+  "bytes": 14062,
+  "sha256": "5ffc51dc1cf732ce48dc74eef2c4fdd5c8810f2619f406bdbf5e3fb0ebc10c87"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-rocket-game-42-screenshots-gallery-desktop.webp": {
+  "bytes": 8782,
+  "sha256": "53f05c2521b180092aae72b25b86ebb43f2c257718e9a272ac5e09f5dc88e49f"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/live-rocket-game-42-screenshots-gallery-phone.webp": {
+  "bytes": 8770,
+  "sha256": "551f87b8f08cad595ff12b492adc7b82cc5869c3db7b2c3ddbbecc83a26a3328"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/projects-menu-by-activity-desktop.webp": {
+  "bytes": 19836,
+  "sha256": "a22a3f69476dd1e712e14601f77a24edc30ad1f3303cc4c369012f56435c6d5d"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/projects-menu-by-activity-phone.webp": {
+  "bytes": 11592,
+  "sha256": "1f6058501ad2c37a9be91b6a5cadd49f885129c3977373d68dc801a09a72a181"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-about-desktop-2.webp": {
+  "bytes": 14458,
+  "sha256": "c9ae0e816ce2b9989e0a2c2b37db0ff8d3cbb683e17d0a80b2b44f422a995f47"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-about-desktop.webp": {
+  "bytes": 14438,
+  "sha256": "065afadb82a8c7bc999b6bc83b9f334e1d3fd7c49cfd4f48d0f57d70b8f698fc"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-about-links-desktop-2.webp": {
+  "bytes": 15888,
+  "sha256": "8e8c647877349f1df7d560e02988d7bfd3b1696d88a0302bbdf9b82868c6fe52"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-about-links-desktop.webp": {
+  "bytes": 15776,
+  "sha256": "0f2d3296f4f82015e2390bc3598d407e4a37018e6785250b48b2a038f6e750e7"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-about-links-phone-2.webp": {
+  "bytes": 17342,
+  "sha256": "c3de2bb92bfaf90cc54d3bf4280970da6fa66a824ff9cb7adbc5d2fdc04a8b6e"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-about-links-phone.webp": {
+  "bytes": 17490,
+  "sha256": "09c0f58cb3e87b35045d65cbc6926c259bb4fe650f7b38107c6cfdfb38c8b2a9"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-about-phone-2.webp": {
+  "bytes": 15810,
+  "sha256": "9effe959558bc38ab733f109812eb67cc34f0f0bf829e6bc7b24a6107dc6616e"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-about-phone.webp": {
+  "bytes": 15864,
+  "sha256": "58714ff976718ec379d37e1481b4abf75bba4dcf16396839b0af1057bf128f79"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-architecture-desktop-2.webp": {
+  "bytes": 20770,
+  "sha256": "75e5a35f4aa03cf65b9dc0f356da4d6726c19a67c310333f4f864541975456c5"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-architecture-desktop.webp": {
+  "bytes": 11954,
+  "sha256": "153074ef4ff716dbf7a2abf2ab0a87434b105f1876e7bd38fe7fdda2ac3c1d01"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-architecture-phone-2.webp": {
+  "bytes": 15916,
+  "sha256": "20ce74b626a9f40d0eb27f99efe08b72988ba09bc93f20943efbe14d72eece4f"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-architecture-phone.webp": {
+  "bytes": 5390,
+  "sha256": "d1aa3f197ac298be522fcb8dbe4355aea6c78bab2940bb6be43eefda3242e906"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-changes-desktop-2.webp": {
+  "bytes": 17974,
+  "sha256": "7f0cdfdadd4b4e01bcf3bf7a3e991ae8276517667568579b6b611d0bfb4ff0d6"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-changes-desktop.webp": {
+  "bytes": 12378,
+  "sha256": "1bb506647f6bd27fa9077a9de3e65489d8ba6bc5be5b5404eeb0c2e9135f05f0"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-changes-phone-2.webp": {
+  "bytes": 14304,
+  "sha256": "d821a9be7264237db52ae2ca7adbf6b8d15cc735d8a101f796f9c4faa6d53a0a"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/reader-section-cards-changes-phone.webp": {
+  "bytes": 4406,
+  "sha256": "01b415524d026e196048f5fb374a269633f1debf856c69325ec0966757eb9fd7"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-big-bloom-desktop-card.webp": {
+  "bytes": 20298,
+  "sha256": "20864b127bc11ae37c17236595fd17519c232adf82f9c9d503b096a839eba0e0"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-big-bloom-desktop.webp": {
+  "bytes": 14356,
+  "sha256": "3df9a599f346f1e3179a2d76b5e341b6870b1a1946fe12913c6362861dbaceff"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-big-bloom-phone-card.webp": {
+  "bytes": 15662,
+  "sha256": "87b5f120451c78958741975a56a28133ed7f118b043e58c77beafa2079764c24"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-big-bloom-phone.webp": {
+  "bytes": 13756,
+  "sha256": "8949feec04ec7323b18ea9e6c9c5ca4279b1a4a16e28ab387b716b9932b1bdce"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-big-bloom-tablet-card.webp": {
+  "bytes": 16318,
+  "sha256": "bc1816af73048f0e2c89bca53c1705d48d34aa30456a95f56ac592504095a67c"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-desktop-big-bloom.webp": {
+  "bytes": 17462,
+  "sha256": "272fe095d34fdfc45e6e9c5807d8c4738d3d557fee1b54a7f9b5045a3f0018c2"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-desktop-reader-before.webp": {
+  "bytes": 3172,
+  "sha256": "7281e1ae8854c57f57b349410c1f0175f6bf89e3c26aa35e7fb030bf4fa8a658"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-desktop-reader-form.webp": {
+  "bytes": 11736,
+  "sha256": "eeb72e3842d5113fe932a5ac5dfe3978b1bb89361ec3ea8e8de93ba14d5c75d7"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-live-desktop-reader-form.webp": {
+  "bytes": 13198,
+  "sha256": "a503a2289653fe5003d04f3f9f32856e6c2cedc1181a8405e57ef3ce7c06b6c9"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-live-phone-reader-form.webp": {
+  "bytes": 10960,
+  "sha256": "6611d46a59b996ca79bdfc39427cf5554286db0864ed96abfb530aaa8f5acfb8"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-phone-big-bloom.webp": {
+  "bytes": 13512,
+  "sha256": "82e267015353e1b9bef6bfd2ce75648c6179bcea6ea6adef3f6bbbe3438a19b0"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-phone-reader-before.webp": {
+  "bytes": 5414,
+  "sha256": "68a661e2b289224174f71a1f2128ed74355eacdc1a63e350f7d8f526111e3ae0"
+ },
+ "/screenshots/babuni-dev/2026-11-25/thumbs/signup-phone-reader-form.webp": {
+  "bytes": 9688,
+  "sha256": "3ec7194a4692f849ed86b453a5caa40700b37e7466fa2d3bc91a60261c782c39"
+ },
  "/screenshots/babuni-dev/verification/about-link-cards-desktop.webp": {
   "bytes": 311134,
   "sha256": "205a2bd1d1d9750404ac1ec6cef69ab296307b3bf7e52f58688236438a6c30da"

@@ -6,6 +6,11 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — BABUNI.DEV screenshots (2026-11-25)
+- 171 BABUNI.DEV screenshots from 13–25 November 2026 on the server media folder. 47 of them were added to the *Visual history* gallery (now 115 images), to 14 entries of `docs/DEVLOG.md` and to a new dated section of `docs/VISUAL_DOCUMENTATION.md`.
+- With this, every screenshot folder except Analubia (on hold) is published: 1,700+ files listed in `src/content/server-media.json`.
+- Verification: `npm run content:check`, `npm run test:grid` and `npm run build` passed. Claude Code (Claude Opus 5.5).
+
 ### Added — Babuni Admin screenshots (2026-11-25)
 - 37 Babuni Admin screenshots on the server media folder (sample projects, players and commits); the connection page from 10 November, which shows server, database and credential-storage details, was left out. A *Screenshots* gallery with 13, and 24 in eleven journal entries (snapshot `d1d4298`).
 - Verification: `npm run content:check`, `npm run test:grid` and `npm run build` passed. Claude Code (Claude Opus 5.5).

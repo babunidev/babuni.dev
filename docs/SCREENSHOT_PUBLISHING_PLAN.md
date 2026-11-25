@@ -35,7 +35,7 @@ Every image is looked at before it is published. Screenshots that show live user
 | 3 | Eldgrim (`eldgrim`) | `Eldgrim`, `eldgrim` | 12 | Done 2026-11-25: 12 on the server (1.3 MB), all in the gallery and in 5 journal entries |
 | 4 | Babuni Admin (`arcanitebrothers`) | `babuni-admin`, `babuni.admin` | 38 | Done 2026-11-25: 37 on the server (1.4 MB), 13 in the gallery, 24 in 11 journal entries. Left out: the connection page with server, database and credential-storage details |
 | 5 | Morkahja (`morkahja-rpg`) | `Morkahja` | 35 | Done 2026-11-25 together with row 7 |
-| 6 | BABUNI.DEV (`babuni-dev`) | `babuni.dev`, `babunidev` | 127 | Planned; joins the existing visual documentation |
+| 6 | BABUNI.DEV (`babuni-dev`) | `babuni.dev`, `babunidev` | 171 | Done 2026-11-25: 171 on the server (15 MB, including that day's own checks), 47 in the Visual history gallery, the development journal and `VISUAL_DOCUMENTATION.md` |
 | 7 | Morkahja web app (`morkahja-rpg`) | `MorkahjaWebApp` | 543 | Done 2026-11-25: 568 of both folders on the server (55 MB, from 584 MB); 20 in the gallery, 124 in 45 journal entries. Left out: 2 QR codes, 3 Soul Link QR screens, a browser warning with a local network address, 1 blank capture; 3 source files were empty |
 | 8 | Analubia | `Analubia` | 1377 | On hold (Babuni, 2026-11-25): not on the website until Babuni has decided how publicly Analubia can be worked on |
 
