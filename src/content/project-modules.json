@@ -889,6 +889,80 @@
         }
       ],
       "credit": "Project rename directed by Babuni.dev; AI-assisted source-label clarification. Public source documents retain their historical wording."
+    },
+    {
+      "id": "screenshots",
+      "type": "gallery",
+      "title": "Screenshots",
+      "preview": "Babuni Admin from one-click publishing to the Project Manager and step-by-step saves, with sample data.",
+      "images": [
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-10/screenshot-20261110-052031.webp",
+          "alt": "Everything is live after one click.",
+          "caption": "Everything is live after one click — 10 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-12/babuni-dev-working-animation.webp",
+          "alt": "A running repository check with its working animation.",
+          "caption": "A running repository check with its working animation — 12 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-16/save-result-popup-encounter.webp",
+          "alt": "The save result for an encounter: live game and GitHub, sample data.",
+          "caption": "The save result for an encounter: live game and GitHub, sample data — 16 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-16/save-result-popup-github-failed.webp",
+          "alt": "A save where GitHub failed, shown step by step.",
+          "caption": "A save where GitHub failed, shown step by step — 16 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-19/projects-overview.webp",
+          "alt": "The Project Manager above the workspaces, with sample projects.",
+          "caption": "The Project Manager above the workspaces, with sample projects — 19 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-19/project-manager-scrolled.webp",
+          "alt": "A project opened from far down the list stays in view.",
+          "caption": "A project opened from far down the list stays in view — 19 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-19/workspace-tabs-babuni-dev.webp",
+          "alt": "The babuni.dev workspace with tabs on top and places on the left.",
+          "caption": "The babuni.dev workspace with tabs on top and places on the left — 19 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-19/workspace-tabs-morkahja.webp",
+          "alt": "Morkahja's Moderation tab with sample players, not live accounts.",
+          "caption": "Morkahja's Moderation tab with sample players, not live accounts — 19 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-19/workspace-tabs-phone.webp",
+          "alt": "The workspace tabs on a phone.",
+          "caption": "The workspace tabs on a phone — 19 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-21/solution-editor.webp",
+          "alt": "Editing a solution.",
+          "caption": "Editing a solution — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-21/image-chosen-not-yet-saved.webp",
+          "alt": "A new picture chosen but not saved yet.",
+          "caption": "A new picture chosen but not saved yet — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-halfway.webp",
+          "alt": "Halfway: the first steps checked off.",
+          "caption": "Halfway: the first steps checked off — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-done.webp",
+          "alt": "All done.",
+          "caption": "All done — 21 November 2026. Development screenshot."
+        }
+      ],
+      "credit": "Creative direction: Babuni. Screenshots with sample projects and players, taken during AI-assisted development; see the development journal."
     }
   ],
   "classic-wow-addons": [

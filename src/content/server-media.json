@@ -1,4 +1,300 @@
 {
+ "/screenshots/arcanitebrothers/2026-11-10/screenshot-20261110-040056.webp": {
+  "bytes": 53138,
+  "sha256": "28944ea48237b52a89644957200ebfa87d50547f8fd763189446635b86cc291e"
+ },
+ "/screenshots/arcanitebrothers/2026-11-10/screenshot-20261110-051936.webp": {
+  "bytes": 53064,
+  "sha256": "8695aec223f70645d6b986214ab1f9a53032f8e2b31411cc514f0a37379d3fe5"
+ },
+ "/screenshots/arcanitebrothers/2026-11-10/screenshot-20261110-052031.webp": {
+  "bytes": 49468,
+  "sha256": "8275da25968274a8f0931f6d4c5424c5d848484a8e0b66aa45d1116640034191"
+ },
+ "/screenshots/arcanitebrothers/2026-11-10/thumbs/screenshot-20261110-040056.webp": {
+  "bytes": 6222,
+  "sha256": "8b0b9a0686284b5b684a07aadc68f426c8e367938130a244dc00ebe110292561"
+ },
+ "/screenshots/arcanitebrothers/2026-11-10/thumbs/screenshot-20261110-051936.webp": {
+  "bytes": 5886,
+  "sha256": "dfe067d89c325c67d8ad95594f92c0052f1b8a7c0eb6656f7d77f0518bb8cae9"
+ },
+ "/screenshots/arcanitebrothers/2026-11-10/thumbs/screenshot-20261110-052031.webp": {
+  "bytes": 9934,
+  "sha256": "7bb6943348eb7789cc7936ec987f6c98c062f1abbbd4642c4a76f9723acd234c"
+ },
+ "/screenshots/arcanitebrothers/2026-11-12/babuni-dev-working-animation.webp": {
+  "bytes": 21500,
+  "sha256": "1684ac1def1a0cef89b1f781aaf994cc5cfafc227b94bf87308286ef653ae71b"
+ },
+ "/screenshots/arcanitebrothers/2026-11-12/thumbs/babuni-dev-working-animation.webp": {
+  "bytes": 3902,
+  "sha256": "7844de5ca488bf243558a0188d4b040cbecc02d850d5aed304f8a951216f3cbb"
+ },
+ "/screenshots/arcanitebrothers/2026-11-16/save-result-popup-encounter.webp": {
+  "bytes": 15246,
+  "sha256": "b30f802d53d3ecbfdddedd3395bca002eb3201cae7aeffb72550b239a81b9224"
+ },
+ "/screenshots/arcanitebrothers/2026-11-16/save-result-popup-github-failed.webp": {
+  "bytes": 15778,
+  "sha256": "ccaa43b507d716e3c6cd951bc515ca7b5278aa679b65e81472e9b6c9ac48b49b"
+ },
+ "/screenshots/arcanitebrothers/2026-11-16/save-result-popup-image-upload.webp": {
+  "bytes": 22798,
+  "sha256": "67799b43216a95e9a3010e4ebf7238b8fb7eb6fb67b97ffb58af7f4cedb26338"
+ },
+ "/screenshots/arcanitebrothers/2026-11-16/save-result-popup-phone-width.webp": {
+  "bytes": 21546,
+  "sha256": "16c40108c38a555b665731e732250fca119082d1ebc6896fa7e2c3b2ae78f7b7"
+ },
+ "/screenshots/arcanitebrothers/2026-11-16/thumbs/save-result-popup-encounter.webp": {
+  "bytes": 2076,
+  "sha256": "52d29c2fcb45749fe59dfd7dc6249a9c2ed79b290435159851ae513145660c84"
+ },
+ "/screenshots/arcanitebrothers/2026-11-16/thumbs/save-result-popup-github-failed.webp": {
+  "bytes": 2298,
+  "sha256": "0eae14ee7293635107a0e83beb39905f4bd28318d4ba4528f4ef0c3a81ba3b24"
+ },
+ "/screenshots/arcanitebrothers/2026-11-16/thumbs/save-result-popup-image-upload.webp": {
+  "bytes": 2874,
+  "sha256": "78e78b83a61cee80d0787c4e8aa47919ae27710288cd70e1efa11becd660bf44"
+ },
+ "/screenshots/arcanitebrothers/2026-11-16/thumbs/save-result-popup-phone-width.webp": {
+  "bytes": 7060,
+  "sha256": "1f5bef0080fbbe5b1fb20aa952c2c1f8a7cf8d27c06ffbd7a392eb1b118e8316"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/project-manager-scrolled-phone.webp": {
+  "bytes": 20064,
+  "sha256": "1640ec87f717575714a8c326d4ec8074f789c9ae6b197f7bf4aa2546d68e79d7"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/project-manager-scrolled.webp": {
+  "bytes": 40498,
+  "sha256": "2a236c5bfb51decd8c3abce978aded872a452f54cfd9e56b297b298419f1ce21"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/projects-overview-phone.webp": {
+  "bytes": 20100,
+  "sha256": "e9e1ddec1716667bc529ba063e9264a17e4cec2accc75cad65e96c35820ffd1c"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/projects-overview.webp": {
+  "bytes": 54766,
+  "sha256": "8136d125f62d23f2e60d658b3dce8db202be0f9d8ada31276210c8858f9bd100"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/thumbs/project-manager-scrolled-phone.webp": {
+  "bytes": 5968,
+  "sha256": "04dc744aa159772b118621e6dda15e89ed1c9c9c6a19270a5bc8d872a7a44719"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/thumbs/project-manager-scrolled.webp": {
+  "bytes": 4108,
+  "sha256": "2c894eb5baa6f1573f8716c11b194c458f78a76f5b5f9e890dba02b39080e5f9"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/thumbs/projects-overview-phone.webp": {
+  "bytes": 6018,
+  "sha256": "93c3bc6b23deb176f1fdd409057cc59356984545fa9e15ff7501ef0637e95b13"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/thumbs/projects-overview.webp": {
+  "bytes": 5756,
+  "sha256": "4536c6b796774512b73299e16f4c5095a07b689dc9a2bebd4f597f78af8911b6"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/thumbs/workspace-tabs-babuni-dev.webp": {
+  "bytes": 4922,
+  "sha256": "ef296cae7f74b3e7ce60714efc275805da8e13f296ace023cd7a4ed096f9fb06"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/thumbs/workspace-tabs-morkahja.webp": {
+  "bytes": 5890,
+  "sha256": "a3abeefef2d9debb7a5e9e64937fde166d9a961d8b3460783b9e09d61e64cb38"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/thumbs/workspace-tabs-phone.webp": {
+  "bytes": 8608,
+  "sha256": "1bdf07de8ab91c94bcdcf83f4e6155877698ee8c37f7ccb167d75d4d48cb76dc"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/workspace-tabs-babuni-dev.webp": {
+  "bytes": 52028,
+  "sha256": "03d8cad2c55635c677526d512dc4007d9924738d59364960435813cd16dd4701"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/workspace-tabs-morkahja.webp": {
+  "bytes": 56540,
+  "sha256": "45a4c71a3fbff9a4b67a0cae062daf7058a4af8671ae9b39e9891fda721f1261"
+ },
+ "/screenshots/arcanitebrothers/2026-11-19/workspace-tabs-phone.webp": {
+  "bytes": 30092,
+  "sha256": "c7a92397ddfefa17ddf9ae8155281a86a90695396a67496de6a5d33f5d7d4dbf"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-checking-off-2.webp": {
+  "bytes": 35458,
+  "sha256": "9cc855b28b66fd5dd10f3378a1d0d76bc71df61b87be886f077404872c9fbdeb"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-checking-off-3.webp": {
+  "bytes": 34240,
+  "sha256": "4c0056bfe7ddac6a1e27a441788b9311adb419cdd9d66fba3be41b7fda248ee8"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-checking-off-4.webp": {
+  "bytes": 33960,
+  "sha256": "229178b539f3c260fdf407f81dc0c7dea88065ffe17825986318a3bec8848754"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-checking-off.webp": {
+  "bytes": 30108,
+  "sha256": "9e684e180361d07f319349e5efe5bfa3f1c292ca0f572ffe8dd9fd9d329be952"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-closing.webp": {
+  "bytes": 40106,
+  "sha256": "a149901edb201a9dfd955675643ed3106e771901d452165553d61abfaf1dbadf"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-done-2.webp": {
+  "bytes": 40158,
+  "sha256": "7f68d96add8321701a900301f869547efc8515caa384b993846600bf5157892c"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-done-3.webp": {
+  "bytes": 40162,
+  "sha256": "89d0d7678eb36b4b166b5048ff8fbbad70a5c471974eac5a8fd8ae70c604350d"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-done-4.webp": {
+  "bytes": 40134,
+  "sha256": "465a864d44fb296c8418fc3ce23aba88558575248cab9ccbbeda097a8c4392bf"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-done.webp": {
+  "bytes": 40130,
+  "sha256": "7da705a196b6084d8fd569e088acb870dd8c828688c788fc7006549dd7b8854d"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-halfway-2.webp": {
+  "bytes": 31634,
+  "sha256": "da72d2b8bcb52ad89e7a97c7f886914224045934d9333b01fdc1ff1f8fa84b7c"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-halfway-3.webp": {
+  "bytes": 31616,
+  "sha256": "94242dcb179f83ac8482e6fe0037916e3340d2fb733c1e98f87d30b722523201"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-halfway-4.webp": {
+  "bytes": 31620,
+  "sha256": "041c2b239b4f9f02b76d5eac6a068309f95057f29223b041a2dd41c8b8e9c8ea"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-halfway-5.webp": {
+  "bytes": 31656,
+  "sha256": "f20de9e8c2a779089ad1f9819f67204c78f15eae1bc860bfe14087a4c84e4a8d"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-halfway.webp": {
+  "bytes": 31560,
+  "sha256": "8fe05f485937a1c82406036308d8fb1bbf1446b40021759138dc0deb86ef9bb0"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-started-2.webp": {
+  "bytes": 22840,
+  "sha256": "ae27595acb2f92aa28ff236b897ea8e73e3b33a50c4b4cd5d7b34c99a9083dba"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-started-3.webp": {
+  "bytes": 22736,
+  "sha256": "0ce189cbb7070f70ddb2fdbe29c4bcfe718401028cb95d752e4a37d3fcbc8f84"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-started-4.webp": {
+  "bytes": 22752,
+  "sha256": "b65c0db75e1cf549b5bbc5d2cb129a46612f38439c499e1c75e4cb2651a4e774"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-started-5.webp": {
+  "bytes": 22528,
+  "sha256": "a228d90787a6a763baa681e28e9f3d570c20627ee82c0cbf56d6a98276058325"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/babuni-admin-save-progress-started.webp": {
+  "bytes": 23014,
+  "sha256": "cb0800385cc237da28c230c342d6419d903d27a7cbb3b4019eccad9d71f62d9b"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/image-chosen-not-yet-saved.webp": {
+  "bytes": 31004,
+  "sha256": "dd9272e435c2b5e78deedda1814563ef9d186f7cbeef071c32ca8e34605031a6"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/solution-detail-edit-button.webp": {
+  "bytes": 32520,
+  "sha256": "35ea198932266badc8479d0c75a70d56ab3c93ff6267ad0a7bc5e00c6bbe2099"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/solution-editor.webp": {
+  "bytes": 31430,
+  "sha256": "f812e5e886868c673e3b78f0e858b2e4d203f3f8a8733e5b2cf9d3f0b563e9fd"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-checking-off-2.webp": {
+  "bytes": 4216,
+  "sha256": "cd3e479d04cce09c6055f67e8861e2a02fac51c455336dfbafe46ee356d80433"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-checking-off-3.webp": {
+  "bytes": 4004,
+  "sha256": "016c78bd24e28e73e6871ec466624e9b06d32693f16d6212710d9c966d3c82a1"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-checking-off-4.webp": {
+  "bytes": 3972,
+  "sha256": "161ace5bdc8b53ed8c069c4a3b65a78c83bb1a8f958a92de31a94edd52bfa924"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-checking-off.webp": {
+  "bytes": 3752,
+  "sha256": "2d53cec92053f9da7afbfdf5d983d164a21d23fa21d9bcfc6d2238e297a55962"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-closing.webp": {
+  "bytes": 5264,
+  "sha256": "bfdb97fb4bd7c49a494a2f79fa2db2088c8f825d8c28dd01368b7653aee9c713"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-done-2.webp": {
+  "bytes": 5280,
+  "sha256": "90ef385bbea6d2a5e344c56bf0874f1ceb680e3a4c8ec6682a2f013f731185ac"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-done-3.webp": {
+  "bytes": 5286,
+  "sha256": "cd3998cedb6b226ae659b93613a69d3eb1f614e687083753f213a608eaa34477"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-done-4.webp": {
+  "bytes": 5282,
+  "sha256": "cd0a0b67908730bc193520e22f89326721f28b021c0bfe5c5f7146bdbd8adbe4"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-done.webp": {
+  "bytes": 5342,
+  "sha256": "4c7b6dd90a847e7491bd429150dd436b387c638a6191dff726c9e9d58188d47a"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-halfway-2.webp": {
+  "bytes": 4156,
+  "sha256": "58a28ec7920947e2dbb2e447702af0c11536f8a84e5c3bb031db4b771d451ef7"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-halfway-3.webp": {
+  "bytes": 4158,
+  "sha256": "d425844276a0ff74e295766a774c4accf050f309b69999595090d67d79ede9d9"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-halfway-4.webp": {
+  "bytes": 4148,
+  "sha256": "df7093b326efa5085fd5bb4c7ff02d1aba7b0685ebe2798e10dad446a57c3bd1"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-halfway-5.webp": {
+  "bytes": 4150,
+  "sha256": "f77faf8129f1b836b7867e64e267a160aeb9bcc51364fa68155b5903ec66bb09"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-halfway.webp": {
+  "bytes": 4132,
+  "sha256": "c3c75eec15d2247000e9693ea053e64ee691864591e65a0a4075c93785694a87"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-started-2.webp": {
+  "bytes": 3002,
+  "sha256": "e575c55e9514f36203220fac9fa91fb10a080306c6efa5aa1057bc235718cbf6"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-started-3.webp": {
+  "bytes": 3026,
+  "sha256": "7a4296a4b8baa5e30a74ee7fee73ab15b927f3eb733d7242ed6b47ff6ea379e1"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-started-4.webp": {
+  "bytes": 3020,
+  "sha256": "3e2d298b79ac42788b78c4cec80692f5e90f825b7e5fc60f2d9ed8433244782a"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-started-5.webp": {
+  "bytes": 2972,
+  "sha256": "1bcf971b08bd211a0a0a970a68685a56976be3febd4864a98625422c8bad775b"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/babuni-admin-save-progress-started.webp": {
+  "bytes": 3050,
+  "sha256": "9a625efb3259e64d745a16c02b86b8f00846bfa6830e5e686bd30ff2a1d99d6c"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/image-chosen-not-yet-saved.webp": {
+  "bytes": 4312,
+  "sha256": "5377436df066557574becd2d9094297796200a46ed1274e492673459dd199695"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/solution-detail-edit-button.webp": {
+  "bytes": 3516,
+  "sha256": "2d73b73f47d4f3435b6fea802942659c6a7a6016d72d96a0586b27eaf074b09e"
+ },
+ "/screenshots/arcanitebrothers/2026-11-21/thumbs/solution-editor.webp": {
+  "bytes": 3552,
+  "sha256": "746bde9906162ae2bfdc77079252798662812b5832826d4a815c17f8c9228e8b"
+ },
  "/screenshots/babuni-dev/verification/about-link-cards-desktop.webp": {
   "bytes": 311134,
   "sha256": "205a2bd1d1d9750404ac1ec6cef69ab296307b3bf7e52f58688236438a6c30da"

@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Babuni Admin screenshots (2026-11-25)
+- 37 Babuni Admin screenshots on the server media folder (sample projects, players and commits); the connection page from 10 November, which shows server, database and credential-storage details, was left out. A *Screenshots* gallery with 13, and 24 in eleven journal entries (snapshot `d1d4298`).
+- Verification: `npm run content:check`, `npm run test:grid` and `npm run build` passed. Claude Code (Claude Opus 5.5).
+
 ### Added — Rocket Game 42 and Eldgrim screenshots (2026-11-25)
 - Rocket Game 42: 13 screenshots on the server media folder (mock scores), a *Screenshots* gallery with 10 and the same 10 in two journal entries (snapshot `7fa6107`).
 - Eldgrim: 12 hearth-board screenshots (sample quests and members), a *Screenshots* gallery with all 12 and the same in five journal entries (snapshot `6be8a89`, which also brings in Eldgrim documents Babuni changed since `1c448f9`).
