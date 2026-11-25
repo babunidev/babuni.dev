@@ -1,4 +1,4 @@
-// Usage: npm run screenshots:import -- <source-folder> <project-id> [--only name,name]
+// Usage: npm run screenshots:import -- <source-folder> <project-id> [--only name,name] [--skip name,name]
 // Turns dated development screenshots (<source>/<YYYY-MM-DD>/*.png) into web-sized WebP
 // files and thumbnails under public/screenshots/<project-id>/<date>/ (ignored by Git), then
 // records them in src/content/server-media.json. Upload with scripts/publish-screenshots.sh.
@@ -49,14 +49,14 @@ async function encode(sharp,input,output,{size,quality}){
   return {...info,croppedRows:blank};
 }
 
-export async function importScreenshots(source,project,{only=null,base=root}={}){
+export async function importScreenshots(source,project,{only=null,skip=new Set(),base=root}={}){
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project))throw new Error('Project ID must be kebab-case');
   const {default:sharp}=await import('sharp');
   const results=[],seen=new Set();
   for(const date of readdirSync(source).filter(d=>DATE.test(d)).sort()){
     for(const file of readdirSync(join(source,date)).filter(f=>/\.(png|jpe?g|webp)$/i.test(f)).sort()){
       const name=screenshotName(file,date);
-      if(only&&!only.has(name))continue;
+      if(only&&!only.has(name)||skip.has(name))continue;
       const key=date+'/'+name;
       if(seen.has(key))throw new Error(`${key}: two source files map to the same name`);
       seen.add(key);
@@ -64,6 +64,7 @@ export async function importScreenshots(source,project,{only=null,base=root}={})
       const full=join(base,'public',urls.src),thumb=join(base,'public',urls.thumb);
       mkdirSync(join(full,'..','thumbs'),{recursive:true});
       const input=join(source,date,file);
+      if(statSync(input).size===0){console.warn(`skipped  ${date}/${file}: empty file`);continue;}
       let width,height,croppedRows=0,skipped=existsSync(full)&&existsSync(thumb);
       if(!skipped){
         if(!existsSync(full))({width,height,croppedRows}=await encode(sharp,input,full,FULL));
@@ -81,9 +82,11 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   const args=process.argv.slice(2);
   const onlyAt=args.indexOf('--only');
   const only=onlyAt>=0?new Set(args.splice(onlyAt,2)[1].split(',')):null;
+  const skipAt=args.indexOf('--skip');
+  const skip=new Set(skipAt>=0?args.splice(skipAt,2)[1].split(','):[]);
   const [source,project]=args;
-  if(!source||!project){console.error('Usage: npm run screenshots:import -- <source-folder> <project-id> [--only name,name]');process.exit(1);}
-  const results=await importScreenshots(resolve(source),project,{only});
+  if(!source||!project){console.error('Usage: npm run screenshots:import -- <source-folder> <project-id> [--only name,name] [--skip name,name]');process.exit(1);}
+  const results=await importScreenshots(resolve(source),project,{only,skip});
   const kb=n=>Math.round(n/1024)+' KB';
   for(const r of results)console.log(`${r.skipped?'kept   ':'created'} ${r.src}  ${r.width}×${r.height}  ${kb(r.originalBytes)} → ${kb(r.bytes)} (+${kb(r.thumbBytes)} thumb)${r.croppedRows?`, ${r.croppedRows} empty rows cropped`:''}`);
   const sum=k=>results.reduce((s,r)=>s+r[k],0);

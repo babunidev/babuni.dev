@@ -620,6 +620,115 @@
         "src": "https://morkahja.eo.page/join",
         "title": "Morkahja news sign-up"
       }
+    },
+    {
+      "id": "screenshots",
+      "type": "gallery",
+      "title": "Screenshots",
+      "preview": "From the new frames and the world map to equipment, specializations and travel: development screenshots from November 2026.",
+      "images": [
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-13/line-frame-avatar-creation-phone.webp",
+          "alt": "Avatar creation on a phone, the preview sized by its frame.",
+          "caption": "Avatar creation on a phone, the preview sized by its frame — 13 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-13/line-frame-nav-tooltips-desktop.webp",
+          "alt": "The menu buttons with tooltips in the new line frame, desktop.",
+          "caption": "The menu buttons with tooltips in the new line frame, desktop — 13 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-13/avatar-details-popover-desktop.webp",
+          "alt": "The avatar details card popping out above the avatar, desktop.",
+          "caption": "The avatar details card popping out above the avatar, desktop — 13 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-13/essence-slots-on-avatar-phone.webp",
+          "alt": "Five essence slots along the bottom edge of the avatar portrait, phone.",
+          "caption": "Five essence slots along the bottom edge of the avatar portrait, phone — 13 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-13/solution-sets-2-one-hovering.webp",
+          "alt": "One chosen solution hovering above its slot.",
+          "caption": "One chosen solution hovering above its slot — 13 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-13/set-reveal-5-result.webp",
+          "alt": "The result after the whole set arrived.",
+          "caption": "The result after the whole set arrived — 13 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-17/region-plate.webp",
+          "alt": "The red region plate with the land's name on the top edge of the encounter, desktop.",
+          "caption": "The red region plate with the land's name on the top edge of the encounter, desktop — 17 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-17/world-map-whole.webp",
+          "alt": "The whole world map of Morkahja in gold and red lines.",
+          "caption": "The whole world map of Morkahja in gold and red lines — 17 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-17/world-map-open.webp",
+          "alt": "The world map opened over the encounter.",
+          "caption": "The world map opened over the encounter — 17 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-18/level-up-choices-before-roll.webp",
+          "alt": "A level-up with three rewards to choose from, before the roll.",
+          "caption": "A level-up with three rewards to choose from, before the roll — 18 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-21/solution-frames-every-picture.webp",
+          "alt": "Every solution picture in the frame the game draws.",
+          "caption": "Every solution picture in the frame the game draws — 21 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-23/inventory-sections-desktop.webp",
+          "alt": "The inventory in three lists: normal items, rare items and essences, desktop.",
+          "caption": "The inventory in three lists: normal items, rare items and essences, desktop — 23 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-23/menu-three-avatars-desktop.webp",
+          "alt": "The main menu: the active avatar big, the other two below like a triangle.",
+          "caption": "The main menu: the active avatar big, the other two below like a triangle — 23 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-23/equipment-card-equipped-desktop.webp",
+          "alt": "An item equipped.",
+          "caption": "An item equipped — 23 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-23/specialization-roster-desktop-picker.webp",
+          "alt": "The fifteen specializations as a roster under their description.",
+          "caption": "The fifteen specializations as a roster under their description — 23 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-24/avatar-card-rows-desktop-overview-chosen.webp",
+          "alt": "The avatar card in rows, the name big above the level.",
+          "caption": "The avatar card in rows, the name big above the level — 24 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-24/avatar-edit-desktop-screen.webp",
+          "alt": "Editing portrait, frame and name.",
+          "caption": "Editing portrait, frame and name — 24 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-24/travel-desktop-map-hover.webp",
+          "alt": "A land lighting up under the pointer on the world map.",
+          "caption": "A land lighting up under the pointer on the world map — 24 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-24/travel-desktop-prompt.webp",
+          "alt": "The question whether to travel and what it costs.",
+          "caption": "The question whether to travel and what it costs — 24 November 2026. Development screenshot."
+        },
+        {
+          "src": "/screenshots/morkahja-rpg/2026-11-24/charge-back-flight-desktop.webp",
+          "alt": "An equipped item setting off toward the encounter.",
+          "caption": "An equipped item setting off toward the encounter — 24 November 2026. Development screenshot."
+        }
+      ],
+      "credit": "Game and creative direction: Babuni. Screenshots taken during AI-assisted development; more of them in the development journal."
     }
   ],
   "morkahjaworld": [

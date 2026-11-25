@@ -34,9 +34,9 @@ Every image is looked at before it is published. Screenshots that show live user
 | 2 | Rocket Game 42 (`rocket-game-42`) | `Rocketgame42` | 13 | Planned |
 | 3 | Eldgrim (`eldgrim`) | `Eldgrim`, `eldgrim` | 12 | Planned |
 | 4 | Babuni Admin (`arcanitebrothers`) | `babuni-admin`, `babuni.admin` | 38 | Planned, needs a careful privacy check |
-| 5 | Morkahja (`morkahja-rpg`) | `Morkahja` | 35 | Planned |
+| 5 | Morkahja (`morkahja-rpg`) | `Morkahja` | 35 | Done 2026-11-25 together with row 7 |
 | 6 | BABUNI.DEV (`babuni-dev`) | `babuni.dev`, `babunidev` | 127 | Planned; joins the existing visual documentation |
-| 7 | Morkahja web app | `MorkahjaWebApp` | 543 | Planned: all in the repository (estimated 64 MB), a selection in the gallery, the matching ones in the journal |
+| 7 | Morkahja web app (`morkahja-rpg`) | `MorkahjaWebApp` | 543 | Done 2026-11-25: 568 of both folders on the server (55 MB, from 584 MB); 20 in the gallery, 124 in 45 journal entries. Left out: 2 QR codes, 3 Soul Link QR screens, a browser warning with a local network address, 1 blank capture; 3 source files were empty |
 | 8 | Analubia | `Analubia` | 1377 | On hold (Babuni, 2026-11-25): not on the website until Babuni has decided how publicly Analubia can be worked on |
 
 ## Steps for each project

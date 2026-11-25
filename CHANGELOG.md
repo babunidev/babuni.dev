@@ -6,6 +6,12 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Morkahja screenshots (2026-11-25)
+- 568 Morkahja development screenshots (12–24 November 2026) on the server media folder, 55 MB from 584 MB of originals, listed in `src/content/server-media.json`. Left out after review: two QR codes and three Soul Link QR screens (they encode addresses or invite links), a browser warning showing a local network address, and one blank capture.
+- `morkahja-rpg` has a new *Screenshots* gallery with 20 captioned images. The Morkahja journal (snapshot `1c02390`) shows 124 of them in 45 entries; the snapshot also brings in the Morkahja documents Babuni changed since `a05846a`.
+- `npm run screenshots:import` takes `--skip name,name` and skips empty source files with a warning.
+- Verification: `npm run content:check`, `npm run test:grid` (239 passed) and `npm run build` passed; upload checked by checksum for all 1,229 listed files. Claude Code (Claude Opus 5.5).
+
 ### Changed — Screenshots moved out of Git into the server's media folder (2026-11-25)
 - Babuni decided that Git holds no screenshots. The 13 Button Game screenshots (with thumbnails) and the 67 verification captures from `public/media/babuni-dev/images/` (66 in `verification/`, plus `small-bloom.webp`) moved to `public/screenshots/<project-id>/…`, which Git ignores, and to `/var/www/babuni.dev/shared/screenshots/` on the server, served at `/screenshots/`. The verification captures were moved byte for byte.
 - `src/content/server-media.json` lists all 93 files with size and SHA-256; `scripts/server-media.mjs update` refreshes it. `npm run content:check` now requires every `/screenshots/` image in a module to be listed there.
