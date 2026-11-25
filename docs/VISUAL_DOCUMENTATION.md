@@ -199,3 +199,10 @@ AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 an
 
 AI headless-Chrome captures from the temporary localhost:4391 preview, at 1366 and 390 pixels. The Projects menu lists the most recently updated project first with "today" / "2 days ago" labels; the About page shows the Elsewhere links as cards with a picture, title and description, and the portrait above "The person behind the projects". Not a physical phone test.
 
+## 2026-11-25 — A sign-up form inside the Morkahja reader
+
+![Morkahja sign-up frame in the reader](../public/media/babuni-dev/images/verification/signup-reader-desktop.webp)
+
+![Morkahja sign-up frame on a narrow screen](../public/media/babuni-dev/images/verification/signup-reader-phone.webp)
+
+AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels, taken after Show sign-up form was pressed in Morkahja's Follow the journey reader. The frame shows the live EmailOctopus page; no address was submitted. Browser simulations, not a physical phone test.

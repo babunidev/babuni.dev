@@ -32,6 +32,7 @@ The following is a **conceptual field inventory**, not a literal copy of the imp
 - File: filename, file type, size if known, licensing/availability, download URL.
 - Release: version, date, changelog reference, source.
 - Feature / experiment: demonstrated behavior, media, implementation status.
+- Sign-up: a hosted mailing-list page framed in the reader only after the visitor asks for it; the website never handles the address (implemented 2026-11-25 for Morkahja).
 
 ## Progressive disclosure
 
@@ -723,3 +724,8 @@ Babuni identified the Grimnir portal as the audiobook project and published Chap
 ## 2026-11-20 — Brunti Audiobook
 
 **Babuni decided:** rename the project to Brunti Audiobook and its repository to `Brunti-audiobook`. **AI execution:** renamed the GitHub repository, switched the connection and snapshot key, and changed the display name and summary. Stable ID `grimnir`, artwork and modules unchanged; earlier entries naming Grimnir or `audiobookGrimnir` are history.
+
+## 2026-11-25 — Follow the journey
+
+Morkahja has a **Follow the journey** sign-up module after Play. Its title and preview are AI-proposed copy for Babuni to edit in `src/content/project-modules.json`. The form itself, its wording and its list settings live in Babuni's EmailOctopus account; the website only frames `https://morkahja.eo.page/join`. The static reading page `/projects/morkahja-rpg/follow/` shows the preview text and no frame. With 13 populated Morkahja modules, the eight-card small bloom includes it in about 8 of 13 openings; the big bloom always does.
+

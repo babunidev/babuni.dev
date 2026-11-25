@@ -2,7 +2,7 @@ import {existsSync, readFileSync, realpathSync, statSync} from 'node:fs';
 import {resolve, sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {demoProjects} from '../src/lib/demo-projects.ts';
-import {moduleHasContent, safeEmbedUrl} from '../src/lib/project-modules.ts';
+import {moduleHasContent, safeEmbedUrl, safeSignupUrl} from '../src/lib/project-modules.ts';
 import {REPOSITORY_DOCUMENTS,documentLocations,repositoryModules,composeProjectModules} from '../src/lib/repository-content.ts';
 import {readLocalDocuments} from './build-document-assets.mjs';
 import {validateConnections,validateSnapshots} from './sync-repositories.mjs';
@@ -31,16 +31,16 @@ export function validateContent(catalog, {projects=demoProjects, root=resolve(fi
     entries.forEach((entry,index)=>{
       const at=`${project}[${index}]`, before=errors.length;
       if(!object(entry)){fail(at,'expected module object');return;}
-      keys(entry,['id','type','title','preview','body','document','images','video','videos','links','qr','source','credit'],at);
+      keys(entry,['id','type','title','preview','body','document','images','video','videos','links','qr','signup','source','credit'],at);
       for(const field of ['id','title'])if(!string(entry[field]))fail(`${at}.${field}`,'required nonempty text');
       if(string(entry.id)&&!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.id))fail(`${at}.id`,'use lowercase words separated by hyphens');
       if(ids.has(entry.id))fail(`${at}.id`,'duplicate module ID');ids.add(entry.id);
       if(typeof entry.preview!=='string')fail(`${at}.preview`,'required text (may be empty for an empty module)');
       if(entry.source!==undefined&&!http(entry.source))fail(`${at}.source`,'expected HTTP(S) source URL');
       if(entry.credit!==undefined&&!string(entry.credit))fail(`${at}.credit`,'expected nonempty credit');
-      const fields={text:['body','document'],gallery:['images'],video:['video','videos'],resources:['links','qr']}[entry.type];
-      if(!fields){fail(`${at}.type`,'expected text, gallery, video or resources');return;}
-      for(const field of ['body','document','images','video','videos','links','qr'])if(entry[field]!==undefined&&!fields.includes(field))fail(`${at}.${field}`,'field does not belong to this module type');
+      const fields={text:['body','document'],gallery:['images'],video:['video','videos'],resources:['links','qr'],signup:['signup']}[entry.type];
+      if(!fields){fail(`${at}.type`,'expected text, gallery, video, resources or signup');return;}
+      for(const field of ['body','document','images','video','videos','links','qr','signup'])if(entry[field]!==undefined&&!fields.includes(field))fail(`${at}.${field}`,'field does not belong to this module type');
       if(entry.type==='text'){
         if(entry.body!==undefined&&typeof entry.body!=='string')fail(`${at}.body`,'expected text');
         if(entry.document!==undefined){
@@ -68,6 +68,15 @@ export function validateContent(catalog, {projects=demoProjects, root=resolve(fi
       if(entry.video!==undefined){if(!object(entry.video))fail(`${at}.video`,'expected video object');else video(entry.video,`${at}.video`);}
       if(entry.video!==undefined&&entry.videos!==undefined)fail(at,'choose video or videos, not both');
       records('videos',['src','embed','poster','title'],video);
+      if(entry.signup!==undefined){
+        const loc=`${at}.signup`;
+        if(!object(entry.signup))fail(loc,'expected sign-up object');
+        else{
+          keys(entry.signup,['src','title'],loc);
+          if(!safeSignupUrl(entry.signup.src))fail(`${loc}.src`,'expected an EmailOctopus page such as https://account.eo.page/slug');
+          if(!string(entry.signup.title))fail(`${loc}.title`,'required frame title');
+        }
+      }
       if(errors.length===before){
         const resolved={...entry,body:entry.document?readFileSync(resolve(root,entry.document),'utf8'):entry.body};
         if(moduleHasContent(resolved)){populated++;if(!string(entry.preview))fail(`${at}.preview`,'populated module needs a preview');}
@@ -78,8 +87,8 @@ export function validateContent(catalog, {projects=demoProjects, root=resolve(fi
   return {errors,counts};
 }
 export function moduleTemplate(type,id){
-  if(!['text','gallery','video','resources'].includes(type)||!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id??''))throw new Error('Usage: npm run content:template -- <text|gallery|video|resources> <module-id>');
-  return {id,type,title:id.split('-').map(word=>word[0].toUpperCase()+word.slice(1)).join(' '),preview:'',...({text:{body:''},gallery:{images:[]},video:{videos:[]},resources:{links:[]}}[type])};
+  if(!['text','gallery','video','resources','signup'].includes(type)||!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id??''))throw new Error('Usage: npm run content:template -- <text|gallery|video|resources|signup> <module-id>');
+  return {id,type,title:id.split('-').map(word=>word[0].toUpperCase()+word.slice(1)).join(' '),preview:'',...({text:{body:''},gallery:{images:[]},video:{videos:[]},resources:{links:[]},signup:{}}[type])};
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try {

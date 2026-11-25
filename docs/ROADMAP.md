@@ -802,3 +802,11 @@ The source identifies a Wrath-era port, not a numbered sequel; Roarboard remains
 ## 2026-11-01 — Accurate header waiting feedback
 
 - [x] Show waiting text only for an actual queued transition; ordinary shifts report motion without an invented opening wait.
+
+## 2026-11-25 — Morkahja sign-up
+
+- [x] `signup` module kind and Morkahja's Follow the journey module, framing the EmailOctopus page after a button press (headless-browser checks at 1280 and 390 px).
+- [ ] A real sign-up end to end, by Babuni, after release.
+- [ ] iOS Safari: frame focus, touch scrolling and third-party storage.
+- [ ] Babuni's review of the module title, preview, button label and disclosure line.
+

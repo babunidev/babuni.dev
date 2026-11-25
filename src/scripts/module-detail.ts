@@ -3,7 +3,8 @@ import {shrinkReader} from './reader-transition';
 import {attachReaderHeader} from './site-navigation';
 import {appendModuleQr} from './module-qr.ts';
 import {videosForModule,type ProjectModule} from '../lib/project-modules';
-import {renderVideo} from './module-preview';
+import {renderVideo,stopPlayers} from './module-preview';
+import {renderSignup} from './module-signup';
 import {renderDocument} from './document-reader';
 import {createDocumentBody} from './document-body';
 import {installReaderDismissal} from './reader-dismissal';
@@ -24,7 +25,6 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
   let dismissReader:(()=>void)|null=null;
   let restoreHeader:(()=>void)|null=null;
   let documentRequest:AbortController|null=null;
-  function stopPlayers(root:HTMLElement){root.querySelectorAll('video').forEach(video=>video.pause());root.querySelectorAll('iframe').forEach(frame=>{const figure=frame.closest('figure');if(figure)figure.replaceWith(renderVideo({embed:frame.src,title:frame.title}));else frame.remove();});}
   function closeDetail(){disposeScroll?.();disposeScroll=null;cancelClosing?.();cancelClosing=null;closing=false;dismissReader=null;if(!detail)return;documentRequest?.abort();documentRequest=null;stopPlayers(detail);restoreHeader?.();restoreHeader=null;detail.close();detail.remove();detail=null;onChange(false);}
   function openDetail(module:ProjectModule,trigger:HTMLButtonElement,options:ReaderOptions={}){
     closeDetail();
@@ -55,6 +55,10 @@ export function createModuleDetails(onChange:(open:boolean,title?:string)=>void)
     if(module.type==='video')for(const video of videosForModule(module))content.append(renderVideo(video));
     if(module.type==='resources')for(const item of module.links??[]){const link=document.createElement('a');link.href=item.href;link.textContent=item.label;link.className='bloom-action';link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
     if(module.type==='resources')appendModuleQr(content,module);
+    if(module.type==='signup'){
+      const intro=document.createElement('p');intro.textContent=module.preview;content.append(intro);
+      const signup=renderSignup(module);if(signup)content.append(signup);
+    }
     if(module.source&&module.type!=='document-list'){const source=document.createElement('a');source.href=module.source;source.textContent='View source';source.target='_blank';source.rel='noopener noreferrer';content.append(source);}
     if(module.credit){const credit=document.createElement('p');credit.className='module-credit';credit.textContent=module.credit;content.append(credit);}
     function backToBloom(){

@@ -824,3 +824,7 @@ Code review of admin `17f8f5e` confirms no active GitHub/publishing capabilities
 
 `renderDocument` turns a paragraph of the form `![](/about-links/<name>.webp)` + `**[Title](url)**` + text into one `a.link-card`. The image path must match `^/about-links/[a-z0-9-]+\.webp$`, so only the site's own thumbnails load; imported documents keep the explicit-media policy.
 
+## 2026-11-25 — Sign-up modules
+
+`signup` is the sixth module kind. `safeSignupUrl` (`src/lib/project-modules.ts`) allows only `https://<account>.eo.page/<slug>`; it is checked by `moduleHasContent`, by `scripts/content-tools.mjs` and again by `renderSignup` (`src/scripts/module-signup.ts`) before a frame exists. `renderModulePreview` needs no branch: a sign-up card falls through to title, preview and Read more. `openDetail` appends the preview and `renderSignup`'s button; the press creates `iframe.signup-frame` with `sandbox` set before `src`. `stopPlayers` now lives in `module-preview.ts` and resets only frames marked `data-player="video"`. The frame is cross-origin: Escape pressed inside it does not reach the reader, so the project icon and the backdrop remain the ways out. No runtime script, dependency or header changes; the repository defines no Content-Security-Policy.
+

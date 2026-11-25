@@ -5,7 +5,7 @@ import {validateContent,moduleTemplate} from '../scripts/content-tools.mjs';
 const projects=[{id:'example'}];
 const check=entries=>validateContent({example:entries},{projects});
 test('all blank templates remain valid and invisible until authored',()=>{
-  for(const type of ['text','gallery','video','resources']){
+  for(const type of ['text','gallery','video','resources','signup']){
     const result=check([moduleTemplate(type,'new-module')]);
     assert.deepEqual(result.errors,[]);assert.equal(result.counts[0].empty,1);
   }
@@ -38,4 +38,15 @@ test('valid modules can change wording without failing validation',()=>{
  const second={...first,title:'Renamed introduction',preview:'Different preview',body:'New wording with other details.'};
  assert.deepEqual(check([first]).errors,[]);
  assert.deepEqual(check([second]).errors,[]);
+});
+
+test('sign-up definitions are checked field by field',()=>{
+ const valid={id:'news',type:'signup',title:'News',preview:'Hear about new things.',signup:{src:'https://example-account.eo.page/join',title:'Example sign-up'}};
+ const result=check([valid]);assert.deepEqual(result.errors,[]);assert.equal(result.counts[0].populated,1);
+ const errors=check([{...valid,id:'host',signup:{...valid.signup,src:'https://example.com/join'}},
+  {...valid,id:'untitled',signup:{src:valid.signup.src}},
+  {...valid,id:'extra',signup:{...valid.signup,height:600}},
+  {id:'text',type:'text',title:'Text',preview:'Text',body:'Body',signup:valid.signup}]).errors;
+ for(const [at,expected] of [['[0].signup.src','eo.page'],['[1].signup.title','required'],['[2].signup.height','unknown field'],['[3].signup','does not belong']])
+  assert.ok(errors.some(e=>e.includes(at)&&e.includes(expected)),at);
 });

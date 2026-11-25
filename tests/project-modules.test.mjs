@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
-import {selectModules,moduleHasContent,moduleRevealPlan,MODULE_OFFSETS,safeEmbedUrl,videosForModule} from '../src/lib/project-modules.ts';
+import {selectModules,moduleHasContent,moduleRevealPlan,MODULE_OFFSETS,safeEmbedUrl,safeSignupUrl,videosForModule} from '../src/lib/project-modules.ts';
 import {moduleVacancies,occupiedCell,restingCell} from '../src/lib/bloom-geometry.ts';
 import {sourceCell,seededRandom} from '../src/lib/grid-shifts.ts';
 import {shiftAvoidsBloom} from '../src/lib/grid-focus.ts';
@@ -72,4 +72,21 @@ test('external embeds must be explicit HTTPS player URLs',()=>{
 test('video modules accept safe embeds and reject empty collections',()=>{
  assert.ok(moduleHasContent({type:'video',videos:[{title:'Embedded',embed:'https://www.youtube-nocookie.com/embed/abc'}]}));
  assert.equal(moduleHasContent({type:'video',videos:[]}),false);
+});
+
+test('sign-up frames accept only an EmailOctopus page address',()=>{
+ assert.equal(safeSignupUrl('https://example-account.eo.page/join'),'https://example-account.eo.page/join');
+ for(const url of ['http://example-account.eo.page/join','https://eo.page/join','https://example.com/join',
+  'https://example-account.eo.page.example.com/join','https://a.b.eo.page/join','https://user:pw@example-account.eo.page/join',
+  'https://user@example-account.eo.page/join','https://example-account.eo.page:8443/join','https://example-account.eo.page:443/join',
+  'https://example-account.eo.page/join?ref=1','https://example-account.eo.page/join?','https://example-account.eo.page/join#top',
+  'https://example-account.eo.page/','https://example-account.eo.page','https://example-account.eo.page/a/b',
+  'https://-bad.eo.page/join','javascript:alert(1)','not a url','',undefined,42])assert.equal(safeSignupUrl(url),null,String(url));
+});
+test('sign-up modules count as populated only with an allowed address and a frame title',()=>{
+ const module={type:'signup',signup:{src:'https://example-account.eo.page/join',title:'Example sign-up'}};
+ assert.ok(moduleHasContent(module));
+ assert.equal(moduleHasContent({type:'signup'}),false);
+ assert.equal(moduleHasContent({...module,signup:{...module.signup,src:'https://example.com/join'}}),false);
+ assert.equal(moduleHasContent({...module,signup:{...module.signup,title:' '}}),false);
 });

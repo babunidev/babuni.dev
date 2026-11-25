@@ -6,6 +6,19 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Morkahja sign-up module (2026-11-25)
+- New module kind `signup`: a text card in both blooms and, in the reader, a disclosure line and a **Show sign-up form** button. The press replaces the button with a sandboxed frame of a hosted sign-up page and moves focus into it. Rendering lives in `src/scripts/module-signup.ts`.
+- Morkahja has a new `follow` module, **Follow the journey**, framing the EmailOctopus page `https://morkahja.eo.page/join`. Morkahja now has 13 populated modules.
+- `safeSignupUrl` in `src/lib/project-modules.ts` accepts only `https://<account>.eo.page/<slug>` with no credentials, port, query or fragment. It is applied by `moduleHasContent`, `npm run content:check` and again by the renderer. The module loader and `npm run content:template` accept the new kind.
+- The frame is 600 px high, with `sandbox="allow-forms allow-scripts allow-same-origin allow-storage-access-by-user-activation"` and `referrerpolicy="strict-origin-when-cross-origin"`.
+- Verification: `npm run content:check`, `npm run test:grid` (230 passed) and `npm run build` passed. Headless Chrome against `astro preview` at 1280 and 390 px: no request to `eo.page`, `recaptcha.net` or `gstatic.com` before the press; afterwards the whole form shows with no sideways scrolling and no console errors; Escape closes the reader while focus is outside the frame; Tab leads from the frame to the project icon, which closes the reader; reopening shows the button again with no frame; mouse-wheel scrolling over the frame scrolls the reader. No address was submitted. Touch scrolling, Safari and a real phone were not tested. Claude Code (Claude Opus 5.5).
+
+### Changed — Reader closing leaves non-video frames alone (2026-11-25)
+- `stopPlayers` moved to `src/scripts/module-preview.ts` and now resets only frames marked `data-player="video"`, so a sign-up form is not swapped for a video player while the reader closes. Claude Code (Claude Opus 5.5).
+
+### Security — Sign-up without a third-party script (2026-11-25)
+- The sign-up uses a cross-origin frame, never EmailOctopus's script embed, because the Morkahja game on the same origin keeps players' private keys in `localStorage`. No script on babuni.dev handles the visitor's address. No Content-Security-Policy exists to change; one added later must allow `frame-src https://morkahja.eo.page`. Claude Code (Claude Opus 5.5).
+
 ### Changed — Projects menu sorted by latest update; About links as cards (2026-11-25)
 - The **Projects** menu is one list, most recently updated project first, instead of the category groups. Order comes from each connected repository's newest branch-head commit (`src/generated/project-activity.json`, refreshed by `activity:sync` on every production build); projects without a connected repository follow in catalog order. Each entry shows how long ago it was updated ("today", "3 days ago"). Search filters the same ordered list. `src/lib/project-groups.ts` and `groupedProjects` are removed.
 - The About page's **Elsewhere** links are cards: a 72 px picture on the left, the link as title and the description under it; the whole card is the link. Pictures are 192 px WebP thumbnails in `public/about-links/`, made from Babuni's portal artwork, plus the babuni.musik channel picture for the two music links. The Markdown reader renders a card only for a paragraph that starts with an image from `/about-links/` followed by a bold link; other images stay links.

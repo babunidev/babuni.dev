@@ -6,6 +6,12 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-25 — A way to follow Morkahja
+
+Morkahja is changing every day, and I wanted people to be able to hear about it. I chose EmailOctopus, published a sign-up page there, and decided that the form belongs inside a module of the Morkahja project: no bare link, and nothing collected in the game. Claude Sonnet 5.5 wrote a developer brief for it. Its main point was safety: the game runs on the same address as the website and keeps each player's keys in the browser, so EmailOctopus's script must never run on the site. The form is shown in a separate frame instead, which loads only when a visitor presses a button. I then asked Claude Code (Claude Opus 5.5) to build it from the brief.
+
+AI added a new module kind for sign-ups and the **Follow the journey** module, checked in a headless browser that nothing reaches EmailOctopus or Google before the button press, and measured the form at phone and desktop widths. It found one thing the brief had not foreseen: inside the frame, reCAPTCHA asked for its own cookies and the frame refused, filling the console with errors. AI allowed that one request, which gives the frame no access to the website's storage. The title, the text and the button wording are AI proposals I can change. A real sign-up is still mine to try once it is live.
+
 ## 2026-11-25 — What changed most recently, first
 
 I wanted the Projects list in the top right sorted by activity instead of by category, so the most recently updated project is always on top. Claude Code (Claude Opus 5.5) sorted it by the date of each repository's latest commit, which the site already reads for the "Recently updated" badges, and added a short "3 days ago" next to each name. The order is refreshed whenever the site is built; a daily refresh needs a scheduled build and publish, which is still to be decided.

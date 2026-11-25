@@ -802,3 +802,7 @@ The requested code-backed assessment keeps administration in the local Babuni.ad
 
 Babuni requested that folder lists can carry images: an image with the same name as a Markdown file sits centered above it, and the file name is centered beneath it, so the list reads image, document, image, document. In the reader's folder index, the image and the button below it both open the document. The big bloom shows up to twelve entries. The small bloom shows up to four entries, but only when the folder has images, so plain folders keep their text-only small bloom. Images keep their natural size until they would exceed the space: the full width, and at most 40% of a tile's height in a small bloom or 90% in a big bloom. Movement, timing and bloom geometry are unchanged.
 
+## 2026-11-25 — Sign-up frame in the reader
+
+The sign-up reader reuses the existing pieces: the preview as a paragraph, a small disclosure line in the credit style, and a `bloom-action` button. After the press, the hosted page sits in the muted-gold `video-frame` border, full content width and 600 px high. That height holds the whole form from a 300-pixel-wide frame (about 560 px of content) to a 900-pixel-wide one (about 290 px, centred by the page itself), and leaves room for a reCAPTCHA challenge. The page's own dark background (`#140A07`) sits inside the lighter reader panel. Bloom and reader timing are unchanged, and nothing is requested at bloom time.
+

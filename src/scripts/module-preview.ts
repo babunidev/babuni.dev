@@ -18,11 +18,22 @@ export function renderVideo(video:ModuleVideo):HTMLElement {
       const frame=document.createElement('iframe');frame.className='bloom-media';frame.src=safe;
       frame.title=video.title;frame.loading='lazy';
       frame.allow='encrypted-media; fullscreen; picture-in-picture';frame.allowFullscreen=true;
-      frame.referrerPolicy='strict-origin-when-cross-origin';frameShell.append(frame);
+      frame.referrerPolicy='strict-origin-when-cross-origin';frame.dataset.player='video';frameShell.append(frame);
     }
   }
   if(frameShell.children.length)container.append(frameShell);
   return container;
+}
+/** Stops playback before the reader closes: pauses native videos and swaps each
+ * embedded video player for a fresh one. Only frames marked as players are
+ * touched; a sign-up form stays as it is until the reader is removed. */
+export function stopPlayers(root:ParentNode){
+  root.querySelectorAll('video').forEach(video=>video.pause());
+  root.querySelectorAll('iframe').forEach(frame=>{
+    if(frame.dataset.player!=='video')return;
+    const figure=frame.closest('figure');
+    if(figure)figure.replaceWith(renderVideo({embed:frame.src,title:frame.title}));else frame.remove();
+  });
 }
 export function renderModulePreview(module:ProjectModule,projectName:string,onReadMore?:()=>void,depth:'small'|'big'='small'):HTMLElement {
   const panel=document.createElement('section');

@@ -1,9 +1,11 @@
 /** Shared content identity and preview data, independent of grid coordinates. */
-export type ModuleType='text'|'gallery'|'video'|'resources'|'document-list';
+export type ModuleType='text'|'gallery'|'video'|'resources'|'document-list'|'signup';
 export interface ModuleImage {src:string;alt:string;caption?:string}
 export interface ModuleLink {label:string;href:string}
 export interface ModuleDocument {title:string;path:string;bodyUrl:string;source:string;image?:string}
 export interface ModuleVideo {src?:string;embed?:string;poster?:string;title:string}
+/** A hosted sign-up page shown in a sandboxed frame inside the reader. */
+export interface ModuleSignup {src:string;title:string}
 export interface ProjectModule {
   id:string;type:ModuleType;title:string;preview:string;
   body?:string;intro?:string;bodyUrl?:string;images?:ModuleImage[];
@@ -13,6 +15,8 @@ export interface ProjectModule {
   /** Resources only: a scannable code opening the first link. */
   qr?:ModuleImage;
   documents?:ModuleDocument[];
+  /** Sign-up only: the hosted page framed in the reader after a button press. */
+  signup?:ModuleSignup;
   source?:string;credit?:string;
 }
 export function videosForModule(module:ProjectModule):ModuleVideo[]{
@@ -28,6 +32,19 @@ export function safeEmbedUrl(value:string):string|null {
   }catch{}
   return null;
 }
+/** Only an EmailOctopus landing page (https://<account>.eo.page/<slug>) may be framed. */
+export function safeSignupUrl(value:unknown):string|null {
+  // An empty `?`, `#`, `@` or default `:443` vanishes from the parsed URL; reject them as written.
+  if(typeof value!=='string'||/[?#@\\]/.test(value)||/^[^/]*\/\/[^/]*:/.test(value))return null;
+  try{
+    const url=new URL(value);
+    if(url.protocol!=='https:'||url.username||url.password||url.port||url.search||url.hash)return null;
+    if(!/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.eo\.page$/.test(url.hostname))return null;
+    if(!/^\/[A-Za-z0-9_-]+$/.test(url.pathname))return null;
+    return url.href;
+  }catch{}
+  return null;
+}
 export function moduleHasContent(module:ProjectModule):boolean {
   switch(module.type){
     case 'text':return !!module.body?.trim()||!!module.bodyUrl?.trim();
@@ -36,6 +53,7 @@ export function moduleHasContent(module:ProjectModule):boolean {
     case 'resources':return !!module.links?.some(link=>link.label.trim()&&link.href.trim());
     case 'document-list':return !!module.documents?.some(doc=>doc.title.trim()&&doc.bodyUrl.trim())
       ||!!module.links?.some(link=>link.label.trim()&&link.href.trim());
+    case 'signup':return !!safeSignupUrl(module.signup?.src)&&typeof module.signup?.title==='string'&&!!module.signup.title.trim();
   }
 }
 export function shuffled<T>(items:readonly T[],random:()=>number=Math.random):T[]{

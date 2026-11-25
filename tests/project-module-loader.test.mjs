@@ -10,3 +10,8 @@ test('failed project loads can retry and invalid IDs never fetch',async()=>{
  await assert.rejects(()=>loader.load('lootfeed'));assert.equal(loader.get('lootfeed'),undefined);
  assert.deepEqual(await loader.load('lootfeed'),[]);assert.equal(calls,2);
 });
+test('the loader accepts sign-up modules and still rejects unknown module types',async()=>{
+ const loader=createProjectModuleLoader(async url=>new Response(JSON.stringify(url.includes('good')?[{id:'news',type:'signup'}]:[{id:'odd',type:'unknown'}])));
+ assert.equal((await loader.load('good')).length,1);
+ await assert.rejects(()=>loader.load('bad'),/Invalid project content/);
+});
