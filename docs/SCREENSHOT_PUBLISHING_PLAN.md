@@ -33,8 +33,8 @@ Every image is looked at before it is published. Screenshots that show live user
 | 4 | Babuni Admin (`arcanitebrothers`) | `babuni-admin`, `babuni.admin` | 38 | Planned, needs a careful privacy check |
 | 5 | Morkahja (`morkahja-rpg`) | `Morkahja` | 35 | Planned |
 | 6 | BABUNI.DEV (`babuni-dev`) | `babuni.dev`, `babunidev` | 127 | Planned; joins the existing visual documentation |
-| 7 | Morkahja web app | `MorkahjaWebApp` | 543 | Needs a choice: a selection per day, or all |
-| 8 | Analubia | `Analubia` | 1358 | Needs a choice: no Analubia project exists on the site yet |
+| 7 | Morkahja web app | `MorkahjaWebApp` | 543 | Planned: all in the repository (estimated 64 MB), a selection in the gallery, the matching ones in the journal |
+| 8 | Analubia | `Analubia` | 1377 | On hold (Babuni, 2026-11-25): not on the website until Babuni has decided how publicly Analubia can be worked on |
 
 ## Steps for each project
 
@@ -44,3 +44,7 @@ Every image is looked at before it is published. Screenshots that show live user
 4. Add the images to the matching dated entries of the project's own `docs/DEVLOG.md`, commit and push that repository, then refresh its snapshot here.
 5. Run `npm run content:check`, `npm run test:grid` and `npm run build`; check the gallery and the journal thumbnails in a browser.
 6. Update `CHANGELOG.md`, `docs/DEVLOG.md` and this table; commit, push and publish.
+
+## Storage limits
+
+Estimated from a random sample of 60 images each (2026-11-25): Morkahja web app about 64 MB published, Analubia about 116 MB. Projects 1–7 together come to roughly 75 MB, which fits in this repository. If the total later passes a few hundred megabytes (for example once Analubia is published), the next step is a media folder on the server outside the release directories, which `publish-site.sh` never deletes. It would get its own upload script, and the repository would keep only a list of the files, so galleries and links can still be checked. Hosted object storage such as Cloudflare R2 or Hetzner Object Storage is the option after that.
