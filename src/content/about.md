@@ -28,7 +28,7 @@ For development work, my role is to come up with ideas, design systems, make dec
 Source repositories, project documentation and development history.
 
 ![](/about-links/curseforge.webp)
-**[CurseForge — Babuni Gaming](https://www.curseforge.com/members/babunigaming/projects)**
+**[CurseForge — Babunidev](https://www.curseforge.com/members/babunidev/projects)**
 World of Warcraft addons published for other players to use.
 
 ![](/about-links/instagram-babuni-gaming.webp)

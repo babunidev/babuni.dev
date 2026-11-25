@@ -358,7 +358,7 @@ TotemTimers.webp was supplied by Babuni.dev and copied byte-for-byte from the lo
 
 Babuni.dev supplied the project description and exact profiles:
 - YouTube: https://www.youtube.com/@babunigamingg
-- CurseForge: https://www.curseforge.com/members/babunigaming/projects
+- CurseForge: https://www.curseforge.com/members/babunidev/projects
 - Instagram: https://www.instagram.com/babunigaming/
 
 The three Babuni Gaming modules describe gaming/streaming and sharing experiences, current WoW emphasis, the connection to some addons/Azeroth Moments, and public profile resources. AI editorial text is attributed to the supplied human direction; no activity schedule or completed video migration is claimed. CurseForge's public profile was readable during this pass; YouTube and Instagram retrieval was unavailable, so their profile contents were not independently inspected.

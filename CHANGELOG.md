@@ -6,6 +6,9 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Fixed — CurseForge profile link (2026-11-25)
+- The CurseForge links on the About page and in Babuni Gaming's **Watch and follow** module pointed to `members/babunigaming`; they now open `https://www.curseforge.com/members/babunidev/projects`, the profile that owns the published addons (RoarForever, FlourishForever, SocialForever, ClearViewForever, Favorcraft, ResistForever), checked in Chrome. Link titles now read "CurseForge — Babunidev". Claude Code (Claude Opus 5.5).
+
 ### Added — Morkahja sign-up module (2026-11-25)
 - New module kind `signup`: a text card in both blooms and, in the reader, a disclosure line and a **Show sign-up form** button. The press replaces the button with a sandboxed frame of a hosted sign-up page and moves focus into it. Rendering lives in `src/scripts/module-signup.ts`.
 - Morkahja has a new `follow` module, **Follow the journey**, framing the EmailOctopus page `https://morkahja.eo.page/join`. Morkahja now has 13 populated modules.

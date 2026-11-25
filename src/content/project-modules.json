@@ -664,15 +664,15 @@
       "id": "channels",
       "type": "resources",
       "title": "Watch and follow",
-      "preview": "YouTube, Instagram and the BabuniGaming projects on CurseForge.",
+      "preview": "YouTube, Instagram and the World of Warcraft addons on CurseForge.",
       "links": [
         {
           "label": "YouTube — Babuni Gaming",
           "href": "https://www.youtube.com/@babunigamingg"
         },
         {
-          "label": "CurseForge — BabuniGaming projects",
-          "href": "https://www.curseforge.com/members/babunigaming/projects"
+          "label": "CurseForge — Babunidev addons",
+          "href": "https://www.curseforge.com/members/babunidev/projects"
         },
         {
           "label": "Instagram — Babuni Gaming",
