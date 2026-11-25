@@ -17,6 +17,22 @@ export function safeDocumentUrl(value:string,sourceUrl?:string):string|null {
     return url.href;
   }catch{return null;}
 }
+/** Split top-level tokens into card sections at the document's main heading level.
+ * A lone leading title heading stays with its introduction, so splitting uses the next level. */
+export function documentSections(tokens:readonly Token[]):Token[][] {
+  const blocks=tokens.filter(t=>t.type!=='space'&&t.type!=='def');
+  const depths=[...new Set(blocks.filter(t=>t.type==='heading').map(t=>t.depth as number))].sort((a,b)=>a-b);
+  let depth=depths[0];
+  const top=blocks.filter(t=>t.type==='heading'&&t.depth===depth);
+  if(top.length===1&&blocks[0]===top[0]&&depths.length>1)depth=depths[1];
+  const groups:Token[][]=[];let current:Token[]=[];
+  for(const token of tokens){
+    if(token.type==='heading'&&token.depth<=depth&&!(token===blocks[0]&&token.depth<depth)&&current.some(t=>t.type!=='space'&&t.type!=='def')){groups.push(current);current=[];}
+    current.push(token);
+  }
+  if(current.some(t=>t.type!=='space'&&t.type!=='def'))groups.push(current);
+  return groups;
+}
 const LINK_CARD_IMAGE=/^\/about-links\/[a-z0-9-]+\.webp$/;
 /** Parse Markdown tokens, then construct safe DOM nodes. Never insert raw HTML. */
 export function renderDocument(source:string,sourceUrl?:string,interactive=true):HTMLElement {
@@ -128,7 +144,11 @@ export function renderDocument(source:string,sourceUrl?:string,interactive=true)
       }
     }
   }
-  render(article,Lexer.lex(source,{gfm:true}));
+  const tokens=Lexer.lex(source,{gfm:true});
+  if(interactive)for(const group of documentSections(tokens)){
+    const section=document.createElement('section');section.className='document-section';
+    render(section,group);article.append(section);
+  }else render(article,tokens);
   for(const {element,href} of links){
     if(href.startsWith('#')){
       let fragment=href.slice(1);try{fragment=decodeURIComponent(fragment);}catch{}

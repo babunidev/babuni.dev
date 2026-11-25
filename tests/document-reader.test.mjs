@@ -69,3 +69,15 @@ test('own /about-links/ thumbnails turn image + bold link + text into one card l
  assert.ok(cards[0].textContent.includes('A short description.'));
  assert.equal(nodes(reader,'img').length,1,'foreign images never load');
 });
+test('readers group text into one card per main section; previews stay unsectioned',t=>{
+ documentDOM(t);
+ const body='# Title\n\nIntro text.\n\n## One\n\nFirst.\n\n### Detail\n\nStill one.\n\n## Two\n\nSecond.';
+ const sections=nodes(renderDocument(body),'section').filter(n=>n.className==='document-section');
+ assert.equal(sections.length,3);
+ assert.ok(sections[0].textContent.startsWith('Title'));
+ assert.ok(sections[1].textContent.includes('Still one.'));
+ assert.ok(sections[2].textContent.startsWith('Two'));
+ assert.equal(nodes(renderDocument('Plain paragraph only.'),'section').length,1);
+ assert.equal(nodes(renderDocument(body,undefined,false),'section').length,0);
+ assert.equal(nodes(renderDocument('## A\n\nx\n\n## B\n\ny'),'section').length,2);
+});

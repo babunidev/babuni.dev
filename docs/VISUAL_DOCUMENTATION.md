@@ -215,3 +215,10 @@ AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 an
 
 AI headless-Chrome captures from the temporary 127.0.0.1:4329 preview at 1280 and 390 pixels, after Babuni asked for the form directly in the big bloom. The project tile is hidden while the sign-up card is the central one. These supersede the reader captures above as the current design. Browser simulations, not a physical phone test; nothing was submitted.
 
+## 2026-11-25 — Reader text in section cards
+
+![Changelog reader with one card per entry](../public/media/babuni-dev/images/verification/reader-section-cards-changelog-desktop.webp)
+
+![About page as section cards on a narrow screen](../public/media/babuni-dev/images/verification/reader-section-cards-about-phone.webp)
+
+AI headless-Chrome captures from the temporary localhost:4392 preview at 1366 and 390 pixels: each main section of a reader is its own card with the heading on top. Not a physical phone test.

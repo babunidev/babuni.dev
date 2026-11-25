@@ -6,6 +6,10 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Changed — Reader text in section cards (2026-11-25)
+- Every reader (About, text modules and repository documents) now shows its text as a column of cards: one card per main section, with the section heading on top, underlined. `renderDocument` splits at the document's main heading level; a lone title heading stays in the first card with its introduction. Small- and big-bloom previews are unchanged. The About link cards sit inside their section card, slightly lighter.
+- Verification: `npm run test:grid` (233 passed after rebasing onto the sign-up changes, including a new sectioning test) and `npm run build` passed; checked in headless Chrome against `astro preview` at 1366 px and 390 px in About (5 cards), the BABUNI.DEV changelog (115) and architecture (141): no sideways scrolling, no page errors. Not tested on a physical phone. Claude Code (Claude Opus 5.5).
+
 ### Changed — Sign-up form shown directly in the big bloom (2026-11-25)
 - Morkahja's **Follow the journey** big-bloom card is now only the EmailOctopus form, with no title, text, button or Read more. The small bloom still shows the title and preview, and its Read more opens the big bloom on the form. The reader's **Show sign-up form** button is gone; the reader, no longer reached from the card, shows the form directly.
 - The form fills the card inside its border and is scaled to fit where the card is smaller than 440 px (factor 0.88 at 800 px viewport width, 0.68 at 390 px), so nothing scrolls inside it.

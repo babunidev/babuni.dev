@@ -278,8 +278,14 @@ const structured={'@context':'https://schema.org','@graph':[
   .module-document{overflow-wrap:anywhere}
   .module-detail-content.about-content .module-document{text-align:center}
   .module-document img.about-portrait{display:block;width:min(100%,440px);height:auto;aspect-ratio:1;object-fit:cover;margin:1.25em auto 1.75em;border-radius:8px}
-  .module-document a.link-card{display:flex;align-items:center;gap:16px;max-width:520px;margin:12px auto;padding:10px;text-align:left;text-decoration:none;color:#e9dfd2;background:#202027;border:1px solid #4a4350;border-radius:8px;transition:border-color 160ms,background-color 160ms}
-  .module-document a.link-card:hover,.module-document a.link-card:focus-visible{border-color:#ae9875;background:#26252d}
+  .module-document .document-section{margin:0 0 18px;padding:22px 26px;background:#1d1c22;border:1px solid #3e3843;border-radius:10px;box-shadow:0 6px 18px #0004}
+  .module-document .document-section>:first-child{margin-top:0}
+  .module-document .document-section>:last-child{margin-bottom:0}
+  .module-document .document-section>:is(h2,h3,h4):first-child{padding-bottom:.45em;border-bottom:1px solid #4a4350;color:#e8d3b0}
+  .module-document .document-section img.about-portrait{margin-top:.25em}
+  @media(max-width:760px){.module-document .document-section{padding:16px 16px;margin-bottom:14px}}
+  .module-document a.link-card{display:flex;align-items:center;gap:16px;max-width:520px;margin:12px auto;padding:10px;text-align:left;text-decoration:none;color:#e9dfd2;background:#26252d;border:1px solid #4a4350;border-radius:8px;transition:border-color 160ms,background-color 160ms}
+  .module-document a.link-card:hover,.module-document a.link-card:focus-visible{border-color:#ae9875;background:#2e2c36}
   .module-document a.link-card:focus-visible{outline:2px solid #beabd8;outline-offset:2px}
   .module-detail-content .link-card img{flex:none;width:72px;height:72px;margin:0;object-fit:cover;border-radius:6px}
   .link-card-body{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}

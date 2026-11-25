@@ -371,6 +371,16 @@
           "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px. Not a physical phone test."
         },
         {
+          "src": "/media/babuni-dev/images/verification/reader-section-cards-changelog-desktop.webp",
+          "alt": "The BABUNI.DEV changelog reader with each dated entry in its own rounded card, heading on top.",
+          "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1366 px. Not a phone test."
+        },
+        {
+          "src": "/media/babuni-dev/images/verification/reader-section-cards-about-phone.webp",
+          "alt": "The About page on a narrow screen: the introduction and portrait in one card, the next section starting in another.",
+          "caption": "AI headless-Chrome capture, 25 November 2026, at 390 px. Not a physical phone test."
+        },
+        {
           "src": "/media/babuni-dev/images/verification/signup-reader-desktop.webp",
           "alt": "The Morkahja reader Follow the journey after Show sign-up form was pressed: the EmailOctopus sign-up page with email field, consent box and Subscribe button inside a gold-bordered frame.",
           "caption": "AI headless-Chrome capture, 25 November 2026, of the local preview at 1280 px. Until the button press, no request reached EmailOctopus or reCAPTCHA. Nothing was submitted. Not a phone test."
