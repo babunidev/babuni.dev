@@ -1,0 +1,53 @@
+name: Daily publish
+
+# Rebuilds origin/main once a day so the Projects menu order and the
+# "Recently updated" badges follow the latest repository activity, then
+# publishes only if the build differs from the live site.
+on:
+  schedule:
+    - cron: '17 4 * * *'   # 04:17 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: babuni-dev-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Test, build and publish origin/main
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Run grid and content tests
+        run: npm run test:grid
+      - name: Install deployment key and pinned host key
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.BABUNI_DEPLOY_SSH_KEY }}
+        run: |
+          test -n "$DEPLOY_SSH_KEY" || { echo "Secret BABUNI_DEPLOY_SSH_KEY is not set" >&2; exit 1; }
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$RUNNER_TEMP/deploy_key"
+          chmod 600 "$RUNNER_TEMP/deploy_key"
+          echo '89.167.120.88 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICxwBg/fT21ARD1lrdXXgHdIQaoBfVtk1hA6rV8iISoO' >> ~/.ssh/known_hosts
+      - name: Build and publish if anything changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_KEY: ${{ runner.temp }}/deploy_key
+        run: scripts/publish-site.sh --apply
+      - name: Remove deployment key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/deploy_key"

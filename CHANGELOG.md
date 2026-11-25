@@ -6,6 +6,11 @@ Entries use concise, neutral technical language, grouped by **Added**, **Changed
 
 ## [Unreleased]
 
+### Added — Daily publish job (2026-11-25)
+- `.github/workflows/daily-publish.yml` runs every day at 04:17 UTC (and on demand): it installs locked dependencies, runs `npm run test:grid`, then `scripts/publish-site.sh --apply`, which rebuilds `origin/main` with fresh repository activity and publishes only if the result differs from the live site (timestamp-only activity changes keep the live bundle). The Projects menu order and the "Recently updated" badges therefore follow the latest commits within a day.
+- `scripts/publish-site.sh` accepts `DEPLOY_KEY=<path>` to use an unencrypted key file instead of the SSH agent. The job writes the key from the `BABUNI_DEPLOY_SSH_KEY` repository secret to the runner's temporary folder, pins the server's ED25519 host key and removes the key afterwards. The job's key is separate from Babuni's own deployment key.
+- Verification: `bash -n` and a YAML parse passed; a local dry run of the changed script (agent path) passed. The job itself has not run yet: it needs the new key on the server and as a repository secret. Claude Code (Claude Opus 5.5).
+
 ### Changed — Reader text in section cards (2026-11-25)
 - Every reader (About, text modules and repository documents) now shows its text as a column of cards: one card per main section, with the section heading on top, underlined. `renderDocument` splits at the document's main heading level; a lone title heading stays in the first card with its introduction. Small- and big-bloom previews are unchanged. The About link cards sit inside their section card, slightly lighter.
 - Verification: `npm run test:grid` (233 passed after rebasing onto the sign-up changes, including a new sectioning test) and `npm run build` passed; checked in headless Chrome against `astro preview` at 1366 px and 390 px in About (5 cards), the BABUNI.DEV changelog (115) and architecture (141): no sideways scrolling, no page errors. Not tested on a physical phone. Claude Code (Claude Opus 5.5).

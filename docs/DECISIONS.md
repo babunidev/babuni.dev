@@ -15,7 +15,7 @@ Give the decision a date or stable identifier, status, human direction, alternat
 **Status:** accepted (Babuni, 2026-11-25). **Replaces** the menu-only category grouping approved earlier (see `docs/PROJECT_GROUPING_PROPOSAL.md`, now historical).
 **Decision:** the Projects menu is a single list ordered by each connected repository's newest branch-head commit, newest first; unconnected projects follow in catalog order. Grid order and per-visit shuffling are unaffected.
 **Alternatives:** keep categories and sort inside each one (not what was asked); fetch activity live in the browser (GitHub's unauthenticated rate limit of 60 requests per hour per visitor makes this unreliable).
-**Open:** Babuni asked for the order to refresh once a day. It refreshes on each production build; a daily automatic build and publish is not set up yet (AI note: it needs the deployment key available to an unattended job).
+**Daily refresh:** Babuni chose a GitHub Actions job (over a timer on the home computer) on 2026-11-25: `.github/workflows/daily-publish.yml` rebuilds and publishes once a day with a separate deployment key stored as the `BABUNI_DEPLOY_SSH_KEY` secret. Revisit if unattended publishing of everything on `main` becomes unwanted.
 
 ## D-2026-11-10 — Folder modules for any repository, with paired images
 **Status:** Accepted creative direction; implemented, not yet visually accepted on the live site.

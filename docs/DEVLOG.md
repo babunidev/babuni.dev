@@ -6,6 +6,10 @@ The newest dated entries come first. Within each day, entries follow the reverse
 
 For specific decisions, implementation changes and technical measurements, see [Decisions](DECISIONS.md), [Changelog](../CHANGELOG.md), [Architecture](ARCHITECTURE.md) and [Visual documentation](VISUAL_DOCUMENTATION.md).
 
+## 2026-11-25 — A daily refresh
+
+The Projects list is sorted by latest update, and I wanted that order refreshed once a day. Of the two options Claude Code (Claude Opus 5.5) offered, a timer on my computer or a GitHub Actions job, I chose GitHub Actions. The job rebuilds the site every morning and publishes only when something changed. It uses its own deployment key, which I add to the server and to the repository secrets myself.
+
 ## 2026-11-25 — The form is the card
 
 Once the sign-up was live, having to press a button to see the form felt like one step too many, and the reader was the wrong place for it. I asked for the form to be visible straight away and to live in the big bloom, with the small bloom keeping the short text. Claude Code (Claude Opus 5.5) made the big-bloom card nothing but the form, scaled down on smaller screens so it always fits whole. In its own screenshots AI then noticed that the Morkahja tile, which always sits in the lower-left quarter of the card you opened, covered the email field. It offered three ways out; I chose to hide the tile while the sign-up card is in the center, since its round icon already leads back. I also wanted the EmailOctopus advertisement gone. AI found that removing it is part of EmailOctopus's paid Pro plan, so on the free plan it stays rather than being hidden by a trick.

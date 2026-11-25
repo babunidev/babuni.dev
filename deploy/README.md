@@ -8,6 +8,8 @@ Target: `https://www.babuni.dev`. Keep `arcanitebrothers.com`, its `/var/www/mor
 
 ## Routine release procedure
 
+**Daily automatic publish (2026-11-25):** `.github/workflows/daily-publish.yml` runs `scripts/publish-site.sh --apply` at 04:17 UTC every day and on demand (Actions → Daily publish → Run workflow). It publishes whatever is on `origin/main` when the build differs from the live site. It uses a separate unencrypted key, stored only as the `BABUNI_DEPLOY_SSH_KEY` repository secret and installed with the `restrict` option in `babunideploy`'s `authorized_keys`. To stop it, disable the workflow or remove that key line from the server.
+
 The initial setup, DNS and certificate steps have already been performed; repeat them only when there is an explicitly authorized infrastructure change. For a normal website update, build and validate the chosen revision, upload it as an isolated release, switch the symlink, run external smoke checks, and retain rollback capability.
 
 1. Create a new release directory under `/var/www/babuni.dev/releases/` and upload the complete contents of the reviewed `dist/` build. Never upload private keys, `.env`, source checkouts or node_modules.

@@ -2,9 +2,11 @@
 # Usage: scripts/publish-site.sh [--apply]
 # Builds committed origin/main in a temporary worktree, compares it with the live site
 # and publishes only the files that differ, as a hard-linked release.
+# DEPLOY_KEY=<path> uses an unencrypted key file instead of the SSH agent
+# (the daily GitHub Actions job, .github/workflows/daily-publish.yml).
 set -euo pipefail
 apply="${1:-}"
-key="$HOME/.ssh/id_ed25519_babuni_deploy"
+key="${DEPLOY_KEY:-$HOME/.ssh/id_ed25519_babuni_deploy}"
 server="babunideploy@89.167.120.88"
 remote="/var/www/babuni.dev"
 ssh_cmd="ssh -i $key -o IdentitiesOnly=yes -o BatchMode=yes"
@@ -20,7 +22,7 @@ cleanup() {
   if [ "$agent_started" = 1 ]; then ssh-agent -k >/dev/null 2>&1 || true; fi
 }
 trap cleanup EXIT
-if ! ssh-add -l 2>/dev/null | grep -q "babuni.dev deployment"; then
+if [ -z "${DEPLOY_KEY:-}" ] && ! ssh-add -l 2>/dev/null | grep -q "babuni.dev deployment"; then
   [ -t 0 ] || { echo "SSH_KEY_NOT_LOADED: unlock the deployment key in your SSH agent first" >&2; exit 3; }
   eval "$(ssh-agent -s)" >/dev/null; agent_started=1; ssh-add "$key"
 fi
